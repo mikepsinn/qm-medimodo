@@ -1,0 +1,12 @@
+
+}javascript:S4165"cReview this useless assignment: "space" already holds the assigned value along all execution paths.(Û™Â
+‡javascript:S2583"mChange this condition so that it does not always evaluate to "false"; some subsequent code is never executed.(³Îâ‚
+ojavascript:S2814"URename "script_indent_level" as this name is already used in declaration at line 482.(º‰ùò
+tjavascript:S2814"URename "script_indent_level" as this name is already used in declaration at line 482.(¥Şùÿÿÿÿ
+hjavascript:S2814"IRename "comment" as this name is already used in declaration at line 244.(½Ÿ»Šÿÿÿÿÿ
+cjavascript:S2814"IRename "comment" as this name is already used in declaration at line 244.(‰à
+cjavascript:S2814"IRename "comment" as this name is already used in declaration at line 244.(†ãêá
+ljavascript:S2814"MRename "_beautifier" as this name is already used in declaration at line 476.(êÈáúÿÿÿÿ
+{javascript:S1871"aEither merge this case with the identical one on line "443" or change one of the implementations.(ŒîÔó
+cjavascript:UnusedVariable";Remove the declaration of the unused 'input_char' variable.(Ñ¶Şäÿÿÿÿÿ
+€javascript:S2703"aAdd the "let", "const" or "var" keyword to this declaration of "unformatted" to make it explicit.(×ø›¬ıÿÿÿÿ

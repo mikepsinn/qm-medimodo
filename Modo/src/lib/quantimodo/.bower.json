@@ -1,0 +1,32 @@
+{
+  "name": "quantimodo",
+  "description": "QuantiModo makes it easy to retrieve and analyze normalized user data from a wide array of devices and applications.",
+  "main": "src/quantimodoApi/index.js",
+  "authors": [
+    "Mike P. Sinn <m@quantimodo.com>"
+  ],
+  "license": "Unlicense",
+  "keywords": [
+    "digital",
+    "health"
+  ],
+  "homepage": "https://quantimo.do",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public.built/ionic/app-configuration/lib",
+    "test",
+    "tests"
+  ],
+  "version": "5.9.53119",
+  "_release": "5.9.53119",
+  "_resolution": {
+    "type": "version",
+    "tag": "v5.9.53119",
+    "commit": "4675f1b9722f1f01b2b946e7a8764c66e8f03bde"
+  },
+  "_source": "https://github.com/QuantiModo/quantimodo-sdk-javascript.git",
+  "_target": "5.9.53119",
+  "_originalSource": "quantimodo"
+}
