@@ -37,6 +37,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                 }
             },
             socialLogin: function (connectorName, ev, additionalParams) {
+                if(!qm.getUser()){qmService.login.setAfterLoginGoToState(qmStates.onboarding);}
                 qmService.showBasicLoader();
                 if(qmService.auth.hello.enabled){
                     qm.auth.hello.login(connectorName, additionalParams);
@@ -530,6 +531,119 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                 } else {
                     callback();
                 }
+            }
+        },
+        login: {
+            completelyResetAppStateAndSendToLogin: function(comeBackAfterLogin){
+                qmLogService.debug('called qmService.login.completelyResetAppStateAndSendToLogin', null);
+                if(comeBackAfterLogin){qmService.login.setAfterLoginGoToUrl();}
+                qmService.completelyResetAppState();
+                qmService.login.sendToLogin();
+            },
+            sendToLoginIfNecessaryAndComeBack: function(afterLoginGoToState, afterLoginGoToUrl){
+                qmLog.authDebug('Called qmService.login.sendToLoginIfNecessaryAndComeBack');
+                qmService.refreshUserUsingAccessTokenInUrlIfNecessary();
+                if(!qm.auth.getAccessTokenFromUrlUserOrStorage()){
+                    if (qm.platform.isDesignMode()) {
+                        qmService.login.setAfterLoginGoToState(qmStates.configuration);
+                    } else if (afterLoginGoToState){
+                        qmService.login.setAfterLoginGoToState(afterLoginGoToState);
+                    } else {
+                        qmService.login.setAfterLoginGoToUrl(afterLoginGoToUrl);
+                    }
+                    qmService.login.sendToLogin();
+                    return true;
+                }
+                return false;
+            },
+            setAfterLoginGoToUrlAndSendToLogin: function (){
+                if($state.current.name.indexOf('login') !== -1){
+                    qmLogService.info('qmService.login.setAfterLoginGoToUrlAndSendToLogin: Why are we sending to login from login state?');
+                    return;
+                }
+                qmService.login.setAfterLoginGoToUrl();
+                qmService.login.sendToLogin();
+            },
+            setAfterLoginGoToUrl: function (afterLoginGoToUrl){
+                if(!afterLoginGoToUrl){afterLoginGoToUrl = window.location.href;}
+                if(!qmService.login.weShouldSetAfterLoginStateOrUrl(afterLoginGoToUrl)){return false;}
+                qmLogService.debug('Setting afterLoginGoToUrl to ' + afterLoginGoToUrl + ' and going to login.', null);
+                qmService.storage.setItem(qm.items.afterLoginGoToUrl, afterLoginGoToUrl);
+            },
+            sendToLogin: function () {
+                if(qm.urlHelper.getParam('access_token')){
+                    if(!qm.auth.getAccessTokenFromCurrentUrl()){
+                        qmLogService.error("Not detecting snake case access_token", {}, qmLog.getStackTrace());
+                    }
+                    qmLogService.error("Why are we sending to login if we have an access token?", {}, qmLog.getStackTrace());
+                    return;
+                }
+                qmLog.authDebug('Sending to app.login', null);
+                qmService.goToState("app.login");
+            },
+            weShouldSetAfterLoginStateOrUrl: function(afterLoginGoToStateOrUrl){
+                if(qm.storage.getItem(qm.items.afterLoginGoToUrl)){
+                    qmLogService.info('afterLoginGoToUrl already set to '+ qm.storage.getItem(qm.items.afterLoginGoToUrl));
+                    return false;
+                }
+                if(qm.storage.getItem(qm.items.afterLoginGoToState)){
+                    qmLogService.info('afterLoginGoToState already set to '+ qm.storage.getItem(qm.items.afterLoginGoToState));
+                    return false;
+                }
+                if(afterLoginGoToStateOrUrl.indexOf('login') !== -1){
+                    qmLogService.info('setAfterLoginGoToState: Why are we sending to login from login state?');
+                    return false;
+                }
+                return true;
+            },
+            setAfterLoginGoToState: function(afterLoginGoToState){
+                if(!qmService.login.weShouldSetAfterLoginStateOrUrl(afterLoginGoToState)){return false;}
+                qmLogService.debug('Setting afterLoginGoToState to ' + afterLoginGoToState + ' and going to login. ');
+                qmService.storage.setItem(qm.items.afterLoginGoToState, afterLoginGoToState);
+            },
+            getAfterLoginState: function(){
+                var afterLoginGoToState = qm.storage.getItem(qm.items.afterLoginGoToState);
+                return afterLoginGoToState;
+            },
+            deleteAfterLoginState: function(){
+                $timeout(function () {  // Wait 10 seconds in case it's called again too quick and sends to default state
+                    qm.storage.removeItem(qm.items.afterLoginGoToState);
+                }, 10000);
+            },
+            afterLoginGoToUrlOrState: function () {
+                qmLog.info("Called afterLoginGoToUrlOrState in "+$state.current.name + "("+window.location.href+")");
+                function sendToDefaultStateIfNecessary() {
+                    if($state.current.name === 'app.login'){
+                        /** @namespace qm.getAppSettings().appDesign.defaultState */
+                        /** @namespace qm.getAppSettings().appDesign */
+                        qmService.goToDefaultState();
+                        return true;
+                    }
+                }
+                function sendToAfterLoginStateIfNecessary() {
+                    var afterLoginGoToState = qmService.login.getAfterLoginState();
+                    qmLogService.debug('afterLoginGoToState from localstorage is  ' + afterLoginGoToState);
+                    if(afterLoginGoToState){
+                        qmService.goToState(afterLoginGoToState);
+                        qmService.login.deleteAfterLoginState();
+                        return true;
+                    }
+                }
+                function sendToAfterLoginGoToUrlIfNecessary() {
+                    var afterLoginGoToUrl = qm.storage.getItem(qm.items.afterLoginGoToUrl);
+                    if(afterLoginGoToUrl) {
+                        qmLogService.info('Going to afterLoginGoToUrl from local storage  ' + afterLoginGoToUrl);
+                        $timeout(function () {qm.storage.removeItem(qm.items.afterLoginGoToUrl);}, 10000);
+                        window.location.replace(afterLoginGoToUrl);
+                        return true;
+                    } else {
+                        qmLogService.debug('sendToAfterLoginGoToUrlIfNecessary: No afterLoginGoToUrl from local storage');
+                    }
+                }
+                if(sendToAfterLoginGoToUrlIfNecessary()) {return true;}
+                if(sendToAfterLoginStateIfNecessary()) {return true;}
+                if(sendToDefaultStateIfNecessary()) {return true;}
+                return false;
             }
         },
         navBar: {
@@ -1536,14 +1650,6 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
             });
         }, requestSpecificErrorHandler);
     };
-    function setAfterLoginGoToUrlAndSendToLogin(){
-        if($state.current.name.indexOf('login') !== -1){
-            qmLogService.info('setAfterLoginGoToUrlAndSendToLogin: Why are we sending to login from login state?');
-            return;
-        }
-        setAfterLoginGoToUrl();
-        sendToLogin();
-    }
     function showOfflineError(options, request) {
         var pathWithoutQuery = getPathWithoutQuery(request);
         var doNotShowOfflineError = false;
@@ -1594,7 +1700,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
             JSON.stringify(request), null, options.stackTrace);
         qmLogService.debug('HEADERS: ' + JSON.stringify(headers), null, options.stackTrace);
         qm.auth.deleteAllAccessTokens();
-        setAfterLoginGoToUrlAndSendToLogin();
+        qmService.login.setAfterLoginGoToUrlAndSendToLogin();
     }
     function getPathWithoutQuery(request) {
         var pathWithQuery = request.url.match(/\/\/[^\/]+\/([^\.]+)/)[1];
@@ -1683,11 +1789,6 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
         qmService.post('api/v3/measurements',
             //['measurements', 'variableName', 'source', 'variableCategoryName', 'unitAbbreviatedName'],
             [], measurementSet, successHandler, errorHandler);
-    };
-    qmService.logoutOfApi = function(successHandler, errorHandler){
-        //TODO: Fix this
-        qmLogService.debug('Logging out of api does not work yet.  Fix it!', null);
-        qmService.get('api/v2/auth/logout', [], {}, successHandler, errorHandler);
     };
     qmService.getNotesFromApi = function(params, successHandler, errorHandler){
         var options = {};
@@ -1989,12 +2090,12 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
         if($state.current.name !== 'app.login'){
             qmLog.authDebug("getAccessTokenFromUrl: Setting qm.auth.accessTokenFromUrl to " + qm.auth.accessTokenFromUrl);
             qmLog.authDebug("getAccessTokenFromUrl: Setting onboarded and introSeen in local storage because we got an access token from url");
-            qm.storage.setItem('onboarded', true);
-            qm.storage.setItem('introSeen', true);
+            qm.storage.setItem(qm.items.onboarded, true);
+            qm.storage.setItem(qm.items.introSeen, true);
             qmLog.info('Setting onboarded and introSeen to true');
             qmLog.info('Setting afterLoginGoToState and afterLoginGoToUrl to null');
-            qm.storage.setItem('afterLoginGoToState', null);
-            qm.storage.setItem('afterLoginGoToUrl', null);
+            qm.storage.setItem(qm.items.afterLoginGoToState, null);
+            qm.storage.setItem(qm.items.afterLoginGoToUrl, null);
         } else {
             qmLog.info('On login state so not setting afterLoginGoToState and afterLoginGoToUrl to null');
         }
@@ -2023,46 +2124,46 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
     };
     qmService.refreshUserUsingAccessTokenInUrlIfNecessary = function(){
         qmLog.authDebug("Called refreshUserUsingAccessTokenInUrlIfNecessary");
-        if($rootScope.user && $rootScope.user.accessToken === qmService.getAccessTokenFromUrlAndSetLocalStorageFlags()){
-            qmLog.authDebug("$rootScope.user token matches the one in url");
-            return;
-        }
-        if(qmService.getAccessTokenFromUrlAndSetLocalStorageFlags()){
-            qmLog.authDebug("refreshUserUsingAccessTokenInUrlIfNecessary: Got access token from url");
-            var accessTokenFromLocalStorage = qm.storage.getItem(qm.items.accessToken);
-            if(accessTokenFromLocalStorage && qm.auth.accessTokenFromUrl !== accessTokenFromLocalStorage){
+        if(!$rootScope.user){$rootScope.user = qm.getUser();}
+        var currentUser = $rootScope.user;
+        var accessTokenFromLocalStorage = qm.storage.getItem(qm.items.accessToken);
+        var tokenFromUrl = qmService.getAccessTokenFromUrlAndSetLocalStorageFlags();
+        function clearStorageIfTokenFromStorageDoesNotMatchTokenFromUrl() {
+            if (tokenFromUrl && accessTokenFromLocalStorage && tokenFromUrl !== accessTokenFromLocalStorage) {
                 qm.storage.clearStorageExceptForUnitsAndCommonVariables();
                 qmLog.authDebug("Cleared local storage because accessTokenFromLocalStorage does not match accessTokenFromUrl");
             }
-            var user = qm.storage.getItem(qm.items.user);
-            if(!user){
-                user = $rootScope.user;
-                qmLog.authDebug("No user from local storage");
-            }
-            if(!user && $rootScope.user){
-                user = $rootScope.user;
-                qmLog.authDebug("refreshUserUsingAccessTokenInUrlIfNecessary: No user from local storage but we do have a $rootScope user");
-            }
-            if(user && qm.auth.accessTokenFromUrl !== user.accessToken){
+        }
+        function unsetUserIfTokenDoesNotMatchOneFromUrl() {
+            if (tokenFromUrl && currentUser && currentUser.accessToken !== tokenFromUrl) {
                 qmService.rootScope.setUser(null);
                 qm.storage.clearStorageExceptForUnitsAndCommonVariables();
                 qmLog.authDebug("refreshUserUsingAccessTokenInUrlIfNecessary: Cleared local storage because user.accessToken does not match qm.auth.accessTokenFromUrl");
             }
-            if(!qm.urlHelper.getParam('doNotRemember')){
+        }
+        function storeTokenFromUrlIfDoNotRememberNotSet() {
+            if (tokenFromUrl && !qm.urlHelper.getParam('doNotRemember')) {
                 qmLog.authDebug("refreshUserUsingAccessTokenInUrlIfNecessary: Setting access token in local storage because doNotRemember is not set");
-                qmService.storage.setItem(qm.items.accessToken, qm.auth.accessTokenFromUrl);
+                qmService.storage.setItem(qm.items.accessToken, tokenFromUrl);
             }
-            if(!$rootScope.user){
+        }
+        function refreshUserDoesNotExistOrIfTokenFromUrlDoesNotMatch() {
+            if (tokenFromUrl && (!currentUser || currentUser.accessToken !== tokenFromUrl)) {
                 qmLog.authDebug("refreshUserUsingAccessTokenInUrlIfNecessary: No $rootScope.user so going to refreshUser");
                 qmService.refreshUser();
             }
         }
+        clearStorageIfTokenFromStorageDoesNotMatchTokenFromUrl();
+        unsetUserIfTokenDoesNotMatchOneFromUrl();
+        storeTokenFromUrlIfDoNotRememberNotSet();
+        refreshUserDoesNotExistOrIfTokenFromUrlDoesNotMatch();
     };
     qmService.getAccessTokenFromAnySource = function () {
         var deferred = $q.defer();
-        if(qmService.getAccessTokenFromUrlAndSetLocalStorageFlags()){
+        var tokenFromUrl = qmService.getAccessTokenFromUrlAndSetLocalStorageFlags();
+        if(tokenFromUrl){
             qmLog.authDebug("getAccessTokenFromAnySource: Got AccessTokenFromUrl");
-            deferred.resolve(qmService.getAccessTokenFromUrlAndSetLocalStorageFlags());
+            deferred.resolve(tokenFromUrl);
             return deferred.promise;
         }
         var accessTokenFromLocalStorage = qm.storage.getItem(qm.items.accessToken);
@@ -2147,7 +2248,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
         if(!response){return qmLogService.error("No API response provided to qmApiGeneralErrorHandler", {errorMessage: error, responseData: data, apiResponse: response, requestOptions: options});}
         if(response.status === 401 || (response.text && response.text.indexOf('expired') !== -1)){
             qmService.auth.handleExpiredAccessTokenResponse(response.body);
-            if(!options || !options.doNotSendToLogin){setAfterLoginGoToUrlAndSendToLogin();}
+            if(!options || !options.doNotSendToLogin){qmService.login.setAfterLoginGoToUrlAndSendToLogin();}
         } else {
             var errorMessage = (response.error && response.error.message) ? response.error.message : error.message;
             qmLogService.error(errorMessage, error.stack, {apiResponse: response}, error.stack);
@@ -2317,7 +2418,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
         qmService.setUser(user);
         if(qm.urlHelper.getParam('doNotRemember')){return;}
         qmService.backgroundGeolocationStartIfEnabled();
-        qmLogService.setupBugsnag();
+        qmLog.setupBugsnag();
         setupGoogleAnalytics(qm.userHelper.getUserFromLocalStorage());
         if(qm.storage.getItem(qm.items.deviceTokenOnServer)){
             qmLogService.debug('This token is already on the server: ' + qm.storage.getItem(qm.items.deviceTokenOnServer));
@@ -2328,44 +2429,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
             qmService.updateUserSettingsDeferred({sendReminderNotificationEmails: $rootScope.sendReminderNotificationEmails});
             $rootScope.sendReminderNotificationEmails = null;
         }
-        qmService.afterLoginGoToUrlOrState();
-    };
-    qmService.goToDefaultStateIfNoAfterLoginGoToUrlOrState = function () {
-        if(!qmService.afterLoginGoToUrlOrState()){qmService.goToDefaultState();}
-    };
-    function sendToAfterLoginGoToUrlIfNecessary() {
-        var afterLoginGoToUrl = qm.storage.getItem('afterLoginGoToUrl');
-        if(afterLoginGoToUrl) {
-            qmLogService.info('Going to afterLoginGoToUrl from local storage  ' + afterLoginGoToUrl);
-            qm.storage.removeItem('afterLoginGoToUrl');
-            window.location.replace(afterLoginGoToUrl);
-            return true;
-        } else {
-            qmLogService.debug('sendToAfterLoginGoToUrlIfNecessary: No afterLoginGoToUrl from local storage', null);
-        }
-    }
-    function sendToAfterLoginStateIfNecessary() {
-        var afterLoginGoToState = qm.storage.getItem('afterLoginGoToState');
-        qmLogService.debug('afterLoginGoToState from localstorage is  ' + afterLoginGoToState, null);
-        if(afterLoginGoToState){
-            qm.storage.removeItem('afterLoginGoToState');
-            qmService.goToState(afterLoginGoToState);
-            return true;
-        }
-    }
-    function sendToDefaultStateIfNecessary() {
-        if($state.current.name === 'app.login'){
-            /** @namespace qm.getAppSettings().appDesign.defaultState */
-            /** @namespace qm.getAppSettings().appDesign */
-            qmService.goToDefaultState();
-            return true;
-        }
-    }
-    qmService.afterLoginGoToUrlOrState = function () {
-        if(sendToAfterLoginGoToUrlIfNecessary()) {return true;}
-        if(sendToAfterLoginStateIfNecessary()) {return true;}
-        if(sendToDefaultStateIfNecessary()) {return true;}
-        return false;
+        qmService.login.afterLoginGoToUrlOrState();
     };
     qmService.syncAllUserData = function(){
         qmService.syncTrackingReminders();
@@ -6029,39 +6093,6 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
         });
         return deferred.promise;
     };
-    function setAfterLoginGoToState(afterLoginGoToState){
-        if(afterLoginGoToState.indexOf('login') !== -1){
-            qmLogService.info('setAfterLoginGoToState: Why are we sending to login from login state?');
-            return;
-        }
-        qmLogService.debug('Setting afterLoginGoToState to ' + afterLoginGoToState + ' and going to login. ', null);
-        qmService.storage.setItem('afterLoginGoToState', afterLoginGoToState);
-    }
-    function setAfterLoginGoToUrl(afterLoginGoToUrl){
-        if(!afterLoginGoToUrl){afterLoginGoToUrl = window.location.href;}
-        if(afterLoginGoToUrl.indexOf('login') !== -1){
-            qmLogService.info('setAfterLoginGoToUrl: Why are we sending to login from login state?');
-            return;
-        }
-        qmLogService.debug('Setting afterLoginGoToUrl to ' + afterLoginGoToUrl + ' and going to login.', null);
-        qmService.storage.setItem('afterLoginGoToUrl', afterLoginGoToUrl);
-    }
-    qmService.sendToLoginIfNecessaryAndComeBack = function(afterLoginGoToState, afterLoginGoToUrl){
-        qmLog.authDebug('Called qmService.sendToLoginIfNecessaryAndComeBack');
-        qmService.refreshUserUsingAccessTokenInUrlIfNecessary();
-        if(!qm.auth.getAccessTokenFromUrlUserOrStorage()){
-            if (qm.platform.isDesignMode()) {
-                setAfterLoginGoToState(qmStates.configuration);
-            } else if (afterLoginGoToState){
-                setAfterLoginGoToState(afterLoginGoToState);
-            } else {
-                setAfterLoginGoToUrl(afterLoginGoToUrl);
-            }
-            sendToLogin();
-            return true;
-        }
-        return false;
-    };
     qmService.addToFavoritesUsingVariableObject = function (variableObject) {
         var trackingReminder = {};
         trackingReminder.variableId = variableObject.id;
@@ -6409,27 +6440,6 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
         function noCallback() {}
         qmService.showMaterialConfirmationDialog(title, textContent, yesCallback, noCallback, ev);
     };
-    qmService.completelyResetAppStateAndSendToLogin = function(comeBackAfterLogin){
-        qmLogService.debug('called qmService.completelyResetAppStateAndSendToLogin', null);
-        if(comeBackAfterLogin){setAfterLoginGoToUrl();}
-        qmService.completelyResetAppState();
-        sendToLogin();
-    };
-    function sendToLogin() {
-        if(qm.urlHelper.getParam('access_token')){
-            if(!qm.auth.getAccessTokenFromCurrentUrl()){
-                qmLogService.error("Not detecting snake case access_token", {}, qmLog.getStackTrace());
-            }
-            qmLogService.error("Why are we sending to login if we have an access token?", {}, qmLog.getStackTrace());
-            return;
-        }
-        qmLog.authDebug('Sending to app.login', null);
-        qmService.goToState("app.login");
-    }
-    qmService.sendToLogin = function() {
-        qmLogService.debug('called qmService.sendToLogin', null);
-        sendToLogin();
-    };
     // Doesn't work yet
     function generateMovingAverageTimeSeries(rawMeasurements) {
         var smoothedMeasurements = [];
@@ -6648,13 +6658,13 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
             qmService.storage.setItem('introSeen', true);
             qmService.rootScope.setUser(null);
         }
-        if(!$rootScope.user){
-            qmService.rootScope.setUser(window.qmUser);
+        if(!$rootScope.user && qm.getUser()){
+            qmService.rootScope.setUser(qm.getUser());
             if($rootScope.user){qmLogService.debug('Got $rootScope.user', null, $rootScope.user);}
         }
         qmService.refreshUserUsingAccessTokenInUrlIfNecessary();
         if($rootScope.user){
-            qmService.registerDeviceToken(); // Try again in case it was accidentally deleted from server TODO: remove after 8/1 or so
+            //qmService.registerDeviceToken(); // Try again in case it was accidentally deleted from server TODO: remove after 8/1 or so
             if(!$rootScope.user.trackLocation){ $rootScope.user.trackLocation = false; }
             if(!$rootScope.user.getPreviewBuilds){ $rootScope.user.getPreviewBuilds = false; }
             //qmSetupInPopup();
@@ -6924,7 +6934,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
         qm.commonVariablesHelper.refreshIfNecessary();
         qm.userVariables.refreshIfNumberOfRemindersGreaterThanUserVariables();
         qmService.backgroundGeolocationStartIfEnabled();
-        qmLogService.setupBugsnag();
+        qmLog.setupBugsnag();
         setupGoogleAnalytics(qm.userHelper.getUserFromLocalStorage());
         qmService.navBar.hideNavigationMenuIfHideUrlParamSet();
         qmService.scheduleSingleMostFrequentLocalNotification();

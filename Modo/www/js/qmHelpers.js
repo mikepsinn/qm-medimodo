@@ -475,7 +475,11 @@ window.qm = {
                     // return;
                 }
                 if(qm.platform.isWeb() && window.location.href.indexOf('.quantimo.do') !== -1){
-                    qm.appsManager.getAppSettingsFromApi(successHandler);
+                    qm.appsManager.getAppSettingsFromApi(successHandler, function () {
+                        qm.appsManager.getAppSettingsFromDefaultConfigJson(function (appSettings) {
+                            if(appSettings){qm.appsManager.setAppSettings(appSettings, successHandler);}
+                        })
+                    });
                     return;
                 }
                 qm.appsManager.getAppSettingsFromDefaultConfigJson(function (appSettings) {
@@ -493,10 +497,11 @@ window.qm = {
             }
             return false;
         },
-        getAppSettingsFromApi: function (successHandler) {
+        getAppSettingsFromApi: function (successHandler, errorHandler) {
             qm.api.getAppSettingsUrl(function(appSettingsUrl){
                 qm.api.getViaXhrOrFetch(appSettingsUrl, function (response) {
                     if(!response){
+                        if(errorHandler){errorHandler("No response from " + appSettingsUrl);}
                         qmLog.error("No response from " + appSettingsUrl);
                         return;
                     }
@@ -506,10 +511,11 @@ window.qm = {
                     }
                     if(!response.appSettings){
                         qmLog.error("No appSettings response from "+ appSettingsUrl);
+                        if(errorHandler){errorHandler("No appSettings response from "+ appSettingsUrl);}
                         return false;
                     }
                     qm.appsManager.setAppSettings(response.appSettings, successHandler);
-                })
+                }, errorHandler)
             });
         },
         getAppSettingsFromDefaultConfigJson: function(callback) {  // I think adding appSettings to the chrome manifest breaks installation
@@ -1152,6 +1158,18 @@ window.qm = {
             params = qm.api.addGlobalParams(params);
             apiInstance.getConnectors(params, callback);
         },
+        getConnectorsFromJson: function(successHandler, errorHandler) {  // I think adding appSettings to the chrome manifest breaks installation
+            qm.api.getViaXhrOrFetch(qm.urlHelper.getAbsoluteUrlFromRelativePath('data/connectors.json'), function (connectors) {  // Can't use QM SDK in service worker
+                if(connectors){
+                    window.qmLog.debug('Got connectors from connectors.json', null, connectors);
+                    qm.storage.setItem(qm.items.connectors, connectors);
+                }
+                if(successHandler){successHandler(connectors)};
+            }, function (error) {
+                qmLog.error("Could not get connectors from connectors.json: "+error);
+                if(errorHandler){errorHandler("Could not get connectors from connectors.json: "+error);}
+            });
+        },
         getConnectorsFromLocalStorage: function(){
             var connectors = qm.storage.getItem(qm.items.connectors);
             if(connectors && connectors.connectors){
@@ -1166,7 +1184,14 @@ window.qm = {
                 if(successHandler){successHandler(connectors);}
                 return;
             }
-            qm.connectorHelper.getConnectorsFromApi({}, successHandler, errorHandler);
+            if(qm.getUser()){
+                qm.connectorHelper.getConnectorsFromApi({}, successHandler, errorHandler);
+            } else {
+                qm.connectorHelper.getConnectorsFromJson(successHandler, function (error) {
+                    qmLog.error("Could not get connectors from connectors.json", error);
+                    qm.connectorHelper.getConnectorsFromApi({}, successHandler, errorHandler);
+                });
+            }
         },
         getConnectorByName: function (connectorName, successHandler) {
             if(!successHandler){
@@ -1432,6 +1457,8 @@ window.qm = {
     },
     items: {
         accessToken: 'accessToken',
+        afterLoginGoToUrl: 'afterLoginGoToUrl',
+        afterLoginGoToState: 'afterLoginGoToState',
         aggregatedCorrelations: 'aggregatedCorrelations',
         apiUrl: 'apiUrl',
         appSettings: 'appSettings',
