@@ -1,1 +1,1 @@
-Merge pull request #1663 from mikepsinn/feature/token-arrays
+Store connector response
