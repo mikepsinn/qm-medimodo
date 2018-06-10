@@ -1,1 +1,1 @@
-Merge pull request #1658 from mikepsinn/feature/getJsonFileAsArrayOfObjects
+Can't use QM SDK in service worker because it uses XHR instead of fetch

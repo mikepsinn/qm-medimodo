@@ -235,7 +235,8 @@ window.qm = {
                 return parts[0].toLowerCase();
             }
             var subDomain = getSubDomain();
-            var clientIdFromAppConfigName = qm.appsManager.appConfigFileNames[getSubDomain()];
+            subDomain = subDomain.replace('qm-', '');
+            var clientIdFromAppConfigName = qm.appsManager.appConfigFileNames[subDomain];
             if(clientIdFromAppConfigName){
                 window.qmLog.debug('Using client id ' + clientIdFromAppConfigName +
                     ' derived from appConfigFileNames using subDomain: ' + subDomain, null);
@@ -1161,10 +1162,13 @@ window.qm = {
         getConnectorsFromJson: function(successHandler, errorHandler) {  // I think adding appSettings to the chrome manifest breaks installation
             qm.api.getViaXhrOrFetch(qm.urlHelper.getAbsoluteUrlFromRelativePath('data/connectors.json'), function (connectors) {  // Can't use QM SDK in service worker
                 if(connectors){
-                    window.qmLog.debug('Got connectors from connectors.json', null, connectors);
+                    qmLog.debug('Got connectors from connectors.json', null, connectors);
                     qm.storage.setItem(qm.items.connectors, connectors);
+                    if(successHandler){successHandler(connectors);}
+                } else {
+                    qmLog.error("No connectors from getConnectorsFromJson");
+                    if(errorHandler){errorHandler("Could not get connectors from connectors.json");}
                 }
-                if(successHandler){successHandler(connectors)};
             }, function (error) {
                 qmLog.error("Could not get connectors from connectors.json: "+error);
                 if(errorHandler){errorHandler("Could not get connectors from connectors.json: "+error);}
@@ -1193,7 +1197,7 @@ window.qm = {
                 });
             }
         },
-        getConnectorByName: function (connectorName, successHandler) {
+        getConnectorByName: function (connectorName, successHandler, errorHandler) {
             if(!successHandler){
                 var connectors = qm.connectorHelper.getConnectorsFromLocalStorage();
                 return connectors.find(function(connector){
@@ -1201,11 +1205,16 @@ window.qm = {
                 });
             }
             qm.connectorHelper.getConnectorsFromLocalStorageOrApi(function (connectors) {
+                if(!connectors){
+                    qmLog.error("No getConnectorsFromLocalStorageOrApi!");
+                    if(errorHandler){errorHandler("No getConnectorsFromLocalStorageOrApi!");}
+                    return;
+                }
                 var match = connectors.find(function(connector){
                     return connector.name === connectorName.toLowerCase();
                 });
                 successHandler(match);
-            })
+            }, errorHandler)
         }
     },
     correlations: {
@@ -1339,6 +1348,7 @@ window.qm = {
             qm.storage.getGlobal(qm.stringHelper.removeSpecialCharacters(causeVariableName+"_"+effectVariableName));
         },
         setItem: function(key, value){
+            if(!qm.storage.valueIsValid(value)){return false;}
             qm.storage.setGlobal(key, value);
         },
         getItem: function(key){
@@ -1622,6 +1632,7 @@ window.qm = {
             })
         },
         setItem: function(key, value, successHandler, errorHandler){
+            if(!qm.storage.valueIsValid(value)){return false;}
             value = JSON.parse(JSON.stringify(value)); // Failed to execute 'put' on 'IDBObjectStore': could not be cloned.
             qm.globalHelper.setItem(key, value);
             if(typeof localforage === "undefined"){
@@ -1630,6 +1641,7 @@ window.qm = {
                 if(errorHandler){errorHandler(errorMessage)};
                 return;
             }
+            if(!qm.storage.valueIsValid(value)){return false;}
             localforage.setItem(key, value, function (err) {
                 if(err){
                     if(errorHandler){errorHandler(err);}
@@ -2401,6 +2413,17 @@ window.qm = {
     },
     serviceWorker: false,
     storage: {
+        valueIsValid: function(value){
+            if(typeof value === "undefined"){
+                qmLog.error("value provided to qm.storage.setItem is undefined!");
+                return false;
+            }
+            if(value === "null"){
+                qmLog.error("null string provided to qm.storage.setItem!");
+                return false;
+            }
+            return true;
+        },
         getUserVariableByName: function (variableName, updateLatestMeasurementTime, lastValue) {
             var userVariables = qm.storage.getWithFilters(qm.items.userVariables, 'name', variableName);
             if(!userVariables || !userVariables.length){return null;}
@@ -2550,14 +2573,7 @@ window.qm = {
             return window.qm.storage.getItem(getLocalStorageNameForRequest(type, route));
         },
         setItem: function(key, value){
-            if(typeof value === "undefined"){
-                qmLog.error("value provided to qm.storage.setItem is undefined!");
-                return;
-            }
-            if(value === "null"){
-                qmLog.error("null string provided to qm.storage.setItem!");
-                return;
-            }
+            if(!qm.storage.valueIsValid(value)){return false;}
             if(value === qm.storage.getGlobal(key)){
                 var valueString = JSON.stringify(value);
                 qmLog.debug("Not setting " + key + " in localStorage because global is already set to " + valueString, null, value);
@@ -3224,13 +3240,13 @@ window.qm = {
             }
             return true;
         },
-        getUserFromApi: function(successCallback, errorHandler){
+        getUserFromApi: function(successHandler, errorHandler){
             qmLog.info("Getting user from API...");
-            function successHandler(userFromApi){
+            function userSuccessHandler(userFromApi){
                 if (userFromApi && typeof userFromApi.displayName !== "undefined") {
                     qmLog.info("Got user from API...");
                     qm.userHelper.setUser(userFromApi);
-                    if(successCallback){successCallback(userFromApi);}
+                    if(successHandler){successHandler(userFromApi);}
                 } else {
                     qmLog.info("Could not get user from API...");
                     if(qm.platform.isChromeExtension()){
@@ -3240,13 +3256,22 @@ window.qm = {
                     }
                 }
             }
-            qm.api.configureClient();
-            var apiInstance = new Quantimodo.UserApi();
-            function callback(error, data, response) {
-                qm.api.generalResponseHandler(error, data, response, successHandler, errorHandler, params, 'getUserFromApi');
+            if(typeof Quantimodo === "undefined"){  // Can't use QM SDK in service worker because it uses XHR instead of fetch
+                qm.api.getRequestUrl('api/v1/user', function(url){
+                    qm.api.getViaXhrOrFetch(url, function (user) {
+                        userSuccessHandler(user);
+                    }, errorHandler)
+                });
+            } else {   // Can't use QM SDK in service worker because it uses XHR instead of fetch
+                qm.api.configureClient();
+                var apiInstance = new Quantimodo.UserApi();
+                function userSdkCallback(error, data, response) {
+                    qm.api.generalResponseHandler(error, data, response, successHandler, errorHandler, params, 'getUserFromApi');
+                    userSuccessHandler(data);
+                }
+                var params = qm.api.addGlobalParams({});
+                apiInstance.getUser(params, userSdkCallback);
             }
-            var params = qm.api.addGlobalParams({});
-            apiInstance.getUser(params, callback);
         },
         getUserFromLocalStorageOrApi: function (successHandler, errorHandler) {
             qm.userHelper.getUserFromLocalStorage(function(user) {

@@ -190,11 +190,15 @@ window.qmLog = {
         }
     },
     getConsoleLogString: function (){
-        var logString = name;
+        var logString = qmLog.name;
         if(qmLog.message && logString !== qmLog.message){logString = logString + ": " + qmLog.message;}
         logString = addCallerFunctionToMessage(logString);
         if(qmLog.stackTrace){logString = logString + ". stackTrace: " + qmLog.stackTrace;}
-        if(qmLog.metaData){logString = logString + ". metaData: " + JSON.stringify(qmLog.metaData);}
+        try {
+            if(qmLog.metaData){logString = logString + ". metaData: " + JSON.stringify(qmLog.metaData);}
+        } catch (error) {
+            console.error("Could not stringify log meta data", error);
+        }
         return logString;
     },
     shouldWeLog: function(providedLogLevelName) {
