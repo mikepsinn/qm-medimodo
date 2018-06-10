@@ -1,1 +1,1 @@
-Merge pull request #1667 from mikepsinn/feature/connector-login
+Merge pull request #1668 from mikepsinn/feature/getUrlQueryParam
