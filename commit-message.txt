@@ -1,1 +1,1 @@
-Merge pull request #1660 from mikepsinn/feature/getUserId
+Merge pull request #1661 from mikepsinn/feature/logConnectorUpdateEvent
