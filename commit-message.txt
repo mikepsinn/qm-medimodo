@@ -1,1 +1,1 @@
-Merge pull request #1662 from mikepsinn/feature/getTestDeviceTokenFbKey
+Merge pull request #1663 from mikepsinn/feature/token-arrays
