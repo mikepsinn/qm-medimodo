@@ -1,1 +1,1 @@
-Merge pull request #1661 from mikepsinn/feature/logConnectorUpdateEvent
+Merge pull request #1662 from mikepsinn/feature/getTestDeviceTokenFbKey
