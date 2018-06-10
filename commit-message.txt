@@ -1,1 +1,1 @@
-Can't use QM SDK in service worker because it uses XHR instead of fetch
+export GIT_BRANCH
