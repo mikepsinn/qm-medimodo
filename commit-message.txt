@@ -1,1 +1,1 @@
-export GIT_BRANCH
+Merge pull request #1659 from mikepsinn/feature/getUserId
