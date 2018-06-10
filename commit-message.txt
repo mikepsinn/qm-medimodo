@@ -1,1 +1,1 @@
-Store connector response
+Nginx
