@@ -1,1 +1,1 @@
-git push ionic gh-pages
+Merge pull request #1658 from mikepsinn/feature/getJsonFileAsArrayOfObjects
