@@ -1,1 +1,1 @@
-Merge pull request #1677 from mikepsinn/feature/csv
+Merge pull request #1679 from mikepsinn/feature/sendToWindowClosePage
