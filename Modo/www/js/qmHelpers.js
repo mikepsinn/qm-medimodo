@@ -18,7 +18,6 @@ window.qm = {
                 if(qm.getUser().displayName && qm.getUser().displayName.toLowerCase().indexOf('test') !== -1){return true;}
             }
             return window.location.href.indexOf("medimodo.heroku") !== -1;
-
         },
         isDevelopment: function(){
             if(window.location.origin.indexOf('http://localhost:') !== -1){return true;}
@@ -393,7 +392,7 @@ window.qm = {
             qm.api.postToQuantiModo(measurements,"v1/measurements", onDoneListener);
         },
         getRequestUrl: function(path, successHandler) {
-            qm.userHelper.getUserFromLocalStorageOrApi(function(user){
+            qm.userHelper.getUserFromLocalStorage(function(user){
                 function addGlobalQueryParameters(url) {
                     function addQueryParameter(url, name, value){
                         if(url.indexOf('?') === -1){return url + "?" + name + "=" + value;}
@@ -434,6 +433,36 @@ window.qm = {
         getQuantiModoUrl: function (path) {
             if(typeof path === "undefined") {path = "";}
             return qm.api.getBaseUrl() + "/" + path;
+        },
+        rateLimit: function(func, rate, async) {
+            var queue = [];
+            var timeOutRef = false;
+            var currentlyEmptyingQueue = false;
+            var emptyQueue = function() {
+                if (queue.length) {
+                    currentlyEmptyingQueue = true;
+                    _.delay(function() {
+                        if (async) {
+                            _.defer(function() { queue.shift().call(); });
+                        } else {
+                            queue.shift().call();
+                        }
+                        emptyQueue();
+                    }, rate);
+                } else {
+                    currentlyEmptyingQueue = false;
+                }
+            };
+            return function() {
+                var args = _.map(arguments, function(e) { return e; }); // get arguments into an array
+                queue.push( _.bind.apply(this, [func, this].concat(args)) ); // call apply so that we can pass in arguments as parameters as opposed to an array
+                if (!currentlyEmptyingQueue) { emptyQueue(); }
+            };
+        },
+        executeWithRateLimit: function (functionToLimit, milliseconds) {
+            milliseconds = milliseconds || 15000;
+            var rateLimited = qm.api.rateLimit(functionToLimit, milliseconds);
+            rateLimited();
         }
     },
     appsManager: { // jshint ignore:line
@@ -619,7 +648,6 @@ window.qm = {
         }
     },
     arrayHelper: {
-
         arrayHasItemWithSpecificPropertyValue: function(propertyName, propertyValue, array){
             if(!array){
                 qmLog.error("No array provided to arrayHasItemWithSpecificPropertyValue");
@@ -740,9 +768,9 @@ window.qm = {
             }
             searchTerm = searchTerm.toLowerCase();
             return array.filter(function(item){
-               var name = item.name || item.variableName;
-               name = name.toLowerCase();
-               return name.indexOf(searchTerm) !== -1;
+                var name = item.name || item.variableName;
+                name = name.toLowerCase();
+                return name.indexOf(searchTerm) !== -1;
             });
         },
         getWithNameContainingEveryWord: function(searchTerm, array){
@@ -2037,7 +2065,6 @@ window.qm = {
                     }
                 })
             });
-
         },
         refreshAndShowPopupIfNecessary: function(notificationParams) {
             qm.notifications.refreshNotifications(notificationParams, function(trackingReminderNotifications){
@@ -2196,7 +2223,6 @@ window.qm = {
             var value = eachRecursive(obj);
             return value;
         }
-
     },
     parameterHelper: {
         getStateOrUrlOrRootScopeCorrelationOrRequestParam: function(paramName, $stateParams, $scope, $rootScope){
@@ -2789,6 +2815,34 @@ window.qm = {
             var result = text.replace( /([A-Z])/g, " $1" );
             var finalResult = result.charAt(0).toUpperCase() + result.slice(1); // capitalize the first letter - as an example.
             return finalResult;
+        },
+        stringifyCircularObject: function (obj, replacer, indent) {
+            var printedObjects = [];
+            var printedObjectKeys = [];
+            function printOnceReplacer(key, value){
+                if ( printedObjects.length > 2000){ // browsers will not print more than 20K, I don't see the point to allow 2K.. algorithm will not be fast anyway if we have too many objects
+                    return 'object too long';
+                }
+                var printedObjIndex = false;
+                printedObjects.forEach(function(obj, index){if(obj===value){printedObjIndex = index;}});
+                if ( key == ''){ //root element
+                    printedObjects.push(obj);
+                    printedObjectKeys.push("root");
+                    return value;
+                } else if(printedObjIndex+"" != "false" && typeof(value)=="object"){
+                    if ( printedObjectKeys[printedObjIndex] == "root"){
+                        return "(pointer to root)";
+                    }else{
+                        return "(see " + ((!!value && !!value.constructor) ? value.constructor.name.toLowerCase()  : typeof(value)) + " with key " + printedObjectKeys[printedObjIndex] + ")";
+                    }
+                }else{
+                    var qualifiedKey = key || "(empty key)";
+                    printedObjects.push(value);
+                    printedObjectKeys.push(qualifiedKey);
+                    if(replacer){return replacer(key, value);}else{return value;}
+                }
+            }
+            return JSON.stringify(obj, printOnceReplacer, indent);
         }
     },
     studyHelper: {
@@ -3088,6 +3142,7 @@ window.qm = {
             url = qm.stringHelper.getStringBeforeSubstring('configuration-index.html', url);
             url = qm.stringHelper.getStringBeforeSubstring('index.html', url);
             url = qm.stringHelper.getStringBeforeSubstring('android_popup.html', url);
+            url = qm.stringHelper.getStringBeforeSubstring('chrome_default_popup_iframe.html', url);
             url = qm.stringHelper.getStringBeforeSubstring('firebase-messaging-sw.js', url);
             url = qm.stringHelper.getStringBeforeSubstring('_generated_background_page.html', url);
             return url;
@@ -3264,9 +3319,7 @@ window.qm = {
                 } else {
                     qmLog.info("Could not get user from API...");
                     if(qm.platform.isChromeExtension()){
-                        qm.api.getRequestUrl("v2/auth/login", function(url){
-                            chrome.tabs.create({"url": url, "selected": true});
-                        });
+                        qm.chrome.openLoginWindow();
                     }
                 }
             }
@@ -3284,7 +3337,7 @@ window.qm = {
                     userSuccessHandler(data);
                 }
                 var params = qm.api.addGlobalParams({});
-                apiInstance.getUser(params, userSdkCallback);
+                qm.api.executeWithRateLimit(function () {apiInstance.getUser(params, userSdkCallback);});
             }
         },
         getUserFromLocalStorageOrApi: function (successHandler, errorHandler) {

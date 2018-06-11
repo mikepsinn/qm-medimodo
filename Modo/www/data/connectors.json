@@ -1,6 +1,6 @@
 [{
   "providesUserProfileForLogin": true,
-  "mobileConnectMethod": "cordova",
+  "mobileConnectMethod": "facebook",
   "stdOAuthToken": null,
   "buttons": [{
     "action": null,
@@ -51,7 +51,7 @@
   "shortDescription": "Tracks social interaction. QuantiModo requires permission to access your Facebook \"user likes\" and \"user posts\".",
   "connnected": false
 }, {
-  "mobileConnectMethod": "cordova",
+  "mobileConnectMethod": "oauth",
   "repositoryImages": null,
   "providesUserProfileForLogin": true,
   "buttons": [{
@@ -295,7 +295,7 @@
   "oauthServiceName": "Google",
   "connnected": false
 }, {
-  "mobileConnectMethod": "cordova",
+  "mobileConnectMethod": "oauth",
   "providesUserProfileForLogin": true,
   "buttons": [{
     "action": null,
@@ -346,7 +346,7 @@
   "shortDescription": "Tracks social interaction.",
   "connnected": false
 }, {
-  "mobileConnectMethod": "cordova",
+  "mobileConnectMethod": "oauth",
   "providesUserProfileForLogin": true,
   "buttons": [{
     "action": null,
@@ -397,7 +397,7 @@
   "shortDescription": "Tracks anything",
   "connnected": false
 }, {
-  "mobileConnectMethod": "cordova",
+  "mobileConnectMethod": "oauth",
   "repositoryImages": null,
   "providesUserProfileForLogin": true,
   "buttons": [{
@@ -449,7 +449,7 @@
   "shortDescription": "Runners and cyclists use Strava to record their activities and compare performance over time",
   "connnected": false
 }, {
-  "mobileConnectMethod": "cordova",
+  "mobileConnectMethod": "oauth",
   "providesUserProfileForLogin": true,
   "buttons": [{
     "action": null,
