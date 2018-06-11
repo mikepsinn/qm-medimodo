@@ -1,1 +1,1 @@
-Merge pull request #1681 from mikepsinn/feature/authenticateIfAccessTokenInRequest
+return 302 https://qm-staging.quantimo.do$request_uri;
