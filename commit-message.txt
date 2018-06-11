@@ -1,1 +1,1 @@
-return 302 https://qm-staging.quantimo.do$request_uri;
+Merge pull request #1683 from mikepsinn/feature/getOrAuthenticateUser
