@@ -1,1 +1,1 @@
- Better post-login loading and redirects
+Merge pull request #1684 from mikepsinn/feature/connect-js
