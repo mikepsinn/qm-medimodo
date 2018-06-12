@@ -1,1 +1,1 @@
-Merge pull request #1685 from mikepsinn/feature/getClientIdFromGlobalsRequestParamsOrBodyOrCookieOrAccessTokenOrSubDomain
+Update dependency gulp-rename to v1.3.0
