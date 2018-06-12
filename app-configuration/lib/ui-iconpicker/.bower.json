@@ -1,0 +1,13 @@
+{
+  "name": "ui-iconpicker",
+  "homepage": "https://github.com/pihomeserver/pihomeconnect-iconpicker",
+  "_release": "694a473994",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "694a473994edfeaa18629df1d513834062b46518"
+  },
+  "_source": "https://github.com/pihomeserver/pihomeconnect-iconpicker.git",
+  "_target": "*",
+  "_originalSource": "git+https://github.com/pihomeserver/pihomeconnect-iconpicker"
+}
