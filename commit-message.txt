@@ -1,1 +1,1 @@
-Nginx host Angular app on Github Pages
+export START_URL=${APP_HOST_NAME}/api/v2/auth/login
