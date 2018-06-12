@@ -1,1 +1,1 @@
-export START_URL=${APP_HOST_NAME}/api/v2/auth/login
+Exclude ionic from rsync
