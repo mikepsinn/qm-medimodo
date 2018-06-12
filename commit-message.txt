@@ -1,1 +1,1 @@
-GH pages deployment
+Nginx host Angular app on Github Pages
