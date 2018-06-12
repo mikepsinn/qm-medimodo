@@ -1,0 +1,103 @@
+<div>
+
+    <div class="variable-inputs">
+
+        <div class="form-group">
+            <label for="predictor-input">
+                Treatment
+                <span ng-show="predictorVariableName.length > 2">
+                </span>
+            </label>
+
+            <div class="input-group">
+                <input id="predictor-input" side-effect-auto-complete
+                       class="form-control"
+                       ng-model="predictorVariableName"
+                       type="text"
+                       effect-or-cause="cause"
+                       placeholder="Enter a medication, food supplement or anything else...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="clearAndSearch('predictorVariableName')"><i
+                            class="fa fa-close"></i></button>
+                </span>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="searchResultRegion" ng-cloak ng-show="showResults">
+
+        <div ng-if="totalCorrelations.length > 0">
+
+            <h4 ng-show="predictorVariableName && !outcomeVariableName">
+                Most common side effects of <strong>{{predictorVariableName}}</strong>
+            </h4>
+
+
+            <div id="searchResultList">
+
+                <div class="row search-result" ng-repeat="c in correlations" id="{{c.variableName | htmlId}}">
+
+                    <h4><a href="" ng-click="setVariableFromListAndShowCorrelation(c.variableName)">
+                        {{c.variableName}}
+                    </a>
+                    </h4>
+
+                    <div class="col-md-8">
+
+                        <p ng-if="c.correlation.percentOfPatients">
+                            {{c.correlation.percentOfPatients}} frequency score</p>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div ng-if="totalCorrelations.length == 0">
+            <p class="no-correlations-message">
+                We don't have any side effects for this treatment.  Maybe try another name for this treatment?
+            </p>
+        </div>
+
+        <div ng-if="totalCorrelations.length == 1">
+
+            <qm-time-line ng-if="showCharts" outcome="{{outcomeVariableName}}"
+                          predictor="{{predictorVariableName}}"
+                          control="timeLineControl">
+            </qm-time-line>
+
+            <qm-scatter-plot ng-if="showCharts" outcome="{{outcomeVariableName}}"
+                             predictor="{{predictorVariableName}}"
+                             control="scatterControl">
+            </qm-scatter-plot>
+
+            <qm-study correlation="totalCorrelations[0].correlation">
+
+            </qm-study>
+
+        </div>
+
+        <div class="text-center">
+            <uib-pagination ng-show="totalCorrelations.length > itemsPerPage"
+                            total-items="totalCorrelations.length"
+                            ng-model="currentPage"
+                            max-size="maxSize"
+                            class="pagination-sm"
+                            ng-change="displayPage(currentPage, true)"
+                            previous-text="<"
+                            next-text=">">
+            </uib-pagination>
+        </div>
+
+    </div>
+
+    <div class="charts-loading" ng-show="showLoading">
+        <img src="https://app.quantimo.do/qm-connect/loader_gears.gif">
+    </div>
+
+</div>

@@ -1,0 +1,115 @@
+<div id="search-variables-app">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <uib-alert
+                    ng-repeat="alert in alerts"
+                    type="{{alert.type}}"
+                    dismiss-on-timeout="7777"
+                    close="closeAlert($index)">
+                {{alert.msg}}
+            </uib-alert>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="variable-inputs">
+                <div class="form-group">
+                    <label for="variable-input">Filter by Variable Name</label>
+
+                    <div class="input-group">
+                        <input id="variable-input"
+                               class="form-control"
+                               ng-model="variableName"
+                               type="text"
+                               placeholder="Enter a medication, food supplement or anything else...">
+                    <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="clearVariableNameInput()">
+                        <i class="fa fa-close"></i>
+                    </button>
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+
+            <p ng-show="searchInProgress" class="text-center">
+                Searching...
+            </p>
+
+            <p ng-show="variableName.length > 2 && !searchInProgress && !variables.length" class="text-center">
+                Nothing Found
+            </p>
+
+            <div class="variable-items-container" ng-show="!searchInProgress && variables.length">
+
+                <div class="variable-item" ng-repeat="v in variables track by $index">
+                    <div class="row">
+
+                        <div class="col-sm-9 col-xs-4">
+                            <h4>
+                                <a ng-if="variables.length > 1"
+                                   ng-click="setSearchedVariableName(v.name)" class="clickable">{{v.name}}</a>
+                                <span ng-if="variables.length == 1">{{v.name}}</span>
+                                <small>({{v.category}})</small>
+                            </h4>
+                        </div>
+
+                        <div class="col-sm-3 col-xs-8 text-right control-icons">
+
+                            <a href="http://www.amazon.com/gp/search/ref=as_li_qf_sp_sr_tl?ie=UTF8&camp=1789&creative=9325&index=aps&keywords={{v.name}}&linkCode=ur2&tag=quant08-20"
+                               target="_blank">
+                                <i class="fa fa-shopping-cart control-icon" tooltip-class="qmwp-tooltip"
+                                   uib-tooltip="Buy it here"></i>
+                            </a>
+                            <i class="fa fa-cog control-icon"
+                               uib-tooltip="Improve our algorithms by optimizing the variable settings"
+                               tooltip-class="qmwp-tooltip"
+                               ng-click="openVarSettingsModal(v)">
+                            </i>
+                            <i class="fa fa-plus control-icon"
+                               uib-tooltip="Add measurement for variable"
+                               tooltip-class="qmwp-tooltip"
+                               ng-click="openAddMeasurementModal(v)">
+                            </i>
+                            <a ng-href="https://app.quantimo.do/api/v1/measurements/csv?variableName={{v.name}}">
+                                <i class="fa fa-download control-icon" uib-tooltip="{{getToolTipText('download', v)}}"
+                                   tooltip-class="qmwp-tooltip"></i>
+                            </a>
+
+                            <i class="fa fa-line-chart control-icon"
+                               ng-class="{ 'active': v.showTimeLine }"
+                               ng-click="showTimeLineFor(v)"
+                               uib-tooltip="Show timeline chart for this variable"
+                               tooltip-class="qmwp-tooltip">
+                            </i>
+                        </div>
+
+                    </div>
+
+                    <qm-time-line ng-if="v.showTimeLine" control="v.timeLineControl"
+                                  chart-container-id="time-line-{{v.name | htmlId}}"></qm-time-line>
+
+                </div>
+
+                <div class="text-center">
+                    <uib-pagination total-items="totalVariables.length"
+                                    ng-show="totalVariables.length > variablesPerPage"
+                                    ng-model="currentPage"
+                                    items-per-page="variablesPerPage"
+                                    ng-change="displayPage(currentPage)">
+                    </uib-pagination>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+</div>

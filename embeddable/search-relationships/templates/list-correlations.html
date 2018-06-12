@@ -1,0 +1,241 @@
+<div>
+
+    <div class="variable-inputs" ng-hide="hideSearchBoxes">
+        <div class="form-group">
+            <label for="outcome-input">
+                Outcome Variable
+                <span ng-show="outcomeVariableName.length > 2">
+                    <i class="fa fa-cog clickable" ng-click="openVarSettingsModal(outcomeVariableName)"></i>
+                    <i class="fa fa-plus clickable" ng-click="addMeasurement(outcomeVariableName)"></i>
+                </span>
+            </label>
+
+            <div class="input-group">
+                <input id="outcome-input" auto-complete
+                       class="form-control"
+                       ng-model="outcomeVariableName"
+                       type="text"
+                       effect-or-cause="effect"
+                       placeholder="Enter a symptom or outcome you want to optimize to see the most important factors...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="clearAndSearch('outcomeVariableName')"><i
+                            class="fa fa-close"></i></button>
+                </span>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="predictor-input">
+                Predictor Variable
+                <span ng-show="predictorVariableName.length > 2">
+                    <i class="fa fa-cog clickable" ng-click="openVarSettingsModal(predictorVariableName)"></i>
+                    <i class="fa fa-plus clickable" ng-click="addMeasurement(predictorVariableName)"></i>
+                </span>
+            </label>
+
+            <div class="input-group">
+                <input id="predictor-input" auto-complete
+                       class="form-control"
+                       ng-model="predictorVariableName"
+                       type="text"
+                       effect-or-cause="cause"
+                       placeholder="Enter a medication, food, or anything that you want to know the most likely effects of...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="clearAndSearch('predictorVariableName')"><i
+                            class="fa fa-close"></i></button>
+                </span>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="searchResultRegion" ng-cloak ng-show="showResults">
+
+        <div ng-if="totalCorrelations.length > 0">
+
+            <h4 ng-show="outcomeVariableName && !predictorVariableName">
+                Strongest Predictors Of <strong>{{outcomeVariableName}}</strong>
+            </h4>
+
+            <h4 ng-show="predictorVariableName && !outcomeVariableName">
+                Strongly Predicted By <strong>{{predictorVariableName}}</strong>
+            </h4>
+
+            <h4 ng-show="predictorVariableName && outcomeVariableName">
+                Relationship Between <strong>{{predictorVariableName}}</strong> and
+                <strong>{{outcomeVariableName}}</strong>
+            </h4>
+
+            <div id="searchResultList">
+
+                <div class="row search-result" ng-repeat="c in correlations">
+
+                    <h4><a href="" ng-click="setVariableFromListAndShowCorrelation(c.variableName)">
+                        {{c.variableName}}
+                    </a>
+                        <small>({{c.variableCategory}})</small>
+                    </h4>
+
+                    <div class="details-and-controls">
+
+                        <div class="col-md-8">
+
+                            <p ng-if="c.correlation.predictorExplanation">
+                                {{c.correlation.predictorExplanation}}</p>
+
+                            <p ng-if="c.correlation.valuePredictingHighOutcomeExplanation">
+                                {{c.correlation.valuePredictingHighOutcomeExplanation}}
+                            </p>
+
+                            <p ng-if="c.correlation.valuePredictingHighOutcomeExplanation">
+                                {{c.correlation.valuePredictingLowOutcomeExplanation}}
+                            </p>
+
+                        </div>
+
+                        <div class="col-md-4 controls text-center" ng-hide="hideSearchBoxes" >
+
+                            <span class="fa fa-thumbs-o-up vote-thumb up"
+                                  uib-tooltip="{{getToolTipText('thumbUp', c.correlation)}}"
+                                  tooltip-placement="bottom"
+                                  tooltip-class="qmwp-tooltip"
+                                  ng-class="{'voted fa-thumbs-up': c.correlation.userVote==1}"
+                                  ng-click="vote(c, 1)">
+                            </span>
+
+                            <span class="fa fa-thumbs-o-down vote-thumb down"
+                                  uib-tooltip="{{getToolTipText('thumbDown', c.correlation)}}"
+                                  tooltip-placement="bottom"
+                                  tooltip-class="qmwp-tooltip"
+                                  ng-class="{'voted fa-thumbs-down': c.correlation.userVote==0}"
+                                  ng-click="vote(c, 0)">
+                            </span>
+
+                            <span class="fa fa-shopping-cart"
+                                  tooltip-class="qmwp-tooltip"
+                                  tooltip-placement="bottom"
+                                  uib-tooltip="Buy it here"
+                                  ng-click="goToAmazon(c.variableName)"
+                            </span>
+                            </span>
+                            <span ng-if="commonOrUser === 'user'" class="fa fa-cog"
+                                  uib-tooltip="Improve our algorithms by optimizing the variable settings"
+                                  tooltip-placement="bottom"
+                                  tooltip-class="qmwp-tooltip"
+                                  ng-click="openVarSettingsModal(c.variableName)">
+                            </span>
+                            <span ng-if="commonOrUser === 'user'" class="fa fa-plus"
+                                  uib-tooltip="Add measurement for variable"
+                                  tooltip-placement="bottom"
+                                  tooltip-class="qmwp-tooltip"
+                                  ng-click="addMeasurement(c.variableName)">
+                            </span>
+                            <span class="fa fa-info-circle"
+                                  uib-tooltip-html="'{{getToolTipText('correlationDetails', c.correlation)}}'"
+                                  tooltip-placement="bottom"
+                                  tooltip-class="qmwp-tooltip">
+                            </span>
+                            <span ng-if="commonOrUser === 'user'" class="fa fa-download"
+                                  uib-tooltip="{{getToolTipText('download', c.correlation)}}"
+                                  tooltip-placement="bottom"
+                                  tooltip-class="qmwp-tooltip"
+                                  ng-click="getDataDownloadLink(c.correlation)">
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div ng-if="totalCorrelations.length == 0">
+
+            <p class="no-correlations-message" ng-show="outcomeVariableName && !predictorVariableName">
+                We don't have enough data yet to determine this the
+                strongest predictors of <strong>{{outcomeVariableName}}</strong>.
+            </p>
+
+            <p class="no-correlations-message" ng-show="predictorVariableName && !outcomeVariableName">
+                We don't have enough data yet to determine this the outcomes most
+                strongly predicted by <strong>{{predictorVariableName}}</strong>.
+            </p>
+
+            <p class="no-correlations-message" ng-show="predictorVariableName && outcomeVariableName">
+                We don't have enough data yet to determine the relationship between
+                <strong>{{predictorVariableName}}</strong> and <strong>{{outcomeVariableName}}</strong>.
+            </p>
+
+            <p class="no-correlations-message">
+                Please provide more data using these
+                <a target="_blank" href="https://app.quantimo.do/ionic/Modo/www/index.html#/app/import">data sources</a>.
+                Also, you can <a target="_blank" href="https://app.quantimo.do/api/v2/studies">create a new study</a>
+                and invite others to provide data as well.
+            </p>
+        </div>
+
+        <div ng-if="totalCorrelations.length == 1">
+
+            <qm-time-line ng-if="showCharts" outcome="{{outcomeVariableName}}"
+                          predictor="{{predictorVariableName}}"
+                          control="timeLineControl">
+            </qm-time-line>
+
+            <qm-scatter-plot ng-if="showCharts" outcome="{{outcomeVariableName}}"
+                             predictor="{{predictorVariableName}}"
+                             control="scatterControl">
+            </qm-scatter-plot>
+
+
+
+            <h3 ng-if="correlation.studyBackground || causeWikiEntry || effectWikiEntry">Study Background</h3>
+            <p>
+                {{correlation.studyBackground}}
+            </p>
+
+            <div>
+                <div ng-if="causeWikiImage" style="width: 100%">
+                    <img hspace="20" style="float:right; padding: 5px" ng-show="causeWikiImage" ng-src="{{causeWikiImage}}" >
+                </div>
+                <div ng-if="causeWikiEntry">
+                    <p ng-bind-html="causeWikiEntry" style="text-align: justify"></p>
+                </div>
+            </div>
+
+            <div>
+                <div ng-if="effectWikiImage" style="width: 100%">
+                    <img hspace="20" style="float:right; padding: 5px" ng-show="effectWikiImage" ng-src="{{effectWikiImage}}" >
+                </div>
+                <div ng-if="effectWikiEntry">
+                    <p ng-bind-html="effectWikiEntry" style="text-align: justify"></p>
+                </div>
+            </div>
+
+            <qm-study correlation="totalCorrelations[0].correlation">
+
+            </qm-study>
+
+        </div>
+
+        <div class="text-center">
+            <uib-pagination ng-show="totalCorrelations.length > itemsPerPage"
+                            total-items="totalCorrelations.length"
+                            ng-model="currentPage"
+                            max-size="maxSize"
+                            class="pagination-sm"
+                            ng-change="displayPage(currentPage, true)"
+                            previous-text="<"
+                            next-text=">">
+            </uib-pagination>
+        </div>
+
+    </div>
+
+    <div class="charts-loading" ng-show="showLoading">
+        <img src="https://app.quantimo.do/qm-connect/loader_gears.gif">
+    </div>
+
+</div>

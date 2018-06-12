@@ -1,0 +1,30 @@
+#search-variables-app .variable-item.ng-enter,
+#search-variables-app .variable-item.ng-enter-active {
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+#search-variables-app .variable-item.ng-leave,
+#search-variables-app .variable-item.ng-leave-active,
+#search-variables-app .variable-item.ng-move {
+  -webkit-animation: fadeOut 1s;
+  animation: fadeOut 1s;
+}
+#search-variables-app .variable-item .row {
+  display: flex;
+  align-items: center;
+}
+#search-variables-app .variable-item .control-icons .control-icon {
+  color: #373a3c;
+  font-size: 32px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+#search-variables-app .variable-item .control-icons .control-icon:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+#search-variables-app .variable-item .control-icons .control-icon.active {
+  opacity: 1;
+  text-decoration: none;
+}

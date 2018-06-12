@@ -1,0 +1,24 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="cancel()"><span
+                aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">
+            <span ng-if="opts.likeValue == 1">Seems plausible?</span>
+            <span ng-if="opts.likeValue == 0">Seems implausible?</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <p>
+            Do you
+            <span ng-if="opts.likeValue == 1">agree that it's possible that</span>
+            <span ng-if="opts.likeValue == 0">believe it is impossible that</span>
+            {{opts.correlation.predictorExplanation}}?
+        </p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="ok()">Yes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel()">Cancel</button>
+    </div>
+</div>
+<!-- /.modal-content -->
+

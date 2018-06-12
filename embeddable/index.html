@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="qmStarterApp" ng-controller="starterController" id="qm-app-top">
+<head>
+    <base href="/embeddable/"/>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body { background: none !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+    </style>
+    <title>QuantiModo Embeddable Features</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.0/animate.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="search-relationships/css/qmwp-search-relationships.css">
+    <link rel="stylesheet" href="search-variables/less/search-variables.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">
+
+    <link rel="stylesheet" href="starter/less/starter.css">
+    <link rel="stylesheet" href="faces/less/faces.css">
+</head>
+
+<body>
+
+<div class="container">
+    <div ui-view></div>
+</div>
+
+
+<!--3rd party-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-route.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js   "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-sanitize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-animate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-cookies.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<script src="../ionic/Modo/src/lib/angular-wikipedia-api-factory/dist/angular-wikipedia-api-factory.min.js"></script>
+
+<!--3rd party-->
+
+<!--Starter app-->
+<script src="starter/starterApp.js"></script>
+<script src="starter/controllers/starterController.js"></script>
+<script src="starter/controllers/loginController.js"></script>
+<script src="starter/controllers/noPluginController.js"></script>
+<!--Starter app-->
+
+<!--Other plugins-->
+<script src="about/qmAboutApp.js"></script>
+<script src="about/controllers/aboutController.js"></script>
+
+<script src="search-relationships/searchRelationships.js"></script>
+<script src="search-relationships/controllers/searchRelationshipsController.js"></script>
+<script src="search-relationships/controllers/modalControllers.js"></script>
+<script src="search-relationships/directives/directives.js"></script>
+<!--<script src="search-relationships/directives/timeLine.js"></script>-->
+<script src="search-relationships/directives/scatterplot.js"></script>
+<script src="search-relationships/directives/study.js"></script>
+<script src="search-relationships/services/searchCorrelationsApi.js"></script>
+<script src="search-relationships/services/voteHelper.js"></script>
+
+<script src="faces/facesApp.js"></script>
+<script src="faces/controllers/facesController.js"></script>
+
+<script src="search-variables/qmSearchVariables.js"></script>
+<script src="search-variables/controllers/searchVariablesController.js"></script>
+<script src="search-variables/controllers/modalControllers.js"></script>
+
+<script src="add-measurement/addMeasurementApp.js"></script>
+<script src="add-measurement/controllers/addMeasurementCtrl.js"></script>
+
+<!--Other plugins-->
+
+<!--Shared scripts-->
+<script src="common/qmCommon.js"></script>
+<script src="common/services/authService.js"></script>
+<script src="common/services/localStorageService.js"></script>
+<script src="common/services/requestsInterceptor.js"></script>
+<script src="common/services/htmlHelper.js"></script>
+<script src="common/services/settingsProvider.js"></script>
+<script src="common/services/qmApiV2.js"></script>
+<script src="common/services/qmApiV1.js"></script>
+<script src="common/directives/dateTimePicker.js"></script>
+<script src="common/directives/qmTimeLine.js"></script>
+<!--Shared scripts-->
+
+<script>
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1.0', {'packages': ['corechart', 'table']});
+
+</script>
+</body>
+</html>

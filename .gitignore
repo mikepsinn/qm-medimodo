@@ -7,3 +7,7 @@ node_modules/
 #sdks-unzipped/
 #sdks-zipped/
 #responses/
+ionic/Modo/
+!ionic/Modo/src/
+!ionic/Modo/www/
+build/logs/

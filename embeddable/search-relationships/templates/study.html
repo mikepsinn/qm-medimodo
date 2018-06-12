@@ -1,0 +1,44 @@
+<h3>Study Abstract</h3>
+<p>
+    {{correlation.studyAbstract}}
+</p>
+
+<h3>Study Objective</h3>
+<p>
+    {{correlation.studyObjective}}
+</p>
+
+<h3 ng-show="correlation.studyDesign">Study Design</h3>
+<p>
+    {{correlation.studyDesign}}
+</p>
+
+<h3 ng-show="correlation.dataAnalysis">Data Analysis</h3>
+<p>
+    {{correlation.dataAnalysis}}
+</p>
+
+<h3 ng-show="correlation.dataSources">Data Sources</h3>
+<p ng-bind-html="correlation.dataSources">
+</p>
+
+<h3 ng-show="!correlation.dataSources">Data Sources</h3>
+Data was collected using these
+<a target="_blank" href="https://app.quantimo.do/ionic/Modo/www/index.html#/app/import">Data Sources</a>.
+</p>
+
+
+<h3 ng-show="correlation.significanceExplanation">Significance Explanation</h3>
+<p>
+    {{correlation.significanceExplanation}}
+</p>
+
+<h3 ng-show="correlation.studyLimitations">Study Limitations</h3>
+<p>
+    {{correlation.studyLimitations}}
+</p>
+
+<h3 ng-show="correlation.studyResults">Study Results</h3>
+<p>
+    {{correlation.studyResults}}
+</p>

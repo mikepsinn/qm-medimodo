@@ -1,0 +1,27 @@
+#qm-faces {
+
+  padding-top: 7px;
+
+  .buttons-holder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+
+    .face-wrapper {
+      cursor: pointer;
+      margin: 7px;
+      border-radius: 50%;
+      transition: box-shadow 177ms linear;
+
+      &:hover {
+        -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+
+}

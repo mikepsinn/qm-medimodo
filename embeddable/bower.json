@@ -1,0 +1,20 @@
+{
+  "name": "Quantimodo Embeddable Features",
+  "version": "1.0.0",
+  "homepage": "staging.quantimo.do/embeddable/",
+  "authors": [
+    ""
+  ],
+  "description": "Quantimodo",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

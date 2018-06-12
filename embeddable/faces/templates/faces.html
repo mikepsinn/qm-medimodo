@@ -1,0 +1,53 @@
+<div id="qm-faces">
+
+    <div class="row">
+
+        <div class="col-xs-12">
+            <uib-alert
+                    ng-repeat="alert in alerts"
+                    type="{{alert.type}}"
+                    dismiss-on-timeout="7777"
+                    close="closeAlert($index)">
+                {{alert.msg}}
+            </uib-alert>
+        </div>
+
+        <div class="col-xs-12 buttons-holder">
+
+            <div class="face-wrapper" ng-click="postMeasurement(1)">
+                <img ng-src="{{ (settings.negative) ? '/assets/img/ic_mood_ecstatic.png'  : '/assets/img/ic_mood_depressed.png' }}"
+                     class="img-responsive"
+                     alt="">
+            </div>
+
+            <div class="face-wrapper" ng-click="postMeasurement(2)">
+                <img ng-src="{{ (settings.negative) ? '/assets/img/ic_mood_happy.png' : '/assets/img/ic_mood_sad.png'  }}"
+                     class="img-responsive"
+                     alt="">
+            </div>
+
+            <div class="face-wrapper" ng-click="postMeasurement(3)">
+                <img ng-src="{{ (settings.negative) ? '/assets/img/ic_mood_ok.png' : '/assets/img/ic_mood_ok.png'  }}"
+                     class="img-responsive"
+                     alt="">
+            </div>
+
+            <div class="face-wrapper" ng-click="postMeasurement(4)">
+                <img ng-src="{{ (settings.negative) ? '/assets/img/ic_mood_sad.png' : '/assets/img/ic_mood_happy.png'  }}"
+                     class="img-responsive"
+                     alt="">
+            </div>
+
+            <div class="face-wrapper" ng-click="postMeasurement(5)">
+                <img ng-src="{{ (settings.negative) ? '/assets/img/ic_mood_depressed.png' : '/assets/img/ic_mood_ecstatic.png'  }}"
+                     class="img-responsive"
+                     alt="">
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<pre>{{m | json}}</pre>
