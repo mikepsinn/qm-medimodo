@@ -1,1 +1,1 @@
-Merge pull request #1684 from mikepsinn/feature/connect-js
+Merge pull request #1685 from mikepsinn/feature/getClientIdFromGlobalsRequestParamsOrBodyOrCookieOrAccessTokenOrSubDomain
