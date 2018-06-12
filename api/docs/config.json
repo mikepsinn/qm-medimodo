@@ -1,0 +1,9 @@
+{
+  "invokerPackage": "QuantiModo\\Client",
+  "modelPackage": "Model",
+  "apiPackage": "Api",
+  "packagePath": "QuantiModoClient",
+  "composerProjectName": "quantimodo-sdk-php",
+  "composerVendorName": "quantimodo",
+  "artifactVersion": "5.0.5"
+}

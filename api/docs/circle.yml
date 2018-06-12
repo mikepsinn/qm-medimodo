@@ -1,0 +1,53 @@
+# Customize the test machine
+machine:
+  node:
+    version: 7.10.0
+  ruby:
+    version: 2.1.2
+
+  # Override /etc/hosts
+  services:
+    - docker
+
+dependencies:
+  override:
+    - chmod +x -R scripts/*
+    #- git clone https://github.com/swagger-api/swagger-codegen
+    #- cd swagger-codegen && ./run-in-docker.sh mvn package
+    #- sh scripts/generate-v1-sdks-circleci.sh
+    #- cd quantimodo_v1_skds/javascript && npm install && npm test
+    - npm install -g gulp browserify
+    - npm install
+    #- ls ./sdks-unzipped/javascript-client
+    #- gulp copy-js-sdk-to-node-modules
+    #- ls ./node_modules/quantimodo
+
+test:
+  override:
+    - gulp 0-download
+    - sleep 5
+    - gulp 1-decompress
+    - sleep 5
+    - sudo chmod -R 777 node_modules
+    - gulp 3-copy-to-repos
+    - sleep 5
+    - gulp js-sdk-copy-to-node-modules
+    - sleep 5
+    - gulp check-responses
+
+general:
+  artifacts:
+    - "swagger-codegen/quantimodo_v1_skds.zip"
+    - "swagger-codegen/api-docs.json"
+    - "node_modules/quantimodo"
+    - "sdks-unzipped"
+    - "sdks-zipped"
+    - "responses"
+
+deployment:
+  prod:
+    branch: master
+    commands:
+      - gulp 4-build-and-release-javascript
+      - gulp 5-commit-changes
+      #- aws s3 cp ~/docs/swagger-codegen/quantimodo_v1_skds.zip s3://quantimodo-docs/

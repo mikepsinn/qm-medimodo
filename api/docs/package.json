@@ -1,0 +1,35 @@
+{
+  "name": "QM-Docker",
+  "version": "0.0.1",
+  "engines": {
+    "node": "6.9.4",
+    "npm": "3.6.0"
+  },
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bower": "~1.3.3",
+    "bugsnag": "^1.11.0",
+    "del": "latest",
+    "gulp": "^3.5.6",
+    "gulp-callback": "0.0.3",
+    "gulp-decompress": "latest",
+    "gulp-download-stream": "0.0.13",
+    "gulp-git": "latest",
+    "gulp-ignore": "^2.0.2",
+    "gulp-rename": "^1.2.0",
+    "gulp-unzip": "^0.2.0",
+    "q": "^1.4.1",
+    "quantimodo": "5.8.82817",
+    "request-promise": "^4.2.1",
+    "run-sequence": "^1.1.4",
+    "unzip": "latest"
+  },
+  "devDependencies": {}
+}
