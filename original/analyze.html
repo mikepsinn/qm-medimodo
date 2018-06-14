@@ -1,0 +1,408 @@
+<head>
+    <meta charset="utf-8">
+    <title>QuAnTiMoDo - Perfect your life!</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="">
+
+    <!-- Styles -->
+    <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="static/css/bootstrap-2.0.3.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="css/jquery-ui/jquery-ui-1.10.1.custom.min.css" rel="stylesheet">
+    <link href="css/jquery.selectbox.css" rel="stylesheet">
+    <link type="text/css" href="css/scrollpane/jquery.jscrollpane.css" rel="stylesheet" media="all" />
+    <link type="text/css" rel="stylesheet" href="css/qtip/jquery.qtip.min.css" />
+    <link href="css/variables_management.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/welcome.css">
+
+   <!-- fav icons -->
+   <link rel="shortcut icon" href="imgs/favicon.png">
+   
+   <script type="text/javascript">
+
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-39222734-24']);
+		_gaq.push(['_setDomainName', 'quantimodo.com']);
+		_gaq.push(['_trackPageview']);
+		
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	
+	</script>
+</head>
+<body class="analysis">
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+<div class="main-container">
+
+    <header>
+        <div class="header-inner analysis clearfix">
+            <a id="logo" class="ir" href="/">Quantimodo Home</a>
+            <nav id="analysisnav">
+                <ul>
+                    <li>
+                        <a href="javascript:App.upload()">Upload Data</a>
+                    </li>
+                    <li class="nav-divider"></li>
+                    <li>
+                        <a href="javascript:App.manageConnectors()">Manage Data</a>
+                    </li>
+                    <li class="nav-divider"></li>
+                    <li>
+                        <a href="javascript:App.connectors()">Link Accounts</a>
+                    </li>
+                    <li class="nav-divider"></li>
+                    <li>
+                        <a href="http://quantimodo.com/blog/identifying-correlations/">Blog</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="user-info">
+                <span class="profile-pic">
+                </span>
+                <span class="user-name">Username</span>
+                <a style="display: none;" class="settings-btn" href="#">settings</a>
+                <a class="logoff-btn" href="/logout">logoff</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="experiment" class="clearfix">
+<!--        <a class="exp-title" href="#">
+           <div class="btn"></div>
+            experiment title
+        </a>
+        <a class="intake-energy" href="#">
+            Effect of Protein Intake on Energy
+        </a> -->
+        <div class="select-date">
+            <input type="text" class="date-from" name="date-from" placeholder="Starting Date" >
+            <label for="date-to">-</label>
+            <input type="text" class="date-to" name="date-to" placeholder="Ending Date" >
+        </div>
+        <div class="select-duration">
+            <input type="hidden" id="duration" value="daily">
+            <ul class="clearfix">
+                <li><a href="#" grouping="0">Minutely</a></li>
+                <li class="nav-divider"></li>
+                <li><a href="#" grouping="1">Hourly</a></li>
+                <li class="nav-divider"></li>
+                <li><a href="#" class="active" grouping="2">Daily</a></li>
+                <li class="nav-divider"></li>
+                <li><a href="#" grouping="3">Weekly</a></li>
+                <li class="nav-divider"></li>
+                <li><a href="#" grouping="4">Monthly</a></li>
+            </ul>
+        </div>
+    </section>
+    <section id="behaviour" class="clearfix">
+        <div class="colm input_variables">
+            <div class="inner-col">
+            	<h4><a class="dwnld edit-bvr edit-links" href="javascript:App.variables.editCategory($('#input_categories_select'),$('#input_vars_select'),'input')">Edit Input Category</a></h4>
+                <a style="display: none" href="javascript:App.variables.addCategory($('#input_categories_select'),$('#input_vars_select'),'input')" class="plus-button"></a>
+                <div class="info-tooltip orange" id="help-tip1"></div>
+                <div class="details-bottom">
+                    <div class="custom-select">
+                        <select id="input_categories_select"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="filler"></div>
+            <div class="inner-col second">
+				<a class="edit-var edit-links" href="javascript:App.variables.edit($('#input_categories_select'),$('#input_vars_select'),'input')">Edit Variable Options</a>
+				<a href="javascript:App.variables.add($('#input_categories_select'),$('#input_vars_select'),'input')" class="plus-button"></a>
+                <div class="info-tooltip orange" id="help-tip2"></div>
+                <div class="details-bottom">
+                    <div class="custom-select">
+                        <select id="input_vars_select"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="colm second output_variables">
+            <div class="inner-col">
+                          	<h4><a class="upld edit-bvr edit-links" href="javascript:App.variables.editCategory($('#output_categories_select'),$('#output_vars_select'),'output')">Edit Output Category</a></h4>
+                <a style="display: none" href="javascript:App.variables.addCategory($('#output_categories_select'),$('#output_vars_select'),'output')" class="plus-button"></a>
+                <div class="info-tooltip blue" id="help-tip3"></div>
+                <div class="details-bottom">
+                    <div class="custom-select">
+                        <select id="output_categories_select"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="filler"></div>
+            <div class="inner-col second">
+                <a class="edit-var-output edit-links" href="javascript:App.variables.edit($('#output_categories_select'),$('#output_vars_select'),'output')">Edit Variable Options</a>
+				<a href="javascript:App.variables.add($('#output_categories_select'),$('#output_vars_select'),'output')" class="plus-button"></a>
+                <div class="info-tooltip blue" id="help-tip4"></div>
+                <div class="details-bottom">
+                    <div class="custom-select">
+                        <select id="output_vars_select"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ <section id="correlations" class="graph-item">
+        <div class="bar-outer"></div>
+        <div class="titleBox">Correlation Scatterplot</div>
+        <div class="graph-inner">
+		    <div id="additional_controls" style="display:none;">
+	    <div id="graph_behaviour">
+	    	<input type="radio" name="graph_behaviour" id="show_original"> Show orginal</input>
+	    	<input type="radio" name="graph_behaviour" id="show_zeroes"> Fill up by zeroes</input>
+	    	<input type="radio" name="graph_behaviour" id="show_avg"> Fill up by AVG</input>
+	    	<input type="radio" name="graph_behaviour" id="show_interpolation"> Interpolate</input>
+	    </div>
+	    <div id="time_shift-old">
+	    	<button style="display:inline;" class="btn" id="shift-backward-old">&larr;</button>
+	    	<label style="display:inline;">Time shifted for </label>
+	    	<label style="display:inline;" id="shifter_time_value-old">0</label>
+	    	<button style="display:inline;" class="btn" id="shift-forward-old">&rarr;</button>
+	    </div>
+	</div>
+		<div class="watermark"></div>
+            <div class="statistical-relationship-gauge">
+            	<h4>Statistical Relationship = Significant</h4>
+                <div class="pointer">
+                    <canvas id="pointer" width="70" height="70">
+                        <p>Your browser doesn't support canvas.</p>
+                    </canvas>
+                </div>
+            </div>
+            <div id="scatterplot"></div>
+			<a class="feedback-btn" href="javascript:App.feedback()">How can we make Quantimodo better?</a> 
+            <div class="main-social-sharing" class="clearfix">
+                <div class="social-inner">
+					<a onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" target="_parent" class="mss-fbBtn image-replacement" href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://quantimodo.com/analyze&p[title]=Help us eradicate mental illness at QuAnTiMoDo.CoM!&p[summary]=Help us eradicate mental illness at QuAnTiMoDo.CoM!&p[images][0]=http://quantimodo.com/blog/wp-content/uploads/2013/01/quantiomod128x128.png">Facebook</a>
+					<a onclick="return !window.open(this.href, 'Google+', 'width=640,height=300')" target="_parent" class="mss-gBtn image-replacement" href="https://plus.google.com/share?url=http://quantimodo.com/analyze">Google</a>
+					<a onclick="return !window.open(this.href, 'Twitter', 'width=640,height=260')" target="_parent" class="mss-tBtn image-replacement" href="https://twitter.com/intent/tweet?url=http://quantimodo.com/analyze&amp;text=Help us eradicate mental illness at QuAnTiMoDo.CoM!&amp;via=quantimodo.com">Twitter</a>
+                    <a class="mss-eBtn image-replacement" href="email">Email</a>
+                    <a class="mss-moreBtn image-replacement" href="twitter">More</a>
+                </div>
+            </div>
+        </div>
+	    <div id="time_shift">
+	    	<button style="display:inline;" class="btn" id="shift-backward">&larr;</button>
+	    	<label style="display:inline;">Time shifted for </label>
+	    	<label style="display:inline;" id="shifter_time_value">0</label>
+	    	<button style="display:inline;" class="btn" id="shift-forward">&rarr;</button>
+	    </div>
+    </section>
+    <section id="timeline" class="graph-item">
+        <div class="bar-outer">
+        </div>
+        <div class="graph-inner">
+		<div class="watermark"></div>
+            <div id="timelinechart"></div>
+            <a class="beta-btn" href="javascript:location.href='/mockup/data/tony.php?uid=' + userId">Try Our New Experimental Features</a>
+            <div class="main-social-sharing" class="clearfix">
+                <div class="social-inner">
+					<a onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" target="_parent" class="mss-fbBtn image-replacement" href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://quantimodo.com/analyze&p[title]=Help us eradicate mental illness at QuAnTiMoDo.CoM!&p[summary]=Help us eradicate mental illness at QuAnTiMoDo.CoM!&p[images][0]=http://quantimodo.com/blog/wp-content/uploads/2013/01/quantiomod128x128.png">Facebook</a>
+					<a onclick="return !window.open(this.href, 'Google+', 'width=640,height=300')" target="_parent" class="mss-gBtn image-replacement" href="https://plus.google.com/share?url=http://quantimodo.com/analyze">Google</a>
+					<a onclick="return !window.open(this.href, 'Twitter', 'width=640,height=260')" target="_parent" class="mss-tBtn image-replacement" href="https://twitter.com/intent/tweet?url=http://quantimodo.com/analyze&amp;text=Help us eradicate mental illness at QuAnTiMoDo.CoM!&amp;via=quantimodo.com">Twitter</a>
+                    <a class="mss-eBtn image-replacement" href="email">Email</a>
+                    <a class="mss-moreBtn image-replacement" href="twitter">More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="notes" style="display:none;">
+        <div class="line-v"></div>
+        <div class="line-h"></div>
+        <a class="share-btn" href="#">Share this</a>
+        <a class="goto-top" href="#">Go to top</a>
+        <div class="notes-inner">
+        <div class="notes-header clearfix">
+            <div class="notes-title">
+                <div class="notes-icon"></div>
+                Notes
+            </div>
+            <a class="add-note" href="#">
+                Create new annotation
+                <div class="icon-add-note"></div>
+            </a>
+        </div>
+        <div class="notes-bottom scroll-pane">
+            <div class="notes-data clearfix">
+                <div class="date-posted">
+                    <h3>27 May 2013</h3>
+                </div>
+                <div class="post-details">
+                    <p>Lorem Ipsum is simply dummy text of the printing</p>
+                </div>
+                <a class="edit-note" href="#">edit note</a>
+            </div>
+            <div class="notes-data clearfix">
+                <div class="date-posted">
+                    <h3>27 May 2013</h3>
+                </div>
+                <div class="post-details">
+                    <p>Lorem Ipsum is simply dummy text of the printing</p>
+                </div>
+                <a class="edit-note" href="#">edit note</a>
+            </div>
+            <div class="notes-data clearfix">
+                <div class="date-posted">
+                    <h3>27 May 2013</h3>
+                </div>
+                <div class="post-details">
+                    <p>Lorem Ipsum is simply dummy text of the printing</p>
+                </div>
+                <a class="edit-note" href="#">edit note</a>
+            </div>
+            <div class="notes-data clearfix">
+                <div class="date-posted">
+                    <h3>27 May 2013</h3>
+                </div>
+                <div class="post-details">
+                    <p>Lorem Ipsum is simply dummy text of the printing</p>
+                </div>
+                <a class="edit-note" href="#">edit note</a>
+            </div>
+            <div class="notes-data clearfix">
+                <div class="date-posted">
+                    <h3>27 May 2013</h3>
+                </div>
+                <div class="post-details">
+                    <p>Lorem Ipsum is simply dummy text of the printing</p>
+                </div>
+                <a class="edit-note" href="#">edit note</a>
+            </div>
+            <div class="notes-data clearfix">
+                <div class="date-posted">
+                    <h3>27 May 2013</h3>
+                </div>
+                <div class="post-details">
+                    <p>Lorem Ipsum is simply dummy text of the printing</p>
+                </div>
+                <a class="edit-note" href="#">edit note</a>
+            </div>
+            <div class="notes-data clearfix">
+                <div class="date-posted">
+                    <h3>27 May 2013</h3>
+                </div>
+                <div class="post-details">
+                    <p>Lorem Ipsum is simply dummy text of the printing</p>
+                </div>
+                <a class="edit-note" href="#">edit note</a>
+            </div>
+        </div>
+        </div>
+    </section>
+	<div style="padding-bottom:35px;"></div>
+</div>
+<footer>
+	<div class="social-sharing">
+		<a onclick="return !window.open(this.href, 'Google+', 'width=640,height=300')" target="_parent" class="ss-googlep image-replacement" href="https://plus.google.com/share?url=http://quantimodo.com/analyze">Google</a>
+		<a onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" target="_parent" class="ss-facebook image-replacement" href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://quantimodo.com/analyze&p[title]=Help us eradicate mental illness at QuAnTiMoDo.CoM!&p[summary]=Help us eradicate mental illness at QuAnTiMoDo.CoM!&p[images][0]=http://quantimodo.com/blog/wp-content/uploads/2013/01/quantiomod128x128.png">Facebook</a>
+		<a onclick="return !window.open(this.href, 'Twitter', 'width=640,height=260')" target="_parent" class="ss-twitter image-replacement" href="https://twitter.com/intent/tweet?url=http://quantimodo.com/analyze&amp;text=Help us eradicate mental illness at QuAnTiMoDo.CoM!&amp;via=quantimodo.com">Twitter</a>
+		<!--a href="https://plus.google.com/communities/100581500031158281444" class="ss-googlep image-replacement" target="_blank">Google Plus</a>
+		<a href="https://www.facebook.com/Quantimodology" class="ss-facebook image-replacement" target="_blank">Facebook</a>
+		<a href="https://twitter.com/QuantimodoApp" class="ss-twitter image-replacement" target="_blank">Twitter</a-->
+	</div>
+	<div class="rainbow-footer image-replacement">The Rainbow of Happiness</div>
+	<div class="buttons">
+		<a href="http://quantimodo.com/blog/terms-of-service" title="Terms of service" target=_blank class="terms">Terms of service</a>
+	</div>
+    <div class="cityscape image-replacement">The City of Data</div>
+</footer>
+
+
+<script src="static/js/jquery-1.8.3.min.js"></script>
+<script src="static/js/bootstrap-2.0.2.min.js"></script>
+
+<script type="text/javascript" src="static/js/jquery.qtip.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.selectbox-0.2.min.js"></script>
+<script type="text/javascript" src="js/analysis.js"></script>
+<script src="static/js/jquery-ui-1.10.2.custom.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="static/js/jquery.jscrollpane.min.js"></script>
+
+<script src="static/js//highcharts/highcharts.js"></script>
+<script src="static/js//highcharts/modules/exporting.js"></script>
+<script src="static/js//jquery.jstepper.min.js"></script>
+
+<script src="static/js/hogan-2.0.0.js"></script>
+<script src="static/js/underscore-1.3.3-min.js"></script>
+<script src="static/js/backbone-0.9.2-min.js"></script>
+<script data-main="js/main.js" src="static/js/require-1.0.3.js"></script>
+<script src="js/math_utils.js"></script>
+<script type="text/javascript" src="js/base64.js"></script>
+<script type="text/javascript" src="js/rgbcolor.js"></script>
+<script type="text/javascript" src="js/canvg.js"></script>
+<script type="text/javascript" src="js/svg_todataurl.js"></script>
+<script type="text/javascript" src"js/jquery.base64.js"></script>
+
+	<script type="text/javascript">
+		$('html').ajaxStart(function() {
+			$(this).addClass('wait').bind('click', function() {
+				return false;
+			});
+			$("body").append("<div class='overlay'/>");
+		}).ajaxStop(function() {
+			$(this).removeClass('wait').unbind('click');
+			$(".overlay").remove();
+		});
+	</script>
+	<script type="text/javascript">
+		$(function() {
+			/*
+			 * TODO the following is a dirty hack. should use requirejs to display the dialog on App being loaded.
+			 */
+			$.ajax("/api/v1/connectors/list",{
+				success: function(data, textStatus, jqXHR){
+					/*
+					 * show it when the user two or less connectors
+					 */
+					if (data.length <= 2) {
+						/*
+						 * no connectors added yet - auto popup add connectors dialog
+						 */
+						console.log("no connectors added yet - auto popup add connectors dialog");
+						//App.connectors();
+						popupAddConnectorsDialog();
+					}
+				}
+			});
+		});
+		
+		function popupAddConnectorsDialog() {
+			console.log("trying to load the dialog");
+			if (typeof App == "undefined") {
+				setTimeout("popupAddConnectorsDialog()", 500);
+			} else {
+				App.connectors();
+			}
+		}
+
+
+//function share_button(social,graph) {
+//    if (graph == '1'){
+//        jQuery("#highcharts-0 svg:first").attr("id","123oo0123");
+//        var svg = document.getElementById("123oo0123");
+//    }else{
+//        jQuery("#highcharts-5 svg:first").attr("id","123oo01234");
+//        var svg = document.getElementById("123oo01234");
+//    }
+//
+//    jQuery.post('/mockup/data/picasa.php',{uploaded_file: svg.toDataURL("image/png"), contentType: "application/x-www-form-urlencoded;charset=UTF-8"},function(d
+//    if (social == 'facebook')
+//        window.open('http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://quantimodo.com/analyze&p[title]=Help us eradicate mental illness at QuAnTiM
+//    if (social == 'googlep')
+//        window.open(imgurl, 'Google+', 'width=640,height=300');
+////        window.open('https://plus.google.com/share?url=http://quantimodo.com/analyze' + imgurl, 'Google+', 'width=640,height=300');
+//
+//});
+//}
+
+
+	</script>
+
+</body>

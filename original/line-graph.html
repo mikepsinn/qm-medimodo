@@ -1,0 +1,99 @@
+<head>
+    <meta charset="utf-8">
+    <title>QuAnTiMoDo - Perfect your life!</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="">
+
+    <!-- Styles -->
+    <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="static/css/bootstrap-2.0.3.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="css/jquery-ui/jquery-ui-1.10.1.custom.min.css" rel="stylesheet">
+    <link href="css/jquery.selectbox.css" rel="stylesheet">
+    <link type="text/css" href="css/scrollpane/jquery.jscrollpane.css" rel="stylesheet" media="all" />
+    <link type="text/css" rel="stylesheet" href="css/qtip/jquery.qtip.min.css" />
+
+   <!-- fav icons -->
+   <link rel="shortcut icon" href="imgs/favicon.png">
+   
+   <script type="text/javascript">
+
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-39222734-24']);
+		_gaq.push(['_setDomainName', 'quantimodo.com']);
+		_gaq.push(['_trackPageview']);
+		
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	
+	</script>
+</head>
+<body class="analysis">
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+<div class="main-container">
+<header>
+</header>
+
+<section id="timeline" class="graph-item">
+    <div class="bar-outer">
+    </div>
+    <div class="graph-inner">
+    <div class="watermark"></div>
+        <div id="timelinechart"></div>
+        <div class="main-social-sharing" class="clearfix">
+            <div class="social-inner">
+                <a onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" target="_parent" class="mss-fbBtn image-replacement" href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://quantimodo.com/analyze&p[title]=Help us eradicate mental illness at QuAnTiMoDo.CoM!&p[summary]=Help us eradicate mental illness at QuAnTiMoDo.CoM!&p[images][0]=http://quantimodo.com/blog/wp-content/uploads/2013/01/quantiomod128x128.png">Facebook</a>
+                <a onclick="return !window.open(this.href, 'Google+', 'width=640,height=300')" target="_parent" class="mss-gBtn image-replacement" href="https://plus.google.com/share?url=http://quantimodo.com/analyze">Google</a>
+                <a onclick="return !window.open(this.href, 'Twitter', 'width=640,height=260')" target="_parent" class="mss-tBtn image-replacement" href="https://twitter.com/intent/tweet?url=http://quantimodo.com/analyze&amp;text=Help us eradicate mental illness at QuAnTiMoDo.CoM!&amp;via=quantimodo.com">Twitter</a>
+                <a class="mss-eBtn image-replacement" href="email">Email</a>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+<footer>
+</footer>
+
+<script src="static/js/jquery-1.8.3.min.js"></script>
+<script src="static/js/bootstrap-2.0.2.min.js"></script>
+
+<script type="text/javascript" src="static/js/jquery.qtip.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.selectbox-0.2.min.js"></script>
+<script type="text/javascript" src="js/line-chart.js"></script>
+<script src="static/js/jquery-ui-1.10.2.custom.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="static/js/jquery.jscrollpane.min.js"></script>
+
+<script src="static/js//highcharts/highcharts.js"></script>
+<script src="static/js//highcharts/modules/exporting.js"></script>
+<script src="static/js//jquery.jstepper.min.js"></script>
+
+<script src="static/js/hogan-2.0.0.js"></script>
+<script src="static/js/underscore-1.3.3-min.js"></script>
+<script src="static/js/backbone-0.9.2-min.js"></script>
+<script data-main="js/main.js" src="static/js/require-1.0.3.js"></script>
+<script src="js/math_utils.js"></script>
+<script type="text/javascript" src="js/base64.js"></script>
+<script type="text/javascript" src="js/rgbcolor.js"></script>
+<script type="text/javascript" src="js/canvg.js"></script>
+<script type="text/javascript" src="js/svg_todataurl.js"></script>
+<script type="text/javascript" src="js/jquery.base64.js"></script>
+
+	<script type="text/javascript">
+		$('html').ajaxStart(function() {
+			$(this).addClass('wait').bind('click', function() {
+				return false;
+			});
+			$("body").append("<div class='overlay'/>");
+		}).ajaxStop(function() {
+			$(this).removeClass('wait').unbind('click');
+			$(".overlay").remove();
+		});
+	</script>
+</body>

@@ -1,0 +1,230 @@
+<template id="manageConnectors">
+    <div class="modal fade manageConnectors" id="modal" style="width:680px; margin-left:-340px;">
+        <div class="modal-header">
+            <h3>Manage Connectors<a href="#" class="close" data-dismiss="modal">&times;</a></h3>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div>
+                    <table class="table manageConnectors">
+                        <thead>
+                        <tr>
+                            <th class="syncStatus">Sync status</th>
+                            <th class="connectors">Connector</th>
+                            <th class="lastSync">Last Sync.</th>
+                            <th class="enabled">Settings</th>
+                            <th class="remove">Remove</th>
+                        </tr>
+                        </thead>
+                        <tbody id="connectorInfoTable">
+                        {{#connectors}}
+                        <tr id="connector-{{connectorName}}" {{#syncing}}class="nowSynchro"{{/syncing}}>
+                            <td class="syncStatus" style="background:inherit">                           
+                                
+                                <span id="syncLED-waiting-{{connectorName}}" class="syncLED-waiting" {{^syncing}}style="display:none"{{/syncing}}>
+                                    <img src="/imgs/syncing.gif" width="35" height="35" alt="load">
+                                </span>
+                                
+	                            <span id="syncLED-{{connectorName}}" class="syncLED-{{^errors}}yes{{/errors}}{{#errors}}no{{/errors}}" {{#syncing}}style="display:none"{{/syncing}}>{{^errors}}Success{{/errors}}{{#errors}}Error{{/errors}}</span>
+                                <a id="syncNow-{{connectorName}}" title="sync now" href="#" {{#syncing}}style="display:none"{{/syncing}}><i class="icon-refresh"></i></a>
+                                
+                            </td>
+                            <td class="connectors" style="background:inherit; vertical-align: middle; width: 158px">
+                                <img src="{{image}}" width=158 height=89 alt="{{name}}">
+                            </td>
+                             <td class="lastSync" style="background:inherit">
+                                <p id="lastSync-{{connectorName}}" {{#syncing}}style="display:none;"{{/syncing}}>{{lastSync}}</p>
+                                {{#syncing}}
+                                <p>Now synchronizing</p>
+                                {{/syncing}}
+                                <a href="#" id="viewUpdates-{{connectorName}}">View Updates</a><br/>
+                            </td>
+                            <td class="settings" style="background:inherit">
+                            	<a href="#" id="settings-{{connectorName}}">Settings <i class="icon-cog"></i></a>
+                            </td>
+                            <td class="remove" style="background:inherit">
+                                <a id="remove-{{connectorName}}" href="#"><i class="icon-trash"></i></a>
+                            </td>
+                        </tr>
+                        {{/connectors}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+                <div class="synchAll">
+                   <a id="sync-all" href="#" class="btn btn-info">sync all your devices now <i class="icon-refresh"></i></a>
+                </div>
+        </div>
+    </div>
+</template>
+
+<template id="connectorSingleRow">
+                        <tr id="connector-{{connectorName}}" {{#syncing}}class="nowSynchro"{{/syncing}}>
+                            <td class="syncStatus" style="background:inherit">                           
+                                
+                                <span id="syncLED-waiting-{{connectorName}}" class="syncLED-waiting" {{^syncing}}style="display:none"{{/syncing}}>
+                                    <img src="imgs/syncing.gif" width="35" height="35" alt="load">
+                                </span>
+                                
+	                            <span id="syncLED-{{connectorName}}" class="syncLED-{{^errors}}yes{{/errors}}{{#errors}}no{{/errors}}" {{#syncing}}style="display:none"{{/syncing}}>{{^errors}}Success{{/errors}}{{#errors}}Error{{/errors}}</span>
+                                <a id="syncNow-{{connectorName}}" title="sync now" href="#" {{#syncing}}style="display:none"{{/syncing}}><i class="icon-refresh"></i></a>
+                                
+                            </td>
+                            <td class="connectors" style="background:inherit; vertical-align: middle; width: 158px">
+                                <img src="{{image}}" width=158 height=89 alt="{{name}}">
+                            </td>
+                             <td class="lastSync" style="background:inherit">
+                                <p id="lastSync-{{connectorName}}" {{#syncing}}style="display:none;"{{/syncing}}>{{lastSync}}</p>
+                                {{#syncing}}
+                                <p>Now synchronizing</p>
+                                {{/syncing}}
+                                <a href="#" id="viewUpdates-{{connectorName}}">View Updates</a><br/>
+                            </td>
+                            <td class="settings" style="background:inherit">
+                             	<a href="#" id="settings-{{connectorName}}">Settings <i class="icon-cog"></i></a>
+                            </td>
+                            <td class="remove" style="background:inherit">
+                                <a id="remove-{{connectorName}}" href="#"><i class="icon-trash"></i></a>
+                            </td>
+                        </tr>
+</template>
+
+<template id="deleteConnectorConfirm">
+    <div class="modal fade" id="deleteConnectorConfirm">
+        <div class="modal-header">
+            <h3>Confirm Removal<a href="#" class="close" data-dismiss="modal">&times;</a></h3>
+        </div>
+        <div class="modal-body" style="overflow:hidden">
+            <div class="alert alert-block"><h4 class="alert-heading">Warning!</h4>
+                You are about to remove {{name}} from your connectors. Are you sure you would like to remove this connector?
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button id="confirmRemoveConnectorBtn" class="btn">Confirm</button>
+            <button class="btn" id="cancelRemoveConnectorBtn">Cancel</button>
+        </div>
+    </div>
+</template>
+<template id="addConnectors">
+
+    <div id="modal" class="modal hide fade" style="width: 650px">
+
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">&times;</a>
+            <h3>Add Connectors</h3>
+        </div>
+
+        <div class="modal-body">
+            <div class="addConnectorsMain">
+
+                <div id="availableConnectors">
+                    {{^rows}}
+                        <div style="margin: 60px 0 75px 0; width: 100%; text-align: center">You have added all available connectors</div>
+                    {{/rows}}
+                    {{#rows}}
+                    <div class="row-fluid">
+                        {{#connectors}}
+                        <div class="span4">
+                            <a  href="javascript:App.addConnector('{{connectUrl}}')">
+                                <img src="{{image}}" alt="" width=158 Height=89>
+                            </a>
+                            <p>{{text}}</p>
+                        </div>
+                        {{/connectors}}
+                    </div>
+                    {{/rows}}
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a class="btn" href="javascript:App.closeModal();">Close</a>
+        </div>
+    </div>
+
+</template>
+<template id="viewUpdates">
+    <div id="viewUpdatesModal" class="modal hide fade" style="width: 750px; margin-left:-325px">
+
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">&times;</a>
+            <h3>Last {{name}} Updates</h3>
+        </div>
+
+        <div class="modal-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Success</th>
+                        <th style="width: 150px">Time</th>
+                        <th>Elapsed</th>
+                        <th>Call Query</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{#updates}}
+                    <tr>
+                        <td class="syncStatus small"><span id="syncLED-{{connectorName}}" class="syncLED-{{^success}}no{{/success}}{{#success}}yes{{/success}}" {{#syncing}}style="display:none;"{{/syncing}}>{{^success}}Error{{/success}}{{#success}}Success{{/success}}</span></td>
+                        <td>{{time}}</td>
+                        <td>{{elapsed}} ms</td>
+                        <td><a href="{{query}}">{{query}}</a></td>
+                        <td>
+                        	<div class="hide" ><div id="rawResponseModal" class="modal hide fade" style="width: 650px; margin-left:-325px">
+								<div class="modal-header">
+						            <a class="close" data-dismiss="modal">&times;</a>
+						            <h3>Response Content</h3>
+						        </div>
+						        <div class="modal-body">
+						            <div>
+						            	{{queryResult}}
+						            </div>
+						        </div>
+						    </div>
+						    </div>
+						    <a href="#" class="btn btn-info" onclick="App.makeModal($(this).prev().html())">Show raw response</a>
+					    </td>
+                    </tr>
+                {{/updates}}
+                </tbody>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" onclick="$('#viewUpdatesModal').modal('hide')">Close</button>
+        </div>
+    </div>
+</template>
+
+<template id="settings">
+    <div id="{{connectorName}}SettingsDialog" class="modal hide fade" style="width: 350px; margin-left: -170px;">
+
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">&times;</a>
+            <h3>{{name}} Settings</h3>
+        </div>
+
+        <div class="modal-body">
+        	<div class="settings">
+	            <label style="display:inline;">Enabled/Disabled </label>
+				<input style="display:inline;" type="checkbox" id="enabled-{{connectorName}}" {{#apiKeyEnabled}}checked="true"{{/apiKeyEnabled}}/>
+				<p/>
+				<label style="display:inline;">Update every </label>
+	          	<input class="hourlyUpdateInterval" type="text" id="hourlyUpdateInterval-{{connectorName}}" value="{{apiKeyHourlyUpdateInterval}}"/>
+	         	<label style="display:inline;"> hours</label>
+	         	{{#username}}
+	         		<p/>
+					<label style="display:inline;">Username </label>
+		           	<input class="username" type="text" id="username-{{connectorName}}" value="{{username}}"/>
+		           	<p/>
+					<label style="display:inline;">Password </label>
+		           	<input class="password" type="password" id="password-{{connectorName}}" value="{{password}}"/>
+	         	{{/username}}
+	         </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" id="saveChanges-{{connectorName}}">Save</button>
+            <button class="btn" onclick="$('#{{connectorName}}SettingsDialog').modal('hide')">Cancel</button>
+        </div>
+    </div>
+</template>

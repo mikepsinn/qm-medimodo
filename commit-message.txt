@@ -1,1 +1,1 @@
-Update dependency gulp-rename to v1.3.0
+Merge pull request #1699 from mikepsinn/develop

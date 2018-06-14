@@ -1,0 +1,149 @@
+<template id="dialog">
+    <div id="modal" class="modal fade hide in">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">&times;</a>
+            <h3>Settings</h3>
+        </div>
+        <form id="settingsForm" action="/api/settings" method="POST" style="margin:0">
+            <div class="modal-body">
+                <h3>Your Personal Details</h3>
+                <table>
+                    <tbody><tr>
+                        <td><label for="guest_firstname">First name</label></td>
+                        <td><input type="text" name="guest_firstname" id="guest_firstname"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="guest_lastname">Last name</label></td>
+                        <td><input type="text" name="guest_lastname" id="guest_lastname"></td>
+                    </tr>
+                    </tbody></table>
+                <h3>Units of measure Preferences</h3>
+                <table>
+                    <tbody><tr>
+                        <td><label for="length_measure_unit">Length Measure</label></td>
+                        <td><select name="length_measure_unit" id="length_measure_unit">
+                            <option value="SI">Cm</option>
+                            <option value="FEET_INCHES">Feet/Inches</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="distance_measure_unit">Distance Measure</label></td>
+                        <td><select name="distance_measure_unit" id="distance_measure_unit">
+                            <option value="SI">Km</option>
+                            <option value="MILES_YARDS">Miles/Yards</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="weight_measure_unit">Weight Measure</label></td>
+                        <td><select name="weight_measure_unit" id="weight_measure_unit">
+                            <option value="SI">Kg/Grams</option>
+                            <option value="STONES">Stones</option>
+                            <option value="POUNDS">Pounds</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="temperature_unit">Temperatures</label></td>
+                        <td><select name="temperature_unit" id="temperature_unit">
+                            <option value="CELSIUS">Celsius</option>
+                            <option value="FAHRENHEIT">Fahrenheit</option>
+                        </select></td>
+                    </tr>
+                    </tbody></table>
+                <h3>Change Your Password</h3>
+                <table>
+                    <tbody><tr>
+                        <td style="width:120px"><label for="password1">New Password</label></td>
+                        <td><input name="password1" id="password1" type="password"/></td>
+                        <td><span id="setPasswordError" class="help-inline error"
+                                  style="display:none; color:rgb(192, 86, 92)"></span></td>
+                    </tr>
+                    <tr>
+                        <td style="width:120px"><label for="password2">New Password 2&nbsp;&nbsp;&nbsp;</label></td>
+                        <td><input name="password2" id="password2" type="password"/></td>
+                    </tr></tbody>
+                </table>
+            </div>
+        </form>
+        <div class="modal-footer">
+            <input type="submit" value="Save Settings" class="btn btn-primary" id="saveSettingsBtn">
+            <button class="btn" onclick="App.closeModal()">Close</button>
+        </div>
+    </div>
+</template>
+<template id="sharingDialog">
+    <div id="sharingModal" class="modal fade hide in">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">&times;</a>
+            <h3>Coaching Buddies</h3>
+        </div>
+        <div class="modal-body">
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div id="coachesDropdown"/>
+                    </div>
+                </div><br/>
+                <div class="row-fluid">
+                    <div class="span19" id="sharedConnectors">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" onclick="$('#sharingModal').modal('hide');">Close</button>
+        </div>
+    </div>
+</template>
+<template id="coachesDropdown">
+    <div class="btn-group">
+        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+            {{selectedCoach}}
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            {{#coaches}}
+            <li><a href="javascript:App.sharingDialog.showCoach('{{username}}')">{{fullname}}</a></li>
+            {{/coaches}}
+            {{^coaches}}
+            <li><a href="javascript:void(0)"><i>Your buddy list is empty</i></a></li>
+            {{/coaches}}
+            <li class="divider"></li>
+            <li><a href="javascript:App.sharingDialog.findUserDialog()">Add Buddy...</a></li>
+        </ul>
+    </div>
+</template>
+<template id="sharedConnectors">
+    {{#connectors}}
+    <div class="row-fluid">
+        {{#row}}
+            <div class="span4"><input type="checkbox"
+                                      onclick="App.sharingDialog.toggleSharedConnector('{{username}}','{{connectorName}}', this.checked);"
+                                      value="{{connectorName}}" {{#shared}}checked=checked{{/shared}}>&nbsp;{{prettyName}}</input> </div>
+        {{/row}}
+    </div>
+    {{/connectors}}
+</template>
+<template id="findUserDialog">
+    <div id="findUserModal" class="modal fade hide in">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">&times;</a>
+            <h3>Invite Buddy</h3>
+        </div>
+        <div class="modal-body">
+            <div class="container-fluid">
+                <form id="findUserForm" action="javascript:void(0);">
+                    <input type="text" placeholder="Please, Enter a Username..." id="findUserField" style="display:inline"/>
+                    <img class="loading-animation"
+                         src="/imgs/loading.gif"/>
+                    <div id="findUserMessage" class="alert alert-info">You need to enter the fluxtream username of the person you want to invite.
+                    If you don't already know it, please ask them to tell you what it is.</div>
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary disabled" onclick="if(!$(this).hasClass('disabled')) { App.sharingDialog.addCoach($('#findUserField').val());}"
+                    id="shareMyDataButton">Add Buddy</button>
+            <button class="btn" onclick="$('#findUserModal').modal('hide');">Close</button>
+        </div>
+    </div>
+</template>

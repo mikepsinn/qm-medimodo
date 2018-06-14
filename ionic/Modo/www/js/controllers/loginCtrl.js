@@ -5,7 +5,12 @@ angular.module('starter').controller('LoginCtrl', ["$scope", "$state", "$rootSco
     $scope.state.socialLogin = function(connectorName, ev, additionalParams) {
         // qmService.createDefaultReminders();  TODO:  Do this at appropriate time. Maybe on the back end during user creation?
         loginTimeout();
-        qmService.auth.socialLogin(connectorName, ev, additionalParams);
+        qmService.auth.socialLogin(connectorName, ev, additionalParams, function (response) {
+            qmLog.info("Called socialLogin successHandler with response: "+JSON.stringify(response));
+            if(!qm.getUser()){handleLoginError("No user after successful social login!");} else {handleLoginSuccess();}
+        }, function (error) {
+            handleLoginError("SocialLogin failed! error: " + error);
+        });
     };
     $scope.controller_name = "LoginCtrl";
     $scope.headline = qm.getAppSettings().headline;
@@ -29,43 +34,43 @@ angular.module('starter').controller('LoginCtrl', ["$scope", "$state", "$rootSco
         //     "the NSA waterboards me, I will never divulge share your data without your permission.",
     };
     var leaveIfLoggedIn = function () {
-        if($rootScope.user && $rootScope.user.accessToken){
+        if(qm.getUser() && qm.auth.getAccessTokenFromUrlUserOrStorage()){
             qmLog.authDebug('Already logged in on login page.  goToDefaultStateIfNoAfterLoginGoToUrlOrState...');
             qmService.login.afterLoginGoToUrlOrState();
         }
     };
+    function handleLoginError(error) {
+        $scope.retryLogin();
+        qmLogService.error('Login failure: '+error);
+    }
+    function handleLoginSuccess() {
+        if(qm.getUser() && $state.current.name.indexOf('login') !== -1){
+            qmService.login.afterLoginGoToUrlOrState();
+        }
+    }
     var loginTimeout = function () {
         qmService.showBlackRingLoader();
         $scope.circlePage.title = 'Logging in...';
         $scope.circlePage.bodyText = 'Thank you for your patience. Your call is very important to us!';
         qmLog.authDebug('Setting login timeout...');
-        $timeout(function () {$scope.state.showRetry = true;}, 3000);
+        $timeout(function () {$scope.state.showRetry = true;}, 5000);
         return $timeout(function () {
             qmLog.authDebug('Finished login timeout');
-            if(!$rootScope.user){
-                $scope.circlePage.title = 'Please try logging in again';
-                $scope.state.showRetry = false;
-                qmLogService.error('Login failure');
-            }
-            if($rootScope.user && $state.current.name.indexOf('login') !== -1){
-                qmService.login.afterLoginGoToUrlOrState();
-            }
+            if(!qm.getUser()){handleLoginError("timed out");} else {handleLoginSuccess();}
         }, 40000);
     };
     function tryToGetUser() {
-        if($rootScope.platform.isChromeExtension){qmService.showBasicLoader();} // Chrome needs to do this because we can't redirect with access token
+        qmService.showBasicLoader(); // Chrome needs to do this because we can't redirect with access token
         console.info("Trying to get user");
         qmService.refreshUser().then(function () {
             console.info("Got user");
             qmService.hideLoader();
             leaveIfLoggedIn();
-            openChromeLoginWindowIfNecessary();
         }, function (error) {
-            console.info("Could not get user!");
+            console.info("Could not get user! error: "+error);
             //qmService.showMaterialAlert(error);  Can't do this because it has a not authenticate popup
-            //qmService.hideLoader();  // Hides login loader too early
+            qmService.hideLoader();  // Hides login loader too early
             leaveIfLoggedIn();
-            openChromeLoginWindowIfNecessary();
         });
     }
     $scope.$on('$ionicView.beforeEnter', function(e) {
@@ -90,12 +95,16 @@ angular.module('starter').controller('LoginCtrl', ["$scope", "$state", "$rootSco
             qmLog.authDebug('ReminderInbox: Hiding splash screen because app is ready');
             navigator.splashscreen.hide();
         }
-        qmService.hideLoader(0.5);
     });
+    $scope.state.setAuthDebugEnabled = function(){
+        qmLog.setAuthDebugEnabled(true);
+        qmLog.authDebug("Enabled auth debug with on-hold button");
+    };
     $scope.retryLogin = function(){
-        qmLog.setAuthDebug(true);
-        qmLog.error("Clicked retry login!");
+        qmLog.setAuthDebugEnabled(true);
+        qmLog.error("Called retry login!");
         $scope.state.alreadyRetried = true;
+        $scope.state.showRetry = false;
         $scope.circlePage.title = 'Please try logging in again';
     };
 }]);

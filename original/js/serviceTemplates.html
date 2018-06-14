@@ -1,0 +1,43 @@
+<template id="feedbackBox">
+	<div id="feedbackModal" class="modal hide fade" style="width: 500px; margin-left:-250px">
+		<div class="feedback-inner-frame">
+			<div class="modal-header">
+				<a class="close" data-dismiss="modal">&times;</a>
+				<h3>Suggestion  Box</h3>
+			</div>
+			 <div class="modal-body">
+				<h4>How can we make Quantimodo better?</h4>
+				<textarea id="feedback" class="field span6" rows="4"></textarea>
+			 </div>
+			  <div class="modal-footer">
+				<button class="btn btn-primary" id="feedback-send">Send</button>
+				<button class="btn" onclick="$('#feedbackModal').modal('hide')">Close</button>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template id="uploadBox">
+	<div id="uploadModal" class="modal hide fade" style="width: 500px; margin-left:-250px">
+		<div class="modal-header">
+			<a class="close" data-dismiss="modal">&times;</a>
+			<h3>Upload exported data files</h3>
+		</div>
+		<div class="modal-body">
+			<h4>Please choose exported data files to upload:</h4>
+			<input id="files" class="fileInput" type="file" name="files[]" multiple="multiple" />
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary" id="upload-send">Upload files</button>
+			<button class="btn" onclick="$('#uploadModal').modal('hide')">Close</button>
+		</div>
+	</div>
+</template>
+
+<template id="warningNotificationWithText">
+	<div class="alert alert-block fade in" id="warningWithTextDialog"  style="width: 400px; margin-left:-200px">
+		<h4>Warning!</h4>
+		<span>{{text}}</span><br/>
+	        <button class="btn" style="float: right;" onclick="$('#warningWithTextDialog').modal('hide')">OK</button>
+	</div>
+</template>

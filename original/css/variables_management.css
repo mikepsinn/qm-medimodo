@@ -1,0 +1,168 @@
+.edit_aggregated_variable_settings td{
+	vertical-align: top !important;
+}
+
+#edit_aggregated_variable_settings_internal{
+	width: 300px;
+}
+ 
+.plus-button{
+	display: inline-block;
+}
+
+.add_edit_category_categories_management {
+	margin: auto;
+}
+
+.add_edit_category_categories {
+	height: 400px;
+	width: 370px;
+	overflow: auto;
+}
+
+.add_edit_category_variable {
+	background-color: silver;
+	width: 300px;
+	height: 32px;
+	display: inline-block;
+	position: relative;
+	padding-top: 10px;
+	top: -10px;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.add_edit_category_left_arrow {
+	background: url("../imgs/left_green_arrow.png") no-repeat scroll left
+		top transparent;
+	height: 32px;
+	width: 32px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.add_edit_category_right_arrow {
+	background: url("../imgs/right_red_arrow.png") no-repeat scroll left
+		top transparent;
+	height: 32px;
+	width: 32px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.edit_aggregated_variable_variables{
+	height: 400px;
+	overflow: auto;
+    text-align: center;
+}
+
+.edit_aggregated_variable_settings td{
+	padding-left:5px;
+	padding-right: 5px;
+}
+
+.add_variables_variable {
+    background-color: #445577;
+    color: white;
+    cursor: pointer;
+    margin: 5px auto;
+    text-align: center;
+    width: 210px;
+    padding:3px;
+}
+
+.add_variables_variable.selected {
+	background-color: green !important;
+}
+
+#add_variables {
+    height: 450px;
+    overflow: auto;
+}
+
+#AggregatedVariableSettingsDialog .modal-body{
+	max-height: 480px !important;
+}
+
+.edit_aggregated_variable_remaining_variable{
+	background-color: #445577;
+    color: white;
+    cursor: move;
+    margin: auto;
+    text-align: center;
+    width: 210px;
+    padding:3px;
+    display: inline-block;
+}
+
+.edit_aggregated_variable_prioritized_variable{
+	background-color: red;
+    color: white;
+    cursor: move;
+    margin: auto;
+    text-align: center;
+    width: 210px;
+    padding:3px;
+    display: inline-block;
+}
+
+.remove_variable{
+	background: url("../imgs/trash.png") no-repeat scroll left
+		top transparent;
+	height: 32px;
+	width: 32px;
+	display: inline-block;
+	position: relative;
+	top: 10px;
+	cursor: pointer;
+}
+
+.up_variable{
+	background: url("../imgs/uparrow.png") no-repeat scroll left
+		top transparent;
+	height: 32px;
+	width: 32px;
+	display: inline-block;
+	position: relative;
+	top: 10px;
+	cursor: pointer;
+}
+
+.up_variable_hide{
+	background-image: none;
+	cursor: default;
+}
+
+.down_variable{
+	background: url("../imgs/downarrow.png") no-repeat scroll left
+		top transparent;
+	height: 32px;
+	width: 32px;
+	display: inline-block;
+	position: relative;
+	top: 10px;
+	cursor: pointer;
+}
+
+.down_variable_hide{
+	background-image: none;
+	cursor: default;
+}
+
+.priority{
+	padding-right: 5px;
+}
+
+#edit_aggregated_variable_prioritized_variables{
+	width:345px;
+}
+
+#edit_aggregated_variable_remaining_variables{
+	width:300px;
+}
+
+.edit_aggregated_variable_variables ul{
+    border: 1px solid #ccc;
+    padding: 5px 0px 10px 3px;
+}
+

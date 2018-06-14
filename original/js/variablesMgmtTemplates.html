@@ -1,0 +1,267 @@
+<template id="aggregatedVariableSettings">
+<div id="AggregatedVariableSettingsDialog" class="modal hide fade"
+	style="width: 1000px; margin-left: -500px;">
+
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal">&times;</a>
+		<h4>{{^variableSettings.id}}Add{{/variableSettings.id}}{{#variableSettings.id}}Edit{{/variableSettings.id}} Aggregated Variable Options</h4>
+	</div>
+
+	<div class="modal-body">
+		<div>Find the first prioritized variable with data. If all prioritized variables have no data, try the remaining variables</div>
+		<table class="edit_aggregated_variable_settings">
+		<tr>
+			<td>
+				<div id="edit_aggregated_variable_settings_internal">
+					<label style="display: inline" >Name </label> 
+					<input id="edit_aggregated_variable_name" value="{{variableSettings.name}}" /> 
+					<br /> 
+					<label style="display: inline">Category </label> 
+					<select id="edit_aggregated_variable_category" class="input-small"> 
+					{{#categories}}
+						<option value="{{id}}">{{name}}</option> 
+					{{/categories}}
+					</select> 
+					<a id="edit_aggregated_variable_add_category" class="plus-button"></a> 
+					<br /> 
+					<label style="display: inline">Unit </label> 
+					<select id="edit_aggregated_variable_unit" class="input-small">
+						<option value=""></option>  
+						{{#units}}
+							<option value="{{id}}" si_unit="{{siUnit}}">{{name}}</option> 
+						{{/units}}
+					</select> 
+					<br /> 
+					<label style="display: inline">Duration of Effects </label> 
+					<input id="edit_aggregated_variable_time_shift" class="input-mini" style="display:inline;" value="{{variableSettings.timeShift}}" /> 
+					<select id="edit_aggregated_variable_time_shift_unit" class="input-mini">
+						<option value=""></option> 
+						{{#timeShiftUnits}}
+							<option value="{{id}}">{{name}}</option> 
+						{{/timeShiftUnits}}
+					</select>
+					<br />
+					<label style="display: none">There should be data at least once per </label> 
+					<select style="display: none" id="edit_aggregated_variable_non_empty" class="input-mini">
+						<option value=""></option> 
+						{{#nonEmptyMeasures}}
+						<option value="{{value}}">{{name}}</option> 
+						{{/nonEmptyMeasures}}
+					</select> 
+					<div id="edit_aggregated_variable_non_empty_options">
+						<label>If all variables have no data that 
+							<label class="edit_aggregated_variable_non_empty_unit" style="display: inline"></label>:
+						</label>
+						<!-- do not change values they are hardcoded according to database values -->
+						<input type="radio" name="edit_aggregated_variable_data_filling" value="IS_MISSING"
+							checked> Assume data is missing 
+						<br />
+						<input type="radio" name="edit_aggregated_variable_data_filling" value="CONSTANT"> 
+							Assume 
+							<input for="CONSTANT" class="edit_aggregated_variable_data_filling_value input-mini" /> 
+							<label class="edit_aggregated_variable_unit" style="display: inline"></label> for that
+							<label class="edit_aggregated_variable_non_empty" style="display: inline"></label>
+						<br /> 
+						<input type="radio" name="edit_aggregated_variable_data_filling"
+							value="INTERPOLATE"> Interpolate the surrounding 
+						<input for="INTERPOLATE"	class="edit_aggregated_variable_data_filling_value input-mini" /> <label
+							class="edit_aggregated_variable_non_empty multiple"
+							style="display: inline"></label> 
+						<br /> 
+						<input type="radio" name="edit_aggregated_variable_data_filling" value="AVERAGE"> 
+						Use the average value (mean of all 
+						<label class="edit_aggregated_variable_non_empty multiple"
+							style="display: inline"></label>)
+					</div>
+					<label style="display: inline">Minimum allowed value:</label> 
+					<input id="edit_aggregated_variable_min_value" class="input-mini" value="{{variableSettings.minValue}}" /> 
+					<label class="edit_aggregated_variable_unit" style="display: inline"></label> 
+					<br /> 
+					<label style="display: inline">Maximum allowed value:</label>
+					<input id="edit_aggregated_variable_max_value" class="input-mini" value="{{variableSettings.maxValue}}" /> 
+					<label class="edit_aggregated_variable_unit" style="display: inline"></label> 
+				</div>
+			</td>
+			<td>
+				<div class="edit_aggregated_variable_variables" id="edit_aggregated_variable_prioritized_variables">
+					Prioritized variables
+					<a id="edit_aggregated_variable_add_prioritized" class="plus-button"></a> 
+					<br/>
+					<ul id="sortable" class="connectedSortable">
+					{{#variableSettings.prioritizedVariables}}
+						<li for_id='{{id}}' class='edit_aggregated_variable_wrapper prioritized' priority="{{priority}}">
+							<span class='priority'>{{priority}}</span>
+							<div class="edit_aggregated_variable_prioritized_variable" si_unit="{{unitDto.siUnit}}" var_id="{{id}}" id="variable_{{id}}" data_owner="{{dataOwner}}">{{#application}}{{application}}, {{/application}}{{name}}</div>
+							<a class='up_variable' for_id='{{id}}'/>
+							<a class='down_variable' for_id='{{id}}'/>
+							<a class='remove_variable prioritized' for_id='{{id}}'/>
+						</li>
+					{{/variableSettings.prioritizedVariables}}
+					</ul>
+				</div>
+			</td>
+			<td>
+				<div class="edit_aggregated_variable_variables" id="edit_aggregated_variable_remaining_variables">
+					Remaining variables
+					<a id="edit_aggregated_variable_add_remaining" class="plus-button"></a> 
+					<br/>
+					<select id="edit_aggregated_variable_remaining_type">
+						<option value="AVERAGE" checked>Use mean of these values</option>
+						<option value="SUMMABLE">Use sum of these values</option>
+					</select>
+					<br/>
+					<ul id="sortable_remaining_variables" class="connectedSortable">
+					{{#variableSettings.remainingVariables}}
+						<li for_id='{{id}}' class='edit_aggregated_variable_wrapper remaining'>
+							<div class="edit_aggregated_variable_remaining_variable" si_unit="{{unitDto.siUnit}}" var_id="{{id}}" id="variable_{{id}}" data_owner="{{dataOwner}}">{{#application}}{{application}}, {{/application}}{{name}}</div>
+							<a class='remove_variable remaining' for_id='{{id}}'/>
+						</li>
+					{{/variableSettings.remainingVariables}}
+					</ul>
+				</div>
+			</td>
+		</tr>
+	</table>
+		<span style="display: none" id="edit_aggregated_variable_error"
+			class="help-inline error"></span>
+	</div>
+	<div class="modal-footer">
+		{{#variableSettings.id}}
+			<button class="btn btn-danger" id="edit_aggregated_variable_delete" style="float: left;">Delete</button>
+		{{/variableSettings.id}}
+		<button class="btn btn-primary" id="edit_aggregated_variable_save">Save</button>
+		<button class="btn"
+			onclick="$('#AggregatedVariableSettingsDialog').modal('hide')">Cancel</button>
+	</div>
+</div>
+</template>
+
+<template id="addCategory">
+<div id="AddCategoryDialog" class="modal hide fade"
+	style="width: 300px; margin-left: -150px;">
+
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal">&times;</a>
+		<h4>Add category</h4>
+	</div>
+
+	<div class="modal-body">
+		<label>Enter new category name:</label> <input id="add_category_name" />
+		<span style="display: none" id="add_category_name_error"
+			class="help-inline error"></span>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" id="add_category_save">Save</button>
+		<button class="btn" onclick="$('#AddCategoryDialog').modal('hide')">Cancel</button>
+	</div>
+</div>
+</template>
+
+<template id="addEditCategory">
+<div id="AddEditCategoryDialog" class="modal hide fade"
+	style="width: 800px; margin-left: -400px;">
+
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal">&times;</a>
+		<h4>{{#category.id}}Edit{{/category.id}}{{^category.id}}Add{{/category.id}}
+			Category</h4>
+	</div>
+
+	<div class="modal-body">
+		   <label style="display:inline-block;">Category name:</label> 
+		   <input id="add_edit_category_name" value="{{category.name}}" {{#global}}disabled="true"{{/global}} /> <span style="display: none"
+			id="add_edit_category_error" class="help-inline error"></span>
+	</div>
+
+	<table class="add_edit_category_categories_management">
+		<tr>
+			<td>
+				<div class="add_edit_category_categories" id="add_edit_category_category_variables">
+				Category's variables
+				<br/>
+				{{#category.variables}}
+					<div id="add_edit_category_variable_wrapper" for="variable_{{id}}">
+						<div class="add_edit_category_variable" id="variable_{{id}}" var_id="{{id}}" data_owner="{{dataOwner}}">{{#application}}{{application}}, {{/application}}{{name}}</div>
+						{{^global}}
+						<div class="add_edit_category_right_arrow" for="variable_{{id}}"></div>
+						{{/global}}
+					 </div>
+				{{/category.variables}}
+				</div>
+			</td>
+			<td>
+				<div class="add_edit_category_categories" id="add_edit_category_other_variables">
+				Other variables
+				<br/>
+				{{#variables}}
+					<div id="add_edit_category_variable_wrapper" for="variable_{{id}}">
+						{{^global}}
+						<div class="add_edit_category_left_arrow" for="variable_{{id}}"></div>
+						{{/global}}
+						<div class="add_edit_category_variable" id="variable_{{id}}" var_id="{{id}}" data_owner="{{dataOwner}}">{{#application}}{{application}}, {{/application}}{{name}}</div>
+					</div>
+				{{/variables}}
+				</div>
+			</td>
+		</tr>
+	</table>
+	<div class="modal-footer">
+		<button class="btn btn-primary" id="add_edit_category_save">Save</button>
+		<button class="btn"
+			onclick="$('#AddEditCategoryDialog').modal('hide')">Cancel</button>
+	</div>
+</div>
+</template>
+
+<template id="addVariables">
+<div id="AddVariablesDialog" class="modal hide fade"
+	style="width: 300px; margin-left: -150px;">
+
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal">&times;</a>
+		<h4>Choose variable</h4>
+	</div>
+
+	<div id="add_variables">
+		{{#variables}}
+			<div class="add_variables_variable" unit_id="{{unitDto.id}}" si_unit="{{unitDto.siUnit}}" var_id="{{id}}" id="variable_{{id}}" data_owner="{{dataOwner}}">{{#application}}{{application}}, {{/application}}{{name}}</div>
+		{{/variables}}
+	</div>
+	
+	<div class="modal-footer">
+		<button class="btn btn-primary" id="add_variables_variable_add">Add</button>
+		<button class="btn" onclick="$('#AddVariablesDialog').modal('hide')">Cancel</button>
+	</div>
+</div>
+</template>
+
+<template id="deleteVariableConfirm">
+    <div class="modal fade" id="deleteVariableConfirmDialog">
+        <div class="modal-header">
+            <h3>Confirm Removal<a href="#" class="close" data-dismiss="modal">&times;</a></h3>
+        </div>
+        <div class="modal-body" style="overflow:hidden">
+            <div class="alert alert-block"><h4 class="alert-heading">Warning!</h4>
+                You are about to remove {{name}} from your variables. Are you sure you would like to remove this variable?
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button id="confirm_remove_variable_btn" class="btn">Confirm</button>
+            <button class="btn" onclick="$('#deleteVariableConfirmDialog').modal('hide')">Cancel</button>
+        </div>
+    </div>
+</template>
+
+<template id="clearVariableContent">
+    <div class="modal fade" id="clearVariableContentDialog">
+        <div class="modal-body" style="overflow:hidden">
+            <div class="alert alert-block"><h4 class="alert-heading">Warning!</h4>
+                This action will remove all of the variables! Are you sure?
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button id="confirm_clear_variable" class="btn">Yes</button>
+            <button id="cancel_clear_variable" class="btn">No</button>
+        </div>
+    </div>
+</template>

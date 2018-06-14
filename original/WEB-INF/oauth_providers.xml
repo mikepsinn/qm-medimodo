@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+            http://www.springframework.org/schema/util 
+            http://www.springframework.org/schema/util/spring-util-3.0.xsd
+            http://www.springframework.org/schema/context 
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+        
+    <util:properties id="socialAuthProperties">
+        <prop key="api.login.yahoo.com.consumer_key">dj0yJmk9TWJlNWRxRmp5bWV0JmQ9WVdrOU9YRlpRVVJuTjJzbWNHbzlNakEzT1RRMk9URTJNZy0tJnM9Y29uc3VtZXJzZWNyZXQmeD02ZA--</prop>
+        <prop key="api.login.yahoo.com.consumer_secret">cc162dc9be71c997d80ca5d765315fee0127a4c9</prop>
+        <prop key="twitter.com.consumer_key">Hv52gj36aYsCE3uG1uTxQ</prop>
+        <prop key="twitter.com.consumer_secret">FbDelhsmxWDQjaKWSO3tpHCXQ4CqtqRP6WtZHf7ydU</prop>
+        
+        <prop key="www.google.com.consumer_key">973261775321.apps.googleusercontent.com</prop>
+        <prop key="www.google.com.consumer_secret">BHVSIS9mvQMrsB3nldfjYzDJ</prop>
+        <prop key="graph.facebook.com.consumer_key">436314759756101</prop>
+        <prop key="graph.facebook.com.consumer_secret">6e5f87537edaaeaacffc920c2a38487c</prop>
+    </util:properties>
+</beans>

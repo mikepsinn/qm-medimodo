@@ -25,7 +25,7 @@ window.qmLog = {
         } else {
             qmLog.message = message || name;
         }
-        qmLog.message = addCallerFunctionToMessage(qmLog.message || "");
+        if(qm.platform.isMobile() && qmLog.isDebugMode()){qmLog.message = addCallerFunctionToMessage(qmLog.message || "");}
         return qmLog.message;
     },
     metaData : {},
@@ -60,14 +60,15 @@ window.qmLog = {
             qmLog.logLevel = localStorage.getItem(qm.items.logLevel);  // Can't use qm.storage because of recursion issue
         }
         if(qmLog.logLevel){return qmLog.logLevel;}
-        qmLog.setLogLevelName("error");
+        qmLog.setLogLevelName("info");
         return qmLog.logLevel;
     },
-    setAuthDebug: function (value) {
+    setAuthDebugEnabled: function (value) {
         qmLog.authDebugEnabled = value;
         if(qmLog.authDebugEnabled && window.localStorage){
             qm.storage.setItem('authDebugEnabled', value);
         }
+        return qmLog.authDebugEnabled;
     },
     setDebugMode: function (value) {
         if (value) {
@@ -146,18 +147,27 @@ window.qmLog = {
             qmLog.info("PushNotification Debug: " + name, message, metaData, stackTrace);
         }
     },
-    authDebug: function(message) {
+    getAuthDebugEnabled: function(message){
         if(message.indexOf("cloudtestlabaccounts") !== -1){ // Keeps spamming bugsnag
-            qmLog.setAuthDebug(false);
-            return;
+            return qmLog.setAuthDebugEnabled(false);
         }
-        if(!qmLog.authDebugEnabled && window.location.href.indexOf("authDebug") !== -1){qmLog.setAuthDebug(true)}
-        if(!qmLog.authDebugEnabled && window.localStorage){qmLog.authDebugEnabled = localStorage.getItem('authDebugEnabled');}
-        if(qmLog.authDebugEnabled || qmLog.isDebugMode()){
+        if(qmLog.isDebugMode()){
+            return true;
+        }
+        if(!qmLog.authDebugEnabled && window.location.href.indexOf("authDebug") !== -1){
+            return qmLog.setAuthDebugEnabled(true)
+        }
+        if(qmLog.authDebugEnabled === null && window.localStorage){
+            qmLog.authDebugEnabled = localStorage.getItem('authDebugEnabled');
+        }
+        return qmLog.authDebugEnabled;
+    },
+    authDebug: function(name, message, metaData) {
+        if(qmLog.getAuthDebugEnabled(name)){
             if(qm.platform.isMobile()){
-                qmLog.error(message, message, null);
+                qmLog.error(name, message, metaData);
             } else {
-                qmLog.info(message, message, null);
+                qmLog.info(name, message, metaData);
             }
         } else {
             //console.log("Log level is " + qmLog.getLogLevelName());
@@ -192,7 +202,7 @@ window.qmLog = {
     getConsoleLogString: function (){
         var logString = qmLog.name;
         if(qmLog.message && logString !== qmLog.message){logString = logString + ": " + qmLog.message;}
-        logString = addCallerFunctionToMessage(logString);
+        if(qm.platform.isMobile() && qmLog.isDebugMode()){logString = addCallerFunctionToMessage(logString);}
         if(qmLog.stackTrace){logString = logString + ". stackTrace: " + qmLog.stackTrace;}
         try {
             if(qmLog.metaData){logString = logString + ". metaData: " + qm.stringHelper.stringifyCircularObject(qmLog.metaData);}
@@ -396,28 +406,42 @@ window.stringifyIfNecessary = function(variable){
     }
 };
 function getCalleeFunction() {
-    return arguments.callee.caller.caller.caller.caller.caller;
+    var callee = arguments.callee.caller;
+    if(callee.caller){callee = callee.caller;}
+    if(callee.caller){callee = callee.caller;}
+    if(callee.caller){callee = callee.caller;}
+    if(callee.caller){callee = callee.caller;}
+    if(callee.caller){callee = callee.caller;}
+    return callee;
 }
 function getCalleeFunctionName() {
-    if(getCalleeFunction() && getCalleeFunction().name && getCalleeFunction().name !== ""){
-        return getCalleeFunction().name;
-    }
-    return null;
-}
-function getCallerFunction() {
-    if(getCalleeFunction()){
-        try {
-            return getCalleeFunction().caller;
-        } catch (error) {
-            console.error(error);
-            return null;
+    try {
+        if(getCalleeFunction() && getCalleeFunction().name && getCalleeFunction().name !== ""){
+            return getCalleeFunction().name;
         }
+    } catch (error) {
+        console.debug(error);
     }
     return null;
 }
 function getCallerFunctionName() {
-    if(getCallerFunction() && getCallerFunction().name && getCallerFunction().name !== ""){
-        return getCallerFunction().name;
+    function getCallerFunction() {
+        if(getCalleeFunction()){
+            try {
+                return getCalleeFunction().caller;
+            } catch (error) {
+                console.error(error);
+                return null;
+            }
+        }
+        return null;
+    }
+    try {
+        if(getCallerFunction() && getCallerFunction().name && getCallerFunction().name !== ""){
+            return getCallerFunction().name;
+        }
+    } catch (error) {
+        console.debug(error);
     }
     return null;
 }
