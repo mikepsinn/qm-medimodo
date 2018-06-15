@@ -6,8 +6,10 @@ angular.module('starter').controller('LoginCtrl', ["$scope", "$state", "$rootSco
         // qmService.createDefaultReminders();  TODO:  Do this at appropriate time. Maybe on the back end during user creation?
         loginTimeout();
         qmService.auth.socialLogin(connectorName, ev, additionalParams, function (response) {
-            qmLog.info("Called socialLogin successHandler with response: "+JSON.stringify(response));
-            if(!qm.getUser()){handleLoginError("No user after successful social login!");} else {handleLoginSuccess();}
+            qmLog.authDebug("Called socialLogin successHandler with response: "+JSON.stringify(response), null, response);
+            if(!qm.getUser()){
+                handleLoginError("No user after successful social login!");} else {handleLoginSuccess();
+            }
         }, function (error) {
             handleLoginError("SocialLogin failed! error: " + error);
         });
@@ -40,7 +42,7 @@ angular.module('starter').controller('LoginCtrl', ["$scope", "$state", "$rootSco
         }
     };
     function handleLoginError(error) {
-        $scope.retryLogin();
+        $scope.retryLogin(error);
         qmLogService.error('Login failure: '+error);
     }
     function handleLoginSuccess() {
@@ -49,15 +51,16 @@ angular.module('starter').controller('LoginCtrl', ["$scope", "$state", "$rootSco
         }
     }
     var loginTimeout = function () {
-        qmService.showBlackRingLoader();
+        var duration = 60000;
+        qmService.showBlackRingLoader(duration);
         $scope.circlePage.title = 'Logging in...';
         $scope.circlePage.bodyText = 'Thank you for your patience. Your call is very important to us!';
         qmLog.authDebug('Setting login timeout...');
-        $timeout(function () {$scope.state.showRetry = true;}, 5000);
+        $timeout(function () {$scope.state.showRetry = true;}, 15000);
         return $timeout(function () {
             qmLog.authDebug('Finished login timeout');
             if(!qm.getUser()){handleLoginError("timed out");} else {handleLoginSuccess();}
-        }, 40000);
+        }, duration);
     };
     function tryToGetUser() {
         qmService.showBasicLoader(); // Chrome needs to do this because we can't redirect with access token
@@ -100,11 +103,12 @@ angular.module('starter').controller('LoginCtrl', ["$scope", "$state", "$rootSco
         qmLog.setAuthDebugEnabled(true);
         qmLog.authDebug("Enabled auth debug with on-hold button");
     };
-    $scope.retryLogin = function(){
+    $scope.retryLogin = function(error){
         qmLog.setAuthDebugEnabled(true);
-        qmLog.error("Called retry login!");
         $scope.state.alreadyRetried = true;
         $scope.state.showRetry = false;
-        $scope.circlePage.title = 'Please try logging in again';
+        //$scope.circlePage.title = 'Please try logging in again';
+        $scope.circlePage.title = null;
+        qmLog.error("Called retry login because: " + error);
     };
 }]);
