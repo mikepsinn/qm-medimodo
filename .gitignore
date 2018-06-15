@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 node_modules/
 .idea/
 ionic/Modo/
@@ -6,3 +7,14 @@ build/logs/
 !ionic/Modo/www/
 !ionic/Modo/www/scripts/
 !ionic/Modo/www/scripts/*
+=======
+CNAME
+node_modules/
+.idea/
+build/logs/
+#ionic/Modo/
+!ionic/Modo/src/
+!ionic/Modo/www/
+!ionic/Modo/www/*
+!ionic/Modo/www/**/*
+>>>>>>> d8c56e267f20d486b62bf860c8a9080700716228
