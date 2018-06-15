@@ -7,3 +7,5 @@ ionic/Modo/
 !ionic/Modo/www/
 !ionic/Modo/www/*
 !ionic/Modo/www/**/*
+!ionic/Modo/www/scripts/
+!ionic/Modo/www/scripts/*
