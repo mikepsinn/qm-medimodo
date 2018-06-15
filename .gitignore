@@ -1,5 +1,6 @@
 node_modules/
 .idea/
+<<<<<<< HEAD
 #platforms/
 #plugins/
 #sdk-repos/
@@ -11,3 +12,11 @@ ionic/Modo/
 !ionic/Modo/src/
 !ionic/Modo/www/
 build/logs/
+=======
+ionic/Modo/
+build/logs/
+!ionic/Modo/src/
+!ionic/Modo/www/
+!ionic/Modo/www/scripts/
+!ionic/Modo/www/scripts/*
+>>>>>>> a432e02a9fc511d268e2dd9c03675c12181b0216
