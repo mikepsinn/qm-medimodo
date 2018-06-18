@@ -381,7 +381,7 @@ angular.module('starter').controller('ImportCtrl', ["$scope", "$ionicLoading", "
         qmService.disconnectConnectorDeferred(connector.name).then(function (){
             $scope.refreshConnectors();
         }, function(error) {
-            qmLogService.error("error disconnecting " + error);
+            qmLogService.error("error disconnecting ", error);
         });
     };
     var updateConnector = function (connector, button){
@@ -409,6 +409,8 @@ angular.module('starter').controller('ImportCtrl', ["$scope", "$ionicLoading", "
             getItHere(connector, button);
         } else if(button.text.toLowerCase().indexOf('update') !== -1){
             updateConnector(connector, button);
+        } else if(button.text.toLowerCase().indexOf('upgrade') !== -1){
+            qmService.goToState('app.upgrade');
         }
     };
     $rootScope.$on('broadcastRefreshConnectors', function() {
