@@ -174,6 +174,49 @@
         }
       }
     },
+    "StudyCharts": {
+      "description": "An object with various chart properties each property contain and svg and Highcharts configuration",
+      "properties": {
+        "populationTraitScatterPlot": {
+          "$ref": "#/definitions/Chart"
+        },
+        "outcomeDistributionColumnChart": {
+          "$ref": "#/definitions/Chart"
+        },
+        "predictorDistributionColumnChart": {
+          "$ref": "#/definitions/Chart"
+        },
+        "correlationScatterPlot": {
+          "$ref": "#/definitions/Chart"
+        },
+        "pairsOverTimeLineChart": {
+          "$ref": "#/definitions/Chart"
+        }
+      }
+    },
+    "VariableCharts": {
+      "description": "An object with various chart properties each property contain and svg and Highcharts configuration",
+      "properties": {
+        "hourlyColumnChart": {
+          "$ref": "#/definitions/Chart"
+        },
+        "monthlyColumnChart": {
+          "$ref": "#/definitions/Chart"
+        },
+        "distributionColumnChart": {
+          "$ref": "#/definitions/Chart"
+        },
+        "weekdayColumnChart": {
+          "$ref": "#/definitions/Chart"
+        },
+        "lineChartWithoutSmoothing": {
+          "$ref": "#/definitions/Chart"
+        },
+        "lineChartWithSmoothing": {
+          "$ref": "#/definitions/Chart"
+        }
+      }
+    },
     "CommonResponse": {
       "properties": {
         "message": {
@@ -304,6 +347,10 @@
             "type": "string"
           },
           "type": "array"
+        },
+        "premium": {
+          "description": "True if connection requires upgrade",
+          "type": "boolean"
         },
         "scopes": {
           "description": "Required connector scopes",
@@ -1709,6 +1756,9 @@
           },
           "type": "array"
         },
+        "studyCharts": {
+          "$ref": "#/definitions/StudyCharts"
+        },
         "effectVariable": {
           "$ref": "#/definitions/Variable"
         },
@@ -2894,6 +2944,10 @@
           "description": "Example: 1",
           "type": "boolean"
         },
+        "createdAt": {
+          "description": "When the record was first created. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format",
+          "type": "string"
+        },
         "displayName": {
           "description": "User display name",
           "type": "string"
@@ -3022,6 +3076,10 @@
           "description": "Example: 1",
           "type": "boolean"
         },
+        "updatedAt": {
+          "description": "When the record in the database was last updated. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss datetime format",
+          "type": "string"
+        },
         "userRegistered": {
           "description": "Example: 2013-12-03 15:25:13 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
@@ -3084,8 +3142,7 @@
           "type": "boolean"
         },
         "charts": {
-          "description": "An object with various chart properties each property contain and svg and Highcharts configuration",
-          "type": "object"
+          "$ref": "#/definitions/VariableCharts"
         },
         "chartsLinkDynamic": {
           "description": "Example: https://local.quantimo.do/ionic/Modo/www/#/app/charts/Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29?variableName=Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Ftreatments.png",

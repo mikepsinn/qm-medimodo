@@ -12,9 +12,24 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
     var qmService = {
         ads: {
             initialize: function(force){
-                if(!qm.platform.isMobile()){return false;}
+                if(!qm.platform.isMobile()){
+                    qmLog.info("admob: Not Initializing because not on mobile...");
+                    return false;
+                }
+                qmLog.info("admob: Checking if user is older than a day...");
                 qm.userHelper.userIsOlderThan1Day(function(OlderThan1Day){
-                    if(!OlderThan1Day && !force) {return;}
+                    if(!OlderThan1Day && !force) {
+                        qmLog.info("admob: Not initializing admob because user not older than 1 day");
+                        return;
+                    }
+                    if(typeof window.plugins.AdMob === "undefined"){
+                        qmLog.error("admob: window.plugins.AdMob undefined on mobile");
+                    }
+                    if(qm.getUser().loginName === 'bucket_box'){
+                        qmLog.info("admob: Not initializing because it's an Apple test user");
+                        return;
+                    }
+                    qmLog.info("admob: Initializing admob and creating banner...");
                     window.plugins.AdMob.setOptions( {
                         publisherId: 'ca-app-pub-2427218021515520/1775529603',
                         interstitialAdId: '',
@@ -44,7 +59,6 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
         },
         auth: {
             deleteAllAccessTokens: function () {
-                $rootScope.accessToken = null;
                 if($rootScope.user){$rootScope.user.accessToken = null;}
                 qm.auth.deleteAllAccessTokens();
             },
@@ -2485,6 +2499,8 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
         qmService.rootScope.setUser(user);
         if(user && !user.stripeActive && qm.getAppSettings().additionalSettings.monetizationSettings.advertisingEnabled){
             qmService.ads.initialize();
+        } else {
+            qmLog.info("admob: Not initializing for some reason")
         }
         qm.userHelper.setUser(user);
     };
@@ -6563,7 +6579,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                         moreInfo: "See a list of the strongest predictors for any outcome.  See the values for each " +
                         "predictor that typically precede optimal outcomes.  Dive deeper by checking " +
                         "out the full study on any predictor and outcome combination.",
-                        image: 'img/data/graph.svg'
+                        image: 'img/data/graph.png'
                     }
 
                 ],
