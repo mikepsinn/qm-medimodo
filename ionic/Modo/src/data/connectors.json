@@ -194,7 +194,7 @@
   "logoColor": "#d34836",
   "longDescription": "Use Google Calendar to automatically track repeated events like treatments.",
   "name": "googlecalendar",
-  "premium": true,
+  "premium": false,
   "shortDescription": "Automate your tracking by creating calendar events with a title containing the value, followed by the unit, followed by the variable name. To track an apple every day, create a repeating event called \"1 serving Apples.\"",
   "oauthServiceName": "Google",
   "connnected": false
@@ -242,7 +242,7 @@
   "logoColor": "#d34836",
   "longDescription": "Use Google Fit to import your fitness data.",
   "name": "googlefit",
-  "premium": true,
+  "premium": false,
   "shortDescription": "Tracks Calories Burned, Heart Rate, Body Weight, Hourly Step Count, and Walk or Run Distance",
   "oauthServiceName": "Google",
   "connnected": false
