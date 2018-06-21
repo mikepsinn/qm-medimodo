@@ -89,14 +89,15 @@ window.qm = {
             }
         },
         generalErrorHandler: function(error, data, response, options){
+            var errorMessage = error.message || response.error.message || error;
             if(!response){return qmLog.error("No API response provided to qmApiGeneralErrorHandler",
-                {errorMessage: error, responseData: data, apiResponse: response, requestOptions: options});}
+                {errorMessage: errorMessage, responseData: data, apiResponse: response, requestOptions: options});}
             if(response.status === 401){
                 if(!options || !options.doNotSendToLogin){
                     qmLog.info("Not authenticated!")
                 }
             } else {
-                qmLog.error(response.error.message, null, {apiResponse: response});
+                qmLog.error(errorMessage, null, {error: error, apiResponse: response});
             }
         },
         addGlobalParams: function (urlParams) {
@@ -988,14 +989,18 @@ window.qm = {
             qmLog.authDebug("getAndSaveAccessTokenFromCurrentUrl " + window.location.href);
             var accessTokenFromUrl = qm.auth.getAccessTokenFromCurrentUrl();
             if(accessTokenFromUrl){
-                if(accessTokenFromUrl.length < 10){
-                    qmLog.error("accessTokenFromUrl is "+ accessTokenFromUrl);
-                    return null;
-                }
+                if(!qm.auth.accessTokenIsValid(accessTokenFromUrl)){return null;}
                 qmLog.authDebug("getAndSaveAccessTokenFromCurrentUrl saving " + accessTokenFromUrl);
                 qm.auth.saveAccessToken(accessTokenFromUrl);
             }
             return accessTokenFromUrl;
+        },
+        accessTokenIsValid: function(accessToken){
+            if(accessToken.length < 10 && accessToken !== "demo"){
+                qmLog.error("This accessTokenFromUrl is not valid: "+ accessToken);
+                return false;
+            }
+            return true;
         },
         saveAccessToken: function(accessToken){
             if(!qm.urlHelper.getParam('doNotRemember')){
@@ -1008,18 +1013,21 @@ window.qm = {
             if(qm.auth.getAndSaveAccessTokenFromCurrentUrl()){
                 return qm.auth.getAndSaveAccessTokenFromCurrentUrl();
             }
+            var accessToken;
             if(qm.userHelper.getUserFromLocalStorage() && qm.userHelper.getUserFromLocalStorage().accessToken){
-                if(qm.userHelper.getUserFromLocalStorage().accessToken.length < 10){
-                    qmLog.error("qm.userHelper.getUserFromLocalStorage().accessToken is "+ qm.userHelper.getUserFromLocalStorage().accessToken);
+                accessToken = qm.userHelper.getUserFromLocalStorage().accessToken;
+                if(!qm.auth.accessTokenIsValid(accessToken)){
+                    qmLog.error("qm.userHelper.getUserFromLocalStorage().accessToken is invalid: "+ accessToken);
                 } else {
-                    return qm.userHelper.getUserFromLocalStorage().accessToken;
+                    return accessToken;
                 }
             }
-            if(qm.storage.getItem(qm.items.accessToken)){
-                if(qm.storage.getItem(qm.items.accessToken).length < 10){
-                    qmLog.error("accessTokenFromUrl is "+ qm.storage.getItem(qm.items.accessToken));
+            accessToken = qm.storage.getItem(qm.items.accessToken);
+            if(accessToken){
+                if(!qm.auth.accessTokenIsValid(accessToken)){
+                    qmLog.error("accessTokenFromUrl is invalid: "+ accessToken);
                 } else {
-                    return qm.storage.getItem(qm.items.accessToken);
+                    return accessToken;
                 }
             }
             qmLog.info("No access token or user!");
@@ -3346,6 +3354,21 @@ window.qm = {
                     return;
                 }
                 qm.userHelper.getUserFromApi(successHandler, errorHandler);
+            });
+        },
+        userIsOlderThan1Day: function(callback){
+            qm.userHelper.userIsOlderThanXSeconds(86400, function(result){
+                callback(result);
+            });
+        },
+        userIsOlderThanXSeconds: function(secondsCutoff, callback){
+            qm.getUser(function(user){
+                if(!user){
+                    callback(false);
+                    return;
+                }
+                var ageInSeconds = qm.timeHelper.getUnixTimestampInSeconds - qm.timeHelper.universalConversionToUnixTimeSeconds(user.createdAt);
+                callback(ageInSeconds > secondsCutoff);
             });
         }
     },
