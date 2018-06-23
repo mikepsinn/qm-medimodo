@@ -125,7 +125,6 @@
 			}
 		}
 	},
-	"appDescription": "Better living through data.",
 	"appDesign": {
 		"aliases": {
 			"active": {
@@ -979,7 +978,6 @@
 		"defaultState": "app.remindersInbox",
 		"wordAliases": []
 	},
-	"appDisplayName": "QuantiModo",
 	"appStatus": {
 		"buildStatus": {
 			"androidArmv7Debug": "BUILDING",
@@ -1012,12 +1010,9 @@
 			"ios": true
 		}
 	},
-	"appType": "general",
 	"buildEnabled": false,
-	"clientId": "quantimodo",
 	"clientSecret": "TcQArZOoUecO9O4aBvntUl6v1QzzsU38",
 	"collaborators": null,
-	"createdAt": null,
 	"id": null,
 	"privateConfig": {
 		"bugsnag_key": "ae7bc49d1285848342342bb5c321a2cf",
@@ -1054,13 +1049,24 @@
 	"redirectUri": "https://app.quantimo.do/ionic/Modo/www/callback/ https://app.quantimo.do/api/v1/connectors/quantimodo/connect https://local.quantimo.do/api/v1/connectors/quantimodo/connect https://staging.quantimo.do/api/v1/connectors/quantimodo/connect http://localhost https://local.quantimo.do/ionic/Modo/www/callback/  https://local.quantimo.do/ionic/Modo/src/callback/  https://staging.quantimo.do/ionic/Modo/www/callback/ ",
 	"userId": 230,
 	"users": null,
-	"companyName": null,
-	"homepageUrl": "https://quantimo.do",
+	"appDescription": "Better living through data.",
+	"appDisplayName": "QuantiModo",
+	"appType": "general",
+	"clientId": "quantimodo",
+	"createdAt": null,
 	"iconUrl": "oHROiCLu95_gizg3j",
+	"ownerAvatar": null,
+	"ownerDisplayName": null,
+	"ownerEmail": null,
+	"physician": null,
+	"scopes": null,
+	"study": null,
+	"updatedAt": null,
+	"homepageUrl": "https://quantimo.do",
 	"longDescription": "",
 	"splashScreen": "oMg0F5fmyf_sfzgyc",
 	"textLogo": "nm8LguNtZL_chsco6",
-	"versionNumber": "2.8.622",
-	"androidVersionCode": "2018062220",
-	"builtAt": 1529642757
+	"versionNumber": "2.8.623",
+	"androidVersionCode": "2018062315",
+	"builtAt": 1529725065
 }
