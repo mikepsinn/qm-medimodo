@@ -1179,6 +1179,35 @@
         "success"
       ]
     },
+    "GetStudiesResponse": {
+      "properties": {
+        "studies": {
+          "items": {
+            "$ref": "#/definitions/Study"
+          },
+          "type": "array"
+        },
+        "description": {
+          "description": "Message",
+          "type": "string"
+        },
+        "message": {
+          "description": "Message",
+          "type": "string"
+        },
+        "status": {
+          "description": "Status code",
+          "type": "integer"
+        },
+        "success": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "status",
+        "success"
+      ]
+    },
     "GetTrackingReminderNotificationsResponse": {
       "properties": {
         "data": {
@@ -4099,6 +4128,13 @@
       "type": "string"
     },
     "causeVariableNameParam": {
+      "description": "Deprecated: Variable name of the hypothetical cause variable.  Example: Sleep Duration",
+      "in": "query",
+      "name": "causeVariableName",
+      "required": false,
+      "type": "string"
+    },
+    "predictorVariableNameParam": {
       "description": "Variable name of the hypothetical cause variable.  Example: Sleep Duration",
       "in": "query",
       "name": "causeVariableName",
@@ -4237,6 +4273,13 @@
       "type": "string"
     },
     "effectVariableNameParam": {
+      "description": "Deprecated: Variable name of the hypothetical effect variable.  Example: Overall Mood",
+      "in": "query",
+      "name": "effectVariableName",
+      "required": false,
+      "type": "string"
+    },
+    "outcomeVariableNameParam": {
       "description": "Variable name of the hypothetical effect variable.  Example: Overall Mood",
       "in": "query",
       "name": "effectVariableName",
@@ -4570,6 +4613,13 @@
       "description": "Example: 2117-08-07",
       "in": "query",
       "name": "stopTrackingDate",
+      "required": false,
+      "type": "string"
+    },
+    "studyClientIdParam": {
+      "description": "Client id for the cohort study you want",
+      "in": "query",
+      "name": "studyClientId",
       "required": false,
       "type": "string"
     },
@@ -5069,6 +5119,12 @@
             "$ref": "#/parameters/effectVariableNameParam"
           },
           {
+            "$ref": "#/parameters/predictorVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/outcomeVariableNameParam"
+          },
+          {
             "$ref": "#/parameters/sortParam"
           },
           {
@@ -5143,6 +5199,12 @@
           },
           {
             "$ref": "#/parameters/effectVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/predictorVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/outcomeVariableNameParam"
           }
         ],
         "produces": [
@@ -5677,6 +5739,12 @@
             "$ref": "#/parameters/effectVariableNameParam"
           },
           {
+            "$ref": "#/parameters/predictorVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/outcomeVariableNameParam"
+          },
+          {
             "$ref": "#/parameters/effectUnitNameParam"
           },
           {
@@ -5740,11 +5808,383 @@
         ]
       }
     },
+    "/v3/shares": {
+      "get": {
+        "description": "This is a list of individuals, apps, or studies with access to your measurements.",
+        "operationId": "getShares",
+        "parameters": [
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/appNameParam"
+          },
+          {
+            "$ref": "#/parameters/appVersionParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          },
+          {
+            "$ref": "#/parameters/log"
+          },
+          {
+            "$ref": "#/parameters/pwd"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Operation",
+            "schema": {
+              "$ref": "#/definitions/AuthorizedClients"
+            }
+          },
+          "401": {
+            "description": "Not Authenticated"
+          }
+        },
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "writemeasurements"
+            ]
+          }
+        ],
+        "summary": "Get Authorized Apps, Studies, and Individuals",
+        "tags": [
+          "user"
+        ]
+      }
+    },
+    "/v3/shares/delete": {
+      "post": {
+        "description": "Remove access to user data for a given client_id associated with a given individual, app, or study",
+        "operationId": "deleteShare",
+        "parameters": [
+          {
+            "description": "Client id of the individual, study, or app that the user wishes to no longer have access to their data",
+            "in": "query",
+            "name": "clientIdToRevoke",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Example: I hate you!",
+            "in": "query",
+            "name": "reason",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Operation",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "401": {
+            "description": "Not Authenticated"
+          }
+        },
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "writemeasurements"
+            ]
+          }
+        ],
+        "summary": "Delete share",
+        "tags": [
+          "user"
+        ]
+      }
+    },
+    "/v3/studies/open": {
+      "get": {
+        "description": "These are studies that anyone can join and share their data for the predictor and outcome variables of interest.",
+        "operationId": "getOpenStudies",
+        "parameters": [
+          {
+            "$ref": "#/parameters/causeVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/effectVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/predictorVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/outcomeVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/appNameParam"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/includeChartsParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          },
+          {
+            "$ref": "#/parameters/recalculate"
+          },
+          {
+            "$ref": "#/parameters/studyClientIdParam"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/GetStudiesResponse"
+            }
+          },
+          "401": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/JsonErrorResponse"
+            }
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "basic"
+            ]
+          }
+        ],
+        "summary": "Get Open Studies",
+        "tags": [
+          "analytics"
+        ]
+      }
+    },
+    "/v3/studies/joined": {
+      "get": {
+        "description": "These are studies that you are currently sharing your data with.",
+        "operationId": "getStudiesJoined",
+        "parameters": [
+          {
+            "$ref": "#/parameters/causeVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/effectVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/predictorVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/outcomeVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/correlationCoefficientParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/outcomesOfInterestParam"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/GetStudiesResponse"
+            }
+          },
+          "401": {
+            "description": "Not Authenticated"
+          }
+        },
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "basic"
+            ]
+          }
+        ],
+        "summary": "Get studies you have joined",
+        "tags": [
+          "analytics"
+        ]
+      }
+    },
+    "/v3/studies/created": {
+      "get": {
+        "description": "These are studies that you have created.",
+        "operationId": "getStudiesCreated",
+        "parameters": [
+          {
+            "$ref": "#/parameters/causeVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/effectVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/predictorVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/outcomeVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/GetStudiesResponse"
+            }
+          },
+          "401": {
+            "description": "Not Authenticated"
+          }
+        },
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "basic"
+            ]
+          }
+        ],
+        "summary": "Get studies you have joined",
+        "tags": [
+          "analytics"
+        ]
+      }
+    },
     "/v3/study/publish": {
       "post": {
-        "description": "Post Study Publish",
-        "operationId": "postStudyPublish",
-        "parameters": [],
+        "description": "Make a study and all related measurements publicly visible by anyone",
+        "operationId": "publishStudy",
+        "parameters": [
+          {
+            "$ref": "#/parameters/causeVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/effectVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/predictorVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/outcomeVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/appNameParam"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/includeChartsParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          },
+          {
+            "$ref": "#/parameters/recalculate"
+          },
+          {
+            "$ref": "#/parameters/studyClientIdParam"
+          }
+        ],
         "produces": [
           "application/json"
         ],
@@ -5765,9 +6205,65 @@
             "description": "Internal server error"
           }
         },
-        "summary": "Post Study Publish",
+        "summary": "Publish Study",
         "tags": [
-          "study"
+          "analytics"
+        ]
+      }
+    },
+    "/v3/study/join": {
+      "post": {
+        "description": "Anonymously share measurements for specified variables",
+        "operationId": "joinStudy",
+        "parameters": [
+          {
+            "$ref": "#/parameters/causeVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/effectVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/predictorVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/outcomeVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/appNameParam"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/PostStudyPublishResponse"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "summary": "Join Study",
+        "tags": [
+          "analytics"
         ]
       }
     },
@@ -6893,55 +7389,6 @@
         ]
       }
     },
-    "/v3/sharing/delete": {
-      "delete": {
-        "description": "Remove access to user data for a given client_id associated with a given individual, app, or study",
-        "operationId": "deleteShare",
-        "parameters": [
-          {
-            "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "description": "Example: I hate you!",
-            "in": "query",
-            "name": "reason",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "$ref": "#/parameters/platform"
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "204": {
-            "description": "Successful Operation",
-            "schema": {
-              "$ref": "#/definitions/CommonResponse"
-            }
-          },
-          "401": {
-            "description": "Not Authenticated"
-          }
-        },
-        "security": [
-          {
-            "access_token": []
-          },
-          {
-            "quantimodo_oauth2": [
-              "writemeasurements"
-            ]
-          }
-        ],
-        "summary": "Delete share",
-        "tags": [
-          "user"
-        ]
-      }
-    },
     "/v4/study": {
       "get": {
         "description": "Get Study",
@@ -6952,6 +7399,12 @@
           },
           {
             "$ref": "#/parameters/effectVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/predictorVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/outcomeVariableNameParam"
           },
           {
             "$ref": "#/parameters/userIdParam"
@@ -6970,6 +7423,9 @@
           },
           {
             "$ref": "#/parameters/recalculate"
+          },
+          {
+            "$ref": "#/parameters/studyClientIdParam"
           }
         ],
         "produces": [

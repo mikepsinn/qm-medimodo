@@ -263,7 +263,7 @@ gulp.task('js-5-release', [], function (callback) {
         ' && git push origin ' + apiVersionNumber +
         ' && bower version ' + apiVersionNumber, function () {
         executeCommand("cd " + getRepoPathForSdkLanguage(javascriptFlavor) + " && npm version " + apiVersionNumber +
-            ' && npm publish', function () {
+            ' && npm publish && git push && git push origin ' + apiVersionNumber, function () {
             updateBowerAndPackageJsonVersions(pathToQmDocker);
             updateBowerAndPackageJsonVersions(pathToIonic);
             //updateBowerAndPackageJsonVersions(".");
@@ -473,6 +473,12 @@ function copyUnzippedJsSdkToRepo(){
 function copyUnzippedJsSdkToApiDocsNodeModules(){
     return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(javascriptFlavor), pathToQuantiModoNodeModule);
 }
+function copyUnzippedJsSdkToIonicSrcLibForTesting(){
+    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(javascriptFlavor), pathToIonic+'/src/lib/quantimodo');
+}
+gulp.task('js-copy-to-src-lib', [], function(){
+    return copyUnzippedJsSdkToIonicSrcLibForTesting();
+});
 function copySdksFromUnzippedPathToRepos(){
     for(var i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){
@@ -486,7 +492,7 @@ gulp.task('js-3-copy-everywhere', ['js-sdk-browserify-unzipped'], function(){
         copyUnzippedJsSdkToRepo();
         //copyUnzippedJsSdkToQmDockerNodeModules();
         //copyUnzippedJsSdkToIonicNodeModules();
-        //copyUnzippedJsSdkToIonicCustomLib();
+        copyUnzippedJsSdkToIonicSrcLibForTesting();
         //copyQmWebJsToIonicCustomLib();
     } catch (error){
         logError(error, error);

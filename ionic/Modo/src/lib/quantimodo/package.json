@@ -1,6 +1,6 @@
 {
   "name": "quantimodo",
-  "version": "5.9.62110",
+  "version": "5.9.62212",
   "description": "We make it easy to retrieve and analyze normalized user data from a wide array of devices and applications. Check out our [docs and sdk's](https://github.com/QuantiModo/docs) or [contact us](https://help.quantimo.do).",
   "license": "Apache 2.0",
   "main": "src/index.js",
@@ -11,11 +11,11 @@
     "fs": false
   },
   "dependencies": {
-    "superagent": "3.5.2"
+    "superagent": "3.8.3"
   },
   "devDependencies": {
-    "mocha": "~2.3.4",
-    "sinon": "1.17.3",
-    "expect.js": "~0.3.1"
+    "mocha": "5.2.0",
+    "sinon": "5.0.10",
+    "expect.js": "0.3.1"
   }
 }

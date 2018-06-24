@@ -1105,6 +1105,7 @@ window.qm = {
                 qm.userHelper.getUserFromLocalStorage().accessToken = null;
             }
             qm.auth.deleteAllCookies();
+            qm.api.configureClient();
         },
         deleteAllCookies: function(){
             qmLog.info("Deleting all cookies...");
@@ -1198,7 +1199,7 @@ window.qm = {
             qm.api.configureClient();
             var apiInstance = new Quantimodo.ConnectorsApi();
             function callback(error, data, response) {
-                qm.api.generalResponseHandler(error, data, response, successHandler, errorHandler, params, 'getUserFromApi');
+                qm.api.generalResponseHandler(error, data, response, successHandler, errorHandler, params, 'getConnectorsFromApi');
             }
             params = qm.api.addGlobalParams(params);
             apiInstance.getConnectors(params, callback);
@@ -3325,6 +3326,17 @@ window.qm = {
             }
             return true;
         },
+        revokeClientAccess: function(clientIdToRevoke, successHandler, errorHandler){
+            qm.api.configureClient();
+            var apiInstance = new Quantimodo.UserApi();
+            function userSdkCallback(error, data, response) {
+                qm.api.generalResponseHandler(error, data, response, successHandler, errorHandler, params, 'revokeClientAccess');
+                qmLog.info("Got user from API...");
+                qm.userHelper.setUser(data.user);
+            }
+            var params = qm.api.addGlobalParams({});
+            apiInstance.deleteShare(clientIdToRevoke, params, userSdkCallback);
+        },
         getUserFromApi: function(successHandler, errorHandler){
             qmLog.info("Getting user from API...");
             function userSuccessHandler(userFromApi){
@@ -3353,6 +3365,7 @@ window.qm = {
                     userSuccessHandler(data);
                 }
                 var params = qm.api.addGlobalParams({});
+                params.includeAuthorizedClients = true;
                 //qm.api.executeWithRateLimit(function () {apiInstance.getUser(params, userSdkCallback);});  // Seems to have a delay before first call
                 apiInstance.getUser(params, userSdkCallback);
             }
@@ -3430,18 +3443,53 @@ window.qm = {
             }
             qm.localForage.saveWithUniqueId(qm.items.commonVariables, definitelyCommonVariables);
         },
+        getCommonVariablesFromJsonFile: function (requestParams, successHandler, errorHandler) {
+            var globalKey = 'CommonVariablesFromJsonFile';
+            var fromGlobals = qm.globalHelper.getItem(globalKey); // Reduce web requests.  Pretty big to keep in localForage
+            var commonVariables;
+            if(fromGlobals){
+                commonVariables = qm.arrayHelper.filterByRequestParams(fromGlobals, requestParams);
+                successHandler(commonVariables);
+            }
+            qm.api.getViaXhrOrFetch('data/commonVariables.json', function(commonVariables){
+                if(!commonVariables){
+                    qmLog.error("No common variables from json file!");
+                    errorHandler("No common variables from json file!");
+                    return;
+                }
+                qm.globalHelper.setItem(globalKey, commonVariables); // Reduce web requests.  Pretty big to keep in localForage
+                commonVariables = qm.arrayHelper.filterByRequestParams(commonVariables, requestParams);
+                successHandler(commonVariables);
+            }, function (error) {
+                if(errorHandler){errorHandler(error);}
+            });
+        },
         getFromLocalStorage: function(requestParams, successHandler, errorHandler){
             if(!successHandler){
                 qmLog.error("No successHandler provided to commonVariables getFromLocalStorage");
                 return;
             }
             if(!requestParams){requestParams = {};}
-            qm.localForage.getElementsWithRequestParams(qm.items.commonVariables, requestParams, function (data) {
-                if(!requestParams.sort){data = qm.variablesHelper.defaultVariableSort(data);}
-                successHandler(data);
+            var commonVariables;
+            function getFromLocalForage(fromJson){
+                qm.localForage.getElementsWithRequestParams(qm.items.commonVariables, requestParams, function (fromLocalForage) {
+                    if(!fromLocalForage){
+                        commonVariables = fromJson;
+                    } else if(fromJson){
+                        commonVariables = fromLocalForage.concat(fromJson);
+                    }
+                    if(!requestParams.sort){commonVariables = qm.variablesHelper.defaultVariableSort(commonVariables);}
+                    successHandler(commonVariables);
+                }, function (error) {
+                    qmLog.error(error);
+                    if(errorHandler){errorHandler(error);}
+                });
+            }
+            qm.commonVariablesHelper.getCommonVariablesFromJsonFile(requestParams, function (commonVariables) {
+                getFromLocalForage(commonVariables);
             }, function (error) {
                 qmLog.error(error);
-                if(errorHandler){errorHandler(error);}
+                getFromLocalForage();
             });
         },
         getFromLocalStorageOrApi: function(params, successHandler, errorHandler){
