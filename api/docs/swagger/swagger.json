@@ -102,20 +102,18 @@
         "appSettings": {
           "$ref": "#/definitions/AppSettings"
         },
-        "message": {
-          "description": "Message",
+        "description": {
+          "description": "Can be used as body of help info popup",
           "type": "string"
         },
-        "status": {
-          "description": "Status code",
-          "type": "integer"
-        },
-        "success": {
-          "type": "boolean"
+        "summary": {
+          "description": "Can be used as title in help info popup",
+          "type": "string"
         }
       },
       "required": [
-        "status"
+        "description",
+        "summary"
       ]
     },
     "AuthorizedClients": {
@@ -249,21 +247,18 @@
     },
     "CommonResponse": {
       "properties": {
-        "message": {
-          "description": "Message",
+        "description": {
+          "description": "Can be used as body of help info popup",
           "type": "string"
         },
-        "status": {
-          "description": "Status code",
-          "type": "integer"
-        },
-        "success": {
-          "type": "boolean"
+        "summary": {
+          "description": "Can be used as title in help info popup",
+          "type": "string"
         }
       },
       "required": [
-        "status",
-        "success"
+        "description",
+        "summary"
       ],
       "type": "object"
     },
@@ -1123,21 +1118,18 @@
           },
           "type": "array"
         },
-        "message": {
-          "description": "Message",
+        "description": {
+          "description": "Can be used as body of help info popup",
           "type": "string"
         },
-        "status": {
-          "description": "Status code",
-          "type": "integer"
-        },
-        "success": {
-          "type": "boolean"
+        "summary": {
+          "description": "Can be used as title in help info popup",
+          "type": "string"
         }
       },
       "required": [
-        "status",
-        "success"
+        "description",
+        "summary"
       ]
     },
     "GetCorrelationsDataResponse": {
@@ -1162,21 +1154,18 @@
         "data": {
           "$ref": "#/definitions/GetCorrelationsDataResponse"
         },
-        "message": {
-          "description": "Message",
+        "description": {
+          "description": "Can be used as body of help info popup",
           "type": "string"
         },
-        "status": {
-          "description": "Status code",
-          "type": "integer"
-        },
-        "success": {
-          "type": "boolean"
+        "summary": {
+          "description": "Can be used as title in help info popup",
+          "type": "string"
         }
       },
       "required": [
-        "status",
-        "success"
+        "description",
+        "summary"
       ]
     },
     "GetStudiesResponse": {
@@ -1188,24 +1177,36 @@
           "type": "array"
         },
         "description": {
-          "description": "Message",
+          "description": "Can be used as body of help info popup",
           "type": "string"
         },
-        "message": {
-          "description": "Message",
+        "summary": {
+          "description": "Can be used as title in help info popup",
           "type": "string"
-        },
-        "status": {
-          "description": "Status code",
-          "type": "integer"
-        },
-        "success": {
-          "type": "boolean"
         }
       },
       "required": [
-        "status",
-        "success"
+        "description",
+        "summary"
+      ]
+    },
+    "GetSharesResponse": {
+      "properties": {
+        "authorizedClients": {
+          "$ref": "#/definitions/AuthorizedClients"
+        },
+        "description": {
+          "description": "Can be used as body of help info popup",
+          "type": "string"
+        },
+        "summary": {
+          "description": "Can be used as title in help info popup",
+          "type": "string"
+        }
+      },
+      "required": [
+        "description",
+        "summary"
       ]
     },
     "GetTrackingReminderNotificationsResponse": {
@@ -1216,21 +1217,18 @@
           },
           "type": "array"
         },
-        "message": {
-          "description": "Message",
+        "description": {
+          "description": "Can be used as body of help info popup",
           "type": "string"
         },
-        "status": {
-          "description": "Status code",
-          "type": "integer"
-        },
-        "success": {
-          "type": "boolean"
+        "summary": {
+          "description": "Can be used as title in help info popup",
+          "type": "string"
         }
       },
       "required": [
-        "status",
-        "success"
+        "description",
+        "summary"
       ]
     },
     "Image": {
@@ -1803,6 +1801,33 @@
           "type": "string"
         }
       }
+    },
+    "ShareInvitationBody": {
+      "properties": {
+        "emailAddress": {
+          "description": "Enter the email address of the friend, family member, or health-care provider that you would like to give access to your measurements",
+          "type": "string"
+        },
+        "name": {
+          "description": "Name of the individual that the user wishes to have access to their measurements",
+          "type": "string"
+        },
+        "emailSubject": {
+          "description": "Example: I would like to share my measurements with you!",
+          "type": "string"
+        },
+        "emailBody": {
+          "description": "Example: I would like to share my data with you so you can help me identify find discover hidden causes of and new treatments for my illness.",
+          "type": "string"
+        },
+        "scopes":{
+          "description": "Space separated list of scopes to grant to the recipient (i.e. readmeasurements, writemeasurements, measurements:read",
+          "type": "string"
+        }
+      },
+      "required": [
+        "emailAddress"
+      ]
     },
     "Study": {
       "properties": {
@@ -4823,7 +4848,7 @@
   "paths": {
     "/v3/appSettings": {
       "get": {
-        "description": "Get QuantiModo client app settings",
+        "description": "Get the settings for your application configurable at https://build.quantimo.do",
         "operationId": "getAppSettings",
         "parameters": [
           {
@@ -5848,7 +5873,7 @@
           "200": {
             "description": "Successful Operation",
             "schema": {
-              "$ref": "#/definitions/AuthorizedClients"
+              "$ref": "#/definitions/GetSharesResponse"
             }
           },
           "401": {
@@ -5867,7 +5892,7 @@
         ],
         "summary": "Get Authorized Apps, Studies, and Individuals",
         "tags": [
-          "user"
+          "shares"
         ]
       }
     },
@@ -5920,7 +5945,58 @@
         ],
         "summary": "Delete share",
         "tags": [
-          "user"
+          "shares"
+        ]
+      }
+    },
+    "/v3/shares/invite": {
+      "post": {
+        "description": "Invite someone to view your measurements",
+        "operationId": "inviteShare",
+        "parameters": [
+          {
+            "description": "Details about person to share with",
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ShareInvitationBody"
+            }
+          },
+          {
+            "$ref": "#/parameters/platform"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Operation",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "401": {
+            "description": "Not Authenticated"
+          }
+        },
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "writemeasurements"
+            ]
+          }
+        ],
+        "summary": "Delete share",
+        "tags": [
+          "shares"
         ]
       }
     },
@@ -5998,7 +6074,7 @@
         ],
         "summary": "Get Open Studies",
         "tags": [
-          "analytics"
+          "studies"
         ]
       }
     },
@@ -6073,7 +6149,7 @@
         ],
         "summary": "Get studies you have joined",
         "tags": [
-          "analytics"
+          "studies"
         ]
       }
     },
@@ -6142,7 +6218,7 @@
         ],
         "summary": "Get studies you have joined",
         "tags": [
-          "analytics"
+          "studies"
         ]
       }
     },
@@ -6512,7 +6588,7 @@
     },
     "/v3/trackingReminders/delete": {
       "delete": {
-        "description": "Delete previously created tracking reminder",
+        "description": "Stop getting notifications to record data for a variable.  Previously recorded measurements will be preserved.",
         "operationId": "deleteTrackingReminder",
         "parameters": [
           {
@@ -6552,7 +6628,7 @@
             ]
           }
         ],
-        "summary": "Delete tracking reminder",
+        "summary": "Delete Tracking Reminder",
         "tags": [
           "reminders"
         ]
@@ -7295,7 +7371,7 @@
     },
     "/v3/votes": {
       "post": {
-        "description": "This is to enable users to indicate their opinion on the plausibility of a causal relationship between a treatment and outcome. We incorporates crowd-sourced plausibility estimations into our algorithm. This is done allowing user to indicate their view of the plausibility of each relationship with thumbs up/down buttons placed next to each prediction.",
+        "description": "I am really good at finding correlations and even compensating for various onset delays and durations of action. However, you are much better than me at knowing if there's a way that a given factor could plausibly influence an outcome. You can help me learn and get better at my predictions by pressing the thumbs down button for relationships that you think are coincidences and thumbs up once that make logic sense.",
         "operationId": "postVote",
         "parameters": [
           {

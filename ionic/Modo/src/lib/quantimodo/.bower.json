@@ -19,14 +19,14 @@
     "test",
     "tests"
   ],
-  "version": "5.9.62212",
-  "_release": "5.9.62212",
+  "version": "5.9.62419",
+  "_release": "5.9.62419",
   "_resolution": {
     "type": "version",
-    "tag": "v5.9.62212",
-    "commit": "3db54ac5f1023a684e12bed93ed31218a7f2032b"
+    "tag": "v5.9.62419",
+    "commit": "a013864ec4061a2e75be857c1225cb3ddd6847e3"
   },
   "_source": "https://github.com/QuantiModo/quantimodo-sdk-javascript.git",
-  "_target": "5.9.62212",
+  "_target": "5.9.62419",
   "_originalSource": "quantimodo"
 }
