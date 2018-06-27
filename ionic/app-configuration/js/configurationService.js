@@ -1,5 +1,36 @@
 angular.module('starter').factory('configurationService', function($http, $q, $rootScope, $state, qmService, qmLogService, $timeout) {
-    var configurationService = {};
+    var configurationService = {
+        getAppsListFromLocalStorage: function(){
+            return qm.storage.getItem(qm.items.appList);
+        },
+        getAppSettingsArrayFromApi: function (){
+            qmLog.info("getAppSettingsArrayFromApi...");
+            var deferred = $q.defer();
+            var params = qm.api.addGlobalParams({all: true, designMode: true});
+            qmService.get('api/v1/appSettings', [], params, function (response) {
+                qmLog.debug(response);
+                /** @namespace response.allAppSettings */
+                var appList = configurationService.convertAppSettingsToAppList(response.allAppSettings);
+                configurationService.saveAppList(appList);
+                configurationService.allAppSettings = response.allAppSettings;
+                deferred.resolve(response.allAppSettings);
+            }, function (error) {
+                deferred.reject(error);
+            });
+            return deferred.promise;
+        },
+        saveAppList: function(appList){
+            qm.storage.setItem(qm.items.appList, appList);
+        },
+        convertAppSettingsToAppList: function(appSettingsArray){
+            if(!appSettingsArray){return [];}
+            var appList = [];
+            for(var i = 0; i < appSettingsArray.length; i++){
+                appList.push({clientId: appSettingsArray[i].clientId, appDisplayName: appSettingsArray[i].appDisplayName, appIcon: appSettingsArray[i].additionalSettings.appImages.appIcon});
+            }
+            return appList;
+        }
+    };
     var menuItems = {
         inbox: {
             "title": "Reminder Inbox",
@@ -1107,7 +1138,6 @@ angular.module('starter').factory('configurationService', function($http, $q, $r
                 $rootScope.appSettings.appDesign[$rootScope.appComponentNames[i]] = {active: fallbackComponent, type: $rootScope.appSettings.appType, custom: fallbackComponent};
             }
         }
-        qm.appSettings = $rootScope.appSettings;
     };
     configurationService.updateAppComponentTypesAfterAppTypeChange = function(){
         if($rootScope.appSettings.appType !== "custom"){
@@ -1133,8 +1163,7 @@ angular.module('starter').factory('configurationService', function($http, $q, $r
                 $rootScope.appSettings.appDesign[appComponentName].active = appComponent;
             }
         }
-        qm.appSettings = $rootScope.appSettings;
-        if(postAfterUpdate){configurationService.postAppSettingsDeferred($rootScope.appSettings);}
+        if(postAfterUpdate){configurationService.saveRevisionAndPostAppSettingsAfterConfirmation($rootScope.appSettings);}
     };
     configurationService.convertAppSettingsRevisionsArrayToRevisionsList = function(revisions){
         var revisionsList = [];
@@ -1145,38 +1174,54 @@ angular.module('starter').factory('configurationService', function($http, $q, $r
         return revisionsList;
     };
     configurationService.saveAppSettingsRevisionLocally = function(callback){
-        qm.localForage.getItem(qm.items.appSettingsRevisions, function(revisions){
-            if(!revisions){revisions = [];}
+        qm.localForage.getItem(qm.items.appSettingsRevisions, function(savedRevisionsInDescendingOrder){
+            if(!savedRevisionsInDescendingOrder){savedRevisionsInDescendingOrder = [];}
+            var revisionsForCurrentClient = [];
+            for (var i = 0; i > savedRevisionsInDescendingOrder.length; i++) {
+                var savedRevision = savedRevisionsInDescendingOrder[i];
+                //if(savedRevision.clientId === $rootScope.appSettings.clientId){revisionsForCurrentClient.push(savedRevision);} // TODO: Might want to switch to this
+                revisionsForCurrentClient.push(savedRevision);
+                if(revisionsForCurrentClient.length > 5){break;}
+            }
             var currentRevision = JSON.parse(JSON.stringify($rootScope.appSettings)); // Decouple
             currentRevision.revisionTime = qm.timeHelper.getCurrentLocalDateAndTime();
-            revisions.push(currentRevision);
+            revisionsForCurrentClient.unshift(currentRevision);
             qmLog.info("Saving " + currentRevision.appDisplayName + " revision " + currentRevision.revisionTime);
-            qm.localForage.setItem(qm.items.appSettingsRevisions, revisions);
+            qm.localForage.setItem(qm.items.appSettingsRevisions, revisionsForCurrentClient);
             if(callback){
-                var revisionsList = configurationService.convertAppSettingsRevisionsArrayToRevisionsList(revisions);
+                var revisionsList = configurationService.convertAppSettingsRevisionsArrayToRevisionsList(revisionsForCurrentClient);
                 callback(revisionsList);
             }
         });
     };
     configurationService.switchApp = function(selectedApp, callback){
         configurationService.saveAppSettingsRevisionLocally(function (revisionList) {
-            qmLog.debug("Switching to ", selectedApp);
+            qmLog.info("Switching to " + selectedApp.appDisplayName + ": ", selectedApp);
             if(selectedApp.clientId === $rootScope.appSettings.clientId){
                 return;  // Can't do this if we're using it for revisions
             }
-            window.location.href = window.location.origin + window.location.pathname + '#/app/configuration/' + selectedApp.clientId;
+            //window.location.href = window.location.origin + window.location.pathname + '#/app/configuration/' + selectedApp.clientId;
+            qm.appsManager.getAppSettingsFromApi(selectedApp.clientId, function (appSettings) {
+                qmService.processAndSaveAppSettings(appSettings);
+            });
             callback(revisionList);
         });
     };
-    configurationService.postAppSettingsDeferred = function(appSettings) {
+    configurationService.saveRevisionAndPostAppSettingsAfterConfirmation = function(appSettings) {
         if(!appSettings){appSettings = $rootScope.appSettings;}
         var deferred = $q.defer();
-        console.debug("postAppSettingsDeferred");
-        configurationService.saveAppSettingsRevisionLocally();
-        configurationService.postAppSettings(appSettings, function(response){deferred.resolve(response);}, function(error){deferred.reject(error);});
+        console.debug("saveRevisionAndPostAppSettingsAfterConfirmation");
+        configurationService.saveAppSettingsRevisionLocally(function (revisionList) {
+            configurationService.postAppSettingsAfterConfirmation(appSettings, function(response){
+                deferred.resolve(revisionList);
+            }, function(error){
+                qmLog.error(error);
+                deferred.reject(error);
+            });
+        });
         return deferred.promise;
     };
-    configurationService.postAppSettings = function(appSettings, successHandler, errorHandler, ev) {
+    configurationService.postAppSettingsAfterConfirmation = function(appSettings, successHandler, errorHandler, ev) {
         var users = appSettings.users || configurationService.users;
         var numberOfUsers = (users) ? users.length : 0;
         var title = 'Save Settings';
@@ -1246,9 +1291,13 @@ angular.module('starter').factory('configurationService', function($http, $q, $r
             $rootScope.appSettings.appType = "custom";
         }
         $rootScope.originalAppSetting = appSettingObjectToEdit;
+        qmLog.info("Editing: ", appSettingObjectToEdit, appSettingObjectToEdit);
         $rootScope.appSettingObjectToEdit = JSON.parse(JSON.stringify(appSettingObjectToEdit));  // This must be done so that we aren't also modifying originalAppSetting, rendering replacement impossible
         $rootScope.appSettingType = appSettingType;
-        $state.go('app.configuration');
+        if($state.current.name.toLowerCase().indexOf('configuration') === -1){
+            qmLog.info("Going to configuration state because we clicked openEditAppSettingsModal");
+            qmService.goToState(qmStates.configuration);  // TODO: Maybe because we used to have buttons on actual menu
+        }
         //if(!doNotOpenModal){$rootScope.editorModal.show();}
     };
     $rootScope.deleteAppComponentElement = function(selectedComponentType, appSettingToDelete) {
@@ -1266,19 +1315,9 @@ angular.module('starter').factory('configurationService', function($http, $q, $r
             $rootScope.appSettings.appDesign[selectedComponentType].custom = $rootScope.appSettings.appDesign[selectedComponentType].active = newComponentSettings;
         } else {
             var appSettings = configurationService.replaceJsonString(originalSettingString, newSettingString, $rootScope.appSettings);
-            qmService.configureAppSettings(appSettings);
+            qmService.processAndSaveAppSettings(appSettings);
         }
-        //postAppSettings($rootScope.appSettings);
-    };
-    $rootScope.saveAppSettingChanges = function() {
-        if($rootScope.appSettingObjectToEdit){
-            var appSettingType = $rootScope.appSettingType;
-            var newAppSetting = $rootScope.appSettingObjectToEdit;
-            var originalAppSetting = $rootScope.originalAppSetting;
-            configurationService.replaceAppSetting(appSettingType, originalAppSetting, JSON.stringify(newAppSetting));
-            $rootScope.originalAppSetting = newAppSetting;  // Have to update so we can replace if we change something else
-        }
-        configurationService.postAppSettingsDeferred();
+        //postAppSettingsAfterConfirmation($rootScope.appSettings);
     };
     $rootScope.isObject = function(input){return angular.isObject(input);};
     $rootScope.isString = function(input){return angular.isString(input);};
@@ -1326,19 +1365,6 @@ angular.module('starter').factory('configurationService', function($http, $q, $r
         deferred.resolve(ionIconsObjects);
         return deferred.promise;
     };
-    configurationService.getAppsList = function (){
-        var deferred = $q.defer();
-        var params = qm.api.addGlobalParams({all: true, designMode: true});
-        qmService.get('api/v1/appSettings', [], params, function (response) {
-            console.debug(response);
-            /** @namespace response.allAppSettings */
-            deferred.resolve(response.allAppSettings);
-            configurationService.allAppSettings = response.allAppSettings;
-        }, function (error) {
-            deferred.reject(error);
-        });
-        return deferred.promise;
-    };
     configurationService.getAppsSettings = function (clientId){
         var deferred = $q.defer();
         qmService.get('api/v1/appSettings', [], {clientId: clientId}, function (response) {
@@ -1354,7 +1380,7 @@ angular.module('starter').factory('configurationService', function($http, $q, $r
             configurationService.users = appSettings.users;
             delete appSettings.users;
         }
-        qmService.configureAppSettings(appSettings);
+        qmService.processAndSaveAppSettings(appSettings);
     };
     configurationService.upgradeUser = function (userId){
         var deferred = $q.defer();
