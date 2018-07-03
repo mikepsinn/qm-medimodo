@@ -1055,12 +1055,12 @@
 	"predictorVariableId": 0,
 	"scopes": null,
 	"study": 0,
-	"updatedAt": "2018-06-30 02:14:34",
+	"updatedAt": "2018-07-03 01:25:10",
 	"userId": 230,
 	"longDescription": "",
 	"splashScreen": "oMg0F5fmyf_sfzgyc",
 	"textLogo": "nm8LguNtZL_chsco6",
-	"versionNumber": "2.8.630",
-	"androidVersionCode": "2018063021",
-	"builtAt": 1530335329
+	"versionNumber": "2.8.703",
+	"androidVersionCode": "2018070319",
+	"builtAt": 1530592566
 }

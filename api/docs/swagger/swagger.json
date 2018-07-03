@@ -262,169 +262,6 @@
       ],
       "type": "object"
     },
-    "Connector": {
-      "properties": {
-        "affiliate": {
-          "description": "Ex: false",
-          "type": "boolean"
-        },
-        "backgroundColor": {
-          "description": "Background color HEX code that matches the icon",
-          "type": "string"
-        },
-        "buttons": {
-          "items": {
-            "$ref": "#/definitions/Button"
-          },
-          "type": "array"
-        },
-        "clientId": {
-          "description": "Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do",
-          "type": "string"
-        },
-        "connected": {
-          "description": "True if the authenticated user has this connector enabled",
-          "type": "boolean"
-        },
-        "connectError": {
-          "description": "Ex: Your token is expired. Please re-connect",
-          "type": "string"
-        },
-        "connectInstructions": {
-          "description": "URL and parameters used when connecting to a service",
-          "$ref": "#/definitions/ConnectInstructions"
-        },
-        "connectorClientId": {
-          "description": "Ex: 225078261031461",
-          "type": "string"
-        },
-        "connectorId": {
-          "description": "Ex: 8",
-          "type": "integer"
-        },
-        "connectStatus": {
-          "description": "Ex: CONNECTED",
-          "type": "string"
-        },
-        "createdAt": {
-          "description": "Ex: 2000-01-01 00:00:00 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
-          "type": "string"
-        },
-        "defaultVariableCategoryName": {
-          "description": "Ex: Social Interactions",
-          "type": "string"
-        },
-        "displayName": {
-          "description": "Connector pretty display name",
-          "type": "string"
-        },
-        "enabled": {
-          "description": "Ex: 1",
-          "type": "integer"
-        },
-        "getItUrl": {
-          "description": "URL to a site where one can get this device or application",
-          "type": "string"
-        },
-        "id": {
-          "description": "Connector ID number",
-          "type": "integer"
-        },
-        "image": {
-          "description": "URL to the image of the connector logo",
-          "type": "string"
-        },
-        "imageHtml": {
-          "description": "Ex: <a href=\"http://www.facebook.com\"><img id=\"facebook_image\" title=\"Facebook\" src=\"https://i.imgur.com/GhwqK4f.png\" alt=\"Facebook\"></a>",
-          "type": "string"
-        },
-        "lastSuccessfulUpdatedAt": {
-          "description": "Ex: 2017-07-31 10:10:34 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
-          "type": "string"
-        },
-        "lastUpdate": {
-          "description": "Epoch timestamp of last sync",
-          "type": "integer"
-        },
-        "linkedDisplayNameHtml": {
-          "description": "Ex: <a href=\"http://www.facebook.com\">Facebook</a>",
-          "type": "string"
-        },
-        "longDescription": {
-          "description": "Ex: Facebook is a social networking website where users may create a personal profile, add other users as friends, and exchange messages.",
-          "type": "string"
-        },
-        "message": {
-          "description": "Ex: Got 412 new measurements on 2017-07-31 10:10:34",
-          "type": "string"
-        },
-        "mobileConnectMethod": {
-          "description": "Mobile connect method: webview, cordova, google, spreadsheet, or ip",
-          "type": "string"
-        },
-        "name": {
-          "description": "Connector lowercase system name",
-          "type": "string"
-        },
-        "platforms": {
-          "description": "Platforms (chrome, android, ios, web) that you can connect on.",
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
-        "premium": {
-          "description": "True if connection requires upgrade",
-          "type": "boolean"
-        },
-        "scopes": {
-          "description": "Required connector scopes",
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
-        "shortDescription": {
-          "description": "Ex: Tracks social interaction. QuantiModo requires permission to access your Facebook \"user likes\" and \"user posts\".",
-          "type": "string"
-        },
-        "spreadsheetUpload": {
-          "description": "True if the user must upload a spreadsheet.  Post the uploaded spreadsheet with your clientId and user accessToken to https://app.quantimo.do/api/v2/spreadsheetUpload",
-          "type": "boolean"
-        },
-        "totalMeasurementsInLastUpdate": {
-          "description": "Number of measurements obtained during latest update",
-          "type": "integer"
-        },
-        "updatedAt": {
-          "description": "Ex: 2017-07-31 10:10:34 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
-          "type": "string"
-        },
-        "updateRequestedAt": {
-          "description": "Ex: 2017-07-18 05:16:31 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
-          "type": "string"
-        },
-        "updateStatus": {
-          "description": "Ex: UPDATED",
-          "type": "string"
-        },
-        "userId": {
-          "description": "Ex: 230",
-          "type": "integer"
-        }
-      },
-      "required": [
-        "connectInstructions",
-        "connected",
-        "displayName",
-        "getItUrl",
-        "id",
-        "image",
-        "lastUpdate",
-        "name",
-        "totalMeasurementsInLastUpdate"
-      ]
-    },
     "ConnectInstructions": {
       "properties": {
         "parameters": {
@@ -767,7 +604,7 @@
           "type": "number"
         },
         "shareUserMeasurements": {
-          "description": "Ex: 1",
+          "description": "Would you like to make this study publicly visible?",
           "type": "boolean"
         },
         "sharingDescription": {
@@ -972,6 +809,48 @@
           "description": "Ex: true",
           "type": "boolean"
         },
+        "backgroundColor": {
+          "description": "Background color HEX code that matches the icon",
+          "type": "string"
+        },
+        "buttons": {
+          "items": {
+            "$ref": "#/definitions/Button"
+          },
+          "type": "array"
+        },
+        "clientId": {
+          "description": "Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do",
+          "type": "string"
+        },
+        "connected": {
+          "description": "True if the authenticated user has this connector enabled",
+          "type": "boolean"
+        },
+        "connectError": {
+          "description": "Ex: Your token is expired. Please re-connect",
+          "type": "string"
+        },
+        "connectInstructions": {
+          "description": "URL and parameters used when connecting to a service",
+          "$ref": "#/definitions/ConnectInstructions"
+        },
+        "connectorId": {
+          "description": "Ex: 8",
+          "type": "integer"
+        },
+        "connectStatus": {
+          "description": "Ex: CONNECTED",
+          "type": "string"
+        },
+        "count": {
+          "description": "Number of measurements from this source or number of users who have measurements from this source",
+          "type": "integer"
+        },
+        "createdAt": {
+          "description": "Ex: 2000-01-01 00:00:00 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "type": "string"
+        },
         "connectorClientId": {
           "description": "Ex: ba7d0c12432650e23b3ce924ae2d21e2ff59e7e4e28650759633700af7ed0a30",
           "type": "string"
@@ -1004,6 +883,14 @@
           "description": "Ex: <a href=\"https://quantimo.do\"><img id=\"quantimodo_image\" title=\"QuantiModo\" src=\"https://quantimodo.quantimo.do/ionic/Modo/www/img/logos/quantimodo-logo-qm-rainbow-200-200.png\" alt=\"QuantiModo\"></a>",
           "type": "string"
         },
+        "lastSuccessfulUpdatedAt": {
+          "description": "Ex: 2017-07-31 10:10:34 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "type": "string"
+        },
+        "lastUpdate": {
+          "description": "Epoch timestamp of last sync",
+          "type": "integer"
+        },
         "linkedDisplayNameHtml": {
           "description": "Ex: <a href=\"https://quantimo.do\">QuantiModo</a>",
           "type": "string"
@@ -1012,13 +899,63 @@
           "description": "Ex: QuantiModo is a Chrome extension, Android app, iOS app, and web app that allows you to easily track mood, symptoms, or any outcome you want to optimize in a fraction of a second.  You can also import your data from over 30 other apps and devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook, Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and more.  QuantiModo then analyzes your data to identify which hidden factors are most likely to be influencing your mood or symptoms and their optimal daily values.",
           "type": "string"
         },
+        "message": {
+          "description": "Ex: Got 412 new measurements on 2017-07-31 10:10:34",
+          "type": "string"
+        },
+        "mobileConnectMethod": {
+          "description": "Mobile connect method: webview, cordova, google, spreadsheet, or ip",
+          "type": "string"
+        },
         "name": {
           "description": "Ex: quantimodo",
           "type": "string"
         },
+        "platforms": {
+          "description": "Platforms (chrome, android, ios, web) that you can connect on.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "premium": {
+          "description": "True if connection requires upgrade",
+          "type": "boolean"
+        },
+        "scopes": {
+          "description": "Required connector scopes",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
         "shortDescription": {
           "description": "Ex: Tracks anything",
           "type": "string"
+        },
+        "spreadsheetUpload": {
+          "description": "True if the user must upload a spreadsheet.  Post the uploaded spreadsheet with your clientId and user accessToken to https://app.quantimo.do/api/v2/spreadsheetUpload",
+          "type": "boolean"
+        },
+        "totalMeasurementsInLastUpdate": {
+          "description": "Number of measurements obtained during latest update",
+          "type": "integer"
+        },
+        "updatedAt": {
+          "description": "Ex: 2017-07-31 10:10:34 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "type": "string"
+        },
+        "updateRequestedAt": {
+          "description": "Ex: 2017-07-18 05:16:31 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "type": "string"
+        },
+        "updateStatus": {
+          "description": "Ex: UPDATED",
+          "type": "string"
+        },
+        "userId": {
+          "description": "Ex: 230",
+          "type": "integer"
         }
       },
       "required": [
@@ -1114,7 +1051,7 @@
       "properties": {
         "connectors": {
           "items": {
-            "$ref": "#/definitions/Connector"
+            "$ref": "#/definitions/DataSource"
           },
           "type": "array"
         },
@@ -1185,11 +1122,29 @@
           "type": "array"
         },
         "description": {
-          "description": "Can be used as body of help info popup",
+          "description": "Ex: These factors are most predictive of Overall Mood based on your own data.",
           "type": "string"
         },
         "summary": {
           "description": "Can be used as title in help info popup",
+          "type": "string"
+        },
+        "image": {
+          "$ref": "#/definitions/Image"
+        },
+        "ionIcon": {
+          "description": "Ex: ion-ios-person",
+          "type": "string"
+        },
+        "startTracking": {
+          "$ref": "#/definitions/ExplanationStartTracking"
+        },
+        "title": {
+          "description": "Ex: Top Predictors of Overall Mood",
+          "type": "string"
+        },
+        "html": {
+          "description": "Embeddable list of study summaries with explanation at the top",
           "type": "string"
         }
       },
@@ -1665,32 +1620,6 @@
         }
       }
     },
-    "PostCorrelation": {
-      "properties": {
-        "causeVariableName": {
-          "description": "Cause variable name",
-          "type": "string"
-        },
-        "correlation": {
-          "description": "Correlation value",
-          "format": "double",
-          "type": "number"
-        },
-        "effectVariableName": {
-          "description": "Effect variable name",
-          "type": "string"
-        },
-        "vote": {
-          "description": "Vote: 0 or 1",
-          "type": "integer"
-        }
-      },
-      "required": [
-        "causeVariableName",
-        "correlation",
-        "effectVariableName"
-      ]
-    },
     "PostMeasurementsDataResponse": {
       "properties": {
         "userVariables": {
@@ -1889,14 +1818,6 @@
       ],
       "type": "object"
     },
-    "Scope": {
-      "properties": {
-        "scalar": {
-          "description": "Ex: user_likes",
-          "type": "string"
-        }
-      }
-    },
     "ShareInvitationBody": {
       "properties": {
         "emailAddress": {
@@ -1961,11 +1882,19 @@
         "causeVariable": {
           "$ref": "#/definitions/Variable"
         },
+        "causeVariableName": {
+          "description": "Ex: Sleep Quality",
+          "type": "string"
+        },
         "studyCharts": {
           "$ref": "#/definitions/StudyCharts"
         },
         "effectVariable": {
           "$ref": "#/definitions/Variable"
+        },
+        "effectVariableName": {
+          "description": "Ex: Overall Mood",
+          "type": "string"
         },
         "participantInstructions": {
           "$ref": "#/definitions/ParticipantInstruction"
@@ -1982,8 +1911,14 @@
         "studyLinks": {
           "$ref": "#/definitions/StudyLinks"
         },
+        "studySharing": {
+          "$ref": "#/definitions/StudySharing"
+        },
         "studyText": {
           "$ref": "#/definitions/StudyText"
+        },
+        "studyVotes": {
+          "$ref": "#/definitions/StudyVotes"
         },
         "joined": {
           "description": "True if you are sharing your data with this study",
@@ -2139,6 +2074,27 @@
         "studyLinkTwitter"
       ]
     },
+    "StudySharing": {
+      "properties": {
+        "shareUserMeasurements": {
+          "description": "Would you like to make this study publicly visible?",
+          "type": "boolean"
+        },
+        "sharingDescription": {
+          "description": "Ex: N1 Study: Sleep Quality Predicts Higher Overall Mood",
+          "type": "string"
+        },
+        "sharingTitle": {
+          "description": "Ex: N1 Study: Sleep Quality Predicts Higher Overall Mood",
+          "type": "string"
+        }
+      },
+      "required": [
+        "shareUserMeasurements",
+        "sharingDescription",
+        "sharingTitle"
+      ]
+    },
     "StudyText": {
       "properties": {
         "averageEffectFollowingHighCauseExplanation": {
@@ -2241,6 +2197,22 @@
         "studyObjective",
         "studyResults",
         "studyTitle"
+      ]
+    },
+    "StudyVotes": {
+      "properties": {
+        "averageVote": {
+          "description": "Average of all user votes with 1 representing an up-vote and 0 representing a down-vote. Ex: 0.9855",
+          "type": "number"
+        },
+        "userVote": {
+          "description": "1 if the current user has up-voted the study and 0 if they down-voted it. Null means no vote. Ex: 1 or 0 or null",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "averageVote",
+        "userVote"
       ]
     },
     "TrackingReminder": {
@@ -3426,26 +3398,16 @@
           "description": "When the record was first created. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format",
           "type": "string"
         },
-        "unitAbbreviatedName": {
-          "description": "Ex: count",
+        "dataSourceNames": {
+          "description": "Comma-separated list of source names to limit variables to those sources",
           "type": "string"
         },
-        "unitCategoryId": {
-          "description": "Ex: 6",
-          "type": "integer"
-        },
-        "unitCategoryName": {
-          "description": "Ex: Miscellany",
-          "type": "string"
-        },
-        "unitId": {
-          "description": "ID of unit to use for this variable",
-          "format": "int32",
-          "type": "integer"
-        },
-        "unitName": {
-          "description": "Ex: Count",
-          "type": "string"
+        "dataSources": {
+          "description": "These are sources of measurements for this variable",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DataSource"
+          }
         },
         "description": {
           "description": "Ex: negative",
@@ -3845,17 +3807,13 @@
           "type": "number"
         },
         "shareUserMeasurements": {
-          "description": "Ex: 1",
+          "description": "Would you like to make your measurements publicly visible?",
           "type": "boolean"
         },
         "skewness": {
           "description": "Skewness",
           "format": "float",
           "type": "number"
-        },
-        "sources": {
-          "description": "Comma-separated list of source names to limit variables to those sources",
-          "type": "string"
         },
         "standardDeviation": {
           "description": "Standard deviation Ex: 0.46483219855434",
@@ -3886,6 +3844,27 @@
         },
         "unit": {
           "$ref": "#/definitions/Unit"
+        },
+        "unitAbbreviatedName": {
+          "description": "Ex: count",
+          "type": "string"
+        },
+        "unitCategoryId": {
+          "description": "Ex: 6",
+          "type": "integer"
+        },
+        "unitCategoryName": {
+          "description": "Ex: Miscellany",
+          "type": "string"
+        },
+        "unitId": {
+          "description": "ID of unit to use for this variable",
+          "format": "int32",
+          "type": "integer"
+        },
+        "unitName": {
+          "description": "Ex: Count",
+          "type": "string"
         },
         "upc": {
           "description": "Universal product code or similar",
@@ -3972,9 +3951,6 @@
         },
         "variableCategory": {
           "$ref": "#/definitions/VariableCategory"
-        },
-        "dataSource": {
-          "$ref": "#/definitions/DataSource"
         },
         "joinedVariables": {
           "description": "Array of Variables that are joined with this Variable",
@@ -4252,13 +4228,6 @@
     "version": "5.8.112511"
   },
   "parameters": {
-    "appNameParam": {
-      "description": "Ex: MoodiModo",
-      "in": "query",
-      "name": "appName",
-      "required": false,
-      "type": "string"
-    },
     "appVersionParam": {
       "description": "Ex: 2.1.1.0",
       "in": "query",
@@ -4383,13 +4352,6 @@
       "required": false,
       "type": "boolean"
     },
-    "doNotCreateNewCommonVariablesParam": {
-      "description": "Ex: ",
-      "in": "query",
-      "name": "doNotCreateNewCommonVariables",
-      "required": false,
-      "type": "boolean"
-    },
     "doNotProcessParam": {
       "description": "Ex: true",
       "in": "query",
@@ -4443,27 +4405,6 @@
       "description": "Require exact match",
       "in": "query",
       "name": "exactMatch",
-      "required": false,
-      "type": "boolean"
-    },
-    "fallbackToAggregateCorrelationsParam": {
-      "description": "Ex: true",
-      "in": "query",
-      "name": "fallbackToAggregateCorrelations",
-      "required": false,
-      "type": "boolean"
-    },
-    "fallbackToAggregatedCorrelationsParam": {
-      "description": "Ex: true",
-      "in": "query",
-      "name": "fallbackToAggregatedCorrelations",
-      "required": false,
-      "type": "boolean"
-    },
-    "fallbackToStudyForCauseAndEffectParam": {
-      "description": "Ex: 1",
-      "in": "query",
-      "name": "fallbackToStudyForCauseAndEffect",
       "required": false,
       "type": "boolean"
     },
@@ -4573,20 +4514,6 @@
       "required": false,
       "type": "boolean"
     },
-    "maximumReminderTimeUtcStringParam": {
-      "description": "Ex: 2017-08-08T23:20:11+00:00",
-      "in": "query",
-      "name": "maximumReminderTimeUtcString",
-      "required": false,
-      "type": "string"
-    },
-    "minimumReminderTimeUtcStringParam": {
-      "description": "Ex: 2017-08-06T23:20:11+00:00",
-      "in": "query",
-      "name": "minimumReminderTimeUtcString",
-      "required": false,
-      "type": "string"
-    },
     "minMaxFilterParam": {
       "description": "Ex: 1",
       "in": "query",
@@ -4594,31 +4521,10 @@
       "required": false,
       "type": "boolean"
     },
-    "numberOfAggregatedCorrelationsAsEffectParam": {
-      "description": "Ex: (gt)1",
-      "in": "query",
-      "name": "numberOfAggregatedCorrelationsAsEffect",
-      "required": false,
-      "type": "string"
-    },
     "numberOfRawMeasurementsParam": {
       "description": "Filter variables by the total number of measurements that they have. This could be used of you want to filter or sort by popularity.",
       "in": "query",
       "name": "numberOfRawMeasurements",
-      "required": false,
-      "type": "string"
-    },
-    "numberOfUserCorrelationsAsCauseParam": {
-      "description": "Ex: (gt)1",
-      "in": "query",
-      "name": "numberOfUserCorrelationsAsCause",
-      "required": false,
-      "type": "string"
-    },
-    "numberOfUserCorrelationsAsEffectParam": {
-      "description": "Ex: (gt)1",
-      "in": "query",
-      "name": "numberOfUserCorrelationsAsEffect",
       "required": false,
       "type": "string"
     },
@@ -4648,13 +4554,6 @@
       "description": "These are studies that anyone can join",
       "in": "query",
       "name": "open",
-      "required": false,
-      "type": "boolean"
-    },
-    "outcomeParam": {
-      "description": "Ex: true",
-      "in": "query",
-      "name": "outcome",
       "required": false,
       "type": "boolean"
     },
@@ -4720,20 +4619,6 @@
       "required": false,
       "type": "string"
     },
-    "reminderFrequencyParam": {
-      "description": "How often user should be reminded in seconds. Ex: 86400",
-      "in": "query",
-      "name": "reminderFrequency",
-      "required": false,
-      "type": "string"
-    },
-    "reminderStartTimeParam": {
-      "description": "Ex: 20:00:00",
-      "in": "query",
-      "name": "reminderStartTime",
-      "required": false,
-      "type": "string"
-    },
     "reminderTimeParam": {
       "description": "Ex: (lt)2017-07-31 21:43:26",
       "in": "query",
@@ -4776,24 +4661,10 @@
       "required": false,
       "type": "string"
     },
-    "startTrackingDateParam": {
-      "description": "Ex: 2017-08-07",
-      "in": "query",
-      "name": "startTrackingDate",
-      "required": false,
-      "type": "string"
-    },
     "stateParam": {
       "description": "An opaque string that is round-tripped in the protocol; that is to say, it is returned as a URI parameter in the Basic flow, and in the URI",
       "in": "query",
       "name": "state",
-      "required": false,
-      "type": "string"
-    },
-    "stopTrackingDateParam": {
-      "description": "Ex: 2117-08-07",
-      "in": "query",
-      "name": "stopTrackingDate",
       "required": false,
       "type": "string"
     },
@@ -4805,7 +4676,7 @@
       "type": "string"
     },
     "synonymsParam": {
-      "description": "Ex: %McDonalds hotcake%",
+      "description": "Ex: McDonalds hotcake",
       "in": "query",
       "name": "synonyms",
       "required": false,
@@ -4822,20 +4693,6 @@
       "description": "Id of the tag variable (i.e. Sugar) you would like to get variables it can be tagged to (i.e. Lollipop).  Converted measurements of the tagged variable are included in analysis of the tag variable (i.e. ingredient).",
       "in": "query",
       "name": "tagVariableId",
-      "required": false,
-      "type": "integer"
-    },
-    "unitAbbreviatedNameParam": {
-      "description": "Ex: /5",
-      "in": "query",
-      "name": "unitAbbreviatedName",
-      "required": false,
-      "type": "string"
-    },
-    "unitIdParam": {
-      "description": "Ex: 10",
-      "in": "query",
-      "name": "unitId",
       "required": false,
       "type": "integer"
     },

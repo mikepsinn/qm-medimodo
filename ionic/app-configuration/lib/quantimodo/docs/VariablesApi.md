@@ -221,26 +221,30 @@ var opts = {
   'limit': 100, // Number | The LIMIT is used to limit the number of results returned. So if youhave 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.
   'offset': 56, // Number | OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause.If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.
   'sort': "sort_example", // String | Sort by one of the listed field names. If the field name is prefixed with `-`, it will sort in descending order.
-  'includePublic': true, // Boolean | Example: true
+  'includePublic': true, // Boolean | Include variables the user has no measurements for
   'manualTracking': true, // Boolean | Only include variables tracked manually by the user
-  'appName': "appName_example", // String | Example: MoodiModo
-  'clientId': "clientId_example", // String | Example: oauth_test_client
+  'clientId': "clientId_example", // String | Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do
   'upc': "upc_example", // String | UPC or other barcode scan result
   'effectOrCause': "effectOrCause_example", // String | Provided variable is the effect or cause
-  'publicEffectOrCause': "publicEffectOrCause_example", // String | Example: 
+  'publicEffectOrCause': "publicEffectOrCause_example", // String | Ex: 
   'exactMatch': true, // Boolean | Require exact match
-  'variableCategoryId': 56, // Number | Example: 13
-  'includePrivate': true, // Boolean | Include non-public variables in results
-  'searchPhrase': "searchPhrase_example", // String | Example: %Body Fat%
-  'synonyms': "synonyms_example", // String | Example: %McDonalds hotcake%
+  'variableCategoryId': 56, // Number | Ex: 13
+  'includePrivate': true, // Boolean | Include user-specific variables in results
+  'searchPhrase': "searchPhrase_example", // String | Ex: %Body Fat%
+  'synonyms': "synonyms_example", // String | Ex: McDonalds hotcake
   'taggedVariableId': 56, // Number | Id of the tagged variable (i.e. Lollipop) you would like to get variables it can be tagged with (i.e. Sugar).  Converted measurements of the tagged variable are included in analysis of the tag variable (i.e. ingredient).
   'tagVariableId': 56, // Number | Id of the tag variable (i.e. Sugar) you would like to get variables it can be tagged to (i.e. Lollipop).  Converted measurements of the tagged variable are included in analysis of the tag variable (i.e. ingredient).
-  'joinVariableId': 56, // Number | Id of the variable you would like to get variables that can be joined to.  This is used to merge duplicate variables.   If joinVariableId is specified, this returns only variables eligible to be joined to the variable specified by the joinVariableId
-  'parentUserTagVariableId': 56, // Number | Id of the parent variable (i.e. Fruit)  you would like to get eligible child variables (i.e. Apple) for.  Child variable measurements will be included in analysis of the parent variable.  For instance, a child of variable Fruit could be Apple
-  'childUserTagVariableId': 56, // Number | Id of the child variable (i.e. Apple) you would like to get eligible parent variables (i.e. Fruit) for.  Child variable measurements will be included in analysis of the parent variable.  For instance, a child of variable Fruit could be Apple
+  'joinVariableId': 56, // Number | Id of the variable you would like to get variables that can be joined to.  This is used to merge duplicate variables.   If joinVariableId is specified, this returns only variables eligible to be joined to the variable specified by the joinVariableId.
+  'parentUserTagVariableId': 56, // Number | Id of the parent category variable (i.e. Fruit) you would like to get eligible child sub-type variables (i.e. Apple) for.  Child variable measurements will be included in analysis of the parent variable.  For instance, a child sub-type of the parent category Fruit could be Apple.  When Apple is tagged with the parent category Fruit, Apple measurements will be included when Fruit is analyzed.
+  'childUserTagVariableId': 56, // Number | Id of the child sub-type variable (i.e. Apple) you would like to get eligible parent variables (i.e. Fruit) for.  Child variable measurements will be included in analysis of the parent variable.  For instance, a child sub-type of the parent category Fruit could be Apple. When Apple is tagged with the parent category Fruit, Apple measurements will be included when Fruit is analyzed.
+  'ingredientUserTagVariableId': 56, // Number | Id of the ingredient variable (i.e. Fructose)  you would like to get eligible ingredientOf variables (i.e. Apple) for.  IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredientOf of variable Fruit could be Apple.
+  'ingredientOfUserTagVariableId': 56, // Number | Id of the ingredientOf variable (i.e. Apple) you would like to get eligible ingredient variables (i.e. Fructose) for.  IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredientOf of variable Fruit could be Apple.
   'commonOnly': true, // Boolean | Return only public and aggregated common variable data instead of user-specific variables
   'userOnly': true, // Boolean | Return only user-specific variables and data, excluding common aggregated variable data
-  'platform': "platform_example" // String | Example: chrome, android, ios, web
+  'platform': "platform_example", // String | Ex: chrome, android, ios, web
+  'includeTags': true, // Boolean | Return parent, child, duplicate, and ingredient variables
+  'recalculate': true, // Boolean | Recalculate instead of using cached analysis
+  'variableId': 56 // Number | Ex: 13
 };
 
 var callback = function(error, data, response) {
@@ -271,26 +275,30 @@ Name | Type | Description  | Notes
  **limit** | **Number**| The LIMIT is used to limit the number of results returned. So if youhave 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records. | [optional] [default to 100]
  **offset** | **Number**| OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause.If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned. | [optional] 
  **sort** | **String**| Sort by one of the listed field names. If the field name is prefixed with &#x60;-&#x60;, it will sort in descending order. | [optional] 
- **includePublic** | **Boolean**| Example: true | [optional] 
+ **includePublic** | **Boolean**| Include variables the user has no measurements for | [optional] 
  **manualTracking** | **Boolean**| Only include variables tracked manually by the user | [optional] 
- **appName** | **String**| Example: MoodiModo | [optional] 
- **clientId** | **String**| Example: oauth_test_client | [optional] 
+ **clientId** | **String**| Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do | [optional] 
  **upc** | **String**| UPC or other barcode scan result | [optional] 
  **effectOrCause** | **String**| Provided variable is the effect or cause | [optional] 
- **publicEffectOrCause** | **String**| Example:  | [optional] 
+ **publicEffectOrCause** | **String**| Ex:  | [optional] 
  **exactMatch** | **Boolean**| Require exact match | [optional] 
- **variableCategoryId** | **Number**| Example: 13 | [optional] 
- **includePrivate** | **Boolean**| Include non-public variables in results | [optional] 
- **searchPhrase** | **String**| Example: %Body Fat% | [optional] 
- **synonyms** | **String**| Example: %McDonalds hotcake% | [optional] 
+ **variableCategoryId** | **Number**| Ex: 13 | [optional] 
+ **includePrivate** | **Boolean**| Include user-specific variables in results | [optional] 
+ **searchPhrase** | **String**| Ex: %Body Fat% | [optional] 
+ **synonyms** | **String**| Ex: McDonalds hotcake | [optional] 
  **taggedVariableId** | **Number**| Id of the tagged variable (i.e. Lollipop) you would like to get variables it can be tagged with (i.e. Sugar).  Converted measurements of the tagged variable are included in analysis of the tag variable (i.e. ingredient). | [optional] 
  **tagVariableId** | **Number**| Id of the tag variable (i.e. Sugar) you would like to get variables it can be tagged to (i.e. Lollipop).  Converted measurements of the tagged variable are included in analysis of the tag variable (i.e. ingredient). | [optional] 
- **joinVariableId** | **Number**| Id of the variable you would like to get variables that can be joined to.  This is used to merge duplicate variables.   If joinVariableId is specified, this returns only variables eligible to be joined to the variable specified by the joinVariableId | [optional] 
- **parentUserTagVariableId** | **Number**| Id of the parent variable (i.e. Fruit)  you would like to get eligible child variables (i.e. Apple) for.  Child variable measurements will be included in analysis of the parent variable.  For instance, a child of variable Fruit could be Apple | [optional] 
- **childUserTagVariableId** | **Number**| Id of the child variable (i.e. Apple) you would like to get eligible parent variables (i.e. Fruit) for.  Child variable measurements will be included in analysis of the parent variable.  For instance, a child of variable Fruit could be Apple | [optional] 
+ **joinVariableId** | **Number**| Id of the variable you would like to get variables that can be joined to.  This is used to merge duplicate variables.   If joinVariableId is specified, this returns only variables eligible to be joined to the variable specified by the joinVariableId. | [optional] 
+ **parentUserTagVariableId** | **Number**| Id of the parent category variable (i.e. Fruit) you would like to get eligible child sub-type variables (i.e. Apple) for.  Child variable measurements will be included in analysis of the parent variable.  For instance, a child sub-type of the parent category Fruit could be Apple.  When Apple is tagged with the parent category Fruit, Apple measurements will be included when Fruit is analyzed. | [optional] 
+ **childUserTagVariableId** | **Number**| Id of the child sub-type variable (i.e. Apple) you would like to get eligible parent variables (i.e. Fruit) for.  Child variable measurements will be included in analysis of the parent variable.  For instance, a child sub-type of the parent category Fruit could be Apple. When Apple is tagged with the parent category Fruit, Apple measurements will be included when Fruit is analyzed. | [optional] 
+ **ingredientUserTagVariableId** | **Number**| Id of the ingredient variable (i.e. Fructose)  you would like to get eligible ingredientOf variables (i.e. Apple) for.  IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredientOf of variable Fruit could be Apple. | [optional] 
+ **ingredientOfUserTagVariableId** | **Number**| Id of the ingredientOf variable (i.e. Apple) you would like to get eligible ingredient variables (i.e. Fructose) for.  IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredientOf of variable Fruit could be Apple. | [optional] 
  **commonOnly** | **Boolean**| Return only public and aggregated common variable data instead of user-specific variables | [optional] 
  **userOnly** | **Boolean**| Return only user-specific variables and data, excluding common aggregated variable data | [optional] 
- **platform** | **String**| Example: chrome, android, ios, web | [optional] 
+ **platform** | **String**| Ex: chrome, android, ios, web | [optional] 
+ **includeTags** | **Boolean**| Return parent, child, duplicate, and ingredient variables | [optional] 
+ **recalculate** | **Boolean**| Recalculate instead of using cached analysis | [optional] 
+ **variableId** | **Number**| Ex: 13 | [optional] 
 
 ### Return type
 
@@ -394,17 +402,16 @@ var apiInstance = new Quantimodo.VariablesApi();
 var userVariables = [new Quantimodo.Variable()]; // [Variable] | Variable user settings data
 
 var opts = { 
-  'includePrivate': true, // Boolean | Include non-public variables in results
-  'clientId': "clientId_example", // String | Example: oauth_test_client
-  'includePublic': true, // Boolean | Example: true
-  'searchPhrase': "searchPhrase_example", // String | Example: %Body Fat%
-  'appName': "appName_example", // String | Example: MoodiModo
+  'includePrivate': true, // Boolean | Include user-specific variables in results
+  'clientId': "clientId_example", // String | Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do
+  'includePublic': true, // Boolean | Include variables the user has no measurements for
+  'searchPhrase': "searchPhrase_example", // String | Ex: %Body Fat%
   'exactMatch': true, // Boolean | Require exact match
   'manualTracking': true, // Boolean | Only include variables tracked manually by the user
   'variableCategoryName': "variableCategoryName_example", // String | Limit results to a specific variable category
-  'variableCategoryId': 56, // Number | Example: 13
-  'synonyms': "synonyms_example", // String | Example: %McDonalds hotcake%
-  'platform': "platform_example" // String | Example: chrome, android, ios, web
+  'variableCategoryId': 56, // Number | Ex: 13
+  'synonyms': "synonyms_example", // String | Ex: McDonalds hotcake
+  'platform': "platform_example", // String | Ex: chrome, android, ios, web
 };
 
 var callback = function(error, data, response) {
@@ -422,17 +429,16 @@ apiInstance.postUserVariables(userVariables, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userVariables** | [**[Variable]**](Variable.md)| Variable user settings data | 
- **includePrivate** | **Boolean**| Include non-public variables in results | [optional] 
- **clientId** | **String**| Example: oauth_test_client | [optional] 
- **includePublic** | **Boolean**| Example: true | [optional] 
- **searchPhrase** | **String**| Example: %Body Fat% | [optional] 
- **appName** | **String**| Example: MoodiModo | [optional] 
+ **includePrivate** | **Boolean**| Include user-specific variables in results | [optional] 
+ **clientId** | **String**| Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do | [optional] 
+ **includePublic** | **Boolean**| Include variables the user has no measurements for | [optional] 
+ **searchPhrase** | **String**| Ex: %Body Fat% | [optional] 
  **exactMatch** | **Boolean**| Require exact match | [optional] 
  **manualTracking** | **Boolean**| Only include variables tracked manually by the user | [optional] 
  **variableCategoryName** | **String**| Limit results to a specific variable category | [optional] 
- **variableCategoryId** | **Number**| Example: 13 | [optional] 
- **synonyms** | **String**| Example: %McDonalds hotcake% | [optional] 
- **platform** | **String**| Example: chrome, android, ios, web | [optional] 
+ **variableCategoryId** | **Number**| Ex: 13 | [optional] 
+ **synonyms** | **String**| Ex: McDonalds hotcake | [optional] 
+ **platform** | **String**| Ex: chrome, android, ios, web | [optional] 
 
 ### Return type
 

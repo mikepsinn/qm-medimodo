@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Chart', 'model/Correlation', 'model/ParticipantInstruction', 'model/StudyHtml', 'model/StudyImages', 'model/StudyLinks', 'model/StudyText', 'model/Variable'], factory);
+    define(['ApiClient', 'model/Correlation', 'model/ParticipantInstruction', 'model/StudyCharts', 'model/StudyHtml', 'model/StudyImages', 'model/StudyLinks', 'model/StudyText', 'model/Variable'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Chart'), require('./Correlation'), require('./ParticipantInstruction'), require('./StudyHtml'), require('./StudyImages'), require('./StudyLinks'), require('./StudyText'), require('./Variable'));
+    module.exports = factory(require('../ApiClient'), require('./Correlation'), require('./ParticipantInstruction'), require('./StudyCharts'), require('./StudyHtml'), require('./StudyImages'), require('./StudyLinks'), require('./StudyText'), require('./Variable'));
   } else {
     // Browser globals (root is window)
     if (!root.Quantimodo) {
       root.Quantimodo = {};
     }
-    root.Quantimodo.Study = factory(root.Quantimodo.ApiClient, root.Quantimodo.Chart, root.Quantimodo.Correlation, root.Quantimodo.ParticipantInstruction, root.Quantimodo.StudyHtml, root.Quantimodo.StudyImages, root.Quantimodo.StudyLinks, root.Quantimodo.StudyText, root.Quantimodo.Variable);
+    root.Quantimodo.Study = factory(root.Quantimodo.ApiClient, root.Quantimodo.Correlation, root.Quantimodo.ParticipantInstruction, root.Quantimodo.StudyCharts, root.Quantimodo.StudyHtml, root.Quantimodo.StudyImages, root.Quantimodo.StudyLinks, root.Quantimodo.StudyText, root.Quantimodo.Variable);
   }
-}(this, function(ApiClient, Chart, Correlation, ParticipantInstruction, StudyHtml, StudyImages, StudyLinks, StudyText, Variable) {
+}(this, function(ApiClient, Correlation, ParticipantInstruction, StudyCharts, StudyHtml, StudyImages, StudyLinks, StudyText, Variable) {
   'use strict';
 
 
@@ -43,21 +43,23 @@
    * Constructs a new <code>Study</code>.
    * @alias module:model/Study
    * @class
-   * @param type {String} Example: population
+   * @param type {String} Ex: population, cohort, or individual
    */
   var exports = function(type) {
     var _this = this;
 
-
-
-
-
-
-
-
-
-
     _this['type'] = type;
+
+
+
+
+
+
+
+
+
+
+
 
   };
 
@@ -72,11 +74,20 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
+      if (data.hasOwnProperty('userId')) {
+        obj['userId'] = ApiClient.convertToType(data['userId'], 'String');
+      }
+      if (data.hasOwnProperty('studyId')) {
+        obj['studyId'] = ApiClient.convertToType(data['studyId'], 'String');
+      }
       if (data.hasOwnProperty('causeVariable')) {
         obj['causeVariable'] = Variable.constructFromObject(data['causeVariable']);
       }
-      if (data.hasOwnProperty('charts')) {
-        obj['charts'] = ApiClient.convertToType(data['charts'], [Chart]);
+      if (data.hasOwnProperty('studyCharts')) {
+        obj['studyCharts'] = StudyCharts.constructFromObject(data['studyCharts']);
       }
       if (data.hasOwnProperty('effectVariable')) {
         obj['effectVariable'] = Variable.constructFromObject(data['effectVariable']);
@@ -99,24 +110,36 @@
       if (data.hasOwnProperty('studyText')) {
         obj['studyText'] = StudyText.constructFromObject(data['studyText']);
       }
-      if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
-      }
-      if (data.hasOwnProperty('userId')) {
-        obj['userId'] = ApiClient.convertToType(data['userId'], 'String');
+      if (data.hasOwnProperty('joined')) {
+        obj['joined'] = ApiClient.convertToType(data['joined'], 'Boolean');
       }
     }
     return obj;
   }
 
   /**
+   * Ex: population, cohort, or individual
+   * @member {String} type
+   */
+  exports.prototype['type'] = undefined;
+  /**
+   * The user id of the principal investigator or subject if an individual studies
+   * @member {String} userId
+   */
+  exports.prototype['userId'] = undefined;
+  /**
+   * ID of the cohort study which is necessary to allow participants to join
+   * @member {String} studyId
+   */
+  exports.prototype['studyId'] = undefined;
+  /**
    * @member {module:model/Variable} causeVariable
    */
   exports.prototype['causeVariable'] = undefined;
   /**
-   * @member {Array.<module:model/Chart>} charts
+   * @member {module:model/StudyCharts} studyCharts
    */
-  exports.prototype['charts'] = undefined;
+  exports.prototype['studyCharts'] = undefined;
   /**
    * @member {module:model/Variable} effectVariable
    */
@@ -146,15 +169,10 @@
    */
   exports.prototype['studyText'] = undefined;
   /**
-   * Example: population
-   * @member {String} type
+   * True if you are sharing your data with this study
+   * @member {Boolean} joined
    */
-  exports.prototype['type'] = undefined;
-  /**
-   * The user id if an individual study
-   * @member {String} userId
-   */
-  exports.prototype['userId'] = undefined;
+  exports.prototype['joined'] = undefined;
 
 
 

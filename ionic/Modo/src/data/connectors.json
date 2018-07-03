@@ -11,7 +11,6 @@
     "ionIcon": "ion-link"
   }],
   "clientRequiresSecret": false,
-  "connected": false,
   "connectError": null,
   "connectInstructions": {
     "url": "https://www.facebook.com/v2.9/dialog/oauth?state=eyJjbGllbnRfaWQiOiJxdWFudGltb2RvIn0-&type=web_server&client_id=225078261031461&redirect_uri=https%3A%2F%2Fapp.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Ffacebook%2Fconnect&response_type=code&scope=user_likes%2Cuser_posts",
@@ -36,6 +35,7 @@
   "updateStatus": null,
   "affiliate": false,
   "backgroundColor": "#3b579d",
+  "connected": false,
   "defaultUnitAbbreviatedName": null,
   "defaultVariableCategoryName": "Social Interactions",
   "displayName": "Facebook",
@@ -63,7 +63,6 @@
     "ionIcon": "ion-link"
   }],
   "clientRequiresSecret": true,
-  "connected": false,
   "connectError": null,
   "connectInstructions": {
     "url": "https://github.com/login/oauth/authorize?state=eyJjbGllbnRfaWQiOiJxdWFudGltb2RvIn0-&type=web_server&client_id=b7bf465391ed9601ba49&redirect_uri=https%3A%2F%2Fapp.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Fgithub%2Fconnect&response_type=code&scope=user%2Crepo",
@@ -88,6 +87,7 @@
   "updateStatus": null,
   "affiliate": false,
   "backgroundColor": "#e4405f",
+  "connected": false,
   "defaultUnitAbbreviatedName": null,
   "defaultVariableCategoryName": "Work",
   "displayName": "GitHub",
@@ -114,7 +114,6 @@
     "ionIcon": "ion-link"
   }],
   "clientRequiresSecret": false,
-  "connected": false,
   "connectError": null,
   "connectInstructions": null,
   "connectorClientId": "1052648855194.apps.googleusercontent.com",
@@ -135,6 +134,7 @@
   "updateStatus": null,
   "affiliate": false,
   "backgroundColor": "#23448b",
+  "connected": false,
   "defaultUnitAbbreviatedName": null,
   "defaultVariableCategoryName": "Payments",
   "displayName": "Gmail",
@@ -162,7 +162,6 @@
     "ionIcon": "ion-link"
   }],
   "clientRequiresSecret": false,
-  "connected": false,
   "connectError": null,
   "connectInstructions": null,
   "connectorClientId": "1052648855194.apps.googleusercontent.com",
@@ -183,6 +182,7 @@
   "updateStatus": null,
   "affiliate": false,
   "backgroundColor": "#2c6efc",
+  "connected": false,
   "defaultUnitAbbreviatedName": null,
   "defaultVariableCategoryName": "Activity",
   "displayName": "Google Calendar",
@@ -210,7 +210,6 @@
     "ionIcon": "ion-link"
   }],
   "clientRequiresSecret": false,
-  "connected": false,
   "connectError": null,
   "connectInstructions": null,
   "connectorClientId": "1052648855194.apps.googleusercontent.com",
@@ -231,6 +230,7 @@
   "updateStatus": null,
   "affiliate": false,
   "backgroundColor": "#00a3ad",
+  "connected": false,
   "defaultUnitAbbreviatedName": null,
   "defaultVariableCategoryName": "Physical Activity",
   "displayName": "Google Fit",
@@ -258,7 +258,6 @@
     "ionIcon": "ion-link"
   }],
   "clientRequiresSecret": false,
-  "connected": false,
   "connectError": null,
   "connectInstructions": null,
   "connectorClientId": "1052648855194.apps.googleusercontent.com",
@@ -279,6 +278,7 @@
   "updateStatus": null,
   "affiliate": false,
   "backgroundColor": "#23448b",
+  "connected": false,
   "defaultUnitAbbreviatedName": null,
   "defaultVariableCategoryName": "Social Interactions",
   "displayName": "Google Plus",
@@ -306,7 +306,6 @@
     "ionIcon": "ion-link"
   }],
   "clientRequiresSecret": true,
-  "connected": false,
   "connectError": null,
   "connectInstructions": {
     "url": "https://www.linkedin.com/uas/oauth2/authorization?state=eyJjbGllbnRfaWQiOiJxdWFudGltb2RvIn0-&type=web_server&client_id=77oiwiq6wuq9uy&redirect_uri=https%3A%2F%2Fapp.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Flinkedin%2Fconnect&response_type=code&scope=r_basicprofile+r_emailaddress",
@@ -331,6 +330,7 @@
   "updateStatus": null,
   "affiliate": false,
   "backgroundColor": "#e4405f",
+  "connected": false,
   "defaultUnitAbbreviatedName": null,
   "defaultVariableCategoryName": "Social Interactions",
   "displayName": "LinkedIn",
@@ -357,7 +357,6 @@
     "ionIcon": "ion-link"
   }],
   "clientRequiresSecret": true,
-  "connected": false,
   "connectError": null,
   "connectInstructions": {
     "url": "https://app.quantimo.do/api/v3/oauth2/authorize?register=true&state=eyJjbGllbnRfaWQiOiJxdWFudGltb2RvIn0-&type=web_server&client_id=quantimodo&redirect_uri=https%3A%2F%2Fapp.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Fquantimodo%2Fconnect&response_type=code&scope=readmeasurements+writemeasurements",
@@ -382,13 +381,14 @@
   "updateStatus": null,
   "affiliate": true,
   "backgroundColor": "#e4405f",
+  "connected": false,
   "defaultUnitAbbreviatedName": null,
   "defaultVariableCategoryName": "Symptoms",
   "displayName": "QuantiModo",
   "getItUrl": "https://quantimo.do",
   "id": 72,
-  "image": "https://app.quantimo.do/ionic/Modo/www/img/logos/quantimodo-logo-qm-rainbow-200-200.png",
-  "imageHtml": "<a href=\"https://quantimo.do\"><img id=\"quantimodo_image\" title=\"QuantiModo\" src=\"https://app.quantimo.do/ionic/Modo/www/img/logos/quantimodo-logo-qm-rainbow-200-200.png\" alt=\"QuantiModo\"></a>",
+  "image": "https://quantimodo.quantimo.do/ionic/Modo/www/img/logos/quantimodo-logo-qm-rainbow-200-200.png",
+  "imageHtml": "<a href=\"https://quantimo.do\"><img id=\"quantimodo_image\" title=\"QuantiModo\" src=\"https://quantimodo.quantimo.do/ionic/Modo/www/img/logos/quantimodo-logo-qm-rainbow-200-200.png\" alt=\"QuantiModo\"></a>",
   "linkedDisplayNameHtml": "<a href=\"https://quantimo.do\">QuantiModo</a>",
   "logoColor": null,
   "longDescription": "QuantiModo allows you to easily track mood, symptoms, or any outcome you want to optimize in a fraction of a second.  You can also import your data from over 30 other apps and devices.  QuantiModo then analyzes your data to identify which hidden factors are most likely to be influencing your mood or symptoms.",
@@ -409,7 +409,6 @@
     "ionIcon": "ion-link"
   }],
   "clientRequiresSecret": true,
-  "connected": false,
   "connectError": null,
   "connectInstructions": {
     "url": "https://www.strava.com/oauth/authorize?approval_prompt=auto&state=eyJjbGllbnRfaWQiOiJxdWFudGltb2RvIn0-&type=web_server&client_id=22095&redirect_uri=https%3A%2F%2Fapp.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Fstrava%2Fconnect&response_type=code&scope=public",
@@ -434,6 +433,7 @@
   "updateStatus": null,
   "affiliate": false,
   "backgroundColor": "#fc4c02",
+  "connected": false,
   "defaultUnitAbbreviatedName": null,
   "defaultVariableCategoryName": "Physical Activity",
   "displayName": "Strava",
@@ -460,7 +460,6 @@
     "ionIcon": "ion-link"
   }],
   "clientRequiresSecret": true,
-  "connected": false,
   "connectError": null,
   "connectInstructions": null,
   "connectorClientId": "pTsS0XybNPtheyxY2yV9YL0Ok",
@@ -481,6 +480,7 @@
   "updateStatus": null,
   "affiliate": false,
   "backgroundColor": "#e4405f",
+  "connected": false,
   "defaultUnitAbbreviatedName": null,
   "defaultVariableCategoryName": "Social Interactions",
   "displayName": "Twitter",
