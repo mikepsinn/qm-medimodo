@@ -1158,7 +1158,7 @@ angular.module('starter').factory('configurationService', function($http, $q, $r
             var appComponent = getAppComponent(appComponentName);
             if(appComponent){
                 if(appComponentName === 'menu'){
-                    appComponent = qmService.convertHrefInSingleMenuType(appComponent);
+                    appComponent = qmService.menu.stateName.addStateNamesToOneMenu(appComponent);
                 }
                 $rootScope.appSettings.appDesign[appComponentName].active = appComponent;
             }
