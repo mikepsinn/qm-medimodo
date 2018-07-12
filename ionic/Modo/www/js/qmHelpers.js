@@ -55,6 +55,14 @@ window.qm = {
             var quantimodo_oauth2 = qmApiClient.authentications.quantimodo_oauth2;
             qmApiClient.basePath = qm.api.getBaseUrl() + '/api';
             quantimodo_oauth2.accessToken = qm.auth.getAccessTokenFromUrlUserOrStorage();
+            // TODO: Enable
+            // qmApiClient.authentications.client_id.clientId = qm.getClientId();
+            // qmApiClient.enableCookies = true;
+            // qmApiClient.defaultHeaders = {
+            //     clientId: qm.getClientId(),
+            //     platform: qm.platform.getCurrentPlatform(),
+            //     appVersion: qm.appsManager.getAppVersion()
+            // };
             return qmApiClient;
         },
         cacheSet: function(params, data, functionName){
@@ -78,7 +86,9 @@ window.qm = {
         cache: {},
         generalResponseHandler: function(error, data, response, successHandler, errorHandler, params, functionName) {
             if(!response){
-                qmLog.info("No response provided to " + functionName + " qmSdkApiResponseHandler with params " +  JSON.stringify(params));
+                var message = "No response provided to " + functionName + " qmSdkApiResponseHandler with params " +  JSON.stringify(params);
+                qmLog.info(message);
+                if(errorHandler){errorHandler(message);}
                 return;
             }
             qmLog.debug(response.status + ' response from ' + response.req.url);
@@ -95,11 +105,12 @@ window.qm = {
             }
         },
         getErrorMessageFromResponse: function(error, response){
-            if(error && error.message){return error.message;}
-            if(response && response.error &&  response.error.message){return response.error.message;}
-            if(response && response.body && response.body.errorMessage){return response.body.errorMessage;}
-            if(response && response.body && response.body.error && response.body.error.message){return response.body.error.message;}
-            return null;
+            var errorMessage = null;
+            if(error && error.message){errorMessage += error.message;}
+            if(response && response.error &&  response.error.message){errorMessage += response.error.message;}
+            if(response && response.body && response.body.errorMessage){errorMessage += response.body.errorMessage;}
+            if(response && response.body && response.body.error && response.body.error.message){errorMessage += response.body.error.message;}
+            return errorMessage;
         },
         generalErrorHandler: function(error, data, response, options){
             var errorMessage = qm.api.getErrorMessageFromResponse(error, response);
@@ -110,9 +121,8 @@ window.qm = {
                 qm.userHelper.setUser(null);
             }
             if(response.status === 401){
-                if(!options || !options.doNotSendToLogin){
-                    qmLog.info("Not authenticated!");
-                }
+                if(!options || !options.doNotSendToLogin){qmLog.info("Not authenticated!");}
+                qm.auth.handle401Response(response.request, options, response.headers)
             } else {
                 qmLog.error(errorMessage, null, {error: error, apiResponse: response});
             }
@@ -220,7 +230,7 @@ window.qm = {
                         successHandler(qm.clientId,  preferences.QuantiModoClientSecret);
                     },
                     function(error) {
-                        qmLog.error("Error! " + JSON.stringify(error));
+                        qmLog.error("Error! ", error);
                     }, ["QuantiModoClientId", "QuantiModoClientSecret"]);
             }
             qm.appsManager.getAppSettingsFromDefaultConfigJson(function (appSettings) {
@@ -292,7 +302,7 @@ window.qm = {
                     qmLog.info(name, message, options);
                 }
             }
-            window.qm.storage.setItem(getLocalStorageNameForRequest(type, route), qm.timeHelper.getUnixTimestampInSeconds());
+            window.qm.storage.setItem(qm.api.getLocalStorageNameForRequest(type, route), qm.timeHelper.getUnixTimestampInSeconds());
             return true;
         },
         responseHandler: function(error, data, response, successHandler, errorHandler) {
@@ -485,9 +495,15 @@ window.qm = {
             milliseconds = milliseconds || 15000;
             var rateLimited = qm.api.rateLimit(functionToLimit, milliseconds);
             rateLimited();
+        },
+        getLocalStorageNameForRequest: function (type, route) {
+            return 'last_' + type + '_' + route.replace('/', '_') + '_request_at';
         }
     },
     appsManager: { // jshint ignore:line
+        getAppVersion: function(){
+            return qm.appsManager.getAppSettingsFromMemory().versionNumber;
+        },
         getBuilderClientId: function(){
             if(!qm.appMode.isBuilder()){return null;}
             var clientId = qm.urlHelper.getParam('clientId');
@@ -901,7 +917,7 @@ window.qm = {
                 qmLog.error("Removing only element from single item array!");
                 return [];
             }
-            while (getSizeInKiloBytes(array) > maxKb) {
+            while (qm.arrayHelper.getSizeInKiloBytes(array) > maxKb) {
                 qm.arrayHelper.removeLastItem(array);
             }
             return array;
@@ -1052,6 +1068,10 @@ window.qm = {
             }
             return elementsToKeep;
         },
+        getSizeInKiloBytes: function(string) {
+            if(typeof value !== "string"){string = JSON.stringify(string);}
+            return Math.round(string.length*16/(8*1024));
+        }
     },
     auth: {
         getAndSaveAccessTokenFromCurrentUrl: function(){
@@ -1269,6 +1289,55 @@ window.qm = {
             //$http(request);
             // Get request doesn't seem to clear cookies
             window.location.replace(logoutUrl);
+        },
+        weShouldSetAfterLoginStateOrUrl: function(afterLoginGoToStateOrUrl){
+            if(qm.storage.getItem(qm.items.afterLoginGoToUrl)){
+                qmLog.info('afterLoginGoToUrl already set to '+ qm.storage.getItem(qm.items.afterLoginGoToUrl));
+                return false;
+            }
+            if(qm.storage.getItem(qm.items.afterLoginGoToState)){
+                qmLog.info('afterLoginGoToState already set to '+ qm.storage.getItem(qm.items.afterLoginGoToState));
+                return false;
+            }
+            if(afterLoginGoToStateOrUrl.indexOf('login') !== -1){
+                qmLog.info('setAfterLoginGoToState: Why are we sending to login from login state?');
+                return false;
+            }
+            return true;
+        },
+        setAfterLoginGoToUrl: function (afterLoginGoToUrl){
+            if(!afterLoginGoToUrl){afterLoginGoToUrl = window.location.href;}
+            if(!qm.auth.weShouldSetAfterLoginStateOrUrl(afterLoginGoToUrl)){return false;}
+            qmLog.debug('Setting afterLoginGoToUrl to ' + afterLoginGoToUrl + ' and going to login.');
+            qm.storage.setItem(qm.items.afterLoginGoToUrl, afterLoginGoToUrl);
+        },
+        sendToLogin: function () {
+            if(qm.urlHelper.getParam('access_token')){
+                if(!qm.auth.getAccessTokenFromCurrentUrl()){
+                    qmLog.error("Not detecting snake case access_token", {}, qmLog.getStackTrace());
+                }
+                qmLog.error("Why are we sending to login if we have an access token?", {}, qmLog.getStackTrace());
+                return;
+            }
+            qmLog.authDebug('Sending to app.login', null);
+            window.location.href = '#/app/login';
+        },
+        setAfterLoginGoToUrlAndSendToLogin: function (){
+            if(window.location.href.indexOf('login') !== -1){
+                qmLog.info('qm.auth.setAfterLoginGoToUrlAndSendToLogin: Why are we sending to login from login state?');
+                return;
+            }
+            qm.auth.setAfterLoginGoToUrl();
+            qm.auth.sendToLogin();
+        },
+        handle401Response: function(request, options, headers) {
+            options = options || {};
+            if(options && options.doNotSendToLogin){return;}
+            qmLog.debug('qmService.generalApiErrorHandler: Sending to login because we got 401 with request ' +
+                JSON.stringify(request), null, options.stackTrace);
+            qmLog.debug('HEADERS: ', headers, options.stackTrace);
+            qm.auth.deleteAllAccessTokens();
+            qm.auth.setAfterLoginGoToUrlAndSendToLogin();
         }
     },
     buildInfo: {},
@@ -1533,9 +1602,9 @@ window.qm = {
             var effectVariableName = study.effectVariableName || study.effectVariable.name;
             qm.storage.setGlobal(qm.stringHelper.removeSpecialCharacters(causeVariableName+"_"+effectVariableName), study);
         },
-        getStudy: function(causeVariableName, effectVariableName, studyId){
-            if(studyId){return qm.storage.getGlobal(studyId);}
-            var study = qm.storage.getGlobal(qm.stringHelper.removeSpecialCharacters(causeVariableName+"_"+effectVariableName));
+        getStudy: function(params){
+            if(params.studyId){return qm.storage.getGlobal(params.studyId);}
+            var study = qm.storage.getGlobal(qm.stringHelper.removeSpecialCharacters(params.causeVariableName+"_"+params.effectVariableName));
             return study;
         },
         setItem: function(key, value){
@@ -1688,7 +1757,7 @@ window.qm = {
         lastLocationUpdateTimeEpochSeconds: 'lastLocationUpdateTimeEpochSeconds',
         lastLongitude: 'lastLongitude',
         lastReminder: 'lastReminder',
-        lastStudyOrCorrelation: 'lastStudyOrCorrelation',
+        lastStudy: 'lastStudy',
         lastPopupNotificationUnixTimeSeconds: 'lastPopupNotificationUnixTimeSeconds',
         lastPushTimestamp: 'lastPushTimestamp',
         logLevel: 'logLevel',
@@ -2180,10 +2249,10 @@ window.qm = {
             if(ratingNotifications.length) {
                 var notification = ratingNotifications[ratingNotifications.length - 1];
                 if(notification.trackingReminderNotificationTimeEpoch < qm.timeHelper.getUnixTimestampInSeconds() - 86400){
-                    window.qmLog.info('Got this notification but it\'s from yesterday: ' + JSON.stringify(notification).substring(0, 140) + '...');
+                    window.qmLog.info('Got this notification but it\'s from yesterday: ', notification);
                     //return;
                 }
-                window.qmLog.info(null, 'Got this notification: ' + JSON.stringify(notification).substring(0, 140) + '...', null);
+                window.qmLog.info(null, 'Got this notification: ', notification);
                 //window.qm.storage.deleteTrackingReminderNotification(notification.trackingReminderNotificationId);
                 //qm.storage.deleteByProperty(qm.items.trackingReminderNotifications, 'variableName', notification.variableName);
                 return notification;
@@ -2387,11 +2456,21 @@ window.qm = {
         }
     },
     parameterHelper: {
-        getStateOrUrlOrRootScopeCorrelationOrRequestParam: function(paramName, $stateParams, $scope, $rootScope){
+        getStateUrlRootScopeOrRequestParam: function(paramName, $stateParams, $scope, $rootScope){
+            if(qm.arrayHelper.variableIsArray(paramName)){
+                for (var i = 0; i < paramName.length; i++) {
+                    var value = qm.parameterHelper.getStateUrlRootScopeOrRequestParam(paramName[i], $stateParams, $scope, $rootScope);
+                    if(value !== null){return value;}
+                }
+                return null;
+            }
             if(qm.urlHelper.getParam(paramName)){return qm.urlHelper.getParam(paramName, window.location.href, true);}
             if($stateParams && $stateParams[paramName]){ return $stateParams[paramName]; }
+            if($scope && $scope[paramName]){return $scope[paramName];}
+            if($scope && $scope.state && $scope.state[paramName]){return $scope.state[paramName];}
             if($scope && $scope.state && $scope.state.requestParams && $scope.state.requestParams[paramName]){return $scope.state.requestParams[paramName];}
             if($rootScope && $rootScope[paramName]){return $rootScope[paramName];}
+            return null;
         }
     },
     platform: {
@@ -2556,7 +2635,7 @@ window.qm = {
         },
         saveToLocalStorage: function(trackingReminders){
             trackingReminders = qm.arrayHelper.unsetNullProperties(trackingReminders);
-            var sizeInKb = getSizeInKiloBytes(trackingReminders);
+            var sizeInKb = qm.arrayHelper.getSizeInKiloBytes(trackingReminders);
             if(sizeInKb > 2000){
                 trackingReminders = qm.reminderHelper.removeArchivedReminders(trackingReminders);
             }
@@ -2689,14 +2768,12 @@ window.qm = {
     studiesCreated: {
         getStudiesCreatedFromApi: function(params, successHandler, errorHandler){
             params = qm.api.addGlobalParams(params);
-            qm.api.configureClient();
-            var apiInstance = new Quantimodo.StudiesApi();
             function callback(error, data, response) {
                 var studiesCreated = data.studiesCreated || data;
                 if (studiesCreated) { qm.shares.saveStudiesCreatedToLocalStorage(studiesCreated); }
                 qm.api.generalResponseHandler(error, data, response, successHandler, errorHandler, params, 'getStudiesCreatedFromApi');
             }
-            apiInstance.getStudiesCreated(params, callback);
+            qm.studyHelper.getStudiesApiInstance().getStudiesCreated(params, callback);
         },
         saveStudiesCreatedToLocalStorage: function(studiesCreated){
             if(!studiesCreated){
@@ -2732,27 +2809,28 @@ window.qm = {
             });
         },
         createStudy: function(body, successHandler, errorHandler){
-            qm.api.configureClient();
-            var apiInstance = new Quantimodo.StudiesApi();
-            function callback(error, data, response) {
-                var study = qm.studyHelper.processAndSaveStudy(data);
-                qm.api.generalResponseHandler(error, study, response, successHandler, errorHandler, params, 'createStudy');
-            }
-            var params = qm.api.addGlobalParams({});
-            apiInstance.createStudy(body, params, callback);
+            qm.studyHelper.getStudyFromLocalForageOrGlobals(body, function (study) {
+                successHandler(study);
+            }, function (error) {
+                qmLog.info(error);
+                function callback(error, data, response) {
+                    var study = qm.studyHelper.processAndSaveStudy(data);
+                    qm.api.generalResponseHandler(error, study, response, successHandler, errorHandler, params, 'createStudy');
+                }
+                var params = qm.api.addGlobalParams({});
+                qm.studyHelper.getStudiesApiInstance().createStudy(body, params, callback);
+            });
         },
     },
     studiesJoined: {
         getStudiesJoinedFromApi: function(params, successHandler, errorHandler){
             params = qm.api.addGlobalParams(params);
-            qm.api.configureClient();
-            var apiInstance = new Quantimodo.StudiesApi();
             function callback(error, data, response) {
                 var studiesJoined = data.studiesJoined || data;
                 if (studiesJoined) { qm.shares.saveStudiesJoinedToLocalStorage(studiesJoined); }
                 qm.api.generalResponseHandler(error, data, response, successHandler, errorHandler, params, 'getStudiesJoinedFromApi');
             }
-            apiInstance.getStudiesJoined(params, callback);
+            qm.studyHelper.getStudiesApiInstance().getStudiesJoined(params, callback);
         },
         saveStudiesJoinedToLocalStorage: function(studiesJoined){
             if(!studiesJoined){
@@ -2788,14 +2866,12 @@ window.qm = {
             });
         },
         joinStudy: function(body, successHandler, errorHandler){
-            qm.api.configureClient();
-            var apiInstance = new Quantimodo.StudiesApi();
             function callback(error, data, response) {
                 var study = qm.studyHelper.processAndSaveStudy(data);
                 qm.api.generalResponseHandler(error, study, response, successHandler, errorHandler, params, 'joinStudy');
             }
             var params = qm.api.addGlobalParams({});
-            apiInstance.joinStudy(body, params, callback);
+            qm.studyHelper.getStudiesApiInstance().joinStudy(body, callback);
         },
     },
     storage: {
@@ -2837,7 +2913,7 @@ window.qm = {
         deleteByProperty: function (localStorageItemName, propertyName, propertyValue){
             var localStorageItemArray = qm.storage.getItem(localStorageItemName);
             if(!localStorageItemArray){
-                window.qmLog.info('Local storage item ' + localStorageItemName + ' not found! Local storage items: ' + JSON.stringify(qm.storage.getLocalStorageList()));
+                window.qmLog.info('Local storage item ' + localStorageItemName + ' not found! Local storage items: ', qm.storage.getLocalStorageList());
             } else {
                 qm.storage.setItem(localStorageItemName, qm.arrayHelper.deleteFromArrayByProperty(localStorageItemArray, propertyName, propertyValue));
             }
@@ -2845,7 +2921,7 @@ window.qm = {
         deleteByPropertyInArray: function (localStorageItemName, propertyName, objectsArray){
             var localStorageItemArray = qm.storage.getItem(localStorageItemName);
             if(!localStorageItemArray){
-                window.qmLog.info('Local storage item ' + localStorageItemName + ' not found! Local storage items: ' + JSON.stringify(qm.storage.getLocalStorageList()));
+                window.qmLog.info('Local storage item ' + localStorageItemName + ' not found! Local storage items: ', qm.storage.getLocalStorageList());
             } else {
                 var arrayOfValuesForProperty = objectsArray.map(function(a) {return a[propertyName];});
                 for (var i=0; i < arrayOfValuesForProperty.length; i++) {
@@ -2953,10 +3029,10 @@ window.qm = {
             qm.globals[key] = value;
         },
         setLastRequestTime: function(type, route){
-            window.qm.storage.setItem(getLocalStorageNameForRequest(type, route), qm.timeHelper.getUnixTimestampInSeconds());
+            window.qm.storage.setItem(qm.api.getLocalStorageNameForRequest(type, route), qm.timeHelper.getUnixTimestampInSeconds());
         },
         getLastRequestTime: function(type, route){
-            return window.qm.storage.getItem(getLocalStorageNameForRequest(type, route));
+            return window.qm.storage.getItem(qm.api.getLocalStorageNameForRequest(type, route));
         },
         setItem: function(key, value){
             if(!qm.storage.valueIsValid(value)){return false;}
@@ -2966,7 +3042,7 @@ window.qm = {
                 return;
             }
             qm.storage.setGlobal(key, value);
-            var sizeInKb = getSizeInKiloBytes(value);
+            var sizeInKb = qm.arrayHelper.getSizeInKiloBytes(value);
             if(sizeInKb > 2000){
                 if(qm.arrayHelper.variableIsArray(value) && value.length > 1){
                     qmLog.error(key + " is " + sizeInKb + "kb so we can't save to localStorage so removing last element until less than 2MB...");
@@ -3001,7 +3077,7 @@ window.qm = {
             }
         },
         getGlobal: function(key){
-            qmLog.debug("getting " + key + " from globals");
+            //qmLog.debug("getting " + key + " from globals");
             if(typeof qm.globals[key] === "undefined"){return null;}
             if(qm.globals[key] === "false"){return false;}
             if(qm.globals[key] === "true"){return true;}
@@ -3198,16 +3274,24 @@ window.qm = {
             if(value === "0"){return true;}
             if(value === "false"){return true;}
             return false;
-        }
+        },
+        isTruthy: function(value){return value && value !== "false"; }
     },
     studyHelper: {
-        lastStudyOrCorrelation: null,
+        getStudiesApiInstance: function(params){
+            qm.api.configureClient();
+            var apiInstance = new Quantimodo.StudiesApi();
+            apiInstance.apiClient.timeout = 120 * 1000;
+            apiInstance.cache = !params || !params.recalculate;
+            return apiInstance;
+        },
+        lastStudy: null,
         getCauseVariable: function($stateParams, $scope, $rootScope){
-            if(qm.parameterHelper.getStateOrUrlOrRootScopeCorrelationOrRequestParam('causeVariable', $stateParams, $scope, $rootScope)){
-                return qm.parameterHelper.getStateOrUrlOrRootScopeCorrelationOrRequestParam('causeVariable', $stateParams, $scope, $rootScope);
+            if(qm.parameterHelper.getStateUrlRootScopeOrRequestParam('causeVariable', $stateParams, $scope, $rootScope)){
+                return qm.parameterHelper.getStateUrlRootScopeOrRequestParam('causeVariable', $stateParams, $scope, $rootScope);
             }
-            if(qm.studyHelper.lastStudyOrCorrelation){
-                var lastStudyOrCorrelation = qm.studyHelper.lastStudyOrCorrelation;
+            if(qm.studyHelper.lastStudy){
+                var lastStudyOrCorrelation = qm.studyHelper.lastStudy;
                 if(lastStudyOrCorrelation.causeVariable){return lastStudyOrCorrelation.causeVariable;}
                 if(lastStudyOrCorrelation.causeVariable){
                     return lastStudyOrCorrelation.causeVariable;
@@ -3215,11 +3299,14 @@ window.qm = {
             }
         },
         getEffectVariable: function($stateParams, $scope, $rootScope){
-            if(qm.parameterHelper.getStateOrUrlOrRootScopeCorrelationOrRequestParam('effectVariable', $stateParams, $scope, $rootScope)){
-                return qm.parameterHelper.getStateOrUrlOrRootScopeCorrelationOrRequestParam('effectVariable', $stateParams, $scope, $rootScope);
+            if(qm.parameterHelper.getStateUrlRootScopeOrRequestParam('effectVariable', $stateParams, $scope, $rootScope)){
+                return qm.parameterHelper.getStateUrlRootScopeOrRequestParam('effectVariable', $stateParams, $scope, $rootScope);
             }
-            if(qm.studyHelper.lastStudyOrCorrelation){
-                var lastStudyOrCorrelation = qm.studyHelper.lastStudyOrCorrelation;
+            if($scope && $scope.state && $scope.state.study && $scope.state.study.effectVariable){
+                return $scope.state.study.effectVariable.name;
+            }
+            if(qm.studyHelper.lastStudy){
+                var lastStudyOrCorrelation = qm.studyHelper.lastStudy;
                 if(lastStudyOrCorrelation.effectVariable){return lastStudyOrCorrelation.effectVariable;}
                 if(lastStudyOrCorrelation.effectVariable){
                     return lastStudyOrCorrelation.effectVariable;
@@ -3227,11 +3314,14 @@ window.qm = {
             }
         },
         getCauseVariableName: function($stateParams, $scope, $rootScope){
-            if(qm.parameterHelper.getStateOrUrlOrRootScopeCorrelationOrRequestParam('causeVariableName', $stateParams, $scope, $rootScope)){
-                return qm.parameterHelper.getStateOrUrlOrRootScopeCorrelationOrRequestParam('causeVariableName', $stateParams, $scope, $rootScope);
+            if($stateParams.causeVariable){return $stateParams.causeVariable.name;}
+            var value = qm.parameterHelper.getStateUrlRootScopeOrRequestParam(['causeVariableName', 'predictorVariableName'], $stateParams, $scope, $rootScope);
+            if(value){return value;}
+            if($scope && $scope.state && $scope.state.study && $scope.state.study.causeVariable){
+                return $scope.state.study.causeVariable.name;
             }
-            if(qm.studyHelper.lastStudyOrCorrelation){
-                var lastStudyOrCorrelation = qm.studyHelper.lastStudyOrCorrelation;
+            if(qm.studyHelper.lastStudy){
+                var lastStudyOrCorrelation = qm.studyHelper.lastStudy;
                 if(lastStudyOrCorrelation.causeVariableName){return lastStudyOrCorrelation.causeVariableName;}
                 if(lastStudyOrCorrelation.causeVariable){
                     return lastStudyOrCorrelation.causeVariable.variableName || lastStudyOrCorrelation.causeVariable.name;
@@ -3239,20 +3329,23 @@ window.qm = {
             }
         },
         getStudyId: function($stateParams, $scope, $rootScope){
-            if(qm.parameterHelper.getStateOrUrlOrRootScopeCorrelationOrRequestParam('studyId', $stateParams, $scope, $rootScope)){
-                return qm.parameterHelper.getStateOrUrlOrRootScopeCorrelationOrRequestParam('studyId', $stateParams, $scope, $rootScope);
+            if(qm.parameterHelper.getStateUrlRootScopeOrRequestParam('studyId', $stateParams, $scope, $rootScope)){
+                return qm.parameterHelper.getStateUrlRootScopeOrRequestParam('studyId', $stateParams, $scope, $rootScope);
             }
-            if(qm.studyHelper.lastStudyOrCorrelation){
-                var lastStudyOrCorrelation = qm.studyHelper.lastStudyOrCorrelation;
+            if(qm.studyHelper.lastStudy){
+                var lastStudyOrCorrelation = qm.studyHelper.lastStudy;
                 if(lastStudyOrCorrelation.studyId){return lastStudyOrCorrelation.studyId;}
             }
         },
         getEffectVariableName: function($stateParams, $scope, $rootScope){
-            if(qm.parameterHelper.getStateOrUrlOrRootScopeCorrelationOrRequestParam('effectVariableName', $stateParams, $scope, $rootScope)){
-                return qm.parameterHelper.getStateOrUrlOrRootScopeCorrelationOrRequestParam('effectVariableName', $stateParams, $scope, $rootScope);
+            if($stateParams.effectVariable){return $stateParams.effectVariable.name;}
+            var value = qm.parameterHelper.getStateUrlRootScopeOrRequestParam(['effectVariableName', 'outcomeVariableName'], $stateParams, $scope, $rootScope);
+            if(value){return value;}
+            if($scope && $scope.state && $scope.state.study && $scope.state.study.effectVariable){
+                return $scope.state.study.effectVariable.name;
             }
-            if(qm.studyHelper.lastStudyOrCorrelation){
-                var lastStudyOrCorrelation = qm.studyHelper.lastStudyOrCorrelation;
+            if(qm.studyHelper.lastStudy){
+                var lastStudyOrCorrelation = qm.studyHelper.lastStudy;
                 if(lastStudyOrCorrelation.effectVariableName){return lastStudyOrCorrelation.effectVariableName;}
                 if(lastStudyOrCorrelation.effectVariable){
                     return lastStudyOrCorrelation.effectVariable.variableName || lastStudyOrCorrelation.effectVariable.name;
@@ -3260,11 +3353,10 @@ window.qm = {
             }
         },
         getCauseVariableId: function($stateParams, $scope, $rootScope){
-            if(qm.parameterHelper.getStateOrUrlOrRootScopeCorrelationOrRequestParam('causeVariableId', $stateParams, $scope, $rootScope)){
-                return qm.parameterHelper.getStateOrUrlOrRootScopeCorrelationOrRequestParam('causeVariableId', $stateParams, $scope, $rootScope);
-            }
-            if(qm.studyHelper.lastStudyOrCorrelation){
-                var lastStudyOrCorrelation = qm.studyHelper.lastStudyOrCorrelation;
+            var value = qm.parameterHelper.getStateUrlRootScopeOrRequestParam(['causeVariableId', 'predictorVariableId'], $stateParams, $scope, $rootScope);
+            if(value){return value;}
+            if(qm.studyHelper.lastStudy){
+                var lastStudyOrCorrelation = qm.studyHelper.lastStudy;
                 if(lastStudyOrCorrelation.causeVariableId){return lastStudyOrCorrelation.causeVariableId;}
                 if(lastStudyOrCorrelation.causeVariable){
                     return lastStudyOrCorrelation.causeVariable.variableId || lastStudyOrCorrelation.causeVariable.id;
@@ -3272,42 +3364,47 @@ window.qm = {
             }
         },
         getEffectVariableId: function($stateParams, $scope, $rootScope){
-            if(qm.parameterHelper.getStateOrUrlOrRootScopeCorrelationOrRequestParam('effectVariableId', $stateParams, $scope, $rootScope)){
-                return qm.parameterHelper.getStateOrUrlOrRootScopeCorrelationOrRequestParam('effectVariableId', $stateParams, $scope, $rootScope);
-            }
-            if(qm.studyHelper.lastStudyOrCorrelation){
-                var lastStudyOrCorrelation = qm.studyHelper.lastStudyOrCorrelation;
+            var value = qm.parameterHelper.getStateUrlRootScopeOrRequestParam(['effectVariableId', 'outcomeVariableId'], $stateParams, $scope, $rootScope);
+            if(value){return value;}
+            if(qm.studyHelper.lastStudy){
+                var lastStudyOrCorrelation = qm.studyHelper.lastStudy;
                 if(lastStudyOrCorrelation.effectVariableId){return lastStudyOrCorrelation.effectVariableId;}
                 if(lastStudyOrCorrelation.effectVariable){
                     return lastStudyOrCorrelation.effectVariable.variableId || lastStudyOrCorrelation.effectVariable.id;
                 }
             }
         },
-        getStudyFromLocalForageOrGlobals: function(causeVariableName, effectVariableName, studyId, successHandler, errorHandler) {
+        studyMatchesParams: function(params, study){
+            if(!study){return false;}
+            if(!study.causeVariableName && !study.causeVariable){
+                qmLog.error("Study does not have causeVariable or causeVariableName", null, study);
+                return false;
+            }
+            var causeVariableName = study.causeVariableName || study.causeVariable.name;
+            var effectVariableName = study.effectVariableName || study.effectVariable.name;
+            if(params.studyId && params.studyId === study.studyId){return true;}
+            if(params.causeVariableName && params.causeVariableName !== causeVariableName){return false;}
+            if(params.effectVariableName && params.effectVariableName !== effectVariableName){return false;}
+            return true;
+        },
+        getStudyFromLocalForageOrGlobals: function(params, successHandler, errorHandler) {
             var study;
-            if(qm.studyHelper.lastStudyOrCorrelation && qm.studyHelper.lastStudyOrCorrelation.causeVariableName === causeVariableName &&
-                qm.studyHelper.lastStudyOrCorrelation.effectVariableName === effectVariableName){
-                study = qm.studyHelper.lastStudyOrCorrelation;
-            }
-            if(qm.globalHelper.getStudy(causeVariableName, effectVariableName, studyId)){
-                study = qm.globalHelper.getStudy(causeVariableName, effectVariableName, studyId);
-            }
+            if(qm.studyHelper.studyMatchesParams(params, qm.studyHelper.lastStudy)){study = qm.studyHelper.lastStudy;}
+            if(qm.globalHelper.getStudy(params)){study = qm.globalHelper.getStudy(params);}
             if(!successHandler){return study;}
             if(study){
                 successHandler(study);
                 return;
             }
-            qm.localForage.getItem(qm.items.lastStudyOrCorrelation, function (study) {
+            qm.localForage.getItem(qm.items.lastStudy, function (study) {
                 if(!study){
                     if(errorHandler){errorHandler("No last study saved");}
                     return;
                 }
-                if(study.causeVariableName === causeVariableName && study.effectVariableName === effectVariableName){
-                    successHandler(study);
-                } else if(studyId && studyId === study.studyId){
+                if(qm.studyHelper.studyMatchesParams(params, study)){
                     successHandler(study);
                 } else {
-                    if(errorHandler){errorHandler("No last study saved");}
+                    if(errorHandler){errorHandler("Last study saved does not match params " + JSON.stringify(params));}
                 }
             });
         },
@@ -3316,49 +3413,75 @@ window.qm = {
                 qmLog.error("No study provided to saveLastStudyToGlobalsAndLocalForage");
                 return;
             }
+            if(!study.causeVariableName && !study.causeVariable){
+                qmLog.error("Study does not have causeVariable or causeVariableName", null, study);
+                return;
+            }
             qm.globalHelper.setStudy(study);
-            qm.localForage.setItem(qm.items.lastStudyOrCorrelation, study);
+            qm.localForage.setItem(qm.items.lastStudy, study);
         },
         deleteLastStudyFromGlobalsAndLocalForage: function(){
             qmLog.info("deleteLastStudyFromGlobalsAndLocalForage");
-            qm.localForage.removeItem(qm.items.lastStudyOrCorrelation);
-            qm.localForage.removeItem(qm.items.lastStudyOrCorrelation);
+            qm.localForage.removeItem(qm.items.lastStudy);
+            qm.localForage.removeItem(qm.items.lastStudy);
         },
-        getStudyUrl: function(causeVariableName, effectVariableName, studyId) {
-            var url = qm.urlHelper.getBaseAppUrl() + "#/app/study?causeVariableName=" + encodeURIComponent(causeVariableName) +
-                "&effectVariableName=" + encodeURIComponent(effectVariableName);
-            if(studyId){url += "&studyId=" + studyId;}
+        getStudyUrl: function(study) {
+            var url = qm.urlHelper.getBaseAppUrl() + "#/app/study";
+            return qm.studyHelper.addStudyParamsToUrl(url, study);
+        },
+        getStudyJoinUrl: function(study) {
+            var url = qm.urlHelper.getBaseAppUrl() + "#/app/study-join";
+            return qm.studyHelper.addStudyParamsToUrl(url, study);
+        },
+        addStudyParamsToUrl: function(url, study){
+            qm.studyHelper.saveLastStudyToGlobalsAndLocalForage(study);
+            var causeVariableName = qm.studyHelper.getCauseVariableName(study);
+            var effectVariableName = qm.studyHelper.getEffectVariableName(study);
+            if(causeVariableName){url = qm.urlHelper.addUrlQueryParamsToUrlString({causeVariableName: causeVariableName}, url);}
+            if(effectVariableName){url = qm.urlHelper.addUrlQueryParamsToUrlString({effectVariableName: effectVariableName}, url);}
+            if(study.studyId){url += "&studyId=" + study.studyId;}
             return url;
         },
         getStudyFromApi: function(params, successHandler, errorHandler){
             params = qm.api.addGlobalParams(params);
-            var cachedData = qm.api.cacheGet(params, 'getStudy');
+            var cacheKey = 'getStudy';
+            var cachedData = qm.api.cacheGet(params, cacheKey);
             if(cachedData && successHandler){
                 //successHandler(cachedData);
                 //return;
             }
-            if(!qm.api.configureClient('getStudy', errorHandler)){return false;}
-            var apiInstance = new Quantimodo.StudiesApi();
-            apiInstance.apiClient.timeout = 120 * 1000;
+            if(!params.studyId && !params.causeVariableName && !params.causeVariableName){
+                errorHandler("No study params provided!");
+                return;
+            }
+            if(!qm.api.configureClient(cacheKey, errorHandler)){return false;}
             function callback(error, data, response) {
                 var study = qm.studyHelper.processAndSaveStudy(data);
-                qm.api.generalResponseHandler(error, study, response, successHandler, errorHandler, params, 'getStudy');
+                qm.api.generalResponseHandler(error, study, response, successHandler, errorHandler, params, cacheKey);
             }
-            apiInstance.getStudy(params, callback);
+            qm.studyHelper.getStudiesApiInstance(params).getStudy(params, callback);
         },
         getStudyFromLocalStorageOrApi: function (params, successHandler, errorHandler){
             if(qm.urlHelper.getParam('aggregated')){params.aggregated = true;}
-            qm.studyHelper.getStudyFromLocalForageOrGlobals(params.causeVariableName, params.effectVariableName, params.studyId,
+            if(qm.urlHelper.getParam('refresh')){params.refresh = true;}
+            function getStudyFromApi(){
+                qm.studyHelper.getStudyFromApi(params, function (study) {
+                    successHandler(study);
+                }, function (error) {
+                    qmLog.error("qmService.getStudy error: ", error);
+                    errorHandler(error);
+                });
+            }
+            if(params.recalculate || params.refresh){
+                getStudyFromApi();
+                return;
+            }
+            qm.studyHelper.getStudyFromLocalForageOrGlobals(params,
                 function(study){
                     successHandler(study);
                 }, function (error) {
                     qmLog.info(error);
-                    qm.studyHelper.getStudyFromApi(params, function (study) {
-                        successHandler(study);
-                    }, function (error) {
-                        qmLog.error("qmService.getStudy error: ", error);
-                        errorHandler(error);
-                    });
+                    getStudyFromApi();
                 });
         },
         processAndSaveStudy: function(data){
@@ -3379,7 +3502,23 @@ window.qm = {
             }
             qm.studyHelper.saveLastStudyToGlobalsAndLocalForage(study);
             return study;
-        }
+        },
+        getStudiesFromApi: function(params, successHandler, errorHandler){
+            params = qm.api.addGlobalParams(params);
+            var cacheKey = 'getStudies';
+            var cachedData = qm.api.cacheGet(params, cacheKey);
+            if(cachedData && successHandler){
+                successHandler(cachedData);
+                return;
+            }
+            if(!qm.api.configureClient(cacheKey, errorHandler)){return false;}
+            function callback(error, data, response) {
+                qm.api.generalResponseHandler(error, data, response, successHandler, errorHandler, params, cacheKey);
+            }
+            qm.studyHelper.getStudiesApiInstance().getStudies(params, callback);
+        },
+        goToStudyPageJoinPageViaStudy: function(study){window.location.href = qm.studyHelper.getStudyJoinUrl(study);},
+        goToStudyPageViaStudy: function(study){window.location.href = qm.studyHelper.getStudyUrl(study);}
     },
     timeHelper: {
         getUnixTimestampInMilliseconds: function(dateTimeString) {
@@ -3530,6 +3669,7 @@ window.qm = {
     },
     urlHelper: {
         addUrlParmsToCurrentUrl: function insertParam(key, value) {
+            qmLog.error("This adds params before hash"); // TODO: Fix me
             key = encodeURI(key); value = encodeURI(value);
             var kvp = document.location.search.substr(1).split('&');
             var i=kvp.length; var x; while(i--) {
@@ -3543,6 +3683,8 @@ window.qm = {
             if(i<0) {kvp[kvp.length] = [key,value].join('=');}
             //this will reload the page, it's likely better to store this until finished
             document.location.search = kvp.join('&');
+            //var url = qm.urlHelper.addUrlQueryParamsToUrlString(params);  // Not working
+            //window.history.pushState({ path: url }, '', url);
         },
         getParam: function(parameterName, url, shouldDecode) {
             if(!url){url = window.location.href;}
@@ -3606,6 +3748,7 @@ window.qm = {
             return qm.urlHelper.getAbsoluteUrlFromRelativePath('default.private_config.json');
         },
         addUrlQueryParamsToUrlString: function (params, url){
+            if(!url){url = window.location.href;}
             for (var key in params) {
                 if (params.hasOwnProperty(key)) {
                     if(url.indexOf(key + '=') === -1){
@@ -3629,7 +3772,7 @@ window.qm = {
             }
         },
         getParameterFromEventUrl: function (event, parameterName) {
-            qmLog.authDebug('extracting ' + parameterName + ' from event: ' + JSON.stringify(event));
+            qmLog.authDebug('extracting ' + parameterName + ' from event: ', event);
             var url = event.url;
             if(!url) {url = event.data;}
             if(!qm.urlHelper.isQuantiMoDoDomain(url)){return;}
@@ -3732,7 +3875,7 @@ window.qm = {
                     user = qm.objectHelper.snakeToCamelCaseProperties(user);
                 }
                 if(user && !user.id){
-                    console.error("No user id in "+ JSON.stringify(qmUser));  // Don't use qmLog.error to avoid infinite loop
+                    console.error("No user id in ", qmUser);  // Don't use qmLog.error to avoid infinite loop
                     qm.userHelper.setUser(null);
                     return null;
                 }
@@ -4368,16 +4511,4 @@ window.qm = {
         }
     }
 };
-// returns bool | string
-// if search param is found: returns its value
-// returns false if not found
-window.isTruthy = function(value){return value && value !== "false"; };
-window.isFalsey = function(value) {if(value === false || value === "false"){return true;}};
-function getSizeInKiloBytes(string) {
-    if(typeof value !== "string"){string = JSON.stringify(string);}
-    return Math.round(string.length*16/(8*1024));
-}
-function getLocalStorageNameForRequest(type, route) {
-    return 'last_' + type + '_' + route.replace('/', '_') + '_request_at';
-}
 qm.urlHelper.redirectToHttpsIfNecessary();

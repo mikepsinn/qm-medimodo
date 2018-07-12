@@ -974,7 +974,7 @@
 		"buildStatus": {
 			"androidArmv7Debug": "BUILDING",
 			"androidArmv7Release": "BUILDING",
-			"androidRelease": "READY",
+			"androidRelease": "BUILDING",
 			"androidDebug": "BUILDING",
 			"androidX86Debug": "BUILDING",
 			"androidX86Release": "BUILDING",
@@ -1055,12 +1055,12 @@
 	"predictorVariableId": 0,
 	"scopes": null,
 	"study": 0,
-	"updatedAt": "2018-07-04 23:23:56",
+	"updatedAt": "2018-07-12 02:09:33",
 	"userId": 230,
 	"longDescription": "",
 	"splashScreen": "oMg0F5fmyf_sfzgyc",
 	"textLogo": "nm8LguNtZL_chsco6",
-	"versionNumber": "2.8.705",
-	"androidVersionCode": "2018070500",
-	"builtAt": 1530748927
+	"versionNumber": "2.8.712",
+	"androidVersionCode": "2018071215",
+	"builtAt": 1531367142
 }

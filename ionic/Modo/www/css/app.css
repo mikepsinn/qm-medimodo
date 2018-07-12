@@ -25309,3 +25309,6 @@ ion-side-menu-content.menu-disabled {
     background-position: 0 0; }
   100% {
     background-position: -2800px 0; } }
+
+.white-links a, .white-links a:hover, .white-links a:active, .white-links a:visited {
+  color: white; }
