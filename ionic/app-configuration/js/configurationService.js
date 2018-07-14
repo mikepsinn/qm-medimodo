@@ -29,7 +29,8 @@ angular.module('starter').factory('configurationService', function($http, $q, $r
                 appList.push({clientId: appSettingsArray[i].clientId, appDisplayName: appSettingsArray[i].appDisplayName, appIcon: appSettingsArray[i].additionalSettings.appImages.appIcon});
             }
             return appList;
-        }
+        },
+        setBuilderClientId: function(clientId){qm.storage.setItem(qm.items.builderClientId, clientId)}
     };
     var menuItems = {
         inbox: {
@@ -1150,8 +1151,7 @@ angular.module('starter').factory('configurationService', function($http, $q, $r
             }
         }
     };
-    configurationService.updateAppComponents = function(postAfterUpdate){
-        if(!$rootScope.appSettings.appDesign){postAfterUpdate = true;}
+    configurationService.updateAppComponents = function(){
         configurationService.setFallBackAppComponents();
         for(var i=0; i < $rootScope.appComponentNames.length; i++){
             var appComponentName = $rootScope.appComponentNames[i];
@@ -1163,7 +1163,6 @@ angular.module('starter').factory('configurationService', function($http, $q, $r
                 $rootScope.appSettings.appDesign[appComponentName].active = appComponent;
             }
         }
-        if(postAfterUpdate){configurationService.saveRevisionAndPostAppSettingsAfterConfirmation($rootScope.appSettings);}
     };
     configurationService.convertAppSettingsRevisionsArrayToRevisionsList = function(revisions){
         var revisionsList = [];
@@ -1195,16 +1194,20 @@ angular.module('starter').factory('configurationService', function($http, $q, $r
         });
     };
     configurationService.switchApp = function(selectedApp, callback){
+        configurationService.setBuilderClientId(selectedApp.clientId);
         configurationService.saveAppSettingsRevisionLocally(function (revisionList) {
             qmLog.info("Switching to " + selectedApp.appDisplayName + ": ", selectedApp);
             if(selectedApp.clientId === $rootScope.appSettings.clientId){
+                callback(revisionList);
                 return;  // Can't do this if we're using it for revisions
             }
             //window.location.href = window.location.origin + window.location.pathname + '#/app/configuration/' + selectedApp.clientId;
             qm.appsManager.getAppSettingsFromApi(selectedApp.clientId, function (appSettings) {
                 qmService.processAndSaveAppSettings(appSettings);
+                configurationService.saveAppSettingsRevisionLocally(function (revisionList) {
+                    callback(revisionList);
+                });
             });
-            callback(revisionList);
         });
     };
     configurationService.saveRevisionAndPostAppSettingsAfterConfirmation = function(appSettings) {
@@ -1222,15 +1225,20 @@ angular.module('starter').factory('configurationService', function($http, $q, $r
         return deferred.promise;
     };
     configurationService.postAppSettingsAfterConfirmation = function(appSettings, successHandler, errorHandler, ev) {
+        configurationService.setBuilderClientId(appSettings.clientId);
         var users = appSettings.users || configurationService.users;
         var numberOfUsers = (users) ? users.length : 0;
         var title = 'Save Settings';
         var textContent = 'Are you absolutely sure you want to save your settings for ' + appSettings.appDisplayName + " ("+
             appSettings.clientId+") and apply your changes for your " + numberOfUsers + " users?";
         function yesCallback() {
-            qmService.showInfoToast("Saved app settings!");
+            qmService.showInfoToast("Saving app settings...");
+            qmService.showBasicLoader();
             $timeout(function () { // Allow time to show toast first
-                qmService.post('api/v1/appSettings', [], appSettings, successHandler, errorHandler);
+                qmService.post('api/v1/appSettings', [], appSettings, function(response){
+                    qmService.processAndSaveAppSettings(response.appSettings, successHandler);
+                    qmService.hideLoader();
+                }, errorHandler);
             }, 100);
         }
         function noCallback() {qmLog.info("Canceled save")}
@@ -1239,7 +1247,6 @@ angular.module('starter').factory('configurationService', function($http, $q, $r
         } else {
             yesCallback();
         }
-
     };
     configurationService.defaultAppDescriptions = {
         general: "Better living through data",
@@ -1292,7 +1299,10 @@ angular.module('starter').factory('configurationService', function($http, $q, $r
         }
         $rootScope.originalAppSetting = appSettingObjectToEdit;
         qmLog.info("Editing: ", appSettingObjectToEdit, appSettingObjectToEdit);
-        $rootScope.appSettingObjectToEdit = JSON.parse(JSON.stringify(appSettingObjectToEdit));  // This must be done so that we aren't also modifying originalAppSetting, rendering replacement impossible
+        // This must be done so that we aren't also modifying originalAppSetting, rendering replacement impossible
+        // TODO: Why do we need to replace anything if we're editing the original?
+        //$rootScope.appSettingObjectToEdit = JSON.parse(JSON.stringify(appSettingObjectToEdit));
+        $rootScope.appSettingObjectToEdit = appSettingObjectToEdit;
         $rootScope.appSettingType = appSettingType;
         if($state.current.name.toLowerCase().indexOf('configuration') === -1){
             qmLog.info("Going to configuration state because we clicked openEditAppSettingsModal");

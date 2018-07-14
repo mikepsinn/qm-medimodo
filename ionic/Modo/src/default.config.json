@@ -175,16 +175,14 @@
 					"title": "Reminder Inbox",
 					"icon": "ion-archive",
 					"bodyText": "Scroll through the Inbox and press the appropriate button on each reminder notification. Each one only takes a few seconds. You'll be shocked at how much valuable data you can collect with just a few minutes in the Reminder Inbox each day!",
-					"$$hashKey": "object:1319",
-					"$$mdSelectId": 1
+					"$$hashKey": "object:1775"
 				},
 				{
 					"id": "recordMeasurementInfoCard",
 					"title": "Record Measurements",
 					"icon": "ion-edit",
 					"bodyText": "Want to just record a medication, food or symptom immediately instead of creating a reminder? Just go to the Record Measurement menu item and select the appropriate variable category. Alternatively, you can just press the little red button at the bottom of the screen.",
-					"$$hashKey": "object:1320",
-					"$$mdSelectId": 2
+					"$$hashKey": "object:1776"
 				},
 				{
 					"id": "chromeExtensionInfoCard",
@@ -196,8 +194,7 @@
 						"text": "Send Me a Link",
 						"ionIcon": "ion-checkmark"
 					},
-					"$$hashKey": "object:1321",
-					"$$mdSelectId": 3
+					"$$hashKey": "object:1777"
 				},
 				{
 					"id": "getHelpInfoCard",
@@ -210,8 +207,7 @@
 						"buttonClass": "button button-clear button-positive ion-checkmark",
 						"goToState": "app.help"
 					},
-					"$$hashKey": "object:1322",
-					"$$mdSelectId": 4
+					"$$hashKey": "object:1778"
 				},
 				{
 					"id": "getFitbitHelpInfoCard",
@@ -223,8 +219,7 @@
 						"text": "Get Fitbit",
 						"ionIcon": "ion-checkmark"
 					},
-					"$$hashKey": "object:1323",
-					"$$mdSelectId": 5
+					"$$hashKey": "object:1779"
 				},
 				{
 					"id": "locationTrackingPage",
@@ -246,11 +241,10 @@
 						"goToState": "app.settings"
 					},
 					"bodyText": "Would you like to automatically log location to see how time spent at restaurants, the gym, work or doctors offices might be affecting you? ",
-					"$$hashKey": "object:1324",
-					"$$mdSelectId": 6,
 					"iconClass": "icon positive ion-ios-location-outline",
 					"ionIcon": "ion-ios-location-outline",
-					"moreInfo": "By automatically recording your location in the background using GPS, we might be able to figure out how the amount of time spent at the gym, restaurants, doctors, offices, home and work locations may be affecting you.  Another benefit of enabling this option is that allows the app to run in the background and open instantly instead of taking a few seconds to load.  You can view your location history by going to Menu -> History -> Locations."
+					"moreInfo": "By automatically recording your location in the background using GPS, we might be able to figure out how the amount of time spent at the gym, restaurants, doctors, offices, home and work locations may be affecting you.  Another benefit of enabling this option is that allows the app to run in the background and open instantly instead of taking a few seconds to load.  You can view your location history by going to Menu -> History -> Locations.",
+					"$$hashKey": "object:1780"
 				},
 				{
 					"id": "weatherTrackingPage",
@@ -272,11 +266,10 @@
 						"buttonClass": "button button-clear button-positive ion-checkmark",
 						"goToState": "app.import"
 					},
-					"$$hashKey": "object:1325",
-					"$$mdSelectId": 7,
 					"iconClass": "icon positive ion-ios-partlysunny",
 					"ionIcon": "ion-ios-partlysunny",
-					"moreInfo": "By recording your local weather conditions, I might be able to figure out how the amount of sunlight or temperature is affecting you."
+					"moreInfo": "By recording your local weather conditions, I might be able to figure out how the amount of sunlight or temperature is affecting you.",
+					"$$hashKey": "object:1781"
 				},
 				{
 					"id": "importDataPage",
@@ -297,8 +290,7 @@
 						"buttonClass": "button button-clear button-positive ion-checkmark",
 						"goToState": "app.import"
 					},
-					"$$hashKey": "object:1326",
-					"$$mdSelectId": 8
+					"$$hashKey": "object:1782"
 				}
 			]
 		},
@@ -314,8 +306,7 @@
 						"url": "img/robots/robot-waving.svg"
 					},
 					"bodyText": "I've been programmed to reduce human suffering with data.",
-					"$$hashKey": "object:1576",
-					"$$mdSelectId": 9
+					"$$hashKey": "object:1214"
 				},
 				{
 					"title": "Hidden Influences",
@@ -327,8 +318,7 @@
 						"url": "img/intro/patient-frown-factors.png"
 					},
 					"bodyText": "Your symptoms can be worsened or improved by medical treatments, your sleep, exercise, the hundreds of chemicals you consume through your diet, and even the weather!",
-					"$$hashKey": "object:1577",
-					"$$mdSelectId": 10
+					"$$hashKey": "object:1215"
 				},
 				{
 					"title": "Only Human",
@@ -340,8 +330,7 @@
 						"url": "img/brains/brain-pink.svg"
 					},
 					"bodyText": "Human brains can only hold 7 numbers in working-memory at a time.  So on their own, they're not able to determine which diet is best for you. ",
-					"$$hashKey": "object:1578",
-					"$$mdSelectId": 11
+					"$$hashKey": "object:1216"
 				},
 				{
 					"title": "Treatment Determination",
@@ -353,8 +342,7 @@
 						"url": "img/intro/doctor-frown-factors.png"
 					},
 					"bodyText": "Indeed, your doctor has access to less than 1% of the relevant information when they use intuition to determine the best ways to treat your symptoms!",
-					"$$hashKey": "object:1579",
-					"$$mdSelectId": 12
+					"$$hashKey": "object:1217"
 				},
 				{
 					"title": "Machine Learning",
@@ -366,8 +354,7 @@
 						"url": "img/robots/quantimodo-robot-brain.svg"
 					},
 					"bodyText": "My brain can hold trillions of numbers!  I can also analyze it to help your dietitian determine how different foods could be affecting your health! ",
-					"$$hashKey": "object:1580",
-					"$$mdSelectId": 13
+					"$$hashKey": "object:1218"
 				},
 				{
 					"title": "Automated Tracking",
@@ -379,8 +366,7 @@
 						"url": "img/intro/download_2-96.png"
 					},
 					"bodyText": "Weight, blood pressure, heart rate, physical activity data can be collected automatically and imported from dozens of devices.  Weather and the amount of time spent at the gym, restaurants, work, or doctors offices can be collected via your phone's GPS.",
-					"$$hashKey": "object:1581",
-					"$$mdSelectId": 14
+					"$$hashKey": "object:1219"
 				},
 				{
 					"title": "Effortless Tracking",
@@ -392,8 +378,7 @@
 						"url": "img/intro/inbox.svg"
 					},
 					"bodyText": "By taking just a few minutes each day, you can easily record your diet and symptoms in the Reminder Inbox.  The more data you give me, the smarter I get!  Your data doesn't have to be perfect to be valuable, but it's important to track regularly. ",
-					"$$hashKey": "object:1582",
-					"$$mdSelectId": 15
+					"$$hashKey": "object:1220"
 				},
 				{
 					"title": "Data Security",
@@ -405,8 +390,7 @@
 						"url": "img/intro/lock.svg"
 					},
 					"bodyText": "I use bank-level encryption to keep your data secure.  Human eyes will never see your data unless you intentionally share it. ",
-					"$$hashKey": "object:1583",
-					"$$mdSelectId": 16
+					"$$hashKey": "object:1221"
 				}
 			]
 		},
@@ -636,7 +620,28 @@
 							"icon": "ion-erlenmeyer-flask",
 							"href": "#/app/study-creation",
 							"id": "study-creation",
-							"$$hashKey": "object:3316"
+							"$hashKey": "ca474062-17a9-6418-658a-b701c924a7fd",
+							"$$hashKey": "object:7339"
+						},
+						{
+							"title": "Your Studies",
+							"stateName": "app.studiesCreated",
+							"icon": "ion-person",
+							"href": "#/app/studies/created",
+							"id": "studies-created",
+							"$hashKey": "object:7356",
+							"params": [],
+							"$$hashKey": "object:3487"
+						},
+						{
+							"title": "Open Studies",
+							"stateName": "app.studiesOpen",
+							"icon": "ion-ios-people",
+							"href": "#/app/studies/open",
+							"id": "studies-open",
+							"$hashKey": "object:3488",
+							"params": [],
+							"$$hashKey": "object:3760"
 						},
 						{
 							"title": "Discoveries",
@@ -686,9 +691,8 @@
 					"addButtonText": "Yes",
 					"nextPageButtonText": "No",
 					"bodyText": "Do you regularly experience any unpleasant emotions?",
-					"$$hashKey": "object:1835",
-					"$$mdSelectId": 17,
-					"moreInfo": "Do you have any emotions that fluctuate regularly?  If so, add them so I can try to determine which factors are influencing them."
+					"moreInfo": "Do you have any emotions that fluctuate regularly?  If so, add them so I can try to determine which factors are influencing them.",
+					"$$hashKey": "object:1508"
 				},
 				{
 					"id": "addSymptomRemindersCard",
@@ -704,9 +708,8 @@
 					"addButtonText": "Yes",
 					"nextPageButtonText": "No",
 					"bodyText": "Do you have any recurring symptoms?",
-					"$$hashKey": "object:1836",
-					"$$mdSelectId": 18,
-					"moreInfo": "Symptom severity can be influence by hundreds of factors in daily life. The human mind can only hold 7 numbers in working memory at a time.  I can hold a billion in my mind! If you regularly record your symptoms, add them so I can use this data to determine which hidden and imperceptible factors might be worsening or improving them."
+					"moreInfo": "Symptom severity can be influence by hundreds of factors in daily life. The human mind can only hold 7 numbers in working memory at a time.  I can hold a billion in my mind! If you regularly record your symptoms, add them so I can use this data to determine which hidden and imperceptible factors might be worsening or improving them.",
+					"$$hashKey": "object:1509"
 				},
 				{
 					"id": "addFoodRemindersCard",
@@ -722,9 +725,8 @@
 					"addButtonText": "Yes",
 					"nextPageButtonText": "No",
 					"bodyText": "Are there any foods or drinks that you consume more than a few times a week?",
-					"$$hashKey": "object:1837",
-					"$$mdSelectId": 19,
-					"moreInfo": "Diet can have a significant impact on your health. It's important to enter any foods that you regularly eat to see how they might be affecting you."
+					"moreInfo": "Diet can have a significant impact on your health. It's important to enter any foods that you regularly eat to see how they might be affecting you.",
+					"$$hashKey": "object:1510"
 				},
 				{
 					"id": "addTreatmentRemindersCard",
@@ -740,9 +742,8 @@
 					"addButtonText": "Yes",
 					"nextPageButtonText": "No",
 					"bodyText": "Are you taking any medications, treatments, supplements, or other interventions like meditation or psychotherapy? ",
-					"$$hashKey": "object:1838",
-					"$$mdSelectId": 20,
-					"moreInfo": "Often the effects of medications and treatments aren't intuitively perceptible. That's where I come in!  If you regularly recording your treatments,  I can analyze the data so we can get a better idea which ones are helping you,which one may be harming you, and which ones are merely a waste of money."
+					"moreInfo": "Often the effects of medications and treatments aren't intuitively perceptible. That's where I come in!  If you regularly recording your treatments,  I can analyze the data so we can get a better idea which ones are helping you,which one may be harming you, and which ones are merely a waste of money.",
+					"$$hashKey": "object:1511"
 				},
 				{
 					"id": "locationTrackingPage",
@@ -758,9 +759,8 @@
 					"premiumFeature": true,
 					"nextPageButtonText": "Maybe Later",
 					"bodyText": "Would you like to automatically log location to see how time spent at restaurants, the gym, work or doctors offices might be affecting you? ",
-					"$$hashKey": "object:1839",
-					"$$mdSelectId": 21,
-					"moreInfo": "By automatically recording your location in the background using GPS, we might be able to figure out how the amount of time spent at the gym, restaurants, doctors, offices, home and work locations may be affecting you.  Another benefit of enabling this option is that allows the app to run in the background and open instantly instead of taking a few seconds to load.  You can view your location history by going to Menu -> History -> Locations."
+					"moreInfo": "By automatically recording your location in the background using GPS, we might be able to figure out how the amount of time spent at the gym, restaurants, doctors, offices, home and work locations may be affecting you.  Another benefit of enabling this option is that allows the app to run in the background and open instantly instead of taking a few seconds to load.  You can view your location history by going to Menu -> History -> Locations.",
+					"$$hashKey": "object:1512"
 				},
 				{
 					"id": "weatherTrackingPage",
@@ -776,9 +776,8 @@
 					"premiumFeature": false,
 					"nextPageButtonText": "Maybe Later",
 					"bodyText": "Would you like to automatically record the weather to see how temperature or sunlight exposure might be affecting you? ",
-					"$$hashKey": "object:1840",
-					"$$mdSelectId": 22,
-					"moreInfo": "By recording your local weather conditions, I might be able to figure out how the amount of sunlight or temperature is affecting you."
+					"moreInfo": "By recording your local weather conditions, I might be able to figure out how the amount of sunlight or temperature is affecting you.",
+					"$$hashKey": "object:1513"
 				},
 				{
 					"id": "importDataPage",
@@ -793,8 +792,7 @@
 					"premiumFeature": true,
 					"bodyText": "Let's go to the Import Data page and see if you're using any of the dozens of apps and devices that I can automatically pull data from!",
 					"nextPageButtonText": "Maybe Later",
-					"$$hashKey": "object:1841",
-					"$$mdSelectId": 23
+					"$$hashKey": "object:1514"
 				},
 				{
 					"id": "allDoneCard",
@@ -807,8 +805,7 @@
 						"url": "img/robots/robot-waving.svg"
 					},
 					"bodyText": "You're all set up!  Let's take a minute to record your first measurements and then you're done for the day! ",
-					"$$hashKey": "object:1848",
-					"$$mdSelectId": 30
+					"$$hashKey": "object:1515"
 				}
 			]
 		},
@@ -1042,7 +1039,7 @@
 	"users": null,
 	"appDescription": "Better living through data.",
 	"appDisplayName": "QuantiModo",
-	"appType": "general",
+	"appType": "custom",
 	"clientId": "quantimodo",
 	"homepageUrl": "https://quantimo.do",
 	"iconUrl": "oHROiCLu95_gizg3j",
@@ -1083,10 +1080,10 @@
 	"name": null,
 	"premium": null,
 	"shortDescription": null,
-	"updatedAt": "2018-07-12 18:29:24",
+	"updatedAt": "2018-07-14 02:50:21",
 	"splashScreen": "oMg0F5fmyf_sfzgyc",
 	"textLogo": "nm8LguNtZL_chsco6",
-	"versionNumber": "2.8.712",
-	"androidVersionCode": "2018071278",
-	"builtAt": 1531422119
+	"versionNumber": "2.8.714",
+	"androidVersionCode": "2018071414",
+	"builtAt": 1531539021
 }

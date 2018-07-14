@@ -283,7 +283,7 @@ angular.module('starter').controller('ConfigurationCtrl', function( $state, $sco
             self.selectedItem = item;
             self.buttonText = dataToPass.buttonText;
             $scope.ionIcon = item.ionIcon;
-            console.debug('Item changed to ' + item.ionIcon.name);
+            console.debug('Item changed to ' + item.ionIcon);
         }
         /**
          * Build `ionIcons` list of key/value pairs
@@ -300,11 +300,11 @@ angular.module('starter').controller('ConfigurationCtrl', function( $state, $sco
             });
         }
     };
-    $scope.selectIonIcon = function (ev, currentIcon, appSettingName) {
+    $scope.selectIonIcon = function (ev, appSettingObjectToEdit) {
         $mdDialog.show({
             controller: SelectIonIconDialogController,
             controllerAs: 'ctrl',
-            templateUrl: 'templates/fragments/variable-search-dialog-fragment.html',
+            templateUrl: 'templates/dialogs/variable-search-dialog.html',
             parent: angular.element(document.body),
             targetEvent: ev,
             clickOutsideToClose: false,
@@ -316,12 +316,12 @@ angular.module('starter').controller('ConfigurationCtrl', function( $state, $sco
                     placeholder: "Search for an icon...",
                     buttonText: "Select icon",
                     requestParams: {},
-                    currentIcon: currentIcon
+                    currentIcon: appSettingObjectToEdit.icon
                 }
             }
-        }).then(function(ionIcon) {
-            currentIcon = ionIcon;
-            updateAppSettingInScope(appSettingName, ionIcon, currentIcon);
+        }).then(function(newIcon) {
+            appSettingObjectToEdit.icon = newIcon;
+            //updateAppSettingInScope(appSettingName, ionIcon, currentIcon);
             configurationService.saveRevisionAndPostAppSettingsAfterConfirmation();
         }, function() {console.debug('User cancelled selection');});
     };
@@ -347,7 +347,13 @@ angular.module('starter').controller('ConfigurationCtrl', function( $state, $sco
         return menuItem;
     };
     $scope.switchApp = function(selectedApp){
+        if(selectedApp.clientId === $rootScope.appSettings.clientId){
+            qmLog.info("Already using "+selectedApp.clientId);
+            return false;
+        }
+        qmService.showBasicLoader();
         configurationService.switchApp(selectedApp, function (revisionList) {
+            qmService.hideLoader();
             $scope.revisionsList = revisionList;
         });
     };

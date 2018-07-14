@@ -58,11 +58,12 @@ window.qm = {
             // TODO: Enable
             // qmApiClient.authentications.client_id.clientId = qm.getClientId();
             // qmApiClient.enableCookies = true;
-            // qmApiClient.defaultHeaders = {
-            //     clientId: qm.getClientId(),
-            //     platform: qm.platform.getCurrentPlatform(),
-            //     appVersion: qm.appsManager.getAppVersion()
-            // };
+            qmApiClient.defaultHeaders = {
+                'X-Client-Id': qm.getClientId(),
+                'X-Platform': qm.platform.getCurrentPlatform(),
+                'X-App-Version': qm.appsManager.getAppVersion(),
+                'X-Framework': 'ionic'
+            };
             return qmApiClient;
         },
         cacheSet: function(params, data, functionName){
@@ -513,7 +514,8 @@ window.qm = {
                 clientId = qm.stringHelper.getStringBeforeSubstring('?', clientId, clientId);
                 return clientId;
             }
-            return null;
+            clientId = qm.storage.getItem(qm.items.builderClientId);
+            return clientId;
         },
         getQuantiModoApiUrl: function () {
             var apiUrl = window.qm.urlHelper.getParam(qm.items.apiUrl);
@@ -645,6 +647,12 @@ window.qm = {
             }
             appSettings.designMode = window.location.href.indexOf('configuration-index.html') !== -1;
             if(!appSettings.appDesign.ionNavBarClass){ appSettings.appDesign.ionNavBarClass = "bar-positive"; }
+            function successHandler() {
+                qm.localForage.setItem(qm.items.appSettings, appSettings);
+                if(callback){callback(appSettings);}
+                return appSettings;
+            }
+            if(qm.appMode.isBuilder()){return successHandler();}  // Don't need to mess with app settings refresh in builder
             qm.appsManager.loadBuildInfoFromDefaultConfigJson(function (buildInfo) {
                 for (var propertyName in buildInfo) {
                     if( buildInfo.hasOwnProperty(propertyName) ) {
@@ -652,11 +660,10 @@ window.qm = {
                     }
                 }
                 if(!appSettings.gottenAt){appSettings.gottenAt = qm.timeHelper.getUnixTimestampInSeconds();}
-                qm.localForage.setItem(qm.items.appSettings, appSettings);
                 if(appSettings.gottenAt < qm.timeHelper.getUnixTimestampInSeconds() - 86400){
                     qm.appsManager.getAppSettingsFromApi(appSettings.clientId);
                 }
-                if(callback){callback(appSettings);}
+                successHandler();
             })
         },
         // SubDomain : Filename
@@ -1735,6 +1742,7 @@ window.qm = {
         appSettings: 'appSettings',
         appSettingsRevisions: 'appSettingsRevisions',
         authorizedClients: 'authorizedClients',
+        builderClientId: 'builderClientId',
         chromeWindowId: 'chromeWindowId',
         clientId: 'clientId',
         commonVariables: 'commonVariables',
@@ -2632,6 +2640,7 @@ window.qm = {
                     }
                 }
             }
+            return mostFrequentReminderIntervalInSeconds;
         },
         saveToLocalStorage: function(trackingReminders){
             trackingReminders = qm.arrayHelper.unsetNullProperties(trackingReminders);
@@ -2814,7 +2823,7 @@ window.qm = {
             }, function (error) {
                 qmLog.info(error);
                 function callback(error, data, response) {
-                    var study = qm.studyHelper.processAndSaveStudy(data);
+                    var study = qm.studyHelper.processAndSaveStudy(data, error);
                     qm.api.generalResponseHandler(error, study, response, successHandler, errorHandler, params, 'createStudy');
                 }
                 var params = qm.api.addGlobalParams({});
@@ -3478,16 +3487,22 @@ window.qm = {
             }
             qm.studyHelper.getStudyFromLocalForageOrGlobals(params,
                 function(study){
-                    successHandler(study);
+                    if(!params.includeCharts || study.studyCharts){
+                        successHandler(study);
+                    } else {
+                        getStudyFromApi();
+                    }
                 }, function (error) {
                     qmLog.info(error);
                     getStudyFromApi();
                 });
         },
-        processAndSaveStudy: function(data){
+        processAndSaveStudy: function(data, error){
             qmLog.debug('study response: ', null, data);
             if(!data){
-                qmLog.error("No data provided to processAndSaveStudy.  We got: ", data, data);
+                if(!error){ // Error will be handled elsewhere
+                    qmLog.error("No data provided to processAndSaveStudy.  We got: ", data, data);
+                }
                 return false;
             }
             var study = data.study || data.publicStudy || data.userStudy || data.cohortStudy || data;
