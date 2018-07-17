@@ -35,6 +35,7 @@
     "text": "Connect",
     "ionIcon": "ion-link"
   }],
+  "card": null,
   "connected": false,
   "count": null,
   "createdAt": null,
@@ -52,6 +53,7 @@
   "name": "facebook",
   "premium": null,
   "shortDescription": "Tracks social interaction. QuantiModo requires permission to access your Facebook \"user likes\" and \"user posts\".",
+  "instructionsHtml": null,
   "updatedAt": null,
   "connnected": false
 }, {
@@ -91,12 +93,13 @@
     "text": "Connect",
     "ionIcon": "ion-link"
   }],
+  "card": null,
   "connected": false,
   "count": null,
   "createdAt": null,
   "dataSourceType": "connector",
   "defaultUnitAbbreviatedName": null,
-  "defaultVariableCategoryName": "Work",
+  "defaultVariableCategoryName": "Activities",
   "displayName": "GitHub",
   "getItUrl": "https://github.com/",
   "id": 4,
@@ -108,6 +111,7 @@
   "name": "github",
   "premium": null,
   "shortDescription": "Tracks code commits.",
+  "instructionsHtml": null,
   "updatedAt": null,
   "connnected": false
 }, {
@@ -142,6 +146,7 @@
     "text": "Connect",
     "ionIcon": "ion-link"
   }],
+  "card": null,
   "connected": false,
   "count": null,
   "createdAt": null,
@@ -159,6 +164,7 @@
   "name": "gmail",
   "premium": null,
   "shortDescription": "Automate your tracking by importing your email receipts from Amazon, Instacart, etc.",
+  "instructionsHtml": null,
   "updatedAt": null,
   "oauthServiceName": "Google",
   "connnected": false
@@ -194,12 +200,13 @@
     "text": "Connect",
     "ionIcon": "ion-link"
   }],
+  "card": null,
   "connected": false,
   "count": null,
   "createdAt": null,
   "dataSourceType": "connector",
   "defaultUnitAbbreviatedName": null,
-  "defaultVariableCategoryName": "Activity",
+  "defaultVariableCategoryName": "Activities",
   "displayName": "Google Calendar",
   "getItUrl": "https://calendar.google.com",
   "id": 51,
@@ -211,6 +218,7 @@
   "name": "googlecalendar",
   "premium": false,
   "shortDescription": "Automate your tracking by creating calendar events with a title containing the value, followed by the unit, followed by the variable name. To track an apple every day, create a repeating event called \"1 serving Apples.\"",
+  "instructionsHtml": null,
   "updatedAt": null,
   "oauthServiceName": "Google",
   "connnected": false
@@ -246,6 +254,7 @@
     "text": "Connect",
     "ionIcon": "ion-link"
   }],
+  "card": null,
   "connected": false,
   "count": null,
   "createdAt": null,
@@ -263,6 +272,7 @@
   "name": "googlefit",
   "premium": false,
   "shortDescription": "Tracks Calories Burned, Heart Rate, Body Weight, Hourly Step Count, and Walk or Run Distance",
+  "instructionsHtml": null,
   "updatedAt": null,
   "oauthServiceName": "Google",
   "connnected": false
@@ -298,6 +308,7 @@
     "text": "Connect",
     "ionIcon": "ion-link"
   }],
+  "card": null,
   "connected": false,
   "count": null,
   "createdAt": null,
@@ -315,6 +326,7 @@
   "name": "googleplus",
   "premium": null,
   "shortDescription": "Tracks social interaction",
+  "instructionsHtml": null,
   "updatedAt": null,
   "oauthServiceName": "Google",
   "connnected": false
@@ -354,6 +366,7 @@
     "text": "Connect",
     "ionIcon": "ion-link"
   }],
+  "card": null,
   "connected": false,
   "count": null,
   "createdAt": null,
@@ -371,6 +384,7 @@
   "name": "linkedin",
   "premium": null,
   "shortDescription": "Tracks social interaction.",
+  "instructionsHtml": null,
   "updatedAt": null,
   "connnected": false
 }, {
@@ -403,12 +417,20 @@
   "backgroundColor": "#e4405f",
   "buttons": [{
     "action": null,
-    "link": "https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/import?connectorName=quantimodo",
+    "link": "#/app/reminders-inbox",
     "color": "#0f9d58",
     "additionalInformation": null,
-    "text": "Connect",
-    "ionIcon": "ion-link"
+    "text": "Record a Measurement",
+    "ionIcon": "ion-archive"
+  }, {
+    "action": null,
+    "link": "#/app/variable-list-category/Anything",
+    "color": "#0f9d58",
+    "additionalInformation": null,
+    "text": "Manage Reminders",
+    "ionIcon": "ion-android-notifications-none"
   }],
+  "card": null,
   "connected": false,
   "count": null,
   "createdAt": null,
@@ -426,6 +448,7 @@
   "name": "quantimodo",
   "premium": null,
   "shortDescription": "Tracks anything",
+  "instructionsHtml": null,
   "updatedAt": null,
   "connnected": false
 }, {
@@ -465,6 +488,7 @@
     "text": "Connect",
     "ionIcon": "ion-link"
   }],
+  "card": null,
   "connected": false,
   "count": null,
   "createdAt": null,
@@ -482,6 +506,7 @@
   "name": "strava",
   "premium": true,
   "shortDescription": "Runners and cyclists use Strava to record their activities and compare performance over time",
+  "instructionsHtml": null,
   "updatedAt": null,
   "connnected": false
 }, {
@@ -516,6 +541,7 @@
     "text": "Connect",
     "ionIcon": "ion-link"
   }],
+  "card": null,
   "connected": false,
   "count": null,
   "createdAt": null,
@@ -533,6 +559,7 @@
   "name": "twitter",
   "premium": null,
   "shortDescription": "Tracks social interaction.",
+  "instructionsHtml": null,
   "updatedAt": null,
   "connnected": false
 }]

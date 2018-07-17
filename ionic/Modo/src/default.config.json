@@ -1057,13 +1057,22 @@
 	"buttons": [
 		{
 			"action": null,
-			"link": "",
+			"link": "#/app/reminders-inbox",
 			"color": "#0f9d58",
 			"additionalInformation": null,
-			"text": "Get it here!",
-			"ionIcon": "ion-bag"
+			"text": "Record a Measurement",
+			"ionIcon": "ion-archive"
+		},
+		{
+			"action": null,
+			"link": "#/app/variable-list-category/Anything",
+			"color": "#0f9d58",
+			"additionalInformation": null,
+			"text": "Manage Reminders",
+			"ionIcon": "ion-android-notifications-none"
 		}
 	],
+	"card": null,
 	"connected": null,
 	"count": null,
 	"createdAt": "2017-05-24 21:44:10",
@@ -1080,10 +1089,11 @@
 	"name": null,
 	"premium": null,
 	"shortDescription": null,
-	"updatedAt": "2018-07-16 03:59:27",
+	"instructionsHtml": null,
+	"updatedAt": "2018-07-17 00:58:15",
 	"splashScreen": "oMg0F5fmyf_sfzgyc",
 	"textLogo": "nm8LguNtZL_chsco6",
 	"versionNumber": "2.8.717",
-	"androidVersionCode": "2018071700",
-	"builtAt": 1531786023
+	"androidVersionCode": "2018071706",
+	"builtAt": 1531791215
 }
