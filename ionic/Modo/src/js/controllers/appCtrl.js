@@ -2,10 +2,11 @@ angular.module('starter')// Parent Controller - This controller runs before ever
 .controller('AppCtrl', ["$scope", "$timeout", "$ionicPopover", "$ionicLoading", "$state", "$ionicHistory", "$rootScope",
     "$ionicPopup", "$ionicSideMenuDelegate", "$ionicPlatform", "$injector", "qmService", "qmLogService",
     "$cordovaOauth", "clipboard", "$ionicActionSheet", "Analytics", "$locale", "$mdDialog", "$mdToast", "$sce",
-    "wikipediaFactory", "appSettingsResponse", function($scope, $timeout, $ionicPopover, $ionicLoading, $state, $ionicHistory, $rootScope,
+    "wikipediaFactory", "appSettingsResponse",  "$stateParams",
+    function($scope, $timeout, $ionicPopover, $ionicLoading, $state, $ionicHistory, $rootScope,
                                 $ionicPopup, $ionicSideMenuDelegate, $ionicPlatform, $injector, qmService, qmLogService,
                                 $cordovaOauth, clipboard, $ionicActionSheet, Analytics, //$ionicDeploy,
-                                $locale, $mdDialog, $mdToast, $sce, wikipediaFactory, appSettingsResponse) {
+                                $locale, $mdDialog, $mdToast, $sce, wikipediaFactory, appSettingsResponse, $stateParams) {
     $scope.controller_name = "AppCtrl";
     qmService.initializeApplication(appSettingsResponse);
     qmService.numberOfPendingNotifications = null;
@@ -25,7 +26,7 @@ angular.module('starter')// Parent Controller - This controller runs before ever
             e.targetScope.controller_name === "RemindersInboxCtrl" ||
             e.targetScope.controller_name === "RemindersManageCtrl" ||
             e.targetScope.controller_name === "StudyCtrl" ||
-            e.targetScope.controller_name === "PredictorsCtrl" ||
+            e.targetScope.controller_name === "StudiesCtrl" ||
             e.targetScope.controller_name === "historyAllMeasurementsCtrl" ||
             e.targetScope.controller_name === "ConfigurationCtrl"
         ) { $scope.showMoreMenuButton = true;
@@ -216,7 +217,7 @@ angular.module('starter')// Parent Controller - This controller runs before ever
         qmService.trackByFavorite(trackingReminder, modifiedReminderValue);
     };
     // Triggered on a button click, or some other target
-    $scope.showFavoriteActionSheet = function(favorite, $index, bloodPressure) {
+    $scope.showFavoriteActionSheet = function(favorite, $index, bloodPressure, state) {
         var variableObject = {id: favorite.variableId, name: favorite.variableName};
         var actionMenuButtons = [
             { text: '<i class="icon ion-gear-a"></i>Edit Reminder' },
@@ -245,7 +246,9 @@ angular.module('starter')// Parent Controller - This controller runs before ever
                 return true;
             },
             destructiveButtonClicked: function() {
-                favorite.hide = true;
+                state.favoritesArray = state.favoritesArray.filter(function (oneFavorite) {
+                    return oneFavorite.id !== favorite.id;
+                });
                 qmService.deleteTrackingReminderDeferred(favorite);
                 return true;
             }
@@ -287,7 +290,7 @@ angular.module('starter')// Parent Controller - This controller runs before ever
     };
     $scope.$on('$stateChangeSuccess', function() {
         qmService.navBar.setOfflineConnectionErrorShowing(false);
-        qmLog.context = $state.current.name;
+        qmLog.globalMetaData.context = $state.current.name;
         if (typeof analytics !== 'undefined')  { analytics.trackView($state.current.name); }
         function showAdSense(){
             return qm.platform.isWeb() &&
@@ -300,6 +303,9 @@ angular.module('starter')// Parent Controller - This controller runs before ever
             $timeout(function () {
                 qmService.rootScope.setProperty('showAdSense', showAdSense()); // This is necessary because of "No slot size for availableWidth=0" error
             }, 3000)
+        }
+        if(qm.platform.isMobile()){
+            if($stateParams.showAds){qmService.adBanner.show();} else {qmService.adBanner.hide();}
         }
         //qmService.login.deleteAfterLoginStateIfItMatchesCurrentState();
         $scope.closeMenu();
