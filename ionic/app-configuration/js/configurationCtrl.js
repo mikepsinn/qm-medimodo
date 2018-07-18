@@ -59,7 +59,12 @@ angular.module('starter').controller('ConfigurationCtrl', function( $state, $sco
         var appToSwitchTo = appSettingsArray.find(function (appSettingsObject) {
             return appSettingsObject.clientId === qm.appsManager.getBuilderClientId();
         });
-        if(!appToSwitchTo && appSettingsArray.length){appToSwitchTo = appSettingsArray[0];}
+        if($rootScope.user.administrator && !appToSwitchTo && $rootScope.appSettings.clientId === qm.appsManager.getBuilderClientId()){
+            // This happens when an admin is editing an app they aren't a collaborator of with clientId url param
+            qmService.hideLoader();
+            return;
+        }
+        if (!appToSwitchTo && appSettingsArray.length){appToSwitchTo = appSettingsArray[0];}
         configurationService.separateUsersAndConfigureAppSettings(appToSwitchTo);
         qmService.hideLoader();
     }
@@ -160,7 +165,7 @@ angular.module('starter').controller('ConfigurationCtrl', function( $state, $sco
             console.debug("File upload response: ", response);
             qmService.showInfoToast(fileName.replace('app_images_', '') + " uploaded!");
             successHandler(response.data.url);
-            $rootScope.saveAppSettingChanges();
+            configurationService.postAppSettingsAfterConfirmation();
             qmService.hideLoader();
         }, function (response) {
             qmService.hideLoader();
@@ -213,7 +218,7 @@ angular.module('starter').controller('ConfigurationCtrl', function( $state, $sco
                 var newAppSettingObjectToEditString = JSON.stringify($rootScope.appSettingObjectToEdit).replace(originalSettingsParentVariableString, newSettingsParentVariableString);
                 $rootScope.appSettingObjectToEdit = JSON.parse(newAppSettingObjectToEditString);
             }
-            $rootScope.saveAppSettingChanges();
+            configurationService.postAppSettingsAfterConfirmation();
             qmService.hideLoader();
         }, function (response) {
             qmService.hideLoader();
@@ -322,7 +327,7 @@ angular.module('starter').controller('ConfigurationCtrl', function( $state, $sco
         }).then(function(newIcon) {
             appSettingObjectToEdit.icon = newIcon;
             //updateAppSettingInScope(appSettingName, ionIcon, currentIcon);
-            configurationService.saveRevisionAndPostAppSettingsAfterConfirmation();
+            //configurationService.saveRevisionAndPostAppSettingsAfterConfirmation();
         }, function() {console.debug('User cancelled selection');});
     };
     $scope.postAppSettingsAfterConfirmation = function () {

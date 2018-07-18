@@ -1037,6 +1037,7 @@
 	},
 	"redirectUri": "https://app.quantimo.do/ionic/Modo/www/callback/ https://app.quantimo.do/api/v1/connectors/quantimodo/connect https://local.quantimo.do/api/v1/connectors/quantimodo/connect https://staging.quantimo.do/api/v1/connectors/quantimodo/connect http://localhost https://local.quantimo.do/ionic/Modo/www/callback/  https://local.quantimo.do/ionic/Modo/src/callback/  https://staging.quantimo.do/ionic/Modo/www/callback/ ",
 	"users": null,
+	"builderUrl": "https://app.quantimo.do/ionic/Modo/www/configuration-index.html#/app/configuration?clientId=quantimodo",
 	"appDescription": "Better living through data.",
 	"appDisplayName": "QuantiModo",
 	"appType": "custom",
@@ -1090,10 +1091,10 @@
 	"premium": null,
 	"shortDescription": null,
 	"instructionsHtml": null,
-	"updatedAt": "2018-07-17 04:02:56",
+	"updatedAt": "2018-07-18 18:15:15",
 	"splashScreen": "oMg0F5fmyf_sfzgyc",
 	"textLogo": "nm8LguNtZL_chsco6",
-	"versionNumber": "2.8.717",
-	"androidVersionCode": "2018071723",
-	"builtAt": 1531805737
+	"versionNumber": "2.8.718",
+	"androidVersionCode": "2018071875",
+	"builtAt": 1531937966
 }
