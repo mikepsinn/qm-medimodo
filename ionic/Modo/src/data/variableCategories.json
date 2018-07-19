@@ -24,6 +24,7 @@
   "svgPath": "img/variable_categories/emotions.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg",
   "synonyms": ["Mood"],
+  "valence": null,
   "id": 1,
   "appType": "mood",
   "helpText": "What emotion do you want to rate?",
@@ -56,6 +57,7 @@
   "svgPath": "img/variable_categories/symptoms.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/symptoms.svg",
   "synonyms": null,
+  "valence": "negative",
   "id": 10,
   "helpText": "What symptom do you want to record?",
   "variableCategoryName": "Symptoms",
@@ -87,6 +89,7 @@
   "svgPath": "img/variable_categories/foods.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/foods.svg",
   "synonyms": ["Grocery"],
+  "valence": null,
   "id": 15,
   "appType": "diet",
   "helpText": "What did you eat?",
@@ -119,6 +122,7 @@
   "svgPath": "img/variable_categories/treatments.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg",
   "synonyms": ["Health and Beauty", "Health & Beauty"],
+  "valence": null,
   "id": 13,
   "appType": "medication",
   "helpText": "What treatment do you want to record?",
@@ -153,6 +157,7 @@
   "svgPath": "img/variable_categories/treatments.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg",
   "synonyms": null,
+  "valence": null,
   "id": 252,
   "appType": "general",
   "helpText": "What type of electronic device did you use?",
@@ -187,6 +192,7 @@
   "svgPath": "img/variable_categories/physique.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/physique.svg",
   "synonyms": null,
+  "valence": null,
   "id": 2,
   "helpText": "What aspect of your physique do you want to record?",
   "variableCategoryName": "Physique",
@@ -218,6 +224,7 @@
   "svgPath": "img/variable_categories/sleep.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/sleep.svg",
   "synonyms": null,
+  "valence": null,
   "id": 6,
   "helpText": "What aspect of sleep do you want to record?",
   "variableCategoryName": "Sleep",
@@ -249,6 +256,7 @@
   "svgPath": "img/variable_categories/physical-activity.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/physical-activity.svg",
   "synonyms": null,
+  "valence": null,
   "id": 3,
   "helpText": "What physical activity do you want to record?",
   "variableCategoryName": "Physical Activity",
@@ -280,6 +288,7 @@
   "svgPath": "img/variable_categories/vital-signs.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/vital-signs.svg",
   "synonyms": null,
+  "valence": null,
   "id": 8,
   "helpText": "What vital sign do you want to record?",
   "variableCategoryName": "Vital Signs",
@@ -311,6 +320,7 @@
   "svgPath": "img/variable_categories/cognitive-performance.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/cognitive-performance.svg",
   "synonyms": null,
+  "valence": null,
   "id": 9,
   "variableCategoryNameSingular": "Cognitive Performance"
 }, {
@@ -339,6 +349,7 @@
   "svgPath": "img/variable_categories/location.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/location.svg",
   "synonyms": ["Location"],
+  "valence": null,
   "id": 4,
   "helpText": "What location do you want to record?",
   "variableCategoryName": "Location",
@@ -370,6 +381,7 @@
   "svgPath": "img/variable_categories/nutrients.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/nutrients.svg",
   "synonyms": null,
+  "valence": null,
   "id": 11,
   "helpText": "What nutrient do you want to track?",
   "variableCategoryName": "Nutrients",
@@ -401,6 +413,7 @@
   "svgPath": "img/variable_categories/work.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/work.svg",
   "synonyms": ["Work", "Productivity"],
+  "valence": null,
   "id": 12,
   "variableCategoryNameSingular": "Goal"
 }, {
@@ -429,6 +442,7 @@
   "svgPath": "img/variable_categories/activity.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/activity.svg",
   "synonyms": ["Activity"],
+  "valence": null,
   "id": 14,
   "helpText": "What activity do you want to record?",
   "variableCategoryName": "Activity",
@@ -460,6 +474,7 @@
   "svgPath": "img/variable_categories/social-interactions.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/social-interactions.svg",
   "synonyms": null,
+  "valence": null,
   "id": 7,
   "variableCategoryNameSingular": "Social Interaction"
 }, {
@@ -488,6 +503,7 @@
   "svgPath": "img/variable_categories/conditions.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/conditions.svg",
   "synonyms": null,
+  "valence": null,
   "id": 16,
   "variableCategoryNameSingular": "Condition"
 }, {
@@ -516,6 +532,7 @@
   "svgPath": "img/variable_categories/environment.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/environment.svg",
   "synonyms": null,
+  "valence": null,
   "id": 17,
   "helpText": "What environmental variable do you want to record?",
   "variableCategoryName": "Environment",
@@ -547,6 +564,7 @@
   "svgPath": "img/variable_categories/causes-of-illness.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/causes-of-illness.svg",
   "synonyms": null,
+  "valence": null,
   "id": 18,
   "variableCategoryNameSingular": "Cause of Illness"
 }, {
@@ -575,6 +593,7 @@
   "svgPath": "img/variable_categories/books.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/books.svg",
   "synonyms": null,
+  "valence": null,
   "id": 19,
   "variableCategoryNameSingular": "Book"
 }, {
@@ -603,6 +622,7 @@
   "svgPath": "img/variable_categories/software.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/software.svg",
   "synonyms": ["Software & Mobile Apps", "App"],
+  "valence": null,
   "id": 20,
   "variableCategoryNameSingular": "Software"
 }, {
@@ -631,6 +651,7 @@
   "svgPath": "img/variable_categories/payments.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
   "synonyms": ["Purchases"],
+  "valence": null,
   "id": 32,
   "helpText": "What did you pay for?",
   "variableCategoryName": "Payments",
@@ -662,6 +683,7 @@
   "svgPath": "img/variable_categories/movies-and-tv.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/movies-and-tv.svg",
   "synonyms": null,
+  "valence": null,
   "id": 42,
   "variableCategoryNameSingular": "Movies and TV"
 }, {
@@ -690,6 +712,7 @@
   "svgPath": "img/variable_categories/music.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/music.svg",
   "synonyms": null,
+  "valence": null,
   "id": 251,
   "helpText": "What music did you listen to?",
   "variableCategoryName": "Music",
@@ -721,6 +744,7 @@
   "svgPath": "img/variable_categories/miscellaneous.svg",
   "svgUrl": "https://app.quantimo.do/ionic/Modo/www/img/variable_categories/miscellaneous.svg",
   "synonyms": null,
+  "valence": null,
   "id": 5,
   "variableCategoryNameSingular": "Miscellaneous",
   "appType": "general"
