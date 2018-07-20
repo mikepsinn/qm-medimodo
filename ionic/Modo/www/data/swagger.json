@@ -205,6 +205,10 @@
         "avatar": {
           "description": "Smaller square image",
           "type": "string"
+        },
+        "link": {
+          "description": "A link to a web page or something. Not much more to say about that.",
+          "type": "string"
         }
       },
       "required": [
@@ -1148,6 +1152,10 @@
         "summary": {
           "description": "Can be used as title in help info popup",
           "type": "string"
+        },
+        "avatar": {
+          "description": "Square icon png url",
+          "type": "string"
         }
       },
       "required": [
@@ -1173,6 +1181,10 @@
         },
         "image": {
           "$ref": "#/definitions/Image"
+        },
+        "avatar": {
+          "description": "Square icon png url",
+          "type": "string"
         },
         "ionIcon": {
           "description": "Ex: ion-ios-person",
@@ -1954,6 +1966,10 @@
         "statistics": {
           "$ref": "#/definitions/Correlation"
         },
+        "studyCard": {
+          "description": "Contains a summary, images, sharing buttons, and links",
+          "$ref": "#/definitions/Card"
+        },
         "studyHtml": {
           "$ref": "#/definitions/StudyHtml"
         },
@@ -2081,6 +2097,10 @@
         },
         "robotSharingImageUrl": {
           "description": "Image with robot and category images",
+          "type": "string"
+        },
+        "avatar": {
+          "description": "Avatar of the principal investigator",
           "type": "string"
         }
       },
@@ -3210,6 +3230,10 @@
         "capabilities": {
           "description": "Ex: a:1:{s:13:\"administrator\";b:1;}",
           "type": "string"
+        },
+        "card": {
+          "description": "Avatar and info",
+          "$ref": "#/definitions/Card"
         },
         "clientId": {
           "description": "Ex: quantimodo",
