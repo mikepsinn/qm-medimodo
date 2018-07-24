@@ -26,6 +26,7 @@
   "synonyms": ["Mood"],
   "valence": null,
   "id": 1,
+  "updatedAt": null,
   "appType": "mood",
   "helpText": "What emotion do you want to rate?",
   "variableCategoryName": "Emotions",
@@ -59,6 +60,7 @@
   "synonyms": null,
   "valence": "negative",
   "id": 10,
+  "updatedAt": null,
   "helpText": "What symptom do you want to record?",
   "variableCategoryName": "Symptoms",
   "variableCategoryNameSingular": "Symptom",
@@ -91,6 +93,7 @@
   "synonyms": ["Grocery"],
   "valence": null,
   "id": 15,
+  "updatedAt": null,
   "appType": "diet",
   "helpText": "What did you eat?",
   "variableCategoryName": "Foods",
@@ -124,6 +127,7 @@
   "synonyms": ["Health and Beauty", "Health & Beauty"],
   "valence": null,
   "id": 13,
+  "updatedAt": null,
   "appType": "medication",
   "helpText": "What treatment do you want to record?",
   "variableCategoryName": "Treatments",
@@ -159,6 +163,7 @@
   "synonyms": null,
   "valence": null,
   "id": 252,
+  "updatedAt": null,
   "appType": "general",
   "helpText": "What type of electronic device did you use?",
   "variableCategoryName": "Electronics",
@@ -194,6 +199,7 @@
   "synonyms": null,
   "valence": null,
   "id": 2,
+  "updatedAt": null,
   "helpText": "What aspect of your physique do you want to record?",
   "variableCategoryName": "Physique",
   "variableCategoryNameSingular": "Physique",
@@ -226,6 +232,7 @@
   "synonyms": null,
   "valence": null,
   "id": 6,
+  "updatedAt": null,
   "helpText": "What aspect of sleep do you want to record?",
   "variableCategoryName": "Sleep",
   "variableCategoryNameSingular": "Sleep",
@@ -258,6 +265,7 @@
   "synonyms": null,
   "valence": null,
   "id": 3,
+  "updatedAt": null,
   "helpText": "What physical activity do you want to record?",
   "variableCategoryName": "Physical Activity",
   "variableCategoryNameSingular": "Physical Activity",
@@ -290,6 +298,7 @@
   "synonyms": null,
   "valence": null,
   "id": 8,
+  "updatedAt": null,
   "helpText": "What vital sign do you want to record?",
   "variableCategoryName": "Vital Signs",
   "variableCategoryNameSingular": "Vital Sign",
@@ -322,6 +331,7 @@
   "synonyms": null,
   "valence": null,
   "id": 9,
+  "updatedAt": null,
   "variableCategoryNameSingular": "Cognitive Performance"
 }, {
   "amazonProductCategory": null,
@@ -351,6 +361,7 @@
   "synonyms": ["Location"],
   "valence": null,
   "id": 4,
+  "updatedAt": null,
   "helpText": "What location do you want to record?",
   "variableCategoryName": "Location",
   "variableCategoryNameSingular": "Location",
@@ -383,6 +394,7 @@
   "synonyms": null,
   "valence": null,
   "id": 11,
+  "updatedAt": null,
   "helpText": "What nutrient do you want to track?",
   "variableCategoryName": "Nutrients",
   "variableCategoryNameSingular": "Nutrient",
@@ -415,6 +427,7 @@
   "synonyms": ["Work", "Productivity"],
   "valence": null,
   "id": 12,
+  "updatedAt": null,
   "variableCategoryNameSingular": "Goal"
 }, {
   "amazonProductCategory": null,
@@ -444,6 +457,7 @@
   "synonyms": ["Activity"],
   "valence": null,
   "id": 14,
+  "updatedAt": null,
   "helpText": "What activity do you want to record?",
   "variableCategoryName": "Activity",
   "variableCategoryNameSingular": "Activity",
@@ -476,6 +490,7 @@
   "synonyms": null,
   "valence": null,
   "id": 7,
+  "updatedAt": null,
   "variableCategoryNameSingular": "Social Interaction"
 }, {
   "amazonProductCategory": null,
@@ -505,6 +520,7 @@
   "synonyms": null,
   "valence": null,
   "id": 16,
+  "updatedAt": null,
   "variableCategoryNameSingular": "Condition"
 }, {
   "amazonProductCategory": null,
@@ -534,6 +550,7 @@
   "synonyms": null,
   "valence": null,
   "id": 17,
+  "updatedAt": null,
   "helpText": "What environmental variable do you want to record?",
   "variableCategoryName": "Environment",
   "variableCategoryNameSingular": "Environment",
@@ -566,6 +583,7 @@
   "synonyms": null,
   "valence": null,
   "id": 18,
+  "updatedAt": null,
   "variableCategoryNameSingular": "Cause of Illness"
 }, {
   "amazonProductCategory": "Books",
@@ -595,6 +613,7 @@
   "synonyms": null,
   "valence": null,
   "id": 19,
+  "updatedAt": null,
   "variableCategoryNameSingular": "Book"
 }, {
   "amazonProductCategory": null,
@@ -624,6 +643,7 @@
   "synonyms": ["Software & Mobile Apps", "App"],
   "valence": null,
   "id": 20,
+  "updatedAt": null,
   "variableCategoryNameSingular": "Software"
 }, {
   "amazonProductCategory": null,
@@ -653,6 +673,7 @@
   "synonyms": ["Purchases"],
   "valence": null,
   "id": 32,
+  "updatedAt": null,
   "helpText": "What did you pay for?",
   "variableCategoryName": "Payments",
   "variableCategoryNameSingular": "Payment",
@@ -685,6 +706,7 @@
   "synonyms": null,
   "valence": null,
   "id": 42,
+  "updatedAt": null,
   "variableCategoryNameSingular": "Movies and TV"
 }, {
   "amazonProductCategory": null,
@@ -714,6 +736,7 @@
   "synonyms": null,
   "valence": null,
   "id": 251,
+  "updatedAt": null,
   "helpText": "What music did you listen to?",
   "variableCategoryName": "Music",
   "variableCategoryNameSingular": "Music",
@@ -746,6 +769,7 @@
   "synonyms": null,
   "valence": null,
   "id": 5,
+  "updatedAt": null,
   "variableCategoryNameSingular": "Miscellaneous",
   "appType": "general"
 }]

@@ -4560,8 +4560,8 @@ exports.cleanHeader = function(header, shouldStripCookie){
      */
 
     /**
-     * Create a Cohort Study
-     * Create a cohort study examining the relationship between a predictor and outcome variable. You will be given a study id which you can invite participants to join and share their measurements for the specified variables.
+     * Create a Study
+     * Create an individual, group, or population study examining the relationship between a predictor and outcome variable. You will be given a study id which you can invite participants to join and share their measurements for the specified variables.
      * @param {module:model/StudyCreationBody} body Details about the study you want to create
      * @param {Object} opts Optional parameters
      * @param {String} opts.clientId Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do
@@ -4674,7 +4674,7 @@ exports.cleanHeader = function(header, shouldStripCookie){
      * @param {Boolean} opts.includeCharts Highcharts configs that can be used if you have highcharts.js included on the page.  This only works if the id or name query parameter is also provided.
      * @param {module:model/String} opts.platform Ex: chrome, android, ios, web
      * @param {Boolean} opts.recalculate Recalculate instead of using cached analysis
-     * @param {String} opts.studyId Client id for the cohort study you want
+     * @param {String} opts.studyId Client id for the study you want
      * @param {module:api/StudiesApi~getOpenStudiesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GetStudiesResponse}
      */
@@ -4733,7 +4733,7 @@ exports.cleanHeader = function(header, shouldStripCookie){
      * @param {Boolean} opts.includeCharts Highcharts configs that can be used if you have highcharts.js included on the page.  This only works if the id or name query parameter is also provided.
      * @param {module:model/String} opts.platform Ex: chrome, android, ios, web
      * @param {Boolean} opts.recalculate Recalculate instead of using cached analysis
-     * @param {String} opts.studyId Client id for the cohort study you want
+     * @param {String} opts.studyId Client id for the study you want
      * @param {String} opts.sort Sort by one of the listed field names. If the field name is prefixed with &#x60;-&#x60;, it will sort in descending order.
      * @param {Number} opts.limit The LIMIT is used to limit the number of results returned. So if youhave 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records. (default to 100)
      * @param {Number} opts.offset OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause.If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.
@@ -4804,8 +4804,8 @@ exports.cleanHeader = function(header, shouldStripCookie){
      */
 
     /**
-     * Get cohort studies you have created
-     * These are cohort studies that you have created.
+     * Get studies you have created
+     * These are studies that you have created.
      * @param {Object} opts Optional parameters
      * @param {String} opts.causeVariableName Name of the hypothetical predictor variable.  Ex: Sleep Duration
      * @param {String} opts.effectVariableName Name of the hypothetical outcome variable.  Ex: Overall Mood
@@ -4940,7 +4940,7 @@ exports.cleanHeader = function(header, shouldStripCookie){
      * @param {Boolean} opts.includeCharts Highcharts configs that can be used if you have highcharts.js included on the page.  This only works if the id or name query parameter is also provided.
      * @param {module:model/String} opts.platform Ex: chrome, android, ios, web
      * @param {Boolean} opts.recalculate Recalculate instead of using cached analysis
-     * @param {String} opts.studyId Client id for the cohort study you want
+     * @param {String} opts.studyId Client id for the study you want
      * @param {module:api/StudiesApi~getStudyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Study}
      */
@@ -4992,7 +4992,7 @@ exports.cleanHeader = function(header, shouldStripCookie){
      * Join a Study
      * Anonymously share measurements for specified variables
      * @param {Object} opts Optional parameters
-     * @param {String} opts.studyId Client id for the cohort study you want
+     * @param {String} opts.studyId Client id for the study you want
      * @param {String} opts.causeVariableName Name of the hypothetical predictor variable.  Ex: Sleep Duration
      * @param {String} opts.effectVariableName Name of the hypothetical outcome variable.  Ex: Overall Mood
      * @param {Number} opts.userId User&#39;s id
@@ -5105,7 +5105,7 @@ exports.cleanHeader = function(header, shouldStripCookie){
      * @param {Boolean} opts.includeCharts Highcharts configs that can be used if you have highcharts.js included on the page.  This only works if the id or name query parameter is also provided.
      * @param {module:model/String} opts.platform Ex: chrome, android, ios, web
      * @param {Boolean} opts.recalculate Recalculate instead of using cached analysis
-     * @param {String} opts.studyId Client id for the cohort study you want
+     * @param {String} opts.studyId Client id for the study you want
      * @param {module:api/StudiesApi~publishStudyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PostStudyPublishResponse}
      */
@@ -6953,10 +6953,15 @@ exports.cleanHeader = function(header, shouldStripCookie){
   var exports = function(link, text) {
     var _this = this;
 
+
+
+
+
+
+
+
     _this['link'] = link;
     _this['text'] = text;
-
-
 
   };
 
@@ -6971,25 +6976,75 @@ exports.cleanHeader = function(header, shouldStripCookie){
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('action')) {
+        obj['action'] = ApiClient.convertToType(data['action'], Object);
+      }
+      if (data.hasOwnProperty('additionalInformation')) {
+        obj['additionalInformation'] = ApiClient.convertToType(data['additionalInformation'], 'String');
+      }
+      if (data.hasOwnProperty('color')) {
+        obj['color'] = ApiClient.convertToType(data['color'], 'String');
+      }
+      if (data.hasOwnProperty('functionToCall')) {
+        obj['functionToCall'] = ApiClient.convertToType(data['functionToCall'], 'String');
+      }
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      }
+      if (data.hasOwnProperty('image')) {
+        obj['image'] = ApiClient.convertToType(data['image'], 'String');
+      }
+      if (data.hasOwnProperty('ionIcon')) {
+        obj['ionIcon'] = ApiClient.convertToType(data['ionIcon'], 'String');
+      }
       if (data.hasOwnProperty('link')) {
         obj['link'] = ApiClient.convertToType(data['link'], 'String');
       }
       if (data.hasOwnProperty('text')) {
         obj['text'] = ApiClient.convertToType(data['text'], 'String');
       }
-      if (data.hasOwnProperty('ionIcon')) {
-        obj['ionIcon'] = ApiClient.convertToType(data['ionIcon'], 'String');
-      }
-      if (data.hasOwnProperty('color')) {
-        obj['color'] = ApiClient.convertToType(data['color'], 'String');
-      }
-      if (data.hasOwnProperty('additionalInformation')) {
-        obj['additionalInformation'] = ApiClient.convertToType(data['additionalInformation'], 'String');
+      if (data.hasOwnProperty('tooltip')) {
+        obj['tooltip'] = ApiClient.convertToType(data['tooltip'], 'String');
       }
     }
     return obj;
   }
 
+  /**
+   * Action data
+   * @member {Object} action
+   */
+  exports.prototype['action'] = undefined;
+  /**
+   * Ex: connect
+   * @member {String} additionalInformation
+   */
+  exports.prototype['additionalInformation'] = undefined;
+  /**
+   * Ex: #f2f2f2
+   * @member {String} color
+   */
+  exports.prototype['color'] = undefined;
+  /**
+   * Name of function to call
+   * @member {String} functionToCall
+   */
+  exports.prototype['functionToCall'] = undefined;
+  /**
+   * HTML element id
+   * @member {String} id
+   */
+  exports.prototype['id'] = undefined;
+  /**
+   * Ex: https://image.jpg
+   * @member {String} image
+   */
+  exports.prototype['image'] = undefined;
+  /**
+   * Ex: ion-refresh
+   * @member {String} ionIcon
+   */
+  exports.prototype['ionIcon'] = undefined;
   /**
    * Ex: https://local.quantimo.do
    * @member {String} link
@@ -7001,20 +7056,10 @@ exports.cleanHeader = function(header, shouldStripCookie){
    */
   exports.prototype['text'] = undefined;
   /**
-   * Ex: ion-refresh
-   * @member {String} ionIcon
+   * Ex: This is a tooltip
+   * @member {String} tooltip
    */
-  exports.prototype['ionIcon'] = undefined;
-  /**
-   * Ex: #f2f2f2
-   * @member {String} color
-   */
-  exports.prototype['color'] = undefined;
-  /**
-   * Ex: connect
-   * @member {String} additionalInformation
-   */
-  exports.prototype['additionalInformation'] = undefined;
+  exports.prototype['tooltip'] = undefined;
 
 
 
@@ -7069,12 +7114,21 @@ exports.cleanHeader = function(header, shouldStripCookie){
    * Constructs a new <code>Card</code>.
    * @alias module:model/Card
    * @class
+   * @param link {String} A link to a web page or something. Not much more to say about that.
    */
-  var exports = function() {
+  var exports = function(link) {
     var _this = this;
 
 
 
+
+
+
+
+
+
+
+    _this['link'] = link;
 
 
 
@@ -7093,65 +7147,128 @@ exports.cleanHeader = function(header, shouldStripCookie){
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('title')) {
-        obj['title'] = ApiClient.convertToType(data['title'], 'String');
+      if (data.hasOwnProperty('avatar')) {
+        obj['avatar'] = ApiClient.convertToType(data['avatar'], 'String');
       }
-      if (data.hasOwnProperty('subTitle')) {
-        obj['subTitle'] = ApiClient.convertToType(data['subTitle'], 'String');
-      }
-      if (data.hasOwnProperty('content')) {
-        obj['content'] = ApiClient.convertToType(data['content'], 'String');
-      }
-      if (data.hasOwnProperty('htmlContent')) {
-        obj['htmlContent'] = ApiClient.convertToType(data['htmlContent'], 'String');
+      if (data.hasOwnProperty('backgroundColor')) {
+        obj['backgroundColor'] = ApiClient.convertToType(data['backgroundColor'], 'String');
       }
       if (data.hasOwnProperty('buttons')) {
         obj['buttons'] = ApiClient.convertToType(data['buttons'], [Button]);
       }
+      if (data.hasOwnProperty('content')) {
+        obj['content'] = ApiClient.convertToType(data['content'], 'String');
+      }
+      if (data.hasOwnProperty('html')) {
+        obj['html'] = ApiClient.convertToType(data['html'], 'String');
+      }
+      if (data.hasOwnProperty('htmlContent')) {
+        obj['htmlContent'] = ApiClient.convertToType(data['htmlContent'], 'String');
+      }
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      }
       if (data.hasOwnProperty('image')) {
         obj['image'] = ApiClient.convertToType(data['image'], 'String');
       }
-      if (data.hasOwnProperty('avatar')) {
-        obj['avatar'] = ApiClient.convertToType(data['avatar'], 'String');
+      if (data.hasOwnProperty('ionIcon')) {
+        obj['ionIcon'] = ApiClient.convertToType(data['ionIcon'], 'String');
+      }
+      if (data.hasOwnProperty('link')) {
+        obj['link'] = ApiClient.convertToType(data['link'], 'String');
+      }
+      if (data.hasOwnProperty('sharingBody')) {
+        obj['sharingBody'] = ApiClient.convertToType(data['sharingBody'], 'String');
+      }
+      if (data.hasOwnProperty('sharingButtons')) {
+        obj['sharingButtons'] = ApiClient.convertToType(data['sharingButtons'], [Button]);
+      }
+      if (data.hasOwnProperty('sharingTitle')) {
+        obj['sharingTitle'] = ApiClient.convertToType(data['sharingTitle'], 'String');
+      }
+      if (data.hasOwnProperty('subTitle')) {
+        obj['subTitle'] = ApiClient.convertToType(data['subTitle'], 'String');
+      }
+      if (data.hasOwnProperty('title')) {
+        obj['title'] = ApiClient.convertToType(data['title'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * Ex: Title
-   * @member {String} title
+   * Smaller square image
+   * @member {String} avatar
    */
-  exports.prototype['title'] = undefined;
+  exports.prototype['avatar'] = undefined;
   /**
-   * Ex: subTitle
-   * @member {String} subTitle
+   * Ex: #f2f2f2
+   * @member {String} backgroundColor
    */
-  exports.prototype['subTitle'] = undefined;
+  exports.prototype['backgroundColor'] = undefined;
+  /**
+   * @member {Array.<module:model/Button>} buttons
+   */
+  exports.prototype['buttons'] = undefined;
   /**
    * Ex: Content
    * @member {String} content
    */
   exports.prototype['content'] = undefined;
   /**
+   * HTML for the entire card.
+   * @member {String} html
+   */
+  exports.prototype['html'] = undefined;
+  /**
    * Ex: <div>Content</div>
    * @member {String} htmlContent
    */
   exports.prototype['htmlContent'] = undefined;
   /**
-   * @member {Array.<module:model/Button>} buttons
+   * HTML element id
+   * @member {String} id
    */
-  exports.prototype['buttons'] = undefined;
+  exports.prototype['id'] = undefined;
   /**
    * Larger image of variable dimensions
    * @member {String} image
    */
   exports.prototype['image'] = undefined;
   /**
-   * Smaller square image
-   * @member {String} avatar
+   * Ex: ion-refresh
+   * @member {String} ionIcon
    */
-  exports.prototype['avatar'] = undefined;
+  exports.prototype['ionIcon'] = undefined;
+  /**
+   * A link to a web page or something. Not much more to say about that.
+   * @member {String} link
+   */
+  exports.prototype['link'] = undefined;
+  /**
+   * Ex: sharingBody
+   * @member {String} sharingBody
+   */
+  exports.prototype['sharingBody'] = undefined;
+  /**
+   * @member {Array.<module:model/Button>} sharingButtons
+   */
+  exports.prototype['sharingButtons'] = undefined;
+  /**
+   * Ex: sharingTitle
+   * @member {String} sharingTitle
+   */
+  exports.prototype['sharingTitle'] = undefined;
+  /**
+   * Ex: subTitle
+   * @member {String} subTitle
+   */
+  exports.prototype['subTitle'] = undefined;
+  /**
+   * Ex: Title
+   * @member {String} title
+   */
+  exports.prototype['title'] = undefined;
 
 
 
@@ -9679,6 +9796,7 @@ exports.cleanHeader = function(header, shouldStripCookie){
 
     _this['description'] = description;
     _this['summary'] = summary;
+
   };
 
   /**
@@ -9701,6 +9819,9 @@ exports.cleanHeader = function(header, shouldStripCookie){
       if (data.hasOwnProperty('summary')) {
         obj['summary'] = ApiClient.convertToType(data['summary'], 'String');
       }
+      if (data.hasOwnProperty('avatar')) {
+        obj['avatar'] = ApiClient.convertToType(data['avatar'], 'String');
+      }
     }
     return obj;
   }
@@ -9719,6 +9840,11 @@ exports.cleanHeader = function(header, shouldStripCookie){
    * @member {String} summary
    */
   exports.prototype['summary'] = undefined;
+  /**
+   * Square icon png url
+   * @member {String} avatar
+   */
+  exports.prototype['avatar'] = undefined;
 
 
 
@@ -9890,6 +10016,7 @@ exports.cleanHeader = function(header, shouldStripCookie){
 
 
 
+
   };
 
   /**
@@ -9914,6 +10041,9 @@ exports.cleanHeader = function(header, shouldStripCookie){
       }
       if (data.hasOwnProperty('image')) {
         obj['image'] = Image.constructFromObject(data['image']);
+      }
+      if (data.hasOwnProperty('avatar')) {
+        obj['avatar'] = ApiClient.convertToType(data['avatar'], 'String');
       }
       if (data.hasOwnProperty('ionIcon')) {
         obj['ionIcon'] = ApiClient.convertToType(data['ionIcon'], 'String');
@@ -9949,6 +10079,11 @@ exports.cleanHeader = function(header, shouldStripCookie){
    * @member {module:model/Image} image
    */
   exports.prototype['image'] = undefined;
+  /**
+   * Square icon png url
+   * @member {String} avatar
+   */
+  exports.prototype['avatar'] = undefined;
   /**
    * Ex: ion-ios-person
    * @member {String} ionIcon
@@ -12628,18 +12763,18 @@ exports.cleanHeader = function(header, shouldStripCookie){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Correlation', 'model/ParticipantInstruction', 'model/StudyCharts', 'model/StudyHtml', 'model/StudyImages', 'model/StudyLinks', 'model/StudySharing', 'model/StudyText', 'model/StudyVotes', 'model/Variable'], factory);
+    define(['ApiClient', 'model/Card', 'model/Correlation', 'model/ParticipantInstruction', 'model/StudyCharts', 'model/StudyHtml', 'model/StudyImages', 'model/StudyLinks', 'model/StudySharing', 'model/StudyText', 'model/StudyVotes', 'model/Variable'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Correlation'), require('./ParticipantInstruction'), require('./StudyCharts'), require('./StudyHtml'), require('./StudyImages'), require('./StudyLinks'), require('./StudySharing'), require('./StudyText'), require('./StudyVotes'), require('./Variable'));
+    module.exports = factory(require('../ApiClient'), require('./Card'), require('./Correlation'), require('./ParticipantInstruction'), require('./StudyCharts'), require('./StudyHtml'), require('./StudyImages'), require('./StudyLinks'), require('./StudySharing'), require('./StudyText'), require('./StudyVotes'), require('./Variable'));
   } else {
     // Browser globals (root is window)
     if (!root.Quantimodo) {
       root.Quantimodo = {};
     }
-    root.Quantimodo.Study = factory(root.Quantimodo.ApiClient, root.Quantimodo.Correlation, root.Quantimodo.ParticipantInstruction, root.Quantimodo.StudyCharts, root.Quantimodo.StudyHtml, root.Quantimodo.StudyImages, root.Quantimodo.StudyLinks, root.Quantimodo.StudySharing, root.Quantimodo.StudyText, root.Quantimodo.StudyVotes, root.Quantimodo.Variable);
+    root.Quantimodo.Study = factory(root.Quantimodo.ApiClient, root.Quantimodo.Card, root.Quantimodo.Correlation, root.Quantimodo.ParticipantInstruction, root.Quantimodo.StudyCharts, root.Quantimodo.StudyHtml, root.Quantimodo.StudyImages, root.Quantimodo.StudyLinks, root.Quantimodo.StudySharing, root.Quantimodo.StudyText, root.Quantimodo.StudyVotes, root.Quantimodo.Variable);
   }
-}(this, function(ApiClient, Correlation, ParticipantInstruction, StudyCharts, StudyHtml, StudyImages, StudyLinks, StudySharing, StudyText, StudyVotes, Variable) {
+}(this, function(ApiClient, Card, Correlation, ParticipantInstruction, StudyCharts, StudyHtml, StudyImages, StudyLinks, StudySharing, StudyText, StudyVotes, Variable) {
   'use strict';
 
 
@@ -12653,6 +12788,7 @@ exports.cleanHeader = function(header, shouldStripCookie){
 
   /**
    * Constructs a new <code>Study</code>.
+   * A study analyzes the relationship between a predictor variable like gluten-intake and an outcome of interest such as overall mood.
    * @alias module:model/Study
    * @class
    * @param type {String} Ex: population, cohort, or individual
@@ -12661,6 +12797,7 @@ exports.cleanHeader = function(header, shouldStripCookie){
     var _this = this;
 
     _this['type'] = type;
+
 
 
 
@@ -12719,6 +12856,9 @@ exports.cleanHeader = function(header, shouldStripCookie){
       }
       if (data.hasOwnProperty('statistics')) {
         obj['statistics'] = Correlation.constructFromObject(data['statistics']);
+      }
+      if (data.hasOwnProperty('studyCard')) {
+        obj['studyCard'] = Card.constructFromObject(data['studyCard']);
       }
       if (data.hasOwnProperty('studyHtml')) {
         obj['studyHtml'] = StudyHtml.constructFromObject(data['studyHtml']);
@@ -12791,6 +12931,11 @@ exports.cleanHeader = function(header, shouldStripCookie){
    */
   exports.prototype['statistics'] = undefined;
   /**
+   * Contains a summary, images, sharing buttons, and links
+   * @member {module:model/Card} studyCard
+   */
+  exports.prototype['studyCard'] = undefined;
+  /**
    * @member {module:model/StudyHtml} studyHtml
    */
   exports.prototype['studyHtml'] = undefined;
@@ -12827,7 +12972,7 @@ exports.cleanHeader = function(header, shouldStripCookie){
 
 
 
-},{"../ApiClient":9,"./Correlation":32,"./ParticipantInstruction":51,"./StudyCharts":62,"./StudyHtml":64,"./StudyImages":65,"./StudyLinks":67,"./StudySharing":68,"./StudyText":69,"./StudyVotes":70,"./Variable":82}],62:[function(require,module,exports){
+},{"../ApiClient":9,"./Card":27,"./Correlation":32,"./ParticipantInstruction":51,"./StudyCharts":62,"./StudyHtml":64,"./StudyImages":65,"./StudyLinks":67,"./StudySharing":68,"./StudyText":69,"./StudyVotes":70,"./Variable":82}],62:[function(require,module,exports){
 /**
  * quantimodo
  * We make it easy to retrieve and analyze normalized user data from a wide array of devices and applications. Check out our [docs and sdk's](https://github.com/QuantiModo/docs) or [contact us](https://help.quantimo.do).
@@ -12989,15 +13134,17 @@ exports.cleanHeader = function(header, shouldStripCookie){
    * Constructs a new <code>StudyCreationBody</code>.
    * @alias module:model/StudyCreationBody
    * @class
-   * @param predictorVariableName {String} Name of predictor variable
-   * @param outcomeVariableName {String} Name of the outcome variable
+   * @param causeVariableName {String} Name of predictor variable
+   * @param effectVariableName {String} Name of the outcome variable
+   * @param type {module:model/StudyCreationBody.TypeEnum} Individual studies are based on data of a single user. Group studies are based on data from a specific group of individuals who have joined.  Global studies are based on aggregated and anonymously shared data from all users.
    */
-  var exports = function(predictorVariableName, outcomeVariableName) {
+  var exports = function(causeVariableName, effectVariableName, type) {
     var _this = this;
 
-    _this['predictorVariableName'] = predictorVariableName;
-    _this['outcomeVariableName'] = outcomeVariableName;
+    _this['causeVariableName'] = causeVariableName;
+    _this['effectVariableName'] = effectVariableName;
 
+    _this['type'] = type;
   };
 
   /**
@@ -13011,14 +13158,17 @@ exports.cleanHeader = function(header, shouldStripCookie){
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('predictorVariableName')) {
-        obj['predictorVariableName'] = ApiClient.convertToType(data['predictorVariableName'], 'String');
+      if (data.hasOwnProperty('causeVariableName')) {
+        obj['causeVariableName'] = ApiClient.convertToType(data['causeVariableName'], 'String');
       }
-      if (data.hasOwnProperty('outcomeVariableName')) {
-        obj['outcomeVariableName'] = ApiClient.convertToType(data['outcomeVariableName'], 'String');
+      if (data.hasOwnProperty('effectVariableName')) {
+        obj['effectVariableName'] = ApiClient.convertToType(data['effectVariableName'], 'String');
       }
       if (data.hasOwnProperty('studyTitle')) {
         obj['studyTitle'] = ApiClient.convertToType(data['studyTitle'], 'String');
+      }
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
     }
     return obj;
@@ -13026,20 +13176,47 @@ exports.cleanHeader = function(header, shouldStripCookie){
 
   /**
    * Name of predictor variable
-   * @member {String} predictorVariableName
+   * @member {String} causeVariableName
    */
-  exports.prototype['predictorVariableName'] = undefined;
+  exports.prototype['causeVariableName'] = undefined;
   /**
    * Name of the outcome variable
-   * @member {String} outcomeVariableName
+   * @member {String} effectVariableName
    */
-  exports.prototype['outcomeVariableName'] = undefined;
+  exports.prototype['effectVariableName'] = undefined;
   /**
    * Title of your study (optional)
    * @member {String} studyTitle
    */
   exports.prototype['studyTitle'] = undefined;
+  /**
+   * Individual studies are based on data of a single user. Group studies are based on data from a specific group of individuals who have joined.  Global studies are based on aggregated and anonymously shared data from all users.
+   * @member {module:model/StudyCreationBody.TypeEnum} type
+   */
+  exports.prototype['type'] = undefined;
 
+
+  /**
+   * Allowed values for the <code>type</code> property.
+   * @enum {String}
+   * @readonly
+   */
+  exports.TypeEnum = {
+    /**
+     * value: "individual"
+     * @const
+     */
+    "individual": "individual",
+    /**
+     * value: "group"
+     * @const
+     */
+    "group": "group",
+    /**
+     * value: "global"
+     * @const
+     */
+    "global": "global"  };
 
 
   return exports;
@@ -13312,6 +13489,7 @@ exports.cleanHeader = function(header, shouldStripCookie){
 
     _this['imageUrl'] = imageUrl;
 
+
   };
 
   /**
@@ -13351,6 +13529,9 @@ exports.cleanHeader = function(header, shouldStripCookie){
       }
       if (data.hasOwnProperty('robotSharingImageUrl')) {
         obj['robotSharingImageUrl'] = ApiClient.convertToType(data['robotSharingImageUrl'], 'String');
+      }
+      if (data.hasOwnProperty('avatar')) {
+        obj['avatar'] = ApiClient.convertToType(data['avatar'], 'String');
       }
     }
     return obj;
@@ -13401,6 +13582,11 @@ exports.cleanHeader = function(header, shouldStripCookie){
    * @member {String} robotSharingImageUrl
    */
   exports.prototype['robotSharingImageUrl'] = undefined;
+  /**
+   * Avatar of the principal investigator
+   * @member {String} avatar
+   */
+  exports.prototype['avatar'] = undefined;
 
 
 
@@ -14280,6 +14466,7 @@ exports.cleanHeader = function(header, shouldStripCookie){
 
 
 
+
     _this['reminderFrequency'] = reminderFrequency;
 
 
@@ -14364,6 +14551,9 @@ exports.cleanHeader = function(header, shouldStripCookie){
       }
       if (data.hasOwnProperty('defaultValue')) {
         obj['defaultValue'] = ApiClient.convertToType(data['defaultValue'], 'Number');
+      }
+      if (data.hasOwnProperty('enabled')) {
+        obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
       }
       if (data.hasOwnProperty('email')) {
         obj['email'] = ApiClient.convertToType(data['email'], 'Boolean');
@@ -14622,6 +14812,11 @@ exports.cleanHeader = function(header, shouldStripCookie){
    * @member {Number} defaultValue
    */
   exports.prototype['defaultValue'] = undefined;
+  /**
+   * If a tracking reminder is enabled, tracking reminder notifications will be generated for this variable.
+   * @member {Boolean} enabled
+   */
+  exports.prototype['enabled'] = undefined;
   /**
    * True if the reminders should be delivered via email
    * @member {Boolean} email
@@ -16566,18 +16761,18 @@ exports.cleanHeader = function(header, shouldStripCookie){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AuthorizedClients'], factory);
+    define(['ApiClient', 'model/AuthorizedClients', 'model/Card'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AuthorizedClients'));
+    module.exports = factory(require('../ApiClient'), require('./AuthorizedClients'), require('./Card'));
   } else {
     // Browser globals (root is window)
     if (!root.Quantimodo) {
       root.Quantimodo = {};
     }
-    root.Quantimodo.User = factory(root.Quantimodo.ApiClient, root.Quantimodo.AuthorizedClients);
+    root.Quantimodo.User = factory(root.Quantimodo.ApiClient, root.Quantimodo.AuthorizedClients, root.Quantimodo.Card);
   }
-}(this, function(ApiClient, AuthorizedClients) {
+}(this, function(ApiClient, AuthorizedClients, Card) {
   'use strict';
 
 
@@ -16607,6 +16802,7 @@ exports.cleanHeader = function(header, shouldStripCookie){
 
 
     _this['administrator'] = administrator;
+
 
 
 
@@ -16686,6 +16882,9 @@ exports.cleanHeader = function(header, shouldStripCookie){
       }
       if (data.hasOwnProperty('capabilities')) {
         obj['capabilities'] = ApiClient.convertToType(data['capabilities'], 'String');
+      }
+      if (data.hasOwnProperty('card')) {
+        obj['card'] = Card.constructFromObject(data['card']);
       }
       if (data.hasOwnProperty('clientId')) {
         obj['clientId'] = ApiClient.convertToType(data['clientId'], 'String');
@@ -16847,6 +17046,11 @@ exports.cleanHeader = function(header, shouldStripCookie){
    * @member {String} capabilities
    */
   exports.prototype['capabilities'] = undefined;
+  /**
+   * Avatar and info
+   * @member {module:model/Card} card
+   */
+  exports.prototype['card'] = undefined;
   /**
    * Ex: quantimodo
    * @member {String} clientId
@@ -17050,7 +17254,7 @@ exports.cleanHeader = function(header, shouldStripCookie){
 
 
 
-},{"../ApiClient":9,"./AuthorizedClients":25}],80:[function(require,module,exports){
+},{"../ApiClient":9,"./AuthorizedClients":25,"./Card":27}],80:[function(require,module,exports){
 /**
  * quantimodo
  * We make it easy to retrieve and analyze normalized user data from a wide array of devices and applications. Check out our [docs and sdk's](https://github.com/QuantiModo/docs) or [contact us](https://help.quantimo.do).
@@ -17421,6 +17625,8 @@ exports.cleanHeader = function(header, shouldStripCookie){
 
 
 
+
+
     _this['userId'] = userId;
 
 
@@ -17714,6 +17920,12 @@ exports.cleanHeader = function(header, shouldStripCookie){
       }
       if (data.hasOwnProperty('numberOfCorrelations')) {
         obj['numberOfCorrelations'] = ApiClient.convertToType(data['numberOfCorrelations'], 'Number');
+      }
+      if (data.hasOwnProperty('numberOfCorrelationsAsCause')) {
+        obj['numberOfCorrelationsAsCause'] = ApiClient.convertToType(data['numberOfCorrelationsAsCause'], 'Number');
+      }
+      if (data.hasOwnProperty('numberOfCorrelationsAsEffect')) {
+        obj['numberOfCorrelationsAsEffect'] = ApiClient.convertToType(data['numberOfCorrelationsAsEffect'], 'Number');
       }
       if (data.hasOwnProperty('numberOfProcessedDailyMeasurements')) {
         obj['numberOfProcessedDailyMeasurements'] = ApiClient.convertToType(data['numberOfProcessedDailyMeasurements'], 'Number');
@@ -18350,6 +18562,16 @@ exports.cleanHeader = function(header, shouldStripCookie){
    * @member {Number} numberOfCorrelations
    */
   exports.prototype['numberOfCorrelations'] = undefined;
+  /**
+   * numberOfAggregateCorrelationsAsCause plus numberOfUserCorrelationsAsCause
+   * @member {Number} numberOfCorrelationsAsCause
+   */
+  exports.prototype['numberOfCorrelationsAsCause'] = undefined;
+  /**
+   * numberOfAggregateCorrelationsAsEffect plus numberOfUserCorrelationsAsEffect
+   * @member {Number} numberOfCorrelationsAsEffect
+   */
+  exports.prototype['numberOfCorrelationsAsEffect'] = undefined;
   /**
    * Number of processed measurements
    * @member {Number} numberOfProcessedDailyMeasurements
