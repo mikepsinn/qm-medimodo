@@ -1058,19 +1058,27 @@
 	"buttons": [
 		{
 			"action": null,
-			"link": "#/app/reminders-inbox",
-			"color": "#0f9d58",
 			"additionalInformation": null,
+			"color": "#0f9d58",
+			"functionToCall": null,
+			"id": "record-a-measurement-button",
+			"image": null,
+			"ionIcon": "ion-archive",
+			"link": "#/app/reminders-inbox",
 			"text": "Record a Measurement",
-			"ionIcon": "ion-archive"
+			"tooltip": null
 		},
 		{
 			"action": null,
-			"link": "#/app/variable-list-category/Anything",
-			"color": "#0f9d58",
 			"additionalInformation": null,
+			"color": "#0f9d58",
+			"functionToCall": null,
+			"id": "manage-reminders-button",
+			"image": null,
+			"ionIcon": "ion-android-notifications-none",
+			"link": "#/app/variable-list-category/Anything",
 			"text": "Manage Reminders",
-			"ionIcon": "ion-android-notifications-none"
+			"tooltip": null
 		}
 	],
 	"card": null,
@@ -1080,7 +1088,7 @@
 	"dataSourceType": "client_app",
 	"defaultUnitAbbreviatedName": null,
 	"defaultVariableCategoryName": null,
-	"displayName": "",
+	"displayName": "QuantiModo",
 	"getItUrl": "",
 	"image": null,
 	"imageHtml": "<a href=\"\"><img id=\"_image\" title=\"\" src=\"\" alt=\"\"></a>",
@@ -1092,10 +1100,10 @@
 	"synonyms": [],
 	"shortDescription": null,
 	"instructionsHtml": null,
-	"updatedAt": "2018-07-24 18:48:21",
+	"updatedAt": "2018-07-24 19:29:30",
 	"splashScreen": "oMg0F5fmyf_sfzgyc",
 	"textLogo": "nm8LguNtZL_chsco6",
 	"versionNumber": "2.8.724",
-	"androidVersionCode": "2018072478",
-	"builtAt": 1532458616
+	"androidVersionCode": "2018072489",
+	"builtAt": 1532468413
 }

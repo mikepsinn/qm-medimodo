@@ -29,11 +29,15 @@
   "backgroundColor": "#3b579d",
   "buttons": [{
     "action": null,
-    "link": "https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/import?connectorName=facebook",
-    "color": "#0f9d58",
     "additionalInformation": null,
+    "color": "#0f9d58",
+    "functionToCall": "connect",
+    "id": "connect-button-facebook",
+    "image": null,
+    "ionIcon": "ion-link",
+    "link": "https://app.quantimo.do/api/connectors/facebook/connect",
     "text": "Connect",
-    "ionIcon": "ion-link"
+    "tooltip": null
   }],
   "card": null,
   "connected": false,
@@ -88,11 +92,15 @@
   "backgroundColor": "#e4405f",
   "buttons": [{
     "action": null,
-    "link": "https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/import?connectorName=github",
-    "color": "#0f9d58",
     "additionalInformation": null,
+    "color": "#0f9d58",
+    "functionToCall": "connect",
+    "id": "connect-button-github",
+    "image": null,
+    "ionIcon": "ion-link",
+    "link": "https://app.quantimo.do/api/connectors/github/connect",
     "text": "Connect",
-    "ionIcon": "ion-link"
+    "tooltip": null
   }],
   "card": null,
   "connected": false,
@@ -142,11 +150,15 @@
   "backgroundColor": "#23448b",
   "buttons": [{
     "action": null,
-    "link": "https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/import?connectorName=gmail",
-    "color": "#0f9d58",
     "additionalInformation": null,
+    "color": "#0f9d58",
+    "functionToCall": "connect",
+    "id": "connect-button-gmail",
+    "image": null,
+    "ionIcon": "ion-link",
+    "link": "https://app.quantimo.do/api/connectors/gmail/connect",
     "text": "Connect",
-    "ionIcon": "ion-link"
+    "tooltip": null
   }],
   "card": null,
   "connected": false,
@@ -197,11 +209,15 @@
   "backgroundColor": "#2c6efc",
   "buttons": [{
     "action": null,
-    "link": "https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/import?connectorName=googlecalendar",
-    "color": "#0f9d58",
     "additionalInformation": null,
+    "color": "#0f9d58",
+    "functionToCall": "connect",
+    "id": "connect-button-googlecalendar",
+    "image": null,
+    "ionIcon": "ion-link",
+    "link": "https://app.quantimo.do/api/connectors/googlecalendar/connect",
     "text": "Connect",
-    "ionIcon": "ion-link"
+    "tooltip": null
   }],
   "card": null,
   "connected": false,
@@ -252,11 +268,15 @@
   "backgroundColor": "#00a3ad",
   "buttons": [{
     "action": null,
-    "link": "https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/import?connectorName=googlefit",
-    "color": "#0f9d58",
     "additionalInformation": null,
+    "color": "#0f9d58",
+    "functionToCall": "connect",
+    "id": "connect-button-googlefit",
+    "image": null,
+    "ionIcon": "ion-link",
+    "link": "https://app.quantimo.do/api/connectors/googlefit/connect",
     "text": "Connect",
-    "ionIcon": "ion-link"
+    "tooltip": null
   }],
   "card": null,
   "connected": false,
@@ -307,11 +327,15 @@
   "backgroundColor": "#23448b",
   "buttons": [{
     "action": null,
-    "link": "https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/import?connectorName=googleplus",
-    "color": "#0f9d58",
     "additionalInformation": null,
+    "color": "#0f9d58",
+    "functionToCall": "connect",
+    "id": "connect-button-googleplus",
+    "image": null,
+    "ionIcon": "ion-link",
+    "link": "https://app.quantimo.do/api/connectors/googleplus/connect",
     "text": "Connect",
-    "ionIcon": "ion-link"
+    "tooltip": null
   }],
   "card": null,
   "connected": false,
@@ -366,11 +390,15 @@
   "backgroundColor": "#e4405f",
   "buttons": [{
     "action": null,
-    "link": "https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/import?connectorName=linkedin",
-    "color": "#0f9d58",
     "additionalInformation": null,
+    "color": "#0f9d58",
+    "functionToCall": "connect",
+    "id": "connect-button-linkedin",
+    "image": null,
+    "ionIcon": "ion-link",
+    "link": "https://app.quantimo.do/api/connectors/linkedin/connect",
     "text": "Connect",
-    "ionIcon": "ion-link"
+    "tooltip": null
   }],
   "card": null,
   "connected": false,
@@ -424,18 +452,26 @@
   "backgroundColor": "#e4405f",
   "buttons": [{
     "action": null,
-    "link": "#/app/reminders-inbox",
-    "color": "#0f9d58",
     "additionalInformation": null,
+    "color": "#0f9d58",
+    "functionToCall": null,
+    "id": "record-a-measurement-button",
+    "image": null,
+    "ionIcon": "ion-archive",
+    "link": "#/app/reminders-inbox",
     "text": "Record a Measurement",
-    "ionIcon": "ion-archive"
+    "tooltip": null
   }, {
     "action": null,
-    "link": "#/app/variable-list-category/Anything",
-    "color": "#0f9d58",
     "additionalInformation": null,
+    "color": "#0f9d58",
+    "functionToCall": null,
+    "id": "manage-reminders-button",
+    "image": null,
+    "ionIcon": "ion-android-notifications-none",
+    "link": "#/app/variable-list-category/Anything",
     "text": "Manage Reminders",
-    "ionIcon": "ion-android-notifications-none"
+    "tooltip": null
   }],
   "card": null,
   "connected": false,
@@ -490,11 +526,15 @@
   "backgroundColor": "#fc4c02",
   "buttons": [{
     "action": null,
-    "link": "https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/import?connectorName=strava",
-    "color": "#0f9d58",
     "additionalInformation": null,
+    "color": "#0f9d58",
+    "functionToCall": "connect",
+    "id": "connect-button-strava",
+    "image": null,
+    "ionIcon": "ion-link",
+    "link": "https://app.quantimo.do/api/connectors/strava/connect",
     "text": "Connect",
-    "ionIcon": "ion-link"
+    "tooltip": null
   }],
   "card": null,
   "connected": false,
@@ -544,11 +584,15 @@
   "backgroundColor": "#e4405f",
   "buttons": [{
     "action": null,
-    "link": "https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/import?connectorName=twitter",
-    "color": "#0f9d58",
     "additionalInformation": null,
+    "color": "#0f9d58",
+    "functionToCall": "connect",
+    "id": "connect-button-twitter",
+    "image": null,
+    "ionIcon": "ion-link",
+    "link": "https://app.quantimo.do/api/connectors/twitter/connect",
     "text": "Connect",
-    "ionIcon": "ion-link"
+    "tooltip": null
   }],
   "card": null,
   "connected": false,
