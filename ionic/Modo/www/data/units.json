@@ -108,7 +108,7 @@
   "manualTracking": 1,
   "minimumValue": 1,
   "name": "1 to 5 Rating",
-  "synonyms": [],
+  "synonyms": ["out of five"],
   "lowerCaseSynonyms": null,
   "id": 10,
   "updatedAt": null
