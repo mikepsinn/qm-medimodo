@@ -1059,24 +1059,34 @@
 		{
 			"action": null,
 			"additionalInformation": null,
+			"confirmationText": null,
 			"color": "#0f9d58",
-			"functionToCall": null,
+			"functionName": null,
+			"functionParameters": null,
 			"id": "record-a-measurement-button",
 			"image": null,
 			"ionIcon": "ion-archive",
 			"link": "#/app/reminders-inbox",
+			"successAlertTitle": null,
+			"successAlertBody": null,
+			"successToastText": null,
 			"text": "Record a Measurement",
 			"tooltip": null
 		},
 		{
 			"action": null,
 			"additionalInformation": null,
+			"confirmationText": null,
 			"color": "#0f9d58",
-			"functionToCall": null,
+			"functionName": null,
+			"functionParameters": null,
 			"id": "manage-reminders-button",
 			"image": null,
 			"ionIcon": "ion-android-notifications-none",
 			"link": "#/app/variable-list-category/Anything",
+			"successAlertTitle": null,
+			"successAlertBody": null,
+			"successToastText": null,
 			"text": "Manage Reminders",
 			"tooltip": null
 		}
@@ -1100,10 +1110,10 @@
 	"synonyms": [],
 	"shortDescription": null,
 	"instructionsHtml": null,
-	"updatedAt": "2018-07-24 19:29:30",
+	"updatedAt": "2018-07-26 02:59:27",
 	"splashScreen": "oMg0F5fmyf_sfzgyc",
 	"textLogo": "nm8LguNtZL_chsco6",
-	"versionNumber": "2.8.724",
-	"androidVersionCode": "2018072489",
-	"builtAt": 1532468413
+	"versionNumber": "2.8.726",
+	"androidVersionCode": "2018072673",
+	"builtAt": 1532627162
 }

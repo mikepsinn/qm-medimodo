@@ -6960,7 +6960,12 @@ exports.cleanHeader = function(header, shouldStripCookie){
 
 
 
+
+
     _this['link'] = link;
+
+
+
     _this['text'] = text;
 
   };
@@ -6985,8 +6990,14 @@ exports.cleanHeader = function(header, shouldStripCookie){
       if (data.hasOwnProperty('color')) {
         obj['color'] = ApiClient.convertToType(data['color'], 'String');
       }
-      if (data.hasOwnProperty('functionToCall')) {
-        obj['functionToCall'] = ApiClient.convertToType(data['functionToCall'], 'String');
+      if (data.hasOwnProperty('confirmationText')) {
+        obj['confirmationText'] = ApiClient.convertToType(data['confirmationText'], 'String');
+      }
+      if (data.hasOwnProperty('functionName')) {
+        obj['functionName'] = ApiClient.convertToType(data['functionName'], 'String');
+      }
+      if (data.hasOwnProperty('functionParameters')) {
+        obj['functionParameters'] = ApiClient.convertToType(data['functionParameters'], Object);
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -6999,6 +7010,15 @@ exports.cleanHeader = function(header, shouldStripCookie){
       }
       if (data.hasOwnProperty('link')) {
         obj['link'] = ApiClient.convertToType(data['link'], 'String');
+      }
+      if (data.hasOwnProperty('successToastText')) {
+        obj['successToastText'] = ApiClient.convertToType(data['successToastText'], 'String');
+      }
+      if (data.hasOwnProperty('successAlertTitle')) {
+        obj['successAlertTitle'] = ApiClient.convertToType(data['successAlertTitle'], 'String');
+      }
+      if (data.hasOwnProperty('successAlertBody')) {
+        obj['successAlertBody'] = ApiClient.convertToType(data['successAlertBody'], 'String');
       }
       if (data.hasOwnProperty('text')) {
         obj['text'] = ApiClient.convertToType(data['text'], 'String');
@@ -7026,10 +7046,20 @@ exports.cleanHeader = function(header, shouldStripCookie){
    */
   exports.prototype['color'] = undefined;
   /**
-   * Name of function to call
-   * @member {String} functionToCall
+   * Text to show user before executing functionName
+   * @member {String} confirmationText
    */
-  exports.prototype['functionToCall'] = undefined;
+  exports.prototype['confirmationText'] = undefined;
+  /**
+   * Name of function to call
+   * @member {String} functionName
+   */
+  exports.prototype['functionName'] = undefined;
+  /**
+   * Data to provide to functionName
+   * @member {Object} functionParameters
+   */
+  exports.prototype['functionParameters'] = undefined;
   /**
    * HTML element id
    * @member {String} id
@@ -7050,6 +7080,21 @@ exports.cleanHeader = function(header, shouldStripCookie){
    * @member {String} link
    */
   exports.prototype['link'] = undefined;
+  /**
+   * Text to show user after executing functionName
+   * @member {String} successToastText
+   */
+  exports.prototype['successToastText'] = undefined;
+  /**
+   * Text to show user after executing functionName
+   * @member {String} successAlertTitle
+   */
+  exports.prototype['successAlertTitle'] = undefined;
+  /**
+   * Text to show user after executing functionName
+   * @member {String} successAlertBody
+   */
+  exports.prototype['successAlertBody'] = undefined;
   /**
    * Ex: Connect
    * @member {String} text
