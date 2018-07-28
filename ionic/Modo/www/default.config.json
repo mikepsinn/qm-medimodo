@@ -1057,12 +1057,14 @@
 	"backgroundColor": null,
 	"buttons": [
 		{
+			"accessibilityText": null,
 			"action": null,
 			"additionalInformation": null,
 			"color": "#0f9d58",
 			"confirmationText": null,
 			"functionName": null,
 			"functionParameters": null,
+			"html": "\"<span id=\"record-a-measurement-button\"><i class=\"icon ion-archive\"></i>Record a Measurement</span>\"",
 			"icon": "ion-archive",
 			"id": "record-a-measurement-button",
 			"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/archive.png",
@@ -1078,12 +1080,14 @@
 			"tooltip": null
 		},
 		{
+			"accessibilityText": null,
 			"action": null,
 			"additionalInformation": null,
 			"color": "#0f9d58",
 			"confirmationText": null,
 			"functionName": null,
 			"functionParameters": null,
+			"html": "\"<span id=\"manage-reminders-button\"><i class=\"icon ion-android-notifications-none\"></i>Manage Reminders</span>\"",
 			"icon": "ion-android-notifications-none",
 			"id": "manage-reminders-button",
 			"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/android-notifications-none.png",
@@ -1122,6 +1126,6 @@
 	"splashScreen": "oMg0F5fmyf_sfzgyc",
 	"textLogo": "nm8LguNtZL_chsco6",
 	"versionNumber": "2.8.728",
-	"androidVersionCode": "2018072878",
-	"builtAt": 1532804414
+	"androidVersionCode": "2018072880",
+	"builtAt": 1532805925
 }
