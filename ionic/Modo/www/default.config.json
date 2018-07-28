@@ -1073,7 +1073,7 @@
 			"successAlertBody": null,
 			"successAlertTitle": null,
 			"successToastText": null,
-			"text": "\"<span id=\"\"><i class=\"icon ion-archive\"></i>Record a Measurement</span>\"",
+			"text": "Record a Measurement",
 			"title": null,
 			"tooltip": null
 		},
@@ -1094,7 +1094,7 @@
 			"successAlertBody": null,
 			"successAlertTitle": null,
 			"successToastText": null,
-			"text": "\"<span id=\"\"><i class=\"icon ion-android-notifications-none\"></i>Manage Reminders</span>\"",
+			"text": "Manage Reminders",
 			"title": null,
 			"tooltip": null
 		}
@@ -1122,6 +1122,6 @@
 	"splashScreen": "oMg0F5fmyf_sfzgyc",
 	"textLogo": "nm8LguNtZL_chsco6",
 	"versionNumber": "2.8.728",
-	"androidVersionCode": "2018072873",
-	"builtAt": 1532800144
+	"androidVersionCode": "2018072878",
+	"builtAt": 1532804414
 }

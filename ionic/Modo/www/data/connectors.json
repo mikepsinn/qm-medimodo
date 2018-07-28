@@ -44,7 +44,7 @@
     "successAlertBody": null,
     "successAlertTitle": null,
     "successToastText": null,
-    "text": "\"<span id=\"\"><i class=\"icon ion-link\"></i>Connect</span>\"",
+    "text": "Connect",
     "title": null,
     "tooltip": null
   }],
@@ -116,7 +116,7 @@
     "successAlertBody": null,
     "successAlertTitle": null,
     "successToastText": null,
-    "text": "\"<span id=\"\"><i class=\"icon ion-link\"></i>Connect</span>\"",
+    "text": "Connect",
     "title": null,
     "tooltip": null
   }],
@@ -183,7 +183,7 @@
     "successAlertBody": null,
     "successAlertTitle": null,
     "successToastText": null,
-    "text": "\"<span id=\"\"><i class=\"icon ion-link\"></i>Connect</span>\"",
+    "text": "Connect",
     "title": null,
     "tooltip": null
   }],
@@ -251,7 +251,7 @@
     "successAlertBody": null,
     "successAlertTitle": null,
     "successToastText": null,
-    "text": "\"<span id=\"\"><i class=\"icon ion-link\"></i>Connect</span>\"",
+    "text": "Connect",
     "title": null,
     "tooltip": null
   }],
@@ -319,7 +319,7 @@
     "successAlertBody": null,
     "successAlertTitle": null,
     "successToastText": null,
-    "text": "\"<span id=\"\"><i class=\"icon ion-link\"></i>Connect</span>\"",
+    "text": "Connect",
     "title": null,
     "tooltip": null
   }],
@@ -387,7 +387,7 @@
     "successAlertBody": null,
     "successAlertTitle": null,
     "successToastText": null,
-    "text": "\"<span id=\"\"><i class=\"icon ion-link\"></i>Connect</span>\"",
+    "text": "Connect",
     "title": null,
     "tooltip": null
   }],
@@ -459,7 +459,7 @@
     "successAlertBody": null,
     "successAlertTitle": null,
     "successToastText": null,
-    "text": "\"<span id=\"\"><i class=\"icon ion-link\"></i>Connect</span>\"",
+    "text": "Connect",
     "title": null,
     "tooltip": null
   }],
@@ -530,7 +530,7 @@
     "successAlertBody": null,
     "successAlertTitle": null,
     "successToastText": null,
-    "text": "\"<span id=\"\"><i class=\"icon ion-archive\"></i>Record a Measurement</span>\"",
+    "text": "Record a Measurement",
     "title": null,
     "tooltip": null
   }, {
@@ -550,7 +550,7 @@
     "successAlertBody": null,
     "successAlertTitle": null,
     "successToastText": null,
-    "text": "\"<span id=\"\"><i class=\"icon ion-android-notifications-none\"></i>Manage Reminders</span>\"",
+    "text": "Manage Reminders",
     "title": null,
     "tooltip": null
   }],
@@ -622,7 +622,7 @@
     "successAlertBody": null,
     "successAlertTitle": null,
     "successToastText": null,
-    "text": "\"<span id=\"\"><i class=\"icon ion-link\"></i>Connect</span>\"",
+    "text": "Connect",
     "title": null,
     "tooltip": null
   }],
@@ -689,7 +689,7 @@
     "successAlertBody": null,
     "successAlertTitle": null,
     "successToastText": null,
-    "text": "\"<span id=\"\"><i class=\"icon ion-link\"></i>Connect</span>\"",
+    "text": "Connect",
     "title": null,
     "tooltip": null
   }],
