@@ -12,7 +12,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 29,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "-4 to 4",
   "advanced": 1,
@@ -33,7 +35,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 25,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "/1",
   "advanced": 1,
@@ -51,7 +55,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 20,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "/6",
   "advanced": 1,
@@ -69,7 +75,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 40,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "/10",
   "advanced": 0,
@@ -90,7 +98,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 203,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "/5",
   "advanced": 0,
@@ -108,10 +118,12 @@
   "manualTracking": 1,
   "minimumValue": 1,
   "name": "1 to 5 Rating",
-  "synonyms": ["out of five"],
+  "synonyms": ["out of five", "out of 5"],
   "lowerCaseSynonyms": null,
   "id": 10,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "applications",
   "advanced": 1,
@@ -129,7 +141,9 @@
   "synonyms": ["Application"],
   "lowerCaseSynonyms": null,
   "id": 14,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "bpm",
   "advanced": 1,
@@ -144,7 +158,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 26,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "cal",
   "advanced": 1,
@@ -159,7 +175,9 @@
   "synonyms": ["Calorie"],
   "lowerCaseSynonyms": null,
   "id": 39,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "capsules",
   "advanced": 1,
@@ -177,7 +195,9 @@
   "synonyms": ["Capsule"],
   "lowerCaseSynonyms": null,
   "id": 27,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "cm",
   "advanced": 1,
@@ -195,7 +215,9 @@
   "synonyms": ["Centimeter"],
   "lowerCaseSynonyms": null,
   "id": 31,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "count",
   "advanced": 0,
@@ -213,7 +235,9 @@
   "synonyms": ["Ea", "Ct"],
   "lowerCaseSynonyms": null,
   "id": 23,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "C",
   "advanced": 1,
@@ -228,7 +252,9 @@
   "synonyms": ["Degrees Celsiu"],
   "lowerCaseSynonyms": null,
   "id": 46,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "degrees east",
   "advanced": 1,
@@ -243,7 +269,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 17,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "F",
   "advanced": 1,
@@ -264,7 +292,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 45,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "degrees north",
   "advanced": 1,
@@ -279,7 +309,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 18,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "$",
   "advanced": 1,
@@ -294,7 +326,9 @@
   "synonyms": ["Dollar"],
   "lowerCaseSynonyms": null,
   "id": 49,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "drops",
   "advanced": 1,
@@ -312,7 +346,9 @@
   "synonyms": ["Drop"],
   "lowerCaseSynonyms": null,
   "id": 201,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "event",
   "advanced": 1,
@@ -330,7 +366,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 41,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "ft",
   "advanced": 1,
@@ -348,7 +386,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 36,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "g",
   "advanced": 0,
@@ -366,7 +406,9 @@
   "synonyms": ["Gram"],
   "lowerCaseSynonyms": null,
   "id": 6,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "h",
   "advanced": 0,
@@ -384,7 +426,9 @@
   "synonyms": ["Hour"],
   "lowerCaseSynonyms": null,
   "id": 34,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "in",
   "advanced": 1,
@@ -402,7 +446,9 @@
   "synonyms": ["Inche"],
   "lowerCaseSynonyms": null,
   "id": 35,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "index",
   "advanced": 1,
@@ -417,7 +463,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 15,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "yes/no",
   "advanced": 0,
@@ -435,7 +483,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 19,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "kcal",
   "advanced": 1,
@@ -450,7 +500,9 @@
   "synonyms": ["Kilocalorie"],
   "lowerCaseSynonyms": null,
   "id": 22,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "kg",
   "advanced": 1,
@@ -465,7 +517,9 @@
   "synonyms": ["Kilogram"],
   "lowerCaseSynonyms": null,
   "id": 5,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "km",
   "advanced": 1,
@@ -483,7 +537,9 @@
   "synonyms": ["Kilometer"],
   "lowerCaseSynonyms": null,
   "id": 16,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "m",
   "advanced": 1,
@@ -498,7 +554,9 @@
   "synonyms": ["Meter"],
   "lowerCaseSynonyms": null,
   "id": 3,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "mcg",
   "advanced": 1,
@@ -516,7 +574,9 @@
   "synonyms": ["Microgram"],
   "lowerCaseSynonyms": null,
   "id": 32,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "mg/dL",
   "advanced": 1,
@@ -531,7 +591,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 43,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "mi",
   "advanced": 1,
@@ -549,7 +611,9 @@
   "synonyms": ["Mile"],
   "lowerCaseSynonyms": null,
   "id": 4,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "mg",
   "advanced": 0,
@@ -567,7 +631,9 @@
   "synonyms": ["Milligram"],
   "lowerCaseSynonyms": null,
   "id": 7,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "mL",
   "advanced": 0,
@@ -585,7 +651,9 @@
   "synonyms": ["Milliliter"],
   "lowerCaseSynonyms": null,
   "id": 9,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "mm",
   "advanced": 1,
@@ -603,7 +671,9 @@
   "synonyms": ["Millimeter"],
   "lowerCaseSynonyms": null,
   "id": 48,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "mmHg",
   "advanced": 1,
@@ -621,7 +691,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 30,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "s",
   "advanced": 1,
@@ -636,7 +708,9 @@
   "synonyms": ["Second"],
   "lowerCaseSynonyms": null,
   "id": 1,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "min",
   "advanced": 0,
@@ -654,7 +728,9 @@
   "synonyms": ["Minute"],
   "lowerCaseSynonyms": null,
   "id": 2,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "Pa",
   "advanced": 1,
@@ -669,7 +745,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 47,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "%",
   "advanced": 1,
@@ -684,7 +762,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 21,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "pieces",
   "advanced": 1,
@@ -702,7 +782,9 @@
   "synonyms": ["Piece"],
   "lowerCaseSynonyms": null,
   "id": 28,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "pills",
   "advanced": 1,
@@ -720,7 +802,9 @@
   "synonyms": ["Pill"],
   "lowerCaseSynonyms": null,
   "id": 24,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "lb",
   "advanced": 1,
@@ -738,7 +822,9 @@
   "synonyms": ["lbs", "Pound"],
   "lowerCaseSynonyms": null,
   "id": 8,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "puffs",
   "advanced": 1,
@@ -756,7 +842,9 @@
   "synonyms": ["Puff"],
   "lowerCaseSynonyms": null,
   "id": 13,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "serving",
   "advanced": 0,
@@ -774,7 +862,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 44,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "sprays",
   "advanced": 1,
@@ -792,7 +882,9 @@
   "synonyms": ["Spray"],
   "lowerCaseSynonyms": null,
   "id": 50,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "tablets",
   "advanced": 1,
@@ -810,7 +902,9 @@
   "synonyms": ["Tablet"],
   "lowerCaseSynonyms": null,
   "id": 11,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "torr",
   "advanced": 1,
@@ -828,7 +922,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 42,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "units",
   "advanced": 1,
@@ -846,7 +942,9 @@
   "synonyms": ["Unit"],
   "lowerCaseSynonyms": null,
   "id": 12,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "/minute",
   "advanced": 1,
@@ -861,7 +959,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 202,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "ms",
   "advanced": 1,
@@ -879,7 +979,9 @@
   "synonyms": ["Millisecond"],
   "lowerCaseSynonyms": null,
   "id": 204,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "L",
   "advanced": 1,
@@ -894,7 +996,9 @@
   "synonyms": ["Liter"],
   "lowerCaseSynonyms": null,
   "id": 205,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "oz",
   "advanced": 1,
@@ -912,7 +1016,9 @@
   "synonyms": ["Ounce"],
   "lowerCaseSynonyms": null,
   "id": 206,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "IU",
   "advanced": 1,
@@ -927,7 +1033,9 @@
   "synonyms": ["International Unit"],
   "lowerCaseSynonyms": null,
   "id": 207,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "m/s",
   "advanced": 1,
@@ -942,7 +1050,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 208,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "qt",
   "advanced": 1,
@@ -960,7 +1070,9 @@
   "synonyms": ["Quart"],
   "lowerCaseSynonyms": null,
   "id": 209,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "dose",
   "advanced": 1,
@@ -978,7 +1090,9 @@
   "synonyms": ["Dose"],
   "lowerCaseSynonyms": null,
   "id": 210,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "ppm",
   "advanced": 1,
@@ -993,7 +1107,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 211,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "dB",
   "advanced": 1,
@@ -1008,7 +1124,9 @@
   "synonyms": ["Decibel"],
   "lowerCaseSynonyms": null,
   "id": 212,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "mbar",
   "advanced": 1,
@@ -1026,7 +1144,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 213,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "hPa",
   "advanced": 1,
@@ -1044,7 +1164,9 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 214,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }, {
   "abbreviatedName": "mph",
   "advanced": 1,
@@ -1059,5 +1181,7 @@
   "synonyms": [],
   "lowerCaseSynonyms": null,
   "id": 215,
-  "updatedAt": null
+  "updatedAt": null,
+  "listCard": null,
+  "buttons": null
 }]
