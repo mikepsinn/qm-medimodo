@@ -10,7 +10,6 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
              $cordovaGeolocation, CacheFactory, $ionicLoading, Analytics, wikipediaFactory, $ionicHistory,
              $ionicActionSheet) {
     var allStates = $state.get();
-    //console.log(qm.stringHelper.prettyJsonStringify(allStates));
     var qmService = {
         adBanner: {
             adPublisherIds: {
@@ -1492,6 +1491,17 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                 qmLog.debug('User cancelled selection');
             });
         },
+        states: {
+            outputStateNameConstantsForPHP: function(){
+                for (var i = 0; i < allStates.length; i++) {
+                    var x = allStates[i];
+                    console.log("const " + x.name.replace('app.', '') + " = '" + x.name + "';")
+                }
+            },
+            outputStateInfoForJsonFile: function(){
+                console.log(qm.stringHelper.prettyJsonStringify(allStates));
+            }
+        },
         storage: {},
         search: {
             getTitle: function(variableCategoryName){
@@ -2840,7 +2850,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
     };
     qmService.syncAllUserData = function(){
         qmService.trackingReminders.syncTrackingReminders();
-        qmService.getFromLocalStorageOrApiDeferred();
+        qm.userVariables.getFromLocalStorageOrApi();
     };
     qmService.refreshUser = function(force){
         var deferred = $q.defer();
@@ -4964,15 +4974,6 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
             qmLogService.error('Error deleting all measurements for variable: ', error);
             deferred.reject(error);
         });
-        return deferred.promise;
-    };
-    qmService.getFromLocalStorageOrApiDeferred = function(params){
-        var deferred = $q.defer();
-        qm.userVariables.getFromLocalStorageOrApi(params, function (userVariables) {
-            params = params || {};
-            deferred.resolve(userVariables);
-        }, function (error) {
-            deferred.reject(error);});
         return deferred.promise;
     };
     qmService.getCommonVariablesDeferred = function(params, successHandler, errorHandler){
