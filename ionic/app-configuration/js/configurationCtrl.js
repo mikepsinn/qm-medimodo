@@ -163,10 +163,14 @@ angular.module('starter').controller('ConfigurationCtrl', function( $state, $sco
             '&filename=' + fileName + "&accessToken=" + $rootScope.user.accessToken + "&encrypt=" + encrypt, data: body});
         file.upload.then(function (response) {
             console.debug("File upload response: ", response);
-            qmService.showInfoToast(fileName.replace('app_images_', '') + " uploaded!");
+            var displayName = fileName.replace('app_images_', '');
+            displayName = qm.stringHelper.camelToTitleCase(displayName);
+            qmService.showInfoToast(displayName + " uploaded!");
             successHandler(response.data.url);
-            configurationService.postAppSettingsAfterConfirmation();
             qmService.hideLoader();
+            configurationService.postAppSettingsAfterConfirmation($rootScope.appSettings, function (appSettingsUpdateResponse) {
+                qmLog.info("appSettings image UpdateResponse", appSettingsUpdateResponse);
+            });
         }, function (response) {
             qmService.hideLoader();
             if (response.status > 0){$scope.errorMsg = response.status + ': ' + response.data;}

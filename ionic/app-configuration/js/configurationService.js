@@ -1225,6 +1225,7 @@ angular.module('starter').factory('configurationService', function($http, $q, $r
         return deferred.promise;
     };
     configurationService.postAppSettingsAfterConfirmation = function(appSettings, successHandler, errorHandler, ev) {
+        if(!appSettings){appSettings = $rootScope.appSettings;}
         configurationService.setBuilderClientId(appSettings.clientId);
         var users = appSettings.users || configurationService.users;
         var numberOfUsers = (users) ? users.length : 0;
