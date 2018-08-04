@@ -5,6 +5,7 @@
   "categoryName": "Miscellany",
   "combinationOperation": null,
   "conversionSteps": [],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -30,6 +31,7 @@
     "operation": "MULTIPLY",
     "value": 12.5
   }],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -52,6 +54,7 @@
     "operation": "MULTIPLY",
     "value": 100
   }],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -74,6 +77,7 @@
     "operation": "MULTIPLY",
     "value": 20
   }],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -99,6 +103,7 @@
     "operation": "ADD",
     "value": -11.111111111111
   }],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -124,6 +129,7 @@
     "operation": "ADD",
     "value": -25
   }],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -131,7 +137,7 @@
   "minimumValue": 1,
   "name": "1 to 5 Rating",
   "suffix": null,
-  "synonyms": ["out of five", "out of 5"],
+  "synonyms": ["out of five", "out of 5", "1 to 5 Rating", "/5", "1 to 5 rating"],
   "id": 10,
   "updatedAt": null,
   "listCard": null,
@@ -146,6 +152,7 @@
     "operation": "MULTIPLY",
     "value": 1
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -165,6 +172,7 @@
   "categoryName": "Miscellany",
   "combinationOperation": null,
   "conversionSteps": [],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -184,6 +192,7 @@
   "categoryName": "Energy",
   "combinationOperation": null,
   "conversionSteps": [],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -206,6 +215,7 @@
     "operation": "MULTIPLY",
     "value": 1
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -228,6 +238,7 @@
     "operation": "MULTIPLY",
     "value": 0.01
   }],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -250,6 +261,7 @@
     "operation": "MULTIPLY",
     "value": 1
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -257,7 +269,7 @@
   "minimumValue": 0,
   "name": "Count",
   "suffix": null,
-  "synonyms": ["Ea", "Ct"],
+  "synonyms": ["Ea", "Ct", "Count", "count", "ea", "ct"],
   "id": 23,
   "updatedAt": null,
   "listCard": null,
@@ -269,6 +281,7 @@
   "categoryName": "Temperature",
   "combinationOperation": null,
   "conversionSteps": [],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -288,6 +301,7 @@
   "categoryName": "Miscellany",
   "combinationOperation": null,
   "conversionSteps": [],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -313,6 +327,7 @@
     "operation": "MULTIPLY",
     "value": 0.55555555555556
   }],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -332,6 +347,7 @@
   "categoryName": "Miscellany",
   "combinationOperation": null,
   "conversionSteps": [],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -351,6 +367,7 @@
   "categoryName": "Currency",
   "combinationOperation": null,
   "conversionSteps": [],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -373,6 +390,7 @@
     "operation": "MULTIPLY",
     "value": 1
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -395,6 +413,7 @@
     "operation": "MULTIPLY",
     "value": 1
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -417,6 +436,7 @@
     "operation": "MULTIPLY",
     "value": 0.3048
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -439,6 +459,7 @@
     "operation": "MULTIPLY",
     "value": 0.001
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -461,6 +482,7 @@
     "operation": "MULTIPLY",
     "value": 3600
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -483,6 +505,7 @@
     "operation": "MULTIPLY",
     "value": 0.0254
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -502,6 +525,7 @@
   "categoryName": "Miscellany",
   "combinationOperation": null,
   "conversionSteps": [],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -524,6 +548,7 @@
     "operation": "MULTIPLY",
     "value": 1
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -543,6 +568,7 @@
   "categoryName": "Energy",
   "combinationOperation": null,
   "conversionSteps": [],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -562,6 +588,7 @@
   "categoryName": "Weight",
   "combinationOperation": null,
   "conversionSteps": [],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -584,6 +611,7 @@
     "operation": "MULTIPLY",
     "value": 1000
   }],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -603,6 +631,7 @@
   "categoryName": "Distance",
   "combinationOperation": null,
   "conversionSteps": [],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -625,6 +654,7 @@
     "operation": "MULTIPLY",
     "value": 0.000001
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -644,6 +674,7 @@
   "categoryName": "Miscellany",
   "combinationOperation": null,
   "conversionSteps": [],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -666,6 +697,7 @@
     "operation": "MULTIPLY",
     "value": 1609.34
   }],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -688,6 +720,7 @@
     "operation": "MULTIPLY",
     "value": 0.000001
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -710,6 +743,7 @@
     "operation": "MULTIPLY",
     "value": 0.001
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -732,6 +766,7 @@
     "operation": "MULTIPLY",
     "value": 0.001
   }],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -754,6 +789,7 @@
     "operation": "MULTIPLY",
     "value": 133.32239
   }],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -773,6 +809,7 @@
   "categoryName": "Duration",
   "combinationOperation": null,
   "conversionSteps": [],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -795,6 +832,7 @@
     "operation": "MULTIPLY",
     "value": 60
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -814,6 +852,7 @@
   "categoryName": "Pressure",
   "combinationOperation": null,
   "conversionSteps": [],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -833,6 +872,7 @@
   "categoryName": "Rating",
   "combinationOperation": null,
   "conversionSteps": [],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -855,6 +895,7 @@
     "operation": "MULTIPLY",
     "value": 1
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -877,6 +918,7 @@
     "operation": "MULTIPLY",
     "value": 1
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -899,6 +941,7 @@
     "operation": "MULTIPLY",
     "value": 0.453592
   }],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -906,7 +949,7 @@
   "minimumValue": 0,
   "name": "Pounds",
   "suffix": null,
-  "synonyms": ["lbs"],
+  "synonyms": ["lbs", "Pounds", "lb", "Pound", "pounds", "pound"],
   "id": 8,
   "updatedAt": null,
   "listCard": null,
@@ -921,6 +964,7 @@
     "operation": "MULTIPLY",
     "value": 1
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -943,6 +987,7 @@
     "operation": "MULTIPLY",
     "value": 1
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -965,6 +1010,7 @@
     "operation": "MULTIPLY",
     "value": 1
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -987,6 +1033,7 @@
     "operation": "MULTIPLY",
     "value": 1
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -1009,6 +1056,7 @@
     "operation": "MULTIPLY",
     "value": 133.322
   }],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -1031,6 +1079,7 @@
     "operation": "MULTIPLY",
     "value": 1
   }],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -1050,6 +1099,7 @@
   "categoryName": "Frequency",
   "combinationOperation": null,
   "conversionSteps": [],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -1072,6 +1122,7 @@
     "operation": "MULTIPLY",
     "value": 0.001
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -1091,6 +1142,7 @@
   "categoryName": "Volume",
   "combinationOperation": null,
   "conversionSteps": [],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -1113,6 +1165,7 @@
     "operation": "MULTIPLY",
     "value": 0.0295735
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -1132,6 +1185,7 @@
   "categoryName": "Miscellany",
   "combinationOperation": null,
   "conversionSteps": [],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -1151,6 +1205,7 @@
   "categoryName": "Frequency",
   "combinationOperation": null,
   "conversionSteps": [],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -1173,6 +1228,7 @@
     "operation": "MULTIPLY",
     "value": 0.946353
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -1195,6 +1251,7 @@
     "operation": "MULTIPLY",
     "value": 1
   }],
+  "defaultValue": null,
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
@@ -1214,6 +1271,7 @@
   "categoryName": "Miscellany",
   "combinationOperation": null,
   "conversionSteps": [],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -1233,6 +1291,7 @@
   "categoryName": "Miscellany",
   "combinationOperation": null,
   "conversionSteps": [],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -1255,6 +1314,7 @@
     "operation": "MULTIPLY",
     "value": 133.32239
   }],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -1277,6 +1337,7 @@
     "operation": "MULTIPLY",
     "value": 100
   }],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 0,
@@ -1296,6 +1357,7 @@
   "categoryName": "Miscellany",
   "combinationOperation": null,
   "conversionSteps": [],
+  "defaultValue": null,
   "fillingValue": null,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
