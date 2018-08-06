@@ -991,7 +991,7 @@
   "fillingValue": 0,
   "lowerCaseSynonyms": null,
   "manualTracking": 1,
-  "maximumValue": null,
+  "maximumValue": 20,
   "minimumValue": 0,
   "name": "Serving",
   "suffix": "consumption",
