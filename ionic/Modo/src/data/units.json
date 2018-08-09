@@ -14,10 +14,8 @@
   "name": "% Recommended Daily Allowance",
   "suffix": "intake",
   "synonyms": ["% Recommended Daily Allowance", "%RDA", "% recommended daily allowance", "%rda"],
-  "buttons": null,
   "createdAt": null,
   "id": 29,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "-4 to 4",
@@ -41,10 +39,8 @@
   "name": "-4 to 4 Rating",
   "suffix": null,
   "synonyms": ["-4 to 4 Rating", "-4 to 4", "-4 to 4 rating"],
-  "buttons": null,
   "createdAt": null,
   "id": 25,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "/1",
@@ -65,10 +61,8 @@
   "name": "0 to 1 Rating",
   "suffix": null,
   "synonyms": ["0 to 1 Rating", "/1", "0 to 1 rating"],
-  "buttons": null,
   "createdAt": null,
   "id": 20,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "/6",
@@ -89,10 +83,8 @@
   "name": "0 to 5 Rating",
   "suffix": null,
   "synonyms": ["0 to 5 Rating", "/6", "0 to 5 rating"],
-  "buttons": null,
   "createdAt": null,
   "id": 40,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "/10",
@@ -116,10 +108,8 @@
   "name": "1 to 10 Rating",
   "suffix": null,
   "synonyms": ["1 to 10 Rating", "/10", "1 to 10 rating"],
-  "buttons": null,
   "createdAt": null,
   "id": 203,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "/5",
@@ -143,10 +133,8 @@
   "name": "1 to 5 Rating",
   "suffix": null,
   "synonyms": ["out of five", "out of 5", "1 to 5 Rating", "/5", "1 to 5 rating"],
-  "buttons": null,
   "createdAt": null,
   "id": 10,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "applications",
@@ -167,10 +155,8 @@
   "name": "Applications",
   "suffix": null,
   "synonyms": ["Applications", "applications", "Application", "application"],
-  "buttons": null,
   "createdAt": null,
   "id": 14,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "bpm",
@@ -188,10 +174,8 @@
   "name": "Beats per Minute",
   "suffix": null,
   "synonyms": ["Beats per Minute", "bpm", "beats per minute"],
-  "buttons": null,
   "createdAt": null,
   "id": 26,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "cal",
@@ -209,10 +193,8 @@
   "name": "Calories",
   "suffix": null,
   "synonyms": ["Calories", "cal", "Calory", "calories", "calory"],
-  "buttons": null,
   "createdAt": null,
   "id": 39,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "capsules",
@@ -233,10 +215,8 @@
   "name": "Capsules",
   "suffix": null,
   "synonyms": ["Capsules", "capsules", "Capsule", "capsule"],
-  "buttons": null,
   "createdAt": null,
   "id": 27,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "cm",
@@ -257,10 +237,8 @@
   "name": "Centimeters",
   "suffix": null,
   "synonyms": ["Centimeters", "cm", "Centimeter", "centimeters", "centimeter"],
-  "buttons": null,
   "createdAt": null,
   "id": 31,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "count",
@@ -281,10 +259,8 @@
   "name": "Count",
   "suffix": null,
   "synonyms": ["Ea", "Ct", "Count", "count", "ea", "ct"],
-  "buttons": null,
   "createdAt": null,
   "id": 23,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "C",
@@ -302,10 +278,8 @@
   "name": "Degrees Celsius",
   "suffix": null,
   "synonyms": ["Degrees Celsius", "C", "Degrees Celsiu", "degrees celsius", "c", "degrees celsiu"],
-  "buttons": null,
   "createdAt": null,
   "id": 46,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "degrees east",
@@ -323,10 +297,8 @@
   "name": "Degrees East",
   "suffix": null,
   "synonyms": ["Degrees East", "degrees east"],
-  "buttons": null,
   "createdAt": null,
   "id": 17,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "F",
@@ -350,10 +322,8 @@
   "name": "Degrees Fahrenheit",
   "suffix": null,
   "synonyms": ["Degrees Fahrenheit", "F", "degrees fahrenheit", "f"],
-  "buttons": null,
   "createdAt": null,
   "id": 45,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "degrees north",
@@ -371,10 +341,8 @@
   "name": "Degrees North",
   "suffix": null,
   "synonyms": ["Degrees North", "degrees north"],
-  "buttons": null,
   "createdAt": null,
   "id": 18,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "$",
@@ -392,10 +360,8 @@
   "name": "Dollars",
   "suffix": null,
   "synonyms": ["Dollars", "$", "Dollar", "dollars", "dollar"],
-  "buttons": null,
   "createdAt": null,
   "id": 49,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "drops",
@@ -416,10 +382,8 @@
   "name": "Drops",
   "suffix": null,
   "synonyms": ["Drops", "drops", "Drop", "drop"],
-  "buttons": null,
   "createdAt": null,
   "id": 201,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "event",
@@ -440,10 +404,8 @@
   "name": "Event",
   "suffix": null,
   "synonyms": ["Event", "event"],
-  "buttons": null,
   "createdAt": null,
   "id": 41,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "ft",
@@ -464,10 +426,8 @@
   "name": "Feet",
   "suffix": null,
   "synonyms": ["Feet", "ft", "feet"],
-  "buttons": null,
   "createdAt": null,
   "id": 36,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "g",
@@ -488,10 +448,8 @@
   "name": "Grams",
   "suffix": null,
   "synonyms": ["Grams", "g", "Gram", "grams", "gram"],
-  "buttons": null,
   "createdAt": null,
   "id": 6,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "h",
@@ -512,10 +470,8 @@
   "name": "Hours",
   "suffix": null,
   "synonyms": ["Hours", "h", "Hour", "hours", "hour"],
-  "buttons": null,
   "createdAt": null,
   "id": 34,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "in",
@@ -536,10 +492,8 @@
   "name": "Inches",
   "suffix": null,
   "synonyms": ["Inches", "in", "Inch", "inches", "inch"],
-  "buttons": null,
   "createdAt": null,
   "id": 35,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "index",
@@ -557,10 +511,8 @@
   "name": "Index",
   "suffix": null,
   "synonyms": ["Index", "index"],
-  "buttons": null,
   "createdAt": null,
   "id": 15,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "yes/no",
@@ -581,10 +533,8 @@
   "name": "Yes/No",
   "suffix": null,
   "synonyms": ["Yes/No", "yes/no"],
-  "buttons": null,
   "createdAt": null,
   "id": 19,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "kcal",
@@ -602,10 +552,8 @@
   "name": "Kilocalories",
   "suffix": null,
   "synonyms": ["Kilocalories", "kcal", "Kilocalory", "kilocalories", "kilocalory"],
-  "buttons": null,
   "createdAt": null,
   "id": 22,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "kg",
@@ -623,10 +571,8 @@
   "name": "Kilograms",
   "suffix": null,
   "synonyms": ["Kilograms", "kg", "Kilogram", "kilograms", "kilogram"],
-  "buttons": null,
   "createdAt": null,
   "id": 5,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "km",
@@ -647,10 +593,8 @@
   "name": "Kilometers",
   "suffix": null,
   "synonyms": ["Kilometers", "km", "Kilometer", "kilometers", "kilometer"],
-  "buttons": null,
   "createdAt": null,
   "id": 16,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "m",
@@ -668,10 +612,8 @@
   "name": "Meters",
   "suffix": null,
   "synonyms": ["Meters", "m", "Meter", "meters", "meter"],
-  "buttons": null,
   "createdAt": null,
   "id": 3,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "mcg",
@@ -692,10 +634,8 @@
   "name": "Micrograms",
   "suffix": null,
   "synonyms": ["Micrograms", "mcg", "Microgram", "micrograms", "microgram"],
-  "buttons": null,
   "createdAt": null,
   "id": 32,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "mg/dL",
@@ -713,10 +653,8 @@
   "name": "Micrograms per decilitre",
   "suffix": null,
   "synonyms": ["Micrograms per decilitre", "mg/dL", "micrograms per decilitre", "mg/dl"],
-  "buttons": null,
   "createdAt": null,
   "id": 43,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "mi",
@@ -737,10 +675,8 @@
   "name": "Miles",
   "suffix": null,
   "synonyms": ["Miles", "mi", "Mile", "miles", "mile"],
-  "buttons": null,
   "createdAt": null,
   "id": 4,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "mg",
@@ -761,10 +697,8 @@
   "name": "Milligrams",
   "suffix": "intake",
   "synonyms": ["Milligrams", "mg", "Milligram", "milligrams", "milligram"],
-  "buttons": null,
   "createdAt": null,
   "id": 7,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "mL",
@@ -785,10 +719,8 @@
   "name": "Milliliters",
   "suffix": null,
   "synonyms": ["Milliliters", "mL", "Milliliter", "milliliters", "ml", "milliliter"],
-  "buttons": null,
   "createdAt": null,
   "id": 9,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "mm",
@@ -809,10 +741,8 @@
   "name": "Millimeters",
   "suffix": null,
   "synonyms": ["Millimeters", "mm", "Millimeter", "millimeters", "millimeter"],
-  "buttons": null,
   "createdAt": null,
   "id": 48,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "mmHg",
@@ -833,10 +763,8 @@
   "name": "Millimeters Merc",
   "suffix": null,
   "synonyms": ["Millimeters Merc", "mmHg", "millimeters merc", "mmhg"],
-  "buttons": null,
   "createdAt": null,
   "id": 30,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "s",
@@ -854,10 +782,8 @@
   "name": "Seconds",
   "suffix": null,
   "synonyms": ["Seconds", "s", "Second", "seconds", "second"],
-  "buttons": null,
   "createdAt": null,
   "id": 1,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "min",
@@ -878,10 +804,8 @@
   "name": "Minutes",
   "suffix": null,
   "synonyms": ["Minutes", "min", "Minute", "minutes", "minute"],
-  "buttons": null,
   "createdAt": null,
   "id": 2,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "Pa",
@@ -899,10 +823,8 @@
   "name": "Pascal",
   "suffix": null,
   "synonyms": ["Pascal", "Pa", "pascal", "pa"],
-  "buttons": null,
   "createdAt": null,
   "id": 47,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "%",
@@ -920,10 +842,8 @@
   "name": "Percent",
   "suffix": null,
   "synonyms": ["Percent", "%", "percent"],
-  "buttons": null,
   "createdAt": null,
   "id": 21,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "pieces",
@@ -944,10 +864,8 @@
   "name": "Pieces",
   "suffix": null,
   "synonyms": ["Pieces", "pieces", "Piece", "piece"],
-  "buttons": null,
   "createdAt": null,
   "id": 28,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "pills",
@@ -968,10 +886,8 @@
   "name": "Pills",
   "suffix": null,
   "synonyms": ["Pills", "pills", "Pill", "pill"],
-  "buttons": null,
   "createdAt": null,
   "id": 24,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "lb",
@@ -992,10 +908,8 @@
   "name": "Pounds",
   "suffix": null,
   "synonyms": ["lbs", "Pounds", "lb", "Pound", "pounds", "pound"],
-  "buttons": null,
   "createdAt": null,
   "id": 8,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "puffs",
@@ -1016,10 +930,8 @@
   "name": "Puffs",
   "suffix": null,
   "synonyms": ["Puffs", "puffs", "Puff", "puff"],
-  "buttons": null,
   "createdAt": null,
   "id": 13,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "serving",
@@ -1040,10 +952,8 @@
   "name": "Serving",
   "suffix": "consumption",
   "synonyms": ["Serving", "serving"],
-  "buttons": null,
   "createdAt": null,
   "id": 44,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "sprays",
@@ -1064,10 +974,8 @@
   "name": "Sprays",
   "suffix": null,
   "synonyms": ["Sprays", "sprays", "Spray", "spray"],
-  "buttons": null,
   "createdAt": null,
   "id": 50,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "tablets",
@@ -1088,10 +996,8 @@
   "name": "Tablets",
   "suffix": null,
   "synonyms": ["Tablets", "tablets", "Tablet", "tablet"],
-  "buttons": null,
   "createdAt": null,
   "id": 11,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "torr",
@@ -1112,10 +1018,8 @@
   "name": "Torr",
   "suffix": null,
   "synonyms": ["Torr", "torr"],
-  "buttons": null,
   "createdAt": null,
   "id": 42,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "units",
@@ -1136,10 +1040,8 @@
   "name": "Units",
   "suffix": null,
   "synonyms": ["Units", "units", "Unit", "unit"],
-  "buttons": null,
   "createdAt": null,
   "id": 12,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "/minute",
@@ -1157,10 +1059,8 @@
   "name": "per Minute",
   "suffix": null,
   "synonyms": ["per Minute", "/minute", "per minute"],
-  "buttons": null,
   "createdAt": null,
   "id": 202,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "ms",
@@ -1181,10 +1081,8 @@
   "name": "Milliseconds",
   "suffix": null,
   "synonyms": ["Milliseconds", "ms", "Millisecond", "milliseconds", "millisecond"],
-  "buttons": null,
   "createdAt": null,
   "id": 204,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "L",
@@ -1202,10 +1100,8 @@
   "name": "Liters",
   "suffix": null,
   "synonyms": ["Liters", "L", "Liter", "liters", "l", "liter"],
-  "buttons": null,
   "createdAt": null,
   "id": 205,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "oz",
@@ -1226,10 +1122,8 @@
   "name": "Ounces",
   "suffix": null,
   "synonyms": ["Ounces", "oz", "Ounce", "ounces", "ounce"],
-  "buttons": null,
   "createdAt": null,
   "id": 206,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "IU",
@@ -1247,10 +1141,8 @@
   "name": "International Units",
   "suffix": null,
   "synonyms": ["International Units", "IU", "International Unit", "international units", "iu", "international unit"],
-  "buttons": null,
   "createdAt": null,
   "id": 207,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "m/s",
@@ -1268,10 +1160,8 @@
   "name": "Meters per Second",
   "suffix": null,
   "synonyms": ["Meters per Second", "m/s", "meters per second"],
-  "buttons": null,
   "createdAt": null,
   "id": 208,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "qt",
@@ -1292,10 +1182,8 @@
   "name": "Quarts",
   "suffix": null,
   "synonyms": ["Quarts", "qt", "Quart", "quarts", "quart"],
-  "buttons": null,
   "createdAt": null,
   "id": 209,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "dose",
@@ -1316,10 +1204,8 @@
   "name": "Doses",
   "suffix": null,
   "synonyms": ["Doses", "dose", "Dose", "doses"],
-  "buttons": null,
   "createdAt": null,
   "id": 210,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "ppm",
@@ -1337,10 +1223,8 @@
   "name": "Parts per Million",
   "suffix": null,
   "synonyms": ["Parts per Million", "ppm", "parts per million"],
-  "buttons": null,
   "createdAt": null,
   "id": 211,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "dB",
@@ -1358,10 +1242,8 @@
   "name": "Decibels",
   "suffix": null,
   "synonyms": ["Decibels", "dB", "Decibel", "decibels", "db", "decibel"],
-  "buttons": null,
   "createdAt": null,
   "id": 212,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "mbar",
@@ -1382,10 +1264,8 @@
   "name": "Millibar",
   "suffix": null,
   "synonyms": ["Millibar", "mbar", "millibar"],
-  "buttons": null,
   "createdAt": null,
   "id": 213,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "hPa",
@@ -1406,10 +1286,8 @@
   "name": "Hectopascal ",
   "suffix": null,
   "synonyms": ["Hectopascal ", "hPa", "hectopascal ", "hpa"],
-  "buttons": null,
   "createdAt": null,
   "id": 214,
-  "listCard": null,
   "updatedAt": null
 }, {
   "abbreviatedName": "mph",
@@ -1427,9 +1305,7 @@
   "name": "Miles per Hour",
   "suffix": null,
   "synonyms": ["Miles per Hour", "mph", "miles per hour"],
-  "buttons": null,
   "createdAt": null,
   "id": 215,
-  "listCard": null,
   "updatedAt": null
 }]
