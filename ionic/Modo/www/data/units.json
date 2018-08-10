@@ -7,16 +7,13 @@
   "conversionSteps": [],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "% Recommended Daily Allowance",
   "suffix": "intake",
-  "synonyms": ["% Recommended Daily Allowance", "%RDA", "% recommended daily allowance", "%rda"],
-  "createdAt": null,
-  "id": 29,
-  "updatedAt": null
+  "synonyms": ["% Recommended Daily Allowance", "%RDA"],
+  "id": 29
 }, {
   "abbreviatedName": "-4 to 4",
   "advanced": 1,
@@ -32,16 +29,13 @@
   }],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": 4,
   "minimumValue": -4,
   "name": "-4 to 4 Rating",
   "suffix": null,
-  "synonyms": ["-4 to 4 Rating", "-4 to 4", "-4 to 4 rating"],
-  "createdAt": null,
-  "id": 25,
-  "updatedAt": null
+  "synonyms": ["-4 to 4 Rating", "-4 to 4"],
+  "id": 25
 }, {
   "abbreviatedName": "/1",
   "advanced": 1,
@@ -54,16 +48,13 @@
   }],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": 1,
   "minimumValue": 0,
   "name": "0 to 1 Rating",
   "suffix": null,
-  "synonyms": ["0 to 1 Rating", "/1", "0 to 1 rating"],
-  "createdAt": null,
-  "id": 20,
-  "updatedAt": null
+  "synonyms": ["0 to 1 Rating", "/1"],
+  "id": 20
 }, {
   "abbreviatedName": "/6",
   "advanced": 1,
@@ -76,16 +67,13 @@
   }],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": 5,
   "minimumValue": 0,
   "name": "0 to 5 Rating",
   "suffix": null,
-  "synonyms": ["0 to 5 Rating", "/6", "0 to 5 rating"],
-  "createdAt": null,
-  "id": 40,
-  "updatedAt": null
+  "synonyms": ["0 to 5 Rating", "/6"],
+  "id": 40
 }, {
   "abbreviatedName": "/10",
   "advanced": 0,
@@ -101,16 +89,13 @@
   }],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": 10,
   "minimumValue": 1,
   "name": "1 to 10 Rating",
   "suffix": null,
-  "synonyms": ["1 to 10 Rating", "/10", "1 to 10 rating"],
-  "createdAt": null,
-  "id": 203,
-  "updatedAt": null
+  "synonyms": ["1 to 10 Rating", "/10"],
+  "id": 203
 }, {
   "abbreviatedName": "/5",
   "advanced": 0,
@@ -126,16 +111,13 @@
   }],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": 5,
   "minimumValue": 1,
   "name": "1 to 5 Rating",
   "suffix": null,
-  "synonyms": ["out of five", "out of 5", "1 to 5 Rating", "/5", "1 to 5 rating"],
-  "createdAt": null,
-  "id": 10,
-  "updatedAt": null
+  "synonyms": ["out of five", "out of 5", "1 to 5 Rating", "/5"],
+  "id": 10
 }, {
   "abbreviatedName": "applications",
   "advanced": 1,
@@ -148,16 +130,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Applications",
   "suffix": null,
   "synonyms": ["Applications", "applications", "Application", "application"],
-  "createdAt": null,
-  "id": 14,
-  "updatedAt": null
+  "id": 14
 }, {
   "abbreviatedName": "bpm",
   "advanced": 1,
@@ -167,16 +146,13 @@
   "conversionSteps": [],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Beats per Minute",
   "suffix": null,
-  "synonyms": ["Beats per Minute", "bpm", "beats per minute"],
-  "createdAt": null,
-  "id": 26,
-  "updatedAt": null
+  "synonyms": ["Beats per Minute", "bpm"],
+  "id": 26
 }, {
   "abbreviatedName": "cal",
   "advanced": 1,
@@ -186,16 +162,13 @@
   "conversionSteps": [],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": null,
   "minimumValue": null,
   "name": "Calories",
   "suffix": null,
-  "synonyms": ["Calories", "cal", "Calory", "calories", "calory"],
-  "createdAt": null,
-  "id": 39,
-  "updatedAt": null
+  "synonyms": ["Calories", "cal", "Calory"],
+  "id": 39
 }, {
   "abbreviatedName": "capsules",
   "advanced": 1,
@@ -208,16 +181,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Capsules",
   "suffix": null,
   "synonyms": ["Capsules", "capsules", "Capsule", "capsule"],
-  "createdAt": null,
-  "id": 27,
-  "updatedAt": null
+  "id": 27
 }, {
   "abbreviatedName": "cm",
   "advanced": 1,
@@ -230,16 +200,13 @@
   }],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Centimeters",
   "suffix": null,
-  "synonyms": ["Centimeters", "cm", "Centimeter", "centimeters", "centimeter"],
-  "createdAt": null,
-  "id": 31,
-  "updatedAt": null
+  "synonyms": ["Centimeters", "cm", "Centimeter"],
+  "id": 31
 }, {
   "abbreviatedName": "count",
   "advanced": 0,
@@ -252,16 +219,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Count",
   "suffix": null,
-  "synonyms": ["Ea", "Ct", "Count", "count", "ea", "ct"],
-  "createdAt": null,
-  "id": 23,
-  "updatedAt": null
+  "synonyms": ["Ea", "Ct", "Count", "count"],
+  "id": 23
 }, {
   "abbreviatedName": "C",
   "advanced": 1,
@@ -271,16 +235,13 @@
   "conversionSteps": [],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": null,
   "name": "Degrees Celsius",
   "suffix": null,
-  "synonyms": ["Degrees Celsius", "C", "Degrees Celsiu", "degrees celsius", "c", "degrees celsiu"],
-  "createdAt": null,
-  "id": 46,
-  "updatedAt": null
+  "synonyms": ["Degrees Celsius", "C", "Degrees Celsiu"],
+  "id": 46
 }, {
   "abbreviatedName": "degrees east",
   "advanced": 1,
@@ -290,16 +251,13 @@
   "conversionSteps": [],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": null,
   "minimumValue": null,
   "name": "Degrees East",
   "suffix": null,
   "synonyms": ["Degrees East", "degrees east"],
-  "createdAt": null,
-  "id": 17,
-  "updatedAt": null
+  "id": 17
 }, {
   "abbreviatedName": "F",
   "advanced": 1,
@@ -315,16 +273,13 @@
   }],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": null,
   "name": "Degrees Fahrenheit",
   "suffix": null,
-  "synonyms": ["Degrees Fahrenheit", "F", "degrees fahrenheit", "f"],
-  "createdAt": null,
-  "id": 45,
-  "updatedAt": null
+  "synonyms": ["Degrees Fahrenheit", "F"],
+  "id": 45
 }, {
   "abbreviatedName": "degrees north",
   "advanced": 1,
@@ -334,16 +289,13 @@
   "conversionSteps": [],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": null,
   "minimumValue": null,
   "name": "Degrees North",
   "suffix": null,
   "synonyms": ["Degrees North", "degrees north"],
-  "createdAt": null,
-  "id": 18,
-  "updatedAt": null
+  "id": 18
 }, {
   "abbreviatedName": "$",
   "advanced": 1,
@@ -353,16 +305,13 @@
   "conversionSteps": [],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": null,
   "minimumValue": null,
   "name": "Dollars",
   "suffix": null,
-  "synonyms": ["Dollars", "$", "Dollar", "dollars", "dollar"],
-  "createdAt": null,
-  "id": 49,
-  "updatedAt": null
+  "synonyms": ["Dollars", "$", "Dollar"],
+  "id": 49
 }, {
   "abbreviatedName": "drops",
   "advanced": 1,
@@ -375,16 +324,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Drops",
   "suffix": null,
   "synonyms": ["Drops", "drops", "Drop", "drop"],
-  "createdAt": null,
-  "id": 201,
-  "updatedAt": null
+  "id": 201
 }, {
   "abbreviatedName": "event",
   "advanced": 1,
@@ -397,16 +343,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Event",
   "suffix": null,
   "synonyms": ["Event", "event"],
-  "createdAt": null,
-  "id": 41,
-  "updatedAt": null
+  "id": 41
 }, {
   "abbreviatedName": "ft",
   "advanced": 1,
@@ -419,16 +362,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Feet",
   "suffix": null,
-  "synonyms": ["Feet", "ft", "feet"],
-  "createdAt": null,
-  "id": 36,
-  "updatedAt": null
+  "synonyms": ["Feet", "ft"],
+  "id": 36
 }, {
   "abbreviatedName": "g",
   "advanced": 0,
@@ -441,16 +381,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Grams",
   "suffix": null,
-  "synonyms": ["Grams", "g", "Gram", "grams", "gram"],
-  "createdAt": null,
-  "id": 6,
-  "updatedAt": null
+  "synonyms": ["Grams", "g", "Gram"],
+  "id": 6
 }, {
   "abbreviatedName": "h",
   "advanced": 0,
@@ -463,16 +400,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": 168,
   "minimumValue": 0,
   "name": "Hours",
   "suffix": null,
-  "synonyms": ["Hours", "h", "Hour", "hours", "hour"],
-  "createdAt": null,
-  "id": 34,
-  "updatedAt": null
+  "synonyms": ["Hours", "h", "Hour"],
+  "id": 34
 }, {
   "abbreviatedName": "in",
   "advanced": 1,
@@ -485,16 +419,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Inches",
   "suffix": null,
-  "synonyms": ["Inches", "in", "Inch", "inches", "inch"],
-  "createdAt": null,
-  "id": 35,
-  "updatedAt": null
+  "synonyms": ["Inches", "in", "Inch"],
+  "id": 35
 }, {
   "abbreviatedName": "index",
   "advanced": 1,
@@ -504,16 +435,13 @@
   "conversionSteps": [],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Index",
   "suffix": null,
   "synonyms": ["Index", "index"],
-  "createdAt": null,
-  "id": 15,
-  "updatedAt": null
+  "id": 15
 }, {
   "abbreviatedName": "yes/no",
   "advanced": 0,
@@ -526,16 +454,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": 1,
   "minimumValue": 0,
   "name": "Yes/No",
   "suffix": null,
   "synonyms": ["Yes/No", "yes/no"],
-  "createdAt": null,
-  "id": 19,
-  "updatedAt": null
+  "id": 19
 }, {
   "abbreviatedName": "kcal",
   "advanced": 1,
@@ -545,16 +470,13 @@
   "conversionSteps": [],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": null,
   "minimumValue": null,
   "name": "Kilocalories",
   "suffix": null,
-  "synonyms": ["Kilocalories", "kcal", "Kilocalory", "kilocalories", "kilocalory"],
-  "createdAt": null,
-  "id": 22,
-  "updatedAt": null
+  "synonyms": ["Kilocalories", "kcal", "Kilocalory"],
+  "id": 22
 }, {
   "abbreviatedName": "kg",
   "advanced": 1,
@@ -564,16 +486,13 @@
   "conversionSteps": [],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Kilograms",
   "suffix": null,
-  "synonyms": ["Kilograms", "kg", "Kilogram", "kilograms", "kilogram"],
-  "createdAt": null,
-  "id": 5,
-  "updatedAt": null
+  "synonyms": ["Kilograms", "kg", "Kilogram"],
+  "id": 5
 }, {
   "abbreviatedName": "km",
   "advanced": 1,
@@ -586,16 +505,13 @@
   }],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Kilometers",
   "suffix": null,
-  "synonyms": ["Kilometers", "km", "Kilometer", "kilometers", "kilometer"],
-  "createdAt": null,
-  "id": 16,
-  "updatedAt": null
+  "synonyms": ["Kilometers", "km", "Kilometer"],
+  "id": 16
 }, {
   "abbreviatedName": "m",
   "advanced": 1,
@@ -605,16 +521,13 @@
   "conversionSteps": [],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Meters",
   "suffix": null,
-  "synonyms": ["Meters", "m", "Meter", "meters", "meter"],
-  "createdAt": null,
-  "id": 3,
-  "updatedAt": null
+  "synonyms": ["Meters", "m", "Meter"],
+  "id": 3
 }, {
   "abbreviatedName": "mcg",
   "advanced": 1,
@@ -627,16 +540,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Micrograms",
   "suffix": null,
-  "synonyms": ["Micrograms", "mcg", "Microgram", "micrograms", "microgram"],
-  "createdAt": null,
-  "id": 32,
-  "updatedAt": null
+  "synonyms": ["Micrograms", "mcg", "Microgram"],
+  "id": 32
 }, {
   "abbreviatedName": "mg/dL",
   "advanced": 1,
@@ -646,16 +556,13 @@
   "conversionSteps": [],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Micrograms per decilitre",
   "suffix": null,
-  "synonyms": ["Micrograms per decilitre", "mg/dL", "micrograms per decilitre", "mg/dl"],
-  "createdAt": null,
-  "id": 43,
-  "updatedAt": null
+  "synonyms": ["Micrograms per decilitre", "mg/dL"],
+  "id": 43
 }, {
   "abbreviatedName": "mi",
   "advanced": 1,
@@ -668,16 +575,13 @@
   }],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Miles",
   "suffix": null,
-  "synonyms": ["Miles", "mi", "Mile", "miles", "mile"],
-  "createdAt": null,
-  "id": 4,
-  "updatedAt": null
+  "synonyms": ["Miles", "mi", "Mile"],
+  "id": 4
 }, {
   "abbreviatedName": "mg",
   "advanced": 0,
@@ -690,16 +594,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Milligrams",
   "suffix": "intake",
-  "synonyms": ["Milligrams", "mg", "Milligram", "milligrams", "milligram"],
-  "createdAt": null,
-  "id": 7,
-  "updatedAt": null
+  "synonyms": ["Milligrams", "mg", "Milligram"],
+  "id": 7
 }, {
   "abbreviatedName": "mL",
   "advanced": 0,
@@ -712,16 +613,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Milliliters",
   "suffix": null,
-  "synonyms": ["Milliliters", "mL", "Milliliter", "milliliters", "ml", "milliliter"],
-  "createdAt": null,
-  "id": 9,
-  "updatedAt": null
+  "synonyms": ["Milliliters", "mL", "Milliliter"],
+  "id": 9
 }, {
   "abbreviatedName": "mm",
   "advanced": 1,
@@ -734,16 +632,13 @@
   }],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Millimeters",
   "suffix": null,
-  "synonyms": ["Millimeters", "mm", "Millimeter", "millimeters", "millimeter"],
-  "createdAt": null,
-  "id": 48,
-  "updatedAt": null
+  "synonyms": ["Millimeters", "mm", "Millimeter"],
+  "id": 48
 }, {
   "abbreviatedName": "mmHg",
   "advanced": 1,
@@ -756,16 +651,13 @@
   }],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Millimeters Merc",
   "suffix": null,
-  "synonyms": ["Millimeters Merc", "mmHg", "millimeters merc", "mmhg"],
-  "createdAt": null,
-  "id": 30,
-  "updatedAt": null
+  "synonyms": ["Millimeters Merc", "mmHg"],
+  "id": 30
 }, {
   "abbreviatedName": "s",
   "advanced": 1,
@@ -775,16 +667,13 @@
   "conversionSteps": [],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": 86400,
   "minimumValue": 0,
   "name": "Seconds",
   "suffix": null,
-  "synonyms": ["Seconds", "s", "Second", "seconds", "second"],
-  "createdAt": null,
-  "id": 1,
-  "updatedAt": null
+  "synonyms": ["Seconds", "s", "Second"],
+  "id": 1
 }, {
   "abbreviatedName": "min",
   "advanced": 0,
@@ -797,16 +686,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": 10080,
   "minimumValue": 0,
   "name": "Minutes",
   "suffix": null,
-  "synonyms": ["Minutes", "min", "Minute", "minutes", "minute"],
-  "createdAt": null,
-  "id": 2,
-  "updatedAt": null
+  "synonyms": ["Minutes", "min", "Minute"],
+  "id": 2
 }, {
   "abbreviatedName": "Pa",
   "advanced": 1,
@@ -816,16 +702,13 @@
   "conversionSteps": [],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": null,
   "minimumValue": null,
   "name": "Pascal",
   "suffix": null,
-  "synonyms": ["Pascal", "Pa", "pascal", "pa"],
-  "createdAt": null,
-  "id": 47,
-  "updatedAt": null
+  "synonyms": ["Pascal", "Pa"],
+  "id": 47
 }, {
   "abbreviatedName": "%",
   "advanced": 1,
@@ -835,16 +718,13 @@
   "conversionSteps": [],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": null,
   "name": "Percent",
   "suffix": null,
-  "synonyms": ["Percent", "%", "percent"],
-  "createdAt": null,
-  "id": 21,
-  "updatedAt": null
+  "synonyms": ["Percent", "%"],
+  "id": 21
 }, {
   "abbreviatedName": "pieces",
   "advanced": 1,
@@ -857,16 +737,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Pieces",
   "suffix": null,
   "synonyms": ["Pieces", "pieces", "Piece", "piece"],
-  "createdAt": null,
-  "id": 28,
-  "updatedAt": null
+  "id": 28
 }, {
   "abbreviatedName": "pills",
   "advanced": 1,
@@ -879,16 +756,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Pills",
   "suffix": null,
   "synonyms": ["Pills", "pills", "Pill", "pill"],
-  "createdAt": null,
-  "id": 24,
-  "updatedAt": null
+  "id": 24
 }, {
   "abbreviatedName": "lb",
   "advanced": 1,
@@ -901,16 +775,13 @@
   }],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Pounds",
   "suffix": null,
-  "synonyms": ["lbs", "Pounds", "lb", "Pound", "pounds", "pound"],
-  "createdAt": null,
-  "id": 8,
-  "updatedAt": null
+  "synonyms": ["lbs", "Pounds", "lb", "Pound"],
+  "id": 8
 }, {
   "abbreviatedName": "puffs",
   "advanced": 1,
@@ -923,16 +794,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Puffs",
   "suffix": null,
   "synonyms": ["Puffs", "puffs", "Puff", "puff"],
-  "createdAt": null,
-  "id": 13,
-  "updatedAt": null
+  "id": 13
 }, {
   "abbreviatedName": "serving",
   "advanced": 0,
@@ -945,16 +813,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": 20,
   "minimumValue": 0,
   "name": "Serving",
   "suffix": "consumption",
   "synonyms": ["Serving", "serving"],
-  "createdAt": null,
-  "id": 44,
-  "updatedAt": null
+  "id": 44
 }, {
   "abbreviatedName": "sprays",
   "advanced": 1,
@@ -967,16 +832,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Sprays",
   "suffix": null,
   "synonyms": ["Sprays", "sprays", "Spray", "spray"],
-  "createdAt": null,
-  "id": 50,
-  "updatedAt": null
+  "id": 50
 }, {
   "abbreviatedName": "tablets",
   "advanced": 1,
@@ -989,16 +851,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Tablets",
   "suffix": null,
   "synonyms": ["Tablets", "tablets", "Tablet", "tablet"],
-  "createdAt": null,
-  "id": 11,
-  "updatedAt": null
+  "id": 11
 }, {
   "abbreviatedName": "torr",
   "advanced": 1,
@@ -1011,16 +870,13 @@
   }],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": null,
   "minimumValue": null,
   "name": "Torr",
   "suffix": null,
   "synonyms": ["Torr", "torr"],
-  "createdAt": null,
-  "id": 42,
-  "updatedAt": null
+  "id": 42
 }, {
   "abbreviatedName": "units",
   "advanced": 1,
@@ -1033,16 +889,13 @@
   }],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Units",
   "suffix": null,
   "synonyms": ["Units", "units", "Unit", "unit"],
-  "createdAt": null,
-  "id": 12,
-  "updatedAt": null
+  "id": 12
 }, {
   "abbreviatedName": "/minute",
   "advanced": 1,
@@ -1052,16 +905,13 @@
   "conversionSteps": [],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "per Minute",
   "suffix": null,
-  "synonyms": ["per Minute", "/minute", "per minute"],
-  "createdAt": null,
-  "id": 202,
-  "updatedAt": null
+  "synonyms": ["per Minute", "/minute"],
+  "id": 202
 }, {
   "abbreviatedName": "ms",
   "advanced": 1,
@@ -1074,16 +924,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": 864000000,
   "minimumValue": 0,
   "name": "Milliseconds",
   "suffix": null,
-  "synonyms": ["Milliseconds", "ms", "Millisecond", "milliseconds", "millisecond"],
-  "createdAt": null,
-  "id": 204,
-  "updatedAt": null
+  "synonyms": ["Milliseconds", "ms", "Millisecond"],
+  "id": 204
 }, {
   "abbreviatedName": "L",
   "advanced": 1,
@@ -1093,16 +940,13 @@
   "conversionSteps": [],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Liters",
   "suffix": null,
-  "synonyms": ["Liters", "L", "Liter", "liters", "l", "liter"],
-  "createdAt": null,
-  "id": 205,
-  "updatedAt": null
+  "synonyms": ["Liters", "L", "Liter"],
+  "id": 205
 }, {
   "abbreviatedName": "oz",
   "advanced": 1,
@@ -1115,16 +959,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Ounces",
   "suffix": null,
-  "synonyms": ["Ounces", "oz", "Ounce", "ounces", "ounce"],
-  "createdAt": null,
-  "id": 206,
-  "updatedAt": null
+  "synonyms": ["Ounces", "oz", "Ounce"],
+  "id": 206
 }, {
   "abbreviatedName": "IU",
   "advanced": 1,
@@ -1134,16 +975,13 @@
   "conversionSteps": [],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "International Units",
   "suffix": null,
-  "synonyms": ["International Units", "IU", "International Unit", "international units", "iu", "international unit"],
-  "createdAt": null,
-  "id": 207,
-  "updatedAt": null
+  "synonyms": ["International Units", "IU", "International Unit"],
+  "id": 207
 }, {
   "abbreviatedName": "m/s",
   "advanced": 1,
@@ -1153,16 +991,13 @@
   "conversionSteps": [],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Meters per Second",
   "suffix": null,
-  "synonyms": ["Meters per Second", "m/s", "meters per second"],
-  "createdAt": null,
-  "id": 208,
-  "updatedAt": null
+  "synonyms": ["Meters per Second", "m/s"],
+  "id": 208
 }, {
   "abbreviatedName": "qt",
   "advanced": 1,
@@ -1175,16 +1010,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Quarts",
   "suffix": null,
-  "synonyms": ["Quarts", "qt", "Quart", "quarts", "quart"],
-  "createdAt": null,
-  "id": 209,
-  "updatedAt": null
+  "synonyms": ["Quarts", "qt", "Quart"],
+  "id": 209
 }, {
   "abbreviatedName": "dose",
   "advanced": 1,
@@ -1197,16 +1029,13 @@
   }],
   "defaultValue": null,
   "fillingValue": 0,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Doses",
   "suffix": null,
-  "synonyms": ["Doses", "dose", "Dose", "doses"],
-  "createdAt": null,
-  "id": 210,
-  "updatedAt": null
+  "synonyms": ["Doses", "dose", "Dose"],
+  "id": 210
 }, {
   "abbreviatedName": "ppm",
   "advanced": 1,
@@ -1216,16 +1045,13 @@
   "conversionSteps": [],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Parts per Million",
   "suffix": null,
-  "synonyms": ["Parts per Million", "ppm", "parts per million"],
-  "createdAt": null,
-  "id": 211,
-  "updatedAt": null
+  "synonyms": ["Parts per Million", "ppm"],
+  "id": 211
 }, {
   "abbreviatedName": "dB",
   "advanced": 1,
@@ -1235,16 +1061,13 @@
   "conversionSteps": [],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Decibels",
   "suffix": null,
-  "synonyms": ["Decibels", "dB", "Decibel", "decibels", "db", "decibel"],
-  "createdAt": null,
-  "id": 212,
-  "updatedAt": null
+  "synonyms": ["Decibels", "dB", "Decibel"],
+  "id": 212
 }, {
   "abbreviatedName": "mbar",
   "advanced": 1,
@@ -1257,16 +1080,13 @@
   }],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Millibar",
   "suffix": null,
-  "synonyms": ["Millibar", "mbar", "millibar"],
-  "createdAt": null,
-  "id": 213,
-  "updatedAt": null
+  "synonyms": ["Millibar", "mbar"],
+  "id": 213
 }, {
   "abbreviatedName": "hPa",
   "advanced": 1,
@@ -1279,16 +1099,13 @@
   }],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 0,
   "maximumValue": null,
   "minimumValue": null,
   "name": "Hectopascal ",
   "suffix": null,
-  "synonyms": ["Hectopascal ", "hPa", "hectopascal ", "hpa"],
-  "createdAt": null,
-  "id": 214,
-  "updatedAt": null
+  "synonyms": ["Hectopascal ", "hPa"],
+  "id": 214
 }, {
   "abbreviatedName": "mph",
   "advanced": 1,
@@ -1298,14 +1115,11 @@
   "conversionSteps": [],
   "defaultValue": null,
   "fillingValue": null,
-  "lowerCaseSynonyms": null,
   "manualTracking": 1,
   "maximumValue": null,
   "minimumValue": 0,
   "name": "Miles per Hour",
   "suffix": null,
-  "synonyms": ["Miles per Hour", "mph", "miles per hour"],
-  "createdAt": null,
-  "id": 215,
-  "updatedAt": null
+  "synonyms": ["Miles per Hour", "mph"],
+  "id": 215
 }]
