@@ -1278,6 +1278,43 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                     qmService.configurePushNotifications();
                 }
             },
+            skipAllForVariable: function(successHandler, errorHandler){
+                var title = "Skip all?";
+                var textContent = "Do you want to dismiss all remaining past " + trackingReminderNotification.variableName + " reminder notifications?";
+                function yesCallback() {
+                    trackingReminderNotification.hide = true;
+                    qmLogService.debug('Skipping all notifications for trackingReminder', null, trackingReminderNotification);
+                    qmService.showInfoToast("Skipping all " + trackingReminderNotification.variableName + " notifications...");
+                    var params = {trackingReminderId : trackingReminderNotification.trackingReminderId};
+                    //qmService.showInfoToast('Skipping all ' + $scope.state.variableObject.name + ' reminder notifications...');
+                    qmService.skipAllTrackingReminderNotificationsDeferred(params)
+                        .then(function(response){
+                            if(successHandler){successHandler(response);}
+                        }, function(error){
+                            if(errorHandler){errorHandler(error);}
+                            qmLog.error(error);
+                            qmService.showMaterialAlert('Failed to skip! ', 'Please let me know by pressing the help button.  Thanks!');
+                        });
+                }
+                function noCallback() {}
+                qmService.showMaterialConfirmationDialog(title, textContent, yesCallback, noCallback, ev);
+                return true;
+            },
+            lastAction: "",
+            showUndoToast: function(callback){
+                qmService.showToastWithButton(qm.notifications.lastAction, 'UNDO', function(){
+                    qm.notifications.undo();
+                    if(callback){callback();}
+                });
+            },
+            handleNotificationAction: function(trackingReminderNotification, undoCallback){
+                qmLog.info("Clicked "+ qmService.notifications.lastAction + " for " + trackingReminderNotification.variableName);
+                trackingReminderNotification.hide = true;
+                qmService.numberOfPendingNotifications--;
+                qmService.notifications.showUndoToast(undoCallback);
+                trackingReminderNotification.trackingReminderNotificationId = trackingReminderNotification.id;
+                return trackingReminderNotification;
+            }
         },
         reminders: {
             broadcastGetTrackingReminders: function(){
@@ -1291,16 +1328,15 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
         },
         rootScope: {
             setProperty: function(property, value, callback){  // Avoid Error: [$rootScope:inprog] $apply already in progress
-                if(typeof $rootScope[property] !== "undefined" && $rootScope[property] === value){return;}
+                if(typeof $rootScope[property] !== "undefined" && $rootScope[property] === value){return value;}
                 $timeout(function() {
                     var string = value;
-                    if(typeof string !== "string"){
-                        string = JSON.stringify(string);
-                    }
+                    if(typeof string !== "string"){string = JSON.stringify(string);}
                     qmLog.info("Setting $rootScope." + property + " to " + string);
                     $rootScope[property] = value;
                     if(callback){callback();}
                 }, 0);
+                return value;
             },
             setUser: function(user){
                 if(user && user.data && user.data.user){user = user.data.user;}
@@ -1523,6 +1559,42 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                 if(errorHandler){errorHandler(error);}
                 qmLog.debug('User cancelled selection');
             });
+        },
+        speech: {
+            getSpeechEnabled: function(){
+                return qmService.rootScope.setProperty('speechEnabled', qm.speech.getSpeechEnabled());
+            },
+            setSpeechEnabled: function(value){
+                return qmService.rootScope.setProperty('speechEnabled', qm.speech.setSpeechEnabled(value));
+            },
+            showRobot: function(startListening){
+                if(!qm.speech.getSpeechAvailable()){return;}
+                qmService.rootScope.setProperty('showRobot', true);
+                if(startListening !== false){
+                    qmService.speech.showVisualizer();
+                }
+            },
+            hideRobot: function(){
+                qmService.rootScope.setProperty('showRobot', false);
+                qmService.speech.hideVisualizer();
+            },
+            toggleRobot: function(){
+                if($rootScope.showRobot){
+                    qmService.speech.hideRobot();
+                } else {
+                    qmService.speech.showRobot();
+                }
+            },
+            showVisualizer: function(){
+                qmService.rootScope.setProperty('showVisualizer', true);
+                $timeout(function(){
+                    qm.speech.rainbowCircleVisualizer();
+                }, 1);
+            },
+            hideVisualizer: function(){
+                qm.speech.abortListening();
+                qmService.rootScope.setProperty('showVisualizer', false);
+            },
         },
         states: {
             outputStateNameConstantsForPHP: function(){
@@ -6349,6 +6421,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
         qm.unitHelper.getUnitsFromApiAndIndexByAbbreviatedNames();
         qmService.deploy.setVersionInfo();
         qmService.deploy.fetchUpdate(); // fetchUpdate done manually instead of auto-update to address iOS white screen. See: https://github.com/nordnet/cordova-hot-code-push/issues/259
+        qmService.rootScope.setProperty('speechAvailable', qm.speech.getSpeechAvailable());
     };
     function checkHoursSinceLastPushNotificationReceived() {
         if(!$rootScope.platform.isMobile){return;}

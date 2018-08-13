@@ -55,6 +55,10 @@ angular.module('starter',
         if (window.StatusBar) {StatusBar.styleDefault();} // org.apache.cordova.statusbar required
     });
     $rootScope.goToState = function(stateName, stateParameters, ev){
+        if(stateName === 'toggleRobot'){
+            qmService.speech.toggleRobot();
+            return;
+        }
         if(stateName.indexOf('button') !== -1){
             var buttonName = stateName;
             /** @namespace $rootScope.appSettings.appDesign.floatingActionButton */
@@ -103,7 +107,7 @@ angular.module('starter',
 
     var intervalChecker = setInterval(function(){if(qm.getAppSettings()){clearInterval(intervalChecker);}}, 500);
     if (qm.urlHelper.getParam('existingUser') || qm.urlHelper.getParam('introSeen') || qm.urlHelper.getParam('refreshUser') || window.designMode) {
-        qmService.intro.setIntroSeen(true, "Url parms have existingUser or introSeen or refreshUser or desingMode");
+        qmService.intro.setIntroSeen(true, "Url parms have existingUser or introSeen or refreshUser or designMode");
         qm.storage.setItem(qm.items.onboarded, true);
     }
 }])
@@ -154,9 +158,11 @@ angular.module('starter',
     var config_resolver = {
         appSettingsResponse: function($q){
             var deferred = $q.defer();
-            qm.appsManager.getAppSettingsLocallyOrFromApi(function(appSettings){
-                deferred.resolve(appSettings);
-            });
+            if(qm.appMode.isDevelopment()){ // TODO: Faster.  We might want to do this globally at some point
+                deferred.resolve(qm.staticData.appSettings);
+            } else {
+                qm.appsManager.getAppSettingsLocallyOrFromApi(function(appSettings){deferred.resolve(appSettings);});
+            }
             return deferred.promise;
         }
     };
