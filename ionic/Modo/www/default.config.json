@@ -365,7 +365,7 @@
 					"image": {
 						"url": "img/intro/download_2-96.png"
 					},
-					"bodyText": "Weight, blood pressure, heart rate, physical activity data can be collected automatically and imported from dozens of devices.  Weather and the amount of time spent at the gym, restaurants, work, or doctors offices can be collected via your phone's GPS.",
+					"bodyText": "Weight, blood pressure, heart rate, & physical activity data can be collected automatically and imported from dozens of devices.  Weather and the amount of time spent at the gym, restaurants, work, or doctors offices can be collected via your phone's GPS.",
 					"$$hashKey": "object:1219"
 				},
 				{
@@ -1122,10 +1122,10 @@
 	"synonyms": [],
 	"shortDescription": null,
 	"instructionsHtml": null,
-	"updatedAt": "2018-08-13 05:45:37",
+	"updatedAt": "2018-08-13 23:49:02",
 	"splashScreen": "oMg0F5fmyf_sfzgyc",
 	"textLogo": "nm8LguNtZL_chsco6",
 	"versionNumber": "2.8.813",
-	"androidVersionCode": "2018081370",
-	"builtAt": 1534179968
+	"androidVersionCode": "2018081398",
+	"builtAt": 1534204606
 }
