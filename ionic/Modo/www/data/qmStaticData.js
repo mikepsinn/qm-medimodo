@@ -1123,22 +1123,22 @@ window.qm.staticData = {
 		"synonyms": [],
 		"shortDescription": null,
 		"instructionsHtml": null,
-		"updatedAt": "2018-08-13 23:49:02",
+		"updatedAt": "2018-08-14 01:48:10",
 		"splashScreen": "oMg0F5fmyf_sfzgyc",
 		"textLogo": "nm8LguNtZL_chsco6",
-		"versionNumber": "2.8.813",
-		"androidVersionCode": "2018081398",
-		"builtAt": 1534204606
+		"versionNumber": "2.8.814",
+		"androidVersionCode": "2018081409",
+		"builtAt": 1534212433
 	},
 	"buildInfo": {
-		"iosCFBundleVersion": "2.8.813.1430",
-		"builtAt": 1534204607,
-		"versionNumber": "2.8.813",
+		"iosCFBundleVersion": "2.8.814.124",
+		"builtAt": 1534212433,
+		"versionNumber": "2.8.814",
 		"versionNumbers": {
-			"iosCFBundleVersion": "2.8.813.1430",
-			"androidVersionCode": "2018081398",
-			"ionicApp": "2.8.813",
-			"buildVersionNumber": "2018081398"
+			"iosCFBundleVersion": "2.8.814.124",
+			"androidVersionCode": "2018081409",
+			"ionicApp": "2.8.814",
+			"buildVersionNumber": "2018081409"
 		},
 		"gitBranch": "master",
 		"gitCommitShaHash": "375903a1ac764ef6d9deabb132df4b947bb1d2fc"
@@ -1842,7 +1842,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 210,
 			"numberOfCorrelationsAsCause": 420,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 1214528,
+			"numberOfRawMeasurements": 1214589,
 			"numberOfTrackingReminders": 2,
 			"numberOfUserCorrelationsAsCause": 210,
 			"numberOfUserCorrelationsAsEffect": 0,
@@ -1940,7 +1940,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 204,
 			"numberOfCorrelationsAsCause": 408,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 1201153,
+			"numberOfRawMeasurements": 1201154,
 			"numberOfTrackingReminders": 2,
 			"numberOfUserCorrelationsAsCause": 204,
 			"numberOfUserCorrelationsAsEffect": 0,
@@ -3407,7 +3407,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 153,
 			"numberOfCorrelationsAsCause": 306,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 1856,
+			"numberOfRawMeasurements": 1857,
 			"numberOfTrackingReminders": 122,
 			"numberOfUserCorrelationsAsCause": 153,
 			"numberOfUserCorrelationsAsEffect": 0,
@@ -3503,7 +3503,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 315,
 			"numberOfCorrelationsAsCause": 88,
 			"numberOfCorrelationsAsEffect": 542,
-			"numberOfRawMeasurements": 1503,
+			"numberOfRawMeasurements": 1506,
 			"numberOfTrackingReminders": 132,
 			"numberOfUserCorrelationsAsCause": 44,
 			"numberOfUserCorrelationsAsEffect": 271,
@@ -4024,7 +4024,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 488,
 			"numberOfCorrelationsAsCause": 250,
 			"numberOfCorrelationsAsEffect": 726,
-			"numberOfRawMeasurements": 6406,
+			"numberOfRawMeasurements": 6409,
 			"numberOfTrackingReminders": 19,
 			"numberOfUserCorrelationsAsCause": 125,
 			"numberOfUserCorrelationsAsEffect": 363,
@@ -4498,7 +4498,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-13 22:52:45",
-			"message": "Got 0 new measurements 64 minutes ago.  ",
+			"message": "Got 0 new measurements 3 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -4719,7 +4719,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-13 20:39:02",
-			"message": "Got 450 new measurements 3 hours ago.  ",
+			"message": "Got 450 new measurements 5 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -4906,7 +4906,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-13 23:50:00",
-			"message": "Got 0 new measurements 7 minutes ago.  ",
+			"message": "Got 0 new measurements 2 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -5097,7 +5097,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-12 16:42:03",
-			"message": "Got 0 new measurements 31 hours ago.  ",
+			"message": "Got 0 new measurements 33 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -5206,7 +5206,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-13 11:12:40",
-			"message": "Got 0 new measurements 13 hours ago.  ",
+			"message": "Got 0 new measurements 15 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -5424,7 +5424,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-12 04:13:13",
-			"message": "Got 0 new measurements 44 hours ago.  ",
+			"message": "Got 0 new measurements 46 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -5548,7 +5548,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-12 15:25:26",
-			"message": "Got 0 new measurements 33 hours ago.  ",
+			"message": "Got 0 new measurements 35 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -5754,7 +5754,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-13 12:12:35",
-			"message": "Got 15 new measurements 12 hours ago.  ",
+			"message": "Got 15 new measurements 14 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -6434,7 +6434,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-06-10 13:10:41",
-			"message": "Got 2 new measurements 64 days ago.  ",
+			"message": "Got 2 new measurements 65 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -6514,7 +6514,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-13 02:52:11",
-			"message": "Got 20 new measurements 21 hours ago.  ",
+			"message": "Got 20 new measurements 23 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -6748,7 +6748,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-12 13:15:14",
-			"message": "Got 57 new measurements 35 hours ago.  ",
+			"message": "Got 57 new measurements 37 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -6940,7 +6940,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-13 23:48:29",
-			"message": "Got 0 new measurements 8 minutes ago.  ",
+			"message": "Got 0 new measurements 2 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
