@@ -114,7 +114,7 @@ window.qmLog = {
         for (var propertyName in object) {
             if (object.hasOwnProperty(propertyName)) {
                 var lowerCaseProperty = propertyName.toLowerCase();
-                if(lowerCaseProperty.indexOf('secret') !== -1 || lowerCaseProperty.indexOf('password') !== -1 || lowerCaseProperty.indexOf('token') !== -1){
+                if(qmLog.secretAliases.indexOf(lowerCaseProperty) !== -1){
                     object[propertyName] = "HIDDEN";
                 } else {
                     object[propertyName] = qmLog.obfuscateSecrets(object[propertyName]);
@@ -122,6 +122,19 @@ window.qmLog = {
             }
         }
         return object;
+    },
+    secretAliases: ['secret', 'password', 'token', 'secret', 'private'],
+    stringContainsSecretAliasWord: function(string){
+        var lowerCase = string.toLowerCase();
+        var censoredString = lowerCase;
+        for (var i = 0; i < qmLog.secretAliases.length; i++) {
+            var secretAlias = qmLog.secretAliases[i];
+            if(lowerCase.indexOf(secretAlias) !== -1){
+                censoredString = qm.stringHelper.getStringBeforeSubstring(secretAlias, censoredString) + " " + secretAlias + "...";
+            }
+        }
+        if(censoredString !== lowerCase){return censoredString;}
+        return false;
     },
     error: function (name, message, errorSpecificMetaData, stackTrace) {
         if(!qmLog.shouldWeLog("error")){return;}
@@ -233,6 +246,8 @@ window.qmLog = {
                 console.error("Could not stringify log meta data", error);
             }
         }
+        var censored = qmLog.stringContainsSecretAliasWord(logString);
+        if(censored){logString = censored;}
         if(qm.platform.isMobileOrTesting()){logString = logLevel + ": " + logString;}
         return logString;
     },
@@ -454,6 +469,7 @@ function getCallerFunctionName() {
     return null;
 }
 function addCallerFunctionToMessage(message) {
+    if(qm.platform.browser.isFirefox()){return message;}
     if(message === "undefined"){message = "";}
     if(getCalleeFunctionName()){message = "callee " + getCalleeFunctionName() + ": " + message || "";}
     if(getCallerFunctionName()){message = "Caller " + getCallerFunctionName() + " called " + message || "";}
