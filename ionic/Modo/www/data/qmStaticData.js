@@ -131,7 +131,8 @@ window.qm.staticData = {
 				"active": {
 					"physicianAlias": "physician",
 					"patientAlias": "patient"
-				}
+				},
+				"id": null
 			},
 			"floatingActionButton": {
 				"active": {
@@ -393,7 +394,8 @@ window.qm.staticData = {
 						"bodyText": "I use bank-level encryption to keep your data secure.  Human eyes will never see your data unless you intentionally share it. ",
 						"$$hashKey": "object:1221"
 					}
-				]
+				],
+				"id": null
 			},
 			"menu": {
 				"active": [
@@ -674,7 +676,8 @@ window.qm.staticData = {
 						"id": "settings",
 						"$$hashKey": "object:3216"
 					}
-				]
+				],
+				"id": null
 			},
 			"onboarding": {
 				"active": [
@@ -808,7 +811,8 @@ window.qm.staticData = {
 						"bodyText": "You're all set up!  Let's take a minute to record your first measurements and then you're done for the day! ",
 						"$$hashKey": "object:1515"
 					}
-				]
+				],
+				"id": null
 			},
 			"upgradePleadingCard": null,
 			"featuresList": {
@@ -957,7 +961,8 @@ window.qm.staticData = {
 						"subtitle": "Help support continued improvements and reduce suffering through accelerated scientific discovery!",
 						"moreInfo": "No ads!  What more do you want?"
 					}
-				]
+				],
+				"id": null
 			},
 			"ionNavBarClass": "bar-positive",
 			"physicianAlias": "Physician",
@@ -1065,20 +1070,21 @@ window.qm.staticData = {
 				"confirmationText": null,
 				"functionName": null,
 				"functionParameters": null,
-				"html": "<span id=\"record-a-measurement-button\"><i class=\"icon ion-archive\"></i>Record a Measurement</span>",
+				"html": "<span id=\"go-to-inbox-button\"><i class=\"icon ion-archive\"></i>Go to Inbox</span>",
 				"icon": "ion-archive",
-				"id": "record-a-measurement-button",
+				"id": "go-to-inbox-button",
 				"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/archive.png",
 				"ionIcon": "ion-archive",
 				"link": "#/app/reminders-inbox",
-				"stateName": null,
-				"stateParams": null,
+				"stateName": "app.remindersInbox",
+				"stateParams": [],
 				"successAlertBody": null,
 				"successAlertTitle": null,
 				"successToastText": null,
-				"text": "Record a Measurement",
-				"title": null,
-				"tooltip": null
+				"text": "Go to Inbox",
+				"title": "Go to Inbox",
+				"tooltip": null,
+				"type": "Inbox"
 			},
 			{
 				"accessibilityText": null,
@@ -1094,14 +1100,15 @@ window.qm.staticData = {
 				"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/android-notifications-none.png",
 				"ionIcon": "ion-android-notifications-none",
 				"link": "#/app/variable-list-category/Anything",
-				"stateName": null,
-				"stateParams": null,
+				"stateName": "app.remindersManage",
+				"stateParams": [],
 				"successAlertBody": null,
 				"successAlertTitle": null,
 				"successToastText": null,
 				"text": "Manage Reminders",
-				"title": null,
-				"tooltip": null
+				"title": "Manage Reminders",
+				"tooltip": null,
+				"type": "ManageReminders"
 			}
 		],
 		"card": null,
@@ -1123,25 +1130,25 @@ window.qm.staticData = {
 		"synonyms": [],
 		"shortDescription": null,
 		"instructionsHtml": null,
-		"updatedAt": "2018-08-20 02:18:18",
+		"updatedAt": "2018-08-21 01:38:44",
 		"splashScreen": "oMg0F5fmyf_sfzgyc",
 		"textLogo": "nm8LguNtZL_chsco6",
-		"versionNumber": "2.8.820",
-		"androidVersionCode": "2018082013",
-		"builtAt": 1534734518
+		"versionNumber": "2.8.821",
+		"androidVersionCode": "2018082161",
+		"builtAt": 1534862512
 	},
 	"buildInfo": {
-		"iosCFBundleVersion": "2.8.820.188",
-		"builtAt": 1534734518,
-		"versionNumber": "2.8.820",
+		"iosCFBundleVersion": "2.8.821.881",
+		"builtAt": 1534862512,
+		"versionNumber": "2.8.821",
 		"versionNumbers": {
-			"iosCFBundleVersion": "2.8.820.188",
-			"androidVersionCode": "2018082013",
-			"ionicApp": "2.8.820",
-			"buildVersionNumber": "2018082013"
+			"iosCFBundleVersion": "2.8.821.881",
+			"androidVersionCode": "2018082161",
+			"ionicApp": "2.8.821",
+			"buildVersionNumber": "2018082161"
 		},
 		"gitBranch": "master",
-		"gitCommitShaHash": "10a887b9f6d933d1662ae8a6dea7dc83526ad0d5"
+		"gitCommitShaHash": "9f4d6c835ccf6674ee98168e846aaf4467c9be19"
 	},
 	"chcp": null,
 	"chromeExtensionManifest": null,
@@ -1155,23 +1162,24 @@ window.qm.staticData = {
 			"manualTracking": true,
 			"name": "Overall Mood",
 			"numberOfAggregateCorrelationsAsCause": 200,
-			"numberOfAggregateCorrelationsAsEffect": 954,
+			"numberOfAggregateCorrelationsAsEffect": 955,
 			"numberCommonTaggedBy": 0,
 			"numberOfCommonTags": 0,
-			"numberOfCorrelations": 1154,
+			"numberOfCorrelations": 1155,
 			"numberOfCorrelationsAsCause": 400,
-			"numberOfCorrelationsAsEffect": 1908,
-			"numberOfRawMeasurements": 603992,
-			"numberOfTrackingReminders": 1281,
+			"numberOfCorrelationsAsEffect": 1910,
+			"numberOfRawMeasurements": 603976,
+			"numberOfTrackingReminders": 1283,
 			"numberOfUserCorrelationsAsCause": 200,
-			"numberOfUserCorrelationsAsEffect": 954,
-			"numberOfUserVariables": 5035,
+			"numberOfUserCorrelationsAsEffect": 955,
+			"numberOfUserVariables": 5038,
 			"outcome": true,
 			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png",
 			"public": true,
-			"subtitle": "1154 studies",
+			"subtitle": "1155 studies",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg",
 			"synonyms": [
+				"Mood",
 				"Overall Mood"
 			],
 			"unitAbbreviatedName": "/5",
@@ -1193,7 +1201,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 468,
 			"numberOfCorrelationsAsCause": 218,
 			"numberOfCorrelationsAsEffect": 718,
-			"numberOfRawMeasurements": 48096,
+			"numberOfRawMeasurements": 48099,
 			"numberOfTrackingReminders": 574,
 			"numberOfUserCorrelationsAsCause": 109,
 			"numberOfUserCorrelationsAsEffect": 359,
@@ -1237,7 +1245,8 @@ window.qm.staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg",
 			"synonyms": [
 				"Nervousness",
-				"Nervousnes"
+				"Nervousnes",
+				"Nervousne"
 			],
 			"unitAbbreviatedName": "/5",
 			"userId": null,
@@ -1258,7 +1267,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 638,
 			"numberOfCorrelationsAsCause": 260,
 			"numberOfCorrelationsAsEffect": 1016,
-			"numberOfRawMeasurements": 31677,
+			"numberOfRawMeasurements": 31683,
 			"numberOfTrackingReminders": 199,
 			"numberOfUserCorrelationsAsCause": 130,
 			"numberOfUserCorrelationsAsEffect": 508,
@@ -1270,7 +1279,8 @@ window.qm.staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg",
 			"synonyms": [
 				"Guiltiness",
-				"Guiltines"
+				"Guiltines",
+				"Guiltine"
 			],
 			"unitAbbreviatedName": "/5",
 			"userId": null,
@@ -1335,7 +1345,8 @@ window.qm.staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg",
 			"synonyms": [
 				"Alertness",
-				"Alertnes"
+				"Alertnes",
+				"Alertne"
 			],
 			"unitAbbreviatedName": "/5",
 			"userId": null,
@@ -1420,7 +1431,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 350,
 			"numberOfCorrelationsAsCause": 200,
 			"numberOfCorrelationsAsEffect": 500,
-			"numberOfRawMeasurements": 30499,
+			"numberOfRawMeasurements": 30501,
 			"numberOfTrackingReminders": 144,
 			"numberOfUserCorrelationsAsCause": 100,
 			"numberOfUserCorrelationsAsEffect": 250,
@@ -1432,7 +1443,8 @@ window.qm.staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg",
 			"synonyms": [
 				"Activeness",
-				"Activenes"
+				"Activenes",
+				"Activene"
 			],
 			"unitAbbreviatedName": "/5",
 			"userId": null,
@@ -1453,7 +1465,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 351,
 			"numberOfCorrelationsAsCause": 202,
 			"numberOfCorrelationsAsEffect": 500,
-			"numberOfRawMeasurements": 24094,
+			"numberOfRawMeasurements": 24095,
 			"numberOfTrackingReminders": 184,
 			"numberOfUserCorrelationsAsCause": 101,
 			"numberOfUserCorrelationsAsEffect": 250,
@@ -1485,7 +1497,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 350,
 			"numberOfCorrelationsAsCause": 174,
 			"numberOfCorrelationsAsEffect": 526,
-			"numberOfRawMeasurements": 31682,
+			"numberOfRawMeasurements": 31684,
 			"numberOfTrackingReminders": 177,
 			"numberOfUserCorrelationsAsCause": 87,
 			"numberOfUserCorrelationsAsEffect": 263,
@@ -1496,8 +1508,12 @@ window.qm.staticData = {
 			"subtitle": "350 studies",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg",
 			"synonyms": [
+				"emotional distress",
 				"Distress",
-				"Distres"
+				"emotional distres",
+				"Distres",
+				"emotional distre",
+				"Distre"
 			],
 			"unitAbbreviatedName": "/5",
 			"userId": null,
@@ -1530,7 +1546,8 @@ window.qm.staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg",
 			"synonyms": [
 				"Attentiveness",
-				"Attentivenes"
+				"Attentivenes",
+				"Attentivene"
 			],
 			"unitAbbreviatedName": "/5",
 			"userId": null,
@@ -1551,7 +1568,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 563,
 			"numberOfCorrelationsAsCause": 224,
 			"numberOfCorrelationsAsEffect": 902,
-			"numberOfRawMeasurements": 23573,
+			"numberOfRawMeasurements": 23575,
 			"numberOfTrackingReminders": 118,
 			"numberOfUserCorrelationsAsCause": 112,
 			"numberOfUserCorrelationsAsEffect": 451,
@@ -1595,7 +1612,8 @@ window.qm.staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg",
 			"synonyms": [
 				"Upsettedness",
-				"Upsettednes"
+				"Upsettednes",
+				"Upsettedne"
 			],
 			"unitAbbreviatedName": "/5",
 			"userId": null,
@@ -1660,7 +1678,8 @@ window.qm.staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg",
 			"synonyms": [
 				"Jitteriness",
-				"Jitterines"
+				"Jitterines",
+				"Jitterine"
 			],
 			"unitAbbreviatedName": "/5",
 			"userId": null,
@@ -1713,7 +1732,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 444,
 			"numberOfCorrelationsAsCause": 230,
 			"numberOfCorrelationsAsEffect": 658,
-			"numberOfRawMeasurements": 25368,
+			"numberOfRawMeasurements": 25369,
 			"numberOfTrackingReminders": 78,
 			"numberOfUserCorrelationsAsCause": 115,
 			"numberOfUserCorrelationsAsEffect": 329,
@@ -1789,7 +1808,8 @@ window.qm.staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg",
 			"synonyms": [
 				"Scaredness",
-				"Scarednes"
+				"Scarednes",
+				"Scaredne"
 			],
 			"unitAbbreviatedName": "/5",
 			"userId": null,
@@ -1810,7 +1830,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 341,
 			"numberOfCorrelationsAsCause": 170,
 			"numberOfCorrelationsAsEffect": 512,
-			"numberOfRawMeasurements": 21551,
+			"numberOfRawMeasurements": 21552,
 			"numberOfTrackingReminders": 71,
 			"numberOfUserCorrelationsAsCause": 85,
 			"numberOfUserCorrelationsAsEffect": 256,
@@ -1829,6 +1849,38 @@ window.qm.staticData = {
 		},
 		{
 			"causeOnly": false,
+			"displayName": "Outdoor Humidity",
+			"id": 5954744,
+			"ionIcon": "ion-ios-partlysunny",
+			"latestMeasurementTime": null,
+			"manualTracking": false,
+			"name": "Outdoor Humidity",
+			"numberOfAggregateCorrelationsAsCause": 213,
+			"numberOfAggregateCorrelationsAsEffect": 0,
+			"numberCommonTaggedBy": 1,
+			"numberOfCommonTags": 1,
+			"numberOfCorrelations": 213,
+			"numberOfCorrelationsAsCause": 426,
+			"numberOfCorrelationsAsEffect": 0,
+			"numberOfRawMeasurements": 1215358,
+			"numberOfTrackingReminders": 3,
+			"numberOfUserCorrelationsAsCause": 213,
+			"numberOfUserCorrelationsAsEffect": 0,
+			"numberOfUserVariables": 767,
+			"outcome": false,
+			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/environment.png",
+			"public": true,
+			"subtitle": "213 studies",
+			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/environment.svg",
+			"synonyms": [
+				"Outdoor Humidity"
+			],
+			"unitAbbreviatedName": "%",
+			"userId": null,
+			"variableCategoryName": "Environment"
+		},
+		{
+			"causeOnly": false,
 			"displayName": "Barometric Pressure",
 			"id": 96380,
 			"ionIcon": "ion-ios-partlysunny",
@@ -1842,7 +1894,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 213,
 			"numberOfCorrelationsAsCause": 426,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 1215241,
+			"numberOfRawMeasurements": 1215289,
 			"numberOfTrackingReminders": 2,
 			"numberOfUserCorrelationsAsCause": 213,
 			"numberOfUserCorrelationsAsEffect": 0,
@@ -1862,38 +1914,6 @@ window.qm.staticData = {
 		},
 		{
 			"causeOnly": false,
-			"displayName": "Outdoor Humidity",
-			"id": 5954744,
-			"ionIcon": "ion-ios-partlysunny",
-			"latestMeasurementTime": null,
-			"manualTracking": false,
-			"name": "Outdoor Humidity",
-			"numberOfAggregateCorrelationsAsCause": 213,
-			"numberOfAggregateCorrelationsAsEffect": 0,
-			"numberCommonTaggedBy": 1,
-			"numberOfCommonTags": 1,
-			"numberOfCorrelations": 213,
-			"numberOfCorrelationsAsCause": 426,
-			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 1215290,
-			"numberOfTrackingReminders": 3,
-			"numberOfUserCorrelationsAsCause": 213,
-			"numberOfUserCorrelationsAsEffect": 0,
-			"numberOfUserVariables": 765,
-			"outcome": false,
-			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/environment.png",
-			"public": true,
-			"subtitle": "213 studies",
-			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/environment.svg",
-			"synonyms": [
-				"Outdoor Humidity"
-			],
-			"unitAbbreviatedName": "%",
-			"userId": null,
-			"variableCategoryName": "Environment"
-		},
-		{
-			"causeOnly": false,
 			"displayName": "Outdoor Temperature",
 			"id": 5954773,
 			"ionIcon": "ion-ios-partlysunny",
@@ -1907,11 +1927,11 @@ window.qm.staticData = {
 			"numberOfCorrelations": 203,
 			"numberOfCorrelationsAsCause": 406,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 1201494,
+			"numberOfRawMeasurements": 1201498,
 			"numberOfTrackingReminders": 8,
 			"numberOfUserCorrelationsAsCause": 203,
 			"numberOfUserCorrelationsAsEffect": 0,
-			"numberOfUserVariables": 763,
+			"numberOfUserVariables": 764,
 			"outcome": false,
 			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/environment.png",
 			"public": true,
@@ -1940,11 +1960,11 @@ window.qm.staticData = {
 			"numberOfCorrelations": 207,
 			"numberOfCorrelationsAsCause": 414,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 1201172,
+			"numberOfRawMeasurements": 1201178,
 			"numberOfTrackingReminders": 2,
 			"numberOfUserCorrelationsAsCause": 207,
 			"numberOfUserCorrelationsAsEffect": 0,
-			"numberOfUserVariables": 737,
+			"numberOfUserVariables": 738,
 			"outcome": false,
 			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/environment.png",
 			"public": true,
@@ -1972,7 +1992,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 314,
 			"numberOfCorrelationsAsCause": 138,
 			"numberOfCorrelationsAsEffect": 490,
-			"numberOfRawMeasurements": 8479,
+			"numberOfRawMeasurements": 8481,
 			"numberOfTrackingReminders": 785,
 			"numberOfUserCorrelationsAsCause": 69,
 			"numberOfUserCorrelationsAsEffect": 245,
@@ -1986,7 +2006,8 @@ window.qm.staticData = {
 				"Tiredness",
 				"Fatigue",
 				"Tiredness / Fatigue",
-				"Tirednes"
+				"Tirednes",
+				"Tiredne"
 			],
 			"unitAbbreviatedName": "/5",
 			"userId": null,
@@ -2039,11 +2060,11 @@ window.qm.staticData = {
 			"numberOfCorrelations": 713,
 			"numberOfCorrelationsAsCause": 224,
 			"numberOfCorrelationsAsEffect": 1202,
-			"numberOfRawMeasurements": 13310,
-			"numberOfTrackingReminders": 640,
+			"numberOfRawMeasurements": 13317,
+			"numberOfTrackingReminders": 642,
 			"numberOfUserCorrelationsAsCause": 112,
 			"numberOfUserCorrelationsAsEffect": 601,
-			"numberOfUserVariables": 579,
+			"numberOfUserVariables": 580,
 			"outcome": true,
 			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png",
 			"public": true,
@@ -2052,7 +2073,8 @@ window.qm.staticData = {
 			"synonyms": [
 				"Anxiety / Nervousness",
 				"Anxiety",
-				"Anxiety / Nervousnes"
+				"Anxiety / Nervousnes",
+				"Anxiety / Nervousne"
 			],
 			"unitAbbreviatedName": "/5",
 			"userId": null,
@@ -2105,11 +2127,11 @@ window.qm.staticData = {
 			"numberOfCorrelations": 2020,
 			"numberOfCorrelationsAsCause": 240,
 			"numberOfCorrelationsAsEffect": 3800,
-			"numberOfRawMeasurements": 40761,
-			"numberOfTrackingReminders": 108,
+			"numberOfRawMeasurements": 40766,
+			"numberOfTrackingReminders": 109,
 			"numberOfUserCorrelationsAsCause": 120,
 			"numberOfUserCorrelationsAsEffect": 1900,
-			"numberOfUserVariables": 358,
+			"numberOfUserVariables": 359,
 			"outcome": true,
 			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/sleep.png",
 			"public": true,
@@ -2138,7 +2160,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 974,
 			"numberOfCorrelationsAsCause": 384,
 			"numberOfCorrelationsAsEffect": 1564,
-			"numberOfRawMeasurements": 93115,
+			"numberOfRawMeasurements": 93119,
 			"numberOfTrackingReminders": 73,
 			"numberOfUserCorrelationsAsCause": 192,
 			"numberOfUserCorrelationsAsEffect": 782,
@@ -2171,7 +2193,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 872,
 			"numberOfCorrelationsAsCause": 402,
 			"numberOfCorrelationsAsEffect": 1342,
-			"numberOfRawMeasurements": 107515,
+			"numberOfRawMeasurements": 110578,
 			"numberOfTrackingReminders": 5,
 			"numberOfUserCorrelationsAsCause": 201,
 			"numberOfUserCorrelationsAsEffect": 671,
@@ -2235,7 +2257,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 479,
 			"numberOfCorrelationsAsCause": 204,
 			"numberOfCorrelationsAsEffect": 754,
-			"numberOfRawMeasurements": 7485,
+			"numberOfRawMeasurements": 7491,
 			"numberOfTrackingReminders": 312,
 			"numberOfUserCorrelationsAsCause": 102,
 			"numberOfUserCorrelationsAsEffect": 377,
@@ -2267,7 +2289,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 774,
 			"numberOfCorrelationsAsCause": 338,
 			"numberOfCorrelationsAsEffect": 1210,
-			"numberOfRawMeasurements": 2291109,
+			"numberOfRawMeasurements": 2291112,
 			"numberOfTrackingReminders": 20,
 			"numberOfUserCorrelationsAsCause": 169,
 			"numberOfUserCorrelationsAsEffect": 605,
@@ -2302,7 +2324,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 398,
 			"numberOfCorrelationsAsCause": 288,
 			"numberOfCorrelationsAsEffect": 508,
-			"numberOfRawMeasurements": 3545,
+			"numberOfRawMeasurements": 3551,
 			"numberOfTrackingReminders": 359,
 			"numberOfUserCorrelationsAsCause": 144,
 			"numberOfUserCorrelationsAsEffect": 254,
@@ -2313,8 +2335,12 @@ window.qm.staticData = {
 			"subtitle": "398 studies",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg",
 			"synonyms": [
+				"Stress Rating",
+				"Feeling stressed",
+				"Stress level",
 				"Stress",
-				"Stres"
+				"Stres",
+				"Stre"
 			],
 			"unitAbbreviatedName": "/5",
 			"userId": null,
@@ -2437,7 +2463,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 675,
 			"numberOfCorrelationsAsCause": 130,
 			"numberOfCorrelationsAsEffect": 1220,
-			"numberOfRawMeasurements": 3149,
+			"numberOfRawMeasurements": 3153,
 			"numberOfTrackingReminders": 288,
 			"numberOfUserCorrelationsAsCause": 65,
 			"numberOfUserCorrelationsAsEffect": 610,
@@ -2469,7 +2495,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 119,
 			"numberOfCorrelationsAsCause": 238,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 3404,
+			"numberOfRawMeasurements": 3409,
 			"numberOfTrackingReminders": 322,
 			"numberOfUserCorrelationsAsCause": 119,
 			"numberOfUserCorrelationsAsEffect": 0,
@@ -2569,7 +2595,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 91,
 			"numberOfCorrelationsAsCause": 66,
 			"numberOfCorrelationsAsEffect": 116,
-			"numberOfRawMeasurements": 3235,
+			"numberOfRawMeasurements": 3236,
 			"numberOfTrackingReminders": 295,
 			"numberOfUserCorrelationsAsCause": 33,
 			"numberOfUserCorrelationsAsEffect": 58,
@@ -2581,7 +2607,8 @@ window.qm.staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg",
 			"synonyms": [
 				"Loneliness",
-				"Lonelines"
+				"Lonelines",
+				"Loneline"
 			],
 			"unitAbbreviatedName": "/5",
 			"userId": null,
@@ -2602,7 +2629,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 909,
 			"numberOfCorrelationsAsCause": 206,
 			"numberOfCorrelationsAsEffect": 1612,
-			"numberOfRawMeasurements": 4425,
+			"numberOfRawMeasurements": 4430,
 			"numberOfTrackingReminders": 265,
 			"numberOfUserCorrelationsAsCause": 103,
 			"numberOfUserCorrelationsAsEffect": 806,
@@ -2645,6 +2672,7 @@ window.qm.staticData = {
 			"subtitle": "188 studies",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/nutrients.svg",
 			"synonyms": [
+				"CaloriesIn",
 				"Caloric Intake"
 			],
 			"unitAbbreviatedName": "kcal",
@@ -2958,7 +2986,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 232,
 			"numberOfCorrelationsAsCause": 88,
 			"numberOfCorrelationsAsEffect": 376,
-			"numberOfRawMeasurements": 1158,
+			"numberOfRawMeasurements": 1176,
 			"numberOfTrackingReminders": 152,
 			"numberOfUserCorrelationsAsCause": 44,
 			"numberOfUserCorrelationsAsEffect": 188,
@@ -3528,22 +3556,22 @@ window.qm.staticData = {
 			"latestMeasurementTime": null,
 			"manualTracking": true,
 			"name": "Heart Rate (Pulse)",
-			"numberOfAggregateCorrelationsAsCause": 159,
+			"numberOfAggregateCorrelationsAsCause": 160,
 			"numberOfAggregateCorrelationsAsEffect": 584,
 			"numberCommonTaggedBy": 0,
 			"numberOfCommonTags": 0,
-			"numberOfCorrelations": 743,
-			"numberOfCorrelationsAsCause": 318,
+			"numberOfCorrelations": 744,
+			"numberOfCorrelationsAsCause": 320,
 			"numberOfCorrelationsAsEffect": 1168,
 			"numberOfRawMeasurements": 168821,
 			"numberOfTrackingReminders": 34,
-			"numberOfUserCorrelationsAsCause": 159,
+			"numberOfUserCorrelationsAsCause": 160,
 			"numberOfUserCorrelationsAsEffect": 584,
 			"numberOfUserVariables": 97,
 			"outcome": true,
 			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/vital-signs.png",
 			"public": true,
-			"subtitle": "743 studies",
+			"subtitle": "744 studies",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/vital-signs.svg",
 			"synonyms": [
 				"Heart Rate",
@@ -3708,7 +3736,8 @@ window.qm.staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/symptoms.svg",
 			"synonyms": [
 				"Sleepiness",
-				"Sleepines"
+				"Sleepines",
+				"Sleepine"
 			],
 			"unitAbbreviatedName": "/5",
 			"userId": null,
@@ -3744,7 +3773,9 @@ window.qm.staticData = {
 				"Lethargy / Tiredness",
 				"Fatigue / Lethargy / Tiredness",
 				"Lethargy / Tirednes",
-				"Fatigue / Lethargy / Tirednes"
+				"Fatigue / Lethargy / Tirednes",
+				"Lethargy / Tiredne",
+				"Fatigue / Lethargy / Tiredne"
 			],
 			"unitAbbreviatedName": "/5",
 			"userId": null,
@@ -3765,7 +3796,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 645,
 			"numberOfCorrelationsAsCause": 362,
 			"numberOfCorrelationsAsEffect": 928,
-			"numberOfRawMeasurements": 18989,
+			"numberOfRawMeasurements": 19042,
 			"numberOfTrackingReminders": 1,
 			"numberOfUserCorrelationsAsCause": 181,
 			"numberOfUserCorrelationsAsEffect": 464,
@@ -3791,21 +3822,21 @@ window.qm.staticData = {
 			"manualTracking": true,
 			"name": "Pain Severity",
 			"numberOfAggregateCorrelationsAsCause": 37,
-			"numberOfAggregateCorrelationsAsEffect": 377,
+			"numberOfAggregateCorrelationsAsEffect": 378,
 			"numberCommonTaggedBy": 0,
 			"numberOfCommonTags": 0,
-			"numberOfCorrelations": 414,
+			"numberOfCorrelations": 415,
 			"numberOfCorrelationsAsCause": 74,
-			"numberOfCorrelationsAsEffect": 754,
-			"numberOfRawMeasurements": 3632,
+			"numberOfCorrelationsAsEffect": 756,
+			"numberOfRawMeasurements": 3633,
 			"numberOfTrackingReminders": 109,
 			"numberOfUserCorrelationsAsCause": 37,
-			"numberOfUserCorrelationsAsEffect": 377,
+			"numberOfUserCorrelationsAsEffect": 378,
 			"numberOfUserVariables": 82,
 			"outcome": true,
 			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/symptoms.png",
 			"public": true,
-			"subtitle": "414 studies",
+			"subtitle": "415 studies",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/symptoms.svg",
 			"synonyms": [
 				"Pain Severity"
@@ -3861,7 +3892,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 660,
 			"numberOfCorrelationsAsCause": 358,
 			"numberOfCorrelationsAsEffect": 962,
-			"numberOfRawMeasurements": 18995,
+			"numberOfRawMeasurements": 19048,
 			"numberOfTrackingReminders": 4,
 			"numberOfUserCorrelationsAsCause": 179,
 			"numberOfUserCorrelationsAsEffect": 481,
@@ -3894,7 +3925,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 661,
 			"numberOfCorrelationsAsCause": 358,
 			"numberOfCorrelationsAsEffect": 964,
-			"numberOfRawMeasurements": 18998,
+			"numberOfRawMeasurements": 19051,
 			"numberOfTrackingReminders": 4,
 			"numberOfUserCorrelationsAsCause": 179,
 			"numberOfUserCorrelationsAsEffect": 482,
@@ -3927,7 +3958,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 667,
 			"numberOfCorrelationsAsCause": 358,
 			"numberOfCorrelationsAsEffect": 976,
-			"numberOfRawMeasurements": 19041,
+			"numberOfRawMeasurements": 19094,
 			"numberOfTrackingReminders": 4,
 			"numberOfUserCorrelationsAsCause": 179,
 			"numberOfUserCorrelationsAsEffect": 488,
@@ -4453,8 +4484,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Get It Here!",
-					"title": null,
-					"tooltip": null
+					"title": "Get it here!",
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -4497,8 +4529,8 @@ window.qm.staticData = {
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
-			"lastSuccessfulUpdatedAt": "2018-08-18 10:07:01",
-			"message": "Got 0 new measurements 41 hours ago.  ",
+			"lastSuccessfulUpdatedAt": "2018-08-21 13:32:12",
+			"message": "Got 0 new measurements 70 minutes ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -4539,8 +4571,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Disconnect",
-					"title": null,
-					"tooltip": null
+					"title": "Disconnect",
+					"tooltip": null,
+					"type": ""
 				},
 				{
 					"accessibilityText": null,
@@ -4562,8 +4595,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Update",
-					"title": null,
-					"tooltip": null
+					"title": "Update",
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -4605,7 +4639,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-07-16 05:41:19",
-			"message": "Got 20 new measurements 35 days ago.  ",
+			"message": "Got 20 new measurements 36 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -4651,8 +4685,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Get It Here!",
-					"title": null,
-					"tooltip": null
+					"title": "Get it here!",
+					"tooltip": null,
+					"type": ""
 				},
 				{
 					"accessibilityText": null,
@@ -4675,7 +4710,8 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Reconnect",
 					"title": "Reconnect",
-					"tooltip": null
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -4718,8 +4754,8 @@ window.qm.staticData = {
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
-			"lastSuccessfulUpdatedAt": "2018-08-18 06:07:19",
-			"message": "Got 138 new measurements 45 hours ago.  ",
+			"lastSuccessfulUpdatedAt": "2018-08-21 11:14:27",
+			"message": "Got 428 new measurements 3 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -4733,7 +4769,7 @@ window.qm.staticData = {
 				"repo"
 			],
 			"spreadsheetUpload": null,
-			"totalMeasurementsInLastUpdate": 138,
+			"totalMeasurementsInLastUpdate": 428,
 			"updateError": null,
 			"updateRequestedAt": "2018-06-11 03:38:32",
 			"updateStatus": "UPDATED",
@@ -4760,8 +4796,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Disconnect",
-					"title": null,
-					"tooltip": null
+					"title": "Disconnect",
+					"tooltip": null,
+					"type": ""
 				},
 				{
 					"accessibilityText": null,
@@ -4783,8 +4820,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Update",
-					"title": null,
-					"tooltip": null
+					"title": "Update",
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -4823,7 +4861,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-07-21 16:53:05",
-			"message": "Got 0 new measurements 29 days ago.  ",
+			"message": "Got 0 new measurements 31 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -4865,8 +4903,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Connect",
-					"title": null,
-					"tooltip": null
+					"title": "Connect",
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -4906,7 +4945,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-18 11:04:56",
-			"message": "Got 0 new measurements 40 hours ago.  ",
+			"message": "Got 0 new measurements 3 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -4948,8 +4987,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Disconnect",
-					"title": null,
-					"tooltip": null
+					"title": "Disconnect",
+					"tooltip": null,
+					"type": ""
 				},
 				{
 					"accessibilityText": null,
@@ -4971,8 +5011,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Update",
-					"title": null,
-					"tooltip": null
+					"title": "Update",
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -5012,7 +5053,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-02-05 22:51:13",
-			"message": "Got 0 new measurements 195 days ago.  ",
+			"message": "Got 0 new measurements 197 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -5057,7 +5098,8 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Reconnect",
 					"title": "Reconnect",
-					"tooltip": null
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -5096,8 +5138,8 @@ window.qm.staticData = {
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
-			"lastSuccessfulUpdatedAt": "2018-08-16 23:27:12",
-			"message": "Got 0 new measurements 3 days ago.  ",
+			"lastSuccessfulUpdatedAt": "2018-08-20 05:29:18",
+			"message": "Got 0 new measurements 33 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -5112,7 +5154,7 @@ window.qm.staticData = {
 			],
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": 0,
-			"updateError": "No new measurements since 2018-08-14",
+			"updateError": "No new measurements since 2018-08-19",
 			"updateRequestedAt": "2018-08-16 23:26:06",
 			"updateStatus": "UPDATED",
 			"affiliate": false,
@@ -5138,8 +5180,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Disconnect",
-					"title": null,
-					"tooltip": null
+					"title": "Disconnect",
+					"tooltip": null,
+					"type": ""
 				},
 				{
 					"accessibilityText": null,
@@ -5161,8 +5204,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Update",
-					"title": null,
-					"tooltip": null
+					"title": "Update",
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -5205,8 +5249,8 @@ window.qm.staticData = {
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
-			"lastSuccessfulUpdatedAt": "2018-08-17 16:14:27",
-			"message": "Got 0 new measurements 2 days ago.  ",
+			"lastSuccessfulUpdatedAt": "2018-08-21 01:42:09",
+			"message": "Got 0 new measurements 13 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -5247,8 +5291,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Disconnect",
-					"title": null,
-					"tooltip": null
+					"title": "Disconnect",
+					"tooltip": null,
+					"type": ""
 				},
 				{
 					"accessibilityText": null,
@@ -5270,8 +5315,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Update",
-					"title": null,
-					"tooltip": null
+					"title": "Update",
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -5323,7 +5369,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2017-10-01 21:08:19",
-			"message": "Got 0 new measurements 322 days ago.  ",
+			"message": "Got 0 new measurements 324 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -5363,7 +5409,8 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Reconnect",
 					"title": "Reconnect",
-					"tooltip": null
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -5424,7 +5471,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-19 14:18:05",
-			"message": "Got 0 new measurements 13 hours ago.  ",
+			"message": "Got 0 new measurements 2 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -5463,8 +5510,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Disconnect",
-					"title": null,
-					"tooltip": null
+					"title": "Disconnect",
+					"tooltip": null,
+					"type": ""
 				},
 				{
 					"accessibilityText": null,
@@ -5486,8 +5534,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Update",
-					"title": null,
-					"tooltip": null
+					"title": "Update",
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -5548,7 +5597,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-19 23:21:30",
-			"message": "Got 0 new measurements 4 hours ago.  ",
+			"message": "Got 0 new measurements 39 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -5587,8 +5636,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Disconnect",
-					"title": null,
-					"tooltip": null
+					"title": "Disconnect",
+					"tooltip": null,
+					"type": ""
 				},
 				{
 					"accessibilityText": null,
@@ -5610,8 +5660,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Update",
-					"title": null,
-					"tooltip": null
+					"title": "Update",
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -5712,7 +5763,8 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Reconnect",
 					"title": "Reconnect",
-					"tooltip": null
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -5753,8 +5805,8 @@ window.qm.staticData = {
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
-			"lastSuccessfulUpdatedAt": "2018-08-17 17:45:42",
-			"message": "Got 10 new measurements 2 days ago.  ",
+			"lastSuccessfulUpdatedAt": "2018-08-21 03:32:44",
+			"message": "Got 15 new measurements 11 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -5769,7 +5821,7 @@ window.qm.staticData = {
 				"read_thermostat"
 			],
 			"spreadsheetUpload": null,
-			"totalMeasurementsInLastUpdate": 10,
+			"totalMeasurementsInLastUpdate": 15,
 			"updateError": null,
 			"updateRequestedAt": "2018-06-11 03:00:14",
 			"updateStatus": "UPDATED",
@@ -5796,8 +5848,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Disconnect",
-					"title": null,
-					"tooltip": null
+					"title": "Disconnect",
+					"tooltip": null,
+					"type": ""
 				},
 				{
 					"accessibilityText": null,
@@ -5819,8 +5872,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Update",
-					"title": null,
-					"tooltip": null
+					"title": "Update",
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -5863,7 +5917,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-19 01:50:35",
-			"message": "Got 0 new measurements 25 hours ago.  ",
+			"message": "Got 0 new measurements 3 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -5892,20 +5946,21 @@ window.qm.staticData = {
 					"confirmationText": null,
 					"functionName": null,
 					"functionParameters": null,
-					"html": "<span id=\"record-a-measurement-button\"><i class=\"icon ion-archive\"></i>Record a Measurement</span>",
+					"html": "<span id=\"go-to-inbox-button\"><i class=\"icon ion-archive\"></i>Go to Inbox</span>",
 					"icon": "ion-archive",
-					"id": "record-a-measurement-button",
+					"id": "go-to-inbox-button",
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/archive.png",
 					"ionIcon": "ion-archive",
 					"link": "#/app/reminders-inbox",
-					"stateName": null,
-					"stateParams": null,
+					"stateName": "app.remindersInbox",
+					"stateParams": [],
 					"successAlertBody": null,
 					"successAlertTitle": null,
 					"successToastText": null,
-					"text": "Record a Measurement",
-					"title": null,
-					"tooltip": null
+					"text": "Go to Inbox",
+					"title": "Go to Inbox",
+					"tooltip": null,
+					"type": "Inbox"
 				},
 				{
 					"accessibilityText": null,
@@ -5921,14 +5976,15 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/android-notifications-none.png",
 					"ionIcon": "ion-android-notifications-none",
 					"link": "#/app/variable-list-category/Anything",
-					"stateName": null,
-					"stateParams": null,
+					"stateName": "app.remindersManage",
+					"stateParams": [],
 					"successAlertBody": null,
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Manage Reminders",
-					"title": null,
-					"tooltip": null
+					"title": "Manage Reminders",
+					"tooltip": null,
+					"type": "ManageReminders"
 				}
 			],
 			"card": null,
@@ -5950,7 +6006,7 @@ window.qm.staticData = {
 			"premium": null,
 			"synonyms": [],
 			"shortDescription": "Tracks anything",
-			"instructionsHtml": "How to Track Zoloft <br>Record your Zoloft daily in the <a href=\"https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/reminders-inbox\"> reminder inbox</a> or using the <a href=\"https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/variable-list-category/Anything\">interactive web or mobile notifications</a>. ",
+			"instructionsHtml": "How to Track Zoloft<br> Record your Zoloft daily in the <a href=\"https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/reminders-inbox\"> reminder inbox</a> or using the <a href=\"https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/variable-list-category/Anything\">interactive web or mobile notifications</a>. ",
 			"updatedAt": null,
 			"connectorId": 72,
 			"connnected": false
@@ -5970,7 +6026,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-04-17 21:07:29",
-			"message": "Got 350 new measurements 124 days ago.  ",
+			"message": "Got 350 new measurements 126 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -6013,8 +6069,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Get It Here!",
-					"title": null,
-					"tooltip": null
+					"title": "Get it here!",
+					"tooltip": null,
+					"type": ""
 				},
 				{
 					"accessibilityText": null,
@@ -6037,7 +6094,8 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Reconnect",
 					"title": "Reconnect",
-					"tooltip": null
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -6118,8 +6176,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Connect",
-					"title": null,
-					"tooltip": null
+					"title": "Connect",
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -6161,7 +6220,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-19 01:50:35",
-			"message": "Got 0 new measurements 25 hours ago.  ",
+			"message": "Got 0 new measurements 3 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -6204,8 +6263,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Disconnect",
-					"title": null,
-					"tooltip": null
+					"title": "Disconnect",
+					"tooltip": null,
+					"type": ""
 				},
 				{
 					"accessibilityText": null,
@@ -6227,8 +6287,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Update",
-					"title": null,
-					"tooltip": null
+					"title": "Update",
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -6266,7 +6327,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-01-27 17:11:40",
-			"message": "Got 43 new measurements 204 days ago.  ",
+			"message": "Got 43 new measurements 206 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -6309,7 +6370,8 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Reconnect",
 					"title": "Reconnect",
-					"tooltip": null
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -6352,7 +6414,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-03-16 19:57:33",
-			"message": "Got 5 new measurements 156 days ago.  ",
+			"message": "Got 5 new measurements 158 days ago.  ",
 			"platforms": [
 				"chrome",
 				"web"
@@ -6390,7 +6452,8 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Reconnect",
 					"title": "Reconnect",
-					"tooltip": null
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -6434,7 +6497,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-06-10 13:10:41",
-			"message": "Got 2 new measurements 71 days ago.  ",
+			"message": "Got 2 new measurements 72 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -6474,8 +6537,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Connect",
-					"title": null,
-					"tooltip": null
+					"title": "Connect",
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -6513,8 +6577,8 @@ window.qm.staticData = {
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
-			"lastSuccessfulUpdatedAt": "2018-08-17 09:00:42",
-			"message": "Got 20 new measurements 3 days ago.  ",
+			"lastSuccessfulUpdatedAt": "2018-08-20 14:01:52",
+			"message": "Got 20 new measurements 25 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -6552,8 +6616,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Disconnect",
-					"title": null,
-					"tooltip": null
+					"title": "Disconnect",
+					"tooltip": null,
+					"type": ""
 				},
 				{
 					"accessibilityText": null,
@@ -6575,8 +6640,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Update",
-					"title": null,
-					"tooltip": null
+					"title": "Update",
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -6669,8 +6735,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Get It Here!",
-					"title": null,
-					"tooltip": null
+					"title": "Get it here!",
+					"tooltip": null,
+					"type": ""
 				},
 				{
 					"accessibilityText": null,
@@ -6692,8 +6759,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Connect",
-					"title": null,
-					"tooltip": null
+					"title": "Connect",
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -6748,7 +6816,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-19 22:38:57",
-			"message": "Got 59 new measurements 4 hours ago.  ",
+			"message": "Got 59 new measurements 40 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -6787,8 +6855,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Disconnect",
-					"title": null,
-					"tooltip": null
+					"title": "Disconnect",
+					"tooltip": null,
+					"type": ""
 				},
 				{
 					"accessibilityText": null,
@@ -6810,8 +6879,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Update",
-					"title": null,
-					"tooltip": null
+					"title": "Update",
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -6862,7 +6932,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-04-22 09:18:55",
-			"message": "Got 2 new measurements 120 days ago.  ",
+			"message": "Got 2 new measurements 121 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -6902,7 +6972,8 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Reconnect",
 					"title": "Reconnect",
-					"tooltip": null
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -6940,7 +7011,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-18 11:04:15",
-			"message": "Got 0 new measurements 40 hours ago.  ",
+			"message": "Got 0 new measurements 3 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -6979,8 +7050,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Disconnect",
-					"title": null,
-					"tooltip": null
+					"title": "Disconnect",
+					"tooltip": null,
+					"type": ""
 				},
 				{
 					"accessibilityText": null,
@@ -7002,8 +7074,9 @@ window.qm.staticData = {
 					"successAlertTitle": null,
 					"successToastText": null,
 					"text": "Update",
-					"title": null,
-					"tooltip": null
+					"title": "Update",
+					"tooltip": null,
+					"type": ""
 				}
 			],
 			"card": null,
@@ -16351,89 +16424,89 @@ window.qm.staticData = {
 			"AppSettings": {
 				"properties": {
 					"additionalSettings": {
-						"description": "",
+						"description": "What do you expect?",
 						"type": "object"
 					},
 					"appDescription": {
-						"description": "",
+						"description": "What do you expect?",
 						"type": "string"
 					},
 					"appDesign": {
-						"description": "",
+						"description": "What do you expect?",
 						"type": "object"
 					},
 					"appDisplayName": {
-						"description": "",
+						"description": "What do you expect?",
 						"type": "string"
 					},
 					"appStatus": {
-						"description": "",
+						"description": "What do you expect?",
 						"type": "object"
 					},
 					"appType": {
-						"description": "",
+						"description": "What do you expect?",
 						"type": "string"
 					},
 					"buildEnabled": {
-						"description": "",
+						"description": "What do you expect?",
 						"type": "string"
 					},
 					"clientId": {
-						"description": "",
+						"description": "What do you expect?",
 						"type": "string"
 					},
 					"clientSecret": {
-						"description": "",
+						"description": "What do you expect?",
 						"type": "string"
 					},
 					"collaborators": {
-						"description": "",
+						"description": "What do you expect?",
 						"items": {
 							"$ref": "#/definitions/User"
 						},
 						"type": "array"
 					},
 					"createdAt": {
-						"description": "",
+						"description": "What do you expect?",
 						"type": "string"
 					},
 					"userId": {
-						"description": "",
+						"description": "What do you expect?",
 						"type": "string"
 					},
 					"users": {
-						"description": "",
+						"description": "What do you expect?",
 						"items": {
 							"$ref": "#/definitions/User"
 						},
 						"type": "array"
 					},
 					"redirectUri": {
-						"description": "",
+						"description": "What do you expect?",
 						"type": "string"
 					},
 					"companyName": {
-						"description": "",
+						"description": "What do you expect?",
 						"type": "string"
 					},
 					"homepageUrl": {
-						"description": "",
+						"description": "What do you expect?",
 						"type": "string"
 					},
 					"iconUrl": {
-						"description": "",
+						"description": "What do you expect?",
 						"type": "string"
 					},
 					"longDescription": {
-						"description": "",
+						"description": "What do you expect?",
 						"type": "string"
 					},
 					"splashScreen": {
-						"description": "",
+						"description": "What do you expect?",
 						"type": "string"
 					},
 					"textLogo": {
-						"description": "",
+						"description": "What do you expect?",
 						"type": "string"
 					}
 				},
@@ -16492,6 +16565,10 @@ window.qm.staticData = {
 			},
 			"Button": {
 				"properties": {
+					"accessibilityText": {
+						"description": "Ex: connect",
+						"type": "string"
+					},
 					"action": {
 						"description": "Action data",
 						"type": "object"
@@ -16516,6 +16593,10 @@ window.qm.staticData = {
 						"description": "Data to provide to functionName",
 						"type": "object"
 					},
+					"html": {
+						"description": "Ex: connect",
+						"type": "string"
+					},
 					"id": {
 						"description": "HTML element id",
 						"type": "string"
@@ -16531,6 +16612,14 @@ window.qm.staticData = {
 					"link": {
 						"description": "Ex: https://local.quantimo.do",
 						"type": "string"
+					},
+					"stateName": {
+						"description": "State to go to",
+						"type": "string"
+					},
+					"stateParams": {
+						"description": "Data to provide to the state",
+						"type": "object"
 					},
 					"successToastText": {
 						"description": "Text to show user after executing functionName",
@@ -16560,6 +16649,12 @@ window.qm.staticData = {
 			},
 			"Card": {
 				"properties": {
+					"actionSheetButtons": {
+						"items": {
+							"$ref": "#/definitions/Button"
+						},
+						"type": "array"
+					},
 					"avatar": {
 						"description": "Smaller square image",
 						"type": "string"
@@ -16568,14 +16663,12 @@ window.qm.staticData = {
 						"description": "Ex: #f2f2f2",
 						"type": "string"
 					},
-					"buttons": {
-						"items": {
-							"$ref": "#/definitions/Button"
-						},
-						"type": "array"
-					},
 					"content": {
 						"description": "Ex: Content",
+						"type": "string"
+					},
+					"headerTitle": {
+						"description": "Ex: Title",
 						"type": "string"
 					},
 					"html": {
@@ -16586,6 +16679,12 @@ window.qm.staticData = {
 						"description": "Ex: <div>Content</div>",
 						"type": "string"
 					},
+					"iconButtons": {
+						"items": {
+							"$ref": "#/definitions/Button"
+						},
+						"type": "array"
+					},
 					"id": {
 						"description": "HTML element id",
 						"type": "string"
@@ -16594,6 +16693,12 @@ window.qm.staticData = {
 						"description": "Larger image of variable dimensions",
 						"type": "string"
 					},
+					"inputFields": {
+						"items": {
+							"$ref": "#/definitions/InputField"
+						},
+						"type": "array"
+					},
 					"ionIcon": {
 						"description": "Ex: ion-refresh",
 						"type": "string"
@@ -16601,6 +16706,12 @@ window.qm.staticData = {
 					"link": {
 						"description": "A link to a web page or something. Not much more to say about that.",
 						"type": "string"
+					},
+					"parameters": {
+						"items": {
+							"$ref": "#/definitions/InputField"
+						},
+						"type": "array"
 					},
 					"sharingBody": {
 						"description": "Ex: sharingBody",
@@ -16616,9 +16727,19 @@ window.qm.staticData = {
 						"description": "Ex: sharingTitle",
 						"type": "string"
 					},
+					"subHeader": {
+						"description": "Ex: subTitle",
+						"type": "string"
+					},
 					"subTitle": {
 						"description": "Ex: subTitle",
 						"type": "string"
+					},
+					"textButtons": {
+						"items": {
+							"$ref": "#/definitions/Button"
+						},
+						"type": "array"
 					},
 					"title": {
 						"description": "Ex: Title",
@@ -16626,8 +16747,7 @@ window.qm.staticData = {
 					}
 				},
 				"required": [
-					"link",
-					"text"
+					"id"
 				]
 			},
 			"Chart": {
@@ -16655,49 +16775,6 @@ window.qm.staticData = {
 					"svg": {
 						"description": "SVG string than can be embedded directly in HTML",
 						"type": "string"
-					}
-				}
-			},
-			"StudyCharts": {
-				"description": "An object with various chart properties each property contain and svg and Highcharts configuration",
-				"properties": {
-					"populationTraitScatterPlot": {
-						"$ref": "#/definitions/Chart"
-					},
-					"outcomeDistributionColumnChart": {
-						"$ref": "#/definitions/Chart"
-					},
-					"predictorDistributionColumnChart": {
-						"$ref": "#/definitions/Chart"
-					},
-					"correlationScatterPlot": {
-						"$ref": "#/definitions/Chart"
-					},
-					"pairsOverTimeLineChart": {
-						"$ref": "#/definitions/Chart"
-					}
-				}
-			},
-			"VariableCharts": {
-				"description": "An object with various chart properties each property contain and svg and Highcharts configuration",
-				"properties": {
-					"hourlyColumnChart": {
-						"$ref": "#/definitions/Chart"
-					},
-					"monthlyColumnChart": {
-						"$ref": "#/definitions/Chart"
-					},
-					"distributionColumnChart": {
-						"$ref": "#/definitions/Chart"
-					},
-					"weekdayColumnChart": {
-						"$ref": "#/definitions/Chart"
-					},
-					"lineChartWithoutSmoothing": {
-						"$ref": "#/definitions/Chart"
-					},
-					"lineChartWithSmoothing": {
-						"$ref": "#/definitions/Chart"
 					}
 				}
 			},
@@ -17505,6 +17582,121 @@ window.qm.staticData = {
 					"button",
 					"description",
 					"title"
+				]
+			},
+			"InputField": {
+				"properties": {
+					"displayName": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"helpText": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"hint": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"icon": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"id": {
+						"description": "HTML element id",
+						"type": "string"
+					},
+					"image": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"key": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"labelLeft": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"labelRight": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"link": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"maxLength": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"maxValue": {
+						"description": "What do you expect?",
+						"type": "number"
+					},
+					"minLength": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"minValue": {
+						"description": "What do you expect?",
+						"type": "number"
+					},
+					"options": {
+						"description": "Selector list options",
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"placeholder": {
+						"description": "Ex: Title",
+						"type": "string"
+					},
+					"postUrl": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"required": {
+						"description": "What do you expect?",
+						"type": "boolean"
+					},
+					"show": {
+						"description": "Ex: Title",
+						"type": "boolean"
+					},
+					"submitButton": {
+						"$ref": "#/definitions/Button"
+					},
+					"type": {
+						"description": "Ex: Title",
+						"enum": [
+							"check_box",
+							"date",
+							"email",
+							"number",
+							"postal_code",
+							"select_option",
+							"string",
+							"switch",
+							"text_area",
+							"unit",
+							"variable_category"
+						],
+						"type": "string"
+					},
+					"validationPattern": {
+						"description": "See http://html5pattern.com/ for examples",
+						"type": "string"
+					},
+					"value": {
+						"description": "What do you expect?",
+						"type": "string"
+					}
+				},
+				"required": [
+					"displayName",
+					"type"
 				]
 			},
 			"GetConnectorsResponse": {
@@ -18319,36 +18511,6 @@ window.qm.staticData = {
 					"emailAddress"
 				]
 			},
-			"StudyCreationBody": {
-				"properties": {
-					"causeVariableName": {
-						"description": "Name of predictor variable",
-						"type": "string"
-					},
-					"effectVariableName": {
-						"description": "Name of the outcome variable",
-						"type": "string"
-					},
-					"studyTitle": {
-						"description": "Title of your study (optional)",
-						"type": "string"
-					},
-					"type": {
-						"description": "Individual studies are based on data of a single user. Group studies are based on data from a specific group of individuals who have joined.  Global studies are based on aggregated and anonymously shared data from all users.",
-						"type": "string",
-						"enum": [
-							"individual",
-							"group",
-							"global"
-						]
-					}
-				},
-				"required": [
-					"causeVariableName",
-					"effectVariableName",
-					"type"
-				]
-			},
 			"Study": {
 				"description": "A study analyzes the relationship between a predictor variable like gluten-intake and an outcome of interest such as overall mood.",
 				"properties": {
@@ -18418,6 +18580,56 @@ window.qm.staticData = {
 					"type"
 				]
 			},
+			"StudyCharts": {
+				"description": "An object with various chart properties each property contain and svg and Highcharts configuration",
+				"properties": {
+					"populationTraitScatterPlot": {
+						"$ref": "#/definitions/Chart"
+					},
+					"outcomeDistributionColumnChart": {
+						"$ref": "#/definitions/Chart"
+					},
+					"predictorDistributionColumnChart": {
+						"$ref": "#/definitions/Chart"
+					},
+					"correlationScatterPlot": {
+						"$ref": "#/definitions/Chart"
+					},
+					"pairsOverTimeLineChart": {
+						"$ref": "#/definitions/Chart"
+					}
+				}
+			},
+			"StudyCreationBody": {
+				"properties": {
+					"causeVariableName": {
+						"description": "Name of predictor variable",
+						"type": "string"
+					},
+					"effectVariableName": {
+						"description": "Name of the outcome variable",
+						"type": "string"
+					},
+					"studyTitle": {
+						"description": "Title of your study (optional)",
+						"type": "string"
+					},
+					"type": {
+						"description": "Individual studies are based on data of a single user. Group studies are based on data from a specific group of individuals who have joined.  Global studies are based on aggregated and anonymously shared data from all users.",
+						"type": "string",
+						"enum": [
+							"individual",
+							"group",
+							"global"
+						]
+					}
+				},
+				"required": [
+					"causeVariableName",
+					"effectVariableName",
+					"type"
+				]
+			},
 			"StudyHtml": {
 				"properties": {
 					"chartHtml": {
@@ -18469,11 +18681,11 @@ window.qm.staticData = {
 						"type": "string"
 					},
 					"socialSharingButtonHtml": {
-						"description": "",
+						"description": "What do you expect?",
 						"type": "string"
 					},
 					"studySummaryBoxHtml": {
-						"description": "",
+						"description": "What do you expect?",
 						"type": "string"
 					}
 				},
@@ -18769,13 +18981,25 @@ window.qm.staticData = {
 						"description": "Link to study comparing variable with strongest relationship for user or population",
 						"type": "string"
 					},
+					"bestStudyCard": {
+						"description": "Description of relationship with variable with strongest relationship for user or population",
+						"$ref": "#/definitions/Card"
+					},
 					"bestUserStudyLink": {
 						"description": "Link to study comparing variable with strongest relationship for user",
 						"type": "string"
 					},
+					"bestUserStudyCard": {
+						"description": "Description of relationship with variable with strongest relationship for user",
+						"$ref": "#/definitions/Card"
+					},
 					"bestPopulationStudyLink": {
 						"description": "Link to study comparing variable with strongest relationship for population",
 						"type": "string"
+					},
+					"bestPopulationStudyCard": {
+						"description": "Description of relationship with variable with strongest relationship for population",
+						"$ref": "#/definitions/Card"
 					},
 					"optimalValueMessage": {
 						"description": "Description of relationship with variable with strongest relationship for user or population",
@@ -19157,13 +19381,25 @@ window.qm.staticData = {
 						"description": "Link to study comparing variable with strongest relationship for user or population",
 						"type": "string"
 					},
+					"bestStudyCard": {
+						"description": "Description of relationship with variable with strongest relationship for user or population",
+						"$ref": "#/definitions/Card"
+					},
 					"bestUserStudyLink": {
 						"description": "Link to study comparing variable with strongest relationship for user",
 						"type": "string"
 					},
+					"bestUserStudyCard": {
+						"description": "Description of relationship with variable with strongest relationship for user",
+						"$ref": "#/definitions/Card"
+					},
 					"bestPopulationStudyLink": {
 						"description": "Link to study comparing variable with strongest relationship for population",
 						"type": "string"
+					},
+					"bestPopulationStudyCard": {
+						"description": "Description of relationship with variable with strongest relationship for population",
+						"$ref": "#/definitions/Card"
 					},
 					"optimalValueMessage": {
 						"description": "Description of relationship with variable with strongest relationship for user or population",
@@ -19929,13 +20165,25 @@ window.qm.staticData = {
 						"description": "Link to study comparing variable with strongest relationship for user or population",
 						"type": "string"
 					},
+					"bestStudyCard": {
+						"description": "Description of relationship with variable with strongest relationship for user or population",
+						"$ref": "#/definitions/Card"
+					},
 					"bestUserStudyLink": {
 						"description": "Link to study comparing variable with strongest relationship for user",
 						"type": "string"
 					},
+					"bestUserStudyCard": {
+						"description": "Description of relationship with variable with strongest relationship for user",
+						"$ref": "#/definitions/Card"
+					},
 					"bestPopulationStudyLink": {
 						"description": "Link to study comparing variable with strongest relationship for population",
 						"type": "string"
+					},
+					"bestPopulationStudyCard": {
+						"description": "Description of relationship with variable with strongest relationship for population",
+						"$ref": "#/definitions/Card"
 					},
 					"optimalValueMessage": {
 						"description": "Description of relationship with variable with strongest relationship for user or population",
@@ -20123,7 +20371,7 @@ window.qm.staticData = {
 						"type": "integer"
 					},
 					"imageUrl": {
-						"description": "",
+						"description": "What do you expect?",
 						"type": "string"
 					},
 					"informationalUrl": {
@@ -20163,7 +20411,7 @@ window.qm.staticData = {
 						"type": "string"
 					},
 					"ionIcon": {
-						"description": "",
+						"description": "What do you expect?",
 						"type": "string"
 					},
 					"joinedCommonTagVariables": {
@@ -20810,6 +21058,29 @@ window.qm.staticData = {
 				"required": [
 					"name"
 				]
+			},
+			"VariableCharts": {
+				"description": "An object with various chart properties each property contain and svg and Highcharts configuration",
+				"properties": {
+					"hourlyColumnChart": {
+						"$ref": "#/definitions/Chart"
+					},
+					"monthlyColumnChart": {
+						"$ref": "#/definitions/Chart"
+					},
+					"distributionColumnChart": {
+						"$ref": "#/definitions/Chart"
+					},
+					"weekdayColumnChart": {
+						"$ref": "#/definitions/Chart"
+					},
+					"lineChartWithoutSmoothing": {
+						"$ref": "#/definitions/Chart"
+					},
+					"lineChartWithSmoothing": {
+						"$ref": "#/definitions/Chart"
+					}
+				}
 			},
 			"Vote": {
 				"properties": {
