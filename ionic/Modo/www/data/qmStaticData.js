@@ -1063,17 +1063,17 @@ window.qm.staticData = {
 		"backgroundColor": null,
 		"buttons": [
 			{
-				"accessibilityText": null,
+				"accessibilityText": "Go to Inbox",
 				"action": null,
 				"additionalInformation": null,
 				"color": "#0f9d58",
 				"confirmationText": null,
 				"functionName": null,
-				"functionParameters": null,
-				"html": "<span id=\"go-to-inbox-button\"><i class=\"icon ion-archive\"></i>Go to Inbox</span>",
+				"parameters": null,
+				"html": "<span id=\"go-to-inbox-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-archive\"></i> &nbsp;Go to Inbox</span>",
 				"icon": "ion-archive",
 				"id": "go-to-inbox-button",
-				"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/archive.png",
+				"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/archive.svg",
 				"ionIcon": "ion-archive",
 				"link": "#/app/reminders-inbox",
 				"stateName": "app.remindersInbox",
@@ -1083,21 +1083,21 @@ window.qm.staticData = {
 				"successToastText": null,
 				"text": "Go to Inbox",
 				"title": "Go to Inbox",
-				"tooltip": null,
+				"tooltip": "Go to Inbox",
 				"type": "Inbox"
 			},
 			{
-				"accessibilityText": null,
+				"accessibilityText": "Manage Reminders",
 				"action": null,
 				"additionalInformation": null,
 				"color": "#0f9d58",
 				"confirmationText": null,
 				"functionName": null,
-				"functionParameters": null,
-				"html": "<span id=\"manage-reminders-button\"><i class=\"icon ion-android-notifications-none\"></i>Manage Reminders</span>",
+				"parameters": null,
+				"html": "<span id=\"manage-reminders-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-android-notifications-none\"></i> &nbsp;Manage Reminders</span>",
 				"icon": "ion-android-notifications-none",
 				"id": "manage-reminders-button",
-				"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/android-notifications-none.png",
+				"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/android-notifications-none.svg",
 				"ionIcon": "ion-android-notifications-none",
 				"link": "#/app/variable-list-category/Anything",
 				"stateName": "app.remindersManage",
@@ -1107,7 +1107,7 @@ window.qm.staticData = {
 				"successToastText": null,
 				"text": "Manage Reminders",
 				"title": "Manage Reminders",
-				"tooltip": null,
+				"tooltip": "Manage Reminders",
 				"type": "ManageReminders"
 			}
 		],
@@ -1130,25 +1130,25 @@ window.qm.staticData = {
 		"synonyms": [],
 		"shortDescription": null,
 		"instructionsHtml": null,
-		"updatedAt": "2018-08-21 01:38:44",
+		"updatedAt": "2018-08-21 22:13:25",
 		"splashScreen": "oMg0F5fmyf_sfzgyc",
 		"textLogo": "nm8LguNtZL_chsco6",
-		"versionNumber": "2.8.821",
-		"androidVersionCode": "2018082161",
-		"builtAt": 1534862512
+		"versionNumber": "2.8.822",
+		"androidVersionCode": "2018082204",
+		"builtAt": 1534899648
 	},
 	"buildInfo": {
-		"iosCFBundleVersion": "2.8.821.881",
-		"builtAt": 1534862512,
-		"versionNumber": "2.8.821",
+		"iosCFBundleVersion": "2.8.822.60",
+		"builtAt": 1534899648,
+		"versionNumber": "2.8.822",
 		"versionNumbers": {
-			"iosCFBundleVersion": "2.8.821.881",
-			"androidVersionCode": "2018082161",
-			"ionicApp": "2.8.821",
-			"buildVersionNumber": "2018082161"
+			"iosCFBundleVersion": "2.8.822.60",
+			"androidVersionCode": "2018082204",
+			"ionicApp": "2.8.822",
+			"buildVersionNumber": "2018082204"
 		},
 		"gitBranch": "master",
-		"gitCommitShaHash": "9f4d6c835ccf6674ee98168e846aaf4467c9be19"
+		"gitCommitShaHash": "14675b4cbcaa8d9911dbf00e2d23628fbc97e982"
 	},
 	"chcp": null,
 	"chromeExtensionManifest": null,
@@ -1465,7 +1465,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 351,
 			"numberOfCorrelationsAsCause": 202,
 			"numberOfCorrelationsAsEffect": 500,
-			"numberOfRawMeasurements": 24095,
+			"numberOfRawMeasurements": 24096,
 			"numberOfTrackingReminders": 184,
 			"numberOfUserCorrelationsAsCause": 101,
 			"numberOfUserCorrelationsAsEffect": 250,
@@ -1830,7 +1830,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 341,
 			"numberOfCorrelationsAsCause": 170,
 			"numberOfCorrelationsAsEffect": 512,
-			"numberOfRawMeasurements": 21552,
+			"numberOfRawMeasurements": 21553,
 			"numberOfTrackingReminders": 71,
 			"numberOfUserCorrelationsAsCause": 85,
 			"numberOfUserCorrelationsAsEffect": 256,
@@ -1846,6 +1846,39 @@ window.qm.staticData = {
 			"unitAbbreviatedName": "/5",
 			"userId": null,
 			"variableCategoryName": "Emotions"
+		},
+		{
+			"causeOnly": false,
+			"displayName": "Barometric Pressure",
+			"id": 96380,
+			"ionIcon": "ion-ios-partlysunny",
+			"latestMeasurementTime": null,
+			"manualTracking": false,
+			"name": "Barometric Pressure",
+			"numberOfAggregateCorrelationsAsCause": 213,
+			"numberOfAggregateCorrelationsAsEffect": 0,
+			"numberCommonTaggedBy": 1,
+			"numberOfCommonTags": 1,
+			"numberOfCorrelations": 213,
+			"numberOfCorrelationsAsCause": 426,
+			"numberOfCorrelationsAsEffect": 0,
+			"numberOfRawMeasurements": 1215370,
+			"numberOfTrackingReminders": 2,
+			"numberOfUserCorrelationsAsCause": 213,
+			"numberOfUserCorrelationsAsEffect": 0,
+			"numberOfUserVariables": 767,
+			"outcome": false,
+			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/environment.png",
+			"public": true,
+			"subtitle": "213 studies",
+			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/environment.svg",
+			"synonyms": [
+				"Barometric",
+				"Barometric Pressure"
+			],
+			"unitAbbreviatedName": "Pa",
+			"userId": null,
+			"variableCategoryName": "Environment"
 		},
 		{
 			"causeOnly": false,
@@ -1876,39 +1909,6 @@ window.qm.staticData = {
 				"Outdoor Humidity"
 			],
 			"unitAbbreviatedName": "%",
-			"userId": null,
-			"variableCategoryName": "Environment"
-		},
-		{
-			"causeOnly": false,
-			"displayName": "Barometric Pressure",
-			"id": 96380,
-			"ionIcon": "ion-ios-partlysunny",
-			"latestMeasurementTime": null,
-			"manualTracking": false,
-			"name": "Barometric Pressure",
-			"numberOfAggregateCorrelationsAsCause": 213,
-			"numberOfAggregateCorrelationsAsEffect": 0,
-			"numberCommonTaggedBy": 1,
-			"numberOfCommonTags": 1,
-			"numberOfCorrelations": 213,
-			"numberOfCorrelationsAsCause": 426,
-			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 1215289,
-			"numberOfTrackingReminders": 2,
-			"numberOfUserCorrelationsAsCause": 213,
-			"numberOfUserCorrelationsAsEffect": 0,
-			"numberOfUserVariables": 766,
-			"outcome": false,
-			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/environment.png",
-			"public": true,
-			"subtitle": "213 studies",
-			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/environment.svg",
-			"synonyms": [
-				"Barometric",
-				"Barometric Pressure"
-			],
-			"unitAbbreviatedName": "Pa",
 			"userId": null,
 			"variableCategoryName": "Environment"
 		},
@@ -1960,7 +1960,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 207,
 			"numberOfCorrelationsAsCause": 414,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 1201178,
+			"numberOfRawMeasurements": 1201181,
 			"numberOfTrackingReminders": 2,
 			"numberOfUserCorrelationsAsCause": 207,
 			"numberOfUserCorrelationsAsEffect": 0,
@@ -2164,7 +2164,7 @@ window.qm.staticData = {
 			"numberOfTrackingReminders": 73,
 			"numberOfUserCorrelationsAsCause": 192,
 			"numberOfUserCorrelationsAsEffect": 782,
-			"numberOfUserVariables": 353,
+			"numberOfUserVariables": 352,
 			"outcome": true,
 			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/physique.png",
 			"public": true,
@@ -2289,7 +2289,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 774,
 			"numberOfCorrelationsAsCause": 338,
 			"numberOfCorrelationsAsEffect": 1210,
-			"numberOfRawMeasurements": 2291112,
+			"numberOfRawMeasurements": 2291712,
 			"numberOfTrackingReminders": 20,
 			"numberOfUserCorrelationsAsCause": 169,
 			"numberOfUserCorrelationsAsEffect": 605,
@@ -3435,7 +3435,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 156,
 			"numberOfCorrelationsAsCause": 312,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 1861,
+			"numberOfRawMeasurements": 1864,
 			"numberOfTrackingReminders": 122,
 			"numberOfUserCorrelationsAsCause": 156,
 			"numberOfUserCorrelationsAsEffect": 0,
@@ -3563,7 +3563,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 744,
 			"numberOfCorrelationsAsCause": 320,
 			"numberOfCorrelationsAsEffect": 1168,
-			"numberOfRawMeasurements": 168821,
+			"numberOfRawMeasurements": 169844,
 			"numberOfTrackingReminders": 34,
 			"numberOfUserCorrelationsAsCause": 160,
 			"numberOfUserCorrelationsAsEffect": 584,
@@ -4153,10 +4153,10 @@ window.qm.staticData = {
 			"numberOfCorrelationsAsCause": 62,
 			"numberOfCorrelationsAsEffect": 0,
 			"numberOfRawMeasurements": 817,
-			"numberOfTrackingReminders": 84,
+			"numberOfTrackingReminders": 85,
 			"numberOfUserCorrelationsAsCause": 31,
 			"numberOfUserCorrelationsAsEffect": 0,
-			"numberOfUserVariables": 66,
+			"numberOfUserVariables": 67,
 			"outcome": false,
 			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/foods.png",
 			"public": true,
@@ -4465,17 +4465,17 @@ window.qm.staticData = {
 			"backgroundColor": "#fa4876",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Get it here!",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": null,
-					"functionParameters": null,
-					"html": "<span id=\"get-it-here!-button\"><i class=\"icon ion-bag\"></i>Get It Here!</span>",
+					"parameters": null,
+					"html": "<span id=\"get-it-here!-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-bag\"></i> &nbsp;Get it here!</span>",
 					"icon": "ion-bag",
 					"id": "get-it-here!-button",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/bag.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/bag.svg",
 					"ionIcon": "ion-bag",
 					"link": "https://chrome.google.com/webstore/detail/quantimodo-life-tracking/jioloifallegdkgjklafkkbniianjbgi",
 					"stateName": null,
@@ -4483,9 +4483,9 @@ window.qm.staticData = {
 					"successAlertBody": null,
 					"successAlertTitle": null,
 					"successToastText": null,
-					"text": "Get It Here!",
+					"text": "Get it here!",
 					"title": "Get it here!",
-					"tooltip": null,
+					"tooltip": "Get it here!",
 					"type": ""
 				}
 			],
@@ -4530,7 +4530,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-21 13:32:12",
-			"message": "Got 0 new measurements 70 minutes ago.  ",
+			"message": "Got 0 new measurements 11 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -4552,17 +4552,17 @@ window.qm.staticData = {
 			"backgroundColor": "#3b579d",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Disconnect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
 					"functionName": "disconnect",
-					"functionParameters": null,
-					"html": "<span id=\"disconnect-button\"><i class=\"icon ion-close-circled\"></i>Disconnect</span>",
+					"parameters": null,
+					"html": "<span id=\"disconnect-button\" style=\"color: #dd4b39\" ><i class=\"icon ion-close-circled\"></i> &nbsp;Disconnect</span>",
 					"icon": "ion-close-circled",
 					"id": "disconnect-button-facebook",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/close-circled.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/facebook/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -4572,21 +4572,21 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Disconnect",
 					"title": "Disconnect",
-					"tooltip": null,
+					"tooltip": "Disconnect",
 					"type": ""
 				},
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Update",
 					"action": "update",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "update",
-					"functionParameters": null,
-					"html": "<span id=\"update-button\"><i class=\"icon ion-refresh\"></i>Update</span>",
+					"parameters": null,
+					"html": "<span id=\"update-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-refresh\"></i> &nbsp;Update</span>",
 					"icon": "ion-refresh",
 					"id": "update-button-facebook",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/refresh.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/refresh.svg",
 					"ionIcon": "ion-refresh",
 					"link": "https://app.quantimo.do/api/connectors/facebook/update?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -4596,7 +4596,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Update",
 					"title": "Update",
-					"tooltip": null,
+					"tooltip": "Update",
 					"type": ""
 				}
 			],
@@ -4639,7 +4639,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-07-16 05:41:19",
-			"message": "Got 20 new measurements 36 days ago.  ",
+			"message": "Got 20 new measurements 37 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -4666,17 +4666,17 @@ window.qm.staticData = {
 			"backgroundColor": "#cc73e1",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Get it here!",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": null,
-					"functionParameters": null,
-					"html": "<span id=\"get-it-here!-button\"><i class=\"icon ion-bag\"></i>Get It Here!</span>",
+					"parameters": null,
+					"html": "<span id=\"get-it-here!-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-bag\"></i> &nbsp;Get it here!</span>",
 					"icon": "ion-bag",
 					"id": "get-it-here!-button",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/bag.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/bag.svg",
 					"ionIcon": "ion-bag",
 					"link": "https://www.amazon.com/Fitbit-Charge-Heart-Fitness-Wristband/dp/B01K9S260E/ref=as_li_ss_tl?ie=UTF8&qid=1493518902&sr=8-3&keywords=fitbit&th=1&linkCode=ll1&tag=quant08-20&linkId=b357b0833de73b0c4e935fd7c13a079e",
 					"stateName": null,
@@ -4684,23 +4684,23 @@ window.qm.staticData = {
 					"successAlertBody": null,
 					"successAlertTitle": null,
 					"successToastText": null,
-					"text": "Get It Here!",
+					"text": "Get it here!",
 					"title": "Get it here!",
-					"tooltip": null,
+					"tooltip": "Get it here!",
 					"type": ""
 				},
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Connect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "connect",
-					"functionParameters": null,
-					"html": "<span id=\"connect-button\"><i class=\"icon ion-link\"></i>Connect</span>",
+					"parameters": null,
+					"html": "<span id=\"connect-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-link\"></i> &nbsp;Connect</span>",
 					"icon": "ion-link",
 					"id": "connect-button-fitbit",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/link.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/fitbit/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -4710,7 +4710,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Reconnect",
 					"title": "Reconnect",
-					"tooltip": null,
+					"tooltip": "Connect",
 					"type": ""
 				}
 			],
@@ -4755,7 +4755,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-21 11:14:27",
-			"message": "Got 428 new measurements 3 hours ago.  ",
+			"message": "Got 428 new measurements 14 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -4777,17 +4777,17 @@ window.qm.staticData = {
 			"backgroundColor": "#e4405f",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Disconnect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
 					"functionName": "disconnect",
-					"functionParameters": null,
-					"html": "<span id=\"disconnect-button\"><i class=\"icon ion-close-circled\"></i>Disconnect</span>",
+					"parameters": null,
+					"html": "<span id=\"disconnect-button\" style=\"color: #dd4b39\" ><i class=\"icon ion-close-circled\"></i> &nbsp;Disconnect</span>",
 					"icon": "ion-close-circled",
 					"id": "disconnect-button-github",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/close-circled.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/github/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -4797,21 +4797,21 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Disconnect",
 					"title": "Disconnect",
-					"tooltip": null,
+					"tooltip": "Disconnect",
 					"type": ""
 				},
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Update",
 					"action": "update",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "update",
-					"functionParameters": null,
-					"html": "<span id=\"update-button\"><i class=\"icon ion-refresh\"></i>Update</span>",
+					"parameters": null,
+					"html": "<span id=\"update-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-refresh\"></i> &nbsp;Update</span>",
 					"icon": "ion-refresh",
 					"id": "update-button-github",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/refresh.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/refresh.svg",
 					"ionIcon": "ion-refresh",
 					"link": "https://app.quantimo.do/api/connectors/github/update?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -4821,7 +4821,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Update",
 					"title": "Update",
-					"tooltip": null,
+					"tooltip": "Update",
 					"type": ""
 				}
 			],
@@ -4884,17 +4884,17 @@ window.qm.staticData = {
 			"backgroundColor": "#23448b",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Connect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "connect",
-					"functionParameters": null,
-					"html": "<span id=\"connect-button\"><i class=\"icon ion-link\"></i>Connect</span>",
+					"parameters": null,
+					"html": "<span id=\"connect-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-link\"></i> &nbsp;Connect</span>",
 					"icon": "ion-link",
 					"id": "connect-button-gmail",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/link.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/gmail/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -4904,7 +4904,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Connect",
 					"title": "Connect",
-					"tooltip": null,
+					"tooltip": "Connect",
 					"type": ""
 				}
 			],
@@ -4944,8 +4944,8 @@ window.qm.staticData = {
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
-			"lastSuccessfulUpdatedAt": "2018-08-18 11:04:56",
-			"message": "Got 0 new measurements 3 days ago.  ",
+			"lastSuccessfulUpdatedAt": "2018-08-21 15:54:43",
+			"message": "Got 0 new measurements 9 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -4968,17 +4968,17 @@ window.qm.staticData = {
 			"backgroundColor": "#2c6efc",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Disconnect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
 					"functionName": "disconnect",
-					"functionParameters": null,
-					"html": "<span id=\"disconnect-button\"><i class=\"icon ion-close-circled\"></i>Disconnect</span>",
+					"parameters": null,
+					"html": "<span id=\"disconnect-button\" style=\"color: #dd4b39\" ><i class=\"icon ion-close-circled\"></i> &nbsp;Disconnect</span>",
 					"icon": "ion-close-circled",
 					"id": "disconnect-button-googlecalendar",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/close-circled.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/googlecalendar/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -4988,21 +4988,21 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Disconnect",
 					"title": "Disconnect",
-					"tooltip": null,
+					"tooltip": "Disconnect",
 					"type": ""
 				},
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Update",
 					"action": "update",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "update",
-					"functionParameters": null,
-					"html": "<span id=\"update-button\"><i class=\"icon ion-refresh\"></i>Update</span>",
+					"parameters": null,
+					"html": "<span id=\"update-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-refresh\"></i> &nbsp;Update</span>",
 					"icon": "ion-refresh",
 					"id": "update-button-googlecalendar",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/refresh.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/refresh.svg",
 					"ionIcon": "ion-refresh",
 					"link": "https://app.quantimo.do/api/connectors/googlecalendar/update?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -5012,7 +5012,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Update",
 					"title": "Update",
-					"tooltip": null,
+					"tooltip": "Update",
 					"type": ""
 				}
 			],
@@ -5078,17 +5078,17 @@ window.qm.staticData = {
 			"backgroundColor": "#00a3ad",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Connect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "connect",
-					"functionParameters": null,
-					"html": "<span id=\"connect-button\"><i class=\"icon ion-link\"></i>Connect</span>",
+					"parameters": null,
+					"html": "<span id=\"connect-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-link\"></i> &nbsp;Connect</span>",
 					"icon": "ion-link",
 					"id": "connect-button-googlefit",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/link.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/googlefit/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -5098,7 +5098,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Reconnect",
 					"title": "Reconnect",
-					"tooltip": null,
+					"tooltip": "Connect",
 					"type": ""
 				}
 			],
@@ -5139,7 +5139,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-20 05:29:18",
-			"message": "Got 0 new measurements 33 hours ago.  ",
+			"message": "Got 0 new measurements 44 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -5161,17 +5161,17 @@ window.qm.staticData = {
 			"backgroundColor": "#23448b",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Disconnect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
 					"functionName": "disconnect",
-					"functionParameters": null,
-					"html": "<span id=\"disconnect-button\"><i class=\"icon ion-close-circled\"></i>Disconnect</span>",
+					"parameters": null,
+					"html": "<span id=\"disconnect-button\" style=\"color: #dd4b39\" ><i class=\"icon ion-close-circled\"></i> &nbsp;Disconnect</span>",
 					"icon": "ion-close-circled",
 					"id": "disconnect-button-googleplus",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/close-circled.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/googleplus/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -5181,21 +5181,21 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Disconnect",
 					"title": "Disconnect",
-					"tooltip": null,
+					"tooltip": "Disconnect",
 					"type": ""
 				},
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Update",
 					"action": "update",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "update",
-					"functionParameters": null,
-					"html": "<span id=\"update-button\"><i class=\"icon ion-refresh\"></i>Update</span>",
+					"parameters": null,
+					"html": "<span id=\"update-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-refresh\"></i> &nbsp;Update</span>",
 					"icon": "ion-refresh",
 					"id": "update-button-googleplus",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/refresh.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/refresh.svg",
 					"ionIcon": "ion-refresh",
 					"link": "https://app.quantimo.do/api/connectors/googleplus/update?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -5205,7 +5205,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Update",
 					"title": "Update",
-					"tooltip": null,
+					"tooltip": "Update",
 					"type": ""
 				}
 			],
@@ -5250,7 +5250,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-21 01:42:09",
-			"message": "Got 0 new measurements 13 hours ago.  ",
+			"message": "Got 0 new measurements 23 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -5272,17 +5272,17 @@ window.qm.staticData = {
 			"backgroundColor": "#e4405f",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Disconnect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
 					"functionName": "disconnect",
-					"functionParameters": null,
-					"html": "<span id=\"disconnect-button\"><i class=\"icon ion-close-circled\"></i>Disconnect</span>",
+					"parameters": null,
+					"html": "<span id=\"disconnect-button\" style=\"color: #dd4b39\" ><i class=\"icon ion-close-circled\"></i> &nbsp;Disconnect</span>",
 					"icon": "ion-close-circled",
 					"id": "disconnect-button-linkedin",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/close-circled.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/linkedin/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -5292,21 +5292,21 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Disconnect",
 					"title": "Disconnect",
-					"tooltip": null,
+					"tooltip": "Disconnect",
 					"type": ""
 				},
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Update",
 					"action": "update",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "update",
-					"functionParameters": null,
-					"html": "<span id=\"update-button\"><i class=\"icon ion-refresh\"></i>Update</span>",
+					"parameters": null,
+					"html": "<span id=\"update-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-refresh\"></i> &nbsp;Update</span>",
 					"icon": "ion-refresh",
 					"id": "update-button-linkedin",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/refresh.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/refresh.svg",
 					"ionIcon": "ion-refresh",
 					"link": "https://app.quantimo.do/api/connectors/linkedin/update?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -5316,7 +5316,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Update",
 					"title": "Update",
-					"tooltip": null,
+					"tooltip": "Update",
 					"type": ""
 				}
 			],
@@ -5389,17 +5389,17 @@ window.qm.staticData = {
 			"backgroundColor": "#F48120",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Connect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "connect",
-					"functionParameters": null,
-					"html": "<span id=\"connect-button\"><i class=\"icon ion-link\"></i>Connect</span>",
+					"parameters": null,
+					"html": "<span id=\"connect-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-link\"></i> &nbsp;Connect</span>",
 					"icon": "ion-link",
 					"id": "connect-button-moodpanda",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/link.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/moodpanda/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -5409,7 +5409,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Reconnect",
 					"title": "Reconnect",
-					"tooltip": null,
+					"tooltip": "Connect",
 					"type": ""
 				}
 			],
@@ -5491,17 +5491,17 @@ window.qm.staticData = {
 			"backgroundColor": "#FFFFFF",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Disconnect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
 					"functionName": "disconnect",
-					"functionParameters": null,
-					"html": "<span id=\"disconnect-button\"><i class=\"icon ion-close-circled\"></i>Disconnect</span>",
+					"parameters": null,
+					"html": "<span id=\"disconnect-button\" style=\"color: #dd4b39\" ><i class=\"icon ion-close-circled\"></i> &nbsp;Disconnect</span>",
 					"icon": "ion-close-circled",
 					"id": "disconnect-button-moodscope",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/close-circled.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/moodscope/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -5511,21 +5511,21 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Disconnect",
 					"title": "Disconnect",
-					"tooltip": null,
+					"tooltip": "Disconnect",
 					"type": ""
 				},
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Update",
 					"action": "update",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "update",
-					"functionParameters": null,
-					"html": "<span id=\"update-button\"><i class=\"icon ion-refresh\"></i>Update</span>",
+					"parameters": null,
+					"html": "<span id=\"update-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-refresh\"></i> &nbsp;Update</span>",
 					"icon": "ion-refresh",
 					"id": "update-button-moodscope",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/refresh.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/refresh.svg",
 					"ionIcon": "ion-refresh",
 					"link": "https://app.quantimo.do/api/connectors/moodscope/update?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -5535,7 +5535,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Update",
 					"title": "Update",
-					"tooltip": null,
+					"tooltip": "Update",
 					"type": ""
 				}
 			],
@@ -5597,7 +5597,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-19 23:21:30",
-			"message": "Got 0 new measurements 39 hours ago.  ",
+			"message": "Got 0 new measurements 2 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -5617,17 +5617,17 @@ window.qm.staticData = {
 			"backgroundColor": "#262626",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Disconnect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
 					"functionName": "disconnect",
-					"functionParameters": null,
-					"html": "<span id=\"disconnect-button\"><i class=\"icon ion-close-circled\"></i>Disconnect</span>",
+					"parameters": null,
+					"html": "<span id=\"disconnect-button\" style=\"color: #dd4b39\" ><i class=\"icon ion-close-circled\"></i> &nbsp;Disconnect</span>",
 					"icon": "ion-close-circled",
 					"id": "disconnect-button-myfitnesspal",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/close-circled.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/myfitnesspal/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -5637,21 +5637,21 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Disconnect",
 					"title": "Disconnect",
-					"tooltip": null,
+					"tooltip": "Disconnect",
 					"type": ""
 				},
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Update",
 					"action": "update",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "update",
-					"functionParameters": null,
-					"html": "<span id=\"update-button\"><i class=\"icon ion-refresh\"></i>Update</span>",
+					"parameters": null,
+					"html": "<span id=\"update-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-refresh\"></i> &nbsp;Update</span>",
 					"icon": "ion-refresh",
 					"id": "update-button-myfitnesspal",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/refresh.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/refresh.svg",
 					"ionIcon": "ion-refresh",
 					"link": "https://app.quantimo.do/api/connectors/myfitnesspal/update?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -5661,7 +5661,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Update",
 					"title": "Update",
-					"tooltip": null,
+					"tooltip": "Update",
 					"type": ""
 				}
 			],
@@ -5743,17 +5743,17 @@ window.qm.staticData = {
 			"backgroundColor": "#4cd964",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Connect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "connect",
-					"functionParameters": null,
-					"html": "<span id=\"connect-button\"><i class=\"icon ion-link\"></i>Connect</span>",
+					"parameters": null,
+					"html": "<span id=\"connect-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-link\"></i> &nbsp;Connect</span>",
 					"icon": "ion-link",
 					"id": "connect-button-mynetdiary",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/link.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/mynetdiary/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -5763,7 +5763,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Reconnect",
 					"title": "Reconnect",
-					"tooltip": null,
+					"tooltip": "Connect",
 					"type": ""
 				}
 			],
@@ -5806,7 +5806,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-21 03:32:44",
-			"message": "Got 15 new measurements 11 hours ago.  ",
+			"message": "Got 15 new measurements 21 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -5829,17 +5829,17 @@ window.qm.staticData = {
 			"backgroundColor": "#388bbe",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Disconnect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
 					"functionName": "disconnect",
-					"functionParameters": null,
-					"html": "<span id=\"disconnect-button\"><i class=\"icon ion-close-circled\"></i>Disconnect</span>",
+					"parameters": null,
+					"html": "<span id=\"disconnect-button\" style=\"color: #dd4b39\" ><i class=\"icon ion-close-circled\"></i> &nbsp;Disconnect</span>",
 					"icon": "ion-close-circled",
 					"id": "disconnect-button-netatmo",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/close-circled.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/netatmo/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -5849,21 +5849,21 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Disconnect",
 					"title": "Disconnect",
-					"tooltip": null,
+					"tooltip": "Disconnect",
 					"type": ""
 				},
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Update",
 					"action": "update",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "update",
-					"functionParameters": null,
-					"html": "<span id=\"update-button\"><i class=\"icon ion-refresh\"></i>Update</span>",
+					"parameters": null,
+					"html": "<span id=\"update-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-refresh\"></i> &nbsp;Update</span>",
 					"icon": "ion-refresh",
 					"id": "update-button-netatmo",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/refresh.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/refresh.svg",
 					"ionIcon": "ion-refresh",
 					"link": "https://app.quantimo.do/api/connectors/netatmo/update?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -5873,7 +5873,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Update",
 					"title": "Update",
-					"tooltip": null,
+					"tooltip": "Update",
 					"type": ""
 				}
 			],
@@ -5939,17 +5939,17 @@ window.qm.staticData = {
 			"backgroundColor": "#e4405f",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Go to Inbox",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": null,
-					"functionParameters": null,
-					"html": "<span id=\"go-to-inbox-button\"><i class=\"icon ion-archive\"></i>Go to Inbox</span>",
+					"parameters": null,
+					"html": "<span id=\"go-to-inbox-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-archive\"></i> &nbsp;Go to Inbox</span>",
 					"icon": "ion-archive",
 					"id": "go-to-inbox-button",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/archive.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/archive.svg",
 					"ionIcon": "ion-archive",
 					"link": "#/app/reminders-inbox",
 					"stateName": "app.remindersInbox",
@@ -5959,21 +5959,21 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Go to Inbox",
 					"title": "Go to Inbox",
-					"tooltip": null,
+					"tooltip": "Go to Inbox",
 					"type": "Inbox"
 				},
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Manage Reminders",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": null,
-					"functionParameters": null,
-					"html": "<span id=\"manage-reminders-button\"><i class=\"icon ion-android-notifications-none\"></i>Manage Reminders</span>",
+					"parameters": null,
+					"html": "<span id=\"manage-reminders-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-android-notifications-none\"></i> &nbsp;Manage Reminders</span>",
 					"icon": "ion-android-notifications-none",
 					"id": "manage-reminders-button",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/android-notifications-none.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/android-notifications-none.svg",
 					"ionIcon": "ion-android-notifications-none",
 					"link": "#/app/variable-list-category/Anything",
 					"stateName": "app.remindersManage",
@@ -5983,7 +5983,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Manage Reminders",
 					"title": "Manage Reminders",
-					"tooltip": null,
+					"tooltip": "Manage Reminders",
 					"type": "ManageReminders"
 				}
 			],
@@ -6050,17 +6050,17 @@ window.qm.staticData = {
 			"backgroundColor": "#2f78bd",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Get it here!",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": null,
-					"functionParameters": null,
-					"html": "<span id=\"get-it-here!-button\"><i class=\"icon ion-bag\"></i>Get It Here!</span>",
+					"parameters": null,
+					"html": "<span id=\"get-it-here!-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-bag\"></i> &nbsp;Get it here!</span>",
 					"icon": "ion-bag",
 					"id": "get-it-here!-button",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/bag.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/bag.svg",
 					"ionIcon": "ion-bag",
 					"link": "https://www.rescuetime.com/rp/quantimodo/plans",
 					"stateName": null,
@@ -6068,23 +6068,23 @@ window.qm.staticData = {
 					"successAlertBody": null,
 					"successAlertTitle": null,
 					"successToastText": null,
-					"text": "Get It Here!",
+					"text": "Get it here!",
 					"title": "Get it here!",
-					"tooltip": null,
+					"tooltip": "Get it here!",
 					"type": ""
 				},
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Connect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "connect",
-					"functionParameters": null,
-					"html": "<span id=\"connect-button\"><i class=\"icon ion-link\"></i>Connect</span>",
+					"parameters": null,
+					"html": "<span id=\"connect-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-link\"></i> &nbsp;Connect</span>",
 					"icon": "ion-link",
 					"id": "connect-button-rescuetime",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/link.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/rescuetime/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -6094,7 +6094,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Reconnect",
 					"title": "Reconnect",
-					"tooltip": null,
+					"tooltip": "Connect",
 					"type": ""
 				}
 			],
@@ -6157,17 +6157,17 @@ window.qm.staticData = {
 			"backgroundColor": "#3d55a6",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Connect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "connect",
-					"functionParameters": null,
-					"html": "<span id=\"connect-button\"><i class=\"icon ion-link\"></i>Connect</span>",
+					"parameters": null,
+					"html": "<span id=\"connect-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-link\"></i> &nbsp;Connect</span>",
 					"icon": "ion-link",
 					"id": "connect-button-runkeeper",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/link.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/runkeeper/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -6177,7 +6177,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Connect",
 					"title": "Connect",
-					"tooltip": null,
+					"tooltip": "Connect",
 					"type": ""
 				}
 			],
@@ -6244,17 +6244,17 @@ window.qm.staticData = {
 			"backgroundColor": "#0f7965",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Disconnect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
 					"functionName": "disconnect",
-					"functionParameters": null,
-					"html": "<span id=\"disconnect-button\"><i class=\"icon ion-close-circled\"></i>Disconnect</span>",
+					"parameters": null,
+					"html": "<span id=\"disconnect-button\" style=\"color: #dd4b39\" ><i class=\"icon ion-close-circled\"></i> &nbsp;Disconnect</span>",
 					"icon": "ion-close-circled",
 					"id": "disconnect-button-slack",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/close-circled.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/slack/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -6264,21 +6264,21 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Disconnect",
 					"title": "Disconnect",
-					"tooltip": null,
+					"tooltip": "Disconnect",
 					"type": ""
 				},
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Update",
 					"action": "update",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "update",
-					"functionParameters": null,
-					"html": "<span id=\"update-button\"><i class=\"icon ion-refresh\"></i>Update</span>",
+					"parameters": null,
+					"html": "<span id=\"update-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-refresh\"></i> &nbsp;Update</span>",
 					"icon": "ion-refresh",
 					"id": "update-button-slack",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/refresh.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/refresh.svg",
 					"ionIcon": "ion-refresh",
 					"link": "https://app.quantimo.do/api/connectors/slack/update?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -6288,7 +6288,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Update",
 					"title": "Update",
-					"tooltip": null,
+					"tooltip": "Update",
 					"type": ""
 				}
 			],
@@ -6350,17 +6350,17 @@ window.qm.staticData = {
 			"backgroundColor": "#124191",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Connect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "connect",
-					"functionParameters": null,
-					"html": "<span id=\"connect-button\"><i class=\"icon ion-link\"></i>Connect</span>",
+					"parameters": null,
+					"html": "<span id=\"connect-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-link\"></i> &nbsp;Connect</span>",
 					"icon": "ion-link",
 					"id": "connect-button-sleepcloud",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/link.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/sleepcloud/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -6370,7 +6370,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Reconnect",
 					"title": "Reconnect",
-					"tooltip": null,
+					"tooltip": "Connect",
 					"type": ""
 				}
 			],
@@ -6432,17 +6432,17 @@ window.qm.staticData = {
 			"backgroundColor": "#cc73e1",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Connect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "connect",
-					"functionParameters": null,
-					"html": "<span id=\"connect-button\"><i class=\"icon ion-link\"></i>Connect</span>",
+					"parameters": null,
+					"html": "<span id=\"connect-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-link\"></i> &nbsp;Connect</span>",
 					"icon": "ion-link",
 					"id": "connect-button-slice",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/link.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/slice/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -6452,7 +6452,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Reconnect",
 					"title": "Reconnect",
-					"tooltip": null,
+					"tooltip": "Connect",
 					"type": ""
 				}
 			],
@@ -6518,17 +6518,17 @@ window.qm.staticData = {
 			"backgroundColor": "#fc4c02",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Connect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "connect",
-					"functionParameters": null,
-					"html": "<span id=\"connect-button\"><i class=\"icon ion-link\"></i>Connect</span>",
+					"parameters": null,
+					"html": "<span id=\"connect-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-link\"></i> &nbsp;Connect</span>",
 					"icon": "ion-link",
 					"id": "connect-button-strava",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/link.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/strava/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -6538,7 +6538,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Connect",
 					"title": "Connect",
-					"tooltip": null,
+					"tooltip": "Connect",
 					"type": ""
 				}
 			],
@@ -6578,7 +6578,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-20 14:01:52",
-			"message": "Got 20 new measurements 25 hours ago.  ",
+			"message": "Got 20 new measurements 35 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -6597,17 +6597,17 @@ window.qm.staticData = {
 			"backgroundColor": "#e4405f",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Disconnect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
 					"functionName": "disconnect",
-					"functionParameters": null,
-					"html": "<span id=\"disconnect-button\"><i class=\"icon ion-close-circled\"></i>Disconnect</span>",
+					"parameters": null,
+					"html": "<span id=\"disconnect-button\" style=\"color: #dd4b39\" ><i class=\"icon ion-close-circled\"></i> &nbsp;Disconnect</span>",
 					"icon": "ion-close-circled",
 					"id": "disconnect-button-twitter",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/close-circled.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/twitter/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -6617,21 +6617,21 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Disconnect",
 					"title": "Disconnect",
-					"tooltip": null,
+					"tooltip": "Disconnect",
 					"type": ""
 				},
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Update",
 					"action": "update",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "update",
-					"functionParameters": null,
-					"html": "<span id=\"update-button\"><i class=\"icon ion-refresh\"></i>Update</span>",
+					"parameters": null,
+					"html": "<span id=\"update-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-refresh\"></i> &nbsp;Update</span>",
 					"icon": "ion-refresh",
 					"id": "update-button-twitter",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/refresh.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/refresh.svg",
 					"ionIcon": "ion-refresh",
 					"link": "https://app.quantimo.do/api/connectors/twitter/update?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -6641,7 +6641,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Update",
 					"title": "Update",
-					"tooltip": null,
+					"tooltip": "Update",
 					"type": ""
 				}
 			],
@@ -6716,17 +6716,17 @@ window.qm.staticData = {
 			"backgroundColor": "#00a1dd",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Get it here!",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": null,
-					"functionParameters": null,
-					"html": "<span id=\"get-it-here!-button\"><i class=\"icon ion-bag\"></i>Get It Here!</span>",
+					"parameters": null,
+					"html": "<span id=\"get-it-here!-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-bag\"></i> &nbsp;Get it here!</span>",
 					"icon": "ion-bag",
 					"id": "get-it-here!-button",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/bag.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/bag.svg",
 					"ionIcon": "ion-bag",
 					"link": "http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20",
 					"stateName": null,
@@ -6734,23 +6734,23 @@ window.qm.staticData = {
 					"successAlertBody": null,
 					"successAlertTitle": null,
 					"successToastText": null,
-					"text": "Get It Here!",
+					"text": "Get it here!",
 					"title": "Get it here!",
-					"tooltip": null,
+					"tooltip": "Get it here!",
 					"type": ""
 				},
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Connect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "connect",
-					"functionParameters": null,
-					"html": "<span id=\"connect-button\"><i class=\"icon ion-link\"></i>Connect</span>",
+					"parameters": null,
+					"html": "<span id=\"connect-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-link\"></i> &nbsp;Connect</span>",
 					"icon": "ion-link",
 					"id": "connect-button-up",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/link.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/up/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -6760,7 +6760,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Connect",
 					"title": "Connect",
-					"tooltip": null,
+					"tooltip": "Connect",
 					"type": ""
 				}
 			],
@@ -6816,7 +6816,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-19 22:38:57",
-			"message": "Got 59 new measurements 40 hours ago.  ",
+			"message": "Got 59 new measurements 2 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -6836,17 +6836,17 @@ window.qm.staticData = {
 			"backgroundColor": "#1e2023",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Disconnect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
 					"functionName": "disconnect",
-					"functionParameters": null,
-					"html": "<span id=\"disconnect-button\"><i class=\"icon ion-close-circled\"></i>Disconnect</span>",
+					"parameters": null,
+					"html": "<span id=\"disconnect-button\" style=\"color: #dd4b39\" ><i class=\"icon ion-close-circled\"></i> &nbsp;Disconnect</span>",
 					"icon": "ion-close-circled",
 					"id": "disconnect-button-worldweatheronline",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/close-circled.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/worldweatheronline/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -6856,21 +6856,21 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Disconnect",
 					"title": "Disconnect",
-					"tooltip": null,
+					"tooltip": "Disconnect",
 					"type": ""
 				},
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Update",
 					"action": "update",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "update",
-					"functionParameters": null,
-					"html": "<span id=\"update-button\"><i class=\"icon ion-refresh\"></i>Update</span>",
+					"parameters": null,
+					"html": "<span id=\"update-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-refresh\"></i> &nbsp;Update</span>",
 					"icon": "ion-refresh",
 					"id": "update-button-worldweatheronline",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/refresh.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/refresh.svg",
 					"ionIcon": "ion-refresh",
 					"link": "https://app.quantimo.do/api/connectors/worldweatheronline/update?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -6880,7 +6880,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Update",
 					"title": "Update",
-					"tooltip": null,
+					"tooltip": "Update",
 					"type": ""
 				}
 			],
@@ -6932,7 +6932,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-04-22 09:18:55",
-			"message": "Got 2 new measurements 121 days ago.  ",
+			"message": "Got 2 new measurements 122 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -6952,17 +6952,17 @@ window.qm.staticData = {
 			"backgroundColor": "#29a2b0",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Connect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "connect",
-					"functionParameters": null,
-					"html": "<span id=\"connect-button\"><i class=\"icon ion-link\"></i>Connect</span>",
+					"parameters": null,
+					"html": "<span id=\"connect-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-link\"></i> &nbsp;Connect</span>",
 					"icon": "ion-link",
 					"id": "connect-button-whatpulse",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/link.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/whatpulse/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -6972,7 +6972,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Reconnect",
 					"title": "Reconnect",
-					"tooltip": null,
+					"tooltip": "Connect",
 					"type": ""
 				}
 			],
@@ -7010,8 +7010,8 @@ window.qm.staticData = {
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
-			"lastSuccessfulUpdatedAt": "2018-08-18 11:04:15",
-			"message": "Got 0 new measurements 3 days ago.  ",
+			"lastSuccessfulUpdatedAt": "2018-08-21 14:52:02",
+			"message": "Got 4 new measurements 10 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -7023,25 +7023,25 @@ window.qm.staticData = {
 			"realId": null,
 			"scopes": [],
 			"spreadsheetUpload": null,
-			"totalMeasurementsInLastUpdate": 0,
-			"updateError": "No new measurements since 2018-08-09",
+			"totalMeasurementsInLastUpdate": 4,
+			"updateError": null,
 			"updateRequestedAt": "2018-07-16 01:17:56",
 			"updateStatus": "UPDATED",
 			"affiliate": true,
 			"backgroundColor": "#00afd8",
 			"buttons": [
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Disconnect",
 					"action": null,
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
 					"functionName": "disconnect",
-					"functionParameters": null,
-					"html": "<span id=\"disconnect-button\"><i class=\"icon ion-close-circled\"></i>Disconnect</span>",
+					"parameters": null,
+					"html": "<span id=\"disconnect-button\" style=\"color: #dd4b39\" ><i class=\"icon ion-close-circled\"></i> &nbsp;Disconnect</span>",
 					"icon": "ion-close-circled",
 					"id": "disconnect-button-withings",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/close-circled.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/withings/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -7051,21 +7051,21 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Disconnect",
 					"title": "Disconnect",
-					"tooltip": null,
+					"tooltip": "Disconnect",
 					"type": ""
 				},
 				{
-					"accessibilityText": null,
+					"accessibilityText": "Update",
 					"action": "update",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
 					"functionName": "update",
-					"functionParameters": null,
-					"html": "<span id=\"update-button\"><i class=\"icon ion-refresh\"></i>Update</span>",
+					"parameters": null,
+					"html": "<span id=\"update-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-refresh\"></i> &nbsp;Update</span>",
 					"icon": "ion-refresh",
 					"id": "update-button-withings",
-					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/png/512/refresh.png",
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/refresh.svg",
 					"ionIcon": "ion-refresh",
 					"link": "https://app.quantimo.do/api/connectors/withings/update?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"stateName": null,
@@ -7075,7 +7075,7 @@ window.qm.staticData = {
 					"successToastText": null,
 					"text": "Update",
 					"title": "Update",
-					"tooltip": null,
+					"tooltip": "Update",
 					"type": ""
 				}
 			],
@@ -16589,8 +16589,8 @@ window.qm.staticData = {
 						"description": "Name of function to call",
 						"type": "string"
 					},
-					"functionParameters": {
-						"description": "Data to provide to functionName",
+					"parameters": {
+						"description": "Data to provide to functionName or be copied to the card parameters when button is clicked and card is posted to the API",
 						"type": "object"
 					},
 					"html": {
@@ -16659,9 +16659,19 @@ window.qm.staticData = {
 						"description": "Smaller square image",
 						"type": "string"
 					},
+					"avatarCircular": {
+						"description": "Smaller circular image",
+						"type": "string"
+					},
 					"backgroundColor": {
 						"description": "Ex: #f2f2f2",
 						"type": "string"
+					},
+					"buttons": {
+						"items": {
+							"$ref": "#/definitions/Button"
+						},
+						"type": "array"
 					},
 					"content": {
 						"description": "Ex: Content",
@@ -16678,12 +16688,6 @@ window.qm.staticData = {
 					"htmlContent": {
 						"description": "Ex: <div>Content</div>",
 						"type": "string"
-					},
-					"iconButtons": {
-						"items": {
-							"$ref": "#/definitions/Button"
-						},
-						"type": "array"
 					},
 					"id": {
 						"description": "HTML element id",
@@ -16708,10 +16712,12 @@ window.qm.staticData = {
 						"type": "string"
 					},
 					"parameters": {
-						"items": {
-							"$ref": "#/definitions/InputField"
-						},
-						"type": "array"
+						"description": "Key value pairs derived from user input fields, button clicks, or preset defaults",
+						"type": "object"
+					},
+					"selectedButton": {
+						"description": "Button that the user clicked and the provided function parameters",
+						"$ref": "#/definitions/Button"
 					},
 					"sharingBody": {
 						"description": "Ex: sharingBody",
@@ -16734,12 +16740,6 @@ window.qm.staticData = {
 					"subTitle": {
 						"description": "Ex: subTitle",
 						"type": "string"
-					},
-					"textButtons": {
-						"items": {
-							"$ref": "#/definitions/Button"
-						},
-						"type": "array"
 					},
 					"title": {
 						"description": "Ex: Title",
@@ -17830,6 +17830,29 @@ window.qm.staticData = {
 				"required": [
 					"description",
 					"summary"
+				]
+			},
+			"FeedResponse": {
+				"properties": {
+					"cards": {
+						"items": {
+							"$ref": "#/definitions/Card"
+						},
+						"type": "array"
+					},
+					"description": {
+						"description": "Tracking reminder notifications, messages, and study result cards that can be displayed in user feed or stream",
+						"type": "string"
+					},
+					"summary": {
+						"description": "Tracking reminder notifications, messages, and study results",
+						"type": "string"
+					}
+				},
+				"required": [
+					"description",
+					"summary",
+					"cards"
 				]
 			},
 			"GetTrackingReminderNotificationsResponse": {
@@ -22248,6 +22271,119 @@ window.qm.staticData = {
 					"summary": "Post DeviceTokens",
 					"tags": [
 						"notifications"
+					]
+				}
+			},
+			"/v3/feed": {
+				"get": {
+					"description": "Tracking reminder notifications, messages, and study results",
+					"operationId": "getFeed",
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"200": {
+							"description": "Successful operation",
+							"schema": {
+								"$ref": "#/definitions/FeedResponse"
+							}
+						}
+					},
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"basic"
+							]
+						}
+					],
+					"summary": "Tracking reminder notifications, messages, and study results",
+					"tags": [
+						"feed"
+					]
+				},
+				"post": {
+					"description": "Post user actions on feed cards",
+					"operationId": "postFeed",
+					"parameters": [
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"description": "Id of the tracking reminder notification to be snoozed",
+							"in": "body",
+							"name": "body",
+							"required": true,
+							"schema": {
+								"description": "Array of cards to take action on",
+								"items": {
+									"$ref": "#/definitions/Card"
+								},
+								"type": "array"
+							}
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"201": {
+							"description": "Returns new feed cards",
+							"schema": {
+								"$ref": "#/definitions/FeedResponse"
+							}
+						},
+						"401": {
+							"description": "Not Authenticated"
+						}
+					},
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"basic"
+							]
+						}
+					],
+					"summary": "Post user interactions with feed",
+					"tags": [
+						"feed"
 					]
 				}
 			},
