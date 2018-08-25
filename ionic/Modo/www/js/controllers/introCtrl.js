@@ -83,7 +83,7 @@ angular.module('starter').controller('IntroCtrl', ["$scope", "$state", "$ionicSl
     });
     function readSlide() {
         //qm.visualizer.hide();
-        qm.microphone.setMicrophoneEnabled(false);
+        qm.mic.setMicEnabled(false);
         if(!qm.speech.getSpeechAvailable()){return;}
         if(!qm.speech.getSpeechEnabled()){return;}
         qm.music.play();
@@ -104,6 +104,7 @@ angular.module('starter').controller('IntroCtrl', ["$scope", "$state", "$ionicSl
         return $rootScope.appSettings.appDesign.intro.active[$scope.myIntro.slideIndex];
     }
     $scope.$on('$ionicView.afterEnter', function(){
+        $scope.showRobot = true;
         qmService.hideLoader();
         qmService.navBar.hideNavigationMenu();
         qm.splash.text.show();
@@ -115,7 +116,7 @@ angular.module('starter').controller('IntroCtrl', ["$scope", "$state", "$ionicSl
         qm.music.fadeOut();
     });
     function readMachinesOfLovingGrace() {
-        qm.robot.show();
+        qm.robot.showRobot();
         qm.visualizer.rainbowCircleVisualizer();
         function callback(){
             $scope.myIntro.ready = true;

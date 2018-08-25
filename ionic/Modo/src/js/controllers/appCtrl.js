@@ -17,6 +17,7 @@ angular.module('starter')// Parent Controller - This controller runs before ever
         qmLog.info($scope.controller_name + ".afterEnter so posting queued notifications if any");
         qm.notifications.postNotifications();
         qmService.refreshUserUsingAccessTokenInUrlIfNecessary();
+        $rootScope.setMicEnabled(qm.mic.getMicEnabled());
     });
     $scope.closeMenu = function () { $ionicSideMenuDelegate.toggleLeft(false); };
     $scope.generalButtonClickHandler = qmService.buttonClickHandlers.generalButtonClickHandler;
@@ -317,17 +318,21 @@ angular.module('starter')// Parent Controller - This controller runs before ever
     $scope.trustAsHtml = function(string) {
         return $sce.trustAsHtml(string);
     };
-    $scope.setMicrophoneEnabled = function(value){
+    $rootScope.setMicEnabled = function(value){
+        qmLog.info("$rootScope.setMicEnabled");
+        if(value === 'toggle'){value = !qm.mic.getMicEnabled();}
         $timeout(function () {
             qmService.rootScope.setProperty('micEnabled', value);
-            qm.microphone.setMicrophoneEnabled(value);
+            qm.mic.setMicEnabled(value);
             qm.speech.setSpeechEnabled(value);
             if(!value){
-                qm.robot.hide();
+                qm.robot.hideRobot();
                 qm.visualizer.hideVisualizer();
+                qm.mic.onMicDisabled();
             } else {
-                qm.robot.show();
-                qm.visualizer.show();
+                qm.robot.showRobot();
+                qm.visualizer.showVisualizer();
+                qm.mic.onMicEnabled();
             }
         }, 1);
     };
@@ -338,6 +343,10 @@ angular.module('starter')// Parent Controller - This controller runs before ever
         qm.speech.defaultAction();
     };
     $scope.robotClick = function(){
-        qmService.goToState(qmStates.chat);
+        if($state.current.name === qmStates.chat){
+            qm.robot.onRobotClick();
+        } else {
+            qmService.goToState(qmStates.chat);
+        }
     }
 }]);

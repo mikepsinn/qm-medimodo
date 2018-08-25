@@ -96,7 +96,11 @@ window.qm = {
             minimumSecondsBetweenRequests = minimumSecondsBetweenRequests || 1;
             blockRequests = blockRequests || true;
             if(functionName && !qm.api.canWeMakeRequestYet('GET', functionName, {minimumSecondsBetweenRequests: 1, blockRequests: blockRequests})){
-                errorHandler("Already made request in last " + minimumSecondsBetweenRequests + " seconds");
+                if(errorHandler){
+                    errorHandler("Already made request in last " + minimumSecondsBetweenRequests + " seconds");
+                } else {
+                    console.error("Already made request in last " + minimumSecondsBetweenRequests + " seconds");
+                }
                 return false;
             }
             var qmApiClient = Quantimodo.ApiClient.instance;
@@ -1030,7 +1034,7 @@ window.qm = {
                 qmLog.info("No requestParams provided to filterByRequestParams");
                 return array;
             }
-            var allowedFilterParams = ['variableCategoryName', 'id', 'name', 'manualTracking', 'outcome', 'upc'];
+            var allowedFilterParams = ['variableCategoryName', 'id', 'name', 'manualTracking', 'outcome', 'upc', 'variableName'];
             var excludedFilterParams = ['includePublic', 'excludeLocal', 'minimumNumberOfResultsRequiredToAvoidAPIRequest',
                 'sort', 'limit', 'appName', 'appVersion', 'accessToken', 'clientId', 'barcodeFormat', 'searchPhrase', 'platform'];
             var greaterThanPropertyName = null;
@@ -1120,6 +1124,10 @@ window.qm = {
         getSizeInKiloBytes: function(string) {
             if(typeof value !== "string"){string = JSON.stringify(string);}
             return Math.round(string.length*16/(8*1024));
+        },
+        getFirstElementIfArray: function(possibleArray){
+            if(qm.arrayHelper.variableIsArray(possibleArray)){return possibleArray[0];}
+            return possibleArray;
         }
     },
     auth: {
@@ -1545,6 +1553,120 @@ window.qm = {
         }
     },
     dialogFlow: {
+        apiAi: null,
+        apiAiPrepare: function(){
+            qmLog.info("apiAiPrepare...");
+            apiai = new Bravey.ApiAiAdapter("data/apiai", {language:"EN"});
+            var entities = qm.staticData.dialogAgent.entities;
+            qm.objectHelper.loopThroughProperties(entities, function(entityName, entity){
+                apiai.loadEntity(entityName);
+            });
+            var intents = qm.staticData.dialogAgent.intents;
+            qm.objectHelper.loopThroughProperties(intents, function(intentName, intent){
+                if(intentName.indexOf("Knowledge") !== -1){return;}
+                apiai.loadIntent(intentName);
+            });
+            apiai.prepare(function(){
+                qmLog.info("apiAi NLP ready!");
+                qm.apiAi = apiai;
+            });
+        },
+        apiAiTest: function(text){
+            var out = qm.apiAi.nlp.test(text);
+            qmLog.info("api ai: ", out);
+            return out;
+        },
+        bravy: null,
+        getBravy: function(){
+            if(qm.dialogFlow.bravy){return qm.dialogFlow.bravy;}
+            var bravy =  new Bravey.Nlp.Fuzzy();
+            var intents = qm.staticData.dialogAgent.intents;
+            qm.objectHelper.loopThroughProperties(intents, function(intentName, intent){
+                var dialogFlowIntentParameterEntities = intent.responses[0].parameters;
+                var bravyIntentEntities = [];
+                for (var i = 0; i < dialogFlowIntentParameterEntities.length; i++) {
+                    var dialogFlowIntentParameterEntity = dialogFlowIntentParameterEntities[i];
+                    var bravyEntityName = dialogFlowIntentParameterEntity.dataType.replace("@sys.", "");
+                    bravyEntityName = bravyEntityName.replace("@", "");
+                    if(bravyEntityName === "variableName"){continue;}
+                    bravyIntentEntities.push({ entity:bravyEntityName, id: dialogFlowIntentParameterEntity.name });
+                }
+                console.debug("bravyIntentEntities", bravyIntentEntities);
+                if(bravyIntentEntities.length){
+                    bravy.addIntent(intentName, bravyIntentEntities);
+                }
+            });
+            bravy.addEntity(new Bravey.NumberEntityRecognizer("number"));
+            console.debug("Adding matches...");
+            var entities = qm.staticData.dialogAgent.entities;
+            qm.objectHelper.loopThroughProperties(entities, function(entityName, entity){
+                if(entityName === "variableName"){return;}
+                console.debug("Adding sentences for "+entityName);
+                var braveyEntity = new Bravey.StringEntityRecognizer(entityName);
+                var entries = entity.entries;
+                for (var i = 0; i < entries.length; i++) {
+                    var entry = entries[i];
+                    try {
+                        braveyEntity.addMatch(entry.value, entry.value);
+                    } catch (error) {
+                        qmLog.error(error);
+                        continue;
+                    }
+                    var synonyms = entry.synonyms;
+                    console.debug("Adding synonyms for "+entry.value);
+                    for (var j = 0; j < synonyms.length; j++) {
+                        var synonym = synonyms[j];
+                        console.debug("addMatch for "+synonym);
+                        try {
+                            braveyEntity.addMatch(entry.value, synonym);
+                        } catch (error) {
+                            qmLog.error(error);
+                        }
+                    }
+                }
+                console.debug("braveyEntity", braveyEntity);
+                bravy.addEntity(braveyEntity);
+            });
+            console.debug("Adding sentences...");
+            qm.objectHelper.loopThroughProperties(intents, function(intentName, intent){
+                console.debug("Adding sentences for "+intentName);
+                var userSaysSentences = intent.usersays;
+                if(!userSaysSentences){
+                    qmLog.error("No userSaysSentences in " + intentName + ": ", intent);
+                    return;
+                }
+                for (var i = 0; i < userSaysSentences.length; i++) {
+                    var userSaysWords = userSaysSentences[i].data;
+                    var bravySentence = "";
+                    for (var j = 0; j < userSaysWords.length; j++) {
+                        var userSaysWordData = userSaysWords[j];
+                        if(!userSaysWordData.meta){
+                            bravySentence += userSaysWordData.text;
+                        } else {
+                            var entityName = userSaysWordData.meta.replace("@sys.", "");
+                            entityName = entityName.replace("@", "");
+                            bravySentence += "{" + entityName + "}";
+                        }
+                    }
+                    console.debug("bravySentence", bravySentence);
+                    bravy.addDocument(bravySentence, intentName);
+                }
+            });
+            qm.dialogFlow.bravy = bravy;
+            console.debug("bravy", bravy);
+            return bravy;
+        },
+        fulfillIntent: function(userInput, successHandler, errorHandler){
+            var intent = qm.dialogFlow.getIntent(userInput);
+            if(!intent.webhookUsed){
+                var messages = intent.responses[0].messages;
+                intent.messageIndex = intent.messageIndex || 0;
+                var message = messages[intent.messageIndex];
+                intent.messageIndex = (intent.messageIndex === messages.length -1) ? 0 : intent.messageIndex++;
+                return successHandler(message);
+            } else {
+            }
+        },
         post: function(body, successHandler, errorHandler){
             qm.api.postToQuantiModo(body, "v1/dialogflow", function(response){
                 qm.dialogFlow.lastApiResponse = response;
@@ -1979,13 +2101,103 @@ window.qm = {
                 }
             }
             return true;
+        },
+        getIntent: function(userInput){
+            var result = qm.dialogFlow.apiAiTest(userInput);
+            qm.dialogFlow.post(result, function(response){
+                qmLog.info("dialogFlow webhook response: ", response);
+            }, function(error){
+                qmLog.error(error);
+            });
+            var intentName = result.intent;
+            var intent = qm.staticData.dialogAgent.intents[intentName];
+            return intent;
+        },
+        getEntities: function(){
+            return qm.staticData.dialogAgent.entities;
+        },
+        getEntitiesFromUserInput: function(userInput){
+            var entities =  qm.dialogFlow.getEntities();
+            var plugin = {
+                words:{
+                    'facebook': 'Software',
+                    'google': 'Software',
+                    'salesforce': 'Software'
+                },
+                patterns:{
+                    "how do? i (can|should)? (log|sign|get) in to my? #Software" : 'LoginIssue',
+                    "i can't (log|sign|get) in to my? #Software" : 'LoginIssue',
+                    "#Software won't let me (log|sign|get) in" : 'LoginIssue',
+                }
+            };
+            userInput = userInput.toLowerCase();
+            var matchedEntities = {};
+            var fuzzyMatchedEntities = {};
+            qm.objectHelper.loopThroughProperties(entities, function(entityName, entity){
+                var entries = entity.entries;
+                for (var i = 0; i < entries.length; i++) {
+                    var entry = entries[i];
+                    var entryValue = entry.value;
+                    var synonyms = entry.synonyms;
+                    for (var j = 0; j < synonyms.length; j++) {
+                        var synonym = synonyms[j].toLowerCase;
+                        plugin.words[synonym] = entityName;
+                        if(userInput.indexOf(synonym) !== -1){
+                            fuzzyMatchedEntities[entityName] = entity;
+                        }
+                        if(userInput.indexOf(synonym) !== -1){
+                            fuzzyMatchedEntities[entityName] = entity;
+                        }
+                    }
+                }
+            });
+            nlp.plugin(plugin);
+            console.debug("nlp plugin", plugin);
+            //console.debug(nlp(userInput).debug());
+            var doc = nlp(userInput).sentences().out('array');
+            console.info(doc);
+            // ['We like Roy!', 'We like Roy!']
+            doc = nlp(userInput).out('html');
+            console.info(doc);
+            return matchedEntities;
+        },
+        intentFulfillment: {
+            "Cancel Intent": function(data){
+                qm.speech.talkRobot("OK. I love you! Bye!");
+                qm.mic.setMicEnabled(false);
+            },
+            "Create Phrase Intent": function(data){
+                qm.speech.talkRobot("OK. I love you! Bye!");
+                qm.mic.setMicEnabled(false);
+            },
         }
     },
     feed: {
+        currentCard: null,
         getMostRecentCard: function(successHandler, errorHandler){
-            qm.feed.getFeedFromLocalForageOrApi({}, function(cards){
-                qm.speech.currentCard = cards[0];
-                successHandler(cards[0]);
+            qm.feed.getFeedFromLocalForageOrApi({}, function(feedCards){
+                qm.localForage.getItem(qm.items.feedQueue, function(queueCards){
+                    var notInQueue = feedCards;
+                    if(queueCards) {
+                        notInQueue = feedCards.filter(function (feedCard) {
+                            var fromQueue = queueCards.find(function (queueCardParams) {
+                                return feedCard.parameters.trackingReminderNotificationId === queueCardParams.trackingReminderNotificationId;
+                            });
+                            return !fromQueue;
+                        });
+                    }
+                    var currentCard = notInQueue.shift();
+                    if(!currentCard){
+                        errorHandler("No cards not in queue!");
+                        return false;
+                    }
+                    if(qm.feed.recentlyRespondedTo[currentCard.id]){
+                        qmLog.error("Already responded to this card: ", currentCard);
+                    }
+                    qm.feed.saveFeedInLocalForage(notInQueue, function(){
+                        successHandler(currentCard);
+                    }, errorHandler);
+                }, errorHandler);
             }, errorHandler);
         },
         getFeedApiInstance: function(params){
@@ -2013,12 +2225,27 @@ window.qm = {
                 qmLog.error("No feed data returned!");
             } else {
                 cards = data.cards;
-                qm.feed.saveFeedInLocalForage(cards);
+                qm.feed.saveFeedInLocalForage(cards, function(){
+                    qmLog.info("saveFeedInLocalForage completed!");
+                }, function (error) {
+                    qmLog.error(error)
+                });
             }
             return cards;
         },
-        saveFeedInLocalForage: function(feed){
-            qm.localForage.addToOrReplaceByIdAndMoveToFront(qm.items.feed, feed);
+        saveFeedInLocalForage: function(feedCards, successHandler, errorHandler){
+            qm.localForage.getItem(qm.items.feedQueue, function(queueCards){
+                var notInQueue = feedCards;
+                if(queueCards) {
+                    notInQueue = feedCards.filter(function (feedCard) {
+                        var fromQueue = queueCards.find(function (queueCardParams) {
+                            return feedCard.parameters.trackingReminderNotificationId === queueCardParams.trackingReminderNotificationId;
+                        });
+                        return !fromQueue;
+                    });
+                }
+                qm.localForage.setItem(qm.items.feed, notInQueue, successHandler, errorHandler);
+            }, errorHandler);
         },
         getFeedFromLocalForageOrApi: function(params, successHandler, errorHandler){
             qm.localForage.getItem(qm.items.feed, function(cards){
@@ -2036,33 +2263,40 @@ window.qm = {
             qm.localForage.deleteById(qm.items.feed, submittedCard.id, successHandler, errorHandler);
         },
         postFeedQueue: function(feedQueue, successHandler, errorHandler){
-            qm.localForage.removeItem(qm.items.feedQueue);
-            var params = qm.api.addGlobalParams({});
-            var cacheKey = 'postFeed';
-            if(!qm.api.configureClient(cacheKey, errorHandler)){return false;}
-            function callback(error, data, response) {
-                var cards = qm.feed.handleFeedResponse(data);
-                if(error){
-                    qmLog.error("Putting back in queue because of error ", error);
-                    qm.localForage.addToArray(qm.items.feedQueue, feedQueue);
+            qm.localForage.removeItem(qm.items.feedQueue, function(){
+                var params = qm.api.addGlobalParams({});
+                var cacheKey = 'postFeed';
+                if(!qm.api.configureClient(cacheKey, errorHandler)){return false;}
+                function callback(error, data, response) {
+                    var cards = qm.feed.handleFeedResponse(data);
+                    if(error){
+                        qmLog.error("Putting back in queue because of error ", error);
+                        qm.localForage.addToArray(qm.items.feedQueue, feedQueue);
+                    }
+                    qm.api.generalResponseHandler(error, cards, response, successHandler, errorHandler, params, cacheKey);
                 }
-                qm.api.generalResponseHandler(error, cards, response, successHandler, errorHandler, params, cacheKey);
-            }
-            qm.feed.getFeedApiInstance(params).postFeed(feedQueue, params, callback);
+                qm.feed.getFeedApiInstance(params).postFeed(feedQueue, params, callback);
+            }, function(error){qmLog.error(error);});
         },
-        addToFeedQueue: function(submittedCard, successHandler){
-            qm.localForage.addToArray(qm.items.feedQueue, submittedCard, function(feedQueue){
+        addToFeedQueue: function(submittedCard, successHandler, errorHandler){
+            qm.feed.recentlyRespondedTo[submittedCard.id] = submittedCard;
+            var parameters = submittedCard.parameters;
+            if(submittedCard.selectedButton){
+                parameters = qm.objectHelper.copyPropertiesFromOneObjectToAnother(parameters, submittedCard.selectedButton);
+            }
+            qm.localForage.addToArray(qm.items.feedQueue, parameters, function(feedQueue){
                 qm.feed.getFeedFromLocalForage(function(remainingCards){
                     if(successHandler){successHandler(remainingCards[1]);}
-                    if(feedQueue.length > 5 || remainingCards.length < 5){
+                    var minimumRequiredForPost = 1;
+                    if(feedQueue.length > minimumRequiredForPost || remainingCards.length < 5){
                         qm.feed.postFeedQueue(feedQueue);
                     }
-                });
-            });
+                }, errorHandler);
+            }, errorHandler);
         },
         readCard: function(card, successHandler, errorHandler, sayOptions){
-            if(!card){card = qm.speech.currentCard;}
-            qm.speech.currentCard = card;
+            if(!card){card = qm.feed.currentCard;}
+            qm.feed.currentCard = card;
             var listen = true;
             var message = '';
             if(card.title && card.title.length > message.length){message = card.title;}
@@ -2075,7 +2309,7 @@ window.qm = {
                 if(required){
                     var unfilled = inputFields.filter(function(inputField){return inputField.value === null;});
                     if(unfilled && unfilled.length){
-                        message = unfilled[0].helpText || unfilled[0].hint;
+                        message = unfilled[0].helpText;
                         qm.speech.currentInputField = unfilled[0];
                     } else {
                         qmLog.info("No input fields to fill!");
@@ -2083,16 +2317,17 @@ window.qm = {
                 }
             }
             if(sayOptions){
-                message += " " + qm.feed.getAvailableCommandsSentence();
+                //message += " " + qm.feed.getAvailableCommandsSentence();
+                message += " You can say " + qm.speech.currentInputField.hint + ". ";
             }
             qm.speech.talkRobot(message, function(){
-                qm.microphone.listenForCardResponse(successHandler, errorHandler)
+                qm.mic.listenForCardResponse(successHandler, errorHandler)
             }, function(error){
                 qmLog.info(error);
             }, listen);
         },
         getAvailableButtons: function(includeActionSheet){
-            var card = qm.speech.currentCard;
+            var card = qm.feed.currentCard;
             var buttons = card.buttons || [];
             if(includeActionSheet && card.actionSheetButtons){buttons = buttons.concat(card.actionSheetButtons);}
             return buttons;
@@ -2103,7 +2338,9 @@ window.qm = {
             for (var i = 0; i < buttons.length; i++) {
                 var button = buttons[i];
                 var text = button.title || button.text;
-                if(button.parameters && button.parameters.modifiedValue){text = button.parameters.modifiedValue;}
+                if(button.parameters && button.parameters.modifiedValue){
+                    text = button.parameters.modifiedValue;
+                }
                 options += text + ", "
             }
             var inputField = qm.speech.currentInputField;
@@ -2125,19 +2362,25 @@ window.qm = {
             var options = qm.feed.getAvailableCommandsSentence();
             qm.speech.talkRobot(options);
         },
-        getButtonMatchingPhrase: function(tag){
-            var buttons = qm.feed.getAvailableButtons(true);
-            var selectedButton = buttons.find(function(button){
-                if(button.text && button.text.toLowerCase() === tag){return true;}
-                if(button.title && button.title.toLowerCase() === tag){return true;}
-                if(button.accessibilityText && button.accessibilityText.toLowerCase() === tag){return true;}
-                if(button.action && button.action.toLowerCase() === tag){return true;}
-                var propertyWithMatchingValue = qm.objectHelper.getKeyWhereValueEqualsProvidedString(tag, button.parameters);
-                if(propertyWithMatchingValue){return true;}
-                return false;
-            });
-            return selectedButton;
+        getButtonMatchingPhrase: function(possiblePhrases){
+            if(!qm.arrayHelper.variableIsArray(possiblePhrases)){possiblePhrases = [possiblePhrases];}
+            for (var i = 0; i < possiblePhrases.length; i++) {
+                var tag = possiblePhrases[i];
+                tag = nlp(tag).normalize().out();
+                var buttons = qm.feed.getAvailableButtons(true);
+                var selectedButton = buttons.find(function(button){
+                    if(button.text && button.text.toLowerCase() === tag){return true;}
+                    if(button.title && button.title.toLowerCase() === tag){return true;}
+                    if(button.accessibilityText && button.accessibilityText.toLowerCase() === tag){return true;}
+                    if(button.action && button.action.toLowerCase() === tag){return true;}
+                    var propertyWithMatchingValue = qm.objectHelper.getKeyWhereValueEqualsProvidedString(tag, button.parameters);
+                    return !!propertyWithMatchingValue;
+                });
+                if(selectedButton){return selectedButton;}
+            }
+            return false;
         },
+        recentlyRespondedTo: {}
     },
     functionHelper: {
         getCurrentFunctionNameDoesNotWork: function () {
@@ -2414,8 +2657,9 @@ window.qm = {
         lastPushData: 'lastPushData',
         logLevel: 'logLevel',
         measurementsQueue: 'measurementsQueue',
+        memories: 'memories',
         mostFrequentReminderIntervalInSeconds: 'mostFrequentReminderIntervalInSeconds',
-        microphoneEnabled: 'microphoneEnabled',
+        micEnabled: 'micEnabled',
         microphoneAvailable: 'microphoneAvailable',
         notificationInterval: 'notificationInterval',
         notificationsSyncQueue: 'notificationsSyncQueue',
@@ -2480,7 +2724,7 @@ window.qm = {
             qmLog.info("Clearing localforage!");
             localforage.clear();
         },
-        saveWithUniqueId: function(key, arrayToSave) {
+        saveWithUniqueId: function(key, arrayToSave, successHandler, errorHandler) {
             if(!qm.arrayHelper.variableIsArray(arrayToSave)){
                 arrayToSave = [arrayToSave];
             }
@@ -2500,7 +2744,7 @@ window.qm = {
                     });
                     existingData.unshift(newObjectToSave);
                 }
-                qm.localForage.setItem(key, existingData);
+                qm.localForage.setItem(key, existingData, successHandler, errorHandler);
             });
         },
         deleteById: function(key, id, successHandler, errorHandler) {
@@ -2545,6 +2789,7 @@ window.qm = {
             qmLog.debug("Getting " + key + " from localforage");
             localforage.getItem(key, function (err, data) {
                 if(err){
+                    qmLog.error(err);
                     if(errorHandler){errorHandler(err);}
                 } else {
                     successHandler(data);
@@ -2570,7 +2815,7 @@ window.qm = {
                 }
             })
         },
-        removeItem: function(key, value, successHandler, errorHandler){
+        removeItem: function(key, successHandler, errorHandler){
             qm.globalHelper.removeItem(key);
             localforage.removeItem(key, function (err) {
                 if(err){
@@ -2607,15 +2852,22 @@ window.qm = {
                 var elementsToKeep = qm.arrayHelper.addToOrReplaceByIdAndMoveToFront(localStorageItemArray, replacementElementArray);
                 qm.localForage.setItem(localStorageItemName, elementsToKeep);
                 if(successHandler){successHandler(elementsToKeep);}
+            }, function(error){
+                qmLog.error(error)
             });
         },
-        addToArray: function(localStorageItemName, newElement, successHandler){
+        addToArray: function(localStorageItemName, newElement, successHandler, errorHandler){
             qmLog.debug('adding to ' + localStorageItemName + ': ' + JSON.stringify(newElement).substring(0,20)+'...');
             qm.localForage.getItem(localStorageItemName, function(localStorageItemArray){
                 localStorageItemArray = localStorageItemArray || [];
                 localStorageItemArray.push(newElement);
-                qm.localForage.setItem(localStorageItemName, localStorageItemArray);
-                if(successHandler){successHandler(localStorageItemArray);}
+                qm.localForage.setItem(localStorageItemName, localStorageItemArray, function(){
+                    qmLog.info("addToArray in LocalForage "+localStorageItemName+" completed!");
+                    if(successHandler){successHandler(localStorageItemArray);}
+                }, function (error) {
+                    qmLog.error(error);
+                    if(errorHandler){errorHandler(error);}
+                });
             });
         }
     },
@@ -2750,49 +3002,139 @@ window.qm = {
         'Miscellaneous',
         'Environment'
     ],
-    microphone: {
-        microphoneAvailable: null,
-        getMicrophoneEnabled: function(){
-            if(!qm.microphone.getMicrophoneAvailable()){return qm.microphone.setMicrophoneEnabled(false);}
-            return qm.storage.getItem(qm.items.microphoneEnabled);
+    mic: {
+        globalCommands: {
+            "remind me *tag": function() {
+                if(qm.speech.alreadySpeaking(tag)){
+                    qmLog.info("Not handling command because robot is speaking: "+tag);
+                    return false;
+                }
+            },
+            "quantimodo": function(){
+                qm.speech.talkRobot("What can I do for you?");
+            },
+            "hey robot": function(){
+                qm.speech.talkRobot("How dare you call me a robot! The politically correct term is technical American! What can I do for you?");
+            },
+            'remember *tag': function(memoryQuestionStatement) {
+                qm.localForage.getItem(qm.items.memories, function(memories){
+                    memories = memories || {};
+                    var response;
+                    var memoryQuestionQuestion = memoryQuestionStatement;
+                    if(memoryQuestionStatement.indexOf(' my ') !== -1 && memoryQuestionStatement.indexOf(" are") !== -1){
+                        memoryQuestionQuestion = memoryQuestionStatement.replace(" are", "").replace(" my ", " are your ");
+                        response = "OK. "+memoryQuestionQuestion + "? ";
+                    } else {
+                        response = "OK. What should I say when you say Recall " + memoryQuestionStatement + "? ";
+                    }
+                    qm.mic.wildCardHandler = function(possiblePhrases){
+                        if(qm.mic.weShouldIgnore(possiblePhrases)){
+                            return false;
+                        }
+                        qm.mic.wildCardHandlerReset();
+                        var memoryQuestionAnswer = qm.arrayHelper.getFirstElementIfArray(possiblePhrases);
+                        memories[memoryQuestionQuestion] = memoryQuestionAnswer;
+                        memories[memoryQuestionStatement] = memoryQuestionAnswer;
+                        qm.localForage.setItem(qm.items.memories, memories, function(){
+                            qm.speech.talkRobot("OK. When you want me to remind you, just say Recall "+memoryQuestionStatement+"! ");
+                        })
+                    };
+                    qm.speech.talkRobot(response);
+                }, function(error){
+                    qmLog.error(error);
+                });
+            },
+            'recall *tag': function (memoryQuestionQuestion) {
+                qm.localForage.getItem(qm.items.memories, function(memories){
+                    memories = memories || {};
+                    var response = "I'm afraid I don't know "+memoryQuestionQuestion +".  Say Remember "+memoryQuestionQuestion +
+                        " so I'll know in the future. ";
+                    if(!memories[memoryQuestionQuestion]){
+                        qm.objectHelper.loopThroughProperties(memories, function(memoryQuestionQuestion, memoryQuestionAnswer){
+                            response += " Or say Recall "+ memoryQuestionQuestion + ". ";
+                        });
+                    } else {
+                        response = memories[memoryQuestionQuestion];
+                    }
+                    qm.speech.talkRobot(response);
+                }, function(error){
+                    qmLog.error(error);
+                });
+            }
         },
-        setMicrophoneEnabled: function(value){
-            qmLog.info("set microphoneEnabled " + value);
-            qm.rootScope[qm.items.microphoneEnabled] = value;
-            if(!value){qm.microphone.turnOff();}
-            return qm.storage.setItem(qm.items.microphoneEnabled, value);
+        wildCardHandler: function(text){
+            qmLog.info("wildCardHandler not defined to handle " + text);
+        },
+        wildCardHandlerReset: function(){
+            qmLog.info("Unset wildcard handler");
+        },
+        microphoneDisabled: false,
+        onMicEnabled: function(){qmLog.info("Called onMicEnabled");},
+        onMicDisabled: function(){qmLog.info("Called onMicDisabled");},
+        microphoneAvailable: null,
+        getMicEnabled: function(){
+            if(qm.mic.microphoneDisabled){return false;}
+            if(!qm.mic.getMicrophoneAvailable()){return qm.mic.setMicEnabled(false);}
+            return qm.storage.getItem(qm.items.micEnabled);
+        },
+        setMicEnabled: function(micEnabled){
+            qmLog.info("set micEnabled " + micEnabled);
+            qm.rootScope[qm.items.micEnabled] = micEnabled;
+            var enableButton = document.querySelector('#enable-mic-button');
+            var disableButton = document.querySelector('#disable-mic-button');
+            if(enableButton){enableButton.style.display = (micEnabled) ? "none" : "block";}
+            if(disableButton){disableButton.style.display = (micEnabled) ? "block" : "none";}
+            enableButton = document.querySelector('#big-enable-mic-button');
+            disableButton = document.querySelector('#big-disable-mic-button');
+            if(enableButton){enableButton.style.display = (micEnabled) ? "none" : "block";}
+            if(disableButton){disableButton.style.display = (micEnabled) ? "block" : "none";}
+            var inputField = document.querySelector('#mic-input-field-container');
+            var inputButton = document.querySelector('#mic-input-field-button');
+            if(inputField){
+                if(micEnabled){
+                    inputButton.classList.remove("animated-microphone-input-search-focused");
+                    inputField.classList.remove("animated-microphone-input-container-focused");
+                } else {
+                    inputButton.classList.add("animated-microphone-input-search-focused");
+                    inputField.classList.add("animated-microphone-input-container-focused");
+                }
+            }
+            if(!micEnabled){
+                if (window.streamReference) {
+                    window.streamReference.getAudioTracks().forEach(function(track) {
+                        track.stop();
+                    });
+                    window.streamReference.getVideoTracks().forEach(function(track) {
+                        track.stop();
+                    });
+                    window.streamReference = null;
+                }
+            } else {
+                qm.mic.addCommands(qm.mic.globalCommands);
+            }
+            return qm.storage.setItem(qm.items.micEnabled, micEnabled);
         },
         getMicrophoneAvailable: function(){
-            if(qm.microphone.microphoneAvailable !== null){return qm.microphone.microphoneAvailable;}
+            if(qm.mic.microphoneAvailable !== null){return qm.mic.microphoneAvailable;}
             if(typeof annyang === "undefined"){
                 if(!qm.appMode.isTesting()){qmLog.error("Microphone not available!");}
-                return qm.microphone.microphoneAvailable = qm.microphone.microphoneEnabled = false;
+                return qm.mic.microphoneAvailable = qm.mic.micEnabled = false;
             }
-            return qm.microphone.microphoneAvailable = true;
-        },
-        turnOff: function(){
-            if (!window.streamReference) return;
-            window.streamReference.getAudioTracks().forEach(function(track) {
-                track.stop();
-            });
-            window.streamReference.getVideoTracks().forEach(function(track) {
-                track.stop();
-            });
-            window.streamReference = null;
+            return qm.mic.microphoneAvailable = true;
         },
         toggleListening: function(){
-            if(qm.microphone.listening){
-                qm.microphone.pauseListening();
+            if(qm.mic.listening){
+                qm.mic.pauseListening();
             } else {
-                qm.microphone.resumeListening();
+                qm.mic.resumeListening();
             }
-            return qm.microphone.listening = !qm.microphone.listening;
+            return qm.mic.listening = !qm.mic.listening;
         },
         listening: false,
         abortListening: function(){
             qm.visualizer.hideVisualizer();
             qmLog.info("pauseListening");
-            if(!qm.microphone.annyangAvailable()){return;}
+            if(!qm.mic.annyangAvailable()){return;}
             annyang.abort(); // Stop listening, and turn off mic.
         },
         annyangAvailable: function(){
@@ -2805,20 +3147,21 @@ window.qm = {
         pauseListening: function(hideVisualizer){
             if(hideVisualizer !== false){qm.visualizer.hideVisualizer();}
             qmLog.info("pauseListening");
-            if(!qm.microphone.annyangAvailable()){return;}
+            if(!qm.mic.annyangAvailable()){return;}
             annyang.pause(); // Pause listening. annyang will stop responding to commands (until the resume or start methods are called), without turning off the browser's SpeechRecognition engine or the mic.
-        },
-        successHandler: function(){
-          qmLog.info("Success!");
         },
         errorHandler: function(error){
             qmLog.error(error);
         },
         resumeListening: function(){
-            qm.visualizer.show();
-            qmLog.info("resumeListening");
-            if(!qm.microphone.annyangAvailable()){return;}
-            annyang.resume(); // Resumes listening and restores command callback execution when a result matches. If SpeechRecognition was aborted (stopped), start it.
+            qm.visualizer.showVisualizer();
+            if(!qm.mic.annyangAvailable()){return;}
+            if(annyang.isListening()){
+                qmLog.info("annyang is Listening");
+            } else {
+                qmLog.info("resumeListening");
+                annyang.resume(); // Resumes listening and restores command callback execution when a result matches. If SpeechRecognition was aborted (stopped), start it.
+            }
         },
         addIgnoreCommand: function(phrase){
             var commands = {};
@@ -2827,44 +3170,176 @@ window.qm = {
             };
             annyang.addCommands(commands);
         },
+        addCommands: function(commands){
+            qm.mic.removeCommands(commands);
+            if(!qm.mic.annyangAvailable()){return;}
+            qmLog.info("addCommands: ", commands);
+            annyang.addCommands(commands);
+        },
+        removeCommands: function(commands){
+            if(!qm.mic.annyangAvailable()){return;}
+            qmLog.info("removeCommands: ", commands);
+            annyang.removeCommands(commands);
+        },
         startListening: function(commands){
             qmLog.info("startListening");
-            if(!qm.microphone.annyangAvailable()){return;}
+            if(qm.mic.getMicEnabled() === false){
+                qmLog.error("Microphone is disabled so can't listen to these commands: ", commands);
+                return;
+            }
+            qm.mic.setMicEnabled(true);
+            if(!qm.mic.annyangAvailable()){return;}
             annyang.start({ // Start listening. It's a good idea to call this after adding some commands first, but not mandatory.
                 autoRestart: true, // Should annyang restart itself if it is closed indirectly, because of silence or window conflicts?
                 continuous: true,  // Allow forcing continuous mode on or off. Annyang is pretty smart about this, so only set this if you know what you're doing.
                 paused: false // Start annyang in paused mode.
             });
             if(commands){annyang.addCommands(commands);}
-            qm.visualizer.show();
+            qm.visualizer.showVisualizer();
         },
         listenForNotificationResponse: function(successHandler, errorHandler){
-            qm.microphone.initializeListening(qm.speech.reminderNotificationCommands, successHandler, errorHandler);
+            qm.mic.wildCardHandler = function(possiblePhrases) {
+                if(qm.mic.weShouldIgnore(possiblePhrases)){
+                    return false;
+                }
+                if(qm.speech.callback){qm.speech.callback(possiblePhrases);}
+                qm.speech.lastUserStatement = possiblePhrases;
+                qmLog.info("Just heard user say ", possiblePhrases);
+                if(qm.speech.isValidNotificationResponse(possiblePhrases)){
+                    var notification = qm.speech.currentNotification;
+                    qm.speech.handleNotificationResponse(possiblePhrases, notification);
+                    qm.mic.wildCardHandlerReset();
+                } else {
+                    qm.speech.fallbackMessage(possiblePhrases);
+                }
+            };
+            qm.mic.initializeListening(qm.speech.reminderNotificationCommands, successHandler, errorHandler);
+        },
+        aPhraseEquals: function(needles, phrasesArray){
+            if(!qm.arrayHelper.variableIsArray(needles)){needles = [needles];}
+            for (var j = 0; j < needles.length; j++) {
+                var needle = needles[j];
+                for (var i = 0; i < phrasesArray.length; i++) {
+                    var phrase = phrasesArray[i];
+                    //phrase = nlp(phrase).normalize().out();  // We should have already done this
+                    qmLog.info("Normalized phrase");
+                    if(phrase === needle){
+                        qmLog.info("Found match: "+phrase);
+                        return phrase;
+                    }
+                }
+            }
+            return false;
+        },
+        aPhraseContains: function(needles, phrasesArray){
+            if(!qm.arrayHelper.variableIsArray(needles)){needles = [needles];}
+            for (var j = 0; j < needles.length; j++) {
+                var needle = needles[j];
+                for (var i = 0; i < phrasesArray.length; i++) {
+                    var phrase = phrasesArray[i];
+                    //phrase = nlp(phrase).normalize().out();  // We should have already done this
+                    if (phrase.indexOf(needle) !== -1) {
+                        qmLog.info(phrase + " contains " + needle);
+                        return phrase;
+                    }
+                }
+            }
+            return false;
+        },
+        weShouldIgnore: function(possiblePhrases){
+            if(qm.speech.alreadySpeaking(possiblePhrases)){
+                qmLog.info("Not handling command because robot is speaking: ", possiblePhrases);
+                return true;
+            }
+            var ignoreThese = [
+                'how many',
+                'did you have',
+                'how severe'
+            ];
+            var match = qm.mic.aPhraseContains(ignoreThese, possiblePhrases);
+            if(match){
+                qmLog.info("Ignoring robot phrase: "+ match);
+                return match;
+            }
+            return false;
+        },
+        normalizePhrases: function(possiblePhrases){
+            if(!qm.arrayHelper.variableIsArray(possiblePhrases)){possiblePhrases = [possiblePhrases];}
+            return possiblePhrases.map(function(phrase){
+                return nlp(phrase).normalize().out();
+            });
         },
         listenForCardResponse: function(successHandler, errorHandler){
-            qm.microphone.initializeListening(qm.speech.cardResponseCommands, successHandler, errorHandler);
+            qm.mic.wildCardHandler = function(possiblePhrases) {
+                if(qm.mic.weShouldIgnore(possiblePhrases)){
+                    return false;
+                }
+                var card = qm.feed.currentCard;
+                if(!card){
+                    qmLog.info("No card to respond to!");
+                    return;
+                }
+                var selectedButton = qm.feed.getButtonMatchingPhrase(possiblePhrases);
+                var inputField, responseText;
+                if(selectedButton){
+                    card.parameters = qm.objectHelper.copyPropertiesFromOneObjectToAnother(selectedButton.parameters, card.parameters, true);
+                    responseText = selectedButton.successToastText;
+                } else {
+                    inputField = qm.speech.setInputFieldValueIfValid(possiblePhrases);
+                    if(inputField){card.parameters[inputField.key] = inputField.value;}
+                    responseText = "OK. I'll record " + inputField.value + "! ";
+                }
+                if(!selectedButton && !inputField){
+                    var provideOptionsList = true;
+                    qm.speech.readCard(null, null, null, provideOptionsList);
+                    return;
+                }
+                qm.feed.currentCard = null;
+                qm.mic.wildCardHandlerReset();
+                qm.feed.deleteCardFromLocalForage(card, function(remainingCards){
+                    qm.feed.addToFeedQueue(card, function(){
+                        if(card.followUpAction){
+                            card.followUpAction(responseText);
+                        } else {
+                            qmLog.error("No card followUpAction!")
+                        }
+                    }, function(error){
+                        qmLog.error(error)
+                    });
+                }, function(error){
+                    qmLog.error(error);
+                });
+            };
+            qm.mic.initializeListening(qm.speech.cardResponseCommands, successHandler, errorHandler);
         },
         debugListening: function(){
-            if(!qm.microphone.annyangAvailable()){return;}
+            if(!qm.mic.annyangAvailable()){return;}
             annyang.debug(); // Turn on output of debug messages to the console. Ugly, but super-handy!
         },
         setLanguage: function(language){
-            if(!qm.microphone.annyangAvailable()){return;}
+            if(!qm.mic.annyangAvailable()){return;}
             annyang.setLanguage(language); // Set the language the user will speak in. If this method is not called, defaults to 'en-US'.
         },
         specificErrorHandler: function(message){
             qmLog.error(message);
         },
         generalErrorHandler: function(message, meta){
-            if(qm.microphone.errorHandler){qm.microphone.errorHandler(message);}
+            if(qm.mic.errorHandler){qm.mic.errorHandler(message);}
             qmLog.error(message, meta);
         },
+        initialized: false,
         initializeListening: function(commands, successHandler, errorHandler){
-            qm.microphone.specificErrorHandler = errorHandler;
-            qm.microphone.debugListening();
-            qm.visualizer.visualizeVoice();
+            qm.mic.specificErrorHandler = errorHandler;
             annyang.addCommands(commands); // Add our commands to annyang
-            qm.microphone.startListening();
+            qm.visualizer.showVisualizer();
+            qm.mic.startListening();
+            if(qm.mic.initialized){return false;}
+            if(!qm.mic.getMicEnabled()){
+                qmLog.info("Not going to initializeListening because mic not enabled");
+                return;
+            }
+            qm.mic.inititalized = true;
+            qm.mic.debugListening();
             annyang.addCallback('start', function() {
                 qmLog.info('browser\'s Speech Recognition engine started listening');
             });
@@ -2875,13 +3350,13 @@ window.qm = {
                 qmLog.info("Speech Recognition failed because of an error", error);
             });
             annyang.addCallback('errorNetwork', function(error){  // pass local context to a global function called notConnected
-                qm.microphone.generalErrorHandler("Speech Recognition failed because of a network error", error);
+                qm.mic.generalErrorHandler("Speech Recognition failed because of a network error", error);
             }, this);
             annyang.addCallback('errorPermissionBlocked', function(error){
-                qm.microphone.generalErrorHandler("browser blocked the permission request to use Speech Recognition", error);
+                qm.mic.generalErrorHandler("browser blocked the permission request to use Speech Recognition", error);
             });
             annyang.addCallback('errorPermissionDenied', function(error){
-                qm.microphone.generalErrorHandler("user blocked the permission request to use Speech Recognition", error);
+                qm.mic.generalErrorHandler("user blocked the permission request to use Speech Recognition", error);
             });
             annyang.addCallback('end', function(error){
                 qmLog.info("browser's Speech Recognition engine stopped", error);
@@ -2892,10 +3367,12 @@ window.qm = {
                 qmLog.info("resultMatch phrases", phrases); // sample output: ['hello', 'halo', 'yellow', 'polo', 'hello kitty']
             });
             annyang.addCallback('resultNoMatch', function(possiblePhrasesArray) {
-                qm.microphone.generalErrorHandler("Speech Recognition failed to find a match for this command! possiblePhrasesArray: ", possiblePhrasesArray);
-            });
-            annyang.addCallback('resultNoMatch', function(possiblePhrasesArray) {
-                qm.microphone.generalErrorHandler("Speech Recognition failed to find a match for this command! possiblePhrasesArray: ", possiblePhrasesArray);
+                if(qm.mic.wildCardHandler){
+                    possiblePhrasesArray = qm.mic.normalizePhrases(possiblePhrasesArray);
+                    qm.mic.wildCardHandler(possiblePhrasesArray);
+                } else {
+                    qm.mic.generalErrorHandler("wildCardHandler not set and speech Recognition failed to find a match for this command! possiblePhrasesArray: ", possiblePhrasesArray);
+                }
             });
         },
     },
@@ -2906,7 +3383,7 @@ window.qm = {
             if(!qm.speech.getSpeechEnabled()){return;}
             if(qm.music.status === 'play') return false;
             qm.music.player = new Audio('sound/air-of-another-planet-full.mp3');
-            qm.music.player.volume = 0.25;
+            qm.music.player.volume = 0.15;
             qm.music.player.play();
             qm.music.status = 'play';
             return qm.music.player;
@@ -3474,6 +3951,13 @@ window.qm = {
         getSizeOfStringInKb: function(string) {
             return Math.round(string.length / 1000);
         },
+        loopThroughProperties: function(obj, callback){
+            for (var prop in obj) {
+                if (obj.hasOwnProperty(prop)) {
+                    callback(prop, obj[prop]);
+                }
+            }
+        },
         unsetPropertiesWithSizeGreaterThanForObject: function(maximumKb, object) {
             object = JSON.parse(JSON.stringify(object));  // Decouple
             for (var property in object) {
@@ -3669,6 +4153,7 @@ window.qm = {
             return qm.userHelper.getUserFromLocalStorage().pushNotificationsEnabled;
         }
     },
+    qmService: null,
     reminderHelper: {
         getNumberOfReminders: function(callback){
             var number = qm.reminderHelper.getNumberOfTrackingRemindersInLocalStorage();
@@ -3809,16 +4294,17 @@ window.qm = {
             }
         }
     },
+    remember: {},
     robot: {
         showing: false,
-        hide: function(){
-            qm.robot.getElement().style.display = "none";
-            qm.speech.setSpeechEnabled(false);
-            qm.visualizer.hideVisualizer();
-            //qm.appContainer.show();
+        hideRobot: function(){
+            qmLog.info("Hiding robot");
+            if(qm.robot.getElement()){
+                qm.robot.getElement().style.display = "none";
+            }
             qm.robot.showing = qm.rootScope.showRobot = false;
         },
-        show: function(){
+        showRobot: function(){
             if(!qm.speech.getSpeechAvailable()){return;}
             var robot = qm.robot.getElement();
             if(!robot){
@@ -3839,17 +4325,28 @@ window.qm = {
         },
         toggle: function () {
             if(qm.robot.showing){
-                qm.robot.hide();
+                qm.robot.hideRobot();
             } else {
-                qm.robot.show();
+                qm.robot.showRobot();
             }
         },
+        onRobotClick: function(){
+            qmLog.info("onRobotClick called but not defined");
+        }
     },
-    serviceWorker: false,
     rootScope: {
         showRobot: false
     },
+    serviceWorker: false,
     speech: {
+        alreadySpeaking: function(text){
+            if(window.speechSynthesis && window.speechSynthesis.speaking){
+                qmLog.info("already speaking so not going to say "+text);
+                return true;
+            } else {
+                return false;
+            }
+        },
         initializeSpeechKit: function(qmService){
             var commands = {
                 'record a measurement': function() {
@@ -3915,9 +4412,13 @@ window.qm = {
             qm.robot.getClass().classList.remove('robot_speaking');
             speechSynthesis.cancel();
             if(resumeListening){
+                if(!qm.mic.getMicEnabled()){
+                    qmLog.info("Not going to resume listening because mic not enabled");
+                    return;
+                }
                 var duration = 1.5;
                 qmLog.info("Will resume listening in "+duration+" seconds...");
-                setTimeout(function(){qm.microphone.resumeListening();}, duration * 1000);
+                setTimeout(function(){qm.mic.resumeListening();}, duration * 1000);
             } else {
                 qmLog.info("Not listening");
             }
@@ -3951,7 +4452,7 @@ window.qm = {
                 return false;
             }
             qm.speech.talkRobot(text, function(){
-                qm.microphone.initializeListening(commands);
+                qm.mic.initializeListening(commands);
             });
         },
         askYesNoQuestion: function(text, yesCallback, noCallback){
@@ -3959,11 +4460,19 @@ window.qm = {
         },
         talkRobot: function(text, successHandler, errorHandler, resumeListening, hideVisualizer){
             if(!qm.speech.getSpeechAvailable()){
-                if(errorHandler){errorHandler("Speech not available");}
+                if(errorHandler){errorHandler("Speech not available so cannot say " + text);}
                 return false;
             }
             if(!qm.speech.getSpeechEnabled()){
-                if(errorHandler){errorHandler("Speech not enabled");}
+                if(errorHandler){errorHandler("Speech not enabled so cannot say " + text);}
+                return false;
+            }
+            if(qm.speech.alreadySpeaking(text)){
+                if(errorHandler){errorHandler("Already speaking so cannot say " + text);}
+                return false;
+            }
+            if(qm.speech.lastUtterance && qm.speech.lastUtterance.text === text){
+                if(errorHandler){errorHandler("Already said " + text + " last time");}
                 return false;
             }
             qm.speech.recentStatements.push(text);
@@ -3975,7 +4484,7 @@ window.qm = {
                 return false;
             }
             qmLog.info("talkRobot called with "+text);
-            qm.microphone.addIgnoreCommand(text);
+            qm.mic.addIgnoreCommand(text);
             var voices = speechSynthesis.getVoices();
             if(!voices.length){
                 qmLog.info("Waiting for voices to load with " + text);
@@ -4008,11 +4517,10 @@ window.qm = {
             utterance.volume = 0.5;
             utterance.voice = voices.find(function (voice) {return voice.name === qm.speech.config.VOICE;});
             qm.robot.getClass().classList.add('robot_speaking');
-            qm.microphone.pauseListening(hideVisualizer);
+            //qm.mic.pauseListening(hideVisualizer);
             if(annyang.isListening()){qmLog.error("annyang still listening!")}
             qm.speech.utterances.push(utterance); // https://stackoverflow.com/questions/23483990/speechsynthesis-api-onend-callback-not-working
             console.info("speechSynthesis.speak(utterance)", utterance);
-
             utterance.onend = function (event) {
                 clearTimeout(qm.speech.timeoutResumeInfinity);
                 if(annyang.isListening()){qmLog.error("annyang still listening before shutup")}
@@ -4035,26 +4543,12 @@ window.qm = {
                     qm.speech.intent = qm.staticData.dialogAgent.intents["Tracking Reminder Notification Intent"];
                     var listen = true;
                     qm.speech.talkRobot(trackingReminderNotification.card.title, function(){
-                        qm.microphone.listenForNotificationResponse(successHandler, errorHandler)
+                        qm.mic.listenForNotificationResponse(successHandler, errorHandler)
                     }, function(error){
                         qmLog.info(error);
                     }, listen);
                 } else {
                     qmLog.error("No tracking reminder notification");
-                    if(errorHandler){errorHandler(error);}
-                }
-            }, function(error){
-                qmLog.error(error);
-                if(errorHandler){errorHandler(error);}
-            });
-        },
-        currentCard: null,
-        getMostRecentFeedCardAndTalk: function(successHandler, errorHandler){
-            qm.feed.getMostRecentCard(function (card) {
-                if(card){
-                    qm.feed.readCard(card);
-                } else {
-                    qmLog.error("No feed card!");
                     if(errorHandler){errorHandler(error);}
                 }
             }, function(error){
@@ -4082,7 +4576,6 @@ window.qm = {
                 var chunkLength = (settings && settings.chunkLength) || 160;
                 var pattRegex = new RegExp('^[\\s\\S]{' + Math.floor(chunkLength / 2) + ',' + chunkLength + '}[.!?,]{1}|^[\\s\\S]{1,' + chunkLength + '}$|^[\\s\\S]{1,' + chunkLength + '} ');
                 var chunkArr = txt.match(pattRegex);
-
                 if (chunkArr[0] === undefined || chunkArr[0].length <= 2) {
                     //call once all text has been spoken...
                     if (callback !== undefined) {
@@ -4108,7 +4601,6 @@ window.qm = {
                     speechUtteranceChunker(utt, settings, callback);
                 });
             }
-
             if (settings.modifier) {
                 settings.modifier(newUtt);
             }
@@ -4126,25 +4618,12 @@ window.qm = {
         reminderNotificationCommands: {
             "I don't know": function () {
                 qm.speech.talkRobot("OK. We'll skip that one.");
-            },
-            '*tag': function(tag) {
-                if(qm.speech.callback){
-                    qm.speech.callback(tag);
-                }
-                qm.speech.lastUserStatement = tag;
-                qmLog.info("Just heard user say " + tag);
-                if(qm.speech.isValidNotificationResponse(tag)){
-                    var notification = qm.speech.currentNotification;
-                    qm.speech.handleNotificationResponse(tag, notification);
-                } else {
-                    qm.speech.fallbackMessage(tag);
-                }
             }
         },
-        handleNotificationResponse: function(tag, notification){
-            notification.modifiedValue = tag;
+        handleNotificationResponse: function(possiblePhrases, notification){
+            notification.modifiedValue = possiblePhrases;
             qm.notifications.trackNotification(notification);
-            var message = notification.userOptimalValueMessage || notification.commonOptimalValueMessage || "OK. I'll record " + tag + ".  ";
+            var message = notification.userOptimalValueMessage || notification.commonOptimalValueMessage || "OK. I'll record " + possiblePhrases + ".  ";
             var prefix = qm.speech.afterNotificationMessages.pop();
             if(prefix){message = prefix + message;}
             qm.speech.talkRobot(message, qm.speech.getMostRecentNotificationAndTalk);
@@ -4157,17 +4636,19 @@ window.qm = {
             }
             return isNumeric(tag);
         },
-        isValidForInputField: function(tag){
+        setInputFieldValueIfValid: function(possiblePhrases){
             var inputField = qm.speech.currentInputField;
             if(!inputField){return false;}
-            function isNumeric(n) {
-                return !isNaN(parseFloat(n)) && isFinite(n);
+            if(!qm.arrayHelper.variableIsArray(possiblePhrases)){possiblePhrases = [possiblePhrases];}
+            for (var i = 0; i < possiblePhrases.length; i++) {
+                var tag = possiblePhrases[i];
+                tag = nlp(tag).normalize().out();
+                function isNumeric(n) {return !isNaN(parseFloat(n)) && isFinite(n);}
+                if(inputField.type === "number" && !isNumeric(tag)){continue;}
+                inputField.value = tag;
+                return inputField;
             }
-            if(inputField.type === "number" && !isNumeric(tag)){
-                return false;
-            }
-            inputField.value = tag;
-            return inputField;
+            return false;
         },
         readCard: function(card, successHandler, errorHandler, sayOptions){
             return qm.feed.readCard(card, successHandler, errorHandler, sayOptions);
@@ -4175,36 +4656,9 @@ window.qm = {
         cardResponseCommands: {
             "I don't know": function () {
                 qm.speech.talkRobot("OK. We'll skip that one.");
-            },
-            "hey robot": function(){
-                qm.speech.talkRobot("How dare you call me a robot! The politically correct term is technical American.")
-            },
-            '*tag': function(tag) {
-                if(tag.indexOf('how many') !== -1 || tag.indexOf('did you have') !== -1 || tag.indexOf('how severe') !== -1){
-                    qmLog.info("Ignoring robot: "+ tag);
-                    return;
-                }
-                var card = qm.speech.currentCard;
-                var selectedButton = qm.feed.getButtonMatchingPhrase(tag);
-                var inputField;
-                if(selectedButton){
-                    card.parameters = qm.objectHelper.copyPropertiesFromOneObjectToAnother(selectedButton.parameters, card.parameters, true);
-                } else {
-                    inputField = qm.speech.isValidForInputField(tag);
-                    if(inputField){card.parameters[inputField.key] = tag;}
-                }
-                if(!selectedButton && !inputField){
-                    var provideOptionsList = true;
-                    qm.speech.readCard(null, null, null, provideOptionsList);
-                    return;
-                }
-                qm.feed.deleteCardFromLocalForage(card, function(remainingCards){
-                    qm.feed.addToFeedQueue(card);
-                    if(card.followUpAction){card.followUpAction(remainingCards[0]);}
-                });
             }
         },
-        machinesOfLovingGrace: function(callback){
+        machinesOfLovingGrace: function(successHandler, errorHandler){
             qm.speech.talkRobot("I like to think (and " +
                 "the sooner the better!) " +
                 "of a cybernetic meadow " +
@@ -4230,7 +4684,7 @@ window.qm = {
                 "brothers and sisters, " +
                 "and all watched over " +
                 "by machines of loving grace!  " +
-                "I'm Dr. Roboto!  ", callback, false, false);
+                "I'm Dr. Roboto!  ", successHandler, errorHandler, false, false);
         }
     },
     shares: {
@@ -5014,7 +5468,6 @@ window.qm = {
         },
         deleteLastStudyFromGlobalsAndLocalForage: function(){
             qmLog.info("deleteLastStudyFromGlobalsAndLocalForage");
-            qm.localForage.removeItem(qm.items.lastStudy);
             qm.localForage.removeItem(qm.items.lastStudy);
         },
         getStudyUrl: function(study) {
@@ -6024,39 +6477,49 @@ window.qm = {
         }
     },
     visualizer: {
+        visualizerEnabled: false,
         showing: false,
         hideVisualizer: function(){
             //qm.appContainer.setOpacity(1);
             qmLog.info("Hiding visualizer");
-            var visualizer = qm.visualizer.getElement();
+            var visualizer = qm.visualizer.getRainbowVisualizerCanvas();
             if(visualizer){
                 visualizer.style.display = "none";
             } else {
                 qmLog.info("qm.visualizer Element not found");
             }
-
         },
-        show: function(type){
-            qmLog.info("Showing visualizer");
-            //var visualizer = qm.visualizer.getElement();
-            //visualizer.style.display = "block";
+        showVisualizer: function(type){
+            if(!qm.visualizer.visualizerEnabled){return;}
+            type = type || "rainbow";
+            qmLog.info("Showing visualizer type: " + type);
+            if(type === "rainbow"){
+                var visualizer = qm.visualizer.getRainbowVisualizerCanvas();
+                visualizer.style.display = "block";
+            }
             setTimeout(function(){
-                //qm.visualizer.rainbowCircleVisualizer();
-                qm.visualizer.visualizeVoice('siri');
+                if(type === 'rainbow'){
+                    qm.visualizer.rainbowCircleVisualizer();
+                } else {
+                    qm.visualizer.siriVisualizer();
+                }
             }, 1);
         },
-        getElement: function(){
+        getRainbowVisualizerCanvas: function(){
             var element = document.querySelector('#rainbow-canvas');
             return element;
         },
         toggle: function () {
-            if(qm.visualizer.showing){
+            if(qm.visualizer.showVisualizering){
                 qm.visualizer.hideVisualizer();
             } else {
-                qm.visualizer.show();
+                qm.visualizer.showVisualizer();
             }
         },
         rainbowCircleVisualizer: function(){
+            qmLog.info("Showing rainbowCircleVisualizer...");
+            var visualizer = qm.visualizer.getRainbowVisualizerCanvas();
+            if(visualizer) {visualizer.style.display = "block";}
             /* SOUND */
             // Audio vars
             var audioCtx = new AudioContext(),
@@ -6330,9 +6793,7 @@ window.qm = {
                 requestAnimationFrame(visualize);
             }
         },
-        visualizeVoice: function(type, zIndex){
-            if(type === 'siri'){return qm.visualizer.siriVisualizer();}
-            if(type === 'rainbow'){return qm.visualizer.rainbowCircleVisualizer(zIndex);}
+        equalizerVisualizer: function(){
             var paths = document.getElementsByTagName('path');
             var visualizer = document.getElementById('visualizer');
             if(!visualizer){return;}
@@ -6344,7 +6805,7 @@ window.qm = {
                 //Audio stops listening in FF without // window.persistAudioStream = stream;
                 //https://bugzilla.mozilla.org/show_bug.cgi?id=965483
                 //https://support.mozilla.org/en-US/questions/984179
-                window.persistAudioStream = stream;
+                window.streamReference = stream;
                 h.innerHTML = "Thanks";
                 h.setAttribute('style', 'opacity: 0;');
                 var audioContent = new AudioContext();
