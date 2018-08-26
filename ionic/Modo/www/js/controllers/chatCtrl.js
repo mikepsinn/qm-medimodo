@@ -80,9 +80,7 @@ angular.module('starter').controller('ChatCtrl', ["$state", "$scope", "$rootScop
         function talk(nextCard, successHandler, errorHandler) {
             qm.feed.getMostRecentCard(function (card) {
                 if(nextCard){card = nextCard;}
-                $scope.safeApply(function () {
-                    $scope.state.cards = [card];
-                });
+                $scope.state.cards = [card];
                 //$scope.$apply(function () { $scope.state.cards = [card]; });// Not sure why this is necessary
                 card.followUpAction = function (successToastText) {
                     qmService.toast.showUndoToast(successToastText, function () {

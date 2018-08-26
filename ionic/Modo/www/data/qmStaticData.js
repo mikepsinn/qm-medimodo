@@ -1130,25 +1130,25 @@ window.qm.staticData = {
 		"synonyms": [],
 		"shortDescription": null,
 		"instructionsHtml": null,
-		"updatedAt": "2018-08-25 22:21:07",
+		"updatedAt": "2018-08-26 00:08:04",
 		"splashScreen": "oMg0F5fmyf_sfzgyc",
 		"textLogo": "nm8LguNtZL_chsco6",
-		"versionNumber": "2.8.825",
-		"androidVersionCode": "2018082594",
-		"builtAt": 1535237675
+		"versionNumber": "2.8.826",
+		"androidVersionCode": "2018082601",
+		"builtAt": 1535242427
 	},
 	"buildInfo": {
-		"iosCFBundleVersion": "2.8.825.1373",
-		"builtAt": 1535237675,
-		"versionNumber": "2.8.825",
+		"iosCFBundleVersion": "2.8.826.12",
+		"builtAt": 1535242428,
+		"versionNumber": "2.8.826",
 		"versionNumbers": {
-			"iosCFBundleVersion": "2.8.825.1373",
-			"androidVersionCode": "2018082594",
-			"ionicApp": "2.8.825",
-			"buildVersionNumber": "2018082594"
+			"iosCFBundleVersion": "2.8.826.12",
+			"androidVersionCode": "2018082601",
+			"ionicApp": "2.8.826",
+			"buildVersionNumber": "2018082601"
 		},
 		"gitBranch": "master",
-		"gitCommitShaHash": "4b3a76924479e8f012cd4824a62ebe744d1bb0dc"
+		"gitCommitShaHash": "9b7482647345687f942b00b3641bddaebeff12e3"
 	},
 	"chcp": null,
 	"chromeExtensionManifest": null,
@@ -33901,7 +33901,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-24 20:08:21",
-			"message": "Got 0 new measurements 27 hours ago.  ",
+			"message": "Got 0 new measurements 28 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -34126,7 +34126,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-24 15:53:58",
-			"message": "Got 332 new measurements 31 hours ago.  ",
+			"message": "Got 332 new measurements 32 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -34316,7 +34316,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-24 22:37:19",
-			"message": "Got 0 new measurements 24 hours ago.  ",
+			"message": "Got 0 new measurements 26 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -34621,7 +34621,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-24 04:12:33",
-			"message": "Got 0 new measurements 43 hours ago.  ",
+			"message": "Got 0 new measurements 44 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -35177,7 +35177,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-24 05:53:11",
-			"message": "Got 15 new measurements 41 hours ago.  ",
+			"message": "Got 15 new measurements 42 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -35288,7 +35288,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-25 17:51:25",
-			"message": "Got 0 new measurements 5 hours ago.  ",
+			"message": "Got 0 new measurements 6 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -35591,7 +35591,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-25 17:51:25",
-			"message": "Got 0 new measurements 5 hours ago.  ",
+			"message": "Got 0 new measurements 6 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -36382,7 +36382,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-24 22:31:10",
-			"message": "Got 1 new measurements 24 hours ago.  ",
+			"message": "Got 1 new measurements 26 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -38643,6 +38643,12 @@ window.qm.staticData = {
 				"automatedExpansion": false,
 				"entries": [
 					{
+						"value": "exit",
+						"synonyms": [
+							"exit"
+						]
+					},
+					{
 						"value": "closeCommand",
 						"synonyms": [
 							"closeCommand",
@@ -38657,11 +38663,80 @@ window.qm.staticData = {
 						"synonyms": [
 							"close"
 						]
+					}
+				]
+			},
+			"createPhraseCommand": {
+				"id": "59394453-4c68-46f9-a5da-5f67704b89cf",
+				"name": "createPhraseCommand",
+				"isOverridable": true,
+				"isEnum": true,
+				"automatedExpansion": false,
+				"entries": [
+					{
+						"value": "create a phrase",
+						"synonyms": [
+							"create a phrase"
+						]
 					},
 					{
-						"value": "exit",
+						"value": "save a @phraseType:phraseType phrase",
 						"synonyms": [
-							"exit"
+							"save a @phraseType:phraseType phrase"
+						]
+					},
+					{
+						"value": "create an @phraseType:phraseType phrase",
+						"synonyms": [
+							"create an @phraseType:phraseType phrase"
+						]
+					},
+					{
+						"value": "save an @phraseType:phraseType phrase",
+						"synonyms": [
+							"save an @phraseType:phraseType phrase"
+						]
+					},
+					{
+						"value": "save a phrase",
+						"synonyms": [
+							"save a phrase"
+						]
+					},
+					{
+						"value": "create a @phraseType:phraseType phrase",
+						"synonyms": [
+							"create a @phraseType:phraseType phrase"
+						]
+					},
+					{
+						"value": "add a phrase",
+						"synonyms": [
+							"add a phrase"
+						]
+					},
+					{
+						"value": "record idea",
+						"synonyms": [
+							"record idea"
+						]
+					},
+					{
+						"value": "record an idea",
+						"synonyms": [
+							"record an idea"
+						]
+					},
+					{
+						"value": "add an @phraseType:phraseType",
+						"synonyms": [
+							"add an @phraseType:phraseType"
+						]
+					},
+					{
+						"value": "add a @phraseType:phraseType",
+						"synonyms": [
+							"add a @phraseType:phraseType"
 						]
 					}
 				]
@@ -38689,15 +38764,15 @@ window.qm.staticData = {
 				"automatedExpansion": false,
 				"entries": [
 					{
-						"value": "create reminder",
-						"synonyms": [
-							"\"add reminder\", \"add\", \"add reminder\", \"add a reminder for\", \"create reminder for\", \"create a reminder for\""
-						]
-					},
-					{
 						"value": "add",
 						"synonyms": [
 							"add"
+						]
+					},
+					{
+						"value": "create reminder",
+						"synonyms": [
+							"\"add reminder\", \"add\", \"add reminder\", \"add a reminder for\", \"create reminder for\", \"create a reminder for\""
 						]
 					}
 				]
@@ -38727,21 +38802,93 @@ window.qm.staticData = {
 				"automatedExpansion": false,
 				"entries": [
 					{
-						"value": "What can you do?",
-						"synonyms": [
-							"What can you do?"
-						]
-					},
-					{
 						"value": "help",
 						"synonyms": [
 							"help"
 						]
 					},
 					{
+						"value": "What can you do?",
+						"synonyms": [
+							"What can you do?"
+						]
+					},
+					{
 						"value": "What can I do?",
 						"synonyms": [
 							"What can I do?"
+						]
+					}
+				]
+			},
+			"interrogativeWord": {
+				"id": "a9a12995-f749-45b2-8c45-f483b36b97c9",
+				"name": "interrogativeWord",
+				"isOverridable": true,
+				"isEnum": false,
+				"automatedExpansion": false,
+				"entries": [
+					{
+						"value": "who",
+						"synonyms": [
+							"who"
+						]
+					},
+					{
+						"value": "what",
+						"synonyms": [
+							"what"
+						]
+					},
+					{
+						"value": "where",
+						"synonyms": [
+							"where"
+						]
+					},
+					{
+						"value": "why",
+						"synonyms": [
+							"why"
+						]
+					},
+					{
+						"value": "how",
+						"synonyms": [
+							"how"
+						]
+					}
+				]
+			},
+			"memoryQuestion": {
+				"id": "685b2db0-5d5b-40e8-a100-14dc22edf502",
+				"name": "memoryQuestion",
+				"isOverridable": true,
+				"isEnum": true,
+				"automatedExpansion": false,
+				"entries": [
+					{
+						"value": "@interrogativeWord:interrogativeWord @any:any",
+						"synonyms": [
+							"@interrogativeWord:interrogativeWord @any:any"
+						]
+					},
+					{
+						"value": "where my keys are",
+						"synonyms": [
+							"where my keys are"
+						]
+					},
+					{
+						"value": "where I put my keys",
+						"synonyms": [
+							"where I put my keys"
+						]
+					},
+					{
+						"value": "where my car is",
+						"synonyms": [
+							"where my car is"
 						]
 					}
 				]
@@ -38754,22 +38901,10 @@ window.qm.staticData = {
 				"automatedExpansion": false,
 				"entries": [
 					{
-						"value": "no",
+						"value": "snooze",
 						"synonyms": [
-							"no"
-						]
-					},
-					{
-						"value": "yes",
-						"synonyms": [
-							"yes"
-						]
-					},
-					{
-						"value": "track",
-						"synonyms": [
-							"track",
-							"Track"
+							"snooze",
+							"Snooze"
 						]
 					},
 					{
@@ -38780,10 +38915,76 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "snooze",
+						"value": "track",
 						"synonyms": [
-							"snooze",
-							"Snooze"
+							"track",
+							"Track"
+						]
+					},
+					{
+						"value": "yes",
+						"synonyms": [
+							"yes"
+						]
+					},
+					{
+						"value": "no",
+						"synonyms": [
+							"no"
+						]
+					}
+				]
+			},
+			"phraseType": {
+				"id": "c4b656c9-3a59-4b4e-bf9a-004f93335fb1",
+				"name": "phraseType",
+				"isOverridable": true,
+				"isEnum": false,
+				"automatedExpansion": false,
+				"entries": [
+					{
+						"value": "unknown",
+						"synonyms": [
+							"unknown"
+						]
+					},
+					{
+						"value": "welcome",
+						"synonyms": [
+							"welcome"
+						]
+					},
+					{
+						"value": "idea",
+						"synonyms": [
+							"idea"
+						]
+					},
+					{
+						"value": "joke",
+						"synonyms": [
+							"joke"
+						]
+					}
+				]
+			},
+			"recallCommand": {
+				"id": "48723f59-70a8-406a-a324-cc8f80cef55c",
+				"name": "recallCommand",
+				"isOverridable": true,
+				"isEnum": true,
+				"automatedExpansion": false,
+				"entries": [
+					{
+						"value": "recall",
+						"synonyms": [
+							"recall"
+						]
+					},
+					{
+						"value": "recall @memoryQuestion:memoryQuestion",
+						"synonyms": [
+							"recall @memoryQuestion:memoryQuestion"
 						]
 					}
 				]
@@ -38805,6 +39006,27 @@ window.qm.staticData = {
 					}
 				]
 			},
+			"rememberCommand": {
+				"id": "1b0c9d7e-58f4-44e0-9fb0-bc079a8e7074",
+				"name": "rememberCommand",
+				"isOverridable": true,
+				"isEnum": true,
+				"automatedExpansion": false,
+				"entries": [
+					{
+						"value": "Remember ",
+						"synonyms": [
+							"Remember "
+						]
+					},
+					{
+						"value": "remember @memoryQuestion:memoryQuestion",
+						"synonyms": [
+							"remember @memoryQuestion:memoryQuestion"
+						]
+					}
+				]
+			},
 			"unitAbbreviatedName": {
 				"id": "398837eb-7f3c-44cb-accd-0f77a6306152",
 				"name": "unitAbbreviatedName",
@@ -38813,128 +39035,9 @@ window.qm.staticData = {
 				"automatedExpansion": false,
 				"entries": [
 					{
-						"value": "count",
+						"value": "%RDA",
 						"synonyms": [
-							"Ea",
-							"Ct",
-							"Count"
-						]
-					},
-					{
-						"value": "kg",
-						"synonyms": [
-							"Kilogram",
-							"Kilograms"
-						]
-					},
-					{
-						"value": "mcg",
-						"synonyms": [
-							"Microgram",
-							"Micrograms"
-						]
-					},
-					{
-						"value": "mi",
-						"synonyms": [
-							"Mile",
-							"Miles"
-						]
-					},
-					{
-						"value": "serving",
-						"synonyms": [
-							"Serving"
-						]
-					},
-					{
-						"value": "tablets",
-						"synonyms": [
-							"Tablet",
-							"Tablets"
-						]
-					},
-					{
-						"value": "km",
-						"synonyms": [
-							"Kilometer",
-							"Kilometers"
-						]
-					},
-					{
-						"value": "mmHg",
-						"synonyms": [
-							"Millimeters Merc"
-						]
-					},
-					{
-						"value": "torr",
-						"synonyms": [
-							"Torr"
-						]
-					},
-					{
-						"value": "hPa",
-						"synonyms": [
-							"Hectopascal "
-						]
-					},
-					{
-						"value": "capsules",
-						"synonyms": [
-							"Capsule",
-							"Capsules"
-						]
-					},
-					{
-						"value": "$",
-						"synonyms": [
-							"Dollar",
-							"Dollars"
-						]
-					},
-					{
-						"value": "event",
-						"synonyms": [
-							"Event"
-						]
-					},
-					{
-						"value": "Pa",
-						"synonyms": [
-							"Pascal"
-						]
-					},
-					{
-						"value": "ft",
-						"synonyms": [
-							"Feet"
-						]
-					},
-					{
-						"value": "yes/no",
-						"synonyms": [
-							"Yes/No"
-						]
-					},
-					{
-						"value": "min",
-						"synonyms": [
-							"Minute",
-							"Minutes"
-						]
-					},
-					{
-						"value": "index",
-						"synonyms": [
-							"Index"
-						]
-					},
-					{
-						"value": "qt",
-						"synonyms": [
-							"Quart",
-							"Quarts"
+							"% Recommended Daily Allowance"
 						]
 					},
 					{
@@ -38944,87 +39047,29 @@ window.qm.staticData = {
 						]
 					},
 					{
+						"value": "/1",
+						"synonyms": [
+							"0 to 1 Rating"
+						]
+					},
+					{
+						"value": "/6",
+						"synonyms": [
+							"0 to 5 Rating"
+						]
+					},
+					{
 						"value": "/10",
 						"synonyms": [
 							"1 to 10 Rating"
 						]
 					},
 					{
-						"value": "bpm",
+						"value": "/5",
 						"synonyms": [
-							"Beats per Minute"
-						]
-					},
-					{
-						"value": "cm",
-						"synonyms": [
-							"Centimeter",
-							"Centimeters"
-						]
-					},
-					{
-						"value": "degrees north",
-						"synonyms": [
-							"Degrees North"
-						]
-					},
-					{
-						"value": "drops",
-						"synonyms": [
-							"Drop",
-							"Drops"
-						]
-					},
-					{
-						"value": "mg/dL",
-						"synonyms": [
-							"Micrograms per decilitre"
-						]
-					},
-					{
-						"value": "mg",
-						"synonyms": [
-							"Milligram",
-							"Milligrams"
-						]
-					},
-					{
-						"value": "IU",
-						"synonyms": [
-							"International Unit",
-							"International Units"
-						]
-					},
-					{
-						"value": "m/s",
-						"synonyms": [
-							"Meters per Second"
-						]
-					},
-					{
-						"value": "cal",
-						"synonyms": [
-							"Calorie",
-							"Calories"
-						]
-					},
-					{
-						"value": "%",
-						"synonyms": [
-							"Percent"
-						]
-					},
-					{
-						"value": "F",
-						"synonyms": [
-							"Degrees Fahrenheit"
-						]
-					},
-					{
-						"value": "s",
-						"synonyms": [
-							"Second",
-							"Seconds"
+							"out of five",
+							"out of 5",
+							"1 to 5 Rating"
 						]
 					},
 					{
@@ -39035,16 +39080,89 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "sprays",
+						"value": "bpm",
 						"synonyms": [
-							"Spray",
-							"Sprays"
+							"Beats per Minute"
 						]
 					},
 					{
-						"value": "/1",
+						"value": "cal",
 						"synonyms": [
-							"0 to 1 Rating"
+							"Calorie",
+							"Calories"
+						]
+					},
+					{
+						"value": "capsules",
+						"synonyms": [
+							"Capsule",
+							"Capsules"
+						]
+					},
+					{
+						"value": "cm",
+						"synonyms": [
+							"Centimeter",
+							"Centimeters"
+						]
+					},
+					{
+						"value": "count",
+						"synonyms": [
+							"Ea",
+							"Ct",
+							"Count"
+						]
+					},
+					{
+						"value": "C",
+						"synonyms": [
+							"Degrees Celsiu",
+							"Degrees Celsius"
+						]
+					},
+					{
+						"value": "degrees east",
+						"synonyms": [
+							"Degrees East"
+						]
+					},
+					{
+						"value": "F",
+						"synonyms": [
+							"Degrees Fahrenheit"
+						]
+					},
+					{
+						"value": "degrees north",
+						"synonyms": [
+							"Degrees North"
+						]
+					},
+					{
+						"value": "$",
+						"synonyms": [
+							"Dollar",
+							"Dollars"
+						]
+					},
+					{
+						"value": "drops",
+						"synonyms": [
+							"Drop",
+							"Drops"
+						]
+					},
+					{
+						"value": "event",
+						"synonyms": [
+							"Event"
+						]
+					},
+					{
+						"value": "ft",
+						"synonyms": [
+							"Feet"
 						]
 					},
 					{
@@ -39062,6 +39180,46 @@ window.qm.staticData = {
 						]
 					},
 					{
+						"value": "in",
+						"synonyms": [
+							"Inche",
+							"Inches"
+						]
+					},
+					{
+						"value": "index",
+						"synonyms": [
+							"Index"
+						]
+					},
+					{
+						"value": "yes/no",
+						"synonyms": [
+							"Yes/No"
+						]
+					},
+					{
+						"value": "kcal",
+						"synonyms": [
+							"Kilocalorie",
+							"Kilocalories"
+						]
+					},
+					{
+						"value": "kg",
+						"synonyms": [
+							"Kilogram",
+							"Kilograms"
+						]
+					},
+					{
+						"value": "km",
+						"synonyms": [
+							"Kilometer",
+							"Kilometers"
+						]
+					},
+					{
 						"value": "m",
 						"synonyms": [
 							"Meter",
@@ -39069,31 +39227,30 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "ms",
+						"value": "mcg",
 						"synonyms": [
-							"Millisecond",
-							"Milliseconds"
+							"Microgram",
+							"Micrograms"
 						]
 					},
 					{
-						"value": "oz",
+						"value": "mg/dL",
 						"synonyms": [
-							"Ounce",
-							"Ounces"
+							"Micrograms per decilitre"
 						]
 					},
 					{
-						"value": "%RDA",
+						"value": "mi",
 						"synonyms": [
-							"% Recommended Daily Allowance"
+							"Mile",
+							"Miles"
 						]
 					},
 					{
-						"value": "/5",
+						"value": "mg",
 						"synonyms": [
-							"out of five",
-							"out of 5",
-							"1 to 5 Rating"
+							"Milligram",
+							"Milligrams"
 						]
 					},
 					{
@@ -39101,6 +39258,45 @@ window.qm.staticData = {
 						"synonyms": [
 							"Milliliter",
 							"Milliliters"
+						]
+					},
+					{
+						"value": "mm",
+						"synonyms": [
+							"Millimeter",
+							"Millimeters"
+						]
+					},
+					{
+						"value": "mmHg",
+						"synonyms": [
+							"Millimeters Merc"
+						]
+					},
+					{
+						"value": "s",
+						"synonyms": [
+							"Second",
+							"Seconds"
+						]
+					},
+					{
+						"value": "min",
+						"synonyms": [
+							"Minute",
+							"Minutes"
+						]
+					},
+					{
+						"value": "Pa",
+						"synonyms": [
+							"Pascal"
+						]
+					},
+					{
+						"value": "%",
+						"synonyms": [
+							"Percent"
 						]
 					},
 					{
@@ -39115,19 +39311,6 @@ window.qm.staticData = {
 						"synonyms": [
 							"Pill",
 							"Pills"
-						]
-					},
-					{
-						"value": "mg",
-						"synonyms": [
-							"mg"
-						]
-					},
-					{
-						"value": "in",
-						"synonyms": [
-							"Inche",
-							"Inches"
 						]
 					},
 					{
@@ -39146,49 +39329,29 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "/minute",
+						"value": "serving",
 						"synonyms": [
-							"per Minute"
+							"Serving"
 						]
 					},
 					{
-						"value": "L",
+						"value": "sprays",
 						"synonyms": [
-							"Liter",
-							"Liters"
+							"Spray",
+							"Sprays"
 						]
 					},
 					{
-						"value": "C",
+						"value": "tablets",
 						"synonyms": [
-							"Degrees Celsiu",
-							"Degrees Celsius"
+							"Tablet",
+							"Tablets"
 						]
 					},
 					{
-						"value": "degrees east",
+						"value": "torr",
 						"synonyms": [
-							"Degrees East"
-						]
-					},
-					{
-						"value": "kcal",
-						"synonyms": [
-							"Kilocalorie",
-							"Kilocalories"
-						]
-					},
-					{
-						"value": "dB",
-						"synonyms": [
-							"Decibel",
-							"Decibels"
-						]
-					},
-					{
-						"value": "mph",
-						"synonyms": [
-							"Miles per Hour"
+							"Torr"
 						]
 					},
 					{
@@ -39199,10 +39362,70 @@ window.qm.staticData = {
 						]
 					},
 					{
+						"value": "/minute",
+						"synonyms": [
+							"per Minute"
+						]
+					},
+					{
+						"value": "ms",
+						"synonyms": [
+							"Millisecond",
+							"Milliseconds"
+						]
+					},
+					{
+						"value": "L",
+						"synonyms": [
+							"Liter",
+							"Liters"
+						]
+					},
+					{
+						"value": "oz",
+						"synonyms": [
+							"Ounce",
+							"Ounces"
+						]
+					},
+					{
+						"value": "IU",
+						"synonyms": [
+							"International Unit",
+							"International Units"
+						]
+					},
+					{
+						"value": "m/s",
+						"synonyms": [
+							"Meters per Second"
+						]
+					},
+					{
+						"value": "qt",
+						"synonyms": [
+							"Quart",
+							"Quarts"
+						]
+					},
+					{
 						"value": "dose",
 						"synonyms": [
 							"Dose",
 							"Doses"
+						]
+					},
+					{
+						"value": "ppm",
+						"synonyms": [
+							"Parts per Million"
+						]
+					},
+					{
+						"value": "dB",
+						"synonyms": [
+							"Decibel",
+							"Decibels"
 						]
 					},
 					{
@@ -39212,22 +39435,21 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "/6",
+						"value": "hPa",
 						"synonyms": [
-							"0 to 5 Rating"
+							"Hectopascal "
 						]
 					},
 					{
-						"value": "mm",
+						"value": "mph",
 						"synonyms": [
-							"Millimeter",
-							"Millimeters"
+							"Miles per Hour"
 						]
 					},
 					{
-						"value": "ppm",
+						"value": "mg",
 						"synonyms": [
-							"Parts per Million"
+							"mg"
 						]
 					}
 				]
@@ -39240,78 +39462,21 @@ window.qm.staticData = {
 				"automatedExpansion": false,
 				"entries": [
 					{
-						"value": "Tablets",
+						"value": "% Recommended Daily Allowance",
 						"synonyms": [
-							"Tablet",
-							"tablets"
+							"%RDA"
 						]
 					},
 					{
-						"value": "1 to 10 Rating",
+						"value": "-4 to 4 Rating",
 						"synonyms": [
-							"/10"
+							"-4 to 4"
 						]
 					},
 					{
-						"value": "Count",
+						"value": "0 to 1 Rating",
 						"synonyms": [
-							"Ea",
-							"Ct",
-							"count"
-						]
-					},
-					{
-						"value": "Kilograms",
-						"synonyms": [
-							"Kilogram",
-							"kg"
-						]
-					},
-					{
-						"value": "Micrograms per decilitre",
-						"synonyms": [
-							"mg/dL"
-						]
-					},
-					{
-						"value": "Milliliters",
-						"synonyms": [
-							"Milliliter",
-							"mL"
-						]
-					},
-					{
-						"value": "Pills",
-						"synonyms": [
-							"Pill",
-							"pills"
-						]
-					},
-					{
-						"value": "Meters per Second",
-						"synonyms": [
-							"m/s"
-						]
-					},
-					{
-						"value": "Centimeters",
-						"synonyms": [
-							"Centimeter",
-							"cm"
-						]
-					},
-					{
-						"value": "Hours",
-						"synonyms": [
-							"Hour",
-							"h"
-						]
-					},
-					{
-						"value": "Millimeters",
-						"synonyms": [
-							"Millimeter",
-							"mm"
+							"/1"
 						]
 					},
 					{
@@ -39321,9 +39486,24 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Miles per Hour",
+						"value": "1 to 10 Rating",
 						"synonyms": [
-							"mph"
+							"/10"
+						]
+					},
+					{
+						"value": "1 to 5 Rating",
+						"synonyms": [
+							"out of five",
+							"out of 5",
+							"/5"
+						]
+					},
+					{
+						"value": "Applications",
+						"synonyms": [
+							"Application",
+							"applications"
 						]
 					},
 					{
@@ -39340,75 +39520,50 @@ window.qm.staticData = {
 						]
 					},
 					{
+						"value": "Capsules",
+						"synonyms": [
+							"Capsule",
+							"capsules"
+						]
+					},
+					{
+						"value": "Centimeters",
+						"synonyms": [
+							"Centimeter",
+							"cm"
+						]
+					},
+					{
+						"value": "Count",
+						"synonyms": [
+							"Ea",
+							"Ct",
+							"count"
+						]
+					},
+					{
+						"value": "Degrees Celsius",
+						"synonyms": [
+							"Degrees Celsiu",
+							"C"
+						]
+					},
+					{
+						"value": "Degrees East",
+						"synonyms": [
+							"degrees east"
+						]
+					},
+					{
+						"value": "Degrees Fahrenheit",
+						"synonyms": [
+							"F"
+						]
+					},
+					{
 						"value": "Degrees North",
 						"synonyms": [
 							"degrees north"
-						]
-					},
-					{
-						"value": "Kilometers",
-						"synonyms": [
-							"Kilometer",
-							"km"
-						]
-					},
-					{
-						"value": "Minutes",
-						"synonyms": [
-							"Minute",
-							"min"
-						]
-					},
-					{
-						"value": "Pieces",
-						"synonyms": [
-							"Piece",
-							"pieces"
-						]
-					},
-					{
-						"value": "Serving",
-						"synonyms": [
-							"serving"
-						]
-					},
-					{
-						"value": "Drops",
-						"synonyms": [
-							"Drop",
-							"drops"
-						]
-					},
-					{
-						"value": "Meters",
-						"synonyms": [
-							"Meter",
-							"m"
-						]
-					},
-					{
-						"value": "Millimeters Merc",
-						"synonyms": [
-							"mmHg"
-						]
-					},
-					{
-						"value": "Pascal",
-						"synonyms": [
-							"Pa"
-						]
-					},
-					{
-						"value": "Percent",
-						"synonyms": [
-							"%"
-						]
-					},
-					{
-						"value": "Liters",
-						"synonyms": [
-							"Liter",
-							"L"
 						]
 					},
 					{
@@ -39419,6 +39574,58 @@ window.qm.staticData = {
 						]
 					},
 					{
+						"value": "Drops",
+						"synonyms": [
+							"Drop",
+							"drops"
+						]
+					},
+					{
+						"value": "Event",
+						"synonyms": [
+							"event"
+						]
+					},
+					{
+						"value": "Feet",
+						"synonyms": [
+							"ft"
+						]
+					},
+					{
+						"value": "Grams",
+						"synonyms": [
+							"Gram",
+							"g"
+						]
+					},
+					{
+						"value": "Hours",
+						"synonyms": [
+							"Hour",
+							"h"
+						]
+					},
+					{
+						"value": "Inches",
+						"synonyms": [
+							"Inche",
+							"in"
+						]
+					},
+					{
+						"value": "Index",
+						"synonyms": [
+							"index"
+						]
+					},
+					{
+						"value": "Yes/No",
+						"synonyms": [
+							"yes/no"
+						]
+					},
+					{
 						"value": "Kilocalories",
 						"synonyms": [
 							"Kilocalorie",
@@ -39426,42 +39633,24 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Ounces",
+						"value": "Kilograms",
 						"synonyms": [
-							"Ounce",
-							"oz"
+							"Kilogram",
+							"kg"
 						]
 					},
 					{
-						"value": "International Units",
+						"value": "Kilometers",
 						"synonyms": [
-							"International Unit",
-							"IU"
+							"Kilometer",
+							"km"
 						]
 					},
 					{
-						"value": "Parts per Million",
+						"value": "Meters",
 						"synonyms": [
-							"ppm"
-						]
-					},
-					{
-						"value": "Millibar",
-						"synonyms": [
-							"mbar"
-						]
-					},
-					{
-						"value": "Decibels",
-						"synonyms": [
-							"Decibel",
-							"dB"
-						]
-					},
-					{
-						"value": "0 to 1 Rating",
-						"synonyms": [
-							"/1"
+							"Meter",
+							"m"
 						]
 					},
 					{
@@ -39472,22 +39661,9 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "-4 to 4 Rating",
+						"value": "Micrograms per decilitre",
 						"synonyms": [
-							"-4 to 4"
-						]
-					},
-					{
-						"value": "Applications",
-						"synonyms": [
-							"Application",
-							"applications"
-						]
-					},
-					{
-						"value": "Yes/No",
-						"synonyms": [
-							"yes/no"
+							"mg/dL"
 						]
 					},
 					{
@@ -39505,6 +39681,26 @@ window.qm.staticData = {
 						]
 					},
 					{
+						"value": "Milliliters",
+						"synonyms": [
+							"Milliliter",
+							"mL"
+						]
+					},
+					{
+						"value": "Millimeters",
+						"synonyms": [
+							"Millimeter",
+							"mm"
+						]
+					},
+					{
+						"value": "Millimeters Merc",
+						"synonyms": [
+							"mmHg"
+						]
+					},
+					{
 						"value": "Seconds",
 						"synonyms": [
 							"Second",
@@ -39512,42 +39708,36 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Torr",
+						"value": "Minutes",
 						"synonyms": [
-							"torr"
+							"Minute",
+							"min"
 						]
 					},
 					{
-						"value": "Degrees Celsius",
+						"value": "Pascal",
 						"synonyms": [
-							"Degrees Celsiu",
-							"C"
+							"Pa"
 						]
 					},
 					{
-						"value": "Capsules",
+						"value": "Percent",
 						"synonyms": [
-							"Capsule",
-							"capsules"
+							"%"
 						]
 					},
 					{
-						"value": "Feet",
+						"value": "Pieces",
 						"synonyms": [
-							"ft"
+							"Piece",
+							"pieces"
 						]
 					},
 					{
-						"value": "Grams",
+						"value": "Pills",
 						"synonyms": [
-							"Gram",
-							"g"
-						]
-					},
-					{
-						"value": "Index",
-						"synonyms": [
-							"index"
+							"Pill",
+							"pills"
 						]
 					},
 					{
@@ -39559,53 +39749,6 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Units",
-						"synonyms": [
-							"Unit",
-							"units"
-						]
-					},
-					{
-						"value": "Hectopascal ",
-						"synonyms": [
-							"hPa"
-						]
-					},
-					{
-						"value": "1 to 5 Rating",
-						"synonyms": [
-							"out of five",
-							"out of 5",
-							"/5"
-						]
-					},
-					{
-						"value": "Degrees Fahrenheit",
-						"synonyms": [
-							"F"
-						]
-					},
-					{
-						"value": "Inches",
-						"synonyms": [
-							"Inche",
-							"in"
-						]
-					},
-					{
-						"value": "Quarts",
-						"synonyms": [
-							"Quart",
-							"qt"
-						]
-					},
-					{
-						"value": "% Recommended Daily Allowance",
-						"synonyms": [
-							"%RDA"
-						]
-					},
-					{
 						"value": "Puffs",
 						"synonyms": [
 							"Puff",
@@ -39613,28 +39756,9 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "per Minute",
+						"value": "Serving",
 						"synonyms": [
-							"/minute"
-						]
-					},
-					{
-						"value": "Degrees East",
-						"synonyms": [
-							"degrees east"
-						]
-					},
-					{
-						"value": "Event",
-						"synonyms": [
-							"event"
-						]
-					},
-					{
-						"value": "Milliseconds",
-						"synonyms": [
-							"Millisecond",
-							"ms"
+							"serving"
 						]
 					},
 					{
@@ -39645,10 +39769,108 @@ window.qm.staticData = {
 						]
 					},
 					{
+						"value": "Tablets",
+						"synonyms": [
+							"Tablet",
+							"tablets"
+						]
+					},
+					{
+						"value": "Torr",
+						"synonyms": [
+							"torr"
+						]
+					},
+					{
+						"value": "Units",
+						"synonyms": [
+							"Unit",
+							"units"
+						]
+					},
+					{
+						"value": "per Minute",
+						"synonyms": [
+							"/minute"
+						]
+					},
+					{
+						"value": "Milliseconds",
+						"synonyms": [
+							"Millisecond",
+							"ms"
+						]
+					},
+					{
+						"value": "Liters",
+						"synonyms": [
+							"Liter",
+							"L"
+						]
+					},
+					{
+						"value": "Ounces",
+						"synonyms": [
+							"Ounce",
+							"oz"
+						]
+					},
+					{
+						"value": "International Units",
+						"synonyms": [
+							"International Unit",
+							"IU"
+						]
+					},
+					{
+						"value": "Meters per Second",
+						"synonyms": [
+							"m/s"
+						]
+					},
+					{
+						"value": "Quarts",
+						"synonyms": [
+							"Quart",
+							"qt"
+						]
+					},
+					{
 						"value": "Doses",
 						"synonyms": [
 							"Dose",
 							"dose"
+						]
+					},
+					{
+						"value": "Parts per Million",
+						"synonyms": [
+							"ppm"
+						]
+					},
+					{
+						"value": "Decibels",
+						"synonyms": [
+							"Decibel",
+							"dB"
+						]
+					},
+					{
+						"value": "Millibar",
+						"synonyms": [
+							"mbar"
+						]
+					},
+					{
+						"value": "Hectopascal ",
+						"synonyms": [
+							"hPa"
+						]
+					},
+					{
+						"value": "Miles per Hour",
+						"synonyms": [
+							"mph"
 						]
 					}
 				]
@@ -39661,49 +39883,9 @@ window.qm.staticData = {
 				"automatedExpansion": false,
 				"entries": [
 					{
-						"value": "Treatments",
-						"synonyms": [
-							"Health and Beauty",
-							"Health & Beauty",
-							"Treatment",
-							"treatments"
-						]
-					},
-					{
-						"value": "Music",
-						"synonyms": [
-							"Music"
-						]
-					},
-					{
 						"value": "Emotions",
 						"synonyms": [
 							"Emotion"
-						]
-					},
-					{
-						"value": "Physical Activity",
-						"synonyms": [
-							"Physical Activity"
-						]
-					},
-					{
-						"value": "Payments",
-						"synonyms": [
-							"Purchases",
-							"Payment"
-						]
-					},
-					{
-						"value": "Electronics",
-						"synonyms": [
-							"Electronic"
-						]
-					},
-					{
-						"value": "Physique",
-						"synonyms": [
-							"Physique"
 						]
 					},
 					{
@@ -39720,21 +39902,24 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Conditions",
+						"value": "Treatments",
 						"synonyms": [
-							"Condition"
+							"Health and Beauty",
+							"Health & Beauty",
+							"Treatment",
+							"treatments"
 						]
 					},
 					{
-						"value": "Nutrients",
+						"value": "Electronics",
 						"synonyms": [
-							"Nutrient"
+							"Electronic"
 						]
 					},
 					{
-						"value": "Social Interactions",
+						"value": "Physique",
 						"synonyms": [
-							"Social Interaction"
+							"Physique"
 						]
 					},
 					{
@@ -39744,17 +39929,9 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Goals",
+						"value": "Physical Activity",
 						"synonyms": [
-							"Work",
-							"Productivity",
-							"Goal"
-						]
-					},
-					{
-						"value": "Causes of Illness",
-						"synonyms": [
-							"Cause of Illness"
+							"Physical Activity"
 						]
 					},
 					{
@@ -39770,9 +39947,24 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Books",
+						"value": "Locations",
 						"synonyms": [
-							"Book"
+							"Location",
+							"Location"
+						]
+					},
+					{
+						"value": "Nutrients",
+						"synonyms": [
+							"Nutrient"
+						]
+					},
+					{
+						"value": "Goals",
+						"synonyms": [
+							"Work",
+							"Productivity",
+							"Goal"
 						]
 					},
 					{
@@ -39780,6 +39972,36 @@ window.qm.staticData = {
 						"synonyms": [
 							"Activity",
 							"Activity"
+						]
+					},
+					{
+						"value": "Social Interactions",
+						"synonyms": [
+							"Social Interaction"
+						]
+					},
+					{
+						"value": "Conditions",
+						"synonyms": [
+							"Condition"
+						]
+					},
+					{
+						"value": "Environment",
+						"synonyms": [
+							"Environment"
+						]
+					},
+					{
+						"value": "Causes of Illness",
+						"synonyms": [
+							"Cause of Illness"
+						]
+					},
+					{
+						"value": "Books",
+						"synonyms": [
+							"Book"
 						]
 					},
 					{
@@ -39791,28 +40013,28 @@ window.qm.staticData = {
 						]
 					},
 					{
+						"value": "Payments",
+						"synonyms": [
+							"Purchases",
+							"Payment"
+						]
+					},
+					{
 						"value": "Movies and TV",
 						"synonyms": [
 							"Movies and TV"
 						]
 					},
 					{
+						"value": "Music",
+						"synonyms": [
+							"Music"
+						]
+					},
+					{
 						"value": "Miscellaneous",
 						"synonyms": [
 							"Miscellaneous"
-						]
-					},
-					{
-						"value": "Environment",
-						"synonyms": [
-							"Environment"
-						]
-					},
-					{
-						"value": "Locations",
-						"synonyms": [
-							"Location",
-							"Location"
 						]
 					}
 				]
@@ -39832,133 +40054,15 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Adderall (mg)",
-						"synonyms": [
-							"Adderall"
-						]
-					},
-					{
-						"value": "Insomnia Or Sleep Disturbances",
-						"synonyms": [
-							"Sleep Disturbances",
-							"Insomnia"
-						]
-					},
-					{
-						"value": "Resting Heart Rate (Pulse)",
-						"synonyms": [
-							"Resting Heart Rate",
-							"Pulse"
-						]
-					},
-					{
-						"value": "Anxiety",
-						"synonyms": [
-							"Anxiety / Nervousness"
-						]
-					},
-					{
-						"value": "Fatigue / Lethargy / Tiredness",
-						"synonyms": [
-							"Fatigue",
-							"Lethargy / Tiredness"
-						]
-					},
-					{
-						"value": "Milk -  Reduced Fat, 2% Milkfat",
-						"synonyms": [
-							"Milk",
-							"Milk -  Reduced Fat"
-						]
-					},
-					{
-						"value": "Lamotrigine (mg)",
-						"synonyms": [
-							"Lamotrigine"
-						]
-					},
-					{
-						"value": "Melatonin (mg)",
-						"synonyms": [
-							"Melatonin"
-						]
-					},
-					{
-						"value": "Levothyroxine (mcg)",
-						"synonyms": [
-							"Levothyroxine"
-						]
-					},
-					{
 						"value": "Sleep Duration",
 						"synonyms": [
 							"Sleep"
 						]
 					},
 					{
-						"value": "Buspirone (mg)",
+						"value": "Chicken (serving)",
 						"synonyms": [
-							"Buspirone"
-						]
-					},
-					{
-						"value": "Blood Pressure",
-						"synonyms": [
-							"Blood"
-						]
-					},
-					{
-						"value": "Effexor XR (Venlafaxine ER) (mg)",
-						"synonyms": [
-							"Effexor XR",
-							"Venlafaxine ER"
-						]
-					},
-					{
-						"value": "Lamictal (mg)",
-						"synonyms": [
-							"Lamictal"
-						]
-					},
-					{
-						"value": "Alcoholic Beverage, Beer, Regular, All",
-						"synonyms": [
-							"Alcoholic Beverage"
-						]
-					},
-					{
-						"value": "Distress",
-						"synonyms": [
-							"emotional distress"
-						]
-					},
-					{
-						"value": "Daily Step Count",
-						"synonyms": [
-							"Steps",
-							"Daily Step"
-						]
-					},
-					{
-						"value": "Tea - Brewed, Prepared With Tap Water (black Tea)",
-						"synonyms": [
-							"Tea - Brewed, Prepared With Tap Water",
-							"black Tea",
-							"Tea",
-							"Tea - Brewed"
-						]
-					},
-					{
-						"value": "Cymbalta (duloxetine) (mg)",
-						"synonyms": [
-							"Cymbalta",
-							"duloxetine"
-						]
-					},
-					{
-						"value": "Meditation (mg)",
-						"synonyms": [
-							"Meditation"
+							"Chicken"
 						]
 					},
 					{
@@ -39969,131 +40073,42 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Depression, Bipolar",
-						"synonyms": [
-							"Depression"
-						]
-					},
-					{
-						"value": "Stress",
-						"synonyms": [
-							"Stress Rating",
-							"Feeling stressed",
-							"Stress level"
-						]
-					},
-					{
-						"value": "Overall Mood",
-						"synonyms": [
-							"Mood",
-							"mood"
-						]
-					},
-					{
-						"value": "Walk Or Run Distance",
-						"synonyms": [
-							"Walk Or Run",
-							"Run Distance",
-							"Walk"
-						]
-					},
-					{
-						"value": "Fluoxetine (mg)",
-						"synonyms": [
-							"Fluoxetine"
-						]
-					},
-					{
-						"value": "Brain Fog (difficulty Thinking Clearly)",
-						"synonyms": [
-							"Brain Fog",
-							"difficulty Thinking Clearly"
-						]
-					},
-					{
-						"value": "Dizziness Or Lightheadedness",
-						"synonyms": [
-							"Lightheadedness",
-							"Dizziness"
-						]
-					},
-					{
-						"value": "Cigarettes (count)",
-						"synonyms": [
-							"Cigarettes"
-						]
-					},
-					{
-						"value": "Tiredness / Fatigue",
-						"synonyms": [
-							"Tiredness",
-							"Fatigue"
-						]
-					},
-					{
 						"value": "Water (serving)",
 						"synonyms": [
 							"Water"
 						]
 					},
 					{
-						"value": "Propranolol (mg)",
+						"value": "Depression, Bipolar",
 						"synonyms": [
-							"Propranolol"
+							"Depression"
 						]
 					},
 					{
-						"value": "Menstrual Period",
+						"value": "Buspirone (mg)",
 						"synonyms": [
-							"Period"
+							"Buspirone"
 						]
 					},
 					{
-						"value": "Body Weight",
+						"value": "Daily Step Count",
 						"synonyms": [
-							"Body"
+							"Steps",
+							"Daily Step"
 						]
 					},
 					{
-						"value": "Sleep Quality Rating",
+						"value": "Effexor XR (Venlafaxine ER) (mg)",
 						"synonyms": [
-							"Sleep Quality"
+							"Effexor XR",
+							"Venlafaxine ER"
 						]
 					},
 					{
-						"value": "Vitamin C (tablets)",
+						"value": "Insomnia Or Sleep Disturbances",
 						"synonyms": [
-							"Vitamin C"
-						]
-					},
-					{
-						"value": "Bowel Movements Count",
-						"synonyms": [
-							"Bowel Movements"
-						]
-					},
-					{
-						"value": "Headache (yes/no)",
-						"synonyms": [
-							"Headache"
-						]
-					},
-					{
-						"value": "Worthlessness (%)",
-						"synonyms": [
-							"Worthlessness"
-						]
-					},
-					{
-						"value": "Wellbutrin XL (mg)",
-						"synonyms": [
-							"Wellbutrin XL"
-						]
-					},
-					{
-						"value": "Multivitamin (pills)",
-						"synonyms": [
-							"Multivitamin"
+							"Sleep Disturbances",
+							"Insomnia"
 						]
 					},
 					{
@@ -40110,35 +40125,204 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Chicken (serving)",
-						"synonyms": [
-							"Chicken"
-						]
-					},
-					{
 						"value": "Diet Coke - 12oz Can",
 						"synonyms": [
 							"Diet Coke"
 						]
 					},
 					{
-						"value": "Alprazolam (Xanax) (mg)",
+						"value": "Vitamin C (tablets)",
 						"synonyms": [
-							"Alprazolam",
-							"Xanax"
+							"Vitamin C"
 						]
 					},
 					{
-						"value": "Methylphenidate (Ritalin / Concerta) (mg)",
+						"value": "Wellbutrin XL (mg)",
 						"synonyms": [
-							"Methylphenidate",
-							"Ritalin / Concerta"
+							"Wellbutrin XL"
+						]
+					},
+					{
+						"value": "Dizziness Or Lightheadedness",
+						"synonyms": [
+							"Lightheadedness",
+							"Dizziness"
+						]
+					},
+					{
+						"value": "Adderall (mg)",
+						"synonyms": [
+							"Adderall"
+						]
+					},
+					{
+						"value": "Lamictal (mg)",
+						"synonyms": [
+							"Lamictal"
+						]
+					},
+					{
+						"value": "Distress",
+						"synonyms": [
+							"emotional distress"
+						]
+					},
+					{
+						"value": "Resting Heart Rate (Pulse)",
+						"synonyms": [
+							"Resting Heart Rate",
+							"Pulse"
+						]
+					},
+					{
+						"value": "Blood Pressure",
+						"synonyms": [
+							"Blood"
+						]
+					},
+					{
+						"value": "Cymbalta (duloxetine) (mg)",
+						"synonyms": [
+							"Cymbalta",
+							"duloxetine"
+						]
+					},
+					{
+						"value": "Brain Fog (difficulty Thinking Clearly)",
+						"synonyms": [
+							"Brain Fog",
+							"difficulty Thinking Clearly"
 						]
 					},
 					{
 						"value": "Sertraline (mg)",
 						"synonyms": [
 							"Sertraline"
+						]
+					},
+					{
+						"value": "Eggs - Fried (whole Egg)",
+						"synonyms": [
+							"Eggs - Fried",
+							"whole Egg",
+							"Eggs"
+						]
+					},
+					{
+						"value": "Lamotrigine (mg)",
+						"synonyms": [
+							"Lamotrigine"
+						]
+					},
+					{
+						"value": "Anxiety",
+						"synonyms": [
+							"Anxiety / Nervousness"
+						]
+					},
+					{
+						"value": "Meditation (mg)",
+						"synonyms": [
+							"Meditation"
+						]
+					},
+					{
+						"value": "Multivitamin (pills)",
+						"synonyms": [
+							"Multivitamin"
+						]
+					},
+					{
+						"value": "Melatonin (mg)",
+						"synonyms": [
+							"Melatonin"
+						]
+					},
+					{
+						"value": "Tea - Brewed, Prepared With Tap Water (black Tea)",
+						"synonyms": [
+							"Tea - Brewed, Prepared With Tap Water",
+							"black Tea",
+							"Tea",
+							"Tea - Brewed"
+						]
+					},
+					{
+						"value": "Heart Rate (Pulse)",
+						"synonyms": [
+							"Heart Rate",
+							"Pulse"
+						]
+					},
+					{
+						"value": "Overall Mood",
+						"synonyms": [
+							"Mood",
+							"mood"
+						]
+					},
+					{
+						"value": "Worthlessness (%)",
+						"synonyms": [
+							"Worthlessness"
+						]
+					},
+					{
+						"value": "Core Body Temperature",
+						"synonyms": [
+							"Core Body"
+						]
+					},
+					{
+						"value": "Escitalopram (Lexapro) (mg)",
+						"synonyms": [
+							"Escitalopram",
+							"Lexapro"
+						]
+					},
+					{
+						"value": "Gas Or Flatulence Severity",
+						"synonyms": [
+							"Flatulence Severity",
+							"Gas"
+						]
+					},
+					{
+						"value": "Birth Control Pills (pills)",
+						"synonyms": [
+							"Birth Control Pills"
+						]
+					},
+					{
+						"value": "Walk Or Run Distance",
+						"synonyms": [
+							"Walk Or Run",
+							"Run Distance",
+							"Walk"
+						]
+					},
+					{
+						"value": "Propranolol (mg)",
+						"synonyms": [
+							"Propranolol"
+						]
+					},
+					{
+						"value": "Body Weight",
+						"synonyms": [
+							"Body"
+						]
+					},
+					{
+						"value": "Bowel Movements Count",
+						"synonyms": [
+							"Bowel Movements"
+						]
+					},
+					{
+						"value": "Headache (yes/no)",
+						"synonyms": [
+							"Headache"
 						]
 					},
 					{
@@ -40155,15 +40339,22 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Gabapentin (mg)",
-						"synonyms": [
-							"Gabapentin"
-						]
-					},
-					{
 						"value": "Citalopram (mg)",
 						"synonyms": [
 							"Citalopram"
+						]
+					},
+					{
+						"value": "Fatigue / Lethargy / Tiredness",
+						"synonyms": [
+							"Fatigue",
+							"Lethargy / Tiredness"
+						]
+					},
+					{
+						"value": "Fluoxetine (mg)",
+						"synonyms": [
+							"Fluoxetine"
 						]
 					},
 					{
@@ -40173,43 +40364,22 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Eggs - Fried (whole Egg)",
+						"value": "Milk -  Reduced Fat, 2% Milkfat",
 						"synonyms": [
-							"Eggs - Fried",
-							"whole Egg",
-							"Eggs"
+							"Milk",
+							"Milk -  Reduced Fat"
 						]
 					},
 					{
-						"value": "Lithium (mg)",
+						"value": "Cigarettes (count)",
 						"synonyms": [
-							"Lithium"
+							"Cigarettes"
 						]
 					},
 					{
-						"value": "Cereals Ready-to-eat, GENERAL MILLS, LUCKY CHARMS",
+						"value": "Sleep Quality Rating",
 						"synonyms": [
-							"Cereals Ready-to-eat"
-						]
-					},
-					{
-						"value": "Heart Rate (Pulse)",
-						"synonyms": [
-							"Heart Rate",
-							"Pulse"
-						]
-					},
-					{
-						"value": "Gas Or Flatulence Severity",
-						"synonyms": [
-							"Flatulence Severity",
-							"Gas"
-						]
-					},
-					{
-						"value": "Core Body Temperature",
-						"synonyms": [
-							"Core Body"
+							"Sleep Quality"
 						]
 					},
 					{
@@ -40219,16 +40389,9 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Birth Control Pills (pills)",
+						"value": "Lithium (mg)",
 						"synonyms": [
-							"Birth Control Pills"
-						]
-					},
-					{
-						"value": "Escitalopram (Lexapro) (mg)",
-						"synonyms": [
-							"Escitalopram",
-							"Lexapro"
+							"Lithium"
 						]
 					},
 					{
@@ -40239,16 +40402,75 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Carrots - Raw",
+						"value": "Levothyroxine (mcg)",
 						"synonyms": [
-							"Carrots"
+							"Levothyroxine"
 						]
 					},
 					{
-						"value": "Carbohydrate, By Difference",
+						"value": "Stress",
 						"synonyms": [
-							"Carbohydrate",
-							"Carbohydrate,"
+							"Stress Rating",
+							"Feeling stressed",
+							"Stress level"
+						]
+					},
+					{
+						"value": "Gabapentin (mg)",
+						"synonyms": [
+							"Gabapentin"
+						]
+					},
+					{
+						"value": "Tiredness / Fatigue",
+						"synonyms": [
+							"Tiredness",
+							"Fatigue"
+						]
+					},
+					{
+						"value": "Menstrual Period",
+						"synonyms": [
+							"Period"
+						]
+					},
+					{
+						"value": "Alprazolam (Xanax) (mg)",
+						"synonyms": [
+							"Alprazolam",
+							"Xanax"
+						]
+					},
+					{
+						"value": "Cereals Ready-to-eat, GENERAL MILLS, LUCKY CHARMS",
+						"synonyms": [
+							"Cereals Ready-to-eat"
+						]
+					},
+					{
+						"value": "Alcoholic Beverage, Beer, Regular, All",
+						"synonyms": [
+							"Alcoholic Beverage"
+						]
+					},
+					{
+						"value": "Methylphenidate (Ritalin / Concerta) (mg)",
+						"synonyms": [
+							"Methylphenidate",
+							"Ritalin / Concerta"
+						]
+					},
+					{
+						"value": "Original Almond Milk (Unsweetened)",
+						"synonyms": [
+							"Original Almond Milk",
+							"Unsweetened"
+						]
+					},
+					{
+						"value": "Menstrual Period (/5)",
+						"synonyms": [
+							"Menstrual Period"
 						]
 					},
 					{
@@ -40259,9 +40481,34 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Menstrual Period (/5)",
+						"value": "Pizza (pieces)",
 						"synonyms": [
-							"Menstrual Period"
+							"Pizza"
+						]
+					},
+					{
+						"value": "Insomnia/Trouble Sleeping",
+						"synonyms": [
+							"Insomnia",
+							"Trouble Sleeping"
+						]
+					},
+					{
+						"value": "Vicks DayQuil Cold & Flu Multi-Symptom Relief LiquiCaps 48 Ct",
+						"synonyms": [
+							"Cold Or Flu Symptoms"
+						]
+					},
+					{
+						"value": "CoQ10 (mg)",
+						"synonyms": [
+							"CoQ10"
+						]
+					},
+					{
+						"value": "Escitalopram (mg)",
+						"synonyms": [
+							"Escitalopram"
 						]
 					},
 					{
@@ -40269,50 +40516,6 @@ window.qm.staticData = {
 						"synonyms": [
 							"Total Lipid",
 							"fat"
-						]
-					},
-					{
-						"value": "Meditation (yes/no)",
-						"synonyms": [
-							"Meditation"
-						]
-					},
-					{
-						"value": "Pizza (pieces)",
-						"synonyms": [
-							"Pizza"
-						]
-					},
-					{
-						"value": "Risperidone (mg)",
-						"synonyms": [
-							"Risperidone"
-						]
-					},
-					{
-						"value": "20:5 N-3 (EPA) Polyunsaturated Fatty Acids",
-						"synonyms": [
-							"20:5 N-3",
-							"EPA"
-						]
-					},
-					{
-						"value": "22:5 N-3 (DPA) Polyunsaturated Fatty Acids",
-						"synonyms": [
-							"22:5 N-3",
-							"DPA"
-						]
-					},
-					{
-						"value": "Ice Cream Cone, Chocolate Covered, With Nuts, Flavors Other Than Chocolate",
-						"synonyms": [
-							"Ice Cream Cone"
-						]
-					},
-					{
-						"value": "Anti-depressant Medication (serving)",
-						"synonyms": [
-							"Anti-depressant Medication"
 						]
 					},
 					{
@@ -40326,61 +40529,6 @@ window.qm.staticData = {
 						"value": "Acetyl L-Carnitine By MRM",
 						"synonyms": [
 							"Acetyl L-Carnitine"
-						]
-					},
-					{
-						"value": "Curcumin 95 By Jarrow",
-						"synonyms": [
-							"Curcumin 95"
-						]
-					},
-					{
-						"value": "Melatonin By NatureMade",
-						"synonyms": [
-							"Melatonin"
-						]
-					},
-					{
-						"value": "N-Acetyl-L-Cysteine By Jarrow",
-						"synonyms": [
-							"N-Acetyl-L-Cysteine"
-						]
-					},
-					{
-						"value": "Fish Oil-1000 Mg (g)",
-						"synonyms": [
-							"Fish Oil-1000 Mg"
-						]
-					},
-					{
-						"value": "Eggs (serving)",
-						"synonyms": [
-							"Eggs"
-						]
-					},
-					{
-						"value": "McDONALDS, Chicken McNUGGETS",
-						"synonyms": [
-							"McDONALDS"
-						]
-					},
-					{
-						"value": "Tea, Ready-to-drink, NESTLE, COOL NESTEA Ice Tea Lemon Flavor",
-						"synonyms": [
-							"Tea"
-						]
-					},
-					{
-						"value": "Gym (min)",
-						"synonyms": [
-							"Gym"
-						]
-					},
-					{
-						"value": "Pain Neck/shoulder",
-						"synonyms": [
-							"Pain Neck",
-							"shoulder"
 						]
 					},
 					{
@@ -40400,60 +40548,9 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Original Almond Milk (Unsweetened)",
+						"value": "Opti-Men Multivitamin (count)",
 						"synonyms": [
-							"Original Almond Milk",
-							"Unsweetened"
-						]
-					},
-					{
-						"value": "Toaster Pastries, KELLOGG, KELLOGGS POP TARTS, Strawberry",
-						"synonyms": [
-							"Toaster Pastries"
-						]
-					},
-					{
-						"value": "Anxious: Using The Brain To Understand And Treat Fear And Anxiety",
-						"synonyms": [
-							"Anxious"
-						]
-					},
-					{
-						"value": "Insomnia/Trouble Sleeping",
-						"synonyms": [
-							"Insomnia",
-							"Trouble Sleeping"
-						]
-					},
-					{
-						"value": "Prozac (mg)",
-						"synonyms": [
-							"Prozac"
-						]
-					},
-					{
-						"value": "Biking (min)",
-						"synonyms": [
-							"Biking"
-						]
-					},
-					{
-						"value": "Abdominal Pain (h)",
-						"synonyms": [
-							"Abdominal Pain"
-						]
-					},
-					{
-						"value": "Magnesium Citrate By Now (g)",
-						"synonyms": [
-							"Magnesium Citrate By Now",
-							"Magnesium Citrate"
-						]
-					},
-					{
-						"value": "Clonidine (mg)",
-						"synonyms": [
-							"Clonidine"
+							"Opti-Men Multivitamin"
 						]
 					},
 					{
@@ -40463,9 +40560,42 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Bread, Whole-wheat, Commercially Prepared, Toasted",
+						"value": "Meditation (yes/no)",
 						"synonyms": [
-							"Bread"
+							"Meditation"
+						]
+					},
+					{
+						"value": "Ballroom, Slow (e.g. Waltz, Foxtrot, Slow Dancing, Samba, Tango, 19th Century Dance, Mambo, Cha Cha)",
+						"synonyms": [
+							"Ballroom, Slow",
+							"e.g. Waltz, Foxtrot, Slow Dancing, Samba, Tango, 19th Century Dance, Mambo, Cha Cha",
+							"Ballroom"
+						]
+					},
+					{
+						"value": "22:5 N-3 (DPA) Polyunsaturated Fatty Acids",
+						"synonyms": [
+							"22:5 N-3",
+							"DPA"
+						]
+					},
+					{
+						"value": "Ice Cream Cone, Chocolate Covered, With Nuts, Flavors Other Than Chocolate",
+						"synonyms": [
+							"Ice Cream Cone"
+						]
+					},
+					{
+						"value": "Prozac (mg)",
+						"synonyms": [
+							"Prozac"
+						]
+					},
+					{
+						"value": "Abdominal Pain (h)",
+						"synonyms": [
+							"Abdominal Pain"
 						]
 					},
 					{
@@ -40476,76 +40606,9 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Opti-Men Multivitamin (count)",
+						"value": "Curcumin By Jarrow",
 						"synonyms": [
-							"Opti-Men Multivitamin"
-						]
-					},
-					{
-						"value": "Pepsi Cola 591ml (20 Oz)",
-						"synonyms": [
-							"Pepsi Cola 591ml",
-							"20 Oz"
-						]
-					},
-					{
-						"value": "Snacks, Pretzels, Hard, Plain, Salted",
-						"synonyms": [
-							"Snacks"
-						]
-					},
-					{
-						"value": "Nugo Free - Gluten Free Dark Chocolate Crunch",
-						"synonyms": [
-							"Nugo Free"
-						]
-					},
-					{
-						"value": "Veggies - Net Carbs",
-						"synonyms": [
-							"Veggies"
-						]
-					},
-					{
-						"value": "Inulin FOS By Jarrow",
-						"synonyms": [
-							"Inulin FOS"
-						]
-					},
-					{
-						"value": "Marijuana (g)",
-						"synonyms": [
-							"Marijuana"
-						]
-					},
-					{
-						"value": "Vicks DayQuil Cold & Flu Multi-Symptom Relief LiquiCaps 48 Ct",
-						"synonyms": [
-							"Cold Or Flu Symptoms"
-						]
-					},
-					{
-						"value": "5-HTP (mg)",
-						"synonyms": [
-							"5-HTP"
-						]
-					},
-					{
-						"value": "Alpha-liphoic-acid By NOW",
-						"synonyms": [
-							"Alpha-liphoic-acid"
-						]
-					},
-					{
-						"value": "CoQ10 (mg)",
-						"synonyms": [
-							"CoQ10"
-						]
-					},
-					{
-						"value": "Insomnia (h)",
-						"synonyms": [
-							"Insomnia"
+							"Curcumin"
 						]
 					},
 					{
@@ -40555,9 +40618,33 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Synthroid (mg)",
+						"value": "Lack of Energy",
 						"synonyms": [
-							"Synthroid"
+							"Lack of"
+						]
+					},
+					{
+						"value": "Clonidine (mg)",
+						"synonyms": [
+							"Clonidine"
+						]
+					},
+					{
+						"value": "Tea, Ready-to-drink, NESTLE, COOL NESTEA Ice Tea Lemon Flavor",
+						"synonyms": [
+							"Tea"
+						]
+					},
+					{
+						"value": "Gym (min)",
+						"synonyms": [
+							"Gym"
+						]
+					},
+					{
+						"value": "Carrots - Raw",
+						"synonyms": [
+							"Carrots"
 						]
 					},
 					{
@@ -40573,9 +40660,184 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Curcumin By Jarrow",
+						"value": "Curcumin 95 By Jarrow",
 						"synonyms": [
-							"Curcumin"
+							"Curcumin 95"
+						]
+					},
+					{
+						"value": "Melatonin By NatureMade",
+						"synonyms": [
+							"Melatonin"
+						]
+					},
+					{
+						"value": "Bread, Whole-wheat, Commercially Prepared, Toasted",
+						"synonyms": [
+							"Bread"
+						]
+					},
+					{
+						"value": "Pepsi Cola 591ml (20 Oz)",
+						"synonyms": [
+							"Pepsi Cola 591ml",
+							"20 Oz"
+						]
+					},
+					{
+						"value": "Nugo Free - Gluten Free Dark Chocolate Crunch",
+						"synonyms": [
+							"Nugo Free"
+						]
+					},
+					{
+						"value": "Poop Quantity Rating",
+						"synonyms": [
+							"Poop Quantity"
+						]
+					},
+					{
+						"value": "Eggs (serving)",
+						"synonyms": [
+							"Eggs"
+						]
+					},
+					{
+						"value": "Risperidone (mg)",
+						"synonyms": [
+							"Risperidone"
+						]
+					},
+					{
+						"value": "Anti-depressant Medication (serving)",
+						"synonyms": [
+							"Anti-depressant Medication"
+						]
+					},
+					{
+						"value": "N-Acetyl-L-Cysteine By Jarrow",
+						"synonyms": [
+							"N-Acetyl-L-Cysteine"
+						]
+					},
+					{
+						"value": "Pain Neck/shoulder",
+						"synonyms": [
+							"Pain Neck",
+							"shoulder"
+						]
+					},
+					{
+						"value": "Anxious: Using The Brain To Understand And Treat Fear And Anxiety",
+						"synonyms": [
+							"Anxious"
+						]
+					},
+					{
+						"value": "Biking (min)",
+						"synonyms": [
+							"Biking"
+						]
+					},
+					{
+						"value": "Snacks, Pretzels, Hard, Plain, Salted",
+						"synonyms": [
+							"Snacks"
+						]
+					},
+					{
+						"value": "Magnesium Citrate By Now (g)",
+						"synonyms": [
+							"Magnesium Citrate By Now",
+							"Magnesium Citrate"
+						]
+					},
+					{
+						"value": "Insomnia (h)",
+						"synonyms": [
+							"Insomnia"
+						]
+					},
+					{
+						"value": "Synthroid (mg)",
+						"synonyms": [
+							"Synthroid"
+						]
+					},
+					{
+						"value": "Oil - Olive",
+						"synonyms": [
+							"Oil"
+						]
+					},
+					{
+						"value": "Cough (yes/no)",
+						"synonyms": [
+							"Cough"
+						]
+					},
+					{
+						"value": "Carbohydrate, By Difference",
+						"synonyms": [
+							"Carbohydrate",
+							"Carbohydrate,"
+						]
+					},
+					{
+						"value": "Fish Oil-1000 Mg (g)",
+						"synonyms": [
+							"Fish Oil-1000 Mg"
+						]
+					},
+					{
+						"value": "Toaster Pastries, KELLOGG, KELLOGGS POP TARTS, Strawberry",
+						"synonyms": [
+							"Toaster Pastries"
+						]
+					},
+					{
+						"value": "Veggies - Net Carbs",
+						"synonyms": [
+							"Veggies"
+						]
+					},
+					{
+						"value": "Bowel Urgency / Frequency",
+						"synonyms": [
+							"Bowel Urgency",
+							"Frequency",
+							"Bowel Urgency /"
+						]
+					},
+					{
+						"value": "20:5 N-3 (EPA) Polyunsaturated Fatty Acids",
+						"synonyms": [
+							"20:5 N-3",
+							"EPA"
+						]
+					},
+					{
+						"value": "5-HTP (mg)",
+						"synonyms": [
+							"5-HTP"
+						]
+					},
+					{
+						"value": "Fast Foods, Hamburger; Single, Regular Patty; With Condiments",
+						"synonyms": [
+							"Fast Foods"
+						]
+					},
+					{
+						"value": "McDONALDS, Chicken McNUGGETS",
+						"synonyms": [
+							"McDONALDS"
+						]
+					},
+					{
+						"value": "Marijuana (g)",
+						"synonyms": [
+							"Marijuana"
 						]
 					},
 					{
@@ -40591,62 +40853,21 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Fast Foods, Hamburger; Single, Regular Patty; With Condiments",
+						"value": "Inulin FOS By Jarrow",
 						"synonyms": [
-							"Fast Foods"
+							"Inulin FOS"
 						]
 					},
 					{
-						"value": "Oil - Olive",
+						"value": "Alpha-liphoic-acid By NOW",
 						"synonyms": [
-							"Oil"
+							"Alpha-liphoic-acid"
 						]
 					},
 					{
-						"value": "Ballroom, Slow (e.g. Waltz, Foxtrot, Slow Dancing, Samba, Tango, 19th Century Dance, Mambo, Cha Cha)",
+						"value": "Steamed Fresh Vegetables Broccoli, Cauliflower, And Carrots",
 						"synonyms": [
-							"Ballroom, Slow",
-							"e.g. Waltz, Foxtrot, Slow Dancing, Samba, Tango, 19th Century Dance, Mambo, Cha Cha",
-							"Ballroom"
-						]
-					},
-					{
-						"value": "Bowel Urgency / Frequency",
-						"synonyms": [
-							"Bowel Urgency",
-							"Frequency",
-							"Bowel Urgency /"
-						]
-					},
-					{
-						"value": "Lack of Energy",
-						"synonyms": [
-							"Lack of"
-						]
-					},
-					{
-						"value": "Cough (yes/no)",
-						"synonyms": [
-							"Cough"
-						]
-					},
-					{
-						"value": "Escitalopram (mg)",
-						"synonyms": [
-							"Escitalopram"
-						]
-					},
-					{
-						"value": "Poop Quantity Rating",
-						"synonyms": [
-							"Poop Quantity"
-						]
-					},
-					{
-						"value": "Fluoxetine (Prozac)",
-						"synonyms": [
-							"Fluoxetine",
-							"Prozac"
+							"Steamed Fresh Vegetables Broccoli"
 						]
 					},
 					{
@@ -40658,10 +40879,9 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Chicken - Breast, Meat Only, Cooked, Roasted",
+						"value": "Topiramate (mg)",
 						"synonyms": [
-							"Chicken",
-							"Chicken - Breast"
+							"Topiramate"
 						]
 					},
 					{
@@ -40671,15 +40891,187 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Seroquel XR (mg)",
+						"value": "Cucumber - With Peel, Raw (serving)",
 						"synonyms": [
-							"Seroquel XR"
+							"Cucumber - With Peel, Raw",
+							"Cucumber",
+							"Cucumber - With Peel"
 						]
 					},
 					{
-						"value": "Depressed  (/5)",
+						"value": "Energy (count)",
+						"synonyms": [
+							"Energy"
+						]
+					},
+					{
+						"value": "Potatoes - Russet, Flesh And Skin, Baked",
+						"synonyms": [
+							"Potatoes",
+							"Potatoes - Russet"
+						]
+					},
+					{
+						"value": "Accutane (mg)",
+						"synonyms": [
+							"Accutane"
+						]
+					},
+					{
+						"value": "Meditation (min)",
+						"synonyms": [
+							"Meditation"
+						]
+					},
+					{
+						"value": "Klonopin (tablets)",
+						"synonyms": [
+							"Klonopin"
+						]
+					},
+					{
+						"value": "Fast Food (serving)",
+						"synonyms": [
+							"Fast Food"
+						]
+					},
+					{
+						"value": "Hard-boiled Eggs By Almark Foods",
+						"synonyms": [
+							"Hard-boiled Eggs"
+						]
+					},
+					{
+						"value": "Xifaxan (mg)",
+						"synonyms": [
+							"Xifaxan"
+						]
+					},
+					{
+						"value": "Sertraline (Zoloft) (pills)",
+						"synonyms": [
+							"Sertraline",
+							"Zoloft"
+						]
+					},
+					{
+						"value": "B12 (mg)",
+						"synonyms": [
+							"B12"
+						]
+					},
+					{
+						"value": "Regular Can Coke 355ml (12 Oz)",
+						"synonyms": [
+							"Regular Can Coke 355ml",
+							"12 Oz"
+						]
+					},
+					{
+						"value": "Zyrtec (Cetirizine) (mg)",
+						"synonyms": [
+							"Zyrtec",
+							"Cetirizine"
+						]
+					},
+					{
+						"value": "Nortriptyline (mg)",
+						"synonyms": [
+							"Nortriptyline"
+						]
+					},
+					{
+						"value": "Humira (units)",
+						"synonyms": [
+							"Humira"
+						]
+					},
+					{
+						"value": "Broccoli - Raw",
+						"synonyms": [
+							"Broccoli"
+						]
+					},
+					{
+						"value": "Tired (yes/no)",
+						"synonyms": [
+							"Tired"
+						]
+					},
+					{
+						"value": "Lithium (pills)",
+						"synonyms": [
+							"Lithium"
+						]
+					},
+					{
+						"value": "TDCS F3/FP2",
+						"synonyms": [
+							"TDCS F3",
+							"FP2"
+						]
+					},
+					{
+						"value": "Depressed  (/10)",
 						"synonyms": [
 							"Depressed"
+						]
+					},
+					{
+						"value": "Crackers, Saltines, Low Salt (includes Oyster, Soda, Soup)",
+						"synonyms": [
+							"Crackers, Saltines, Low Salt",
+							"includes Oyster, Soda, Soup",
+							"Crackers"
+						]
+					},
+					{
+						"value": "SAM-E 400 (mg)",
+						"synonyms": [
+							"SAM-E 400"
+						]
+					},
+					{
+						"value": "French Fries/Medium",
+						"synonyms": [
+							"French Fries",
+							"Medium"
+						]
+					},
+					{
+						"value": "Vitamin D3 By Jarrow",
+						"synonyms": [
+							"Vitamin D3"
+						]
+					},
+					{
+						"value": "SAM-E 400 (tablets)",
+						"synonyms": [
+							"SAM-E 400"
+						]
+					},
+					{
+						"value": "Probiotic Assurance By Your Health Vita",
+						"synonyms": [
+							"Probiotic Assurance"
+						]
+					},
+					{
+						"value": "Vitamin D3 (mg)",
+						"synonyms": [
+							"Vitamin D3"
+						]
+					},
+					{
+						"value": "Adapalene (yes/no)",
+						"synonyms": [
+							"Adapalene"
+						]
+					},
+					{
+						"value": "Risperdal (mg)",
+						"synonyms": [
+							"Risperdal"
 						]
 					},
 					{
@@ -40689,33 +41081,97 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Steamed Fresh Vegetables Broccoli, Cauliflower, And Carrots",
+						"value": "Almond Breeze - Almond Milk (Original)",
 						"synonyms": [
-							"Steamed Fresh Vegetables Broccoli"
+							"Almond Breeze - Almond Milk",
+							"Original",
+							"Almond Breeze"
 						]
 					},
 					{
-						"value": "CoQ10 By Doctors Best",
+						"value": "Crying (yes/no)",
 						"synonyms": [
-							"CoQ10"
+							"Crying"
 						]
 					},
 					{
-						"value": "Breakfast Scrambled Eggs With Cheddar Cheese By Nutrisystem",
+						"value": "Amphetamines (g)",
 						"synonyms": [
-							"Breakfast Scrambled Eggs With Cheddar Cheese"
+							"Amphetamines"
 						]
 					},
 					{
-						"value": "Protein Shake (g)",
+						"value": "Tramadol (mg)",
 						"synonyms": [
-							"Protein Shake"
+							"Tramadol"
 						]
 					},
 					{
-						"value": "Broccoli - Raw",
+						"value": "Breakfast Menu Entrees Veggie-cheese Ome W Eggbeaters By Denny",
 						"synonyms": [
-							"Broccoli"
+							"Breakfast Menu Entrees Veggie-cheese Ome W Eggbeaters"
+						]
+					},
+					{
+						"value": "Crying Duration",
+						"synonyms": [
+							"Crying"
+						]
+					},
+					{
+						"value": "Dexedrine (mg)",
+						"synonyms": [
+							"Dexedrine"
+						]
+					},
+					{
+						"value": "Risperdal (Risperidone) (tablets)",
+						"synonyms": [
+							"Risperdal",
+							"Risperidone"
+						]
+					},
+					{
+						"value": "Pain (yes/no)",
+						"synonyms": [
+							"Pain"
+						]
+					},
+					{
+						"value": "Bowel Movement Rating",
+						"synonyms": [
+							"Bowel Movement"
+						]
+					},
+					{
+						"value": "Cannibus (snaps)",
+						"synonyms": [
+							"Cannibus",
+							"snaps"
+						]
+					},
+					{
+						"value": "Methamphetamine (puffs)",
+						"synonyms": [
+							"Methamphetamine"
+						]
+					},
+					{
+						"value": "Purelife Energy Boost",
+						"synonyms": [
+							"Purelife  Boost"
+						]
+					},
+					{
+						"value": "Viibryd (mg)",
+						"synonyms": [
+							"Viibryd"
+						]
+					},
+					{
+						"value": "Depressed  (/5)",
+						"synonyms": [
+							"Depressed"
 						]
 					},
 					{
@@ -40726,9 +41182,360 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Hummus, Commercial",
+						"value": "French Fries, Salted",
 						"synonyms": [
-							"Hummus"
+							"French Fries"
+						]
+					},
+					{
+						"value": "Benadryl (mg)",
+						"synonyms": [
+							"Benadryl"
+						]
+					},
+					{
+						"value": "Shower (/1)",
+						"synonyms": [
+							"Shower"
+						]
+					},
+					{
+						"value": "Klonopin (mg)",
+						"synonyms": [
+							"Klonopin"
+						]
+					},
+					{
+						"value": "Deprenyl (Selegiline)",
+						"synonyms": [
+							"Deprenyl",
+							"Selegiline"
+						]
+					},
+					{
+						"value": "Gluten Free Pasta With Olive Oil (lb)",
+						"synonyms": [
+							"Gluten Free Pasta With Olive Oil"
+						]
+					},
+					{
+						"value": "Bread - Rye, Toasted",
+						"synonyms": [
+							"Bread",
+							"Bread - Rye"
+						]
+					},
+					{
+						"value": "Bupropion (Wellbutrin)",
+						"synonyms": [
+							"Bupropion",
+							"Wellbutrin"
+						]
+					},
+					{
+						"value": "Piracetam (g)",
+						"synonyms": [
+							"Piracetam"
+						]
+					},
+					{
+						"value": "L-Tyrosine (mg)",
+						"synonyms": [
+							"L-Tyrosine"
+						]
+					},
+					{
+						"value": "Gabapentin (Neurontin) (mg)",
+						"synonyms": [
+							"Gabapentin",
+							"Neurontin"
+						]
+					},
+					{
+						"value": "Iberogast (mL)",
+						"synonyms": [
+							"Iberogast"
+						]
+					},
+					{
+						"value": "Focalin (mg)",
+						"synonyms": [
+							"Focalin"
+						]
+					},
+					{
+						"value": "Serapax (Oxazepam)",
+						"synonyms": [
+							"Serapax",
+							"Oxazepam"
+						]
+					},
+					{
+						"value": "Bupropion (Wellbutrin) (tablets)",
+						"synonyms": [
+							"Bupropion",
+							"Wellbutrin"
+						]
+					},
+					{
+						"value": "Cipralex (mg)",
+						"synonyms": [
+							"Cipralex"
+						]
+					},
+					{
+						"value": "Hydroxyzine (mg)",
+						"synonyms": [
+							"Hydroxyzine"
+						]
+					},
+					{
+						"value": "OCD (Rating)",
+						"synonyms": [
+							"OCD"
+						]
+					},
+					{
+						"value": "Anti-depressant Medication (mg)",
+						"synonyms": [
+							"Anti-depressant Medication"
+						]
+					},
+					{
+						"value": "Fish Oil (mg)",
+						"synonyms": [
+							"Fish Oil"
+						]
+					},
+					{
+						"value": "Berberine Plus By Best Naturals",
+						"synonyms": [
+							"Berberine Plus"
+						]
+					},
+					{
+						"value": "Exhaustion Rating",
+						"synonyms": [
+							"Exhaustion"
+						]
+					},
+					{
+						"value": "Somac (mg)",
+						"synonyms": [
+							"Somac"
+						]
+					},
+					{
+						"value": "Kefir By Lifeway",
+						"synonyms": [
+							"Kefir"
+						]
+					},
+					{
+						"value": "Vyvanse (yes/no)",
+						"synonyms": [
+							"Vyvanse"
+						]
+					},
+					{
+						"value": "Ballroom, Slow (e.g. Waltz, Foxtrot, Slow Dancing, Samba, Tango,",
+						"synonyms": [
+							"Ballroom, Slow",
+							"e.g. Waltz, Foxtrot, Slow Dancing, Samba, Tango,",
+							"Ballroom"
+						]
+					},
+					{
+						"value": "Therapy (min)",
+						"synonyms": [
+							"Therapy"
+						]
+					},
+					{
+						"value": "Zinc (mg)",
+						"synonyms": [
+							"Zinc"
+						]
+					},
+					{
+						"value": "Vitamin D3 (units)",
+						"synonyms": [
+							"Vitamin D3"
+						]
+					},
+					{
+						"value": "Pumpkin Seeds 2.25 Oz (64 G)",
+						"synonyms": [
+							"Pumpkin Seeds 2.25 Oz",
+							"64 G"
+						]
+					},
+					{
+						"value": "Fountain Beverages Diet Sprite Zero By The Coca-cola",
+						"synonyms": [
+							"Fountain Beverages Diet Sprite Zero"
+						]
+					},
+					{
+						"value": "Magnesium (mg)",
+						"synonyms": [
+							"Magnesium"
+						]
+					},
+					{
+						"value": "Probiotics (pills)",
+						"synonyms": [
+							"Probiotics"
+						]
+					},
+					{
+						"value": "Orange Juice - 100% Juice With Bits",
+						"synonyms": [
+							"Orange Juice"
+						]
+					},
+					{
+						"value": "Migraine Headache Duration",
+						"synonyms": [
+							"Migraine Headache"
+						]
+					},
+					{
+						"value": "Difficulty Falling Asleep Or Staying Asleep",
+						"synonyms": [
+							"Staying Asleep",
+							"Difficulty Falling Asleep"
+						]
+					},
+					{
+						"value": "Dark Chocolate Nuts & Sea Salt - Low Sugar",
+						"synonyms": [
+							"Dark Chocolate Nuts & Sea Salt"
+						]
+					},
+					{
+						"value": "Nexium (tablets)",
+						"synonyms": [
+							"Nexium"
+						]
+					},
+					{
+						"value": "Melatonin By Sundown Naturals",
+						"synonyms": [
+							"Melatonin"
+						]
+					},
+					{
+						"value": "Fluoxetine (Prozac)",
+						"synonyms": [
+							"Fluoxetine",
+							"Prozac"
+						]
+					},
+					{
+						"value": "Insomnia Or Sleep Disturbances (h)",
+						"synonyms": [
+							"Insomnia Or Sleep Disturbances",
+							"Insomnia"
+						]
+					},
+					{
+						"value": "Chicken - Breast, Meat Only, Cooked, Roasted",
+						"synonyms": [
+							"Chicken",
+							"Chicken - Breast"
+						]
+					},
+					{
+						"value": "High Blood Pressure",
+						"synonyms": [
+							"High Blood"
+						]
+					},
+					{
+						"value": "Diarrhea (yes/no)",
+						"synonyms": [
+							"Diarrhea"
+						]
+					},
+					{
+						"value": "Cofee (serving)",
+						"synonyms": [
+							"Cofee"
+						]
+					},
+					{
+						"value": "Ibuprofen (Advil, Motrin) (mg)",
+						"synonyms": [
+							"Ibuprofen",
+							"Advil, Motrin"
+						]
+					},
+					{
+						"value": "Cereals - Granola, Homemade (g)",
+						"synonyms": [
+							"Cereals - Granola, Homemade",
+							"Cereals",
+							"Cereals - Granola"
+						]
+					},
+					{
+						"value": "Automobile Repair, Light Or Moderate Effort",
+						"synonyms": [
+							"Automobile Repair",
+							"Moderate Effort",
+							"Automobile Repair, Light"
+						]
+					},
+					{
+						"value": "Side Salad (Lettuce And Tomatoes)",
+						"synonyms": [
+							"Side Salad",
+							"Lettuce And Tomatoes"
+						]
+					},
+					{
+						"value": "Milk Thistle (mg)",
+						"synonyms": [
+							"Milk Thistle"
+						]
+					},
+					{
+						"value": "Provigil (modafinil) (mg)",
+						"synonyms": [
+							"Provigil",
+							"modafinil"
+						]
+					},
+					{
+						"value": "Magnesium (oral) (tablets)",
+						"synonyms": [
+							"Magnesium",
+							"oral"
+						]
+					},
+					{
+						"value": "NAC (mg)",
+						"synonyms": [
+							"NAC"
+						]
+					},
+					{
+						"value": "Breakfast Scrambled Eggs With Cheddar Cheese By Nutrisystem",
+						"synonyms": [
+							"Breakfast Scrambled Eggs With Cheddar Cheese"
+						]
+					},
+					{
+						"value": "Hypomania (h)",
+						"synonyms": [
+							"Hypomania"
+						]
+					},
+					{
+						"value": "Protein Shake (g)",
+						"synonyms": [
+							"Protein Shake"
 						]
 					},
 					{
@@ -40738,10 +41545,127 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Potatoes - Russet, Flesh And Skin, Baked",
+						"value": "Sleepy/Sluggish",
 						"synonyms": [
-							"Potatoes",
-							"Potatoes - Russet"
+							"Sleepy",
+							"Sluggish"
+						]
+					},
+					{
+						"value": "Coca-cola 591ml Bottle By The Coca-cola",
+						"synonyms": [
+							"Coca-cola 591ml Bottle"
+						]
+					},
+					{
+						"value": "Physiotherapy (min)",
+						"synonyms": [
+							"Physiotherapy"
+						]
+					},
+					{
+						"value": "Alcoholic Beverage, Wine, Table, All",
+						"synonyms": [
+							"Alcoholic Beverage"
+						]
+					},
+					{
+						"value": "Special Salad (Single)",
+						"synonyms": [
+							"Special Salad",
+							"Single"
+						]
+					},
+					{
+						"value": "IBProfin (mg)",
+						"synonyms": [
+							"IBProfin"
+						]
+					},
+					{
+						"value": "Vitamin D3 (IU)",
+						"synonyms": [
+							"Vitamin D3"
+						]
+					},
+					{
+						"value": "Milk, Whole, 3.25% Milkfat, With Added Vitamin D",
+						"synonyms": [
+							"Milk"
+						]
+					},
+					{
+						"value": "Sleep (/5)",
+						"synonyms": [
+							"Sleep"
+						]
+					},
+					{
+						"value": "Running (min)",
+						"synonyms": [
+							"Running"
+						]
+					},
+					{
+						"value": "Trazodone (mg)",
+						"synonyms": [
+							"Trazodone"
+						]
+					},
+					{
+						"value": "UVB (min)",
+						"synonyms": [
+							"UVB"
+						]
+					},
+					{
+						"value": "Cold Shower (min)",
+						"synonyms": [
+							"Cold Shower"
+						]
+					},
+					{
+						"value": "Baked Or Grilled Salmon",
+						"synonyms": [
+							"Grilled Salmon",
+							"Baked"
+						]
+					},
+					{
+						"value": "Diarrhea (count)",
+						"synonyms": [
+							"Diarrhea"
+						]
+					},
+					{
+						"value": "Lisdexamfetamine (Vyvanse) (mg)",
+						"synonyms": [
+							"Lisdexamfetamine",
+							"Vyvanse"
+						]
+					},
+					{
+						"value": "Zicam Nose Slime (applications)",
+						"synonyms": [
+							"Zicam Nose Slime"
+						]
+					},
+					{
+						"value": "Oxycodone (mg)",
+						"synonyms": [
+							"Oxycodone"
+						]
+					},
+					{
+						"value": "Topamax (mg)",
+						"synonyms": [
+							"Topamax"
+						]
+					},
+					{
+						"value": "Hand Lotion  (applications)",
+						"synonyms": [
+							"Hand Lotion"
 						]
 					},
 					{
@@ -40754,214 +41678,15 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Ballroom, Slow (e.g. Waltz, Foxtrot, Slow Dancing, Samba, Tango,",
-						"synonyms": [
-							"Ballroom, Slow",
-							"e.g. Waltz, Foxtrot, Slow Dancing, Samba, Tango,",
-							"Ballroom"
-						]
-					},
-					{
-						"value": "Insomnia Or Sleep Disturbances (h)",
-						"synonyms": [
-							"Insomnia Or Sleep Disturbances",
-							"Insomnia"
-						]
-					},
-					{
-						"value": "French Fries, Salted",
-						"synonyms": [
-							"French Fries"
-						]
-					},
-					{
-						"value": "Sleepy/Sluggish",
-						"synonyms": [
-							"Sleepy",
-							"Sluggish"
-						]
-					},
-					{
-						"value": "Brush Teeth (count)",
-						"synonyms": [
-							"Brush Teeth"
-						]
-					},
-					{
-						"value": "Coca-cola 591ml Bottle By The Coca-cola",
-						"synonyms": [
-							"Coca-cola 591ml Bottle"
-						]
-					},
-					{
-						"value": "Energy (count)",
-						"synonyms": [
-							"Energy"
-						]
-					},
-					{
-						"value": "Hypomania (h)",
-						"synonyms": [
-							"Hypomania"
-						]
-					},
-					{
-						"value": "Accutane (mg)",
-						"synonyms": [
-							"Accutane"
-						]
-					},
-					{
-						"value": "Optimum Omega 3 Fish Oil (mg)",
-						"synonyms": [
-							"Optimum Omega 3 Fish Oil"
-						]
-					},
-					{
-						"value": "Strattera (mg)",
-						"synonyms": [
-							"Strattera"
-						]
-					},
-					{
-						"value": "Cereals - Oats, Regular And Quick And Instant, Unenriched, Cooked With Water, Without Salt (oatmeal)",
-						"synonyms": [
-							"Cereals - Oats, Regular And Quick And Instant, Unenriched, Cooked With Water, Without Salt",
-							"oatmeal",
-							"Cereals",
-							"Cereals - Oats"
-						]
-					},
-					{
-						"value": "Physiotherapy (min)",
-						"synonyms": [
-							"Physiotherapy"
-						]
-					},
-					{
-						"value": "High Blood Pressure",
-						"synonyms": [
-							"High Blood"
-						]
-					},
-					{
 						"value": "Baclofen (mg)",
 						"synonyms": [
 							"Baclofen"
 						]
 					},
 					{
-						"value": "Benadryl (mg)",
-						"synonyms": [
-							"Benadryl"
-						]
-					},
-					{
-						"value": "Berberine Plus By Nova Nutrition",
-						"synonyms": [
-							"Berberine Plus"
-						]
-					},
-					{
-						"value": "Topiramate (mg)",
-						"synonyms": [
-							"Topiramate"
-						]
-					},
-					{
-						"value": "Diarrhea (yes/no)",
-						"synonyms": [
-							"Diarrhea"
-						]
-					},
-					{
-						"value": "Alcoholic Beverage, Wine, Table, All",
-						"synonyms": [
-							"Alcoholic Beverage"
-						]
-					},
-					{
-						"value": "Multivitamin (mg)",
-						"synonyms": [
-							"Multivitamin"
-						]
-					},
-					{
 						"value": "Pepsi Cola - 12oz",
 						"synonyms": [
 							"Pepsi Cola"
-						]
-					},
-					{
-						"value": "Cipralex (mg)",
-						"synonyms": [
-							"Cipralex"
-						]
-					},
-					{
-						"value": "Almond Breeze - Almond Milk (Original)",
-						"synonyms": [
-							"Almond Breeze - Almond Milk",
-							"Original",
-							"Almond Breeze"
-						]
-					},
-					{
-						"value": "N-Acetyl Cysteine By Source Naturals",
-						"synonyms": [
-							"N-Acetyl Cysteine"
-						]
-					},
-					{
-						"value": "DeLong (Weight)",
-						"synonyms": [
-							"DeLong"
-						]
-					},
-					{
-						"value": "Broccoli - Steamed 1 Cup Chopped (With Butter Spray)",
-						"synonyms": [
-							"Broccoli - Steamed 1 Cup Chopped",
-							"With Butter Spray",
-							"Broccoli"
-						]
-					},
-					{
-						"value": "Cofee (serving)",
-						"synonyms": [
-							"Cofee"
-						]
-					},
-					{
-						"value": "Special Salad (Single)",
-						"synonyms": [
-							"Special Salad",
-							"Single"
-						]
-					},
-					{
-						"value": "Infection (Leg)",
-						"synonyms": [
-							"Infection",
-							"Leg"
-						]
-					},
-					{
-						"value": "Crying (yes/no)",
-						"synonyms": [
-							"Crying"
-						]
-					},
-					{
-						"value": "Eldepryl By Orion Pharma",
-						"synonyms": [
-							"Eldepryl"
-						]
-					},
-					{
-						"value": "Stretching (min)",
-						"synonyms": [
-							"Stretching"
 						]
 					},
 					{
@@ -40972,26 +41697,6 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "2 Eggs Scrambled With Cheddar Cheese (serving)",
-						"synonyms": [
-							"2 Eggs Scrambled With Cheddar Cheese"
-						]
-					},
-					{
-						"value": "Amphetamines (g)",
-						"synonyms": [
-							"Amphetamines"
-						]
-					},
-					{
-						"value": "Cucumber - With Peel, Raw (serving)",
-						"synonyms": [
-							"Cucumber - With Peel, Raw",
-							"Cucumber",
-							"Cucumber - With Peel"
-						]
-					},
-					{
 						"value": "Water Or Juice",
 						"synonyms": [
 							"Juice",
@@ -40999,15 +41704,358 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Shower (/1)",
+						"value": "Acidic Foods - 6-oz Granules: Guaranteed",
 						"synonyms": [
-							"Shower"
+							"Acidic Foods"
 						]
 					},
 					{
-						"value": "Meditation (min)",
+						"value": "Curcumin By Eden Pond",
 						"synonyms": [
-							"Meditation"
+							"Curcumin"
+						]
+					},
+					{
+						"value": "Low Energy",
+						"synonyms": [
+							"Low"
+						]
+					},
+					{
+						"value": "Butter - Salted (serving)",
+						"synonyms": [
+							"Butter - Salted",
+							"Butter"
+						]
+					},
+					{
+						"value": "100% Orange Juice - Calcium/Vitamin D/Pulp Free",
+						"synonyms": [
+							"100% Orange Juice",
+							"100% Orange Juice - Calcium",
+							"Vitamin D/Pulp Free"
+						]
+					},
+					{
+						"value": "Flonase (sprays)",
+						"synonyms": [
+							"Flonase"
+						]
+					},
+					{
+						"value": "Vitamin D3 (tablets)",
+						"synonyms": [
+							"Vitamin D3"
+						]
+					},
+					{
+						"value": "Alpha-Lipoic Acid By Doctors Best",
+						"synonyms": [
+							"Alpha-Lipoic Acid"
+						]
+					},
+					{
+						"value": "Green Tea By Finest Nutrition",
+						"synonyms": [
+							"Green Tea"
+						]
+					},
+					{
+						"value": "Topiramate (Topamax)  (tablets)",
+						"synonyms": [
+							"Topiramate",
+							"Topamax"
+						]
+					},
+					{
+						"value": "N-Acetyl Cysteine By Source Naturals",
+						"synonyms": [
+							"N-Acetyl Cysteine"
+						]
+					},
+					{
+						"value": "Stretching (min)",
+						"synonyms": [
+							"Stretching"
+						]
+					},
+					{
+						"value": "Snacks, Potato Chips, Plain, Salted",
+						"synonyms": [
+							"Snacks"
+						]
+					},
+					{
+						"value": "Everybody Masturbates For Girls",
+						"synonyms": [
+							"Masturbate"
+						]
+					},
+					{
+						"value": "Coconut Oil (g)",
+						"synonyms": [
+							"Coconut Oil"
+						]
+					},
+					{
+						"value": "Fast Foods, Quesadilla, With Chicken",
+						"synonyms": [
+							"Fast Foods"
+						]
+					},
+					{
+						"value": "Amitriptyline (mg)",
+						"synonyms": [
+							"Amitriptyline"
+						]
+					},
+					{
+						"value": "Cranberry Juice Cocktail - Bottled",
+						"synonyms": [
+							"Cranberry Juice Cocktail"
+						]
+					},
+					{
+						"value": "Active Time (min)",
+						"synonyms": [
+							"Active Time"
+						]
+					},
+					{
+						"value": "Jogging, On A Mini-tramp",
+						"synonyms": [
+							"Jogging"
+						]
+					},
+					{
+						"value": "Piracetam (mg)",
+						"synonyms": [
+							"Piracetam"
+						]
+					},
+					{
+						"value": "Lorazepam (mg)",
+						"synonyms": [
+							"Lorazepam"
+						]
+					},
+					{
+						"value": "Fasting (yes/no)",
+						"synonyms": [
+							"Fasting"
+						]
+					},
+					{
+						"value": "Berberine Plus By Nova Nutrition",
+						"synonyms": [
+							"Berberine Plus"
+						]
+					},
+					{
+						"value": "Infection (Leg)",
+						"synonyms": [
+							"Infection",
+							"Leg"
+						]
+					},
+					{
+						"value": "2 Eggs Scrambled With Cheddar Cheese (serving)",
+						"synonyms": [
+							"2 Eggs Scrambled With Cheddar Cheese"
+						]
+					},
+					{
+						"value": "22:6 N-3 (DHA) Polyunsaturated Fatty Acids",
+						"synonyms": [
+							"22:6 N-3",
+							"DHA"
+						]
+					},
+					{
+						"value": "Oil Olive Salad Or Cooking",
+						"synonyms": [
+							"Cooking",
+							"Oil Olive Salad"
+						]
+					},
+					{
+						"value": "Running (mi)",
+						"synonyms": [
+							"Running"
+						]
+					},
+					{
+						"value": "Multivitamin (count)",
+						"synonyms": [
+							"Multivitamin"
+						]
+					},
+					{
+						"value": "Side House Chop Salad W/Blue Cheese And Balsamic Vinegrette Dres",
+						"synonyms": [
+							"Side House Chop Salad W",
+							"Blue Cheese And Balsamic Vinegrette Dres"
+						]
+					},
+					{
+						"value": "Muffins, Blueberry, Commercially Prepared (Includes Mini-muffins)",
+						"synonyms": [
+							"Muffins, Blueberry, Commercially Prepared",
+							"Includes Mini-muffins",
+							"Muffins"
+						]
+					},
+					{
+						"value": "Trileptal (mg)",
+						"synonyms": [
+							"Trileptal"
+						]
+					},
+					{
+						"value": "Lactobacillus GG Probiotic By Culturelle",
+						"synonyms": [
+							"Lactobacillus GG Probiotic"
+						]
+					},
+					{
+						"value": "Digestive Advantage Bc 30 (tablets)",
+						"synonyms": [
+							"Digestive Advantage Bc 30"
+						]
+					},
+					{
+						"value": "Vitamin D3 By Naturewise",
+						"synonyms": [
+							"Vitamin D3"
+						]
+					},
+					{
+						"value": "Loratadine (mg)",
+						"synonyms": [
+							"Loratadine"
+						]
+					},
+					{
+						"value": "Valium (mg)",
+						"synonyms": [
+							"Valium"
+						]
+					},
+					{
+						"value": "Triamcinolone Acetonide (applications)",
+						"synonyms": [
+							"Triamcinolone Acetonide"
+						]
+					},
+					{
+						"value": "Journaling (yes/no)",
+						"synonyms": [
+							"Journaling"
+						]
+					},
+					{
+						"value": "Seroquel XR (mg)",
+						"synonyms": [
+							"Seroquel XR"
+						]
+					},
+					{
+						"value": "CoQ10 By Doctors Best",
+						"synonyms": [
+							"CoQ10"
+						]
+					},
+					{
+						"value": "Hummus, Commercial",
+						"synonyms": [
+							"Hummus"
+						]
+					},
+					{
+						"value": "Cheese (Cheddar)",
+						"synonyms": [
+							"Cheese",
+							"Cheddar"
+						]
+					},
+					{
+						"value": "Vitamin C (mg)",
+						"synonyms": [
+							"Vitamin C"
+						]
+					},
+					{
+						"value": "Lamictal (Lamotragine)",
+						"synonyms": [
+							"Lamictal",
+							"Lamotragine"
+						]
+					},
+					{
+						"value": "Cheese Pizza - Rice Crust - Gluten Free",
+						"synonyms": [
+							"Cheese Pizza"
+						]
+					},
+					{
+						"value": "Clarity of Urine Rating",
+						"synonyms": [
+							"Clarity of Urine"
+						]
+					},
+					{
+						"value": "Quetiapine (mg)",
+						"synonyms": [
+							"Quetiapine"
+						]
+					},
+					{
+						"value": "Ibuprofen (count)",
+						"synonyms": [
+							"Ibuprofen"
+						]
+					},
+					{
+						"value": "Dizziness/Lightheadedness",
+						"synonyms": [
+							"Dizziness",
+							"Lightheadedness"
+						]
+					},
+					{
+						"value": "Ritalin (mg)",
+						"synonyms": [
+							"Ritalin"
+						]
+					},
+					{
+						"value": "NSI-189 By Nyles7",
+						"synonyms": [
+							"NSI-189"
+						]
+					},
+					{
+						"value": "Methadone (mg)",
+						"synonyms": [
+							"Methadone"
+						]
+					},
+					{
+						"value": "Humira Pen (mL)",
+						"synonyms": [
+							"Humira Pen"
+						]
+					},
+					{
+						"value": "Jdtic (mg)",
+						"synonyms": [
+							"Jdtic"
+						]
+					},
+					{
+						"value": "Brush Teeth (count)",
+						"synonyms": [
+							"Brush Teeth"
 						]
 					},
 					{
@@ -41025,60 +42073,9 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "22:6 N-3 (DHA) Polyunsaturated Fatty Acids",
-						"synonyms": [
-							"22:6 N-3",
-							"DHA"
-						]
-					},
-					{
-						"value": "Klonopin (mg)",
-						"synonyms": [
-							"Klonopin"
-						]
-					},
-					{
-						"value": "IBProfin (mg)",
-						"synonyms": [
-							"IBProfin"
-						]
-					},
-					{
-						"value": "Jdtic (mL)",
-						"synonyms": [
-							"Jdtic"
-						]
-					},
-					{
 						"value": "Vitamin D3 (pills)",
 						"synonyms": [
 							"Vitamin D3"
-						]
-					},
-					{
-						"value": "Oil Olive Salad Or Cooking",
-						"synonyms": [
-							"Cooking",
-							"Oil Olive Salad"
-						]
-					},
-					{
-						"value": "Snacks, Potato Chips, Plain, Salted",
-						"synonyms": [
-							"Snacks"
-						]
-					},
-					{
-						"value": "Therapy (min)",
-						"synonyms": [
-							"Therapy"
-						]
-					},
-					{
-						"value": "Deprenyl (Selegiline)",
-						"synonyms": [
-							"Deprenyl",
-							"Selegiline"
 						]
 					},
 					{
@@ -41096,148 +42093,10 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Tired (yes/no)",
-						"synonyms": [
-							"Tired"
-						]
-					},
-					{
-						"value": "Hydroxyzine (mg)",
-						"synonyms": [
-							"Hydroxyzine"
-						]
-					},
-					{
-						"value": "NAC By Now",
-						"synonyms": [
-							"NAC"
-						]
-					},
-					{
-						"value": "Klonopin (tablets)",
-						"synonyms": [
-							"Klonopin"
-						]
-					},
-					{
-						"value": "Acidic Foods - 6-oz Granules: Guaranteed",
-						"synonyms": [
-							"Acidic Foods"
-						]
-					},
-					{
-						"value": "Lithium (pills)",
-						"synonyms": [
-							"Lithium"
-						]
-					},
-					{
-						"value": "Gluten Free Pasta With Olive Oil (lb)",
-						"synonyms": [
-							"Gluten Free Pasta With Olive Oil"
-						]
-					},
-					{
-						"value": "Beef - Tenderloin, Trimmed To 0\\\" Fat, All Grades, Cooked, Broil",
-						"synonyms": [
-							"Beef",
-							"Beef - Tenderloin"
-						]
-					},
-					{
-						"value": "Fast Food (serving)",
-						"synonyms": [
-							"Fast Food"
-						]
-					},
-					{
 						"value": "Gluten Free Pancake Mix (Mix Only)",
 						"synonyms": [
 							"Gluten Free Pancake Mix",
 							"Mix Only"
-						]
-					},
-					{
-						"value": "Running (mi)",
-						"synonyms": [
-							"Running"
-						]
-					},
-					{
-						"value": "TDCS F3/FP2",
-						"synonyms": [
-							"TDCS F3",
-							"FP2"
-						]
-					},
-					{
-						"value": "DHEA (mg)",
-						"synonyms": [
-							"DHEA"
-						]
-					},
-					{
-						"value": "Cheese (Cheddar)",
-						"synonyms": [
-							"Cheese",
-							"Cheddar"
-						]
-					},
-					{
-						"value": "Muscle Aches Or Cramps",
-						"synonyms": [
-							"Cramps",
-							"Muscle Aches"
-						]
-					},
-					{
-						"value": "Ibuprofen (Advil, Motrin) (mg)",
-						"synonyms": [
-							"Ibuprofen",
-							"Advil, Motrin"
-						]
-					},
-					{
-						"value": "Vitamin C (mg)",
-						"synonyms": [
-							"Vitamin C"
-						]
-					},
-					{
-						"value": "Multivitamin (count)",
-						"synonyms": [
-							"Multivitamin"
-						]
-					},
-					{
-						"value": "Hard-boiled Eggs By Almark Foods",
-						"synonyms": [
-							"Hard-boiled Eggs"
-						]
-					},
-					{
-						"value": "Bread - Rye, Toasted",
-						"synonyms": [
-							"Bread",
-							"Bread - Rye"
-						]
-					},
-					{
-						"value": "Tramadol (mg)",
-						"synonyms": [
-							"Tramadol"
-						]
-					},
-					{
-						"value": "Vitamin D3 (IU)",
-						"synonyms": [
-							"Vitamin D3"
-						]
-					},
-					{
-						"value": "Breakfast Menu Entrees Veggie-cheese Ome W Eggbeaters By Denny",
-						"synonyms": [
-							"Breakfast Menu Entrees Veggie-cheese Ome W Eggbeaters"
 						]
 					},
 					{
@@ -41248,100 +42107,85 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Lemonade (serving)",
+						"value": "Corn - Sweet, Yellow, Canned, Whole Kernel, Drained Solids",
 						"synonyms": [
-							"Lemonade"
+							"Corn",
+							"Corn - Sweet"
 						]
 					},
 					{
-						"value": "Milk, Whole, 3.25% Milkfat, With Added Vitamin D",
+						"value": "Headache (count)",
 						"synonyms": [
-							"Milk"
+							"Headache"
 						]
 					},
 					{
-						"value": "Side House Chop Salad W/Blue Cheese And Balsamic Vinegrette Dres",
+						"value": "Weight Lifting (min)",
 						"synonyms": [
-							"Side House Chop Salad W",
-							"Blue Cheese And Balsamic Vinegrette Dres"
+							"Weight Lifting"
 						]
 					},
 					{
-						"value": "Everybody Masturbates For Girls",
+						"value": "100% Whey Concentrated And Isolated Whey Protein (Vanilla)",
 						"synonyms": [
-							"Masturbate"
+							"100% Whey Concentrated And Isolated Whey Protein",
+							"Vanilla"
 						]
 					},
 					{
-						"value": "Curcumin By Eden Pond",
+						"value": "Diet Coke - 12oz Can (355 Ml)",
 						"synonyms": [
-							"Curcumin"
+							"Diet Coke - 12oz Can",
+							"355 Ml",
+							"Diet Coke"
 						]
 					},
 					{
-						"value": "Zinc (mg)",
+						"value": "Vitamin D3 By NatureMade",
 						"synonyms": [
-							"Zinc"
+							"Vitamin D3"
 						]
 					},
 					{
-						"value": "Crying Duration",
+						"value": "Spironolactone (mg)",
 						"synonyms": [
-							"Crying"
+							"Spironolactone"
+						]
+					},
+					{
+						"value": "Creatine  (tablets)",
+						"synonyms": [
+							"Creatine"
+						]
+					},
+					{
+						"value": "Optimum Omega 3 Fish Oil (mg)",
+						"synonyms": [
+							"Optimum Omega 3 Fish Oil"
+						]
+					},
+					{
+						"value": "DeLong (Weight)",
+						"synonyms": [
+							"DeLong"
+						]
+					},
+					{
+						"value": "Jdtic (mL)",
+						"synonyms": [
+							"Jdtic"
+						]
+					},
+					{
+						"value": "DHEA (mg)",
+						"synonyms": [
+							"DHEA"
 						]
 					},
 					{
 						"value": "L-Theanine (mg)",
 						"synonyms": [
 							"L-Theanine"
-						]
-					},
-					{
-						"value": "Vitamin D3 (units)",
-						"synonyms": [
-							"Vitamin D3"
-						]
-					},
-					{
-						"value": "Dexedrine (mg)",
-						"synonyms": [
-							"Dexedrine"
-						]
-					},
-					{
-						"value": "Lamictal (Lamotragine)",
-						"synonyms": [
-							"Lamictal",
-							"Lamotragine"
-						]
-					},
-					{
-						"value": "Multivitamin/ Multimineral Supplement",
-						"synonyms": [
-							"Multivitamin",
-							"Multimineral Supplement"
-						]
-					},
-					{
-						"value": "Risperdal (Risperidone) (tablets)",
-						"synonyms": [
-							"Risperdal",
-							"Risperidone"
-						]
-					},
-					{
-						"value": "Bupropion (Wellbutrin)",
-						"synonyms": [
-							"Bupropion",
-							"Wellbutrin"
-						]
-					},
-					{
-						"value": "Trader Joes Bedtime Tea / Sleepytime Tea (any Brand)",
-						"synonyms": [
-							"Trader Joes Bedtime Tea / Sleepytime Tea",
-							"any Brand",
-							"Trader Joes Bedtime Tea"
 						]
 					},
 					{
@@ -41357,141 +42201,88 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Cheese Pizza - Rice Crust - Gluten Free",
-						"synonyms": [
-							"Cheese Pizza"
-						]
-					},
-					{
-						"value": "Sleep (/5)",
-						"synonyms": [
-							"Sleep"
-						]
-					},
-					{
-						"value": "Pain (yes/no)",
-						"synonyms": [
-							"Pain"
-						]
-					},
-					{
-						"value": "Depressed  (/10)",
-						"synonyms": [
-							"Depressed"
-						]
-					},
-					{
-						"value": "Piracetam (g)",
-						"synonyms": [
-							"Piracetam"
-						]
-					},
-					{
-						"value": "Concerta (mg)",
-						"synonyms": [
-							"Concerta"
-						]
-					},
-					{
-						"value": "Running (min)",
-						"synonyms": [
-							"Running"
-						]
-					},
-					{
-						"value": "Clarity of Urine Rating",
-						"synonyms": [
-							"Clarity of Urine"
-						]
-					},
-					{
-						"value": "Trazodone (mg)",
-						"synonyms": [
-							"Trazodone"
-						]
-					},
-					{
 						"value": "Abdominal Pain (m)",
 						"synonyms": [
 							"Abdominal Pain"
 						]
 					},
 					{
-						"value": "Quetiapine (mg)",
+						"value": "Coke (Small)",
 						"synonyms": [
-							"Quetiapine"
+							"Coke",
+							"Small"
 						]
 					},
 					{
-						"value": "Ibuprofen (count)",
+						"value": "Inositol & Choline By Source Naturals",
 						"synonyms": [
-							"Ibuprofen"
+							"Inositol & Choline"
 						]
 					},
 					{
-						"value": "Corn - Sweet, Yellow, Canned, Whole Kernel, Drained Solids",
+						"value": "Pristiq (tablets)",
 						"synonyms": [
-							"Corn",
-							"Corn - Sweet"
+							"Pristiq"
 						]
 					},
 					{
-						"value": "Low Energy",
+						"value": "Dry Mouth Or Throat",
 						"synonyms": [
-							"Low"
+							"Throat",
+							"Dry Mouth"
 						]
 					},
 					{
-						"value": "Headache (count)",
+						"value": "Humira (mg)",
 						"synonyms": [
-							"Headache"
+							"Humira"
 						]
 					},
 					{
-						"value": "Coconut Oil (g)",
+						"value": "Members Mark Omeprazole Acid Reducer",
 						"synonyms": [
-							"Coconut Oil"
+							"Welby Omeprazole"
 						]
 					},
 					{
-						"value": "Xifaxan (mg)",
+						"value": "Flaxseed Oil By Nature Made",
 						"synonyms": [
-							"Xifaxan"
+							"Flaxseed Oil"
 						]
 					},
 					{
-						"value": "Cereals - Granola, Homemade (g)",
+						"value": "Multivitamin (units)",
 						"synonyms": [
-							"Cereals - Granola, Homemade",
+							"Multivitamin"
+						]
+					},
+					{
+						"value": "Cereals - Oats, Regular And Quick And Instant, Unenriched, Cooked With Water, Without Salt (oatmeal)",
+						"synonyms": [
+							"Cereals - Oats, Regular And Quick And Instant, Unenriched, Cooked With Water, Without Salt",
+							"oatmeal",
 							"Cereals",
-							"Cereals - Granola"
+							"Cereals - Oats"
 						]
 					},
 					{
-						"value": "Muffins, Blueberry, Commercially Prepared (Includes Mini-muffins)",
+						"value": "Eldepryl By Orion Pharma",
 						"synonyms": [
-							"Muffins, Blueberry, Commercially Prepared",
-							"Includes Mini-muffins",
-							"Muffins"
+							"Eldepryl"
 						]
 					},
 					{
-						"value": "Pumpkin Seeds 2.25 Oz (64 G)",
+						"value": "Lemonade (serving)",
 						"synonyms": [
-							"Pumpkin Seeds 2.25 Oz",
-							"64 G"
+							"Lemonade"
 						]
 					},
 					{
-						"value": "OCD (Rating)",
+						"value": "Trader Joes Bedtime Tea / Sleepytime Tea (any Brand)",
 						"synonyms": [
-							"OCD"
-						]
-					},
-					{
-						"value": "UVB (min)",
-						"synonyms": [
-							"UVB"
+							"Trader Joes Bedtime Tea / Sleepytime Tea",
+							"any Brand",
+							"Trader Joes Bedtime Tea"
 						]
 					},
 					{
@@ -41509,80 +42300,130 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Cold Shower (min)",
+						"value": "Watermelon - Raw",
 						"synonyms": [
-							"Cold Shower"
+							"Watermelon"
 						]
 					},
 					{
-						"value": "Sertraline (Zoloft) (pills)",
+						"value": "Topamax (Weight)",
 						"synonyms": [
-							"Sertraline",
+							"Topamax"
+						]
+					},
+					{
+						"value": "Milk Chocolate Hot Cocoa Mix (With 6 Oz Water)",
+						"synonyms": [
+							"Milk Chocolate Hot Cocoa Mix",
+							"With 6 Oz Water"
+						]
+					},
+					{
+						"value": "Methotrexate (mg)",
+						"synonyms": [
+							"Methotrexate"
+						]
+					},
+					{
+						"value": "Metformin (mg)",
+						"synonyms": [
+							"Metformin"
+						]
+					},
+					{
+						"value": "Vitamin D (units)",
+						"synonyms": [
+							"Vitamin D"
+						]
+					},
+					{
+						"value": "Antacid Tablets By Walgreens",
+						"synonyms": [
+							"Antacid Tablets"
+						]
+					},
+					{
+						"value": "Vyvanse (mg)",
+						"synonyms": [
+							"Vyvanse"
+						]
+					},
+					{
+						"value": "Zoloft (yes/no)",
+						"synonyms": [
 							"Zoloft"
 						]
 					},
 					{
-						"value": "Fountain Beverages Diet Sprite Zero By The Coca-cola",
+						"value": "Prenatal Vitamin (tablets)",
 						"synonyms": [
-							"Fountain Beverages Diet Sprite Zero"
+							"Prenatal Vitamin"
 						]
 					},
 					{
-						"value": "Weight Lifting (min)",
+						"value": "Saccharomyces Boulardii (Nutricology)",
 						"synonyms": [
-							"Weight Lifting"
+							"Saccharomyces Boulardii",
+							"Nutricology"
 						]
 					},
 					{
-						"value": "Magnesium (mg)",
+						"value": "Chamomile (units)",
 						"synonyms": [
-							"Magnesium"
+							"Chamomile"
 						]
 					},
 					{
-						"value": "Probiotics (pills)",
+						"value": "Strattera (mg)",
 						"synonyms": [
-							"Probiotics"
+							"Strattera"
 						]
 					},
 					{
-						"value": "Crackers, Saltines, Low Salt (includes Oyster, Soda, Soup)",
+						"value": "Multivitamin (mg)",
 						"synonyms": [
-							"Crackers, Saltines, Low Salt",
-							"includes Oyster, Soda, Soup",
-							"Crackers"
+							"Multivitamin"
 						]
 					},
 					{
-						"value": "Orange Juice - 100% Juice With Bits",
+						"value": "Broccoli - Steamed 1 Cup Chopped (With Butter Spray)",
 						"synonyms": [
-							"Orange Juice"
+							"Broccoli - Steamed 1 Cup Chopped",
+							"With Butter Spray",
+							"Broccoli"
 						]
 					},
 					{
-						"value": "Anti-depressant Medication (mg)",
+						"value": "NAC By Now",
 						"synonyms": [
-							"Anti-depressant Medication"
+							"NAC"
 						]
 					},
 					{
-						"value": "Butter - Salted (serving)",
+						"value": "Beef - Tenderloin, Trimmed To 0\\\" Fat, All Grades, Cooked, Broil",
 						"synonyms": [
-							"Butter - Salted",
-							"Butter"
+							"Beef",
+							"Beef - Tenderloin"
 						]
 					},
 					{
-						"value": "Coke (Small)",
+						"value": "Muscle Aches Or Cramps",
 						"synonyms": [
-							"Coke",
-							"Small"
+							"Cramps",
+							"Muscle Aches"
 						]
 					},
 					{
-						"value": "Fast Foods, Quesadilla, With Chicken",
+						"value": "Multivitamin/ Multimineral Supplement",
 						"synonyms": [
-							"Fast Foods"
+							"Multivitamin",
+							"Multimineral Supplement"
+						]
+					},
+					{
+						"value": "Concerta (mg)",
+						"synonyms": [
+							"Concerta"
 						]
 					},
 					{
@@ -41593,134 +42434,10 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Watermelon - Raw",
-						"synonyms": [
-							"Watermelon"
-						]
-					},
-					{
-						"value": "Automobile Repair, Light Or Moderate Effort",
-						"synonyms": [
-							"Automobile Repair",
-							"Moderate Effort",
-							"Automobile Repair, Light"
-						]
-					},
-					{
-						"value": "B12 (mg)",
-						"synonyms": [
-							"B12"
-						]
-					},
-					{
-						"value": "100% Orange Juice - Calcium/Vitamin D/Pulp Free",
-						"synonyms": [
-							"100% Orange Juice",
-							"100% Orange Juice - Calcium",
-							"Vitamin D/Pulp Free"
-						]
-					},
-					{
-						"value": "Regular Can Coke 355ml (12 Oz)",
-						"synonyms": [
-							"Regular Can Coke 355ml",
-							"12 Oz"
-						]
-					},
-					{
-						"value": "Migraine Headache Duration",
-						"synonyms": [
-							"Migraine Headache"
-						]
-					},
-					{
-						"value": "Bowel Movement Rating",
-						"synonyms": [
-							"Bowel Movement"
-						]
-					},
-					{
 						"value": "Tinnitus / Ringing Sound In Ear",
 						"synonyms": [
 							"Tinnitus",
 							"Ringing Sound In Ear"
-						]
-					},
-					{
-						"value": "Difficulty Falling Asleep Or Staying Asleep",
-						"synonyms": [
-							"Staying Asleep",
-							"Difficulty Falling Asleep"
-						]
-					},
-					{
-						"value": "Dizziness/Lightheadedness",
-						"synonyms": [
-							"Dizziness",
-							"Lightheadedness"
-						]
-					},
-					{
-						"value": "Fish Oil (mg)",
-						"synonyms": [
-							"Fish Oil"
-						]
-					},
-					{
-						"value": "Berberine Plus By Best Naturals",
-						"synonyms": [
-							"Berberine Plus"
-						]
-					},
-					{
-						"value": "Inositol & Choline By Source Naturals",
-						"synonyms": [
-							"Inositol & Choline"
-						]
-					},
-					{
-						"value": "Ritalin (mg)",
-						"synonyms": [
-							"Ritalin"
-						]
-					},
-					{
-						"value": "SAM-E 400 (mg)",
-						"synonyms": [
-							"SAM-E 400"
-						]
-					},
-					{
-						"value": "Topamax (Weight)",
-						"synonyms": [
-							"Topamax"
-						]
-					},
-					{
-						"value": "Flonase (sprays)",
-						"synonyms": [
-							"Flonase"
-						]
-					},
-					{
-						"value": "100% Whey Concentrated And Isolated Whey Protein (Vanilla)",
-						"synonyms": [
-							"100% Whey Concentrated And Isolated Whey Protein",
-							"Vanilla"
-						]
-					},
-					{
-						"value": "Dark Chocolate Nuts & Sea Salt - Low Sugar",
-						"synonyms": [
-							"Dark Chocolate Nuts & Sea Salt"
-						]
-					},
-					{
-						"value": "Diet Coke - 12oz Can (355 Ml)",
-						"synonyms": [
-							"Diet Coke - 12oz Can",
-							"355 Ml",
-							"Diet Coke"
 						]
 					},
 					{
@@ -41737,79 +42454,9 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Amitriptyline (mg)",
-						"synonyms": [
-							"Amitriptyline"
-						]
-					},
-					{
-						"value": "NSI-189 By Nyles7",
-						"synonyms": [
-							"NSI-189"
-						]
-					},
-					{
-						"value": "Pristiq (tablets)",
-						"synonyms": [
-							"Pristiq"
-						]
-					},
-					{
-						"value": "Vitamin D3 (tablets)",
-						"synonyms": [
-							"Vitamin D3"
-						]
-					},
-					{
 						"value": "Vitamin B Complex (pills)",
 						"synonyms": [
 							"Vitamin B Complex"
-						]
-					},
-					{
-						"value": "Vitamin D3 By NatureMade",
-						"synonyms": [
-							"Vitamin D3"
-						]
-					},
-					{
-						"value": "Baked Or Grilled Salmon",
-						"synonyms": [
-							"Grilled Salmon",
-							"Baked"
-						]
-					},
-					{
-						"value": "Cranberry Juice Cocktail - Bottled",
-						"synonyms": [
-							"Cranberry Juice Cocktail"
-						]
-					},
-					{
-						"value": "Milk Chocolate Hot Cocoa Mix (With 6 Oz Water)",
-						"synonyms": [
-							"Milk Chocolate Hot Cocoa Mix",
-							"With 6 Oz Water"
-						]
-					},
-					{
-						"value": "Side Salad (Lettuce And Tomatoes)",
-						"synonyms": [
-							"Side Salad",
-							"Lettuce And Tomatoes"
-						]
-					},
-					{
-						"value": "Active Time (min)",
-						"synonyms": [
-							"Active Time"
-						]
-					},
-					{
-						"value": "Dry Mouth Or Throat",
-						"synonyms": [
-							"Throat",
-							"Dry Mouth"
 						]
 					},
 					{
@@ -41820,163 +42467,9 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Alpha-Lipoic Acid By Doctors Best",
-						"synonyms": [
-							"Alpha-Lipoic Acid"
-						]
-					},
-					{
-						"value": "L-Tyrosine (mg)",
-						"synonyms": [
-							"L-Tyrosine"
-						]
-					},
-					{
-						"value": "Methotrexate (mg)",
-						"synonyms": [
-							"Methotrexate"
-						]
-					},
-					{
-						"value": "Trileptal (mg)",
-						"synonyms": [
-							"Trileptal"
-						]
-					},
-					{
-						"value": "Lactobacillus GG Probiotic By Culturelle",
-						"synonyms": [
-							"Lactobacillus GG Probiotic"
-						]
-					},
-					{
-						"value": "French Fries/Medium",
-						"synonyms": [
-							"French Fries",
-							"Medium"
-						]
-					},
-					{
-						"value": "Jogging, On A Mini-tramp",
-						"synonyms": [
-							"Jogging"
-						]
-					},
-					{
-						"value": "Diarrhea (count)",
-						"synonyms": [
-							"Diarrhea"
-						]
-					},
-					{
-						"value": "Exhaustion Rating",
-						"synonyms": [
-							"Exhaustion"
-						]
-					},
-					{
-						"value": "Somac (mg)",
-						"synonyms": [
-							"Somac"
-						]
-					},
-					{
-						"value": "Green Tea By Finest Nutrition",
-						"synonyms": [
-							"Green Tea"
-						]
-					},
-					{
-						"value": "Metformin (mg)",
-						"synonyms": [
-							"Metformin"
-						]
-					},
-					{
-						"value": "Gabapentin (Neurontin) (mg)",
-						"synonyms": [
-							"Gabapentin",
-							"Neurontin"
-						]
-					},
-					{
-						"value": "Milk Thistle (mg)",
-						"synonyms": [
-							"Milk Thistle"
-						]
-					},
-					{
 						"value": "Tegretol (mg)",
 						"synonyms": [
 							"Tegretol"
-						]
-					},
-					{
-						"value": "Zyrtec (Cetirizine) (mg)",
-						"synonyms": [
-							"Zyrtec",
-							"Cetirizine"
-						]
-					},
-					{
-						"value": "Digestive Advantage Bc 30 (tablets)",
-						"synonyms": [
-							"Digestive Advantage Bc 30"
-						]
-					},
-					{
-						"value": "Vitamin D (units)",
-						"synonyms": [
-							"Vitamin D"
-						]
-					},
-					{
-						"value": "Lisdexamfetamine (Vyvanse) (mg)",
-						"synonyms": [
-							"Lisdexamfetamine",
-							"Vyvanse"
-						]
-					},
-					{
-						"value": "Antacid Tablets By Walgreens",
-						"synonyms": [
-							"Antacid Tablets"
-						]
-					},
-					{
-						"value": "Vitamin D3 By Jarrow",
-						"synonyms": [
-							"Vitamin D3"
-						]
-					},
-					{
-						"value": "Methadone (mg)",
-						"synonyms": [
-							"Methadone"
-						]
-					},
-					{
-						"value": "Kefir By Lifeway",
-						"synonyms": [
-							"Kefir"
-						]
-					},
-					{
-						"value": "Zicam Nose Slime (applications)",
-						"synonyms": [
-							"Zicam Nose Slime"
-						]
-					},
-					{
-						"value": "Nortriptyline (mg)",
-						"synonyms": [
-							"Nortriptyline"
-						]
-					},
-					{
-						"value": "Oxycodone (mg)",
-						"synonyms": [
-							"Oxycodone"
 						]
 					},
 					{
@@ -41986,262 +42479,9 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Humira Pen (mL)",
-						"synonyms": [
-							"Humira Pen"
-						]
-					},
-					{
-						"value": "SAM-E 400 (tablets)",
-						"synonyms": [
-							"SAM-E 400"
-						]
-					},
-					{
-						"value": "Provigil (modafinil) (mg)",
-						"synonyms": [
-							"Provigil",
-							"modafinil"
-						]
-					},
-					{
-						"value": "Spironolactone (mg)",
-						"synonyms": [
-							"Spironolactone"
-						]
-					},
-					{
-						"value": "Topamax (mg)",
-						"synonyms": [
-							"Topamax"
-						]
-					},
-					{
-						"value": "Iberogast (mL)",
-						"synonyms": [
-							"Iberogast"
-						]
-					},
-					{
-						"value": "Magnesium (oral) (tablets)",
-						"synonyms": [
-							"Magnesium",
-							"oral"
-						]
-					},
-					{
-						"value": "Vitamin D3 By Naturewise",
-						"synonyms": [
-							"Vitamin D3"
-						]
-					},
-					{
-						"value": "Cannibus (snaps)",
-						"synonyms": [
-							"Cannibus",
-							"snaps"
-						]
-					},
-					{
-						"value": "Hand Lotion  (applications)",
-						"synonyms": [
-							"Hand Lotion"
-						]
-					},
-					{
-						"value": "Focalin (mg)",
-						"synonyms": [
-							"Focalin"
-						]
-					},
-					{
-						"value": "Humira (mg)",
-						"synonyms": [
-							"Humira"
-						]
-					},
-					{
-						"value": "Vyvanse (mg)",
-						"synonyms": [
-							"Vyvanse"
-						]
-					},
-					{
-						"value": "Members Mark Omeprazole Acid Reducer",
-						"synonyms": [
-							"Welby Omeprazole"
-						]
-					},
-					{
-						"value": "Nexium (tablets)",
-						"synonyms": [
-							"Nexium"
-						]
-					},
-					{
-						"value": "Probiotic Assurance By Your Health Vita",
-						"synonyms": [
-							"Probiotic Assurance"
-						]
-					},
-					{
-						"value": "Melatonin By Sundown Naturals",
-						"synonyms": [
-							"Melatonin"
-						]
-					},
-					{
-						"value": "Flaxseed Oil By Nature Made",
-						"synonyms": [
-							"Flaxseed Oil"
-						]
-					},
-					{
-						"value": "Loratadine (mg)",
-						"synonyms": [
-							"Loratadine"
-						]
-					},
-					{
-						"value": "Topiramate (Topamax)  (tablets)",
-						"synonyms": [
-							"Topiramate",
-							"Topamax"
-						]
-					},
-					{
-						"value": "Zoloft (yes/no)",
-						"synonyms": [
-							"Zoloft"
-						]
-					},
-					{
-						"value": "Jdtic (mg)",
-						"synonyms": [
-							"Jdtic"
-						]
-					},
-					{
-						"value": "Vyvanse (yes/no)",
-						"synonyms": [
-							"Vyvanse"
-						]
-					},
-					{
-						"value": "Serapax (Oxazepam)",
-						"synonyms": [
-							"Serapax",
-							"Oxazepam"
-						]
-					},
-					{
-						"value": "Valium (mg)",
-						"synonyms": [
-							"Valium"
-						]
-					},
-					{
-						"value": "Vitamin D3 (mg)",
-						"synonyms": [
-							"Vitamin D3"
-						]
-					},
-					{
-						"value": "Prenatal Vitamin (tablets)",
-						"synonyms": [
-							"Prenatal Vitamin"
-						]
-					},
-					{
-						"value": "Methamphetamine (puffs)",
-						"synonyms": [
-							"Methamphetamine"
-						]
-					},
-					{
-						"value": "Bupropion (Wellbutrin) (tablets)",
-						"synonyms": [
-							"Bupropion",
-							"Wellbutrin"
-						]
-					},
-					{
-						"value": "Triamcinolone Acetonide (applications)",
-						"synonyms": [
-							"Triamcinolone Acetonide"
-						]
-					},
-					{
-						"value": "NAC (mg)",
-						"synonyms": [
-							"NAC"
-						]
-					},
-					{
-						"value": "Piracetam (mg)",
-						"synonyms": [
-							"Piracetam"
-						]
-					},
-					{
-						"value": "Saccharomyces Boulardii (Nutricology)",
-						"synonyms": [
-							"Saccharomyces Boulardii",
-							"Nutricology"
-						]
-					},
-					{
-						"value": "Humira (units)",
-						"synonyms": [
-							"Humira"
-						]
-					},
-					{
-						"value": "Multivitamin (units)",
-						"synonyms": [
-							"Multivitamin"
-						]
-					},
-					{
-						"value": "Lorazepam (mg)",
-						"synonyms": [
-							"Lorazepam"
-						]
-					},
-					{
-						"value": "Chamomile (units)",
-						"synonyms": [
-							"Chamomile"
-						]
-					},
-					{
 						"value": "Hand Makeup (applications)",
 						"synonyms": [
 							"Hand Makeup"
-						]
-					},
-					{
-						"value": "Adapalene (yes/no)",
-						"synonyms": [
-							"Adapalene"
-						]
-					},
-					{
-						"value": "Fasting (yes/no)",
-						"synonyms": [
-							"Fasting"
-						]
-					},
-					{
-						"value": "Journaling (yes/no)",
-						"synonyms": [
-							"Journaling"
-						]
-					},
-					{
-						"value": "Risperdal (mg)",
-						"synonyms": [
-							"Risperdal"
 						]
 					},
 					{
@@ -42251,21 +42491,9 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Creatine  (tablets)",
+						"value": "Flonase (count)",
 						"synonyms": [
-							"Creatine"
-						]
-					},
-					{
-						"value": "Purelife Energy Boost",
-						"synonyms": [
-							"Purelife  Boost"
-						]
-					},
-					{
-						"value": "Viibryd (mg)",
-						"synonyms": [
-							"Viibryd"
+							"Flonase"
 						]
 					},
 					{
@@ -42275,62 +42503,21 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Quetiapine (Seroquel)",
+						"value": "Alcoholic Beverage, Wine, Table, Red",
 						"synonyms": [
-							"Quetiapine",
-							"Seroquel"
+							"Alcoholic Beverage"
 						]
 					},
 					{
-						"value": "Flonase (count)",
+						"value": "Sea Salt (g)",
 						"synonyms": [
-							"Flonase"
+							"Sea Salt"
 						]
 					},
 					{
-						"value": "Grapefruit Seed Extract (GSE)",
+						"value": "Antihistamine (serving)",
 						"synonyms": [
-							"Grapefruit Seed Extract",
-							"GSE"
-						]
-					},
-					{
-						"value": "Dark Chocolate Nuts & Sea Salt - Low Sugar (g)",
-						"synonyms": [
-							"Dark Chocolate Nuts & Sea Salt - Low Sugar",
-							"Dark Chocolate Nuts & Sea Salt"
-						]
-					},
-					{
-						"value": "Gluten Free Three Cheese Pizza By Udis",
-						"synonyms": [
-							"Gluten Free Three Cheese Pizza"
-						]
-					},
-					{
-						"value": "Organic Tomato Products Spaghetti Sauce No Salt Added By Eden F",
-						"synonyms": [
-							"Organic Tomato Products Spaghetti Sauce No Salt Added"
-						]
-					},
-					{
-						"value": "Peanut Butter By Skippy",
-						"synonyms": [
-							"Peanut Butter"
-						]
-					},
-					{
-						"value": "Peanut Butter Smooth Or Chunky Natural Style For Meal Plans",
-						"synonyms": [
-							"Chunky Natural Style For Meal Plans",
-							"Peanut Butter Smooth"
-						]
-					},
-					{
-						"value": "Raw Local Honey (contributed)",
-						"synonyms": [
-							"Raw Local Honey",
-							"contributed"
+							"Antihistamine"
 						]
 					},
 					{
@@ -42341,421 +42528,15 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Sprite 12oz Can By Coco-cola Co",
-						"synonyms": [
-							"Sprite 12oz Can"
-						]
-					},
-					{
-						"value": "Medium Coke (lb)",
-						"synonyms": [
-							"Medium Coke"
-						]
-					},
-					{
-						"value": "Large Lemons (count)",
-						"synonyms": [
-							"Large Lemons"
-						]
-					},
-					{
-						"value": "Alcoholic Beverage, Wine, Table, Red",
-						"synonyms": [
-							"Alcoholic Beverage"
-						]
-					},
-					{
-						"value": "Almond, Walnut & Macadamia Protein Bar With Peanuts",
-						"synonyms": [
-							"Almond"
-						]
-					},
-					{
-						"value": "Apple (serving)",
-						"synonyms": [
-							"Apple"
-						]
-					},
-					{
-						"value": "Blackberries - Raw",
-						"synonyms": [
-							"Blackberries"
-						]
-					},
-					{
-						"value": "Bowl of Long Grain White Rice + 1 Tablespoon Margerine (serving)",
-						"synonyms": [
-							"Bowl of Long Grain White Rice + 1 Tablespoon Margerine"
-						]
-					},
-					{
 						"value": "Cafe Mocha, Venti, 2%",
 						"synonyms": [
 							"Cafe Mocha"
 						]
 					},
 					{
-						"value": "EGG Green Tea Extract By Now",
-						"synonyms": [
-							"EGG Green Tea Extract"
-						]
-					},
-					{
-						"value": "Medical Cannabis / Marijuana",
-						"synonyms": [
-							"Medical Cannabis",
-							"Marijuana"
-						]
-					},
-					{
-						"value": "Super B Complex (count)",
-						"synonyms": [
-							"Super B Complex"
-						]
-					},
-					{
-						"value": "Vitamin D3 (count)",
-						"synonyms": [
-							"Vitamin D3"
-						]
-					},
-					{
-						"value": "Psuedophed (pills)",
-						"synonyms": [
-							"Psuedophed"
-						]
-					},
-					{
-						"value": "Folic Acid By Solaray",
-						"synonyms": [
-							"Folic Acid"
-						]
-					},
-					{
-						"value": "Antihistamine (serving)",
-						"synonyms": [
-							"Antihistamine"
-						]
-					},
-					{
-						"value": "Lamictal (serving)",
-						"synonyms": [
-							"Lamictal"
-						]
-					},
-					{
-						"value": "Beans - Black, Cooked, Boiled, With Salt (g)",
-						"synonyms": [
-							"Beans - Black, Cooked, Boiled, With Salt",
-							"Beans",
-							"Beans - Black"
-						]
-					},
-					{
-						"value": "Ciabatta Parbaked Gluten-Free Bread Rolls (g)",
-						"synonyms": [
-							"Ciabatta Parbaked Gluten-Free Bread Rolls"
-						]
-					},
-					{
-						"value": "Dark Chocolate Nuts & Sea Salt - Low Sugar (serving) (g)",
-						"synonyms": [
-							"Dark Chocolate Nuts & Sea Salt - Low Sugar",
-							"Dark Chocolate Nuts & Sea Salt"
-						]
-					},
-					{
-						"value": "Green Cracked Olives (g)",
-						"synonyms": [
-							"Green Cracked Olives"
-						]
-					},
-					{
-						"value": "Sea Salt (g)",
-						"synonyms": [
-							"Sea Salt"
-						]
-					},
-					{
-						"value": "Tostitos Scoops (g)",
-						"synonyms": [
-							"Tostitos Scoops"
-						]
-					},
-					{
-						"value": "12 Oz Outback Special (Sirloin)",
-						"synonyms": [
-							"12 Oz Outback Special",
-							"Sirloin"
-						]
-					},
-					{
-						"value": "Asparagus - Raw",
-						"synonyms": [
-							"Asparagus"
-						]
-					},
-					{
-						"value": "Butter Toffee Peanuts (g)",
-						"synonyms": [
-							"Butter Toffee Peanuts"
-						]
-					},
-					{
 						"value": "Adderall (count)",
 						"synonyms": [
 							"Adderall"
-						]
-					},
-					{
-						"value": "Adderall Xr (count)",
-						"synonyms": [
-							"Adderall Xr"
-						]
-					},
-					{
-						"value": "Doxylamine (Unisom)",
-						"synonyms": [
-							"Doxylamine",
-							"Unisom"
-						]
-					},
-					{
-						"value": "Flaxseed Oil By Nature Made (count)",
-						"synonyms": [
-							"Flaxseed Oil By Nature Made",
-							"Flaxseed Oil"
-						]
-					},
-					{
-						"value": "Hot Shower (count)",
-						"synonyms": [
-							"Hot Shower"
-						]
-					},
-					{
-						"value": "Baby Carrots (Net Carbs) (g)",
-						"synonyms": [
-							"Baby Carrots",
-							"Net Carbs"
-						]
-					},
-					{
-						"value": "Cola By Bigk",
-						"synonyms": [
-							"Cola"
-						]
-					},
-					{
-						"value": "Myoplex Lite Ready-to-drink Strawberry Cream By Eas",
-						"synonyms": [
-							"Myoplex Lite Ready-to-drink Strawberry Cream"
-						]
-					},
-					{
-						"value": "Omega-3 Mix (g)",
-						"synonyms": [
-							"Omega-3 Mix"
-						]
-					},
-					{
-						"value": "Orange Juice Drink (g)",
-						"synonyms": [
-							"Orange Juice Drink"
-						]
-					},
-					{
-						"value": "Roasted Almond Nut Crunch Granola Bars By Nature Valley",
-						"synonyms": [
-							"Roasted Almond Nut Crunch Granola Bars"
-						]
-					},
-					{
-						"value": "Scrambled Egg With Cheese (g)",
-						"synonyms": [
-							"Scrambled Egg With Cheese"
-						]
-					},
-					{
-						"value": "Butter Microwave Popcorn (lb)",
-						"synonyms": [
-							"Butter Microwave Popcorn"
-						]
-					},
-					{
-						"value": "Fresh Asparagus (lb)",
-						"synonyms": [
-							"Fresh Asparagus"
-						]
-					},
-					{
-						"value": "Candy (pieces)",
-						"synonyms": [
-							"Candy"
-						]
-					},
-					{
-						"value": "Almond Breeze - Almond Milk (Original) (serving)",
-						"synonyms": [
-							"Almond Breeze - Almond Milk",
-							"Original",
-							"Almond Breeze"
-						]
-					},
-					{
-						"value": "Apple Juice, Canned Or Bottled, Unsweetened, With Added Ascorbic Acid",
-						"synonyms": [
-							"Apple Juice",
-							"Bottled, Unsweetened, With Added Ascorbic Acid",
-							"Apple Juice, Canned"
-						]
-					},
-					{
-						"value": "Brown Flax, Ground",
-						"synonyms": [
-							"Brown Flax"
-						]
-					},
-					{
-						"value": "Can (serving)",
-						"synonyms": [
-							"Can"
-						]
-					},
-					{
-						"value": "Candies - Fudge, Chocolate, Prepared-from-recipe",
-						"synonyms": [
-							"Candies",
-							"Candies - Fudge"
-						]
-					},
-					{
-						"value": "Classic 591ml (20 Oz)",
-						"synonyms": [
-							"Classic 591ml",
-							"20 Oz"
-						]
-					},
-					{
-						"value": "Diet Coke 355ml Can By The Coca-cola",
-						"synonyms": [
-							"Diet Coke 355ml Can"
-						]
-					},
-					{
-						"value": "Kefir Lowfat, Plain Unsweetened (g)",
-						"synonyms": [
-							"Kefir Lowfat, Plain Unsweetened",
-							"Kefir Lowfat"
-						]
-					},
-					{
-						"value": "Lime Chips (g)",
-						"synonyms": [
-							"Lime Chips"
-						]
-					},
-					{
-						"value": "Vegetable Medley With Broccoli, Carrots And Cauliflower (g)",
-						"synonyms": [
-							"Vegetable Medley With Broccoli, Carrots And Cauliflower",
-							"Vegetable Medley With Broccoli"
-						]
-					},
-					{
-						"value": "Bulk Garlic (lb)",
-						"synonyms": [
-							"Bulk Garlic"
-						]
-					},
-					{
-						"value": "Bread, Whole-wheat, Commercially Prepared",
-						"synonyms": [
-							"Bread"
-						]
-					},
-					{
-						"value": "Cooked/sliced",
-						"synonyms": [
-							"Cooked",
-							"sliced"
-						]
-					},
-					{
-						"value": "Corn - Sweet, Yellow, Frozen, Kernels Cut Off Cob, Unprepared",
-						"synonyms": [
-							"Corn",
-							"Corn - Sweet"
-						]
-					},
-					{
-						"value": "Doctors Best Alpha-lipoic Acid 600 (count)",
-						"synonyms": [
-							"Doctors Best Alpha-lipoic Acid 600"
-						]
-					},
-					{
-						"value": "Magnesium Citrate By Now (count)",
-						"synonyms": [
-							"Magnesium Citrate By Now",
-							"Magnesium Citrate"
-						]
-					},
-					{
-						"value": "Zinc Losenge (sugar-free) (count)",
-						"synonyms": [
-							"Zinc Losenge",
-							"sugar-free"
-						]
-					},
-					{
-						"value": "Cipralex (mg/dL)",
-						"synonyms": [
-							"Cipralex"
-						]
-					},
-					{
-						"value": "Microwave Popcorn Buttery Flavour By Act Ii",
-						"synonyms": [
-							"Microwave Popcorn Buttery Flavour"
-						]
-					},
-					{
-						"value": "Philadelphia Cream Cheese Philadelphia Original Cream Cheese Spread By Kraft",
-						"synonyms": [
-							"Philadelphia Cream Cheese Philadelphia Original Cream Cheese Spread"
-						]
-					},
-					{
-						"value": "Small Gluten Free Cheese Pizza (lb)",
-						"synonyms": [
-							"Small Gluten Free Cheese Pizza"
-						]
-					},
-					{
-						"value": "Annual606 (pieces)",
-						"synonyms": [
-							"Annual606"
-						]
-					},
-					{
-						"value": "Assorted Sauteed Veggies (Pepper, Mushrooms, Onions)",
-						"synonyms": [
-							"Assorted Sauteed Veggies",
-							"Pepper, Mushrooms, Onions"
-						]
-					},
-					{
-						"value": "Broccoli - Raw (serving)",
-						"synonyms": [
-							"Broccoli - Raw",
-							"Broccoli"
-						]
-					},
-					{
-						"value": "Butter - Salted",
-						"synonyms": [
-							"Butter"
 						]
 					},
 					{
@@ -42766,66 +42547,10 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Meditation (event)",
-						"synonyms": [
-							"Meditation"
-						]
-					},
-					{
-						"value": "NAC By Now (count)",
-						"synonyms": [
-							"NAC By Now",
-							"NAC"
-						]
-					},
-					{
-						"value": "Humira (count)",
-						"synonyms": [
-							"Humira"
-						]
-					},
-					{
 						"value": "Duloxetine (Cymbalta) (pills)",
 						"synonyms": [
 							"Duloxetine",
 							"Cymbalta"
-						]
-					},
-					{
-						"value": "Optimized Foliate By Life Extension",
-						"synonyms": [
-							"Optimized Foliate"
-						]
-					},
-					{
-						"value": "Microwave Popcorn Butter Flavor (g)",
-						"synonyms": [
-							"Microwave Popcorn Butter Flavor"
-						]
-					},
-					{
-						"value": "Nutrition Mens Health Mix By Planters",
-						"synonyms": [
-							"Nutrition Mens Health Mix"
-						]
-					},
-					{
-						"value": "Refrigerated Cranberry Juice Cocktail By Tropicana",
-						"synonyms": [
-							"Refrigerated Cranberry Juice Cocktail"
-						]
-					},
-					{
-						"value": "Green Tea (mg)",
-						"synonyms": [
-							"Green Tea"
-						]
-					},
-					{
-						"value": "Multivitamin/Mineral (tablets)",
-						"synonyms": [
-							"Multivitamin/Mineral",
-							"Multivitamin"
 						]
 					},
 					{
@@ -42836,95 +42561,15 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Almond Walnut Macademia Bar (Correct From Label)",
-						"synonyms": [
-							"Almond Walnut Macademia Bar",
-							"Correct From Label"
-						]
-					},
-					{
-						"value": "Buttered Popcorn, Junior (serving)",
-						"synonyms": [
-							"Buttered Popcorn, Junior",
-							"Buttered Popcorn"
-						]
-					},
-					{
-						"value": "Carrots - Baby, Raw (serving)",
-						"synonyms": [
-							"Carrots - Baby, Raw",
-							"Carrots",
-							"Carrots - Baby"
-						]
-					},
-					{
-						"value": "Cereals, QUAKER, Instant Oatmeal, Maple And Brown Sugar, Dry",
-						"synonyms": [
-							"Cereals"
-						]
-					},
-					{
 						"value": "Antibiotics Such as Doxycycline, Amoxicillin, Erythromycin)",
 						"synonyms": [
 							"Antibiotics Such as Doxycycline"
 						]
 					},
 					{
-						"value": "Eldepryl By Orion Pharma (count)",
-						"synonyms": [
-							"Eldepryl By Orion Pharma",
-							"Eldepryl"
-						]
-					},
-					{
-						"value": "Folic Acid (count)",
-						"synonyms": [
-							"Folic Acid"
-						]
-					},
-					{
-						"value": "Trazadone (pills)",
-						"synonyms": [
-							"Trazadone"
-						]
-					},
-					{
-						"value": "100% Apple Juice By Clover Valley",
-						"synonyms": [
-							"100% Apple Juice"
-						]
-					},
-					{
 						"value": "Dennisons Vegetarian Chili By Conagra Foods",
 						"synonyms": [
 							"Dennisons Vegetarian Chili"
-						]
-					},
-					{
-						"value": "Fruit Salad (Cantaloupe, Honeydew, Grapes) Strawberry, Pineapple (g)",
-						"synonyms": [
-							"Fruit Salad",
-							"Cantaloupe, Honeydew, Grapes"
-						]
-					},
-					{
-						"value": "Msm Sulfur (g)",
-						"synonyms": [
-							"Msm Sulfur"
-						]
-					},
-					{
-						"value": "Veg Omelet (contributed)",
-						"synonyms": [
-							"Veg Omelet",
-							"contributed"
-						]
-					},
-					{
-						"value": "Sweet Potato (Boiled)",
-						"synonyms": [
-							"Sweet Potato",
-							"Boiled"
 						]
 					},
 					{
@@ -42936,31 +42581,9 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Beef - Tenderloin, Trimmed To 0\\\" Fat, All Grades, Cooked, Broiled (Filet Mignon, Beef Medallions)",
-						"synonyms": [
-							"Filet Mignon, Beef Medallions",
-							"Beef",
-							"Beef - Tenderloin"
-						]
-					},
-					{
 						"value": "Kiss My Face Lavender & Shea Butter Moisture Shave",
 						"synonyms": [
 							"Kiss My Face Lavender & Shea Butter Moisture Shave"
-						]
-					},
-					{
-						"value": "Breakfast Menu Entrees Veggie-cheese Ome W Eggbeaters By Dennys (retired)",
-						"synonyms": [
-							"Breakfast Menu Entrees Veggie-cheese Ome W Eggbeaters By Dennys",
-							"retired",
-							"Breakfast Menu Entrees Veggie-cheese Ome W Eggbeaters"
-						]
-					},
-					{
-						"value": "Gluten Free Chocolate Chip Cookies By Udis",
-						"synonyms": [
-							"Gluten Free Chocolate Chip Cookies"
 						]
 					},
 					{
@@ -42971,48 +42594,165 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Lemon Juice - Raw (g)",
+						"value": "Clonazepam (Klonopin, Rivotril)",
 						"synonyms": [
-							"Lemon Juice - Raw",
-							"Lemon Juice"
+							"Clonazepam",
+							"Klonopin, Rivotril"
 						]
 					},
 					{
-						"value": "Baby Carrots (serving)",
+						"value": "Baby Carrots (Net Carbs)",
 						"synonyms": [
-							"Baby Carrots"
+							"Baby Carrots",
+							"Net Carbs"
 						]
 					},
 					{
-						"value": "Backyard Barbecue Potato Chips (serving)",
+						"value": "Carrots - Raw (serving)",
 						"synonyms": [
-							"Backyard Barbecue Potato Chips"
+							"Carrots - Raw",
+							"Carrots"
 						]
 					},
 					{
-						"value": "Bratwurst, Beef And Pork, Smoked",
+						"value": "Bupropion Sr (pills)",
 						"synonyms": [
-							"Bratwurst"
+							"Bupropion Sr"
 						]
 					},
 					{
-						"value": "Cucumber - With Peel, Raw",
+						"value": "Reserve Time- Need To Keep This (No Routines Can Be Slated Here) Until I Prove Otherwise",
 						"synonyms": [
-							"Cucumber",
-							"Cucumber - With Peel"
+							"Reserve Time- Need To Keep This",
+							"No Routines Can Be Slated Here"
 						]
 					},
 					{
-						"value": "Kefir By Lifeway (count)",
+						"value": "Vitamin D (IU)",
 						"synonyms": [
-							"Kefir By Lifeway",
-							"Kefir"
+							"Vitamin D"
 						]
 					},
 					{
-						"value": "Emergen-C Super Orange",
+						"value": "Dark Mint Chocolate Chip Bar By Nugo",
 						"synonyms": [
-							"Emergen-C Super Orange"
+							"Dark Mint Chocolate Chip Bar"
+						]
+					},
+					{
+						"value": "Medical Cannabis / Marijuana",
+						"synonyms": [
+							"Medical Cannabis",
+							"Marijuana"
+						]
+					},
+					{
+						"value": "12 Oz Outback Special (Sirloin)",
+						"synonyms": [
+							"12 Oz Outback Special",
+							"Sirloin"
+						]
+					},
+					{
+						"value": "Zinc Losenge (sugar-free) (count)",
+						"synonyms": [
+							"Zinc Losenge",
+							"sugar-free"
+						]
+					},
+					{
+						"value": "Small Gluten Free Cheese Pizza (lb)",
+						"synonyms": [
+							"Small Gluten Free Cheese Pizza"
+						]
+					},
+					{
+						"value": "Almond Walnut Macademia Bar (Correct From Label)",
+						"synonyms": [
+							"Almond Walnut Macademia Bar",
+							"Correct From Label"
+						]
+					},
+					{
+						"value": "Cereals, QUAKER, Instant Oatmeal, Maple And Brown Sugar, Dry",
+						"synonyms": [
+							"Cereals"
+						]
+					},
+					{
+						"value": "Eldepryl By Orion Pharma (count)",
+						"synonyms": [
+							"Eldepryl By Orion Pharma",
+							"Eldepryl"
+						]
+					},
+					{
+						"value": "Meditation (pills)",
+						"synonyms": [
+							"Meditation"
+						]
+					},
+					{
+						"value": "Almond Walnut Macadamia + Protein With Peanuts (serving)",
+						"synonyms": [
+							"Almond Walnut Macadamia + Protein With Peanuts"
+						]
+					},
+					{
+						"value": "Corn (serving)",
+						"synonyms": [
+							"Corn"
+						]
+					},
+					{
+						"value": "Psuedophed (pills)",
+						"synonyms": [
+							"Psuedophed"
+						]
+					},
+					{
+						"value": "Lamictal (serving)",
+						"synonyms": [
+							"Lamictal"
+						]
+					},
+					{
+						"value": "Ciabatta Parbaked Gluten-Free Bread Rolls (g)",
+						"synonyms": [
+							"Ciabatta Parbaked Gluten-Free Bread Rolls"
+						]
+					},
+					{
+						"value": "Flaxseed Oil By Nature Made (count)",
+						"synonyms": [
+							"Flaxseed Oil By Nature Made",
+							"Flaxseed Oil"
+						]
+					},
+					{
+						"value": "Cipralex (mg/dL)",
+						"synonyms": [
+							"Cipralex"
+						]
+					},
+					{
+						"value": "Butter - Salted",
+						"synonyms": [
+							"Butter"
+						]
+					},
+					{
+						"value": "Multivitamin/Mineral (tablets)",
+						"synonyms": [
+							"Multivitamin/Mineral",
+							"Multivitamin"
+						]
+					},
+					{
+						"value": "Fruit Salad (Cantaloupe, Honeydew, Grapes) Strawberry, Pineapple (g)",
+						"synonyms": [
+							"Fruit Salad",
+							"Cantaloupe, Honeydew, Grapes"
 						]
 					},
 					{
@@ -43023,103 +42763,9 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Clonazepam (Klonopin, Rivotril)",
-						"synonyms": [
-							"Clonazepam",
-							"Klonopin, Rivotril"
-						]
-					},
-					{
-						"value": "Vitamin D3 By Naturewise (count)",
-						"synonyms": [
-							"Vitamin D3 By Naturewise",
-							"Vitamin D3"
-						]
-					},
-					{
-						"value": "Meditation (pills)",
-						"synonyms": [
-							"Meditation"
-						]
-					},
-					{
 						"value": "Proper Brushing of Teeth (event)",
 						"synonyms": [
 							"Proper Brushing of Teeth"
-						]
-					},
-					{
-						"value": "50% Dark Chocolate With Sea Salt (g)",
-						"synonyms": [
-							"50% Dark Chocolate With Sea Salt"
-						]
-					},
-					{
-						"value": "Kids Meals Grilled Cheese Sandwich By Sonic",
-						"synonyms": [
-							"Kids Meals Grilled Cheese Sandwich"
-						]
-					},
-					{
-						"value": "Starbucks Coffee (g)",
-						"synonyms": [
-							"Starbucks Coffee"
-						]
-					},
-					{
-						"value": "Wheat Free Waffle Apple Cinnamon By Vans",
-						"synonyms": [
-							"Wheat Free Waffle Apple Cinnamon"
-						]
-					},
-					{
-						"value": "Chocolate (units)",
-						"synonyms": [
-							"Chocolate"
-						]
-					},
-					{
-						"value": "Carrots - Baby, Raw",
-						"synonyms": [
-							"Carrots",
-							"Carrots - Baby"
-						]
-					},
-					{
-						"value": "Coke 20 Fl Oz. Bottle (serving)",
-						"synonyms": [
-							"Coke 20 Fl Oz. Bottle"
-						]
-					},
-					{
-						"value": "Honey (serving)",
-						"synonyms": [
-							"Honey"
-						]
-					},
-					{
-						"value": "Myoplex Lite Ready-to-Drink Strawberry Cream (lb)",
-						"synonyms": [
-							"Myoplex Lite Ready-to-Drink Strawberry Cream"
-						]
-					},
-					{
-						"value": "Almond Walnut Macadamia + Protein With Peanuts (serving)",
-						"synonyms": [
-							"Almond Walnut Macadamia + Protein With Peanuts"
-						]
-					},
-					{
-						"value": "Apples - Raw, With Skin",
-						"synonyms": [
-							"Apples",
-							"Apples - Raw"
-						]
-					},
-					{
-						"value": "Cheese - Cheddar",
-						"synonyms": [
-							"Cheese"
 						]
 					},
 					{
@@ -43135,158 +42781,9 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Bowl of Long Grain White Rice + 1 Tablespoon Margerine (g)",
-						"synonyms": [
-							"Bowl of Long Grain White Rice + 1 Tablespoon Margerine"
-						]
-					},
-					{
-						"value": "Orange Juice - Raw (g)",
-						"synonyms": [
-							"Orange Juice - Raw",
-							"Orange Juice"
-						]
-					},
-					{
-						"value": "Passion-fruit Juice - Yellow, Raw (g)",
-						"synonyms": [
-							"Passion-fruit Juice - Yellow, Raw",
-							"Passion-fruit Juice",
-							"Passion-fruit Juice - Yellow"
-						]
-					},
-					{
-						"value": "Dark Chocolate Nuts & Sea Salt - Low Sugar (lb)",
-						"synonyms": [
-							"Dark Chocolate Nuts & Sea Salt - Low Sugar",
-							"Dark Chocolate Nuts & Sea Salt"
-						]
-					},
-					{
-						"value": "Baby Carrots (Net Carbs)",
-						"synonyms": [
-							"Baby Carrots",
-							"Net Carbs"
-						]
-					},
-					{
-						"value": "Buttered Popcorn, Junior",
-						"synonyms": [
-							"Buttered Popcorn"
-						]
-					},
-					{
-						"value": "Carrots - Raw (serving)",
-						"synonyms": [
-							"Carrots - Raw",
-							"Carrots"
-						]
-					},
-					{
-						"value": "Zinc Losenge (sugar-free)",
-						"synonyms": [
-							"Zinc Losenge",
-							"sugar-free"
-						]
-					},
-					{
-						"value": "Bupropion Sr (pills)",
-						"synonyms": [
-							"Bupropion Sr"
-						]
-					},
-					{
-						"value": "Candy - One Roll (g)",
-						"synonyms": [
-							"Candy - One Roll",
-							"Candy"
-						]
-					},
-					{
-						"value": "Corn Flour Whole-grain Blue (harina De Maiz Morado)",
-						"synonyms": [
-							"Corn Flour Whole-grain Blue",
-							"harina De Maiz Morado"
-						]
-					},
-					{
-						"value": "Potatoes Yukon Gold By Melissas",
-						"synonyms": [
-							"Potatoes Yukon Gold"
-						]
-					},
-					{
 						"value": "Salad With Oil & Vinegar (g)",
 						"synonyms": [
 							"Salad With Oil & Vinegar"
-						]
-					},
-					{
-						"value": "Beans (serving)",
-						"synonyms": [
-							"Beans"
-						]
-					},
-					{
-						"value": "Caffe Mocha - Tall - Nonfat Milk - No Whipped Cream",
-						"synonyms": [
-							"Caffe Mocha"
-						]
-					},
-					{
-						"value": "Corn (serving)",
-						"synonyms": [
-							"Corn"
-						]
-					},
-					{
-						"value": "Melatonin (count)",
-						"synonyms": [
-							"Melatonin"
-						]
-					},
-					{
-						"value": "Magnesium Citrate By Now",
-						"synonyms": [
-							"Magnesium Citrate"
-						]
-					},
-					{
-						"value": "Reserve Time- Need To Keep This (No Routines Can Be Slated Here) Until I Prove Otherwise",
-						"synonyms": [
-							"Reserve Time- Need To Keep This",
-							"No Routines Can Be Slated Here"
-						]
-					},
-					{
-						"value": "Multivitamin (serving)",
-						"synonyms": [
-							"Multivitamin"
-						]
-					},
-					{
-						"value": "Vitamin D (IU)",
-						"synonyms": [
-							"Vitamin D"
-						]
-					},
-					{
-						"value": "Anchovies By John West",
-						"synonyms": [
-							"Anchovies"
-						]
-					},
-					{
-						"value": "Cocoa Pebbles (Gluten Free) (g)",
-						"synonyms": [
-							"Cocoa Pebbles",
-							"Gluten Free"
-						]
-					},
-					{
-						"value": "French Fries (g)",
-						"synonyms": [
-							"French Fries"
 						]
 					},
 					{
@@ -43303,21 +42800,142 @@ window.qm.staticData = {
 						]
 					},
 					{
+						"value": "Simply Orange Pineapple (pieces)",
+						"synonyms": [
+							"Simply Orange Pineapple"
+						]
+					},
+					{
+						"value": "Sustenex With Ganeden-BC30 Probiotic Capsules",
+						"synonyms": [
+							"Sustenex With Ganeden-BC30 Probiotic Capsules"
+						]
+					},
+					{
+						"value": "Organic Tomato Products Spaghetti Sauce No Salt Added By Eden Foods",
+						"synonyms": [
+							"Organic Tomato Products Spaghetti Sauce No Salt Added"
+						]
+					},
+					{
+						"value": "Dark Chocolate Nuts & Sea Salt - Low Sugar (serving) (g)",
+						"synonyms": [
+							"Dark Chocolate Nuts & Sea Salt - Low Sugar",
+							"Dark Chocolate Nuts & Sea Salt"
+						]
+					},
+					{
+						"value": "Quetiapine (Seroquel)",
+						"synonyms": [
+							"Quetiapine",
+							"Seroquel"
+						]
+					},
+					{
+						"value": "Doxylamine (Unisom)",
+						"synonyms": [
+							"Doxylamine",
+							"Unisom"
+						]
+					},
+					{
+						"value": "Bulk Garlic (lb)",
+						"synonyms": [
+							"Bulk Garlic"
+						]
+					},
+					{
+						"value": "Annual606 (pieces)",
+						"synonyms": [
+							"Annual606"
+						]
+					},
+					{
+						"value": "Broccoli - Raw (serving)",
+						"synonyms": [
+							"Broccoli - Raw",
+							"Broccoli"
+						]
+					},
+					{
+						"value": "Humira (count)",
+						"synonyms": [
+							"Humira"
+						]
+					},
+					{
+						"value": "Sweet Potato (Boiled)",
+						"synonyms": [
+							"Sweet Potato",
+							"Boiled"
+						]
+					},
+					{
+						"value": "Vitamin D3 By Naturewise (count)",
+						"synonyms": [
+							"Vitamin D3 By Naturewise",
+							"Vitamin D3"
+						]
+					},
+					{
 						"value": "Candy - One Roll",
 						"synonyms": [
 							"Candy"
 						]
 					},
 					{
-						"value": "Test (m)",
+						"value": "Fruity Pebbles Gluten Free By Post",
 						"synonyms": [
-							"Test"
+							"Fruity Pebbles Gluten Free"
 						]
 					},
 					{
-						"value": "Apple (g)",
+						"value": "Fit Fare Veggie Skillet (lb)",
 						"synonyms": [
-							"Apple"
+							"Fit Fare Veggie Skillet"
+						]
+					},
+					{
+						"value": "Carbonated Beverage, Ginger Ale",
+						"synonyms": [
+							"Carbonated Beverage"
+						]
+					},
+					{
+						"value": "Almond, Walnut & Macadamia Protein Bar With Peanuts",
+						"synonyms": [
+							"Almond"
+						]
+					},
+					{
+						"value": "EGG Green Tea Extract By Now",
+						"synonyms": [
+							"EGG Green Tea Extract"
+						]
+					},
+					{
+						"value": "Hot Shower (count)",
+						"synonyms": [
+							"Hot Shower"
+						]
+					},
+					{
+						"value": "Gluten Free Chocolate Chip Cookies By Udis",
+						"synonyms": [
+							"Gluten Free Chocolate Chip Cookies"
+						]
+					},
+					{
+						"value": "Kefir By Lifeway (count)",
+						"synonyms": [
+							"Kefir By Lifeway",
+							"Kefir"
+						]
+					},
+					{
+						"value": "Coke 20 Fl Oz. Bottle (serving)",
+						"synonyms": [
+							"Coke 20 Fl Oz. Bottle"
 						]
 					},
 					{
@@ -43329,30 +42947,277 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Cafe Americano (tall) By Cosi",
+						"value": "Minute Maid Lemonade By The Coca-cola",
 						"synonyms": [
-							"Cafe Americano",
-							"tall"
+							"Minute Maid Lemonade"
 						]
 					},
 					{
-						"value": "Eggs - Hard-boiled (whole Egg) (g)",
+						"value": "Green Cracked Olives (g)",
 						"synonyms": [
-							"Eggs - Hard-boiled",
-							"whole Egg",
-							"Eggs"
+							"Green Cracked Olives"
 						]
 					},
 					{
-						"value": "Scoops (g)",
+						"value": "Microwave Popcorn Buttery Flavour By Act Ii",
 						"synonyms": [
-							"Scoops"
+							"Microwave Popcorn Buttery Flavour"
 						]
 					},
 					{
-						"value": "Simply Orange Pineapple (pieces)",
+						"value": "Meditation (event)",
 						"synonyms": [
-							"Simply Orange Pineapple"
+							"Meditation"
+						]
+					},
+					{
+						"value": "Microwave Popcorn Butter Flavor (g)",
+						"synonyms": [
+							"Microwave Popcorn Butter Flavor"
+						]
+					},
+					{
+						"value": "Cucumber - With Peel, Raw",
+						"synonyms": [
+							"Cucumber",
+							"Cucumber - With Peel"
+						]
+					},
+					{
+						"value": "Honey (serving)",
+						"synonyms": [
+							"Honey"
+						]
+					},
+					{
+						"value": "Candy - One Roll (g)",
+						"synonyms": [
+							"Candy - One Roll",
+							"Candy"
+						]
+					},
+					{
+						"value": "Caffe Mocha - Tall - Nonfat Milk - No Whipped Cream",
+						"synonyms": [
+							"Caffe Mocha"
+						]
+					},
+					{
+						"value": "Wheylent (g)",
+						"synonyms": [
+							"Wheylent"
+						]
+					},
+					{
+						"value": "Blackberries - Raw",
+						"synonyms": [
+							"Blackberries"
+						]
+					},
+					{
+						"value": "Asparagus - Raw",
+						"synonyms": [
+							"Asparagus"
+						]
+					},
+					{
+						"value": "Candy (pieces)",
+						"synonyms": [
+							"Candy"
+						]
+					},
+					{
+						"value": "Classic 591ml (20 Oz)",
+						"synonyms": [
+							"Classic 591ml",
+							"20 Oz"
+						]
+					},
+					{
+						"value": "Diet Coke 355ml Can By The Coca-cola",
+						"synonyms": [
+							"Diet Coke 355ml Can"
+						]
+					},
+					{
+						"value": "Magnesium Citrate By Now (count)",
+						"synonyms": [
+							"Magnesium Citrate By Now",
+							"Magnesium Citrate"
+						]
+					},
+					{
+						"value": "Baby Carrots (serving)",
+						"synonyms": [
+							"Baby Carrots"
+						]
+					},
+					{
+						"value": "50% Dark Chocolate With Sea Salt (g)",
+						"synonyms": [
+							"50% Dark Chocolate With Sea Salt"
+						]
+					},
+					{
+						"value": "Apples - Raw, With Skin",
+						"synonyms": [
+							"Apples",
+							"Apples - Raw"
+						]
+					},
+					{
+						"value": "Buttered Popcorn, Junior",
+						"synonyms": [
+							"Buttered Popcorn"
+						]
+					},
+					{
+						"value": "Orgasm (count)",
+						"synonyms": [
+							"Orgasm"
+						]
+					},
+					{
+						"value": "Oil - Olive (g)",
+						"synonyms": [
+							"Oil - Olive",
+							"Oil"
+						]
+					},
+					{
+						"value": "Beef - Tenderloin, Trimmed To 0\\\" Fat, All Grades, Cooked, Broil (mg)",
+						"synonyms": [
+							"Beef",
+							"Beef - Tenderloin"
+						]
+					},
+					{
+						"value": "Cola By Bigk",
+						"synonyms": [
+							"Cola"
+						]
+					},
+					{
+						"value": "Dark Chocolate Nuts & Sea Salt - Low Sugar (g)",
+						"synonyms": [
+							"Dark Chocolate Nuts & Sea Salt - Low Sugar",
+							"Dark Chocolate Nuts & Sea Salt"
+						]
+					},
+					{
+						"value": "Organic Tomato Products Spaghetti Sauce No Salt Added By Eden F",
+						"synonyms": [
+							"Organic Tomato Products Spaghetti Sauce No Salt Added"
+						]
+					},
+					{
+						"value": "Butter Toffee Peanuts (g)",
+						"synonyms": [
+							"Butter Toffee Peanuts"
+						]
+					},
+					{
+						"value": "Grapefruit Seed Extract (GSE)",
+						"synonyms": [
+							"Grapefruit Seed Extract",
+							"GSE"
+						]
+					},
+					{
+						"value": "Gluten Free Three Cheese Pizza By Udis",
+						"synonyms": [
+							"Gluten Free Three Cheese Pizza"
+						]
+					},
+					{
+						"value": "Medium Coke (lb)",
+						"synonyms": [
+							"Medium Coke"
+						]
+					},
+					{
+						"value": "Myoplex Lite Ready-to-drink Strawberry Cream By Eas",
+						"synonyms": [
+							"Myoplex Lite Ready-to-drink Strawberry Cream"
+						]
+					},
+					{
+						"value": "Kefir Lowfat, Plain Unsweetened (g)",
+						"synonyms": [
+							"Kefir Lowfat, Plain Unsweetened",
+							"Kefir Lowfat"
+						]
+					},
+					{
+						"value": "Assorted Sauteed Veggies (Pepper, Mushrooms, Onions)",
+						"synonyms": [
+							"Assorted Sauteed Veggies",
+							"Pepper, Mushrooms, Onions"
+						]
+					},
+					{
+						"value": "Green Tea (mg)",
+						"synonyms": [
+							"Green Tea"
+						]
+					},
+					{
+						"value": "Buttered Popcorn, Junior (serving)",
+						"synonyms": [
+							"Buttered Popcorn, Junior",
+							"Buttered Popcorn"
+						]
+					},
+					{
+						"value": "Breakfast Menu Entrees Veggie-cheese Ome W Eggbeaters By Dennys (retired)",
+						"synonyms": [
+							"Breakfast Menu Entrees Veggie-cheese Ome W Eggbeaters By Dennys",
+							"retired",
+							"Breakfast Menu Entrees Veggie-cheese Ome W Eggbeaters"
+						]
+					},
+					{
+						"value": "Lemon Juice - Raw (g)",
+						"synonyms": [
+							"Lemon Juice - Raw",
+							"Lemon Juice"
+						]
+					},
+					{
+						"value": "Wheat Free Waffle Apple Cinnamon By Vans",
+						"synonyms": [
+							"Wheat Free Waffle Apple Cinnamon"
+						]
+					},
+					{
+						"value": "Chocolate (units)",
+						"synonyms": [
+							"Chocolate"
+						]
+					},
+					{
+						"value": "Bowl of Long Grain White Rice + 1 Tablespoon Margerine (g)",
+						"synonyms": [
+							"Bowl of Long Grain White Rice + 1 Tablespoon Margerine"
+						]
+					},
+					{
+						"value": "Orange Juice - Raw (g)",
+						"synonyms": [
+							"Orange Juice - Raw",
+							"Orange Juice"
+						]
+					},
+					{
+						"value": "Beans (serving)",
+						"synonyms": [
+							"Beans"
+						]
+					},
+					{
+						"value": "Test (m)",
+						"synonyms": [
+							"Test"
 						]
 					},
 					{
@@ -43361,6 +43226,292 @@ window.qm.staticData = {
 							"100% Orange Juice - Calcium/Vitamin D/Pulp Free",
 							"100% Orange Juice",
 							"100% Orange Juice - Calcium"
+						]
+					},
+					{
+						"value": "Seeded Red Grapes By Tesco",
+						"synonyms": [
+							"Seeded Red Grapes"
+						]
+					},
+					{
+						"value": "Large Lemons (count)",
+						"synonyms": [
+							"Large Lemons"
+						]
+					},
+					{
+						"value": "Vitamin D3 (count)",
+						"synonyms": [
+							"Vitamin D3"
+						]
+					},
+					{
+						"value": "Candies - Fudge, Chocolate, Prepared-from-recipe",
+						"synonyms": [
+							"Candies",
+							"Candies - Fudge"
+						]
+					},
+					{
+						"value": "Vegetable Medley With Broccoli, Carrots And Cauliflower (g)",
+						"synonyms": [
+							"Vegetable Medley With Broccoli, Carrots And Cauliflower",
+							"Vegetable Medley With Broccoli"
+						]
+					},
+					{
+						"value": "Doctors Best Alpha-lipoic Acid 600 (count)",
+						"synonyms": [
+							"Doctors Best Alpha-lipoic Acid 600"
+						]
+					},
+					{
+						"value": "Bratwurst, Beef And Pork, Smoked",
+						"synonyms": [
+							"Bratwurst"
+						]
+					},
+					{
+						"value": "Myoplex Lite Ready-to-Drink Strawberry Cream (lb)",
+						"synonyms": [
+							"Myoplex Lite Ready-to-Drink Strawberry Cream"
+						]
+					},
+					{
+						"value": "Sea Salt (serving)",
+						"synonyms": [
+							"Sea Salt"
+						]
+					},
+					{
+						"value": "Orange Juice Drink (g)",
+						"synonyms": [
+							"Orange Juice Drink"
+						]
+					},
+					{
+						"value": "Apple Juice, Canned Or Bottled, Unsweetened, With Added Ascorbic Acid",
+						"synonyms": [
+							"Apple Juice",
+							"Bottled, Unsweetened, With Added Ascorbic Acid",
+							"Apple Juice, Canned"
+						]
+					},
+					{
+						"value": "Cooked/sliced",
+						"synonyms": [
+							"Cooked",
+							"sliced"
+						]
+					},
+					{
+						"value": "NAC By Now (count)",
+						"synonyms": [
+							"NAC By Now",
+							"NAC"
+						]
+					},
+					{
+						"value": "Carrots - Baby, Raw (serving)",
+						"synonyms": [
+							"Carrots - Baby, Raw",
+							"Carrots",
+							"Carrots - Baby"
+						]
+					},
+					{
+						"value": "Folic Acid (count)",
+						"synonyms": [
+							"Folic Acid"
+						]
+					},
+					{
+						"value": "Beef - Tenderloin, Trimmed To 0\\\" Fat, All Grades, Cooked, Broiled (Filet Mignon, Beef Medallions)",
+						"synonyms": [
+							"Filet Mignon, Beef Medallions",
+							"Beef",
+							"Beef - Tenderloin"
+						]
+					},
+					{
+						"value": "Backyard Barbecue Potato Chips (serving)",
+						"synonyms": [
+							"Backyard Barbecue Potato Chips"
+						]
+					},
+					{
+						"value": "Dark Chocolate Nuts & Sea Salt - Low Sugar (lb)",
+						"synonyms": [
+							"Dark Chocolate Nuts & Sea Salt - Low Sugar",
+							"Dark Chocolate Nuts & Sea Salt"
+						]
+					},
+					{
+						"value": "Cocoa Pebbles (Gluten Free) (g)",
+						"synonyms": [
+							"Cocoa Pebbles",
+							"Gluten Free"
+						]
+					},
+					{
+						"value": "Cream - Half And Half",
+						"synonyms": [
+							"Cream"
+						]
+					},
+					{
+						"value": "Vegetable Cheese Omelet By Wonderslim",
+						"synonyms": [
+							"Vegetable Cheese Omelet"
+						]
+					},
+					{
+						"value": "Peanut Butter By Skippy",
+						"synonyms": [
+							"Peanut Butter"
+						]
+					},
+					{
+						"value": "Peanut Butter Smooth Or Chunky Natural Style For Meal Plans",
+						"synonyms": [
+							"Chunky Natural Style For Meal Plans",
+							"Peanut Butter Smooth"
+						]
+					},
+					{
+						"value": "Sprite 12oz Can By Coco-cola Co",
+						"synonyms": [
+							"Sprite 12oz Can"
+						]
+					},
+					{
+						"value": "Baby Carrots (Net Carbs) (g)",
+						"synonyms": [
+							"Baby Carrots",
+							"Net Carbs"
+						]
+					},
+					{
+						"value": "Omega-3 Mix (g)",
+						"synonyms": [
+							"Omega-3 Mix"
+						]
+					},
+					{
+						"value": "Fresh Asparagus (lb)",
+						"synonyms": [
+							"Fresh Asparagus"
+						]
+					},
+					{
+						"value": "Brown Flax, Ground",
+						"synonyms": [
+							"Brown Flax"
+						]
+					},
+					{
+						"value": "Cheese - Cheddar",
+						"synonyms": [
+							"Cheese"
+						]
+					},
+					{
+						"value": "Magnesium Citrate By Now",
+						"synonyms": [
+							"Magnesium Citrate"
+						]
+					},
+					{
+						"value": "Cafe Americano (tall) By Cosi",
+						"synonyms": [
+							"Cafe Americano",
+							"tall"
+						]
+					},
+					{
+						"value": "Apple (serving)",
+						"synonyms": [
+							"Apple"
+						]
+					},
+					{
+						"value": "Beans - Black, Cooked, Boiled, With Salt (g)",
+						"synonyms": [
+							"Beans - Black, Cooked, Boiled, With Salt",
+							"Beans",
+							"Beans - Black"
+						]
+					},
+					{
+						"value": "Tostitos Scoops (g)",
+						"synonyms": [
+							"Tostitos Scoops"
+						]
+					},
+					{
+						"value": "Lime Chips (g)",
+						"synonyms": [
+							"Lime Chips"
+						]
+					},
+					{
+						"value": "Optimized Foliate By Life Extension",
+						"synonyms": [
+							"Optimized Foliate"
+						]
+					},
+					{
+						"value": "Trazadone (pills)",
+						"synonyms": [
+							"Trazadone"
+						]
+					},
+					{
+						"value": "Veg Omelet (contributed)",
+						"synonyms": [
+							"Veg Omelet",
+							"contributed"
+						]
+					},
+					{
+						"value": "Multivitamin (serving)",
+						"synonyms": [
+							"Multivitamin"
+						]
+					},
+					{
+						"value": "Cereals, Oats, Regular And Quick And Instant, Unenriched, Cooked With Water (includes Boiling And Microwaving), With Salt",
+						"synonyms": [
+							"Cereals, Oats, Regular And Quick And Instant, Unenriched, Cooked With Water",
+							"includes Boiling And Microwaving",
+							"Cereals"
+						]
+					},
+					{
+						"value": "Adderall Xr (count)",
+						"synonyms": [
+							"Adderall Xr"
+						]
+					},
+					{
+						"value": "Corn - Sweet, Yellow, Frozen, Kernels Cut Off Cob, Unprepared",
+						"synonyms": [
+							"Corn",
+							"Corn - Sweet"
+						]
+					},
+					{
+						"value": "Zinc Losenge (sugar-free)",
+						"synonyms": [
+							"Zinc Losenge",
+							"sugar-free"
+						]
+					},
+					{
+						"value": "Apple (g)",
+						"synonyms": [
+							"Apple"
 						]
 					},
 					{
@@ -43385,50 +43536,6 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Cream - Half And Half",
-						"synonyms": [
-							"Cream"
-						]
-					},
-					{
-						"value": "Orgasm (count)",
-						"synonyms": [
-							"Orgasm"
-						]
-					},
-					{
-						"value": "Sustenex With Ganeden-BC30 Probiotic Capsules",
-						"synonyms": [
-							"Sustenex With Ganeden-BC30 Probiotic Capsules"
-						]
-					},
-					{
-						"value": "Fruity Pebbles Gluten Free By Post",
-						"synonyms": [
-							"Fruity Pebbles Gluten Free"
-						]
-					},
-					{
-						"value": "Oil - Olive (g)",
-						"synonyms": [
-							"Oil - Olive",
-							"Oil"
-						]
-					},
-					{
-						"value": "Wheylent (g)",
-						"synonyms": [
-							"Wheylent"
-						]
-					},
-					{
-						"value": "Beef - Loin, Bottom Sirloin Butt, Tri-tip Steak, Lean Only, Cook",
-						"synonyms": [
-							"Beef",
-							"Beef - Loin"
-						]
-					},
-					{
 						"value": "Cereals Ready-to-eat, KELLOGG, KELLOGGS Corn Flakes",
 						"synonyms": [
 							"Cereals Ready-to-eat"
@@ -43441,72 +43548,195 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Sea Salt (serving)",
+						"value": "Raw Local Honey (contributed)",
 						"synonyms": [
-							"Sea Salt"
+							"Raw Local Honey",
+							"contributed"
 						]
 					},
 					{
-						"value": "Dark Mint Chocolate Chip Bar By Nugo",
+						"value": "Bowl of Long Grain White Rice + 1 Tablespoon Margerine (serving)",
 						"synonyms": [
-							"Dark Mint Chocolate Chip Bar"
+							"Bowl of Long Grain White Rice + 1 Tablespoon Margerine"
 						]
 					},
 					{
-						"value": "Minute Maid Lemonade By The Coca-cola",
+						"value": "Scrambled Egg With Cheese (g)",
 						"synonyms": [
-							"Minute Maid Lemonade"
+							"Scrambled Egg With Cheese"
 						]
 					},
 					{
-						"value": "Organic Tomato Products Spaghetti Sauce No Salt Added By Eden Foods",
+						"value": "Bread, Whole-wheat, Commercially Prepared",
 						"synonyms": [
-							"Organic Tomato Products Spaghetti Sauce No Salt Added"
+							"Bread"
 						]
 					},
 					{
-						"value": "Seeded Red Grapes By Tesco",
+						"value": "100% Apple Juice By Clover Valley",
 						"synonyms": [
-							"Seeded Red Grapes"
+							"100% Apple Juice"
 						]
 					},
 					{
-						"value": "Vegetable Cheese Omelet By Wonderslim",
+						"value": "Msm Sulfur (g)",
 						"synonyms": [
-							"Vegetable Cheese Omelet"
+							"Msm Sulfur"
 						]
 					},
 					{
-						"value": "Beef - Tenderloin, Trimmed To 0\\\" Fat, All Grades, Cooked, Broil (mg)",
+						"value": "Emergen-C Super Orange",
+						"synonyms": [
+							"Emergen-C Super Orange"
+						]
+					},
+					{
+						"value": "Starbucks Coffee (g)",
+						"synonyms": [
+							"Starbucks Coffee"
+						]
+					},
+					{
+						"value": "Corn Flour Whole-grain Blue (harina De Maiz Morado)",
+						"synonyms": [
+							"Corn Flour Whole-grain Blue",
+							"harina De Maiz Morado"
+						]
+					},
+					{
+						"value": "Potatoes Yukon Gold By Melissas",
+						"synonyms": [
+							"Potatoes Yukon Gold"
+						]
+					},
+					{
+						"value": "Eggs - Hard-boiled (whole Egg) (g)",
+						"synonyms": [
+							"Eggs - Hard-boiled",
+							"whole Egg",
+							"Eggs"
+						]
+					},
+					{
+						"value": "Scoops (g)",
+						"synonyms": [
+							"Scoops"
+						]
+					},
+					{
+						"value": "Beef - Loin, Bottom Sirloin Butt, Tri-tip Steak, Lean Only, Cook",
 						"synonyms": [
 							"Beef",
-							"Beef - Tenderloin"
+							"Beef - Loin"
 						]
 					},
 					{
-						"value": "Fit Fare Veggie Skillet (lb)",
+						"value": "Super B Complex (count)",
 						"synonyms": [
-							"Fit Fare Veggie Skillet"
+							"Super B Complex"
 						]
 					},
 					{
-						"value": "Carbonated Beverage, Ginger Ale",
+						"value": "Folic Acid By Solaray",
 						"synonyms": [
-							"Carbonated Beverage"
+							"Folic Acid"
 						]
 					},
 					{
-						"value": "Cereals, Oats, Regular And Quick And Instant, Unenriched, Cooked With Water (includes Boiling And Microwaving), With Salt",
+						"value": "Roasted Almond Nut Crunch Granola Bars By Nature Valley",
 						"synonyms": [
-							"Cereals, Oats, Regular And Quick And Instant, Unenriched, Cooked With Water",
-							"includes Boiling And Microwaving",
-							"Cereals"
+							"Roasted Almond Nut Crunch Granola Bars"
 						]
 					},
 					{
-						"value": "Fruity Pebbles (serving)",
+						"value": "Butter Microwave Popcorn (lb)",
 						"synonyms": [
-							"Fruity Pebbles"
+							"Butter Microwave Popcorn"
+						]
+					},
+					{
+						"value": "Can (serving)",
+						"synonyms": [
+							"Can"
+						]
+					},
+					{
+						"value": "Philadelphia Cream Cheese Philadelphia Original Cream Cheese Spread By Kraft",
+						"synonyms": [
+							"Philadelphia Cream Cheese Philadelphia Original Cream Cheese Spread"
+						]
+					},
+					{
+						"value": "Nutrition Mens Health Mix By Planters",
+						"synonyms": [
+							"Nutrition Mens Health Mix"
+						]
+					},
+					{
+						"value": "Refrigerated Cranberry Juice Cocktail By Tropicana",
+						"synonyms": [
+							"Refrigerated Cranberry Juice Cocktail"
+						]
+					},
+					{
+						"value": "Melatonin (count)",
+						"synonyms": [
+							"Melatonin"
+						]
+					},
+					{
+						"value": "Anchovies By John West",
+						"synonyms": [
+							"Anchovies"
+						]
+					},
+					{
+						"value": "Almond Breeze - Almond Milk (Original) (serving)",
+						"synonyms": [
+							"Almond Breeze - Almond Milk",
+							"Original",
+							"Almond Breeze"
+						]
+					},
+					{
+						"value": "Kids Meals Grilled Cheese Sandwich By Sonic",
+						"synonyms": [
+							"Kids Meals Grilled Cheese Sandwich"
+						]
+					},
+					{
+						"value": "Carrots - Baby, Raw",
+						"synonyms": [
+							"Carrots",
+							"Carrots - Baby"
+						]
+					},
+					{
+						"value": "Passion-fruit Juice - Yellow, Raw (g)",
+						"synonyms": [
+							"Passion-fruit Juice - Yellow, Raw",
+							"Passion-fruit Juice",
+							"Passion-fruit Juice - Yellow"
+						]
+					},
+					{
+						"value": "French Fries (g)",
+						"synonyms": [
+							"French Fries"
+						]
+					},
+					{
+						"value": "Dark Mint Chocolate Chip Protein Bar (serving)",
+						"synonyms": [
+							"Dark Mint Chocolate Chip Protein Bar"
+						]
+					},
+					{
+						"value": "French Fries - Medium 12/2013",
+						"synonyms": [
+							"French Fries",
+							"French Fries - Medium 12",
+							"2013"
 						]
 					},
 					{
@@ -43518,9 +43748,42 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Energy Drink, RED BULL, With Added Caffeine, Niacin, Pantothenic Acid, Vitamins B6 And B12",
+						"value": "Myoplex Lite Ready-to-Drink Strawberry Cream (serving)",
 						"synonyms": [
-							"Energy Drink"
+							"Myoplex Lite Ready-to-Drink Strawberry Cream"
+						]
+					},
+					{
+						"value": "Sour Chewy Cubes (Correct)",
+						"synonyms": [
+							"Sour Chewy Cubes",
+							"Correct"
+						]
+					},
+					{
+						"value": "Veggie Omlet With Cheese (serving)",
+						"synonyms": [
+							"Veggie Omlet With Cheese"
+						]
+					},
+					{
+						"value": "Inulin Fos (Prebiotic Soluble Fiber)",
+						"synonyms": [
+							"Inulin Fos",
+							"Prebiotic Soluble Fiber"
+						]
+					},
+					{
+						"value": "McDONALDS, Sausage McGRIDDLES",
+						"synonyms": [
+							"McDONALDS"
+						]
+					},
+					{
+						"value": "Regular Can Coke 355ml (12 Oz) (serving)",
+						"synonyms": [
+							"Regular Can Coke 355ml",
+							"12 Oz"
 						]
 					},
 					{
@@ -43531,28 +43794,29 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Dark Mint Chocolate Chip Protein Bar (serving)",
+						"value": "Movie Theater Butter (Minibag)",
 						"synonyms": [
-							"Dark Mint Chocolate Chip Protein Bar"
+							"Movie Theater Butter",
+							"Minibag"
 						]
 					},
 					{
-						"value": "Dark Chocolate Trail Mix (serving)",
+						"value": "Vanilla Milk Shake - Regular",
 						"synonyms": [
-							"Dark Chocolate Trail Mix"
+							"Vanilla Milk Shake"
 						]
 					},
 					{
-						"value": "Gluten Free Pasta With Olive Oil (From Maggianos Website)",
+						"value": "Tostito Rest Hint Lime (serving)",
 						"synonyms": [
-							"Gluten Free Pasta With Olive Oil",
-							"From Maggianos Website"
+							"Tostito Rest Hint Lime"
 						]
 					},
 					{
-						"value": "Omega-3 Mix (serving)",
+						"value": "French Fries (Website)",
 						"synonyms": [
-							"Omega-3 Mix"
+							"French Fries",
+							"Website"
 						]
 					},
 					{
@@ -43569,64 +43833,28 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Snacks, Tortilla Chips, Plain, White Corn, Salted",
+						"value": "Sweet Cream Butter - Salted***",
 						"synonyms": [
-							"Snacks"
+							"Sweet Cream Butter"
 						]
 					},
 					{
-						"value": "Vegan Boca Burger- Grain Bun, Mustard, Onion, Pickle, Lettuce, T",
+						"value": "Hot Fudge Sundae - Small",
 						"synonyms": [
-							"Vegan Boca Burger- Grain Bun"
+							"Hot Fudge Sundae"
 						]
 					},
 					{
-						"value": "Veggie Omlet With Cheese (serving)",
+						"value": "Portabella Mushroom (Net Carbs)",
 						"synonyms": [
-							"Veggie Omlet With Cheese"
+							"Portabella Mushroom",
+							"Net Carbs"
 						]
 					},
 					{
-						"value": "French Fries - Medium 12/2013",
+						"value": "Gluten Free Pasta With Olive Oil (serving)",
 						"synonyms": [
-							"French Fries",
-							"French Fries - Medium 12",
-							"2013"
-						]
-					},
-					{
-						"value": "Mangos - Raw",
-						"synonyms": [
-							"Mangos"
-						]
-					},
-					{
-						"value": "Movie Theatre Butter Popcorn - Single Serve Bag (42.5g - From Box)",
-						"synonyms": [
-							"Movie Theatre Butter Popcorn - Single Serve Bag",
-							"42.5g - From Box",
-							"Movie Theatre Butter Popcorn"
-						]
-					},
-					{
-						"value": "Myoplex Lite Ready-to-Drink Strawberry Cream (serving)",
-						"synonyms": [
-							"Myoplex Lite Ready-to-Drink Strawberry Cream"
-						]
-					},
-					{
-						"value": "Garden Vegetable Medley (Sugar Snap Peas; Roasted Potatoes; Red",
-						"synonyms": [
-							"Garden Vegetable Medley",
-							"Sugar Snap Peas",
-							" Roasted Potatoes",
-							" Red"
-						]
-					},
-					{
-						"value": "Large Raw Carrot (serving)",
-						"synonyms": [
-							"Large Raw Carrot"
+							"Gluten Free Pasta With Olive Oil"
 						]
 					},
 					{
@@ -43637,63 +43865,15 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Rice (serving)",
+						"value": "Omega-3 Mix (serving)",
 						"synonyms": [
-							"Rice"
+							"Omega-3 Mix"
 						]
 					},
 					{
-						"value": "Sour Chewy Cubes (Correct)",
+						"value": "Snacks, Tortilla Chips, Plain, White Corn, Salted",
 						"synonyms": [
-							"Sour Chewy Cubes",
-							"Correct"
-						]
-					},
-					{
-						"value": "Sugars - Powdered",
-						"synonyms": [
-							"Sugars"
-						]
-					},
-					{
-						"value": "Tea - Brewed, Prepared With Drinking Water (black Tea)",
-						"synonyms": [
-							"Tea - Brewed, Prepared With Drinking Water",
-							"black Tea",
-							"Tea",
-							"Tea - Brewed"
-						]
-					},
-					{
-						"value": "Hot Fudge Sundae - Small",
-						"synonyms": [
-							"Hot Fudge Sundae"
-						]
-					},
-					{
-						"value": "Inulin Fos (Prebiotic Soluble Fiber)",
-						"synonyms": [
-							"Inulin Fos",
-							"Prebiotic Soluble Fiber"
-						]
-					},
-					{
-						"value": "Grilled (serving)",
-						"synonyms": [
-							"Grilled"
-						]
-					},
-					{
-						"value": "Low In Sodium, Chili, Medium",
-						"synonyms": [
-							"Low In Sodium"
-						]
-					},
-					{
-						"value": "Movie Theater Butter (Minibag)",
-						"synonyms": [
-							"Movie Theater Butter",
-							"Minibag"
+							"Snacks"
 						]
 					},
 					{
@@ -43710,75 +43890,46 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Snacks (serving)",
+						"value": "Pumpkin Seeds Roasted And Salted(With Shell And Potassium)",
 						"synonyms": [
-							"Snacks"
+							"Pumpkin Seeds Roasted And Salted",
+							"With Shell And Potassium"
 						]
 					},
 					{
-						"value": "Vanilla Milk Shake - Regular",
+						"value": "Sugars - Powdered",
 						"synonyms": [
-							"Vanilla Milk Shake"
+							"Sugars"
 						]
 					},
 					{
-						"value": "Lemon Wedge Or Slice",
+						"value": "Myoplex Light Strawberry Cream Protein Shake (serving)",
 						"synonyms": [
-							"Slice",
-							"Lemon Wedge"
+							"Myoplex Light Strawberry Cream Protein Shake"
 						]
 					},
 					{
-						"value": "Portabella Mushroom (Net Carbs)",
+						"value": "Dark Chocolate Trail Mix (serving)",
 						"synonyms": [
-							"Portabella Mushroom",
-							"Net Carbs"
+							"Dark Chocolate Trail Mix"
 						]
 					},
 					{
-						"value": "Spices - Pepper, Black",
+						"value": "Fruity Pebbles (serving)",
 						"synonyms": [
-							"Spices",
-							"Spices - Pepper"
+							"Fruity Pebbles"
 						]
 					},
 					{
-						"value": "Tostito Rest Hint Lime (serving)",
+						"value": "Mangos - Raw",
 						"synonyms": [
-							"Tostito Rest Hint Lime"
+							"Mangos"
 						]
 					},
 					{
-						"value": "Vegetable Skillet (serving)",
+						"value": "Low In Sodium, Chili, Medium",
 						"synonyms": [
-							"Vegetable Skillet"
-						]
-					},
-					{
-						"value": "Eggs - Fried (whole Egg) (serving)",
-						"synonyms": [
-							"Eggs - Fried",
-							"whole Egg",
-							"Eggs"
-						]
-					},
-					{
-						"value": "French Fries (Website)",
-						"synonyms": [
-							"French Fries",
-							"Website"
-						]
-					},
-					{
-						"value": "Gluten Free Pasta With Olive Oil (serving)",
-						"synonyms": [
-							"Gluten Free Pasta With Olive Oil"
-						]
-					},
-					{
-						"value": "Lemon Juice - Raw",
-						"synonyms": [
-							"Lemon Juice"
+							"Low In Sodium"
 						]
 					},
 					{
@@ -43789,16 +43940,30 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Nuts, Almonds",
+						"value": "Lemon Wedge Or Slice",
 						"synonyms": [
-							"Nuts"
+							"Slice",
+							"Lemon Wedge"
 						]
 					},
 					{
-						"value": "Pumpkin Seeds Roasted And Salted(With Shell And Potassium)",
+						"value": "Movie Theatre Butter Popcorn - Single Serve Bag (42.5g - From Box)",
 						"synonyms": [
-							"Pumpkin Seeds Roasted And Salted",
-							"With Shell And Potassium"
+							"Movie Theatre Butter Popcorn - Single Serve Bag",
+							"42.5g - From Box",
+							"Movie Theatre Butter Popcorn"
+						]
+					},
+					{
+						"value": "Rice (serving)",
+						"synonyms": [
+							"Rice"
+						]
+					},
+					{
+						"value": "Lemon Juice - Raw",
+						"synonyms": [
+							"Lemon Juice"
 						]
 					},
 					{
@@ -43809,66 +43974,36 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Snacks, Popcorn, Cheese-flavor",
-						"synonyms": [
-							"Snacks"
-						]
-					},
-					{
 						"value": "Soup, Ramen Noodle, Chicken Flavor, Dry",
 						"synonyms": [
 							"Soup"
 						]
 					},
 					{
-						"value": "Strawberry Lowfat - Lifeway",
+						"value": "Large Raw Carrot (serving)",
 						"synonyms": [
-							"Strawberry Lowfat"
+							"Large Raw Carrot"
 						]
 					},
 					{
-						"value": "Walnuts, Cranberries, & Soynuts",
+						"value": "Tea - Brewed, Prepared With Drinking Water (black Tea)",
 						"synonyms": [
-							"Walnuts"
+							"Tea - Brewed, Prepared With Drinking Water",
+							"black Tea",
+							"Tea",
+							"Tea - Brewed"
 						]
 					},
 					{
-						"value": "French Fries - Large (About 42 Fries)",
+						"value": "Grilled (serving)",
 						"synonyms": [
-							"French Fries - Large",
-							"About 42 Fries",
-							"French Fries"
+							"Grilled"
 						]
 					},
 					{
-						"value": "McDONALDS, Hamburger",
+						"value": "Snacks (serving)",
 						"synonyms": [
-							"McDONALDS"
-						]
-					},
-					{
-						"value": "McDONALDS, Sausage McGRIDDLES",
-						"synonyms": [
-							"McDONALDS"
-						]
-					},
-					{
-						"value": "Rice, Brown, Long-grain, Raw",
-						"synonyms": [
-							"Rice"
-						]
-					},
-					{
-						"value": "Side House Chop Salad W/Blue Cheese And Balsamic Vinegrette Dressing",
-						"synonyms": [
-							"Side House Chop Salad W",
-							"Blue Cheese And Balsamic Vinegrette Dressing"
-						]
-					},
-					{
-						"value": "Sweet Cream Butter - Salted***",
-						"synonyms": [
-							"Sweet Cream Butter"
+							"Snacks"
 						]
 					},
 					{
@@ -43885,11 +44020,123 @@ window.qm.staticData = {
 						]
 					},
 					{
+						"value": "Energy Drink, RED BULL, With Added Caffeine, Niacin, Pantothenic Acid, Vitamins B6 And B12",
+						"synonyms": [
+							"Energy Drink"
+						]
+					},
+					{
+						"value": "Vegetable Skillet (serving)",
+						"synonyms": [
+							"Vegetable Skillet"
+						]
+					},
+					{
+						"value": "Side House Chop Salad W/Blue Cheese And Balsamic Vinegrette Dressing",
+						"synonyms": [
+							"Side House Chop Salad W",
+							"Blue Cheese And Balsamic Vinegrette Dressing"
+						]
+					},
+					{
 						"value": "Movie Theatre Butter Popcorn - Single Serve Bag (42.5g - From Bo",
 						"synonyms": [
 							"Movie Theatre Butter Popcorn - Single Serve Bag",
 							"42.5g - From Bo",
 							"Movie Theatre Butter Popcorn"
+						]
+					},
+					{
+						"value": "Gluten Free Pasta With Olive Oil (From Maggianos Website)",
+						"synonyms": [
+							"Gluten Free Pasta With Olive Oil",
+							"From Maggianos Website"
+						]
+					},
+					{
+						"value": "Vegan Boca Burger- Grain Bun, Mustard, Onion, Pickle, Lettuce, T",
+						"synonyms": [
+							"Vegan Boca Burger- Grain Bun"
+						]
+					},
+					{
+						"value": "Garden Vegetable Medley (Sugar Snap Peas; Roasted Potatoes; Red",
+						"synonyms": [
+							"Garden Vegetable Medley",
+							"Sugar Snap Peas",
+							" Roasted Potatoes",
+							" Red"
+						]
+					},
+					{
+						"value": "Spices - Pepper, Black",
+						"synonyms": [
+							"Spices",
+							"Spices - Pepper"
+						]
+					},
+					{
+						"value": "Strawberry Lowfat - Lifeway",
+						"synonyms": [
+							"Strawberry Lowfat"
+						]
+					},
+					{
+						"value": "Nuts, Almonds",
+						"synonyms": [
+							"Nuts"
+						]
+					},
+					{
+						"value": "Vegetable Medley With Broccoli, Carrots And Cauliflower",
+						"synonyms": [
+							"Vegetable Medley With Broccoli"
+						]
+					},
+					{
+						"value": "Snacks, Popcorn, Cheese-flavor",
+						"synonyms": [
+							"Snacks"
+						]
+					},
+					{
+						"value": "Eggs - Fried (whole Egg) (serving)",
+						"synonyms": [
+							"Eggs - Fried",
+							"whole Egg",
+							"Eggs"
+						]
+					},
+					{
+						"value": "French Fries - Large (About 42 Fries)",
+						"synonyms": [
+							"French Fries - Large",
+							"About 42 Fries",
+							"French Fries"
+						]
+					},
+					{
+						"value": "Rice, Brown, Long-grain, Raw",
+						"synonyms": [
+							"Rice"
+						]
+					},
+					{
+						"value": "Pork, Cured, Ham With Natural Juices, Rump, Bone-in, Separable Lean And Fat, Unheated",
+						"synonyms": [
+							"Pork"
+						]
+					},
+					{
+						"value": "McDONALDS, Hamburger",
+						"synonyms": [
+							"McDONALDS"
+						]
+					},
+					{
+						"value": "Walnuts, Cranberries, & Soynuts",
+						"synonyms": [
+							"Walnuts"
 						]
 					},
 					{
@@ -43900,53 +44147,9 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Pork, Cured, Ham With Natural Juices, Rump, Bone-in, Separable Lean And Fat, Unheated",
+						"value": "Peppers, Red",
 						"synonyms": [
-							"Pork"
-						]
-					},
-					{
-						"value": "Regular Can Coke 355ml (12 Oz) (serving)",
-						"synonyms": [
-							"Regular Can Coke 355ml",
-							"12 Oz"
-						]
-					},
-					{
-						"value": "Vegetable Medley With Broccoli, Carrots And Cauliflower",
-						"synonyms": [
-							"Vegetable Medley With Broccoli"
-						]
-					},
-					{
-						"value": "Myoplex Light Strawberry Cream Protein Shake (serving)",
-						"synonyms": [
-							"Myoplex Light Strawberry Cream Protein Shake"
-						]
-					},
-					{
-						"value": "Original Waffles - Gluten Free",
-						"synonyms": [
-							"Original Waffles"
-						]
-					},
-					{
-						"value": "Pork, Leg Cap Steak, Boneless, Separable Lean And Fat, Raw",
-						"synonyms": [
-							"Pork"
-						]
-					},
-					{
-						"value": "Roasted & Salted Pumpkin Seeds (W/ Shell)",
-						"synonyms": [
-							"Roasted & Salted Pumpkin Seeds",
-							"W/ Shell"
-						]
-					},
-					{
-						"value": "Sardines (serving)",
-						"synonyms": [
-							"Sardines"
+							"Peppers"
 						]
 					},
 					{
@@ -43957,22 +44160,10 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Walnuts, Cashews & Almonds",
+						"value": "Roasted & Salted Pumpkin Seeds (W/ Shell)",
 						"synonyms": [
-							"Walnuts"
-						]
-					},
-					{
-						"value": "dmt",
-						"synonyms": [
-							"dmt"
-						]
-					},
-					{
-						"value": "Eggs, Cage Free Large Brown, 1 Whole Egg Mj (serving)",
-						"synonyms": [
-							"Eggs, Cage Free Large Brown, 1 Whole Egg Mj",
-							"Eggs"
+							"Roasted & Salted Pumpkin Seeds",
+							"W/ Shell"
 						]
 					},
 					{
@@ -43982,19 +44173,60 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Gluten Free, Wheat Free Homestyle Waffles",
+						"value": "Vegan Boca Burger- Grain Bun, Mustard, Onion, Pickle, Lettuce, Tomato",
 						"synonyms": [
-							"Gluten Free"
+							"Vegan Boca Burger- Grain Bun"
 						]
 					},
 					{
-						"value": "Garden Vegetable Medley (Sugar Snap Peas; Roasted Potatoes; Red Peppers; Garden Herbs) *corrected*",
+						"value": "Tamale Verde - Cheese - Gluten Free",
 						"synonyms": [
-							"Garden Vegetable Medley",
-							"Sugar Snap Peas",
-							" Roasted Potatoes",
-							" Red Peppers",
-							" Garden Herbs"
+							"Tamale Verde"
+						]
+					},
+					{
+						"value": "Hawaiian Grog, Ground",
+						"synonyms": [
+							"Dierbergs Highland Grog Ground Coffee",
+							"Hawaiian Grog, Ground, 2 Pound",
+							"Hawaiian Grog"
+						]
+					},
+					{
+						"value": "Gluten Free Pasta - Rotelle",
+						"synonyms": [
+							"Gluten Free Pasta"
+						]
+					},
+					{
+						"value": "Probugs - Orange Creamy Crawler",
+						"synonyms": [
+							"Probugs"
+						]
+					},
+					{
+						"value": "Grape Tomatoes (Net Carbs)",
+						"synonyms": [
+							"Grape Tomatoes",
+							"Net Carbs"
+						]
+					},
+					{
+						"value": "Vegetables, Mixed, Frozen, Cooked, Boiled, Drained, With Salt",
+						"synonyms": [
+							"Vegetables"
+						]
+					},
+					{
+						"value": "Sardines (serving)",
+						"synonyms": [
+							"Sardines"
+						]
+					},
+					{
+						"value": "Nutrition Bar - Lemon Zest",
+						"synonyms": [
+							"Nutrition Bar"
 						]
 					},
 					{
@@ -44006,6 +44238,105 @@ window.qm.staticData = {
 						]
 					},
 					{
+						"value": "Orange (serving)",
+						"synonyms": [
+							"Orange"
+						]
+					},
+					{
+						"value": "Traditional Favorites Pasta Sauce - Tomato & Basil",
+						"synonyms": [
+							"Traditional Favorites Pasta Sauce"
+						]
+					},
+					{
+						"value": "Pulp Free Orange Juice (serving)",
+						"synonyms": [
+							"Pulp Free Orange Juice"
+						]
+					},
+					{
+						"value": "Natural, Cultured Goat Milk Kefir",
+						"synonyms": [
+							"Natural"
+						]
+					},
+					{
+						"value": "Eggs, Cage Free Large Brown, 1 Whole Egg Mj (serving)",
+						"synonyms": [
+							"Eggs, Cage Free Large Brown, 1 Whole Egg Mj",
+							"Eggs"
+						]
+					},
+					{
+						"value": "dmt",
+						"synonyms": [
+							"dmt"
+						]
+					},
+					{
+						"value": "Eggs, Cage Free Large Brown, 1 Whole Egg Mj",
+						"synonyms": [
+							"Eggs"
+						]
+					},
+					{
+						"value": "Strawberries - Raw",
+						"synonyms": [
+							"Strawberries"
+						]
+					},
+					{
+						"value": "Sprite (serving)",
+						"synonyms": [
+							"Sprite"
+						]
+					},
+					{
+						"value": "Sea Salt Potato Chips (Correct) 1.5 Oz Bag",
+						"synonyms": [
+							"Sea Salt Potato Chips",
+							"Correct"
+						]
+					},
+					{
+						"value": "Walnuts, Cashews & Almonds",
+						"synonyms": [
+							"Walnuts"
+						]
+					},
+					{
+						"value": "Vegan Boca Burger W/cheese",
+						"synonyms": [
+							"Vegan Boca Burger W",
+							"cheese"
+						]
+					},
+					{
+						"value": "Veggie-Cheese Omelet, Omelet Only",
+						"synonyms": [
+							"Veggie-Cheese Omelet"
+						]
+					},
+					{
+						"value": "Original Waffles - Gluten Free",
+						"synonyms": [
+							"Original Waffles"
+						]
+					},
+					{
+						"value": "HOT POCKETS Ham N Cheese Stuffed Sandwich, Frozen",
+						"synonyms": [
+							"HOT POCKETS Ham N Cheese Stuffed Sandwich"
+						]
+					},
+					{
+						"value": "Pork, Leg Cap Steak, Boneless, Separable Lean And Fat, Raw",
+						"synonyms": [
+							"Pork"
+						]
+					},
+					{
 						"value": "NESCAF Dolce Gusto Coffee Capsules",
 						"synonyms": [
 							"Single-Serve Capsules & Pods",
@@ -44013,22 +44344,13 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Nutrition Bar - Lemon Zest",
+						"value": "Garden Vegetable Medley (Sugar Snap Peas; Roasted Potatoes; Red Peppers; Garden Herbs) *corrected*",
 						"synonyms": [
-							"Nutrition Bar"
-						]
-					},
-					{
-						"value": "Orange (serving)",
-						"synonyms": [
-							"Orange"
-						]
-					},
-					{
-						"value": "Plus - Almond Walnut Macadamia + Protein, With Peanuts",
-						"synonyms": [
-							"Plus",
-							"Plus - Almond Walnut Macadamia + Protein"
+							"Garden Vegetable Medley",
+							"Sugar Snap Peas",
+							" Roasted Potatoes",
+							" Red Peppers",
+							" Garden Herbs"
 						]
 					},
 					{
@@ -44044,36 +44366,6 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Dinner (serving)",
-						"synonyms": [
-							"Dinner"
-						]
-					},
-					{
-						"value": "Eggs, Cage Free Large Brown, 1 Whole Egg Mj",
-						"synonyms": [
-							"Eggs"
-						]
-					},
-					{
-						"value": "Gluten Free Pasta - Rotelle",
-						"synonyms": [
-							"Gluten Free Pasta"
-						]
-					},
-					{
-						"value": "Natural, Cultured Goat Milk Kefir",
-						"synonyms": [
-							"Natural"
-						]
-					},
-					{
-						"value": "Peppers, Red",
-						"synonyms": [
-							"Peppers"
-						]
-					},
-					{
 						"value": "Pineapple - Raw, All Varieties",
 						"synonyms": [
 							"Pineapple",
@@ -44081,176 +44373,29 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Popcorn, Butter Microwave (As Listed On Label)",
+						"value": "English Muffins, Plain, Toasted, Enriched, With Calcium Propionate (includes Sourdough)",
 						"synonyms": [
-							"Popcorn, Butter Microwave",
-							"As Listed On Label",
-							"Popcorn"
+							"English Muffins, Plain, Toasted, Enriched, With Calcium Propionate",
+							"includes Sourdough",
+							"English Muffins"
 						]
 					},
 					{
-						"value": "Probugs - Orange Creamy Crawler",
+						"value": "Yogurt, Greek, CHOBANI CHAMPIONS, VERY BERRY",
 						"synonyms": [
-							"Probugs"
+							"Yogurt"
 						]
 					},
 					{
-						"value": "Strawberries - Raw",
+						"value": "Gluten Free, Wheat Free Homestyle Waffles",
 						"synonyms": [
-							"Strawberries"
-						]
-					},
-					{
-						"value": "Traditional Cut Shredded Sharp Cheddar Cheese (Off The Block)",
-						"synonyms": [
-							"Traditional Cut Shredded Sharp Cheddar Cheese",
-							"Off The Block"
-						]
-					},
-					{
-						"value": "Veggie-Cheese Omelet, Omelet Only",
-						"synonyms": [
-							"Veggie-Cheese Omelet"
-						]
-					},
-					{
-						"value": "Movie Theatre Butter Popcorn (Mini Bags)",
-						"synonyms": [
-							"Movie Theatre Butter Popcorn",
-							"Mini Bags"
-						]
-					},
-					{
-						"value": "Nuts - Macadamia Nuts, Raw",
-						"synonyms": [
-							"Nuts",
-							"Nuts - Macadamia Nuts"
-						]
-					},
-					{
-						"value": "Popcorn - Microwave",
-						"synonyms": [
-							"Popcorn"
-						]
-					},
-					{
-						"value": "Salad Dressing - Italian Dressing",
-						"synonyms": [
-							"Salad Dressing"
-						]
-					},
-					{
-						"value": "TACO BELL, Bean Burrito",
-						"synonyms": [
-							"TACO BELL"
-						]
-					},
-					{
-						"value": "Gluten Free Dinner Rolls (Also at Legal Seafoods)",
-						"synonyms": [
-							"Gluten Free Dinner Rolls",
-							"Also at Legal Seafoods"
-						]
-					},
-					{
-						"value": "Gluten-Free Ciabatta Rolls (Usa Made)",
-						"synonyms": [
-							"Gluten-Free Ciabatta Rolls",
-							"Usa Made"
-						]
-					},
-					{
-						"value": "Grape Tomatoes (Net Carbs)",
-						"synonyms": [
-							"Grape Tomatoes",
-							"Net Carbs"
-						]
-					},
-					{
-						"value": "HOT POCKETS Ham N Cheese Stuffed Sandwich, Frozen",
-						"synonyms": [
-							"HOT POCKETS Ham N Cheese Stuffed Sandwich"
-						]
-					},
-					{
-						"value": "Mcdonalds Coke, Large",
-						"synonyms": [
-							"Mcdonalds Coke"
-						]
-					},
-					{
-						"value": "Roasted Deluxe Mixed Nuts, Salted *corrected*",
-						"synonyms": [
-							"Roasted Deluxe Mixed Nuts"
-						]
-					},
-					{
-						"value": "Sprite (serving)",
-						"synonyms": [
-							"Sprite"
-						]
-					},
-					{
-						"value": "Tasty Light Cheese (Cheddar)",
-						"synonyms": [
-							"Tasty Light Cheese",
-							"Cheddar"
-						]
-					},
-					{
-						"value": "Vegan Boca Burger W/cheese",
-						"synonyms": [
-							"Vegan Boca Burger W",
-							"cheese"
-						]
-					},
-					{
-						"value": "Vegetables, Mixed, Frozen, Cooked, Boiled, Drained, With Salt",
-						"synonyms": [
-							"Vegetables"
+							"Gluten Free"
 						]
 					},
 					{
 						"value": "Gluten, Soy And Dairy Free Dark Chocolate Trail Mix",
 						"synonyms": [
 							"Gluten"
-						]
-					},
-					{
-						"value": "Lentil Vegetable Soup (Light Sodium) ** Net Carbs",
-						"synonyms": [
-							"Lentil Vegetable Soup",
-							"Light Sodium"
-						]
-					},
-					{
-						"value": "Traditional Favorites Pasta Sauce - Tomato & Basil",
-						"synonyms": [
-							"Traditional Favorites Pasta Sauce"
-						]
-					},
-					{
-						"value": "Vegan Boca Burger- Grain Bun, Mustard, Onion, Pickle, Lettuce, Tomato",
-						"synonyms": [
-							"Vegan Boca Burger- Grain Bun"
-						]
-					},
-					{
-						"value": "Garlic - Raw",
-						"synonyms": [
-							"Garlic"
-						]
-					},
-					{
-						"value": "Kefir Lowfat, Plain Unsweetened",
-						"synonyms": [
-							"Kefir Lowfat"
-						]
-					},
-					{
-						"value": "Microwave Popcorn - Butter",
-						"synonyms": [
-							"Microwave Popcorn"
 						]
 					},
 					{
@@ -44268,16 +44413,29 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Sea Salt Potato Chips (Correct) 1.5 Oz Bag",
+						"value": "guiltiness",
 						"synonyms": [
-							"Sea Salt Potato Chips",
-							"Correct"
+							"guiltiness"
 						]
 					},
 					{
-						"value": "Tamale Verde - Cheese - Gluten Free",
+						"value": "Popcorn, Butter Microwave (As Listed On Label)",
 						"synonyms": [
-							"Tamale Verde"
+							"Popcorn, Butter Microwave",
+							"As Listed On Label",
+							"Popcorn"
+						]
+					},
+					{
+						"value": "Garlic - Raw",
+						"synonyms": [
+							"Garlic"
+						]
+					},
+					{
+						"value": "Microwave Popcorn - Butter",
+						"synonyms": [
+							"Microwave Popcorn"
 						]
 					},
 					{
@@ -44287,19 +44445,24 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "English Muffins, Plain, Toasted, Enriched, With Calcium Propionate (includes Sourdough)",
+						"value": "Plus - Almond Walnut Macadamia + Protein, With Peanuts",
 						"synonyms": [
-							"English Muffins, Plain, Toasted, Enriched, With Calcium Propionate",
-							"includes Sourdough",
-							"English Muffins"
+							"Plus",
+							"Plus - Almond Walnut Macadamia + Protein"
 						]
 					},
 					{
-						"value": "Hawaiian Grog, Ground",
+						"value": "Gluten-Free Ciabatta Rolls (Usa Made)",
 						"synonyms": [
-							"Dierbergs Highland Grog Ground Coffee",
-							"Hawaiian Grog, Ground, 2 Pound",
-							"Hawaiian Grog"
+							"Gluten-Free Ciabatta Rolls",
+							"Usa Made"
+						]
+					},
+					{
+						"value": "Tasty Light Cheese (Cheddar)",
+						"synonyms": [
+							"Tasty Light Cheese",
+							"Cheddar"
 						]
 					},
 					{
@@ -44309,9 +44472,28 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Pulp Free Orange Juice (serving)",
+						"value": "Nuts - Macadamia Nuts, Raw",
 						"synonyms": [
-							"Pulp Free Orange Juice"
+							"Nuts",
+							"Nuts - Macadamia Nuts"
+						]
+					},
+					{
+						"value": "TACO BELL, Bean Burrito",
+						"synonyms": [
+							"TACO BELL"
+						]
+					},
+					{
+						"value": "Mcdonalds Coke, Large",
+						"synonyms": [
+							"Mcdonalds Coke"
+						]
+					},
+					{
+						"value": "Roasted Deluxe Mixed Nuts, Salted *corrected*",
+						"synonyms": [
+							"Roasted Deluxe Mixed Nuts"
 						]
 					},
 					{
@@ -44322,15 +44504,55 @@ window.qm.staticData = {
 						]
 					},
 					{
-						"value": "Yogurt, Greek, CHOBANI CHAMPIONS, VERY BERRY",
+						"value": "Dinner (serving)",
 						"synonyms": [
-							"Yogurt"
+							"Dinner"
 						]
 					},
 					{
-						"value": "guiltiness",
+						"value": "Traditional Cut Shredded Sharp Cheddar Cheese (Off The Block)",
 						"synonyms": [
-							"guiltiness"
+							"Traditional Cut Shredded Sharp Cheddar Cheese",
+							"Off The Block"
+						]
+					},
+					{
+						"value": "Kefir Lowfat, Plain Unsweetened",
+						"synonyms": [
+							"Kefir Lowfat"
+						]
+					},
+					{
+						"value": "Lentil Vegetable Soup (Light Sodium) ** Net Carbs",
+						"synonyms": [
+							"Lentil Vegetable Soup",
+							"Light Sodium"
+						]
+					},
+					{
+						"value": "Movie Theatre Butter Popcorn (Mini Bags)",
+						"synonyms": [
+							"Movie Theatre Butter Popcorn",
+							"Mini Bags"
+						]
+					},
+					{
+						"value": "Popcorn - Microwave",
+						"synonyms": [
+							"Popcorn"
+						]
+					},
+					{
+						"value": "Salad Dressing - Italian Dressing",
+						"synonyms": [
+							"Salad Dressing"
+						]
+					},
+					{
+						"value": "Gluten Free Dinner Rolls (Also at Legal Seafoods)",
+						"synonyms": [
+							"Gluten Free Dinner Rolls",
+							"Also at Legal Seafoods"
 						]
 					}
 				]
@@ -44462,20 +44684,6 @@ window.qm.staticData = {
 						"updated": 1533832953
 					},
 					{
-						"id": "8738eeb1-a3ea-4112-84d2-cf2dec0b8bc4",
-						"data": [
-							{
-								"text": "close",
-								"alias": "closeCommand",
-								"meta": "@closeCommand",
-								"userDefined": true
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"updated": 1533832953
-					},
-					{
 						"id": "658d738d-a915-4496-8f1b-b3b376cc6e26",
 						"data": [
 							{
@@ -44483,6 +44691,20 @@ window.qm.staticData = {
 								"alias": "closeCommand",
 								"meta": "@closeCommand",
 								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1533832953
+					},
+					{
+						"id": "8738eeb1-a3ea-4112-84d2-cf2dec0b8bc4",
+						"data": [
+							{
+								"text": "close",
+								"alias": "closeCommand",
+								"meta": "@closeCommand",
+								"userDefined": true
 							}
 						],
 						"isTemplate": false,
@@ -44502,6 +44724,179 @@ window.qm.staticData = {
 						"isTemplate": false,
 						"count": 0,
 						"updated": 1533832953
+					}
+				]
+			},
+			"Create Phrase Intent": {
+				"id": "1afcabca-a1d9-418f-b2fb-5c371727ddb8",
+				"name": "Create Phrase Intent",
+				"auto": true,
+				"contexts": [],
+				"responses": [
+					{
+						"resetContexts": false,
+						"affectedContexts": [],
+						"parameters": [
+							{
+								"id": "0a3a52f4-197f-42f7-a70e-2474356daa5c",
+								"required": true,
+								"dataType": "@createPhraseCommand",
+								"name": "createPhraseCommand",
+								"value": "$createPhraseCommand",
+								"prompts": [
+									{
+										"lang": "en",
+										"value": "I think you want to record a phrase. Could you say record an idea?"
+									}
+								],
+								"isList": false
+							},
+							{
+								"id": "8e360840-5076-4d74-bde6-73e4162f69fa",
+								"required": true,
+								"dataType": "@sys.any",
+								"name": "phrase",
+								"value": "$phrase",
+								"prompts": [
+									{
+										"lang": "en",
+										"value": "What is the phrase?"
+									},
+									{
+										"lang": "en",
+										"value": "Yes?"
+									},
+									{
+										"lang": "en",
+										"value": "What?"
+									},
+									{
+										"lang": "en",
+										"value": "What is it?"
+									}
+								],
+								"isList": false
+							}
+						],
+						"messages": [
+							{
+								"type": 0,
+								"lang": "en",
+								"speech": []
+							}
+						],
+						"defaultResponsePlatforms": {},
+						"speech": []
+					}
+				],
+				"priority": 500000,
+				"cortanaCommand": {
+					"navigateOrService": "NAVIGATE",
+					"target": ""
+				},
+				"webhookUsed": true,
+				"webhookForSlotFilling": false,
+				"lastUpdate": 1534573235,
+				"fallbackIntent": false,
+				"events": [],
+				"usersays": [
+					{
+						"id": "629a7c4b-3c12-4df7-a129-27c823bf6281",
+						"data": [
+							{
+								"text": "add a phrase",
+								"alias": "createPhraseCommand",
+								"meta": "@createPhraseCommand",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1534122273
+					},
+					{
+						"id": "e305ab6d-052a-43c6-847d-bf1bd7546fe4",
+						"data": [
+							{
+								"text": "add an idea",
+								"alias": "createPhraseCommand",
+								"meta": "@createPhraseCommand",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1534573235
+					},
+					{
+						"id": "d1760418-b2b3-4fe8-9642-d1517453402f",
+						"data": [
+							{
+								"text": "record an idea",
+								"alias": "createPhraseCommand",
+								"meta": "@createPhraseCommand",
+								"userDefined": true
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1534122273
+					},
+					{
+						"id": "f68c6fd3-4d19-4e30-b055-11e2317fc964",
+						"data": [
+							{
+								"text": "record idea",
+								"alias": "createPhraseCommand",
+								"meta": "@createPhraseCommand",
+								"userDefined": true
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1534122273
+					},
+					{
+						"id": "1a18522c-c4f3-40fb-8566-846f2f397402",
+						"data": [
+							{
+								"text": "create a phrase",
+								"alias": "createPhraseCommand",
+								"meta": "@createPhraseCommand",
+								"userDefined": true
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1534122273
+					},
+					{
+						"id": "3b1db474-9aa9-4124-a795-3019d6217068",
+						"data": [
+							{
+								"text": "save a phrase",
+								"alias": "createPhraseCommand",
+								"meta": "@createPhraseCommand",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1534122273
+					},
+					{
+						"id": "84db17e8-fe18-462a-b0a0-4a0ddf547ce1",
+						"data": [
+							{
+								"text": "save an idea phrase",
+								"alias": "createPhraseCommand",
+								"meta": "@createPhraseCommand",
+								"userDefined": true
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1534122273
 					}
 				]
 			},
@@ -44542,6 +44937,12 @@ window.qm.staticData = {
 								"dataType": "@createReminderTriggerPhrase",
 								"name": "triggerPhrase",
 								"value": "$triggerPhrase",
+								"prompts": [
+									{
+										"lang": "en",
+										"value": "I think you want to create a reminder, but could you be more specific?  Maybe say add Mood or add whatever you want to track."
+									}
+								],
 								"isList": false
 							}
 						],
@@ -44563,25 +44964,25 @@ window.qm.staticData = {
 				},
 				"webhookUsed": true,
 				"webhookForSlotFilling": false,
-				"lastUpdate": 1533409807,
+				"lastUpdate": 1534122155,
 				"fallbackIntent": false,
 				"events": [],
 				"usersays": [
 					{
-						"id": "d07c6610-8635-44be-9bbd-93140ddbc710",
+						"id": "f0b4eb9a-f304-4b8a-a1fd-97baeb357972",
 						"data": [
 							{
 								"text": "add",
 								"alias": "triggerPhrase",
 								"meta": "@createReminderTriggerPhrase",
-								"userDefined": false
+								"userDefined": true
 							},
 							{
 								"text": " ",
 								"userDefined": false
 							},
 							{
-								"text": "guiltiness",
+								"text": "mood",
 								"alias": "variableName",
 								"meta": "@variableName",
 								"userDefined": true
@@ -44589,10 +44990,10 @@ window.qm.staticData = {
 						],
 						"isTemplate": false,
 						"count": 0,
-						"updated": 1533409807
+						"updated": 1534122155
 					},
 					{
-						"id": "82401ac1-0b8b-4a3b-b29d-db64d74a781a",
+						"id": "1f4759ad-94ee-4416-bb57-c2476b92a977",
 						"data": [
 							{
 								"text": "add",
@@ -44613,10 +45014,34 @@ window.qm.staticData = {
 						],
 						"isTemplate": false,
 						"count": 0,
-						"updated": 1533409807
+						"updated": 1534122155
 					},
 					{
-						"id": "34989049-8892-463d-9e8a-97da7704885a",
+						"id": "f81f0265-dc16-48f6-8e87-1d60be2c1ea8",
+						"data": [
+							{
+								"text": "add",
+								"alias": "triggerPhrase",
+								"meta": "@createReminderTriggerPhrase",
+								"userDefined": false
+							},
+							{
+								"text": " ",
+								"userDefined": false
+							},
+							{
+								"text": "guiltiness",
+								"alias": "variableName",
+								"meta": "@variableName",
+								"userDefined": true
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1534122155
+					},
+					{
+						"id": "7cd56f70-f3ee-43a4-b367-6944110298c7",
 						"data": [
 							{
 								"text": "add",
@@ -44637,73 +45062,7 @@ window.qm.staticData = {
 						],
 						"isTemplate": false,
 						"count": 0,
-						"updated": 1533409807
-					},
-					{
-						"id": "aabdc0a7-283b-4de9-a7d7-c60699999b08",
-						"data": [
-							{
-								"text": "add",
-								"alias": "triggerPhrase",
-								"meta": "@createReminderTriggerPhrase",
-								"userDefined": true
-							},
-							{
-								"text": " ",
-								"userDefined": false
-							},
-							{
-								"text": "mood",
-								"alias": "variableName",
-								"meta": "@variableName",
-								"userDefined": true
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"updated": 1533409807
-					},
-					{
-						"id": "b354ae1e-d69c-4331-bc72-0b09fc12f1b1",
-						"data": [
-							{
-								"text": "water",
-								"alias": "variableName",
-								"meta": "@variableName",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"updated": 1533409807
-					},
-					{
-						"id": "1c0cf0a1-0ea0-4198-ab0b-addf86ca99e1",
-						"data": [
-							{
-								"text": "mood",
-								"alias": "variableName",
-								"meta": "@variableName",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"updated": 1533409807
-					},
-					{
-						"id": "04bb3ed5-d213-4fc6-91b0-ea48f5c25262",
-						"data": [
-							{
-								"text": "apples",
-								"alias": "variableName",
-								"meta": "@variableName",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"updated": 1533409807
+						"updated": 1534122155
 					}
 				]
 			},
@@ -44722,7 +45081,10 @@ window.qm.staticData = {
 							{
 								"type": 0,
 								"lang": "en",
-								"speech": "I didn't get that. Could you try phrasing your statement like Add Apples or Record 5 out of 5 Overall Mood?"
+								"speech": [
+									"Could you try phrasing your statement like Record Idea, or Add Apples or Record 5 out of 5 Overall Mood?",
+									"Recorded. I'll ask my boss about it."
+								]
 							},
 							{
 								"type": 0,
@@ -44735,9 +45097,13 @@ window.qm.staticData = {
 					}
 				],
 				"priority": 500000,
+				"cortanaCommand": {
+					"navigateOrService": "NAVIGATE",
+					"target": ""
+				},
 				"webhookUsed": true,
 				"webhookForSlotFilling": false,
-				"lastUpdate": 1532974560,
+				"lastUpdate": 1534119655,
 				"fallbackIntent": true,
 				"events": []
 			},
@@ -44799,34 +45165,10 @@ window.qm.staticData = {
 				],
 				"usersays": [
 					{
-						"id": "0c66027c-df22-4d2a-80d8-a4d0bf11a966",
+						"id": "bfef17ba-b1df-4cd9-9107-c8d9d949a89f",
 						"data": [
 							{
-								"text": "hello",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"updated": 1533356919
-					},
-					{
-						"id": "b575f647-64b2-4941-badf-a1cc3efe5320",
-						"data": [
-							{
-								"text": "hey there",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"updated": 1533356919
-					},
-					{
-						"id": "4246d40a-e271-4ee2-bbd0-26ffd5ca2939",
-						"data": [
-							{
-								"text": "howdy",
+								"text": "hi",
 								"userDefined": false
 							}
 						],
@@ -44859,6 +45201,18 @@ window.qm.staticData = {
 						"updated": 1533356919
 					},
 					{
+						"id": "0c66027c-df22-4d2a-80d8-a4d0bf11a966",
+						"data": [
+							{
+								"text": "hello",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1533356919
+					},
+					{
 						"id": "b8b13be3-4039-462c-a761-c28da0cf0679",
 						"data": [
 							{
@@ -44868,18 +45222,6 @@ window.qm.staticData = {
 						],
 						"isTemplate": false,
 						"count": 1,
-						"updated": 1533356919
-					},
-					{
-						"id": "b103548f-4b97-4f6f-84c9-00046a0d6f78",
-						"data": [
-							{
-								"text": "just going to say hi",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
 						"updated": 1533356919
 					},
 					{
@@ -44907,10 +45249,10 @@ window.qm.staticData = {
 						"updated": 1533356919
 					},
 					{
-						"id": "b5e7831e-c746-45a3-a1bb-be10b7276be2",
+						"id": "b575f647-64b2-4941-badf-a1cc3efe5320",
 						"data": [
 							{
-								"text": "hello again",
+								"text": "hey there",
 								"userDefined": false
 							}
 						],
@@ -44943,10 +45285,10 @@ window.qm.staticData = {
 						"updated": 1533356919
 					},
 					{
-						"id": "6b522a8d-f6ab-47d9-a707-ecb24aae78ce",
+						"id": "ab34225f-dae1-41de-969a-1b562b05d890",
 						"data": [
 							{
-								"text": "greetings",
+								"text": "hello there",
 								"userDefined": false
 							}
 						],
@@ -44967,10 +45309,10 @@ window.qm.staticData = {
 						"updated": 1533356919
 					},
 					{
-						"id": "bfef17ba-b1df-4cd9-9107-c8d9d949a89f",
+						"id": "4246d40a-e271-4ee2-bbd0-26ffd5ca2939",
 						"data": [
 							{
-								"text": "hi",
+								"text": "howdy",
 								"userDefined": false
 							}
 						],
@@ -44979,10 +45321,34 @@ window.qm.staticData = {
 						"updated": 1533356919
 					},
 					{
-						"id": "ab34225f-dae1-41de-969a-1b562b05d890",
+						"id": "b103548f-4b97-4f6f-84c9-00046a0d6f78",
 						"data": [
 							{
-								"text": "hello there",
+								"text": "just going to say hi",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1533356919
+					},
+					{
+						"id": "b5e7831e-c746-45a3-a1bb-be10b7276be2",
+						"data": [
+							{
+								"text": "hello again",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1533356919
+					},
+					{
+						"id": "6b522a8d-f6ab-47d9-a707-ecb24aae78ce",
+						"data": [
+							{
+								"text": "greetings",
 								"userDefined": false
 							}
 						],
@@ -45049,6 +45415,78 @@ window.qm.staticData = {
 				"events": [],
 				"usersays": [
 					{
+						"id": "e8e1b454-1923-45ee-a713-cefa921d67c8",
+						"data": [
+							{
+								"text": "done with",
+								"alias": "doneWithCategoryTriggerPhrase",
+								"meta": "@doneWithCategoryTriggerPhrase",
+								"userDefined": false
+							},
+							{
+								"text": " ",
+								"userDefined": false
+							},
+							{
+								"text": "emotions",
+								"alias": "variableCategoryName",
+								"meta": "@variableCategoryName",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1533392105
+					},
+					{
+						"id": "f9f1c523-1792-4201-b4b7-b43d202ceb82",
+						"data": [
+							{
+								"text": "done",
+								"alias": "doneWithCategoryTriggerPhrase",
+								"meta": "@doneWithCategoryTriggerPhrase",
+								"userDefined": true
+							},
+							{
+								"text": " with ",
+								"userDefined": false
+							},
+							{
+								"text": "treatments",
+								"alias": "variableCategoryName",
+								"meta": "@variableCategoryName",
+								"userDefined": true
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1533392105
+					},
+					{
+						"id": "752fc39b-83c7-41eb-842a-7ad5d6d744ea",
+						"data": [
+							{
+								"text": "done with",
+								"alias": "doneWithCategoryTriggerPhrase",
+								"meta": "@doneWithCategoryTriggerPhrase",
+								"userDefined": false
+							},
+							{
+								"text": " ",
+								"userDefined": false
+							},
+							{
+								"text": "foods",
+								"alias": "variableCategoryName",
+								"meta": "@variableCategoryName",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1533392105
+					},
+					{
 						"id": "21a1fb06-a5b3-4b65-9152-239a7a8d5215",
 						"data": [
 							{
@@ -45097,30 +45535,6 @@ window.qm.staticData = {
 						"updated": 1533392105
 					},
 					{
-						"id": "752fc39b-83c7-41eb-842a-7ad5d6d744ea",
-						"data": [
-							{
-								"text": "done with",
-								"alias": "doneWithCategoryTriggerPhrase",
-								"meta": "@doneWithCategoryTriggerPhrase",
-								"userDefined": false
-							},
-							{
-								"text": " ",
-								"userDefined": false
-							},
-							{
-								"text": "foods",
-								"alias": "variableCategoryName",
-								"meta": "@variableCategoryName",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"updated": 1533392105
-					},
-					{
 						"id": "83fec809-4c07-4a17-bc8b-24ff3fdf52b6",
 						"data": [
 							{
@@ -45138,54 +45552,6 @@ window.qm.staticData = {
 								"alias": "variableCategoryName",
 								"meta": "@variableCategoryName",
 								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"updated": 1533392105
-					},
-					{
-						"id": "e8e1b454-1923-45ee-a713-cefa921d67c8",
-						"data": [
-							{
-								"text": "done with",
-								"alias": "doneWithCategoryTriggerPhrase",
-								"meta": "@doneWithCategoryTriggerPhrase",
-								"userDefined": false
-							},
-							{
-								"text": " ",
-								"userDefined": false
-							},
-							{
-								"text": "emotions",
-								"alias": "variableCategoryName",
-								"meta": "@variableCategoryName",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"updated": 1533392105
-					},
-					{
-						"id": "f9f1c523-1792-4201-b4b7-b43d202ceb82",
-						"data": [
-							{
-								"text": "done",
-								"alias": "doneWithCategoryTriggerPhrase",
-								"meta": "@doneWithCategoryTriggerPhrase",
-								"userDefined": true
-							},
-							{
-								"text": " with ",
-								"userDefined": false
-							},
-							{
-								"text": "treatments",
-								"alias": "variableCategoryName",
-								"meta": "@variableCategoryName",
-								"userDefined": true
 							}
 						],
 						"isTemplate": false,
@@ -45235,20 +45601,6 @@ window.qm.staticData = {
 				"events": [],
 				"usersays": [
 					{
-						"id": "900d42f8-5884-4731-834e-efdd4aeff1e7",
-						"data": [
-							{
-								"text": "help",
-								"alias": "helpCommand",
-								"meta": "@helpCommand",
-								"userDefined": true
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"updated": 1533833787
-					},
-					{
 						"id": "a1f996bb-17f4-4954-8ecd-6f4b505f1d4f",
 						"data": [
 							{
@@ -45283,29 +45635,97 @@ window.qm.staticData = {
 						"isTemplate": false,
 						"count": 0,
 						"updated": 1533833787
+					},
+					{
+						"id": "900d42f8-5884-4731-834e-efdd4aeff1e7",
+						"data": [
+							{
+								"text": "help",
+								"alias": "helpCommand",
+								"meta": "@helpCommand",
+								"userDefined": true
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1533833787
 					}
 				]
 			},
-			"Knowledge.KnowledgeBase.MTQ3ODYxNjIwMDE1ODc0NzAzMzY": {
-				"id": "fa003351-d595-41b1-aac3-e85707cd498f",
-				"name": "Knowledge.KnowledgeBase.MTQ3ODYxNjIwMDE1ODc0NzAzMzY",
-				"auto": false,
+			"Recall Intent": {
+				"id": "95a49fb0-b9f2-4ff6-a8ca-f90fe189f8d8",
+				"name": "Recall Intent",
+				"auto": true,
 				"contexts": [],
 				"responses": [
 					{
 						"resetContexts": false,
 						"affectedContexts": [],
-						"parameters": [],
+						"parameters": [
+							{
+								"id": "7ad9f040-112d-4ec4-81e5-ec661510d3d9",
+								"required": false,
+								"dataType": "@memoryQuestion",
+								"name": "memoryQuestion",
+								"value": "$memoryQuestion",
+								"isList": false
+							},
+							{
+								"id": "6fcebb63-1496-4756-a8ce-101474bd32a7",
+								"required": false,
+								"dataType": "@recallCommand",
+								"name": "recallCommand",
+								"value": "$recallCommand",
+								"isList": false
+							}
+						],
+						"messages": [
+							{
+								"type": 0,
+								"lang": "en",
+								"speech": []
+							}
+						],
 						"defaultResponsePlatforms": {},
 						"speech": []
 					}
 				],
 				"priority": 500000,
-				"webhookUsed": false,
+				"cortanaCommand": {
+					"navigateOrService": "NAVIGATE",
+					"target": ""
+				},
+				"webhookUsed": true,
 				"webhookForSlotFilling": false,
-				"lastUpdate": 1533602033,
+				"lastUpdate": 1535051049,
 				"fallbackIntent": false,
-				"events": []
+				"events": [],
+				"usersays": [
+					{
+						"id": "3bf2b086-aea7-4a43-a2c9-c8e3ccb62dea",
+						"data": [
+							{
+								"text": "Recall",
+								"alias": "recallCommand",
+								"meta": "@recallCommand",
+								"userDefined": true
+							},
+							{
+								"text": " ",
+								"userDefined": false
+							},
+							{
+								"text": "where my keys are",
+								"alias": "memoryQuestion",
+								"meta": "@memoryQuestion",
+								"userDefined": true
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1534958185
+					}
+				]
 			},
 			"Record Measurement Intent": {
 				"id": "63660c17-8146-48b5-847e-2d73ffbee270",
@@ -45394,6 +45814,50 @@ window.qm.staticData = {
 				"events": [],
 				"usersays": [
 					{
+						"id": "5ed22796-cbfa-469a-a572-bc5f64c60734",
+						"data": [
+							{
+								"text": "record",
+								"alias": "recordMeasurementTriggerPhrase",
+								"meta": "@recordMeasurementTriggerPhrase",
+								"userDefined": true
+							},
+							{
+								"text": " ",
+								"userDefined": false
+							},
+							{
+								"text": "0",
+								"alias": "value",
+								"meta": "@sys.number",
+								"userDefined": true
+							},
+							{
+								"text": " ",
+								"userDefined": false
+							},
+							{
+								"text": "mg",
+								"alias": "unitAbbreviatedName",
+								"meta": "@unitAbbreviatedName",
+								"userDefined": true
+							},
+							{
+								"text": " ",
+								"userDefined": false
+							},
+							{
+								"text": "dmt",
+								"alias": "variableName",
+								"meta": "@variableName",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1533392228
+					},
+					{
 						"id": "327dcfda-63e4-4167-8f2f-5b23b39ab41a",
 						"data": [
 							{
@@ -45418,6 +45882,50 @@ window.qm.staticData = {
 							},
 							{
 								"text": "mood",
+								"alias": "variableName",
+								"meta": "@variableName",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1533392228
+					},
+					{
+						"id": "45e96c81-6649-4898-ad70-103185026a2b",
+						"data": [
+							{
+								"text": "record",
+								"alias": "recordMeasurementTriggerPhrase",
+								"meta": "@recordMeasurementTriggerPhrase",
+								"userDefined": false
+							},
+							{
+								"text": " ",
+								"userDefined": false
+							},
+							{
+								"text": "5",
+								"alias": "value",
+								"meta": "@sys.number",
+								"userDefined": true
+							},
+							{
+								"text": " ",
+								"userDefined": false
+							},
+							{
+								"text": "milligrams",
+								"alias": "unitName",
+								"meta": "@unitName",
+								"userDefined": true
+							},
+							{
+								"text": " ",
+								"userDefined": false
+							},
+							{
+								"text": "dmt",
 								"alias": "variableName",
 								"meta": "@variableName",
 								"userDefined": false
@@ -45470,24 +45978,85 @@ window.qm.staticData = {
 						"isTemplate": false,
 						"count": 0,
 						"updated": 1533392228
-					},
+					}
+				]
+			},
+			"Remember Intent": {
+				"id": "a452b446-cdcb-49c1-936b-219c3767114c",
+				"name": "Remember Intent",
+				"auto": true,
+				"contexts": [],
+				"responses": [
 					{
-						"id": "45e96c81-6649-4898-ad70-103185026a2b",
+						"resetContexts": false,
+						"affectedContexts": [],
+						"parameters": [
+							{
+								"id": "433d237e-5adb-4721-933c-be510381dbc5",
+								"required": true,
+								"dataType": "@sys.any",
+								"name": "memoryAnswer",
+								"value": "$memoryAnswer",
+								"prompts": [
+									{
+										"lang": "en",
+										"value": "What is the answer to the question you want to remember?"
+									}
+								],
+								"isList": false
+							},
+							{
+								"id": "1e3abda8-e088-42cd-a98c-026d0651efa0",
+								"required": false,
+								"dataType": "@rememberCommand",
+								"name": "rememberCommand",
+								"value": "$rememberCommand",
+								"isList": false
+							},
+							{
+								"id": "228af71f-b5cd-4c6c-bb26-57b2202746ac",
+								"required": true,
+								"dataType": "@memoryQuestion",
+								"name": "memoryQuestion",
+								"value": "$memoryQuestion",
+								"prompts": [
+									{
+										"lang": "en",
+										"value": "What do you wan to remember?"
+									}
+								],
+								"isList": false
+							}
+						],
+						"messages": [
+							{
+								"type": 0,
+								"lang": "en",
+								"speech": []
+							}
+						],
+						"defaultResponsePlatforms": {},
+						"speech": []
+					}
+				],
+				"priority": 500000,
+				"cortanaCommand": {
+					"navigateOrService": "NAVIGATE",
+					"target": ""
+				},
+				"webhookUsed": true,
+				"webhookForSlotFilling": false,
+				"lastUpdate": 1535051034,
+				"fallbackIntent": false,
+				"events": [],
+				"usersays": [
+					{
+						"id": "1311c3ce-2998-4670-aa8b-97ade1b92653",
 						"data": [
 							{
-								"text": "record",
-								"alias": "recordMeasurementTriggerPhrase",
-								"meta": "@recordMeasurementTriggerPhrase",
-								"userDefined": false
-							},
-							{
-								"text": " ",
-								"userDefined": false
-							},
-							{
-								"text": "5",
-								"alias": "value",
-								"meta": "@sys.number",
+								"text": "Remember",
+								"alias": "rememberCommand",
+								"meta": "@rememberCommand",
 								"userDefined": true
 							},
 							{
@@ -45495,69 +46064,77 @@ window.qm.staticData = {
 								"userDefined": false
 							},
 							{
-								"text": "milligrams",
-								"alias": "unitName",
-								"meta": "@unitName",
+								"text": "where my car is",
+								"alias": "memoryQuestion",
+								"meta": "@memoryQuestion",
 								"userDefined": true
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1535049385
+					},
+					{
+						"id": "89d0a4b2-6050-426c-96b8-bd81c8cdc2e0",
+						"data": [
+							{
+								"text": "remember",
+								"alias": "rememberCommand",
+								"meta": "@rememberCommand",
+								"userDefined": false
 							},
 							{
 								"text": " ",
 								"userDefined": false
 							},
 							{
-								"text": "dmt",
-								"alias": "variableName",
-								"meta": "@variableName",
+								"text": "where I put my keys",
+								"alias": "memoryQuestion",
+								"meta": "@memoryQuestion",
+								"userDefined": true
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1535049385
+					},
+					{
+						"id": "5056e556-7c46-4c09-964c-d158e4ddd032",
+						"data": [
+							{
+								"text": "remember",
+								"alias": "rememberCommand",
+								"meta": "@rememberCommand",
+								"userDefined": false
+							},
+							{
+								"text": " ",
+								"userDefined": false
+							},
+							{
+								"text": "where my keys are",
+								"alias": "memoryQuestion",
+								"meta": "@memoryQuestion",
+								"userDefined": true
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1535049385
+					},
+					{
+						"id": "8374624f-5687-46e9-9d0e-ad28e52b16cd",
+						"data": [
+							{
+								"text": "remember something",
+								"alias": "rememberCommand",
+								"meta": "@rememberCommand",
 								"userDefined": false
 							}
 						],
 						"isTemplate": false,
 						"count": 0,
-						"updated": 1533392228
-					},
-					{
-						"id": "5ed22796-cbfa-469a-a572-bc5f64c60734",
-						"data": [
-							{
-								"text": "record",
-								"alias": "recordMeasurementTriggerPhrase",
-								"meta": "@recordMeasurementTriggerPhrase",
-								"userDefined": true
-							},
-							{
-								"text": " ",
-								"userDefined": false
-							},
-							{
-								"text": "0",
-								"alias": "value",
-								"meta": "@sys.number",
-								"userDefined": true
-							},
-							{
-								"text": " ",
-								"userDefined": false
-							},
-							{
-								"text": "mg",
-								"alias": "unitAbbreviatedName",
-								"meta": "@unitAbbreviatedName",
-								"userDefined": true
-							},
-							{
-								"text": " ",
-								"userDefined": false
-							},
-							{
-								"text": "dmt",
-								"alias": "variableName",
-								"meta": "@variableName",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"updated": 1533392228
+						"updated": 1534957575
 					}
 				]
 			},
@@ -45634,20 +46211,6 @@ window.qm.staticData = {
 				],
 				"usersays": [
 					{
-						"id": "a771be46-22cb-441a-9439-aca5221add85",
-						"data": [
-							{
-								"text": "nope",
-								"alias": "yesNo",
-								"meta": "@yesNo",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 1,
-						"updated": 1533512333
-					},
-					{
 						"id": "122ab686-f373-4b40-b211-e3af071c213b",
 						"data": [
 							{
@@ -45655,6 +46218,34 @@ window.qm.staticData = {
 								"alias": "yesNo",
 								"meta": "@yesNo",
 								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1533512333
+					},
+					{
+						"id": "69949328-785c-4aa9-a7d3-143c56c54bf9",
+						"data": [
+							{
+								"text": "skip",
+								"alias": "notificationAction",
+								"meta": "@notificationAction",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1533512333
+					},
+					{
+						"id": "97c3af22-1f5f-4821-9d73-b7548f55810f",
+						"data": [
+							{
+								"text": "0",
+								"alias": "value",
+								"meta": "@sys.number",
+								"userDefined": true
 							}
 						],
 						"isTemplate": false,
@@ -45682,6 +46273,48 @@ window.qm.staticData = {
 						],
 						"isTemplate": false,
 						"count": 0,
+						"updated": 1533512333
+					},
+					{
+						"id": "d78f2b84-b2df-4a89-814e-0e24a6593179",
+						"data": [
+							{
+								"text": "no",
+								"alias": "yesNo",
+								"meta": "@yesNo",
+								"userDefined": true
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1533512333
+					},
+					{
+						"id": "6a754b52-dd90-4cb6-b960-b3075f9491e7",
+						"data": [
+							{
+								"text": "track",
+								"alias": "notificationAction",
+								"meta": "@notificationAction",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1533512333
+					},
+					{
+						"id": "a771be46-22cb-441a-9439-aca5221add85",
+						"data": [
+							{
+								"text": "nope",
+								"alias": "yesNo",
+								"meta": "@yesNo",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 1,
 						"updated": 1533512333
 					},
 					{
@@ -45713,66 +46346,10 @@ window.qm.staticData = {
 						"updated": 1533512333
 					},
 					{
-						"id": "97c3af22-1f5f-4821-9d73-b7548f55810f",
-						"data": [
-							{
-								"text": "0",
-								"alias": "value",
-								"meta": "@sys.number",
-								"userDefined": true
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"updated": 1533512333
-					},
-					{
-						"id": "d78f2b84-b2df-4a89-814e-0e24a6593179",
-						"data": [
-							{
-								"text": "no",
-								"alias": "yesNo",
-								"meta": "@yesNo",
-								"userDefined": true
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"updated": 1533512333
-					},
-					{
 						"id": "54c9f62f-5e95-4bcd-af7d-318980d111a7",
 						"data": [
 							{
 								"text": "snooze",
-								"alias": "notificationAction",
-								"meta": "@notificationAction",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"updated": 1533512333
-					},
-					{
-						"id": "6a754b52-dd90-4cb6-b960-b3075f9491e7",
-						"data": [
-							{
-								"text": "track",
-								"alias": "notificationAction",
-								"meta": "@notificationAction",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"updated": 1533512333
-					},
-					{
-						"id": "69949328-785c-4aa9-a7d3-143c56c54bf9",
-						"data": [
-							{
-								"text": "skip",
 								"alias": "notificationAction",
 								"meta": "@notificationAction",
 								"userDefined": false
@@ -54278,6 +54855,7 @@ window.qm.staticData = {
 			"conversionSteps": [],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -54307,6 +54885,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": 4,
 			"minimumValue": -4,
@@ -54332,6 +54911,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": 1,
 			"minimumValue": 0,
@@ -54357,6 +54937,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": 5,
 			"minimumValue": 0,
@@ -54386,6 +54967,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": 10,
 			"minimumValue": 1,
@@ -54415,6 +54997,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": 5,
 			"minimumValue": 1,
@@ -54442,6 +55025,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -54464,6 +55048,7 @@ window.qm.staticData = {
 			"conversionSteps": [],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -54484,6 +55069,7 @@ window.qm.staticData = {
 			"conversionSteps": [],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": null,
 			"minimumValue": null,
@@ -54510,6 +55096,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -54537,6 +55124,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -54563,6 +55151,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -54585,6 +55174,7 @@ window.qm.staticData = {
 			"conversionSteps": [],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": null,
@@ -54606,6 +55196,7 @@ window.qm.staticData = {
 			"conversionSteps": [],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": null,
 			"minimumValue": null,
@@ -54635,6 +55226,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": null,
@@ -54655,6 +55247,7 @@ window.qm.staticData = {
 			"conversionSteps": [],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": null,
 			"minimumValue": null,
@@ -54675,6 +55268,7 @@ window.qm.staticData = {
 			"conversionSteps": [],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": null,
 			"minimumValue": null,
@@ -54701,6 +55295,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -54728,6 +55323,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -54753,6 +55349,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -54778,6 +55375,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -54804,6 +55402,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": 168,
 			"minimumValue": 0,
@@ -54830,6 +55429,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -54851,6 +55451,7 @@ window.qm.staticData = {
 			"conversionSteps": [],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -54876,6 +55477,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": 1,
 			"minimumValue": 0,
@@ -54896,6 +55498,7 @@ window.qm.staticData = {
 			"conversionSteps": [],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": null,
 			"minimumValue": null,
@@ -54917,6 +55520,7 @@ window.qm.staticData = {
 			"conversionSteps": [],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -54943,6 +55547,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -54964,6 +55569,7 @@ window.qm.staticData = {
 			"conversionSteps": [],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -54990,6 +55596,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55011,6 +55618,7 @@ window.qm.staticData = {
 			"conversionSteps": [],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55036,6 +55644,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55062,6 +55671,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55088,6 +55698,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55114,6 +55725,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55140,6 +55752,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55160,6 +55773,7 @@ window.qm.staticData = {
 			"conversionSteps": [],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": 86400,
 			"minimumValue": 0,
@@ -55186,6 +55800,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": 10080,
 			"minimumValue": 0,
@@ -55207,6 +55822,7 @@ window.qm.staticData = {
 			"conversionSteps": [],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": null,
 			"minimumValue": null,
@@ -55227,6 +55843,7 @@ window.qm.staticData = {
 			"conversionSteps": [],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": null,
@@ -55252,6 +55869,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55279,6 +55897,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55306,6 +55925,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55333,6 +55953,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55360,6 +55981,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": 20,
 			"minimumValue": 0,
@@ -55385,6 +56007,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55412,6 +56035,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55439,6 +56063,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": null,
 			"minimumValue": null,
@@ -55464,6 +56089,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55486,6 +56112,7 @@ window.qm.staticData = {
 			"conversionSteps": [],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55511,6 +56138,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": 864000000,
 			"minimumValue": 0,
@@ -55532,6 +56160,7 @@ window.qm.staticData = {
 			"conversionSteps": [],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55558,6 +56187,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55579,6 +56209,7 @@ window.qm.staticData = {
 			"conversionSteps": [],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55600,6 +56231,7 @@ window.qm.staticData = {
 			"conversionSteps": [],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55625,6 +56257,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55651,6 +56284,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": 0,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55672,6 +56306,7 @@ window.qm.staticData = {
 			"conversionSteps": [],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55692,6 +56327,7 @@ window.qm.staticData = {
 			"conversionSteps": [],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55718,6 +56354,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": null,
 			"minimumValue": 0,
@@ -55743,6 +56380,7 @@ window.qm.staticData = {
 			],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 0,
 			"maximumValue": null,
 			"minimumValue": null,
@@ -55763,6 +56401,7 @@ window.qm.staticData = {
 			"conversionSteps": [],
 			"defaultValue": null,
 			"fillingValue": null,
+			"hint": null,
 			"manualTracking": 1,
 			"maximumValue": null,
 			"minimumValue": 0,
