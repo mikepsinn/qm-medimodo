@@ -24103,7 +24103,7 @@ label.item.item-input.item-text > input[type="text"] {
     #BUTTONS | Base
 \*------------------------------------*/
 .mfb-component__button--main, .mfb-component__button--child {
-  background-color: #1BB76E;
+  background-color: #b7000a;
   display: inline-block;
   position: relative;
   border: none;
@@ -24810,6 +24810,12 @@ label.item.item-input.item-text > input[type="text"] {
 
 .buttons > .button {
   border-radius: 30px; }
+
+.md-fab-mini-ion-icon {
+  margin: auto;
+  top: -7px;
+  position: relative;
+  left: -4px; }
 
 #chat-app .center .content-card .chat #chat-content .message-row.bot .avatar {
   margin: 0 16px 0 0; }
@@ -25520,13 +25526,13 @@ img.intro-primary-outcome-variable-rating-buttons {
   z-index: 5;
   background-color: #db3236; }
 
-.robot {
+.robot-container {
   box-sizing: border-box;
   position: absolute;
   width: 160px;
   height: 170px;
   bottom: -30px;
-  left: calc(50% - 80px);
+  left: calc(100% - 160px);
   z-index: 4; }
 
 .head {
