@@ -1571,6 +1571,10 @@ window.qm = {
                 qm.apiAi = apiai;
             });
         },
+        loopThroughIntents: function(callback){
+            var intents = qm.staticData.dialogAgent.intents;
+            qm.objectHelper.loopThroughProperties(intents, callback);
+        },
         apiAiTest: function(text){
             if(!qm.apiAi){
                 qmLog.info("qm.apiAi not defined");
@@ -1659,21 +1663,6 @@ window.qm = {
             qm.dialogFlow.bravy = bravy;
             console.debug("bravy", bravy);
             return bravy;
-        },
-        fulfillIntent: function(userInput, successHandler, errorHandler){
-            var intent = qm.dialogFlow.getIntent(userInput);
-            if(!intent){
-                qmLog.error("No intent!")
-                return false;
-            }
-            if(!intent.webhookUsed){
-                var messages = intent.responses[0].messages;
-                intent.messageIndex = intent.messageIndex || 0;
-                var message = messages[intent.messageIndex];
-                intent.messageIndex = (intent.messageIndex === messages.length -1) ? 0 : intent.messageIndex++;
-                return successHandler(message);
-            } else {
-            }
         },
         post: function(body, successHandler, errorHandler){
             qm.api.postToQuantiModo(body, "v1/dialogflow", function(response){
@@ -2063,6 +2052,7 @@ window.qm = {
             "session": "projects/dr-modo/agent/sessions/1533759866859"
         },
         getEntityFromLastUserStatement: function(entityName){
+            qm.dialogFlow.matchedEntities = {};
             var lastUserStatement = qm.speech.lastUserStatement.toLowerCase();
             var entries = qm.staticData.dialogAgent.entities[entityName].entries;
             var words = lastUserStatement.split(" ");
@@ -2079,51 +2069,66 @@ window.qm = {
                 for (j = 0; i < entries.length; j += 1) {
                     for (var k = 0; k < entry.synonyms; k += 1) {
                         var synonym = synonyms[i];
-                        if(word === synonym.toLowerCase()){return entry;}
+                        if(word === synonym.toLowerCase()){
+                            qm.dialogFlow.matchedEntities[entityName] = qm.staticData.dialogAgent.entities[entityName];
+                            qm.dialogFlow.matchedEntities[entityName].userInput = word;
+                        }
                     }
                 }
             }
-            return null;
+            return qm.dialogFlow.matchedEntities;
         },
-        weHaveRequiredParams: function(intent){
+        getUnfilledParameter: function(intent){
+            var param;
+            qm.objectHelper.loopThroughProperties(intent.unfilledParameters, function(parameterName, parameter){
+                param = parameter;
+            });
+            return param;
+        },
+        calculateScore: function(intent, matchedEntities){
             var parameters = intent.responses[0].parameters;
+            intent.unfilledParameters = {};
+            intent.unfilledTriggerPhrases = {};
+            intent.parameters = {};
+            //if(qm.feed.currentCard){intent.parameters = qm.feed.currentCard.parameters;}
             for (var i = 0; i < parameters.length; i++) {
                 var parameter = parameters[i];
                 var parameterName = parameter.name;
-                if(parameter.required){
-                    var value = qm.speech.currentIntent.parameters[parameterName];
-                    if(value){
-                        continue;
+                var dataType = parameter.dataType.replace('@', '');
+                if (matchedEntities[dataType]) {
+                    var value = matchedEntities[dataType].matchedEntryValue;
+                    if(typeof value === "undefined"){value = matchedEntities[dataType];}
+                    intent.parameters[parameterName] = value
+                } else if(parameter.required){
+                    intent.unfilledParameters[parameterName] = parameter;
+                    if(parameterName.toLowerCase().indexOf('triggerphrase') !== -1){
+                        intent.unfilledTriggerPhrases[parameterName] = parameter;
                     }
-                    value = qm.dialogFlow.getEntityFromLastUserStatement(parameterName);
-                    if(value){
-                        qm.speech.currentIntent.parameters[parameterName] = value;
-                        continue;
-                    }
-                    qm.speech.parameterToGet = parameterName;
-                    qm.speech.talkRobot(parameter.prompts[0].value, function(){
-                        var value = qm.dialogFlow.getEntityFromLastUserStatement(qm.speech.parameterToGet);
-                        qm.speech.currentIntent.parameters[qm.speech.parameterToGet] = value;
-                    });
-                    return false;
                 }
             }
-            return true;
+            var filled = Object.keys(intent.parameters).length;
+            var unfilled = Object.keys(intent.unfilledParameters).length;
+            var unfilledTriggerPhrases = Object.keys(intent.unfilledTriggerPhrases).length;
+            return filled - unfilled - unfilledTriggerPhrases;
         },
+        matchedEntities: {},
+        matchedIntents: {},
+        matchedIntent: null,
         getIntent: function(userInput){
-            var result = qm.dialogFlow.apiAiTest(userInput);
-            if(!result){
-                qmLog.error("No intent!");
-                return false;
-            }
-            qm.dialogFlow.post(result, function(response){
-                qmLog.info("dialogFlow webhook response: ", response);
-            }, function(error){
-                qmLog.error(error);
+            var matchedEntities = qm.dialogFlow.getEntitiesFromUserInput(userInput);
+            var bestScore = 0;
+            var intents = [];
+            var matchedIntent = null;
+            qm.dialogFlow.loopThroughIntents(function(intentName, intent){
+                var score = intent.score = qm.dialogFlow.calculateScore(intent, matchedEntities);
+                if(score > bestScore){
+                    matchedIntent = intent;
+                    bestScore = score;
+                }
+                intents.push(intent);
             });
-            var intentName = result.intent;
-            var intent = qm.staticData.dialogAgent.intents[intentName];
-            return intent;
+            //if(matchedIntent.name === "Default Fallback Intent"){return null;}
+            return matchedIntent;
         },
         getEntities: function(){
             return qm.staticData.dialogAgent.entities;
@@ -2143,22 +2148,28 @@ window.qm = {
                 }
             };
             userInput = userInput.toLowerCase();
+            var exactMatches = {};
+            var fuzzyMatches = {};
             var matchedEntities = {};
-            var fuzzyMatchedEntities = {};
             qm.objectHelper.loopThroughProperties(entities, function(entityName, entity){
                 var entries = entity.entries;
                 for (var i = 0; i < entries.length; i++) {
                     var entry = entries[i];
                     var entryValue = entry.value;
                     var synonyms = entry.synonyms;
+                    if(synonyms.indexOf("\"") !== -1){
+                        synonyms = synonyms.split("\"");
+                    }
                     for (var j = 0; j < synonyms.length; j++) {
-                        var synonym = synonyms[j].toLowerCase;
-                        plugin.words[synonym] = entityName;
-                        if(userInput.indexOf(synonym) !== -1){
-                            fuzzyMatchedEntities[entityName] = entity;
-                        }
-                        if(userInput.indexOf(synonym) !== -1){
-                            fuzzyMatchedEntities[entityName] = entity;
+                        var synonym = synonyms[j].toLowerCase();
+                        synonym = synonym.replace('\"', '');
+                        //plugin.words[synonym] = entityName;
+                        if(userInput === synonym){
+                            matchedEntities[entityName] = exactMatches[entityName] = entity;
+                            entity.matchedEntryValue = entryValue;
+                        } else if (userInput.indexOf(synonym) !== -1){
+                            fuzzyMatches[entityName] = entity;
+                            matchedEntities[entityName] = entity.matchedEntryValue = entryValue;
                         }
                     }
                 }
@@ -2299,7 +2310,7 @@ window.qm = {
             }
             return parameters;
         },
-        addToFeedQueue: function(submittedCard, successHandler, errorHandler){
+        addToFeedQueueAndRemoveFromFeed: function(submittedCard, successHandler, errorHandler){
             qm.feed.recentlyRespondedTo[submittedCard.id] = submittedCard;
             var parameters = submittedCard.parameters;
             if(submittedCard.selectedButton){
@@ -2307,11 +2318,16 @@ window.qm = {
             }
             qm.localForage.addToArray(qm.items.feedQueue, parameters, function(feedQueue){
                 qm.feed.getFeedFromLocalForage(function(remainingCards){
-                    if(successHandler){successHandler(remainingCards[1]);}
-                    var minimumRequiredForPost = 5;
-                    if(feedQueue.length > minimumRequiredForPost || remainingCards.length < 3){
-                        qm.feed.postFeedQueue(feedQueue);
-                    }
+                    remainingCards = remainingCards.filter(function(card){
+                        return card.id !== submittedCard.id;
+                    });
+                    qm.feed.saveFeedInLocalForage(remainingCards, function(){
+                        if(successHandler){successHandler(remainingCards[0]);}
+                        var minimumRequiredForPost = 5;
+                        if(feedQueue.length > minimumRequiredForPost || remainingCards.length < 3){
+                            qm.feed.postFeedQueue(feedQueue);
+                        }
+                    });
                 }, errorHandler);
             }, errorHandler);
         },
@@ -2341,14 +2357,14 @@ window.qm = {
             if(card.headerTitle && card.headerTitle.length > message.length){message = card.headerTitle;}
             if(card.subTitle && card.subTitle.length > message.length){message = card.subTitle;}
             if(card.subHeader && card.subHeader.length > message.length){message = card.subHeader;}
-            if(!message || !message.length && card.content){message = card.content;}
-            if(!message || !message.length){message = qm.stringHelper.stripHtmlTags(card.htmlContent);}
+            if(card.content){if(!message || !message.length && card.content){message = card.content;}}
+            if(card.htmlContent){if(!message || !message.length){message = qm.stringHelper.stripHtmlTags(card.htmlContent);}}
             var unfilledFields = qm.feed.getUnfilledInputFields(card);
             if(unfilledFields && unfilledFields.length){
                 message = unfilledFields[0].helpText;
                 if(sayOptions){
                     //message += " " + qm.feed.getAvailableCommandsSentence();
-                    message += " You can say " + unfilledFields[0].hint + ". ";
+                    message += unfilledFields[0].hint;
                 }
             }
             qm.speech.talkRobot(message, function(){
@@ -3076,7 +3092,13 @@ window.qm = {
             },
             'remind me *tag': function (memoryQuestionQuestion) {
                 qm.memories.recall(memoryQuestionQuestion);
-            }
+            },
+            'hey google *tag': function (tag){qmLog.info("Ignoring "+tag);},
+            'ok google *tag': function (tag){qmLog.info("Ignoring "+tag);},
+            'hey siri *tag': function (tag){qmLog.info("Ignoring "+tag);},
+            'hey siri *tag': function (tag){qmLog.info("Ignoring "+tag);},
+            'hey alexa *tag': function (tag){qmLog.info("Ignoring "+tag);},
+            'hey alexa *tag': function (tag){qmLog.info("Ignoring "+tag);}
         },
         wildCardHandler: function(text){
             qmLog.info("wildCardHandler not defined to handle " + text);
@@ -3336,7 +3358,7 @@ window.qm = {
                     if(unfilledFields){
                         qmLog.errorAndExceptionTestingOrDevelopment("Un-filled fields: ", unfilledFields);
                     }
-                    qm.feed.addToFeedQueue(card, function(){
+                    qm.feed.addToFeedQueueAndRemoveFromFeed(card, function(){
                         if(card.followUpAction){
                             card.followUpAction(responseText);
                         } else {
@@ -4777,7 +4799,12 @@ window.qm = {
             }
         },
         machinesOfLovingGrace: function(successHandler, errorHandler){
-            qm.speech.talkRobot("I like to think (and " +
+            qm.speech.talkRobot(
+                "Hi!  I'm Dr. Roboto!  " +
+                "Thank you for installing me!  " +
+                "I love meeting new people!  " +
+                "People are like nature's apps! " +
+                "I like to think (and " +
                 "the sooner the better!) " +
                 "of a cybernetic meadow " +
                 "where mammals and computers " +
@@ -5186,7 +5213,7 @@ window.qm = {
             if(!qm.storage.valueIsValid(value)){return false;}
             var globalValue = qm.storage.getGlobal(key);
             if(qm.objectHelper.isObject(value)){
-                qmLog.info("Can't compare because changes made to the gotten object are applied to the global object");
+                qmLog.info("Can't compare "+key+" because changes made to the gotten object are applied to the global object");
             } else if (value === globalValue) {
                 var valueString = JSON.stringify(value);
                 qmLog.debug("Not setting " + key + " in localStorage because global is already set to " + valueString, null, value);
@@ -5325,8 +5352,11 @@ window.qm = {
     },
     stringHelper: {
         stripHtmlTags: function(strInputCode){
-            var cleanText = strInputCode.replace(/<\/?[^>]+(>|$)/g, "");
-            return cleanText;
+            if(!strInputCode){
+                qmLog.error("Nothing provided to stripHtmlTags");
+                return strInputCode;
+            }
+            return strInputCode.replace(/<\/?[^>]+(>|$)/g, "");
         },
         removeSpecialCharacters: function (str) {
             return str.replace(/[^A-Z0-9]+/ig, "_");
@@ -6602,7 +6632,7 @@ window.qm = {
         }
     },
     visualizer: {
-        visualizerEnabled: false,
+        visualizerEnabled: true,
         showing: false,
         hideVisualizer: function(){
             //qm.appContainer.setOpacity(1);
@@ -6616,7 +6646,7 @@ window.qm = {
         },
         showVisualizer: function(type){
             if(!qm.visualizer.visualizerEnabled){return;}
-            type = type || "rainbow";
+            type = type || "siri";
             qmLog.info("Showing visualizer type: " + type);
             if(type === "rainbow"){
                 var visualizer = qm.visualizer.getRainbowVisualizerCanvas();
@@ -6749,6 +6779,7 @@ window.qm = {
             // the canvas size
             var WIDTH = 1000;
             var HEIGHT = 400;
+            var canvas = $('#siri-canvas')[0];
             var ctx = canvas.getContext("2d");
             // options to tweak the look
             var opts = {

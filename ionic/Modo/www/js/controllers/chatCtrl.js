@@ -1,5 +1,5 @@
-angular.module('starter').controller('ChatCtrl', ["$state", "$scope", "$rootScope", "$http", "qmService", "$stateParams", "$timeout", "$ionicActionSheet",
-    function( $state, $scope, $rootScope, $http, qmService, $stateParams, $timeout, $ionicActionSheet) {
+angular.module('starter').controller('ChatCtrl', ["$state", "$scope", "$rootScope", "$http", "qmService", "$stateParams", "$timeout",
+    function( $state, $scope, $rootScope, $http, qmService, $stateParams, $timeout) {
         $scope.controller_name = "ChatCtrl";
         qmService.navBar.setFilterBarSearchIcon(false);
         $scope.state = {
@@ -21,7 +21,7 @@ angular.module('starter').controller('ChatCtrl', ["$state", "$scope", "$rootScop
                 if(card.link){
                     qm.urlHelper.goToUrl(card.link);
                 } else {
-                    talk();
+                    getMostRecentCardAndTalk();
                 }
             },
             onSwipeLeft: function($event, $target){
@@ -33,18 +33,18 @@ angular.module('starter').controller('ChatCtrl', ["$state", "$scope", "$rootScop
             cardButtonClick: function(card, button){
                 qmLog.info("card", card);
                 qmLog.info("button", button);
-                if(button && button.parameters && button.parameters.trackingReminderNotificationId){
+                if(card.parameters.trackingReminderNotificationId){
                     card.selectedButton = button;
-                    qm.feed.addToFeedQueue(card, function (nextCard) {
+                    qm.feed.addToFeedQueueAndRemoveFromFeed(card, function (nextCard) {
                         //$scope.state.cards = [nextCard];
-                        talk();
+                        getMostRecentCardAndTalk();
                     });
                 } else {
                     qmLog.error("Not sure how to handle this button", {card: card, button: button});
                 }
             },
             openActionSheet: function (card) {
-                qmService.actionSheets.openActionSheet(card, talk);
+                qmService.actionSheets.openActionSheet(card, getMostRecentCardAndTalk);
             }
         };
         $scope.$on('$ionicView.beforeEnter', function(e) {
@@ -60,32 +60,30 @@ angular.module('starter').controller('ChatCtrl', ["$state", "$scope", "$rootScop
                 return;
             }
             //qm.speech.deepThought(notification);
-            talk(null, function(){
-                qm.mic.onMicEnabled = talk;
+            getMostRecentCardAndTalk(null, function(){
+                qm.mic.onMicEnabled = getMostRecentCardAndTalk;
             }, function(error){
                 qmLog.error(error);
-                qm.mic.onMicEnabled = talk;
+                qm.mic.onMicEnabled = getMostRecentCardAndTalk;
             });
             qmService.actionSheet.setDefaultActionSheet(function() {
                 refresh();
             });
-            qm.mic.initializeListening(qm.mic.startListeningCommands);
-            qm.mic.onMicEnabled = function () {
-                qm.mic.initializeListening(qm.mic.startListeningCommands);
-            };
-            qm.robot.onRobotClick = talk;
+            qm.mic.onMicEnabled = getMostRecentCardAndTalk;
+            qm.robot.onRobotClick = getMostRecentCardAndTalk;
             qm.mic.wildCardHandler = $scope.state.userReply;
+            qmService.pusher.stateSpecificMessageHandler = botReply;
             //qm.dialogFlow.apiAiPrepare();
         });
         function handleSwipe($event, $target) {
             qmLog.info("onSwipe $event", $event);
             qmLog.info("onSwipe $target", $target);
-            if(button.parameters.trackingReminderNotificationId){qmService.notification.skip(button.parameters);}
-            talk();
+            if($scope.state.cards[0].parameters.trackingReminderNotificationId){qmService.notification.skip($scope.state.cards[0].parameters);}
+            getMostRecentCardAndTalk();
         }
         function refresh(){
             qm.feed.getFeedFromApi({}, function(cards){
-                if(!qm.speech.alreadySpeaking()){talk();}
+                if(!qm.speech.alreadySpeaking()){getMostRecentCardAndTalk();}
             });
         }
         if($scope.state.visualizationType === 'rainbow'){
@@ -97,25 +95,35 @@ angular.module('starter').controller('ChatCtrl', ["$state", "$scope", "$rootScop
         if($scope.state.visualizationType === 'equalizer'){
             $scope.state.bodyCss = "background-color:#333;";
         }
-        function talk(nextCard, successHandler, errorHandler) {
+        function getMostRecentCardAndTalk(nextCard, successHandler, errorHandler) {
             qm.feed.getMostRecentCard(function (card) {
                 if(nextCard){card = nextCard;}
                 $scope.safeApply(function () {
+                    if(card.parameters.trackingReminderNotificationTimeEpoch){
+                        var d = new Date(0); // The 0 there is the key, which sets the date to the epoch
+                        d.setUTCSeconds(card.parameters.trackingReminderNotificationTimeEpoch);
+                        card.date = d;
+                    }
                     $scope.state.cards = [card];
                 });
                 //$scope.$apply(function () { $scope.state.cards = [card]; });// Not sure why this is necessary
                 card.followUpAction = function (successToastText) {
                     if(successToastText){
                         qmService.toast.showUndoToast(successToastText, function () {
-                            qm.localForage.deleteById(qm.items.feedQueue, card.id, function(){talk(card);});
+                            qm.localForage.deleteById(qm.items.feedQueue, card.id, function(){getMostRecentCardAndTalk(card);});
                         });
                     }
                     //qm.speech.talkRobot(successToastText);
-                    talk();
+                    getMostRecentCardAndTalk();
                 };
                 qm.feed.readCard(card, successHandler, errorHandler);
                 $scope.state.lastBotMessage = qm.speech.lastUtterance.text;
             }, errorHandler);
+        }
+        function botReply(message){
+            $scope.state.lastBotMessage = message;
+            $scope.state.messages.push({who: 'bot', message: message, time: 'Just now'});
+            qm.speech.talkRobot(message);
         }
         $scope.state.userReply = function(reply) {
             if(qm.arrayHelper.variableIsArray(reply)){reply = reply[0];}
@@ -128,26 +136,15 @@ angular.module('starter').controller('ChatCtrl', ["$state", "$scope", "$rootScop
             }
             qm.mic.saveThought(reply);
             $scope.safeApply(function () {
-                $scope.state.messages.push({who: 'user', message: $scope.state.userInputString, time: 'Just now'});
-                //$scope.state.cards.push({subHeader: reply, avatarCircular: qm.getUser().avatarImage});
-                qm.dialogFlow.fulfillIntent($scope.state.userInputString, function (reply) {
-                    $scope.state.messages.push({who: 'bot', message: reply, time: 'Just now'});
+                //$scope.state.messages.push({who: 'user', message: $scope.state.userInputString, time: 'Just now'});
+                $scope.state.cards.push({subHeader: reply, avatarCircular: qm.getUser().avatarImage});
+                qmService.dialogFlow.fulfillIntent($scope.state.userInputString, function (response) {
+                    botReply(response.message || response);
+                }, function(error){
+                    botReply(error.message || error);
                 });
                 $scope.state.userInputString = '';
                 $scope.state.lastBotMessage = "One moment please...";
-            });
-        };
-        qm.staticData.dialogAgent.intents["Cancel Intent"].callback = function(){
-            qm.speech.talkRobot(qm.staticData.dialogAgent.intents["Cancel Intent"].responses.messages.speech);
-            qm.mic.abortListening();
-            qmService.goToDefaultState();
-        };
-        qm.staticData.dialogAgent.intents["Create Reminder Intent"].callback = function(){
-            qm.speech.currentIntent.name = "Create Reminder Intent";
-            var intent = qm.staticData.dialogAgent.intents["Create Reminder Intent"];
-            if(!qm.dialogFlow.weHaveRequiredParams(intent)){return;}
-            qm.variablesHelper.getFromLocalStorageOrApi({searchPhrase: qm.speech.currentIntent.parameters.variableName}, function(variable){
-                qmService.addToRemindersUsingVariableObject(variable, {skipReminderSettingsIfPossible: true, doneState: "false"});
             });
         };
     }]
