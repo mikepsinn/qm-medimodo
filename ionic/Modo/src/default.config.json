@@ -1075,6 +1075,7 @@
 			"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/archive.svg",
 			"ionIcon": "ion-archive",
 			"link": "#/app/reminders-inbox",
+			"webhookUrl": null,
 			"stateName": "app.remindersInbox",
 			"stateParams": [],
 			"successAlertBody": null,
@@ -1099,6 +1100,7 @@
 			"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/android-notifications-none.svg",
 			"ionIcon": "ion-android-notifications-none",
 			"link": "#/app/variable-list-category/Anything",
+			"webhookUrl": null,
 			"stateName": "app.remindersManage",
 			"stateParams": [],
 			"successAlertBody": null,
@@ -1133,6 +1135,6 @@
 	"splashScreen": "oMg0F5fmyf_sfzgyc",
 	"textLogo": "nm8LguNtZL_chsco6",
 	"versionNumber": "2.8.830",
-	"androidVersionCode": "2018083082",
-	"builtAt": 1535658468
+	"androidVersionCode": "2018083086",
+	"builtAt": 1535662762
 }

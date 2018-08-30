@@ -1076,6 +1076,7 @@ window.qm.staticData = {
 				"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/archive.svg",
 				"ionIcon": "ion-archive",
 				"link": "#/app/reminders-inbox",
+				"webhookUrl": null,
 				"stateName": "app.remindersInbox",
 				"stateParams": [],
 				"successAlertBody": null,
@@ -1100,6 +1101,7 @@ window.qm.staticData = {
 				"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/android-notifications-none.svg",
 				"ionIcon": "ion-android-notifications-none",
 				"link": "#/app/variable-list-category/Anything",
+				"webhookUrl": null,
 				"stateName": "app.remindersManage",
 				"stateParams": [],
 				"successAlertBody": null,
@@ -1134,18 +1136,18 @@ window.qm.staticData = {
 		"splashScreen": "oMg0F5fmyf_sfzgyc",
 		"textLogo": "nm8LguNtZL_chsco6",
 		"versionNumber": "2.8.830",
-		"androidVersionCode": "2018083082",
-		"builtAt": 1535658468
+		"androidVersionCode": "2018083086",
+		"builtAt": 1535662762
 	},
 	"buildInfo": {
-		"iosCFBundleVersion": "2.8.830.1186",
-		"builtAt": 1535658468,
+		"iosCFBundleVersion": "2.8.830.1258",
+		"builtAt": 1535662762,
 		"versionNumber": "2.8.830",
 		"versionNumbers": {
-			"iosCFBundleVersion": "2.8.830.1186",
-			"androidVersionCode": "2018083082",
+			"iosCFBundleVersion": "2.8.830.1258",
+			"androidVersionCode": "2018083086",
 			"ionicApp": "2.8.830",
-			"buildVersionNumber": "2018083082"
+			"buildVersionNumber": "2018083086"
 		},
 		"gitBranch": "master",
 		"gitCommitShaHash": "5e4802ca60c59aa4cee3b51f0eb34c145de751b4"
@@ -3372,7 +3374,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 156,
 			"numberOfCorrelationsAsCause": 312,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 1895,
+			"numberOfRawMeasurements": 1896,
 			"numberOfTrackingReminders": 125,
 			"numberOfUserCorrelationsAsCause": 156,
 			"numberOfUserCorrelationsAsEffect": 0,
@@ -3565,7 +3567,7 @@ window.qm.staticData = {
 			"numberOfCorrelations": 744,
 			"numberOfCorrelationsAsCause": 320,
 			"numberOfCorrelationsAsEffect": 1168,
-			"numberOfRawMeasurements": 171043,
+			"numberOfRawMeasurements": 171044,
 			"numberOfTrackingReminders": 34,
 			"numberOfUserCorrelationsAsCause": 160,
 			"numberOfUserCorrelationsAsEffect": 584,
@@ -33870,6 +33872,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/bag.svg",
 					"ionIcon": "ion-bag",
 					"link": "https://chrome.google.com/webstore/detail/quantimodo-life-tracking/jioloifallegdkgjklafkkbniianjbgi",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -33922,7 +33925,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-28 22:56:46",
-			"message": "Got 0 new measurements 45 hours ago.  ",
+			"message": "Got 0 new measurements 46 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -33957,6 +33960,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/facebook/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -33981,6 +33985,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/refresh.svg",
 					"ionIcon": "ion-refresh",
 					"link": "https://app.quantimo.do/api/connectors/facebook/update?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -34071,6 +34076,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/bag.svg",
 					"ionIcon": "ion-bag",
 					"link": "https://www.amazon.com/Fitbit-Charge-Heart-Fitness-Wristband/dp/B01K9S260E/ref=as_li_ss_tl?ie=UTF8&qid=1493518902&sr=8-3&keywords=fitbit&th=1&linkCode=ll1&tag=quant08-20&linkId=b357b0833de73b0c4e935fd7c13a079e",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -34095,6 +34101,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/fitbit/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -34182,6 +34189,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/github/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -34206,6 +34214,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/refresh.svg",
 					"ionIcon": "ion-refresh",
 					"link": "https://app.quantimo.do/api/connectors/github/update?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -34289,6 +34298,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/gmail/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -34337,7 +34347,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-29 00:10:45",
-			"message": "Got 0 new measurements 44 hours ago.  ",
+			"message": "Got 0 new measurements 45 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -34373,6 +34383,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/googlecalendar/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -34397,6 +34408,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/refresh.svg",
 					"ionIcon": "ion-refresh",
 					"link": "https://app.quantimo.do/api/connectors/googlecalendar/update?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -34483,6 +34495,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/googlefit/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -34566,6 +34579,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/googleplus/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -34653,6 +34667,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/linkedin/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -34677,6 +34692,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/refresh.svg",
 					"ionIcon": "ion-refresh",
 					"link": "https://app.quantimo.do/api/connectors/linkedin/update?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -34770,6 +34786,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/moodpanda/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -34872,6 +34889,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/moodscope/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -34896,6 +34914,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/refresh.svg",
 					"ionIcon": "ion-refresh",
 					"link": "https://app.quantimo.do/api/connectors/moodscope/update?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -34998,6 +35017,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/myfitnesspal/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -35022,6 +35042,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/refresh.svg",
 					"ionIcon": "ion-refresh",
 					"link": "https://app.quantimo.do/api/connectors/myfitnesspal/update?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -35124,6 +35145,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/mynetdiary/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -35174,7 +35196,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-28 08:16:35",
-			"message": "Got 20 new measurements 2 days ago.  ",
+			"message": "Got 20 new measurements 3 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -35210,6 +35232,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/netatmo/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -35234,6 +35257,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/refresh.svg",
 					"ionIcon": "ion-refresh",
 					"link": "https://app.quantimo.do/api/connectors/netatmo/update?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -35285,7 +35309,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-30 02:31:43",
-			"message": "Got 0 new measurements 17 hours ago.  ",
+			"message": "Got 0 new measurements 18 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -35320,6 +35344,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/archive.svg",
 					"ionIcon": "ion-archive",
 					"link": "#/app/reminders-inbox",
+					"webhookUrl": null,
 					"stateName": "app.remindersInbox",
 					"stateParams": [],
 					"successAlertBody": null,
@@ -35344,6 +35369,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/android-notifications-none.svg",
 					"ionIcon": "ion-android-notifications-none",
 					"link": "#/app/variable-list-category/Anything",
+					"webhookUrl": null,
 					"stateName": "app.remindersManage",
 					"stateParams": [],
 					"successAlertBody": null,
@@ -35431,6 +35457,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/bag.svg",
 					"ionIcon": "ion-bag",
 					"link": "https://www.rescuetime.com/rp/quantimodo/plans",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -35455,6 +35482,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/rescuetime/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -35538,6 +35566,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/runkeeper/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -35588,7 +35617,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-30 02:31:43",
-			"message": "Got 0 new measurements 17 hours ago.  ",
+			"message": "Got 0 new measurements 18 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -35625,6 +35654,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/slack/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -35649,6 +35679,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/refresh.svg",
 					"ionIcon": "ion-refresh",
 					"link": "https://app.quantimo.do/api/connectors/slack/update?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -35731,6 +35762,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/sleepcloud/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -35813,6 +35845,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/slice/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -35899,6 +35932,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/strava/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -35978,6 +36012,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/twitter/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -36002,6 +36037,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/refresh.svg",
 					"ionIcon": "ion-refresh",
 					"link": "https://app.quantimo.do/api/connectors/twitter/update?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -36097,6 +36133,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/bag.svg",
 					"ionIcon": "ion-bag",
 					"link": "http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -36121,6 +36158,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/up/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -36217,6 +36255,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/worldweatheronline/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -36241,6 +36280,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/refresh.svg",
 					"ionIcon": "ion-refresh",
 					"link": "https://app.quantimo.do/api/connectors/worldweatheronline/update?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -36333,6 +36373,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
 					"ionIcon": "ion-link",
 					"link": "https://app.quantimo.do/api/connectors/whatpulse/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -36379,7 +36420,7 @@ window.qm.staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-08-29 00:04:13",
-			"message": "Got 0 new measurements 44 hours ago.  ",
+			"message": "Got 0 new measurements 45 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -36412,6 +36453,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/close-circled.svg",
 					"ionIcon": "ion-close-circled",
 					"link": "https://app.quantimo.do/api/connectors/withings/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -36436,6 +36478,7 @@ window.qm.staticData = {
 					"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/refresh.svg",
 					"ionIcon": "ion-refresh",
 					"link": "https://app.quantimo.do/api/connectors/withings/update?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
+					"webhookUrl": null,
 					"stateName": null,
 					"stateParams": null,
 					"successAlertBody": null,
@@ -38940,6 +38983,94 @@ window.qm.staticData = {
 	],
 	"dialogAgent": {
 		"entities": {
+			"answer": {
+				"id": "fb8d553e-57f6-4ce5-aba4-cc890dc00c62",
+				"name": "answer",
+				"isOverridable": true,
+				"isEnum": true,
+				"automatedExpansion": false,
+				"entries": [
+					{
+						"value": "@any:any",
+						"synonyms": [
+							"@any:any"
+						]
+					},
+					{
+						"value": "just luck i guess",
+						"synonyms": [
+							"just luck i guess"
+						]
+					},
+					{
+						"value": "just lucky i guess",
+						"synonyms": [
+							"just lucky i guess"
+						]
+					}
+				]
+			},
+			"answerCommand": {
+				"id": "b42bb26b-f051-48fd-b5c5-c3bd4add79c8",
+				"name": "answerCommand",
+				"isOverridable": true,
+				"isEnum": true,
+				"automatedExpansion": false,
+				"entries": [
+					{
+						"value": "@answerTriggerPhrase:answerTriggerPhrase @answer:answer",
+						"synonyms": [
+							"@answerTriggerPhrase:answerTriggerPhrase @answer:answer"
+						]
+					}
+				]
+			},
+			"answerTriggerPhrase": {
+				"id": "729a2b9a-3410-4e51-a7bf-fe75b4cce016",
+				"name": "answerTriggerPhrase",
+				"isOverridable": true,
+				"isEnum": false,
+				"automatedExpansion": false,
+				"entries": [
+					{
+						"value": "answer ",
+						"synonyms": [
+							"answer",
+							"the answer is"
+						]
+					}
+				]
+			},
+			"askQuestionCommand": {
+				"id": "67fbb787-1053-46e9-a1d7-a9b94899e4b4",
+				"name": "askQuestionCommand",
+				"isOverridable": true,
+				"isEnum": true,
+				"automatedExpansion": false,
+				"entries": [
+					{
+						"value": "@askQuestionTriggerPhrase:askQuestionTriggerPhrase @question:question",
+						"synonyms": [
+							"@askQuestionTriggerPhrase:askQuestionTriggerPhrase @question:question"
+						]
+					}
+				]
+			},
+			"askQuestionTriggerPhrase": {
+				"id": "36c4f06e-9be8-4266-8afa-42d5677b4290",
+				"name": "askQuestionTriggerPhrase",
+				"isOverridable": true,
+				"isEnum": false,
+				"automatedExpansion": false,
+				"entries": [
+					{
+						"value": "ask",
+						"synonyms": [
+							"ask"
+						]
+					}
+				]
+			},
 			"closeCommand": {
 				"id": "e6c89a46-20c2-4558-b15f-1071c1a26911",
 				"name": "closeCommand",
@@ -39237,6 +39368,13 @@ window.qm.staticData = {
 						"synonyms": [
 							"no"
 						]
+					},
+					{
+						"value": "skipAll",
+						"synonyms": [
+							"i don't remember",
+							"skip all"
+						]
 					}
 				]
 			},
@@ -39269,6 +39407,27 @@ window.qm.staticData = {
 						"value": "joke",
 						"synonyms": [
 							"joke"
+						]
+					}
+				]
+			},
+			"question": {
+				"id": "74d98b79-a732-47cc-9fe9-c517bef5c5d0",
+				"name": "question",
+				"isOverridable": true,
+				"isEnum": true,
+				"automatedExpansion": false,
+				"entries": [
+					{
+						"value": "@any:any",
+						"synonyms": [
+							"@any:any"
+						]
+					},
+					{
+						"value": "how he got so handsome",
+						"synonyms": [
+							"how he got so handsome"
 						]
 					}
 				]
@@ -39311,6 +39470,27 @@ window.qm.staticData = {
 					}
 				]
 			},
+			"recordSymptomTriggerPhrase": {
+				"id": "f5d8dc00-8607-4b3d-bbf8-4d32e7af5076",
+				"name": "recordSymptomTriggerPhrase",
+				"isOverridable": true,
+				"isEnum": false,
+				"automatedExpansion": false,
+				"entries": [
+					{
+						"value": "i have a",
+						"synonyms": [
+							"i have a"
+						]
+					},
+					{
+						"value": "i have",
+						"synonyms": [
+							"i have"
+						]
+					}
+				]
+			},
 			"rememberCommand": {
 				"id": "1b0c9d7e-58f4-44e0-9fb0-bc079a8e7074",
 				"name": "rememberCommand",
@@ -39328,6 +39508,8422 @@ window.qm.staticData = {
 						"value": "remember @memoryQuestion:memoryQuestion",
 						"synonyms": [
 							"remember @memoryQuestion:memoryQuestion"
+						]
+					}
+				]
+			},
+			"symptomVariableName": {
+				"id": "588b9695-db54-41c1-8724-1cae1750b0bf",
+				"name": "symptomVariableName",
+				"isOverridable": true,
+				"isEnum": false,
+				"automatedExpansion": false,
+				"entries": [
+					{
+						"value": "Lack of Motivation",
+						"synonyms": [
+							"Lack of Motivation"
+						]
+					},
+					{
+						"value": "Insomnia Or Sleep Disturbances",
+						"synonyms": [
+							"Sleep Disturbances",
+							"Insomnia",
+							"Insomnia Or Sleep Disturbances",
+							"Sleep Disturbance",
+							"Insomnium",
+							"Insomnia Or Sleep Disturbance"
+						]
+					},
+					{
+						"value": "Back Pain",
+						"synonyms": [
+							"Back Pain"
+						]
+					},
+					{
+						"value": "Headache Severity",
+						"synonyms": [
+							"Headache Severity",
+							"Headache"
+						]
+					},
+					{
+						"value": "Acne Severity",
+						"synonyms": [
+							"Acne Severity",
+							"Acne"
+						]
+					},
+					{
+						"value": "Hunger",
+						"synonyms": [
+							"Hunger"
+						]
+					},
+					{
+						"value": "Neck Pain",
+						"synonyms": [
+							"Neck Pain"
+						]
+					},
+					{
+						"value": "Suicidality",
+						"synonyms": [
+							"Suicidality"
+						]
+					},
+					{
+						"value": "Sleepiness",
+						"synonyms": [
+							"Sleepiness",
+							"Sleepines",
+							"Sleepine"
+						]
+					},
+					{
+						"value": "Panic Attack",
+						"synonyms": [
+							"Panic Attack"
+						]
+					},
+					{
+						"value": "Pain Severity",
+						"synonyms": [
+							"Pain Severity",
+							"Pain"
+						]
+					},
+					{
+						"value": "Apathy",
+						"synonyms": [
+							"Apathy"
+						]
+					},
+					{
+						"value": "ADHD",
+						"synonyms": [
+							"ADHD"
+						]
+					},
+					{
+						"value": "Dissociation",
+						"synonyms": [
+							"Dissociation"
+						]
+					},
+					{
+						"value": "Nausea Severity",
+						"synonyms": [
+							"Nausea Severity",
+							"Nausea"
+						]
+					},
+					{
+						"value": "Joint Pain Severity",
+						"synonyms": [
+							"Joint Pain Severity",
+							"Joint Pain"
+						]
+					},
+					{
+						"value": "Gas Or Flatulence Severity",
+						"synonyms": [
+							"Flatulence Severity",
+							"Gas",
+							"Gas Or Flatulence Severity",
+							"Gas Or Flatulence"
+						]
+					},
+					{
+						"value": "Paranoia",
+						"synonyms": [
+							"Paranoia",
+							"Paranoium"
+						]
+					},
+					{
+						"value": "Abdominal Pain",
+						"synonyms": [
+							"Abdominal Pain"
+						]
+					},
+					{
+						"value": "Bloating",
+						"synonyms": [
+							"Bloating"
+						]
+					},
+					{
+						"value": "Leg Pain",
+						"synonyms": [
+							"Leg Pain"
+						]
+					},
+					{
+						"value": "Depression, Bipolar",
+						"synonyms": [
+							"Depression",
+							"Depression, Bipolar"
+						]
+					},
+					{
+						"value": "Sickness Severity",
+						"synonyms": [
+							"Sickness Severity",
+							"Sickness",
+							"Sicknes"
+						]
+					},
+					{
+						"value": "Menstrual Period",
+						"synonyms": [
+							"Period",
+							"Menstrual Period"
+						]
+					},
+					{
+						"value": "Migraine Headache Severity",
+						"synonyms": [
+							"Migraine Headache Severity",
+							"Migraine Headache"
+						]
+					},
+					{
+						"value": "Abdominal Cramps",
+						"synonyms": [
+							"Abdominal Cramps",
+							"Abdominal Cramp"
+						]
+					},
+					{
+						"value": "Brain Fog (difficulty Thinking Clearly)",
+						"synonyms": [
+							"Brain Fog",
+							"difficulty Thinking Clearly"
+						]
+					},
+					{
+						"value": "Lack of Focus",
+						"synonyms": [
+							"Lack of Focus",
+							"Lack of Focu"
+						]
+					},
+					{
+						"value": "Bowel Movements Count",
+						"synonyms": [
+							"Bowel Movements",
+							"Bowel Movements Count",
+							"Bowel Movement"
+						]
+					},
+					{
+						"value": "Hair Loss Severity",
+						"synonyms": [
+							"Hair Loss Severity",
+							"Hair Loss",
+							"Hair Los"
+						]
+					},
+					{
+						"value": "Headache",
+						"synonyms": [
+							"Headache"
+						]
+					},
+					{
+						"value": "Thoughts of Suicide",
+						"synonyms": [
+							"Thoughts of Suicide"
+						]
+					},
+					{
+						"value": "Heartburn Or Indigestion",
+						"synonyms": [
+							"Indigestion",
+							"Heartburn",
+							"Heartburn Or Indigestion"
+						]
+					},
+					{
+						"value": "Stomach Ache",
+						"synonyms": [
+							"Stomach Ache"
+						]
+					},
+					{
+						"value": "Mania",
+						"synonyms": [
+							"Mania",
+							"Manium"
+						]
+					},
+					{
+						"value": "Depressive Disorder",
+						"synonyms": [
+							"Depressive Disorder",
+							"Depressive"
+						]
+					},
+					{
+						"value": "Psoriasis Severity",
+						"synonyms": [
+							"Psoriasis Severity",
+							"Psoriasis",
+							"Psoriasi"
+						]
+					},
+					{
+						"value": "Overwhelmed",
+						"synonyms": [
+							"Overwhelmed"
+						]
+					},
+					{
+						"value": "Upset Stomach",
+						"synonyms": [
+							"Upset Stomach"
+						]
+					},
+					{
+						"value": "Poor Self Care",
+						"synonyms": [
+							"Poor Self Care"
+						]
+					},
+					{
+						"value": "Concentration Problems",
+						"synonyms": [
+							"Concentration Problems",
+							"Concentration Problem"
+						]
+					},
+					{
+						"value": "Stomach Cramps",
+						"synonyms": [
+							"Stomach Cramps",
+							"Stomach Cramp"
+						]
+					},
+					{
+						"value": "Dizziness Or Lightheadedness",
+						"synonyms": [
+							"Lightheadedness",
+							"Dizziness",
+							"Dizziness Or Lightheadedness",
+							"Lightheadednes",
+							"Dizzines",
+							"Dizziness Or Lightheadednes",
+							"Lightheadedne",
+							"Dizzine",
+							"Dizziness Or Lightheadedne"
+						]
+					},
+					{
+						"value": "Hypomania",
+						"synonyms": [
+							"Hypomania",
+							"Hypomanium"
+						]
+					},
+					{
+						"value": "Sinus Congestion",
+						"synonyms": [
+							"Congestion",
+							"Nasal congestion / Blocked nose",
+							"nasal congestion",
+							"Sinus Congestion"
+						]
+					},
+					{
+						"value": "Crying",
+						"synonyms": [
+							"Crying"
+						]
+					},
+					{
+						"value": "Constipation",
+						"synonyms": [
+							"Constipation"
+						]
+					},
+					{
+						"value": "ADHD-Inattentive Type",
+						"synonyms": [
+							"ADHD-Inattentive Type"
+						]
+					},
+					{
+						"value": "Fatigue",
+						"synonyms": [
+							"Fatigue"
+						]
+					},
+					{
+						"value": "Bowel Movement Rating",
+						"synonyms": [
+							"Bowel Movement",
+							"Bowel Movement Rating"
+						]
+					},
+					{
+						"value": "Food Allergies",
+						"synonyms": [
+							"Food Allergies",
+							"Food Allergy"
+						]
+					},
+					{
+						"value": "Hyperactivity",
+						"synonyms": [
+							"Hyperactivity"
+						]
+					},
+					{
+						"value": "Difficulty Falling Asleep Or Staying Asleep",
+						"synonyms": [
+							"Staying Asleep",
+							"Difficulty Falling Asleep",
+							"Difficulty Falling Asleep Or Staying Asleep"
+						]
+					},
+					{
+						"value": "Rage",
+						"synonyms": [
+							"Rage"
+						]
+					},
+					{
+						"value": "Insomnia (h)",
+						"synonyms": [
+							"Insomnia",
+							"Insomnium"
+						]
+					},
+					{
+						"value": "Migraine Headache Duration",
+						"synonyms": [
+							"Migraine Headache",
+							"Migraine Headache Duration"
+						]
+					},
+					{
+						"value": "Tired",
+						"synonyms": [
+							"Tired"
+						]
+					},
+					{
+						"value": "Chest Pains",
+						"synonyms": [
+							"Chest Pains",
+							"Chest Pain"
+						]
+					},
+					{
+						"value": "IBS",
+						"synonyms": [
+							"IBS"
+						]
+					},
+					{
+						"value": "Shakiness Rating",
+						"synonyms": [
+							"Shakiness",
+							"Shakiness Rating",
+							"Shakines",
+							"Shakine"
+						]
+					},
+					{
+						"value": "Poop Quantity Rating",
+						"synonyms": [
+							"Poop Quantity",
+							"Poop Quantity Rating"
+						]
+					},
+					{
+						"value": "Crying Duration",
+						"synonyms": [
+							"Crying",
+							"Crying Duration"
+						]
+					},
+					{
+						"value": "Pain In The Knees",
+						"synonyms": [
+							"Pain In The Knees",
+							"Pain In The Knee"
+						]
+					},
+					{
+						"value": "Hot Flashes",
+						"synonyms": [
+							"Hot Flashes",
+							"Hot Flash"
+						]
+					},
+					{
+						"value": "Self Harm",
+						"synonyms": [
+							"Self Harm"
+						]
+					},
+					{
+						"value": "Runny Nose, Sneezing, Cough, Sore Throat, Or Flu-like Symptoms",
+						"synonyms": [
+							"Runny Nose",
+							"Flu-like Symptoms",
+							"Runny Nose, Sneezing, Cough, Sore Throat,",
+							"Runny Nose, Sneezing, Cough, Sore Throat, Or Flu-like Symptoms",
+							"Flu-like Symptom",
+							"Runny Nose, Sneezing, Cough, Sore Throat, Or Flu-like Symptom"
+						]
+					},
+					{
+						"value": "Picking at Skin",
+						"synonyms": [
+							"Picking at Skin"
+						]
+					},
+					{
+						"value": "Worry",
+						"synonyms": [
+							"Worry"
+						]
+					},
+					{
+						"value": "Manic Symptoms",
+						"synonyms": [
+							"Manic Symptoms",
+							"Manic Symptom"
+						]
+					},
+					{
+						"value": "Tiredness",
+						"synonyms": [
+							"Tiredness",
+							"Tirednes",
+							"Tiredne"
+						]
+					},
+					{
+						"value": "Money",
+						"synonyms": [
+							"Money"
+						]
+					},
+					{
+						"value": "Muscle Aches Or Cramps",
+						"synonyms": [
+							"Cramps",
+							"Muscle Aches",
+							"Muscle Aches Or Cramps",
+							"Cramp",
+							"Muscle Ach",
+							"Muscle Aches Or Cramp"
+						]
+					},
+					{
+						"value": "Tension",
+						"synonyms": [
+							"Tension"
+						]
+					},
+					{
+						"value": "Extreme Exhaustion",
+						"synonyms": [
+							"Extreme Exhaustion"
+						]
+					},
+					{
+						"value": "Clarity of Urine Rating",
+						"synonyms": [
+							"Clarity of Urine",
+							"Clarity of Urine Rating"
+						]
+					},
+					{
+						"value": "Insomnia Severity",
+						"synonyms": [
+							"Insomnia Severity",
+							"Insomnia",
+							"Insomnium"
+						]
+					},
+					{
+						"value": "Psychosis",
+						"synonyms": [
+							"Psychosis",
+							"Psychosi"
+						]
+					},
+					{
+						"value": "Panic",
+						"synonyms": [
+							"Panic"
+						]
+					},
+					{
+						"value": "OCD",
+						"synonyms": [
+							"OCD"
+						]
+					},
+					{
+						"value": "Lower Back Ache",
+						"synonyms": [
+							"Lower Back Ache"
+						]
+					},
+					{
+						"value": "Menstruation",
+						"synonyms": [
+							"Menstruation"
+						]
+					},
+					{
+						"value": "Compulsive Shopping",
+						"synonyms": [
+							"Compulsive Shopping"
+						]
+					},
+					{
+						"value": "Hand Pain",
+						"synonyms": [
+							"Hand Pain"
+						]
+					},
+					{
+						"value": "Headaches",
+						"synonyms": [
+							"Headaches",
+							"Headach"
+						]
+					},
+					{
+						"value": "Relaxed",
+						"synonyms": [
+							"Relaxed"
+						]
+					},
+					{
+						"value": "Hunger (0 To 5 Rating)",
+						"synonyms": [
+							"Hunger",
+							"0 To 5 Rating"
+						]
+					},
+					{
+						"value": "Inflammatory Pain",
+						"synonyms": [
+							"Inflammatory Pain"
+						]
+					},
+					{
+						"value": "Allergy Severity",
+						"synonyms": [
+							"Allergy Severity",
+							"Allergy"
+						]
+					},
+					{
+						"value": "Upper Back Pain",
+						"synonyms": [
+							"Upper Back Pain"
+						]
+					},
+					{
+						"value": "Guilt",
+						"synonyms": [
+							"Guilt"
+						]
+					},
+					{
+						"value": "Major Depression",
+						"synonyms": [
+							"Major Depression"
+						]
+					},
+					{
+						"value": "Abdominal Pain (m)",
+						"synonyms": [
+							"Abdominal Pain"
+						]
+					},
+					{
+						"value": "Gluten",
+						"synonyms": [
+							"Gluten"
+						]
+					},
+					{
+						"value": "Binge Eating",
+						"synonyms": [
+							"Binge Eating"
+						]
+					},
+					{
+						"value": "Bipolar Disorder",
+						"synonyms": [
+							"Bipolar Disorder",
+							"Bipolar"
+						]
+					},
+					{
+						"value": "Thirst",
+						"synonyms": [
+							"Thirst"
+						]
+					},
+					{
+						"value": "Hypomania (h)",
+						"synonyms": [
+							"Hypomania",
+							"Hypomanium"
+						]
+					},
+					{
+						"value": "Abdominal Pain (h)",
+						"synonyms": [
+							"Abdominal Pain"
+						]
+					},
+					{
+						"value": "Dermatillomania",
+						"synonyms": [
+							"Dermatillomania",
+							"Dermatillomanium"
+						]
+					},
+					{
+						"value": "Bumps",
+						"synonyms": [
+							"Bumps",
+							"Bump"
+						]
+					},
+					{
+						"value": "Laziness",
+						"synonyms": [
+							"Laziness",
+							"Lazines"
+						]
+					},
+					{
+						"value": "Agoraphobia",
+						"synonyms": [
+							"Agoraphobia",
+							"Agoraphobium"
+						]
+					},
+					{
+						"value": "Energy (count)",
+						"synonyms": [
+							"Energy"
+						]
+					},
+					{
+						"value": "Lethargy",
+						"synonyms": [
+							"Lethargy"
+						]
+					},
+					{
+						"value": "Irritable Bowel Syndrome",
+						"synonyms": [
+							"Irritable Bowel Syndrome"
+						]
+					},
+					{
+						"value": "Steatorrhea",
+						"synonyms": [
+							"Steatorrhea"
+						]
+					},
+					{
+						"value": "Migraine",
+						"synonyms": [
+							"Migraine"
+						]
+					},
+					{
+						"value": "Shakiness",
+						"synonyms": [
+							"Shakiness",
+							"Shakines",
+							"Shakine"
+						]
+					},
+					{
+						"value": "Libido",
+						"synonyms": [
+							"Libido"
+						]
+					},
+					{
+						"value": "Nightmare",
+						"synonyms": [
+							"Nightmare"
+						]
+					},
+					{
+						"value": "Confusion",
+						"synonyms": [
+							"Confusion"
+						]
+					},
+					{
+						"value": "Angryness",
+						"synonyms": [
+							"Angryness",
+							"Angrynes"
+						]
+					},
+					{
+						"value": "Shoulder Pain",
+						"synonyms": [
+							"Shoulder Pain"
+						]
+					},
+					{
+						"value": "PMS",
+						"synonyms": [
+							"PMS"
+						]
+					},
+					{
+						"value": "Light-headedness",
+						"synonyms": [
+							"Light-headedness",
+							"Light-headednes"
+						]
+					},
+					{
+						"value": "Low Energy",
+						"synonyms": [
+							"Low",
+							"Low Energy"
+						]
+					},
+					{
+						"value": "Aaa Test Reminder Variable",
+						"synonyms": [
+							"Aaa Test Reminder Variable"
+						]
+					},
+					{
+						"value": "Dizziness",
+						"synonyms": [
+							"Dizziness",
+							"Dizzines",
+							"Dizzine"
+						]
+					},
+					{
+						"value": "Dry Mouth Or Throat",
+						"synonyms": [
+							"Throat",
+							"Dry Mouth",
+							"Dry Mouth Or Throat"
+						]
+					},
+					{
+						"value": "Mental Depression",
+						"synonyms": [
+							"Mental Depression"
+						]
+					},
+					{
+						"value": "Blurry Vision",
+						"synonyms": [
+							"Blurry Vision"
+						]
+					},
+					{
+						"value": "Physically Jittery",
+						"synonyms": [
+							"Physically Jittery"
+						]
+					},
+					{
+						"value": "Headache (count)",
+						"synonyms": [
+							"Headache"
+						]
+					},
+					{
+						"value": "Sleep Apnea",
+						"synonyms": [
+							"Sleep Apnea"
+						]
+					},
+					{
+						"value": "Horny",
+						"synonyms": [
+							"Horny"
+						]
+					},
+					{
+						"value": "Nausea Alone",
+						"synonyms": [
+							"Nausea Alone"
+						]
+					},
+					{
+						"value": "Breathing Disturbance",
+						"synonyms": [
+							"Breathing Disturbance"
+						]
+					},
+					{
+						"value": "Bruxism",
+						"synonyms": [
+							"Bruxism"
+						]
+					},
+					{
+						"value": "Scar Pain",
+						"synonyms": [
+							"Scar Pain"
+						]
+					},
+					{
+						"value": "Focused",
+						"synonyms": [
+							"Focused"
+						]
+					},
+					{
+						"value": "Proud",
+						"synonyms": [
+							"Proud"
+						]
+					},
+					{
+						"value": "Anxiety Attacks",
+						"synonyms": [
+							"Anxiety Attacks",
+							"Anxiety Attack"
+						]
+					},
+					{
+						"value": "Sluggishness",
+						"synonyms": [
+							"Sluggishness",
+							"Sluggishnes",
+							"Sluggishne"
+						]
+					},
+					{
+						"value": "Dry Mouth",
+						"synonyms": [
+							"Dry Mouth"
+						]
+					},
+					{
+						"value": "Tooth Pain",
+						"synonyms": [
+							"Tooth Pain"
+						]
+					},
+					{
+						"value": "High Blood Pressure",
+						"synonyms": [
+							"High Blood",
+							"High Blood Pressure"
+						]
+					},
+					{
+						"value": "Fibromyalgia",
+						"synonyms": [
+							"Fibromyalgia",
+							"Fibromyalgium"
+						]
+					},
+					{
+						"value": "Drug Dependence",
+						"synonyms": [
+							"Drug Dependence"
+						]
+					},
+					{
+						"value": "Body Aches",
+						"synonyms": [
+							"Body Aches",
+							"Body Ach"
+						]
+					},
+					{
+						"value": "Restlessness",
+						"synonyms": [
+							"Restlessness",
+							"Restlessnes"
+						]
+					},
+					{
+						"value": "Painful Urination",
+						"synonyms": [
+							"Painful Urination"
+						]
+					},
+					{
+						"value": "Anxiety Attack",
+						"synonyms": [
+							"Anxiety Attack"
+						]
+					},
+					{
+						"value": "Emptiness",
+						"synonyms": [
+							"Emptiness",
+							"Emptines"
+						]
+					},
+					{
+						"value": "Swollen Fingertips",
+						"synonyms": [
+							"Swollen Fingertips",
+							"Swollen Fingertip"
+						]
+					},
+					{
+						"value": "Runny Nose",
+						"synonyms": [
+							"Runny Nose"
+						]
+					},
+					{
+						"value": "Burning Tongue",
+						"synonyms": [
+							"Burning Tongue"
+						]
+					},
+					{
+						"value": "Hydration",
+						"synonyms": [
+							"Hydration"
+						]
+					},
+					{
+						"value": "Carbohydrate Cravings",
+						"synonyms": [
+							"Carbohydrate Cravings",
+							"Carbohydrate Craving"
+						]
+					},
+					{
+						"value": "Pessimism",
+						"synonyms": [
+							"Pessimism"
+						]
+					},
+					{
+						"value": "Sneezing",
+						"synonyms": [
+							"Sneezing"
+						]
+					},
+					{
+						"value": "Cough",
+						"synonyms": [
+							"Cough"
+						]
+					},
+					{
+						"value": "Sinus Inflammation",
+						"synonyms": [
+							"Sinus Inflammation"
+						]
+					},
+					{
+						"value": "Sore Throat",
+						"synonyms": [
+							"Sore Throat"
+						]
+					},
+					{
+						"value": "Curious",
+						"synonyms": [
+							"Curious",
+							"Curiou"
+						]
+					},
+					{
+						"value": "Back Acne",
+						"synonyms": [
+							"Back Acne"
+						]
+					},
+					{
+						"value": "Decreased Appetite",
+						"synonyms": [
+							"Decreased Appetite"
+						]
+					},
+					{
+						"value": "Stomach Pain",
+						"synonyms": [
+							"Stomach Pain"
+						]
+					},
+					{
+						"value": "Aggression",
+						"synonyms": [
+							"Aggression"
+						]
+					},
+					{
+						"value": "Back",
+						"synonyms": [
+							"Back"
+						]
+					},
+					{
+						"value": "Acne Cystic",
+						"synonyms": [
+							"Acne Cystic"
+						]
+					},
+					{
+						"value": "Swollen Feet",
+						"synonyms": [
+							"Swollen Feet"
+						]
+					},
+					{
+						"value": "Period Pain",
+						"synonyms": [
+							"Period Pain"
+						]
+					},
+					{
+						"value": "Borderline Personality Disorder",
+						"synonyms": [
+							"Borderline Personality",
+							"Borderline Personality Disorder"
+						]
+					},
+					{
+						"value": "Stuffy Nose",
+						"synonyms": [
+							"Stuffy Nose"
+						]
+					},
+					{
+						"value": "Everybody Masturbates For Girls",
+						"synonyms": [
+							"Masturbate",
+							"Everybody Masturbates For Girls",
+							"Everybody Masturbates For Girl"
+						]
+					},
+					{
+						"value": "Foot Pain",
+						"synonyms": [
+							"Foot Pain"
+						]
+					},
+					{
+						"value": "Defensive",
+						"synonyms": [
+							"Defensive"
+						]
+					},
+					{
+						"value": "Dry Skin",
+						"synonyms": [
+							"Dry Skin"
+						]
+					},
+					{
+						"value": "Muscle Pain",
+						"synonyms": [
+							"Muscle Pain"
+						]
+					},
+					{
+						"value": "Ear Pain",
+						"synonyms": [
+							"Ear Pain"
+						]
+					},
+					{
+						"value": "Easily Angered",
+						"synonyms": [
+							"Easily Angered"
+						]
+					},
+					{
+						"value": "Thirsty",
+						"synonyms": [
+							"Thirsty"
+						]
+					},
+					{
+						"value": "Infection (Leg)",
+						"synonyms": [
+							"Infection",
+							"Leg"
+						]
+					},
+					{
+						"value": "Euphoria",
+						"synonyms": [
+							"Euphoria",
+							"Euphorium"
+						]
+					},
+					{
+						"value": "Flatulence",
+						"synonyms": [
+							"Flatulence"
+						]
+					},
+					{
+						"value": "Impatience",
+						"synonyms": [
+							"Impatience"
+						]
+					},
+					{
+						"value": "Toothache",
+						"synonyms": [
+							"Toothache"
+						]
+					},
+					{
+						"value": "Frequent Headaches",
+						"synonyms": [
+							"Frequent Headaches",
+							"Frequent Headach"
+						]
+					},
+					{
+						"value": "Wrist Pain",
+						"synonyms": [
+							"Wrist Pain"
+						]
+					},
+					{
+						"value": "Isolation",
+						"synonyms": [
+							"Isolation"
+						]
+					},
+					{
+						"value": "Manic",
+						"synonyms": [
+							"Manic"
+						]
+					},
+					{
+						"value": "Half Hourly",
+						"synonyms": [
+							"Half Hourly"
+						]
+					},
+					{
+						"value": "Anxiety Depression",
+						"synonyms": [
+							"Anxiety Depression"
+						]
+					},
+					{
+						"value": "Feeling Suicidal",
+						"synonyms": [
+							"Feeling Suicidal"
+						]
+					},
+					{
+						"value": "Itchy",
+						"synonyms": [
+							"Itchy"
+						]
+					},
+					{
+						"value": "Vicks DayQuil Cold & Flu Multi-Symptom Relief LiquiCaps 48 Ct",
+						"synonyms": [
+							"Cold Or Flu Symptoms",
+							"Vicks DayQuil Cold & Flu Multi-Symptom Relief LiquiCaps 48 Ct",
+							"Cold Or Flu Symptom"
+						]
+					},
+					{
+						"value": "Muscle Tension",
+						"synonyms": [
+							"Muscle Tension"
+						]
+					},
+					{
+						"value": "Acid Reflux",
+						"synonyms": [
+							"Acid Reflux"
+						]
+					},
+					{
+						"value": "Distractibility",
+						"synonyms": [
+							"Distractibility"
+						]
+					},
+					{
+						"value": "Crying Easily",
+						"synonyms": [
+							"Crying Easily"
+						]
+					},
+					{
+						"value": "Sensitivity To Smell",
+						"synonyms": [
+							"Sensitivity To Smell"
+						]
+					},
+					{
+						"value": "1530223521 Unique Test Variable",
+						"synonyms": [
+							"1530223521 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531929235 Unique Test Variable",
+						"synonyms": [
+							"1531929235 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533527679 Unique Test Variable",
+						"synonyms": [
+							"1533527679 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Palpitations",
+						"synonyms": [
+							"Palpitations",
+							"Palpitation"
+						]
+					},
+					{
+						"value": "1526746672 Unique Test Variable",
+						"synonyms": [
+							"1526746672 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528741211 Unique Test Variable",
+						"synonyms": [
+							"1528741211 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530224080 Unique Test Variable",
+						"synonyms": [
+							"1530224080 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531929803 Unique Test Variable",
+						"synonyms": [
+							"1531929803 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Low",
+						"synonyms": [
+							"Low"
+						]
+					},
+					{
+						"value": "1525632599 Unique Test Variable",
+						"synonyms": [
+							"1525632599 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528742375 Unique Test Variable",
+						"synonyms": [
+							"1528742375 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530224579 Unique Test Variable",
+						"synonyms": [
+							"1530224579 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531930390 Unique Test Variable",
+						"synonyms": [
+							"1531930390 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534037845 Unique Test Variable",
+						"synonyms": [
+							"1534037845 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535405778 Unique Test Variable",
+						"synonyms": [
+							"1535405778 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Left Sided Abdominal Pain",
+						"synonyms": [
+							"Left Sided Abdominal Pain"
+						]
+					},
+					{
+						"value": "1528744551 Unique Test Variable",
+						"synonyms": [
+							"1528744551 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530224850 Unique Test Variable",
+						"synonyms": [
+							"1530224850 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531930931 Unique Test Variable",
+						"synonyms": [
+							"1531930931 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535410361 Unique Test Variable",
+						"synonyms": [
+							"1535410361 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Psychotic Episode",
+						"synonyms": [
+							"Psychotic Episode"
+						]
+					},
+					{
+						"value": "Chronic Diarrhea",
+						"synonyms": [
+							"Chronic Diarrhea"
+						]
+					},
+					{
+						"value": "Jeuk",
+						"synonyms": [
+							"Jeuk"
+						]
+					},
+					{
+						"value": "Head Ack",
+						"synonyms": [
+							"Head Ack"
+						]
+					},
+					{
+						"value": "1528747522 Unique Test Variable",
+						"synonyms": [
+							"1528747522 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530225566 Unique Test Variable",
+						"synonyms": [
+							"1530225566 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531425906 Unique Test Variable",
+						"synonyms": [
+							"1531425906 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531931479 Unique Test Variable",
+						"synonyms": [
+							"1531931479 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535415822 Unique Test Variable",
+						"synonyms": [
+							"1535415822 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Vivid Dreams",
+						"synonyms": [
+							"Vivid Dreams",
+							"Vivid Dream"
+						]
+					},
+					{
+						"value": "Social Avoidance",
+						"synonyms": [
+							"Social Avoidance"
+						]
+					},
+					{
+						"value": "1525632988 Unique Test Variable",
+						"synonyms": [
+							"1525632988 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Lethargic",
+						"synonyms": [
+							"Lethargic"
+						]
+					},
+					{
+						"value": "1530226091 Unique Test Variable",
+						"synonyms": [
+							"1530226091 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531426043 Unique Test Variable",
+						"synonyms": [
+							"1531426043 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531931538 Unique Test Variable",
+						"synonyms": [
+							"1531931538 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Face Oedema",
+						"synonyms": [
+							"Face Oedema"
+						]
+					},
+					{
+						"value": "Agitation (feeling Jittery)",
+						"synonyms": [
+							"Agitation",
+							"feeling Jittery"
+						]
+					},
+					{
+						"value": "1526500049 Unique Test Variable",
+						"synonyms": [
+							"1526500049 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530226332 Unique Test Variable",
+						"synonyms": [
+							"1530226332 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531426698 Unique Test Variable",
+						"synonyms": [
+							"1531426698 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531932166 Unique Test Variable",
+						"synonyms": [
+							"1531932166 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Flushing (redness In Face And Other Ares of Skin)",
+						"synonyms": [
+							"Flushing",
+							"redness In Face And Other Ares of Skin"
+						]
+					},
+					{
+						"value": "Unfocused",
+						"synonyms": [
+							"Unfocused"
+						]
+					},
+					{
+						"value": "Vomiting",
+						"synonyms": [
+							"Vomiting"
+						]
+					},
+					{
+						"value": "1528596274 Unique Test Variable",
+						"synonyms": [
+							"1528596274 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529779079 Unique Test Variable",
+						"synonyms": [
+							"1529779079 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531932919 Unique Test Variable",
+						"synonyms": [
+							"1531932919 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534091745 Unique Test Variable",
+						"synonyms": [
+							"1534091745 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529779619 Unique Test Variable",
+						"synonyms": [
+							"1529779619 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531932995 Unique Test Variable",
+						"synonyms": [
+							"1531932995 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534093670 Unique Test Variable",
+						"synonyms": [
+							"1534093670 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Allergic Reaction",
+						"synonyms": [
+							"Allergic Reaction"
+						]
+					},
+					{
+						"value": "Menstrual Cramps",
+						"synonyms": [
+							"Menstrual Cramps",
+							"Menstrual Cramp"
+						]
+					},
+					{
+						"value": "1529779878 Unique Test Variable",
+						"synonyms": [
+							"1529779878 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Forgetfulness",
+						"synonyms": [
+							"Forgetfulness",
+							"Forgetfulnes",
+							"Forgetfulne"
+						]
+					},
+					{
+						"value": "1525642320 Unique Test Variable",
+						"synonyms": [
+							"1525642320 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1526500996 Unique Test Variable",
+						"synonyms": [
+							"1526500996 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529780776 Unique Test Variable",
+						"synonyms": [
+							"1529780776 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531934313 Unique Test Variable",
+						"synonyms": [
+							"1531934313 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Frequent Urination",
+						"synonyms": [
+							"Frequent Urination"
+						]
+					},
+					{
+						"value": "1525642776 Unique Test Variable",
+						"synonyms": [
+							"1525642776 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527456668 Unique Test Variable",
+						"synonyms": [
+							"1527456668 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Homework Compulssive Disorder",
+						"synonyms": [
+							"Homework Compulssive",
+							"Homework Compulssive Disorder"
+						]
+					},
+					{
+						"value": "1529781272 Unique Test Variable",
+						"synonyms": [
+							"1529781272 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Canker Sores",
+						"synonyms": [
+							"Canker Sores",
+							"Canker Sore"
+						]
+					},
+					{
+						"value": "Thyroid Disorder",
+						"synonyms": [
+							"Thyroid Disorder",
+							"Thyroid"
+						]
+					},
+					{
+						"value": "Jaw Clenching Without Teeth Grinding (or Touching)",
+						"synonyms": [
+							"Jaw Clenching Without Teeth Grinding",
+							"or Touching"
+						]
+					},
+					{
+						"value": "1526501595 Unique Test Variable",
+						"synonyms": [
+							"1526501595 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1526758279 Unique Test Variable",
+						"synonyms": [
+							"1526758279 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527458788 Unique Test Variable",
+						"synonyms": [
+							"1527458788 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527911993 Unique Test Variable",
+						"synonyms": [
+							"1527911993 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529781702 Unique Test Variable",
+						"synonyms": [
+							"1529781702 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Gas And Bloating",
+						"synonyms": [
+							"Gas And Bloating"
+						]
+					},
+					{
+						"value": "Jaw Pain",
+						"synonyms": [
+							"Jaw Pain"
+						]
+					},
+					{
+						"value": "1525644612 Unique Test Variable",
+						"synonyms": [
+							"1525644612 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529781950 Unique Test Variable",
+						"synonyms": [
+							"1529781950 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Grogginess",
+						"synonyms": [
+							"Grogginess",
+							"Groggines"
+						]
+					},
+					{
+						"value": "Gas Or Bloating",
+						"synonyms": [
+							"Bloating",
+							"Gas",
+							"Gas Or Bloating"
+						]
+					},
+					{
+						"value": "Bulimia",
+						"synonyms": [
+							"Bulimia",
+							"Bulimium"
+						]
+					},
+					{
+						"value": "Eyes Want To Shut, as Though One Has Been Crying For Months",
+						"synonyms": [
+							"Eyes Want To Shut",
+							"Eyes Want To Shut, as Though One Has Been Crying For Months",
+							"Eyes Want To Shut, as Though One Has Been Crying For Month"
+						]
+					},
+					{
+						"value": "Purine Metabolism Disorder",
+						"synonyms": [
+							"Purine Metabolism Disorder",
+							"Purine Metabolism"
+						]
+					},
+					{
+						"value": "1526502189 Unique Test Variable",
+						"synonyms": [
+							"1526502189 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Thoughtsofhelplessness",
+						"synonyms": [
+							"Thoughtsofhelplessness",
+							"Thoughtsofhelplessnes"
+						]
+					},
+					{
+						"value": "1527461126 Unique Test Variable",
+						"synonyms": [
+							"1527461126 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530236200 Unique Test Variable",
+						"synonyms": [
+							"1530236200 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534102236 Unique Test Variable",
+						"synonyms": [
+							"1534102236 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529793811 Unique Test Variable",
+						"synonyms": [
+							"1529793811 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530255552 Unique Test Variable",
+						"synonyms": [
+							"1530255552 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533598116 Unique Test Variable",
+						"synonyms": [
+							"1533598116 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Chronic Daily Headache",
+						"synonyms": [
+							"Chronic Daily Headache"
+						]
+					},
+					{
+						"value": "Weakness",
+						"synonyms": [
+							"Weakness",
+							"Weaknes"
+						]
+					},
+					{
+						"value": "Leg Discomfort",
+						"synonyms": [
+							"Leg Discomfort"
+						]
+					},
+					{
+						"value": "1529794658 Unique Test Variable",
+						"synonyms": [
+							"1529794658 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530256256 Unique Test Variable",
+						"synonyms": [
+							"1530256256 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530256581 Unique Test Variable",
+						"synonyms": [
+							"1530256581 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531939322 Unique Test Variable",
+						"synonyms": [
+							"1531939322 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Anxiety Or Nervousness",
+						"synonyms": [
+							"Nervousness",
+							"Anxiety",
+							"Anxiety Or Nervousness",
+							"Nervousnes",
+							"Anxiety Or Nervousnes"
+						]
+					},
+					{
+						"value": "Weepiness",
+						"synonyms": [
+							"Weepiness",
+							"Weepines",
+							"Weepine"
+						]
+					},
+					{
+						"value": "Jaw Tension",
+						"synonyms": [
+							"Jaw Tension"
+						]
+					},
+					{
+						"value": "1529795796 Unique Test Variable",
+						"synonyms": [
+							"1529795796 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531940965 Unique Test Variable",
+						"synonyms": [
+							"1531940965 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533598884 Unique Test Variable",
+						"synonyms": [
+							"1533598884 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1526763882 Unique Test Variable",
+						"synonyms": [
+							"1526763882 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527463383 Unique Test Variable",
+						"synonyms": [
+							"1527463383 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529343336 Unique Test Variable",
+						"synonyms": [
+							"1529343336 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Diarrhoea",
+						"synonyms": [
+							"Diarrhoea"
+						]
+					},
+					{
+						"value": "1531944917 Unique Test Variable",
+						"synonyms": [
+							"1531944917 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Joint Inflammation",
+						"synonyms": [
+							"Joint Inflammation"
+						]
+					},
+					{
+						"value": "Neck Or Spinal Problems In The Cervical Region",
+						"synonyms": [
+							"Neck Or Spinal Problems In The Cervical Region With Muscle Tightness",
+							"Spinal Problems In The Cervical Region",
+							"Neck",
+							"Neck Or Spinal Problems In The Cervical Region",
+							"Neck Or Spinal Problems In The Cervical Region With Muscle Tightnes"
+						]
+					},
+					{
+						"value": "1526765917 Unique Test Variable",
+						"synonyms": [
+							"1526765917 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527467289 Unique Test Variable",
+						"synonyms": [
+							"1527467289 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529345144 Unique Test Variable",
+						"synonyms": [
+							"1529345144 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Bowel Movement",
+						"synonyms": [
+							"Bowel Movement"
+						]
+					},
+					{
+						"value": "1527469028 Unique Test Variable",
+						"synonyms": [
+							"1527469028 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527915574 Unique Test Variable",
+						"synonyms": [
+							"1527915574 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529347646 Unique Test Variable",
+						"synonyms": [
+							"1529347646 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531947061 Unique Test Variable",
+						"synonyms": [
+							"1531947061 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Joint Stiffness",
+						"synonyms": [
+							"Joint Stiffness",
+							"Joint Stiffnes",
+							"Joint Stiffne"
+						]
+					},
+					{
+						"value": "Throbbing Headache",
+						"synonyms": [
+							"Throbbing Headache"
+						]
+					},
+					{
+						"value": "1526507285 Unique Test Variable",
+						"synonyms": [
+							"1526507285 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527470375 Unique Test Variable",
+						"synonyms": [
+							"1527470375 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527924311 Unique Test Variable",
+						"synonyms": [
+							"1527924311 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528755922 Unique Test Variable",
+						"synonyms": [
+							"1528755922 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531947762 Unique Test Variable",
+						"synonyms": [
+							"1531947762 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Mundo Onrico",
+						"synonyms": [
+							"Mundo Onírico",
+							"Mundo Onrico"
+						]
+					},
+					{
+						"value": "1526507386 Unique Test Variable",
+						"synonyms": [
+							"1526507386 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527471459 Unique Test Variable",
+						"synonyms": [
+							"1527471459 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527956835 Unique Test Variable",
+						"synonyms": [
+							"1527956835 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Hallucinations",
+						"synonyms": [
+							"Hallucinations",
+							"Hallucination"
+						]
+					},
+					{
+						"value": "Soreness",
+						"synonyms": [
+							"Soreness",
+							"Sorenes"
+						]
+					},
+					{
+						"value": "Temper Tantrum #mirella",
+						"synonyms": [
+							"Temper Tantrum #mirella"
+						]
+					},
+					{
+						"value": "1527473084 Unique Test Variable",
+						"synonyms": [
+							"1527473084 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527957449 Unique Test Variable",
+						"synonyms": [
+							"1527957449 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Back, Muscle, Or Bone Pain",
+						"synonyms": [
+							"Back",
+							"Bone Pain",
+							"Back, Muscle,",
+							"Back, Muscle, Or Bone Pain"
+						]
+					},
+					{
+						"value": "1526770736 Unique Test Variable",
+						"synonyms": [
+							"1526770736 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527474189 Unique Test Variable",
+						"synonyms": [
+							"1527474189 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531951252 Unique Test Variable",
+						"synonyms": [
+							"1531951252 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534779676 Unique Test Variable",
+						"synonyms": [
+							"1534779676 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Bipolar I Disorder",
+						"synonyms": [
+							"Bipolar I Disorder",
+							"Bipolar I"
+						]
+					},
+					{
+						"value": "1526772364 Unique Test Variable",
+						"synonyms": [
+							"1526772364 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527475286 Unique Test Variable",
+						"synonyms": [
+							"1527475286 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531954701 Unique Test Variable",
+						"synonyms": [
+							"1531954701 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535474824 Unique Test Variable",
+						"synonyms": [
+							"1535474824 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Sores",
+						"synonyms": [
+							"Sores",
+							"Sore"
+						]
+					},
+					{
+						"value": "1526508956 Unique Test Variable",
+						"synonyms": [
+							"1526508956 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527104400 Unique Test Variable",
+						"synonyms": [
+							"1527104400 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527477020 Unique Test Variable",
+						"synonyms": [
+							"1527477020 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535477670 Unique Test Variable",
+						"synonyms": [
+							"1535477670 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Regret",
+						"synonyms": [
+							"Regret"
+						]
+					},
+					{
+						"value": "1527105920 Unique Test Variable",
+						"synonyms": [
+							"1527105920 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527478085 Unique Test Variable",
+						"synonyms": [
+							"1527478085 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532151761 Unique Test Variable",
+						"synonyms": [
+							"1532151761 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535497167 Unique Test Variable",
+						"synonyms": [
+							"1535497167 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Helplessness",
+						"synonyms": [
+							"Helplessness",
+							"Helplessnes"
+						]
+					},
+					{
+						"value": "1527106848 Unique Test Variable",
+						"synonyms": [
+							"1527106848 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527958230 Unique Test Variable",
+						"synonyms": [
+							"1527958230 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532153083 Unique Test Variable",
+						"synonyms": [
+							"1532153083 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535497872 Unique Test Variable",
+						"synonyms": [
+							"1535497872 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Headache Or Heaviness In Head",
+						"synonyms": [
+							"Heaviness In Head",
+							"Headache",
+							"Headache Or Heaviness In Head"
+						]
+					},
+					{
+						"value": "Negative Body Image",
+						"synonyms": [
+							"Negative Body Image"
+						]
+					},
+					{
+						"value": "Soy",
+						"synonyms": [
+							"Soy"
+						]
+					},
+					{
+						"value": "Cellulitis",
+						"synonyms": [
+							"Cellulitis",
+							"Celluliti",
+							"Cellulitus",
+							"Cellulitu"
+						]
+					},
+					{
+						"value": "1527479186 Unique Test Variable",
+						"synonyms": [
+							"1527479186 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Medical Unfeasability",
+						"synonyms": [
+							"Medical Unfeasability"
+						]
+					},
+					{
+						"value": "1535500688 Unique Test Variable",
+						"synonyms": [
+							"1535500688 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Beware of Counterfeit Drugs And Do Not Mix Medications",
+						"synonyms": [
+							"Beware Of Counterfeit Drugs And Do Not Mix Medications....",
+							"Beware of erfeit Drugs And Do Not Mix Medications",
+							"Beware of Counterfeit Drugs And Do Not Mix Medications",
+							"Beware of erfeit Drugs And Do Not Mix Medication",
+							"Beware of Counterfeit Drugs And Do Not Mix Medication"
+						]
+					},
+					{
+						"value": "Hungry (Hunger Rating)",
+						"synonyms": [
+							"Hungry",
+							"Hunger Rating"
+						]
+					},
+					{
+						"value": "Dry Eyes",
+						"synonyms": [
+							"Dry Eyes",
+							"Dry Eye"
+						]
+					},
+					{
+						"value": "Bad Dreams",
+						"synonyms": [
+							"Bad Dreams",
+							"Bad Dream"
+						]
+					},
+					{
+						"value": "1526775205 Unique Test Variable",
+						"synonyms": [
+							"1526775205 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533602882 Unique Test Variable",
+						"synonyms": [
+							"1533602882 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Heart Palpitations",
+						"synonyms": [
+							"Heart Palpitations",
+							"Heart Palpitation"
+						]
+					},
+					{
+						"value": "Breathing Quality",
+						"synonyms": [
+							"Breathing Quality"
+						]
+					},
+					{
+						"value": "1526784815 Unique Test Variable",
+						"synonyms": [
+							"1526784815 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Yeast Infection",
+						"synonyms": [
+							"Yeast Infection"
+						]
+					},
+					{
+						"value": "Nerve Pain",
+						"synonyms": [
+							"Nerve Pain"
+						]
+					},
+					{
+						"value": "Arthritic Pains",
+						"synonyms": [
+							"Arthritic Pains",
+							"Arthritic Pain"
+						]
+					},
+					{
+						"value": "Eczema",
+						"synonyms": [
+							"Eczema"
+						]
+					},
+					{
+						"value": "1528330679 Unique Test Variable",
+						"synonyms": [
+							"1528330679 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Disturbance In Sexual Arousal",
+						"synonyms": [
+							"Disturbance In Sexual Arousal"
+						]
+					},
+					{
+						"value": "Delusions",
+						"synonyms": [
+							"Delusions",
+							"Delusion"
+						]
+					},
+					{
+						"value": "Agitation Rating",
+						"synonyms": [
+							"Agitation",
+							"Agitation Rating"
+						]
+					},
+					{
+						"value": "1524790519 Unique Test Variable",
+						"synonyms": [
+							"1524790519 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Control Pause",
+						"synonyms": [
+							"Control Pause"
+						]
+					},
+					{
+						"value": "1531442256 Unique Test Variable",
+						"synonyms": [
+							"1531442256 Unique Test Variable"
+						]
+					},
+					{
+						"value": "TMJ",
+						"synonyms": [
+							"TMJ"
+						]
+					},
+					{
+						"value": "Heartburns",
+						"synonyms": [
+							"Heartburns",
+							"Heartburn"
+						]
+					},
+					{
+						"value": "Lack of Appetite",
+						"synonyms": [
+							"Lack of Appetite"
+						]
+					},
+					{
+						"value": "Burning Skin",
+						"synonyms": [
+							"Burning Skin"
+						]
+					},
+					{
+						"value": "Mal De Tte",
+						"synonyms": [
+							"Mal De Tête",
+							"Mal De Tte"
+						]
+					},
+					{
+						"value": "Drug Dependence (Rating)",
+						"synonyms": [
+							"Drug Dependence"
+						]
+					},
+					{
+						"value": "Dry Eye",
+						"synonyms": [
+							"Dry Eye"
+						]
+					},
+					{
+						"value": "Mast Cell",
+						"synonyms": [
+							"Mast Cell"
+						]
+					},
+					{
+						"value": "Adult Otitis Media (ear Infection)",
+						"synonyms": [
+							"Adult Otitis Media",
+							"ear Infection",
+							"Adult Otitis Medium"
+						]
+					},
+					{
+						"value": "Energy Value",
+						"synonyms": [
+							"Energy Value 1",
+							"Energy Value"
+						]
+					},
+					{
+						"value": "Nocturia Aggravated",
+						"synonyms": [
+							"Nocturia Aggravated"
+						]
+					},
+					{
+						"value": "Douleur Ventre",
+						"synonyms": [
+							"Douleur Ventre"
+						]
+					},
+					{
+						"value": "1528332357 Unique Test Variable",
+						"synonyms": [
+							"1528332357 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Night Sweating",
+						"synonyms": [
+							"Night Sweating"
+						]
+					},
+					{
+						"value": "1531972039 Unique Test Variable",
+						"synonyms": [
+							"1531972039 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533612330 Unique Test Variable",
+						"synonyms": [
+							"1533612330 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Rapid Pulse",
+						"synonyms": [
+							"Rapid Pulse"
+						]
+					},
+					{
+						"value": "1524792919 Unique Test Variable",
+						"synonyms": [
+							"1524792919 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Mortons Nueroma",
+						"synonyms": [
+							"Mortons Nueroma"
+						]
+					},
+					{
+						"value": "1527481314 Unique Test Variable",
+						"synonyms": [
+							"1527481314 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528338604 Unique Test Variable",
+						"synonyms": [
+							"1528338604 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Hypoglycemic",
+						"synonyms": [
+							"Hypoglycemic"
+						]
+					},
+					{
+						"value": "Spontaneous Crying",
+						"synonyms": [
+							"Spontaneous Crying"
+						]
+					},
+					{
+						"value": "1524801224 Unique Test Variable",
+						"synonyms": [
+							"1524801224 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527482477 Unique Test Variable",
+						"synonyms": [
+							"1527482477 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528342926 Unique Test Variable",
+						"synonyms": [
+							"1528342926 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529085335 Unique Test Variable",
+						"synonyms": [
+							"1529085335 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529458628 Unique Test Variable",
+						"synonyms": [
+							"1529458628 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Fast Heartbeat",
+						"synonyms": [
+							"Fast Heartbeat"
+						]
+					},
+					{
+						"value": "1524801482 Unique Test Variable",
+						"synonyms": [
+							"1524801482 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527483413 Unique Test Variable",
+						"synonyms": [
+							"1527483413 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529459036 Unique Test Variable",
+						"synonyms": [
+							"1529459036 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530305057 Unique Test Variable",
+						"synonyms": [
+							"1530305057 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Hives",
+						"synonyms": [
+							"Hives",
+							"Hive"
+						]
+					},
+					{
+						"value": "1527484356 Unique Test Variable",
+						"synonyms": [
+							"1527484356 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527961517 Unique Test Variable",
+						"synonyms": [
+							"1527961517 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Withdrawn",
+						"synonyms": [
+							"Withdrawn"
+						]
+					},
+					{
+						"value": "1529459436 Unique Test Variable",
+						"synonyms": [
+							"1529459436 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530305492 Unique Test Variable",
+						"synonyms": [
+							"1530305492 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Swollen",
+						"synonyms": [
+							"Swollen"
+						]
+					},
+					{
+						"value": "Reflux",
+						"synonyms": [
+							"Reflux"
+						]
+					},
+					{
+						"value": "1524803976 Unique Test Variable",
+						"synonyms": [
+							"1524803976 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527485761 Unique Test Variable",
+						"synonyms": [
+							"1527485761 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529461277 Unique Test Variable",
+						"synonyms": [
+							"1529461277 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530306069 Unique Test Variable",
+						"synonyms": [
+							"1530306069 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Hot Flashes (a Sudden Wave of Mild Or Intense Body Heat)",
+						"synonyms": [
+							"Hot Flashes",
+							"a Sudden Wave of Mild Or Intense Body Heat",
+							"Hot Flash"
+						]
+					},
+					{
+						"value": "Improvement Factors",
+						"synonyms": [
+							"Improvement Factors",
+							"Improvement Factor"
+						]
+					},
+					{
+						"value": "1524804991 Unique Test Variable",
+						"synonyms": [
+							"1524804991 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527486867 Unique Test Variable",
+						"synonyms": [
+							"1527486867 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527962010 Unique Test Variable",
+						"synonyms": [
+							"1527962010 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530306762 Unique Test Variable",
+						"synonyms": [
+							"1530306762 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534129136 Unique Test Variable",
+						"synonyms": [
+							"1534129136 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Hallucination, Auditory",
+						"synonyms": [
+							"Hallucination",
+							"Hallucination, Auditory"
+						]
+					},
+					{
+						"value": "Anxiety State",
+						"synonyms": [
+							"Anxiety State"
+						]
+					},
+					{
+						"value": "Gout Attack",
+						"synonyms": [
+							"Gout Attack"
+						]
+					},
+					{
+						"value": "1524806882 Unique Test Variable",
+						"synonyms": [
+							"1524806882 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527487858 Unique Test Variable",
+						"synonyms": [
+							"1527487858 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528597779 Unique Test Variable",
+						"synonyms": [
+							"1528597779 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529464309 Unique Test Variable",
+						"synonyms": [
+							"1529464309 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530307061 Unique Test Variable",
+						"synonyms": [
+							"1530307061 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534129740 Unique Test Variable",
+						"synonyms": [
+							"1534129740 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527488051 Unique Test Variable",
+						"synonyms": [
+							"1527488051 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529465612 Unique Test Variable",
+						"synonyms": [
+							"1529465612 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Grief",
+						"synonyms": [
+							"Grief"
+						]
+					},
+					{
+						"value": "Trichotillomania",
+						"synonyms": [
+							"Trichotillomania",
+							"Trichotillomanium"
+						]
+					},
+					{
+						"value": "Bladder Irritation",
+						"synonyms": [
+							"Bladder Irritation"
+						]
+					},
+					{
+						"value": "1527493984 Unique Test Variable",
+						"synonyms": [
+							"1527493984 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529466118 Unique Test Variable",
+						"synonyms": [
+							"1529466118 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Burning Pelvis",
+						"synonyms": [
+							"Burning Pelvis",
+							"Burning Pelvi"
+						]
+					},
+					{
+						"value": "Being Fat",
+						"synonyms": [
+							"Being Fat"
+						]
+					},
+					{
+						"value": "1529507347 Unique Test Variable",
+						"synonyms": [
+							"1529507347 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525200428 Unique Test Variable",
+						"synonyms": [
+							"1525200428 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527123624 Unique Test Variable",
+						"synonyms": [
+							"1527123624 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532008170 Unique Test Variable",
+						"synonyms": [
+							"1532008170 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525200477 Unique Test Variable",
+						"synonyms": [
+							"1525200477 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527124288 Unique Test Variable",
+						"synonyms": [
+							"1527124288 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Cigarette Craving",
+						"synonyms": [
+							"Cigarette Craving"
+						]
+					},
+					{
+						"value": "Sleep Rating",
+						"synonyms": [
+							"Sleep",
+							"Sleep Rating"
+						]
+					},
+					{
+						"value": "1532008730 Unique Test Variable",
+						"synonyms": [
+							"1532008730 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533053924 Unique Test Variable",
+						"synonyms": [
+							"1533053924 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534180378 Unique Test Variable",
+						"synonyms": [
+							"1534180378 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525201802 Unique Test Variable",
+						"synonyms": [
+							"1525201802 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527134023 Unique Test Variable",
+						"synonyms": [
+							"1527134023 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Messyness",
+						"synonyms": [
+							"Messyness",
+							"Messynes"
+						]
+					},
+					{
+						"value": "1527963368 Unique Test Variable",
+						"synonyms": [
+							"1527963368 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530322831 Unique Test Variable",
+						"synonyms": [
+							"1530322831 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532009554 Unique Test Variable",
+						"synonyms": [
+							"1532009554 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534181660 Unique Test Variable",
+						"synonyms": [
+							"1534181660 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Heartburn",
+						"synonyms": [
+							"Heartburn"
+						]
+					},
+					{
+						"value": "1525205074 Unique Test Variable",
+						"synonyms": [
+							"1525205074 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527516969 Unique Test Variable",
+						"synonyms": [
+							"1527516969 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532011861 Unique Test Variable",
+						"synonyms": [
+							"1532011861 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534181772 Unique Test Variable",
+						"synonyms": [
+							"1534181772 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525208700 Unique Test Variable",
+						"synonyms": [
+							"1525208700 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527523312 Unique Test Variable",
+						"synonyms": [
+							"1527523312 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Marriage Rating",
+						"synonyms": [
+							"Marriage",
+							"Marriage Rating"
+						]
+					},
+					{
+						"value": "1530336391 Unique Test Variable",
+						"synonyms": [
+							"1530336391 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534195820 Unique Test Variable",
+						"synonyms": [
+							"1534195820 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Bowel Movement Discomfort",
+						"synonyms": [
+							"Bowel Movement Discomfort"
+						]
+					},
+					{
+						"value": "1525210650 Unique Test Variable",
+						"synonyms": [
+							"1525210650 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527524963 Unique Test Variable",
+						"synonyms": [
+							"1527524963 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528392845 Unique Test Variable",
+						"synonyms": [
+							"1528392845 Unique Test Variable"
+						]
+					},
+					{
+						"value": "PMO",
+						"synonyms": [
+							"PMO"
+						]
+					},
+					{
+						"value": "1534196322 Unique Test Variable",
+						"synonyms": [
+							"1534196322 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525213335 Unique Test Variable",
+						"synonyms": [
+							"1525213335 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528393327 Unique Test Variable",
+						"synonyms": [
+							"1528393327 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Present",
+						"synonyms": [
+							"Present"
+						]
+					},
+					{
+						"value": "1528395164 Unique Test Variable",
+						"synonyms": [
+							"1528395164 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534197018 Unique Test Variable",
+						"synonyms": [
+							"1534197018 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528404283 Unique Test Variable",
+						"synonyms": [
+							"1528404283 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529091008 Unique Test Variable",
+						"synonyms": [
+							"1529091008 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531789869 Unique Test Variable",
+						"synonyms": [
+							"1531789869 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532629324 Unique Test Variable",
+						"synonyms": [
+							"1532629324 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534197586 Unique Test Variable",
+						"synonyms": [
+							"1534197586 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Fatigue Aggravated",
+						"synonyms": [
+							"Fatigue Aggravated"
+						]
+					},
+					{
+						"value": "1526517002 Unique Test Variable",
+						"synonyms": [
+							"1526517002 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527528321 Unique Test Variable",
+						"synonyms": [
+							"1527528321 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531789915 Unique Test Variable",
+						"synonyms": [
+							"1531789915 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532630636 Unique Test Variable",
+						"synonyms": [
+							"1532630636 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1526517477 Unique Test Variable",
+						"synonyms": [
+							"1526517477 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527528448 Unique Test Variable",
+						"synonyms": [
+							"1527528448 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Stiffness",
+						"synonyms": [
+							"Stiffness",
+							"Stiffnes",
+							"Stiffne"
+						]
+					},
+					{
+						"value": "Behavior Showing Increased Motor Activity",
+						"synonyms": [
+							"Behavior Showing Increased Motor Activity"
+						]
+					},
+					{
+						"value": "1526518038 Unique Test Variable",
+						"synonyms": [
+							"1526518038 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529001735 Unique Test Variable",
+						"synonyms": [
+							"1529001735 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529092250 Unique Test Variable",
+						"synonyms": [
+							"1529092250 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530382484 Unique Test Variable",
+						"synonyms": [
+							"1530382484 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Allodynia",
+						"synonyms": [
+							"Allodynia",
+							"Allodynium"
+						]
+					},
+					{
+						"value": "Crying Rating",
+						"synonyms": [
+							"Crying",
+							"Crying Rating"
+						]
+					},
+					{
+						"value": "Raging",
+						"synonyms": [
+							"Raging"
+						]
+					},
+					{
+						"value": "Schulterschmerz, Ziehenden + Anduktionsschwäche",
+						"synonyms": [
+							"Schulterschmerz",
+							"Schulterschmerz, Ziehenden + Anduktionsschwäche"
+						]
+					},
+					{
+						"value": "1530386901 Unique Test Variable",
+						"synonyms": [
+							"1530386901 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Calculus of Kidney",
+						"synonyms": [
+							"Calculus of Kidney"
+						]
+					},
+					{
+						"value": "Nostalgia",
+						"synonyms": [
+							"Nostalgia",
+							"Nostalgium"
+						]
+					},
+					{
+						"value": "1527530372 Unique Test Variable",
+						"synonyms": [
+							"1527530372 Unique Test Variable"
+						]
+					},
+					{
+						"value": "BRP",
+						"synonyms": [
+							"BRP"
+						]
+					},
+					{
+						"value": "Burping (excessive)",
+						"synonyms": [
+							"Burping",
+							"excessive"
+						]
+					},
+					{
+						"value": "1525217342 Unique Test Variable",
+						"synonyms": [
+							"1525217342 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527531802 Unique Test Variable",
+						"synonyms": [
+							"1527531802 Unique Test Variable"
+						]
+					},
+					{
+						"value": "BRSt",
+						"synonyms": [
+							"BRSt"
+						]
+					},
+					{
+						"value": "1533076098 Unique Test Variable",
+						"synonyms": [
+							"1533076098 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525217985 Unique Test Variable",
+						"synonyms": [
+							"1525217985 Unique Test Variable"
+						]
+					},
+					{
+						"value": "BRSi",
+						"synonyms": [
+							"BRSi"
+						]
+					},
+					{
+						"value": "Insomnia",
+						"synonyms": [
+							"Insomnia",
+							"Insomnium"
+						]
+					},
+					{
+						"value": "1525218499 Unique Test Variable",
+						"synonyms": [
+							"1525218499 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Masturbate",
+						"synonyms": [
+							"Masturbate"
+						]
+					},
+					{
+						"value": "1528818236 Unique Test Variable",
+						"synonyms": [
+							"1528818236 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530730193 Unique Test Variable",
+						"synonyms": [
+							"1530730193 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533076759 Unique Test Variable",
+						"synonyms": [
+							"1533076759 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534198152 Unique Test Variable",
+						"synonyms": [
+							"1534198152 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525218942 Unique Test Variable",
+						"synonyms": [
+							"1525218942 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528818735 Unique Test Variable",
+						"synonyms": [
+							"1528818735 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531793178 Unique Test Variable",
+						"synonyms": [
+							"1531793178 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Buzzing",
+						"synonyms": [
+							"Buzzing"
+						]
+					},
+					{
+						"value": "1531795513 Unique Test Variable",
+						"synonyms": [
+							"1531795513 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533077218 Unique Test Variable",
+						"synonyms": [
+							"1533077218 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Hopelessness: Feeling as Though The Current State Is Permanent",
+						"synonyms": [
+							"Hopelessness: Feeling as Though The Current State Is Permanent"
+						]
+					},
+					{
+						"value": "Sour Stomach",
+						"synonyms": [
+							"Sour Stomach"
+						]
+					},
+					{
+						"value": "1525219555 Unique Test Variable",
+						"synonyms": [
+							"1525219555 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527532798 Unique Test Variable",
+						"synonyms": [
+							"1527532798 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528049466 Unique Test Variable",
+						"synonyms": [
+							"1528049466 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Ear Bubble",
+						"synonyms": [
+							"Ear Bubble"
+						]
+					},
+					{
+						"value": "1528820121 Unique Test Variable",
+						"synonyms": [
+							"1528820121 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531795967 Unique Test Variable",
+						"synonyms": [
+							"1531795967 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527533590 Unique Test Variable",
+						"synonyms": [
+							"1527533590 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528051408 Unique Test Variable",
+						"synonyms": [
+							"1528051408 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528821075 Unique Test Variable",
+						"synonyms": [
+							"1528821075 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531796602 Unique Test Variable",
+						"synonyms": [
+							"1531796602 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533077783 Unique Test Variable",
+						"synonyms": [
+							"1533077783 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Swelling Face",
+						"synonyms": [
+							"Swelling Face"
+						]
+					},
+					{
+						"value": "Calmness",
+						"synonyms": [
+							"Calmness",
+							"Calmnes"
+						]
+					},
+					{
+						"value": "Increased Appetite",
+						"synonyms": [
+							"Increased Appetite"
+						]
+					},
+					{
+						"value": "Chapped Skin",
+						"synonyms": [
+							"Chapped Skin"
+						]
+					},
+					{
+						"value": "1528052747 Unique Test Variable",
+						"synonyms": [
+							"1528052747 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528834614 Unique Test Variable",
+						"synonyms": [
+							"1528834614 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533078378 Unique Test Variable",
+						"synonyms": [
+							"1533078378 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Not Worried About Personal Appearance",
+						"synonyms": [
+							"Not Worried About Personal Appearance"
+						]
+					},
+					{
+						"value": "Diarrhea Severity Rating",
+						"synonyms": [
+							"Diarrhea Severity",
+							"Diarrhea",
+							"Diarrhea Severity Rating"
+						]
+					},
+					{
+						"value": "Self Harming",
+						"synonyms": [
+							"Self Harming"
+						]
+					},
+					{
+						"value": "1524879346 Unique Test Variable",
+						"synonyms": [
+							"1524879346 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528053606 Unique Test Variable",
+						"synonyms": [
+							"1528053606 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529095799 Unique Test Variable",
+						"synonyms": [
+							"1529095799 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530737013 Unique Test Variable",
+						"synonyms": [
+							"1530737013 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Claustrophobia",
+						"synonyms": [
+							"Claustrophobia",
+							"Claustrophobium"
+						]
+					},
+					{
+						"value": "Herpes",
+						"synonyms": [
+							"Herpes",
+							"Herpe"
+						]
+					},
+					{
+						"value": "1524879860 Unique Test Variable",
+						"synonyms": [
+							"1524879860 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529003121 Unique Test Variable",
+						"synonyms": [
+							"1529003121 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530744942 Unique Test Variable",
+						"synonyms": [
+							"1530744942 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533680018 Unique Test Variable",
+						"synonyms": [
+							"1533680018 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534198730 Unique Test Variable",
+						"synonyms": [
+							"1534198730 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1524880359 Unique Test Variable",
+						"synonyms": [
+							"1524880359 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Smelly Breath",
+						"synonyms": [
+							"Smelly Breath"
+						]
+					},
+					{
+						"value": "1530745908 Unique Test Variable",
+						"synonyms": [
+							"1530745908 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533083207 Unique Test Variable",
+						"synonyms": [
+							"1533083207 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Misophonia",
+						"synonyms": [
+							"Misophonia",
+							"Misophonium"
+						]
+					},
+					{
+						"value": "1530746484 Unique Test Variable",
+						"synonyms": [
+							"1530746484 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533684636 Unique Test Variable",
+						"synonyms": [
+							"1533684636 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527534778 Unique Test Variable",
+						"synonyms": [
+							"1527534778 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533700412 Unique Test Variable",
+						"synonyms": [
+							"1533700412 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Muc. Bt",
+						"synonyms": [
+							"Muc. Bt"
+						]
+					},
+					{
+						"value": "1524885403 Unique Test Variable",
+						"synonyms": [
+							"1524885403 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530749127 Unique Test Variable",
+						"synonyms": [
+							"1530749127 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531807556 Unique Test Variable",
+						"synonyms": [
+							"1531807556 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Average Level of Daily Energy",
+						"synonyms": [
+							"Average Level of Daily",
+							"Average Level of Daily Energy"
+						]
+					},
+					{
+						"value": "1530749811 Unique Test Variable",
+						"synonyms": [
+							"1530749811 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Abdominal Pain Upper",
+						"synonyms": [
+							"Abdominal Pain Upper"
+						]
+					},
+					{
+						"value": "1531202433 Unique Test Variable",
+						"synonyms": [
+							"1531202433 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Hallucination",
+						"synonyms": [
+							"Hallucination"
+						]
+					},
+					{
+						"value": "Cancer",
+						"synonyms": [
+							"Cancer"
+						]
+					},
+					{
+						"value": "1529098615 Unique Test Variable",
+						"synonyms": [
+							"1529098615 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530750426 Unique Test Variable",
+						"synonyms": [
+							"1530750426 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531202673 Unique Test Variable",
+						"synonyms": [
+							"1531202673 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Pelvic Floor Disorder",
+						"synonyms": [
+							"Pelvic Floor",
+							"Pelvic Floor Disorder"
+						]
+					},
+					{
+						"value": "Changes In Appetite",
+						"synonyms": [
+							"Changes In Appetite"
+						]
+					},
+					{
+						"value": "Shaking Hands That You Cannot Control",
+						"synonyms": [
+							"Shaking Hands That You Cannot Control"
+						]
+					},
+					{
+						"value": "1529099428 Unique Test Variable",
+						"synonyms": [
+							"1529099428 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Increased Head Pain",
+						"synonyms": [
+							"Increased Head Pain"
+						]
+					},
+					{
+						"value": "Candida Infection",
+						"synonyms": [
+							"Candida Infection"
+						]
+					},
+					{
+						"value": "Sciatica - Radiating",
+						"synonyms": [
+							"Sciatica - Radiating, Aching Pain",
+							"Sciatica",
+							"Sciatica - Radiating"
+						]
+					},
+					{
+						"value": "Ovary Pain Left Side",
+						"synonyms": [
+							"Ovary Pain Left Side"
+						]
+					},
+					{
+						"value": "1527535506 Unique Test Variable",
+						"synonyms": [
+							"1527535506 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529099865 Unique Test Variable",
+						"synonyms": [
+							"1529099865 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Increased Heart Rate",
+						"synonyms": [
+							"Increased Heart Rate"
+						]
+					},
+					{
+						"value": "Canker Sores Or Mouth Ulcerations",
+						"synonyms": [
+							"Mouth Ulcerations",
+							"Canker Sores",
+							"Canker Sores Or Mouth Ulcerations",
+							"Mouth Ulceration",
+							"Canker Sore",
+							"Canker Sores Or Mouth Ulceration"
+						]
+					},
+					{
+						"value": "Weak Legs",
+						"synonyms": [
+							"Weak Legs",
+							"Weak Leg"
+						]
+					},
+					{
+						"value": "1528416252 Unique Test Variable",
+						"synonyms": [
+							"1528416252 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Inattention",
+						"synonyms": [
+							"Inattention"
+						]
+					},
+					{
+						"value": "1530394570 Unique Test Variable",
+						"synonyms": [
+							"1530394570 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Shortness of Breath",
+						"synonyms": [
+							"Shortness of Breath"
+						]
+					},
+					{
+						"value": "Scratching Head",
+						"synonyms": [
+							"Scratching Head"
+						]
+					},
+					{
+						"value": "1530398223 Unique Test Variable",
+						"synonyms": [
+							"1530398223 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Shoulder Muscle Aching",
+						"synonyms": [
+							"Shoulder Muscle Aching"
+						]
+					},
+					{
+						"value": "Perfectionism",
+						"synonyms": [
+							"Perfectionism"
+						]
+					},
+					{
+						"value": "Franticness",
+						"synonyms": [
+							"Franticness",
+							"Franticnes"
+						]
+					},
+					{
+						"value": "Sore Muscles",
+						"synonyms": [
+							"Sore Muscles",
+							"Sore Muscle"
+						]
+					},
+					{
+						"value": "1527536336 Unique Test Variable",
+						"synonyms": [
+							"1527536336 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1524940045 Unique Test Variable",
+						"synonyms": [
+							"1524940045 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529293194 Unique Test Variable",
+						"synonyms": [
+							"1529293194 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Human Herpesvirus 6 Infection",
+						"synonyms": [
+							"Human Herpesvirus 6 Infection"
+						]
+					},
+					{
+						"value": "1530757788 Unique Test Variable",
+						"synonyms": [
+							"1530757788 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1524944515 Unique Test Variable",
+						"synonyms": [
+							"1524944515 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529298704 Unique Test Variable",
+						"synonyms": [
+							"1529298704 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533747112 Unique Test Variable",
+						"synonyms": [
+							"1533747112 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Upset Tummy",
+						"synonyms": [
+							"Upset Tummy"
+						]
+					},
+					{
+						"value": "1533747738 Unique Test Variable",
+						"synonyms": [
+							"1533747738 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Arm Pain",
+						"synonyms": [
+							"Arm Pain"
+						]
+					},
+					{
+						"value": "1524946296 Unique Test Variable",
+						"synonyms": [
+							"1524946296 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530765797 Unique Test Variable",
+						"synonyms": [
+							"1530765797 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Hypersensitivity",
+						"synonyms": [
+							"Hypersensitivity"
+						]
+					},
+					{
+						"value": "Bedwetting",
+						"synonyms": [
+							"Bedwetting"
+						]
+					},
+					{
+						"value": "1524951171 Unique Test Variable",
+						"synonyms": [
+							"1524951171 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Fingers Pain",
+						"synonyms": [
+							"Fingers Pain"
+						]
+					},
+					{
+						"value": "1527537057 Unique Test Variable",
+						"synonyms": [
+							"1527537057 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531240515 Unique Test Variable",
+						"synonyms": [
+							"1531240515 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533752242 Unique Test Variable",
+						"synonyms": [
+							"1533752242 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Hypersomnia",
+						"synonyms": [
+							"Hypersomnia",
+							"Hypersomnium"
+						]
+					},
+					{
+						"value": "Obsessive Thoughts",
+						"synonyms": [
+							"Obsessive Thoughts",
+							"Obsessive Thought"
+						]
+					},
+					{
+						"value": "1524978160 Unique Test Variable",
+						"synonyms": [
+							"1524978160 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531240536 Unique Test Variable",
+						"synonyms": [
+							"1531240536 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532052062 Unique Test Variable",
+						"synonyms": [
+							"1532052062 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533753538 Unique Test Variable",
+						"synonyms": [
+							"1533753538 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Hypervigilance",
+						"synonyms": [
+							"Hypervigilance"
+						]
+					},
+					{
+						"value": "Pain Overall",
+						"synonyms": [
+							"Pain Overall"
+						]
+					},
+					{
+						"value": "1527539999 Unique Test Variable",
+						"synonyms": [
+							"1527539999 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534207818 Unique Test Variable",
+						"synonyms": [
+							"1534207818 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Chills",
+						"synonyms": [
+							"Chills",
+							"Chill"
+						]
+					},
+					{
+						"value": "Depressive Episode, Unspecified",
+						"synonyms": [
+							"Depressive Episode",
+							"Depressive Episode, Unspecified"
+						]
+					},
+					{
+						"value": "1527540299 Unique Test Variable",
+						"synonyms": [
+							"1527540299 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529592567 Unique Test Variable",
+						"synonyms": [
+							"1529592567 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533100681 Unique Test Variable",
+						"synonyms": [
+							"1533100681 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527540652 Unique Test Variable",
+						"synonyms": [
+							"1527540652 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529592799 Unique Test Variable",
+						"synonyms": [
+							"1529592799 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532053916 Unique Test Variable",
+						"synonyms": [
+							"1532053916 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533109874 Unique Test Variable",
+						"synonyms": [
+							"1533109874 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527541521 Unique Test Variable",
+						"synonyms": [
+							"1527541521 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527541842 Unique Test Variable",
+						"synonyms": [
+							"1527541842 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533144334 Unique Test Variable",
+						"synonyms": [
+							"1533144334 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Disrupted Sleep",
+						"synonyms": [
+							"Disrupted Sleep"
+						]
+					},
+					{
+						"value": "Hypomanic Symptoms",
+						"synonyms": [
+							"Hypomanic Symptoms",
+							"Hypomanic Symptom"
+						]
+					},
+					{
+						"value": "Self Destructive Behavior",
+						"synonyms": [
+							"Self Destructive Behavior"
+						]
+					},
+					{
+						"value": "1527542478 Unique Test Variable",
+						"synonyms": [
+							"1527542478 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529595379 Unique Test Variable",
+						"synonyms": [
+							"1529595379 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532065540 Unique Test Variable",
+						"synonyms": [
+							"1532065540 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533144928 Unique Test Variable",
+						"synonyms": [
+							"1533144928 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527542893 Unique Test Variable",
+						"synonyms": [
+							"1527542893 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529595448 Unique Test Variable",
+						"synonyms": [
+							"1529595448 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532066421 Unique Test Variable",
+						"synonyms": [
+							"1532066421 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533154379 Unique Test Variable",
+						"synonyms": [
+							"1533154379 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Cold Or Flu Symptoms",
+						"synonyms": [
+							"Flu Symptoms",
+							"Cold",
+							"Cold Or Flu Symptoms",
+							"Flu Symptom",
+							"Cold Or Flu Symptom"
+						]
+					},
+					{
+						"value": "Physical Weakness",
+						"synonyms": [
+							"Physical Weakness",
+							"Physical Weaknes"
+						]
+					},
+					{
+						"value": "Self-injury (cutting, Hitting)",
+						"synonyms": [
+							"Self-injury",
+							"cutting, Hitting"
+						]
+					},
+					{
+						"value": "1527543401 Unique Test Variable",
+						"synonyms": [
+							"1527543401 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529595926 Unique Test Variable",
+						"synonyms": [
+							"1529595926 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534810790 Unique Test Variable",
+						"synonyms": [
+							"1534810790 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Asthma (acute)",
+						"synonyms": [
+							"Asthma",
+							"acute"
+						]
+					},
+					{
+						"value": "1527544150 Unique Test Variable",
+						"synonyms": [
+							"1527544150 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528124356 Unique Test Variable",
+						"synonyms": [
+							"1528124356 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529596462 Unique Test Variable",
+						"synonyms": [
+							"1529596462 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530503617 Unique Test Variable",
+						"synonyms": [
+							"1530503617 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534812981 Unique Test Variable",
+						"synonyms": [
+							"1534812981 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Disoriented",
+						"synonyms": [
+							"Disoriented"
+						]
+					},
+					{
+						"value": "1529597881 Unique Test Variable",
+						"synonyms": [
+							"1529597881 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530503643 Unique Test Variable",
+						"synonyms": [
+							"1530503643 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530807123 Unique Test Variable",
+						"synonyms": [
+							"1530807123 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534813785 Unique Test Variable",
+						"synonyms": [
+							"1534813785 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Plantar Fasciitis",
+						"synonyms": [
+							"Plantar Fasciitis",
+							"Plantar Fasciiti",
+							"Plantar Fasciitus",
+							"Plantar Fasciitu"
+						]
+					},
+					{
+						"value": "Cold Symptoms",
+						"synonyms": [
+							"Cold Symptoms",
+							"Cold Symptom"
+						]
+					},
+					{
+						"value": "1529006353 Unique Test Variable",
+						"synonyms": [
+							"1529006353 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529598406 Unique Test Variable",
+						"synonyms": [
+							"1529598406 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530810016 Unique Test Variable",
+						"synonyms": [
+							"1530810016 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533172589 Unique Test Variable",
+						"synonyms": [
+							"1533172589 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533781909 Unique Test Variable",
+						"synonyms": [
+							"1533781909 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534210582 Unique Test Variable",
+						"synonyms": [
+							"1534210582 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534863522 Unique Test Variable",
+						"synonyms": [
+							"1534863522 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Thinking of Giving Up",
+						"synonyms": [
+							"Thinking of Giving Up"
+						]
+					},
+					{
+						"value": "Itchiness",
+						"synonyms": [
+							"Itchiness",
+							"Itchines"
+						]
+					},
+					{
+						"value": "Sudden, Jerky Movements",
+						"synonyms": [
+							"Sudden",
+							"Sudden, Jerky Movements",
+							"Sudden, Jerky Movement"
+						]
+					},
+					{
+						"value": "Sharp Pain Left Lower Back",
+						"synonyms": [
+							"Sharp Pain Left Lower Back"
+						]
+					},
+					{
+						"value": "1534863594 Unique Test Variable",
+						"synonyms": [
+							"1534863594 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529006801 Unique Test Variable",
+						"synonyms": [
+							"1529006801 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529599109 Unique Test Variable",
+						"synonyms": [
+							"1529599109 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525724837 Unique Test Variable",
+						"synonyms": [
+							"1525724837 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529599346 Unique Test Variable",
+						"synonyms": [
+							"1529599346 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534877636 Unique Test Variable",
+						"synonyms": [
+							"1534877636 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529809896 Unique Test Variable",
+						"synonyms": [
+							"1529809896 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533219155 Unique Test Variable",
+						"synonyms": [
+							"1533219155 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527551727 Unique Test Variable",
+						"synonyms": [
+							"1527551727 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533783471 Unique Test Variable",
+						"synonyms": [
+							"1533783471 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534887977 Unique Test Variable",
+						"synonyms": [
+							"1534887977 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1526831268 Unique Test Variable",
+						"synonyms": [
+							"1526831268 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529132451 Unique Test Variable",
+						"synonyms": [
+							"1529132451 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531510867 Unique Test Variable",
+						"synonyms": [
+							"1531510867 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532099818 Unique Test Variable",
+						"synonyms": [
+							"1532099818 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533787034 Unique Test Variable",
+						"synonyms": [
+							"1533787034 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534888478 Unique Test Variable",
+						"synonyms": [
+							"1534888478 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525726761 Unique Test Variable",
+						"synonyms": [
+							"1525726761 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1526832485 Unique Test Variable",
+						"synonyms": [
+							"1526832485 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527552416 Unique Test Variable",
+						"synonyms": [
+							"1527552416 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529600867 Unique Test Variable",
+						"synonyms": [
+							"1529600867 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531511470 Unique Test Variable",
+						"synonyms": [
+							"1531511470 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532100643 Unique Test Variable",
+						"synonyms": [
+							"1532100643 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534889016 Unique Test Variable",
+						"synonyms": [
+							"1534889016 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Sore Teeth And Gums",
+						"synonyms": [
+							"Sore Teeth And Gums",
+							"Sore Teeth And Gum"
+						]
+					},
+					{
+						"value": "1526834591 Unique Test Variable",
+						"synonyms": [
+							"1526834591 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532101747 Unique Test Variable",
+						"synonyms": [
+							"1532101747 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534900557 Unique Test Variable",
+						"synonyms": [
+							"1534900557 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527553070 Unique Test Variable",
+						"synonyms": [
+							"1527553070 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532101900 Unique Test Variable",
+						"synonyms": [
+							"1532101900 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534905979 Unique Test Variable",
+						"synonyms": [
+							"1534905979 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Daytime Drowsiness",
+						"synonyms": [
+							"Daytime Drowsiness",
+							"Daytime Drowsines"
+						]
+					},
+					{
+						"value": "Sore Throat, Chills, Or Other Signs of Infection",
+						"synonyms": [
+							"Sore Throat",
+							"Other Signs of Infection",
+							"Sore Throat, Chills,",
+							"Sore Throat, Chills, Or Other Signs of Infection"
+						]
+					},
+					{
+						"value": "1529601660 Unique Test Variable",
+						"synonyms": [
+							"1529601660 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534911033 Unique Test Variable",
+						"synonyms": [
+							"1534911033 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Morbid Thoughts",
+						"synonyms": [
+							"Morbid Thoughts",
+							"Morbid Thought"
+						]
+					},
+					{
+						"value": "Jittery",
+						"synonyms": [
+							"Jittery"
+						]
+					},
+					{
+						"value": "Feelings of Worthlessness & Shame",
+						"synonyms": [
+							"Feelings of Worthlessness & Shame"
+						]
+					},
+					{
+						"value": "Anhedonia",
+						"synonyms": [
+							"Anhedonia",
+							"Anhedonium"
+						]
+					},
+					{
+						"value": "Epigastric Fullness",
+						"synonyms": [
+							"Epigastric Fullness",
+							"Epigastric Fullnes"
+						]
+					},
+					{
+						"value": "1527553762 Unique Test Variable",
+						"synonyms": [
+							"1527553762 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529602050 Unique Test Variable",
+						"synonyms": [
+							"1529602050 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534215478 Unique Test Variable",
+						"synonyms": [
+							"1534215478 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Chest Tightness",
+						"synonyms": [
+							"Chest Tightness",
+							"Chest Tightnes",
+							"Chest Tightne"
+						]
+					},
+					{
+						"value": "Pimples",
+						"synonyms": [
+							"Pimples",
+							"Pimple"
+						]
+					},
+					{
+						"value": "1534218638 Unique Test Variable",
+						"synonyms": [
+							"1534218638 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Feels Like Hip Has Been Popped Out of Joint",
+						"synonyms": [
+							"Feels Like Hip Has Been Popped Out of Joint"
+						]
+					},
+					{
+						"value": "Subclinical Hypothyroidism",
+						"synonyms": [
+							"Subclinical Hypothyroidism"
+						]
+					},
+					{
+						"value": "Intrusive Thoughts Rating",
+						"synonyms": [
+							"Intrusive Thoughts",
+							"Intrusive Thoughts Rating",
+							"Intrusive Thought"
+						]
+					},
+					{
+						"value": "1527554683 Unique Test Variable",
+						"synonyms": [
+							"1527554683 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528917897 Unique Test Variable",
+						"synonyms": [
+							"1528917897 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534992620 Unique Test Variable",
+						"synonyms": [
+							"1534992620 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Seasonal Affective Disorder",
+						"synonyms": [
+							"Seasonal Affective Disorder",
+							"Seasonal Affective"
+						]
+					},
+					{
+						"value": "1528918493 Unique Test Variable",
+						"synonyms": [
+							"1528918493 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533262117 Unique Test Variable",
+						"synonyms": [
+							"1533262117 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Seborrheic Dermatitis",
+						"synonyms": [
+							"Seborrheic Dermatitis",
+							"Seborrheic Dermatiti",
+							"Seborrheic Dermatitus",
+							"Seborrheic Dermatitu"
+						]
+					},
+					{
+						"value": "1528918974 Unique Test Variable",
+						"synonyms": [
+							"1528918974 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529603323 Unique Test Variable",
+						"synonyms": [
+							"1529603323 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534279320 Unique Test Variable",
+						"synonyms": [
+							"1534279320 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Decreased Alertness And Concentration",
+						"synonyms": [
+							"Decreased Alertness And Concentration"
+						]
+					},
+					{
+						"value": "Loss of Self Confidence",
+						"synonyms": [
+							"Loss of Self Confidence"
+						]
+					},
+					{
+						"value": "Emotions Feel Vulnerable",
+						"synonyms": [
+							"Emotions Feel Vulnerable"
+						]
+					},
+					{
+						"value": "1525220103 Unique Test Variable",
+						"synonyms": [
+							"1525220103 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525359869 Unique Test Variable",
+						"synonyms": [
+							"1525359869 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527555855 Unique Test Variable",
+						"synonyms": [
+							"1527555855 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528471243 Unique Test Variable",
+						"synonyms": [
+							"1528471243 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528919374 Unique Test Variable",
+						"synonyms": [
+							"1528919374 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Social Anxiety Disorder",
+						"synonyms": [
+							"Social Anxiety Disorder",
+							"Social Anxiety"
+						]
+					},
+					{
+						"value": "1525220656 Unique Test Variable",
+						"synonyms": [
+							"1525220656 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525727334 Unique Test Variable",
+						"synonyms": [
+							"1525727334 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527211375 Unique Test Variable",
+						"synonyms": [
+							"1527211375 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527556396 Unique Test Variable",
+						"synonyms": [
+							"1527556396 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532102731 Unique Test Variable",
+						"synonyms": [
+							"1532102731 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525222390 Unique Test Variable",
+						"synonyms": [
+							"1525222390 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527219998 Unique Test Variable",
+						"synonyms": [
+							"1527219998 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527556643 Unique Test Variable",
+						"synonyms": [
+							"1527556643 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528473638 Unique Test Variable",
+						"synonyms": [
+							"1528473638 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Kidney Stones",
+						"synonyms": [
+							"Kidney Stones",
+							"Kidney Stone"
+						]
+					},
+					{
+						"value": "Dyspnea",
+						"synonyms": [
+							"Dyspnea"
+						]
+					},
+					{
+						"value": "1527556903 Unique Test Variable",
+						"synonyms": [
+							"1527556903 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528475241 Unique Test Variable",
+						"synonyms": [
+							"1528475241 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Fight Or Flight",
+						"synonyms": [
+							"Flight",
+							"Fight",
+							"Fight Or Flight"
+						]
+					},
+					{
+						"value": "1527221785 Unique Test Variable",
+						"synonyms": [
+							"1527221785 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527557045 Unique Test Variable",
+						"synonyms": [
+							"1527557045 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528475712 Unique Test Variable",
+						"synonyms": [
+							"1528475712 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Brave",
+						"synonyms": [
+							"Brave"
+						]
+					},
+					{
+						"value": "1527557071 Unique Test Variable",
+						"synonyms": [
+							"1527557071 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527557264 Unique Test Variable",
+						"synonyms": [
+							"1527557264 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528480513 Unique Test Variable",
+						"synonyms": [
+							"1528480513 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532103272 Unique Test Variable",
+						"synonyms": [
+							"1532103272 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Energy Increased",
+						"synonyms": [
+							"Energy Increased"
+						]
+					},
+					{
+						"value": "Leg Cramps",
+						"synonyms": [
+							"Leg Cramps",
+							"Leg Cramp"
+						]
+					},
+					{
+						"value": "Tension Headache",
+						"synonyms": [
+							"Tension Headache"
+						]
+					},
+					{
+						"value": "Productiv",
+						"synonyms": [
+							"Productiv"
+						]
+					},
+					{
+						"value": "1527557518 Unique Test Variable",
+						"synonyms": [
+							"1527557518 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528481467 Unique Test Variable",
+						"synonyms": [
+							"1528481467 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527557848 Unique Test Variable",
+						"synonyms": [
+							"1527557848 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528482270 Unique Test Variable",
+						"synonyms": [
+							"1528482270 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529173385 Unique Test Variable",
+						"synonyms": [
+							"1529173385 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534282635 Unique Test Variable",
+						"synonyms": [
+							"1534282635 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Nicotine Dependence",
+						"synonyms": [
+							"Nicotine Dependence"
+						]
+					},
+					{
+						"value": "Galloping Heartbeat",
+						"synonyms": [
+							"Galloping Heartbeat"
+						]
+					},
+					{
+						"value": "1527558419 Unique Test Variable",
+						"synonyms": [
+							"1527558419 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534288910 Unique Test Variable",
+						"synonyms": [
+							"1534288910 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Chronic Fatigue",
+						"synonyms": [
+							"Chronic Fatigue"
+						]
+					},
+					{
+						"value": "1525223514 Unique Test Variable",
+						"synonyms": [
+							"1525223514 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529876092 Unique Test Variable",
+						"synonyms": [
+							"1529876092 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531525925 Unique Test Variable",
+						"synonyms": [
+							"1531525925 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534289621 Unique Test Variable",
+						"synonyms": [
+							"1534289621 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525223912 Unique Test Variable",
+						"synonyms": [
+							"1525223912 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528489119 Unique Test Variable",
+						"synonyms": [
+							"1528489119 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529616072 Unique Test Variable",
+						"synonyms": [
+							"1529616072 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525224424 Unique Test Variable",
+						"synonyms": [
+							"1525224424 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527596086 Unique Test Variable",
+						"synonyms": [
+							"1527596086 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529616599 Unique Test Variable",
+						"synonyms": [
+							"1529616599 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534290703 Unique Test Variable",
+						"synonyms": [
+							"1534290703 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Stomach Or Abdominal Pain",
+						"synonyms": [
+							"Abdominal Pain",
+							"Stomach",
+							"Stomach Or Abdominal Pain"
+						]
+					},
+					{
+						"value": "Incontinence",
+						"synonyms": [
+							"Incontinence"
+						]
+					},
+					{
+						"value": "Sensitivity To Smells",
+						"synonyms": [
+							"Sensitivity To Smells",
+							"Sensitivity To Smell"
+						]
+					},
+					{
+						"value": "1525228630 Unique Test Variable",
+						"synonyms": [
+							"1525228630 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Appetite",
+						"synonyms": [
+							"Appetite"
+						]
+					},
+					{
+						"value": "1529616885 Unique Test Variable",
+						"synonyms": [
+							"1529616885 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531526733 Unique Test Variable",
+						"synonyms": [
+							"1531526733 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525231639 Unique Test Variable",
+						"synonyms": [
+							"1525231639 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1526578463 Unique Test Variable",
+						"synonyms": [
+							"1526578463 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531527285 Unique Test Variable",
+						"synonyms": [
+							"1531527285 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534292185 Unique Test Variable",
+						"synonyms": [
+							"1534292185 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Panic Reaction",
+						"synonyms": [
+							"Panic Reaction"
+						]
+					},
+					{
+						"value": "Chronic Pain",
+						"synonyms": [
+							"Chronic Pain"
+						]
+					},
+					{
+						"value": "Sensitivity To Sound",
+						"synonyms": [
+							"Sensitivity To Sound"
+						]
+					},
+					{
+						"value": "1529618090 Unique Test Variable",
+						"synonyms": [
+							"1529618090 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531527356 Unique Test Variable",
+						"synonyms": [
+							"1531527356 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534293231 Unique Test Variable",
+						"synonyms": [
+							"1534293231 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Stomach Pain Or Swelling",
+						"synonyms": [
+							"Swelling",
+							"Stomach Pain",
+							"Stomach Pain Or Swelling"
+						]
+					},
+					{
+						"value": "Back of Knees Ache Only When Standing",
+						"synonyms": [
+							"Back of Knees Ache Only When Standing"
+						]
+					},
+					{
+						"value": "Swollen Ankles",
+						"synonyms": [
+							"Swollen Ankles",
+							"Swollen Ankle"
+						]
+					},
+					{
+						"value": "1525234942 Unique Test Variable",
+						"synonyms": [
+							"1525234942 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1526583347 Unique Test Variable",
+						"synonyms": [
+							"1526583347 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529620262 Unique Test Variable",
+						"synonyms": [
+							"1529620262 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529880550 Unique Test Variable",
+						"synonyms": [
+							"1529880550 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534296330 Unique Test Variable",
+						"synonyms": [
+							"1534296330 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Loss of Appetite",
+						"synonyms": [
+							"Loss of Appetite"
+						]
+					},
+					{
+						"value": "Sinus Headache",
+						"synonyms": [
+							"Sinus Headache"
+						]
+					},
+					{
+						"value": "Recurrent Urinary Tract Infection",
+						"synonyms": [
+							"Recurrent Urinary Tract Infection"
+						]
+					},
+					{
+						"value": "Shutdown",
+						"synonyms": [
+							"Shutdown"
+						]
+					},
+					{
+						"value": "1529620674 Unique Test Variable",
+						"synonyms": [
+							"1529620674 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534299349 Unique Test Variable",
+						"synonyms": [
+							"1534299349 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529620942 Unique Test Variable",
+						"synonyms": [
+							"1529620942 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534299398 Unique Test Variable",
+						"synonyms": [
+							"1534299398 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525237845 Unique Test Variable",
+						"synonyms": [
+							"1525237845 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535053523 Unique Test Variable",
+						"synonyms": [
+							"1535053523 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525728368 Unique Test Variable",
+						"synonyms": [
+							"1525728368 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Sweating Increased",
+						"synonyms": [
+							"Sweating Increased"
+						]
+					},
+					{
+						"value": "Difficulty Concentrating",
+						"synonyms": [
+							"Difficulty Concent",
+							"Difficulty Concentrating"
+						]
+					},
+					{
+						"value": "Hunger Abnormal",
+						"synonyms": [
+							"Hunger Abnormal"
+						]
+					},
+					{
+						"value": "Verstopfung",
+						"synonyms": [
+							"Verstopfung"
+						]
+					},
+					{
+						"value": "Flashbacks",
+						"synonyms": [
+							"Flashbacks",
+							"Flashback"
+						]
+					},
+					{
+						"value": "Blood Pressure Normal",
+						"synonyms": [
+							"Blood  Normal",
+							"Blood Pressure Normal"
+						]
+					},
+					{
+						"value": "Crying Abnormal",
+						"synonyms": [
+							"Crying Abnormal"
+						]
+					},
+					{
+						"value": "Diarhrea",
+						"synonyms": [
+							"Diarhrea"
+						]
+					},
+					{
+						"value": "HPS",
+						"synonyms": [
+							"HPS"
+						]
+					},
+					{
+						"value": "Inconfort Vaginal",
+						"synonyms": [
+							"Inconfort Vaginal"
+						]
+					},
+					{
+						"value": "Flue Like Symptoms",
+						"synonyms": [
+							"Flue Like Symptoms",
+							"Flue Like Symptom"
+						]
+					},
+					{
+						"value": "1529882667 Unique Test Variable",
+						"synonyms": [
+							"1529882667 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529624263 Unique Test Variable",
+						"synonyms": [
+							"1529624263 Unique Test Variable"
+						]
+					},
+					{
+						"value": "My Anxiety",
+						"synonyms": [
+							"My Anxiety"
+						]
+					},
+					{
+						"value": "Coital Bleeding",
+						"synonyms": [
+							"Coital Bleeding"
+						]
+					},
+					{
+						"value": "1525056814 Unique Test Variable",
+						"synonyms": [
+							"1525056814 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Sexual Dysfunction",
+						"synonyms": [
+							"Sexual Dysfunction"
+						]
+					},
+					{
+						"value": "In Morning Blackout",
+						"synonyms": [
+							"In Morning Blackout"
+						]
+					},
+					{
+						"value": "1529888017 Unique Test Variable",
+						"synonyms": [
+							"1529888017 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Shaking",
+						"synonyms": [
+							"Shaking"
+						]
+					},
+					{
+						"value": "Abdominal Colic",
+						"synonyms": [
+							"Abdominal Colic"
+						]
+					},
+					{
+						"value": "1529888148 Unique Test Variable",
+						"synonyms": [
+							"1529888148 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Self-Harm Urges",
+						"synonyms": [
+							"Self-Harm Urges",
+							"Self-Harm Urge"
+						]
+					},
+					{
+						"value": "1528929362 Unique Test Variable",
+						"synonyms": [
+							"1528929362 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529889027 Unique Test Variable",
+						"synonyms": [
+							"1529889027 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532107278 Unique Test Variable",
+						"synonyms": [
+							"1532107278 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533854659 Unique Test Variable",
+						"synonyms": [
+							"1533854659 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Inflammation",
+						"synonyms": [
+							"Inflammation"
+						]
+					},
+					{
+						"value": "Pain of Uterus",
+						"synonyms": [
+							"Pain of Uterus",
+							"Pain of Uteru"
+						]
+					},
+					{
+						"value": "1529889173 Unique Test Variable",
+						"synonyms": [
+							"1529889173 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532107343 Unique Test Variable",
+						"synonyms": [
+							"1532107343 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Vivid Nightmares",
+						"synonyms": [
+							"Vivid Nightmares",
+							"Vivid Nightmare"
+						]
+					},
+					{
+						"value": "Weight Increased",
+						"synonyms": [
+							"Weight Increased"
+						]
+					},
+					{
+						"value": "1529889762 Unique Test Variable",
+						"synonyms": [
+							"1529889762 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532108761 Unique Test Variable",
+						"synonyms": [
+							"1532108761 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Pain And Stiffness In Groin",
+						"synonyms": [
+							"Pain And Stiffness In Groin, Hips, Ileac Area, Elbows, Knees",
+							"Pain And Stiffness In Groin",
+							"Pain And Stiffness In Groin, Hips, Ileac Area, Elbows, Knee"
+						]
+					},
+					{
+						"value": "Mucus In Throat",
+						"synonyms": [
+							"Mucus In Throat"
+						]
+					},
+					{
+						"value": "1529890031 Unique Test Variable",
+						"synonyms": [
+							"1529890031 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Sweating",
+						"synonyms": [
+							"Sweating"
+						]
+					},
+					{
+						"value": "Voices",
+						"synonyms": [
+							"Voices",
+							"Voice"
+						]
+					},
+					{
+						"value": "1527280371 Unique Test Variable",
+						"synonyms": [
+							"1527280371 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531541221 Unique Test Variable",
+						"synonyms": [
+							"1531541221 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532109876 Unique Test Variable",
+						"synonyms": [
+							"1532109876 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Ear Ringing",
+						"synonyms": [
+							"Ear Ringing"
+						]
+					},
+					{
+						"value": "Ecezma",
+						"synonyms": [
+							"Ecezma"
+						]
+					},
+					{
+						"value": "1527285747 Unique Test Variable",
+						"synonyms": [
+							"1527285747 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527609372 Unique Test Variable",
+						"synonyms": [
+							"1527609372 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Settled Stomach",
+						"synonyms": [
+							"Settled Stomach"
+						]
+					},
+					{
+						"value": "Dysphoria",
+						"synonyms": [
+							"Dysphoria",
+							"Dysphorium"
+						]
+					},
+					{
+						"value": "1527286934 Unique Test Variable",
+						"synonyms": [
+							"1527286934 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527610151 Unique Test Variable",
+						"synonyms": [
+							"1527610151 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535065774 Unique Test Variable",
+						"synonyms": [
+							"1535065774 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Swelling",
+						"synonyms": [
+							"Swelling"
+						]
+					},
+					{
+						"value": "1527610630 Unique Test Variable",
+						"synonyms": [
+							"1527610630 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528934607 Unique Test Variable",
+						"synonyms": [
+							"1528934607 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535067724 Unique Test Variable",
+						"synonyms": [
+							"1535067724 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Disassociation",
+						"synonyms": [
+							"Disassociation"
+						]
+					},
+					{
+						"value": "Spider Bites",
+						"synonyms": [
+							"Spider Bites",
+							"Spider Bite"
+						]
+					},
+					{
+						"value": "Splitting Nails",
+						"synonyms": [
+							"Splitting Nails",
+							"Splitting Nail"
+						]
+					},
+					{
+						"value": "1527610923 Unique Test Variable",
+						"synonyms": [
+							"1527610923 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530574611 Unique Test Variable",
+						"synonyms": [
+							"1530574611 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531583290 Unique Test Variable",
+						"synonyms": [
+							"1531583290 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535071056 Unique Test Variable",
+						"synonyms": [
+							"1535071056 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Cognitive Function",
+						"synonyms": [
+							"Cognitive Function"
+						]
+					},
+					{
+						"value": "Courbatures",
+						"synonyms": [
+							"Courbatures",
+							"Courbature"
+						]
+					},
+					{
+						"value": "Abs",
+						"synonyms": [
+							"Abs"
+						]
+					},
+					{
+						"value": "1527617036 Unique Test Variable",
+						"synonyms": [
+							"1527617036 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531585022 Unique Test Variable",
+						"synonyms": [
+							"1531585022 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1526404528 Unique Test Variable",
+						"synonyms": [
+							"1526404528 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531585565 Unique Test Variable",
+						"synonyms": [
+							"1531585565 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1526414823 Unique Test Variable",
+						"synonyms": [
+							"1526414823 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528936623 Unique Test Variable",
+						"synonyms": [
+							"1528936623 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Weight Decreased",
+						"synonyms": [
+							"Weight Decreased"
+						]
+					},
+					{
+						"value": "1531329231 Unique Test Variable",
+						"synonyms": [
+							"1531329231 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532111779 Unique Test Variable",
+						"synonyms": [
+							"1532111779 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Talkative",
+						"synonyms": [
+							"Talkative"
+						]
+					},
+					{
+						"value": "1526415603 Unique Test Variable",
+						"synonyms": [
+							"1526415603 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531329249 Unique Test Variable",
+						"synonyms": [
+							"1531329249 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532407291 Unique Test Variable",
+						"synonyms": [
+							"1532407291 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Depression Suicidal",
+						"synonyms": [
+							"Depression Suicidal"
+						]
+					},
+					{
+						"value": "1525743562 Unique Test Variable",
+						"synonyms": [
+							"1525743562 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1526420512 Unique Test Variable",
+						"synonyms": [
+							"1526420512 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Left Leg Pain",
+						"synonyms": [
+							"Left Leg Pain"
+						]
+					},
+					{
+						"value": "1529631598 Unique Test Variable",
+						"synonyms": [
+							"1529631598 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532407759 Unique Test Variable",
+						"synonyms": [
+							"1532407759 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Knee Swelling",
+						"synonyms": [
+							"Knee Swelling"
+						]
+					},
+					{
+						"value": "Dizziness On Standing",
+						"synonyms": [
+							"Dizziness On Standing"
+						]
+					},
+					{
+						"value": "Easily Distracted",
+						"synonyms": [
+							"Easily Distracted"
+						]
+					},
+					{
+						"value": "1525746259 Unique Test Variable",
+						"synonyms": [
+							"1525746259 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Right Leg Pain",
+						"synonyms": [
+							"Right Leg Pain"
+						]
+					},
+					{
+						"value": "1531331998 Unique Test Variable",
+						"synonyms": [
+							"1531331998 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531847479 Unique Test Variable",
+						"synonyms": [
+							"1531847479 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532408592 Unique Test Variable",
+						"synonyms": [
+							"1532408592 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534343677 Unique Test Variable",
+						"synonyms": [
+							"1534343677 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Dizziness Or A Spinning Sensation",
+						"synonyms": [
+							"A Spinning Sensation",
+							"Dizziness",
+							"Dizziness Or A Spinning Sensation",
+							"Dizzines"
+						]
+					},
+					{
+						"value": "Easily Overwhelmed With Simple Tasks",
+						"synonyms": [
+							"Easily Overwhelmed With Simple Tasks",
+							"Easily Overwhelmed With Simple Task"
+						]
+					},
+					{
+						"value": "1525746908 Unique Test Variable",
+						"synonyms": [
+							"1525746908 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528509213 Unique Test Variable",
+						"synonyms": [
+							"1528509213 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Hot Patches",
+						"synonyms": [
+							"Hot Patches",
+							"Hot Patch"
+						]
+					},
+					{
+						"value": "1525747420 Unique Test Variable",
+						"synonyms": [
+							"1525747420 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529635502 Unique Test Variable",
+						"synonyms": [
+							"1529635502 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Dizzy",
+						"synonyms": [
+							"Dizzy"
+						]
+					},
+					{
+						"value": "Intensely Creative",
+						"synonyms": [
+							"Intensely Creative"
+						]
+					},
+					{
+						"value": "1523540961 Unique Test Variable",
+						"synonyms": [
+							"1523540961 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525748744 Unique Test Variable",
+						"synonyms": [
+							"1525748744 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1526916302 Unique Test Variable",
+						"synonyms": [
+							"1526916302 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529643696 Unique Test Variable",
+						"synonyms": [
+							"1529643696 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1526921847 Unique Test Variable",
+						"synonyms": [
+							"1526921847 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528509701 Unique Test Variable",
+						"synonyms": [
+							"1528509701 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531851202 Unique Test Variable",
+						"synonyms": [
+							"1531851202 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Gastrooesophageal Reflux Disease",
+						"synonyms": [
+							"Gastrooesophageal Reflux Disease"
+						]
+					},
+					{
+						"value": "1528510639 Unique Test Variable",
+						"synonyms": [
+							"1528510639 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532117576 Unique Test Variable",
+						"synonyms": [
+							"1532117576 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Temporary Paralysis",
+						"synonyms": [
+							"Temporary Paralysis",
+							"Temporary Paralysi"
+						]
+					},
+					{
+						"value": "Llenura",
+						"synonyms": [
+							"Llenura"
+						]
+					},
+					{
+						"value": "1526604321 Unique Test Variable",
+						"synonyms": [
+							"1526604321 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Pressure",
+						"synonyms": [
+							"Pressure"
+						]
+					},
+					{
+						"value": "Grieperig",
+						"synonyms": [
+							"Grieperig"
+						]
+					},
+					{
+						"value": "1526422623 Unique Test Variable",
+						"synonyms": [
+							"1526422623 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Pain, Temple",
+						"synonyms": [
+							"Pain",
+							"Pain, Temple"
+						]
+					},
+					{
+						"value": "1527302922 Unique Test Variable",
+						"synonyms": [
+							"1527302922 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529688523 Unique Test Variable",
+						"synonyms": [
+							"1529688523 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529948022 Unique Test Variable",
+						"synonyms": [
+							"1529948022 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534525874 Unique Test Variable",
+						"synonyms": [
+							"1534525874 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527303448 Unique Test Variable",
+						"synonyms": [
+							"1527303448 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529948698 Unique Test Variable",
+						"synonyms": [
+							"1529948698 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530580791 Unique Test Variable",
+						"synonyms": [
+							"1530580791 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532124524 Unique Test Variable",
+						"synonyms": [
+							"1532124524 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534542268 Unique Test Variable",
+						"synonyms": [
+							"1534542268 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527308991 Unique Test Variable",
+						"synonyms": [
+							"1527308991 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Swelling In Fingers",
+						"synonyms": [
+							"Swelling In Fingers",
+							"Swelling In Finger"
+						]
+					},
+					{
+						"value": "1529948766 Unique Test Variable",
+						"synonyms": [
+							"1529948766 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531592838 Unique Test Variable",
+						"synonyms": [
+							"1531592838 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533876336 Unique Test Variable",
+						"synonyms": [
+							"1533876336 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534544265 Unique Test Variable",
+						"synonyms": [
+							"1534544265 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Headache Aggravated",
+						"synonyms": [
+							"Headache Aggravated"
+						]
+					},
+					{
+						"value": "Not Feeling Well, Stopped Up Achy, Just Over All Ill But at Work, Came In at 10 Cant Leave Till 5 Since Snow & Ice",
+						"synonyms": [
+							"Not Feeling Well",
+							"Not Feeling Well, Stopped Up Achy, Just Over All Ill But at Work, Came In at 10 Cant Leave Till 5 Since Snow & Ice"
+						]
+					},
+					{
+						"value": "1529949352 Unique Test Variable",
+						"synonyms": [
+							"1529949352 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531594919 Unique Test Variable",
+						"synonyms": [
+							"1531594919 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533877622 Unique Test Variable",
+						"synonyms": [
+							"1533877622 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534545939 Unique Test Variable",
+						"synonyms": [
+							"1534545939 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1524427888 Unique Test Variable",
+						"synonyms": [
+							"1524427888 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529691561 Unique Test Variable",
+						"synonyms": [
+							"1529691561 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529951989 Unique Test Variable",
+						"synonyms": [
+							"1529951989 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531348541 Unique Test Variable",
+						"synonyms": [
+							"1531348541 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531597295 Unique Test Variable",
+						"synonyms": [
+							"1531597295 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534547212 Unique Test Variable",
+						"synonyms": [
+							"1534547212 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Muscle Or Joint Pain",
+						"synonyms": [
+							"Joint Pain",
+							"Muscle",
+							"Muscle Or Joint Pain"
+						]
+					},
+					{
+						"value": "Pump It Up ? Balance Avec  15 Minutes Activité ?",
+						"synonyms": [
+							"Pump It Up ? Balance Avec  15 Minutes Activité ?"
+						]
+					},
+					{
+						"value": "Akathisia",
+						"synonyms": [
+							"Akathisia",
+							"Akathisium"
+						]
+					},
+					{
+						"value": "1524436659 Unique Test Variable",
+						"synonyms": [
+							"1524436659 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Biting Lip",
+						"synonyms": [
+							"Biting Lip"
+						]
+					},
+					{
+						"value": "1529954370 Unique Test Variable",
+						"synonyms": [
+							"1529954370 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531604363 Unique Test Variable",
+						"synonyms": [
+							"1531604363 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534548525 Unique Test Variable",
+						"synonyms": [
+							"1534548525 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Bad Mania",
+						"synonyms": [
+							"Bad Mania",
+							"Bad Manium"
+						]
+					},
+					{
+						"value": "1524436878 Unique Test Variable",
+						"synonyms": [
+							"1524436878 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Biting Nails",
+						"synonyms": [
+							"Biting Nails",
+							"Biting Nail"
+						]
+					},
+					{
+						"value": "1530581245 Unique Test Variable",
+						"synonyms": [
+							"1530581245 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534549793 Unique Test Variable",
+						"synonyms": [
+							"1534549793 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Elbow Pain",
+						"synonyms": [
+							"Elbow Pain"
+						]
+					},
+					{
+						"value": "Douleur Trijumeau Ophtalmique",
+						"synonyms": [
+							"Douleur Trijumeau Ophtalmique"
+						]
+					},
+					{
+						"value": "Good Mania",
+						"synonyms": [
+							"Good Mania",
+							"Good Manium"
+						]
+					},
+					{
+						"value": "1524439687 Unique Test Variable",
+						"synonyms": [
+							"1524439687 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527349182 Unique Test Variable",
+						"synonyms": [
+							"1527349182 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529965688 Unique Test Variable",
+						"synonyms": [
+							"1529965688 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530593737 Unique Test Variable",
+						"synonyms": [
+							"1530593737 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531351977 Unique Test Variable",
+						"synonyms": [
+							"1531351977 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534550654 Unique Test Variable",
+						"synonyms": [
+							"1534550654 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535137373 Unique Test Variable",
+						"synonyms": [
+							"1535137373 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1524440330 Unique Test Variable",
+						"synonyms": [
+							"1524440330 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529966871 Unique Test Variable",
+						"synonyms": [
+							"1529966871 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530598096 Unique Test Variable",
+						"synonyms": [
+							"1530598096 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534349238 Unique Test Variable",
+						"synonyms": [
+							"1534349238 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534551486 Unique Test Variable",
+						"synonyms": [
+							"1534551486 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Muscle Spasms",
+						"synonyms": [
+							"Muscle Spasms"
+						]
+					},
+					{
+						"value": "1527350097 Unique Test Variable",
+						"synonyms": [
+							"1527350097 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529967674 Unique Test Variable",
+						"synonyms": [
+							"1529967674 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534553077 Unique Test Variable",
+						"synonyms": [
+							"1534553077 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1526423628 Unique Test Variable",
+						"synonyms": [
+							"1526423628 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534554239 Unique Test Variable",
+						"synonyms": [
+							"1534554239 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Muscle Twitching",
+						"synonyms": [
+							"Muscle Twitching"
+						]
+					},
+					{
+						"value": "Atypical Depression",
+						"synonyms": [
+							"Atypical Depression"
+						]
+					},
+					{
+						"value": "1534555849 Unique Test Variable",
+						"synonyms": [
+							"1534555849 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Muscle Weakness",
+						"synonyms": [
+							"Muscle Weakness",
+							"Muscle Weaknes"
+						]
+					},
+					{
+						"value": "Bloated",
+						"synonyms": [
+							"Bloated"
+						]
+					},
+					{
+						"value": "Hard Heart Beat",
+						"synonyms": [
+							"Hard Heart Beat"
+						]
+					},
+					{
+						"value": "1529968097 Unique Test Variable",
+						"synonyms": [
+							"1529968097 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534556521 Unique Test Variable",
+						"synonyms": [
+							"1534556521 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529968368 Unique Test Variable",
+						"synonyms": [
+							"1529968368 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531619416 Unique Test Variable",
+						"synonyms": [
+							"1531619416 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532125444 Unique Test Variable",
+						"synonyms": [
+							"1532125444 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534557258 Unique Test Variable",
+						"synonyms": [
+							"1534557258 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Heart Discomfort",
+						"synonyms": [
+							"Heart Discomfort"
+						]
+					},
+					{
+						"value": "1528557004 Unique Test Variable",
+						"synonyms": [
+							"1528557004 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529969922 Unique Test Variable",
+						"synonyms": [
+							"1529969922 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533420160 Unique Test Variable",
+						"synonyms": [
+							"1533420160 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534562118 Unique Test Variable",
+						"synonyms": [
+							"1534562118 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Ovarian Cancer",
+						"synonyms": [
+							"Ovarian Cancer"
+						]
+					},
+					{
+						"value": "Abdomen Distended",
+						"synonyms": [
+							"Abdomen Distended"
+						]
+					},
+					{
+						"value": "1524522495 Unique Test Variable",
+						"synonyms": [
+							"1524522495 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529970459 Unique Test Variable",
+						"synonyms": [
+							"1529970459 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532126093 Unique Test Variable",
+						"synonyms": [
+							"1532126093 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534567694 Unique Test Variable",
+						"synonyms": [
+							"1534567694 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1524525880 Unique Test Variable",
+						"synonyms": [
+							"1524525880 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528565781 Unique Test Variable",
+						"synonyms": [
+							"1528565781 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529970777 Unique Test Variable",
+						"synonyms": [
+							"1529970777 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Rejection",
+						"synonyms": [
+							"Rejection"
+						]
+					},
+					{
+						"value": "1534573332 Unique Test Variable",
+						"synonyms": [
+							"1534573332 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Redness And Flaky Skin",
+						"synonyms": [
+							"Redness And Flaky Skin"
+						]
+					},
+					{
+						"value": "1524529576 Unique Test Variable",
+						"synonyms": [
+							"1524529576 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527815348 Unique Test Variable",
+						"synonyms": [
+							"1527815348 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528566874 Unique Test Variable",
+						"synonyms": [
+							"1528566874 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Fibro Fog",
+						"synonyms": [
+							"Fibro Fog"
+						]
+					},
+					{
+						"value": "1529977186 Unique Test Variable",
+						"synonyms": [
+							"1529977186 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533425865 Unique Test Variable",
+						"synonyms": [
+							"1533425865 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534603547 Unique Test Variable",
+						"synonyms": [
+							"1534603547 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1524532142 Unique Test Variable",
+						"synonyms": [
+							"1524532142 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528567119 Unique Test Variable",
+						"synonyms": [
+							"1528567119 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529977742 Unique Test Variable",
+						"synonyms": [
+							"1529977742 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533426102 Unique Test Variable",
+						"synonyms": [
+							"1533426102 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534630856 Unique Test Variable",
+						"synonyms": [
+							"1534630856 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Sinus Pressure",
+						"synonyms": [
+							"Sinus",
+							"Sinus Pressure",
+							"Sinu"
+						]
+					},
+					{
+						"value": "Tense Muscles",
+						"synonyms": [
+							"Tense Muscles",
+							"Tense Muscle"
+						]
+					},
+					{
+						"value": "1524533740 Unique Test Variable",
+						"synonyms": [
+							"1524533740 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525797734 Unique Test Variable",
+						"synonyms": [
+							"1525797734 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527816573 Unique Test Variable",
+						"synonyms": [
+							"1527816573 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528567435 Unique Test Variable",
+						"synonyms": [
+							"1528567435 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529979135 Unique Test Variable",
+						"synonyms": [
+							"1529979135 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532448758 Unique Test Variable",
+						"synonyms": [
+							"1532448758 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534647806 Unique Test Variable",
+						"synonyms": [
+							"1534647806 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1524536344 Unique Test Variable",
+						"synonyms": [
+							"1524536344 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525798146 Unique Test Variable",
+						"synonyms": [
+							"1525798146 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528568301 Unique Test Variable",
+						"synonyms": [
+							"1528568301 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529979566 Unique Test Variable",
+						"synonyms": [
+							"1529979566 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Pain In Hands And Wrists",
+						"synonyms": [
+							"Pain In Hands And Wrists",
+							"Pain In Hands And Wrist"
+						]
+					},
+					{
+						"value": "Hidradenitis",
+						"synonyms": [
+							"Hidradenitis",
+							"Hidradeniti"
+						]
+					},
+					{
+						"value": "1525798764 Unique Test Variable",
+						"synonyms": [
+							"1525798764 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Reactor",
+						"synonyms": [
+							"Reactor"
+						]
+					},
+					{
+						"value": "1529980004 Unique Test Variable",
+						"synonyms": [
+							"1529980004 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Excessive Sleepiness",
+						"synonyms": [
+							"Excessive Sleepiness",
+							"Excessive Sleepines"
+						]
+					},
+					{
+						"value": "Physical Aching",
+						"synonyms": [
+							"Physical Aching"
+						]
+					},
+					{
+						"value": "Craving",
+						"synonyms": [
+							"Craving"
+						]
+					},
+					{
+						"value": "1524593849 Unique Test Variable",
+						"synonyms": [
+							"1524593849 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Liquidized",
+						"synonyms": [
+							"Liquidized"
+						]
+					},
+					{
+						"value": "1527828126 Unique Test Variable",
+						"synonyms": [
+							"1527828126 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528569096 Unique Test Variable",
+						"synonyms": [
+							"1528569096 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529980278 Unique Test Variable",
+						"synonyms": [
+							"1529980278 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532128608 Unique Test Variable",
+						"synonyms": [
+							"1532128608 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532453058 Unique Test Variable",
+						"synonyms": [
+							"1532453058 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Cognitive Fog",
+						"synonyms": [
+							"Cognitive Fog"
+						]
+					},
+					{
+						"value": "Self Harm Urge",
+						"synonyms": [
+							"Self Harm Urge"
+						]
+					},
+					{
+						"value": "1524594439 Unique Test Variable",
+						"synonyms": [
+							"1524594439 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Bricked",
+						"synonyms": [
+							"Bricked"
+						]
+					},
+					{
+						"value": "1528569620 Unique Test Variable",
+						"synonyms": [
+							"1528569620 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529981939 Unique Test Variable",
+						"synonyms": [
+							"1529981939 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532458491 Unique Test Variable",
+						"synonyms": [
+							"1532458491 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534695575 Unique Test Variable",
+						"synonyms": [
+							"1534695575 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Tinitus",
+						"synonyms": [
+							"Tinitus",
+							"Tinitu"
+						]
+					},
+					{
+						"value": "Repetitive Behavior",
+						"synonyms": [
+							"Repetitive Behavior"
+						]
+					},
+					{
+						"value": "1525529687 Unique Test Variable",
+						"synonyms": [
+							"1525529687 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Need Nap",
+						"synonyms": [
+							"Need Nap"
+						]
+					},
+					{
+						"value": "1529990486 Unique Test Variable",
+						"synonyms": [
+							"1529990486 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532459827 Unique Test Variable",
+						"synonyms": [
+							"1532459827 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534696455 Unique Test Variable",
+						"synonyms": [
+							"1534696455 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Tired, Red, Or Itchy Eyes",
+						"synonyms": [
+							"Tired",
+							"Itchy Eyes",
+							"Tired, Red,",
+							"Tired, Red, Or Itchy Eyes",
+							"Itchy Eye",
+							"Tired, Red, Or Itchy Eye"
+						]
+					},
+					{
+						"value": "Constant Worrying",
+						"synonyms": [
+							"Constant Worrying"
+						]
+					},
+					{
+						"value": "Morning Depression",
+						"synonyms": [
+							"Morning Depression"
+						]
+					},
+					{
+						"value": "Avoidant Behavior",
+						"synonyms": [
+							"Avoidant Behavior"
+						]
+					},
+					{
+						"value": "Intentional Self-injury",
+						"synonyms": [
+							"Intentional Self-injury"
+						]
+					},
+					{
+						"value": "1534698076 Unique Test Variable",
+						"synonyms": [
+							"1534698076 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Excessive Sweating",
+						"synonyms": [
+							"Excessive Sweating"
+						]
+					},
+					{
+						"value": "Night Time Hallucinations",
+						"synonyms": [
+							"Night Time Hallucinations",
+							"Night Time Hallucination"
+						]
+					},
+					{
+						"value": "Pressured Speech",
+						"synonyms": [
+							"Pressured Speech"
+						]
+					},
+					{
+						"value": "1526426783 Unique Test Variable",
+						"synonyms": [
+							"1526426783 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528575782 Unique Test Variable",
+						"synonyms": [
+							"1528575782 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529259118 Unique Test Variable",
+						"synonyms": [
+							"1529259118 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534355852 Unique Test Variable",
+						"synonyms": [
+							"1534355852 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534699432 Unique Test Variable",
+						"synonyms": [
+							"1534699432 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Nightmares",
+						"synonyms": [
+							"Nightmares",
+							"Nightmare"
+						]
+					},
+					{
+						"value": "Self Doubt",
+						"synonyms": [
+							"Self Doubt"
+						]
+					},
+					{
+						"value": "1530019944 Unique Test Variable",
+						"synonyms": [
+							"1530019944 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534356555 Unique Test Variable",
+						"synonyms": [
+							"1534356555 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Genital Warts",
+						"synonyms": [
+							"Genital Warts",
+							"Genital Wart"
+						]
+					},
+					{
+						"value": "Bed-ridden (awake)",
+						"synonyms": [
+							"Bed-ridden",
+							"awake"
+						]
+					},
+					{
+						"value": "1525806283 Unique Test Variable",
+						"synonyms": [
+							"1525806283 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528580732 Unique Test Variable",
+						"synonyms": [
+							"1528580732 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534699903 Unique Test Variable",
+						"synonyms": [
+							"1534699903 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Geographic Tongue",
+						"synonyms": [
+							"Geographic Tongue"
+						]
+					},
+					{
+						"value": "Efficintie-cofficint",
+						"synonyms": [
+							"Efficiëntie-coëfficiënt",
+							"Efficintie-cofficint"
+						]
+					},
+					{
+						"value": "No Sleep (purposeful)",
+						"synonyms": [
+							"No Sleep",
+							"purposeful"
+						]
+					},
+					{
+						"value": "1525808194 Unique Test Variable",
+						"synonyms": [
+							"1525808194 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528585411 Unique Test Variable",
+						"synonyms": [
+							"1528585411 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528601708 Unique Test Variable",
+						"synonyms": [
+							"1528601708 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528989340 Unique Test Variable",
+						"synonyms": [
+							"1528989340 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530020360 Unique Test Variable",
+						"synonyms": [
+							"1530020360 Unique Test Variable"
+						]
+					},
+					{
+						"value": "GERD",
+						"synonyms": [
+							"GERD"
+						]
+					},
+					{
+						"value": "1528586215 Unique Test Variable",
+						"synonyms": [
+							"1528586215 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530020845 Unique Test Variable",
+						"synonyms": [
+							"1530020845 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525810430 Unique Test Variable",
+						"synonyms": [
+							"1525810430 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528587548 Unique Test Variable",
+						"synonyms": [
+							"1528587548 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530021318 Unique Test Variable",
+						"synonyms": [
+							"1530021318 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534362478 Unique Test Variable",
+						"synonyms": [
+							"1534362478 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1524673360 Unique Test Variable",
+						"synonyms": [
+							"1524673360 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525811020 Unique Test Variable",
+						"synonyms": [
+							"1525811020 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528588285 Unique Test Variable",
+						"synonyms": [
+							"1528588285 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530021892 Unique Test Variable",
+						"synonyms": [
+							"1530021892 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534362813 Unique Test Variable",
+						"synonyms": [
+							"1534362813 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Trembling",
+						"synonyms": [
+							"Trembling"
+						]
+					},
+					{
+						"value": "Feeling Suicidal (finding)",
+						"synonyms": [
+							"Feeling Suicidal",
+							"finding"
+						]
+					},
+					{
+						"value": "1524675178 Unique Test Variable",
+						"synonyms": [
+							"1524675178 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525811022 Unique Test Variable",
+						"synonyms": [
+							"1525811022 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528588717 Unique Test Variable",
+						"synonyms": [
+							"1528588717 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530022230 Unique Test Variable",
+						"synonyms": [
+							"1530022230 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531359329 Unique Test Variable",
+						"synonyms": [
+							"1531359329 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534363146 Unique Test Variable",
+						"synonyms": [
+							"1534363146 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1524676019 Unique Test Variable",
+						"synonyms": [
+							"1524676019 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525812274 Unique Test Variable",
+						"synonyms": [
+							"1525812274 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528589326 Unique Test Variable",
+						"synonyms": [
+							"1528589326 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530022449 Unique Test Variable",
+						"synonyms": [
+							"1530022449 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533949339 Unique Test Variable",
+						"synonyms": [
+							"1533949339 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Numbing (emotionally)",
+						"synonyms": [
+							"Numbing",
+							"emotionally"
+						]
+					},
+					{
+						"value": "Tremors",
+						"synonyms": [
+							"Tremors",
+							"Tremor"
+						]
+					},
+					{
+						"value": "1524677393 Unique Test Variable",
+						"synonyms": [
+							"1524677393 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1525813350 Unique Test Variable",
+						"synonyms": [
+							"1525813350 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530022862 Unique Test Variable",
+						"synonyms": [
+							"1530022862 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533950143 Unique Test Variable",
+						"synonyms": [
+							"1533950143 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534378358 Unique Test Variable",
+						"synonyms": [
+							"1534378358 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1524679228 Unique Test Variable",
+						"synonyms": [
+							"1524679228 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Thinking About Things Obsesivley",
+						"synonyms": [
+							"Thinking About Things Obsesivley"
+						]
+					},
+					{
+						"value": "Wok The Walk",
+						"synonyms": [
+							"Wok The Walk"
+						]
+					},
+					{
+						"value": "1530023574 Unique Test Variable",
+						"synonyms": [
+							"1530023574 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1524683268 Unique Test Variable",
+						"synonyms": [
+							"1524683268 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530024107 Unique Test Variable",
+						"synonyms": [
+							"1530024107 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534701342 Unique Test Variable",
+						"synonyms": [
+							"1534701342 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530024572 Unique Test Variable",
+						"synonyms": [
+							"1530024572 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Twitching",
+						"synonyms": [
+							"Twitching"
+						]
+					},
+					{
+						"value": "Grandiosity",
+						"synonyms": [
+							"Grandiosity"
+						]
+					},
+					{
+						"value": "1524683913 Unique Test Variable",
+						"synonyms": [
+							"1524683913 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Abdominal Pain (Rating)",
+						"synonyms": [
+							"Abdominal Pain"
+						]
+					},
+					{
+						"value": "1530025198 Unique Test Variable",
+						"synonyms": [
+							"1530025198 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Extreme Irritability",
+						"synonyms": [
+							"Extreme Irritability"
+						]
+					},
+					{
+						"value": "1524684488 Unique Test Variable",
+						"synonyms": [
+							"1524684488 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1526438958 Unique Test Variable",
+						"synonyms": [
+							"1526438958 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534702184 Unique Test Variable",
+						"synonyms": [
+							"1534702184 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535164189 Unique Test Variable",
+						"synonyms": [
+							"1535164189 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Reaction Aggravation",
+						"synonyms": [
+							"Reaction Aggravation"
+						]
+					},
+					{
+						"value": "1524686316 Unique Test Variable",
+						"synonyms": [
+							"1524686316 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530031218 Unique Test Variable",
+						"synonyms": [
+							"1530031218 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Irritation",
+						"synonyms": [
+							"Irritation"
+						]
+					},
+					{
+						"value": "Pain In Wrist, Fingers, Or Hand",
+						"synonyms": [
+							"Pain In Wrist",
+							"Hand",
+							"Pain In Wrist, Fingers,",
+							"Pain In Wrist, Fingers, Or Hand"
+						]
+					},
+					{
+						"value": "Right Hip Pain",
+						"synonyms": [
+							"Right Hip Pain"
+						]
+					},
+					{
+						"value": "1524692621 Unique Test Variable",
+						"synonyms": [
+							"1524692621 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527874627 Unique Test Variable",
+						"synonyms": [
+							"1527874627 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530037939 Unique Test Variable",
+						"synonyms": [
+							"1530037939 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532467895 Unique Test Variable",
+						"synonyms": [
+							"1532467895 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Sleep Paralysis",
+						"synonyms": [
+							"Sleep Paralysis",
+							"Sleep Paralysi"
+						]
+					},
+					{
+						"value": "Violent",
+						"synonyms": [
+							"Violent"
+						]
+					},
+					{
+						"value": "1524694354 Unique Test Variable",
+						"synonyms": [
+							"1524694354 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1526439462 Unique Test Variable",
+						"synonyms": [
+							"1526439462 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Right Lungs Eaching",
+						"synonyms": [
+							"Right Lungs Eaching"
+						]
+					},
+					{
+						"value": "1530038234 Unique Test Variable",
+						"synonyms": [
+							"1530038234 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531691931 Unique Test Variable",
+						"synonyms": [
+							"1531691931 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532470022 Unique Test Variable",
+						"synonyms": [
+							"1532470022 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535230916 Unique Test Variable",
+						"synonyms": [
+							"1535230916 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1524696796 Unique Test Variable",
+						"synonyms": [
+							"1524696796 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527875244 Unique Test Variable",
+						"synonyms": [
+							"1527875244 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528651512 Unique Test Variable",
+						"synonyms": [
+							"1528651512 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530040256 Unique Test Variable",
+						"synonyms": [
+							"1530040256 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1532470674 Unique Test Variable",
+						"synonyms": [
+							"1532470674 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533962255 Unique Test Variable",
+						"synonyms": [
+							"1533962255 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535240161 Unique Test Variable",
+						"synonyms": [
+							"1535240161 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527888399 Unique Test Variable",
+						"synonyms": [
+							"1527888399 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528216950 Unique Test Variable",
+						"synonyms": [
+							"1528216950 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530044382 Unique Test Variable",
+						"synonyms": [
+							"1530044382 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1533963072 Unique Test Variable",
+						"synonyms": [
+							"1533963072 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535242148 Unique Test Variable",
+						"synonyms": [
+							"1535242148 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1524697506 Unique Test Variable",
+						"synonyms": [
+							"1524697506 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527894552 Unique Test Variable",
+						"synonyms": [
+							"1527894552 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530048294 Unique Test Variable",
+						"synonyms": [
+							"1530048294 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531697585 Unique Test Variable",
+						"synonyms": [
+							"1531697585 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534011339 Unique Test Variable",
+						"synonyms": [
+							"1534011339 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535244143 Unique Test Variable",
+						"synonyms": [
+							"1535244143 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1524699408 Unique Test Variable",
+						"synonyms": [
+							"1524699408 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527894990 Unique Test Variable",
+						"synonyms": [
+							"1527894990 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531699001 Unique Test Variable",
+						"synonyms": [
+							"1531699001 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535244711 Unique Test Variable",
+						"synonyms": [
+							"1535244711 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Happiness Level",
+						"synonyms": [
+							"Happiness Level"
+						]
+					},
+					{
+						"value": "1524700559 Unique Test Variable",
+						"synonyms": [
+							"1524700559 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527895281 Unique Test Variable",
+						"synonyms": [
+							"1527895281 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535254195 Unique Test Variable",
+						"synonyms": [
+							"1535254195 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Pain During Menstrual Period",
+						"synonyms": [
+							"Pain During Menstrual Period"
+						]
+					},
+					{
+						"value": "Groin Pain",
+						"synonyms": [
+							"Groin Pain"
+						]
+					},
+					{
+						"value": "Random Joint Pains",
+						"synonyms": [
+							"Random Joint Pains",
+							"Random Joint Pain"
+						]
+					},
+					{
+						"value": "1524701281 Unique Test Variable",
+						"synonyms": [
+							"1524701281 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1526671251 Unique Test Variable",
+						"synonyms": [
+							"1526671251 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535255505 Unique Test Variable",
+						"synonyms": [
+							"1535255505 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Eye Movement Increases Temple Pain",
+						"synonyms": [
+							"Eye Movement Increases Temple Pain"
+						]
+					},
+					{
+						"value": "1524701265 Unique Test Variable",
+						"synonyms": [
+							"1524701265 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1526671976 Unique Test Variable",
+						"synonyms": [
+							"1526671976 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535258811 Unique Test Variable",
+						"synonyms": [
+							"1535258811 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1524702134 Unique Test Variable",
+						"synonyms": [
+							"1524702134 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531705382 Unique Test Variable",
+						"synonyms": [
+							"1531705382 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535259107 Unique Test Variable",
+						"synonyms": [
+							"1535259107 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1526681184 Unique Test Variable",
+						"synonyms": [
+							"1526681184 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527895535 Unique Test Variable",
+						"synonyms": [
+							"1527895535 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528667269 Unique Test Variable",
+						"synonyms": [
+							"1528667269 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Head Pressure",
+						"synonyms": [
+							"Head",
+							"Head Pressure"
+						]
+					},
+					{
+						"value": "1535262686 Unique Test Variable",
+						"synonyms": [
+							"1535262686 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Impulse-control Disorder",
+						"synonyms": [
+							"Impulse-control Disorder",
+							"Impulse-control"
+						]
+					},
+					{
+						"value": "Major Depressive Disorder",
+						"synonyms": [
+							"Major Depressive",
+							"Major Depressive Disorder"
+						]
+					},
+					{
+						"value": "1526682405 Unique Test Variable",
+						"synonyms": [
+							"1526682405 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Red Sweat",
+						"synonyms": [
+							"Red Sweat"
+						]
+					},
+					{
+						"value": "1527895766 Unique Test Variable",
+						"synonyms": [
+							"1527895766 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528677419 Unique Test Variable",
+						"synonyms": [
+							"1528677419 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535263339 Unique Test Variable",
+						"synonyms": [
+							"1535263339 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Lack of Pleasure",
+						"synonyms": [
+							"Lack of Pleasure"
+						]
+					},
+					{
+						"value": "1526683506 Unique Test Variable",
+						"synonyms": [
+							"1526683506 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527896027 Unique Test Variable",
+						"synonyms": [
+							"1527896027 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528993088 Unique Test Variable",
+						"synonyms": [
+							"1528993088 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530119480 Unique Test Variable",
+						"synonyms": [
+							"1530119480 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535267244 Unique Test Variable",
+						"synonyms": [
+							"1535267244 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Fast Heart Rate",
+						"synonyms": [
+							"Fast Heart Rate"
+						]
+					},
+					{
+						"value": "Bothered By Background Noise",
+						"synonyms": [
+							"Bothered",
+							"Bothered By Background Noise"
+						]
+					},
+					{
+						"value": "Too Much Tv",
+						"synonyms": [
+							"Too Much Tv"
+						]
+					},
+					{
+						"value": "Optimism",
+						"synonyms": [
+							"Optimism"
+						]
+					},
+					{
+						"value": "Hourly",
+						"synonyms": [
+							"Hourly"
+						]
+					},
+					{
+						"value": "1526695004 Unique Test Variable",
+						"synonyms": [
+							"1526695004 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527896281 Unique Test Variable",
+						"synonyms": [
+							"1527896281 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530127639 Unique Test Variable",
+						"synonyms": [
+							"1530127639 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527896377 Unique Test Variable",
+						"synonyms": [
+							"1527896377 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1527896596 Unique Test Variable",
+						"synonyms": [
+							"1527896596 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528688740 Unique Test Variable",
+						"synonyms": [
+							"1528688740 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530131101 Unique Test Variable",
+						"synonyms": [
+							"1530131101 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535300354 Unique Test Variable",
+						"synonyms": [
+							"1535300354 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Tics",
+						"synonyms": [
+							"Tics",
+							"Tic"
+						]
+					},
+					{
+						"value": "1528689564 Unique Test Variable",
+						"synonyms": [
+							"1528689564 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530131507 Unique Test Variable",
+						"synonyms": [
+							"1530131507 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535308834 Unique Test Variable",
+						"synonyms": [
+							"1535308834 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Anxiety Disorder",
+						"synonyms": [
+							"Anxiety",
+							"Anxiety Disorder"
+						]
+					},
+					{
+						"value": "1528690377 Unique Test Variable",
+						"synonyms": [
+							"1528690377 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529772149 Unique Test Variable",
+						"synonyms": [
+							"1529772149 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530131982 Unique Test Variable",
+						"synonyms": [
+							"1530131982 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535320974 Unique Test Variable",
+						"synonyms": [
+							"1535320974 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Craving For Heavy Greasy Foods Like French Fries",
+						"synonyms": [
+							"Craving For Heavy Greasy Foods Like French Fries.",
+							"Craving For Heavy Greasy Foods Like French Fries",
+							"Craving For Heavy Greasy Foods Like French Fry"
+						]
+					},
+					{
+						"value": "Muscle Spasm In The Neck And Shoulders",
+						"synonyms": [
+							"Muscle Spasm In The Neck And Shoulders",
+							"Muscle Spasm In The Neck And Shoulder"
+						]
+					},
+					{
+						"value": "Ears Pressurizing",
+						"synonyms": [
+							"Ears Pressurizing"
+						]
+					},
+					{
+						"value": "1528690954 Unique Test Variable",
+						"synonyms": [
+							"1528690954 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530132549 Unique Test Variable",
+						"synonyms": [
+							"1530132549 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535322527 Unique Test Variable",
+						"synonyms": [
+							"1535322527 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Manic Episode",
+						"synonyms": [
+							"Manic Episode"
+						]
+					},
+					{
+						"value": "1528691564 Unique Test Variable",
+						"synonyms": [
+							"1528691564 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1529773554 Unique Test Variable",
+						"synonyms": [
+							"1529773554 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530132893 Unique Test Variable",
+						"synonyms": [
+							"1530132893 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531157062 Unique Test Variable",
+						"synonyms": [
+							"1531157062 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535330417 Unique Test Variable",
+						"synonyms": [
+							"1535330417 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Feeling Irritable",
+						"synonyms": [
+							"Feeling Irritable"
+						]
+					},
+					{
+						"value": "1528692671 Unique Test Variable",
+						"synonyms": [
+							"1528692671 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530134045 Unique Test Variable",
+						"synonyms": [
+							"1530134045 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535333250 Unique Test Variable",
+						"synonyms": [
+							"1535333250 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Feeling Sensitive To Light",
+						"synonyms": [
+							"Feeling Sensitive To Light"
+						]
+					},
+					{
+						"value": "1530135279 Unique Test Variable",
+						"synonyms": [
+							"1530135279 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531157301 Unique Test Variable",
+						"synonyms": [
+							"1531157301 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534017079 Unique Test Variable",
+						"synonyms": [
+							"1534017079 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535334754 Unique Test Variable",
+						"synonyms": [
+							"1535334754 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1528697687 Unique Test Variable",
+						"synonyms": [
+							"1528697687 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535335612 Unique Test Variable",
+						"synonyms": [
+							"1535335612 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Cold Hands & Feet",
+						"synonyms": [
+							"Cold Hands & Feet"
+						]
+					},
+					{
+						"value": "1530142547 Unique Test Variable",
+						"synonyms": [
+							"1530142547 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535338353 Unique Test Variable",
+						"synonyms": [
+							"1535338353 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535339389 Unique Test Variable",
+						"synonyms": [
+							"1535339389 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530157606 Unique Test Variable",
+						"synonyms": [
+							"1530157606 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535340741 Unique Test Variable",
+						"synonyms": [
+							"1535340741 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Itchy Eyes",
+						"synonyms": [
+							"Itchy Eyes",
+							"Itchy Eye"
+						]
+					},
+					{
+						"value": "1524768888 Unique Test Variable",
+						"synonyms": [
+							"1524768888 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1530159570 Unique Test Variable",
+						"synonyms": [
+							"1530159570 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535344561 Unique Test Variable",
+						"synonyms": [
+							"1535344561 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Nxiety",
+						"synonyms": [
+							"Nxiety"
+						]
+					},
+					{
+						"value": "1534725109 Unique Test Variable",
+						"synonyms": [
+							"1534725109 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535385016 Unique Test Variable",
+						"synonyms": [
+							"1535385016 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1535387662 Unique Test Variable",
+						"synonyms": [
+							"1535387662 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534730227 Unique Test Variable",
+						"synonyms": [
+							"1534730227 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Arthritis",
+						"synonyms": [
+							"Arthritis",
+							"Arthriti",
+							"Arthritus",
+							"Arthritu"
+						]
+					},
+					{
+						"value": "Female Sexual Dysfunction",
+						"synonyms": [
+							"Female Sexual Dysfunction"
+						]
+					},
+					{
+						"value": "Migraine Buttons Flaring",
+						"synonyms": [
+							"Migraine Buttons Flaring"
+						]
+					},
+					{
+						"value": "1530222575 Unique Test Variable",
+						"synonyms": [
+							"1530222575 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1531418709 Unique Test Variable",
+						"synonyms": [
+							"1531418709 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534735587 Unique Test Variable",
+						"synonyms": [
+							"1534735587 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Addiction",
+						"synonyms": [
+							"Addiction"
+						]
+					},
+					{
+						"value": "Loss of Intrest",
+						"synonyms": [
+							"Loss of Intrest"
+						]
+					},
+					{
+						"value": "Ears Popping",
+						"synonyms": [
+							"Ears Popping"
+						]
+					},
+					{
+						"value": "1526492646 Unique Test Variable",
+						"synonyms": [
+							"1526492646 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Sleepless",
+						"synonyms": [
+							"Sleepless",
+							"Sleeples"
+						]
+					},
+					{
+						"value": "1530223041 Unique Test Variable",
+						"synonyms": [
+							"1530223041 Unique Test Variable"
+						]
+					},
+					{
+						"value": "1534738075 Unique Test Variable",
+						"synonyms": [
+							"1534738075 Unique Test Variable"
+						]
+					},
+					{
+						"value": "Broken Bone",
+						"synonyms": [
+							"Broken Bone"
+						]
+					},
+					{
+						"value": "Feeling Spacy",
+						"synonyms": [
+							"Feeling Spacy"
+						]
+					},
+					{
+						"value": "Gastrointestinal Pain",
+						"synonyms": [
+							"Gastrointestinal Pain"
+						]
+					},
+					{
+						"value": "knee pain",
+						"synonyms": [
+							"knee pain"
 						]
 					}
 				]
@@ -44889,6 +53485,203 @@ window.qm.staticData = {
 			}
 		},
 		"intents": {
+			"Answer Question Intent": {
+				"id": "26a46749-313b-44dc-8e38-86f3b383e370",
+				"name": "Answer Question Intent",
+				"auto": true,
+				"contexts": [],
+				"responses": [
+					{
+						"resetContexts": false,
+						"affectedContexts": [],
+						"parameters": [
+							{
+								"id": "98653655-a00e-42cf-8edc-9766b519b510",
+								"required": false,
+								"dataType": "@answerTriggerPhrase",
+								"name": "answerTriggerPhrase",
+								"value": "$answerTriggerPhrase",
+								"isList": false
+							},
+							{
+								"id": "a7914782-d40f-4df5-91ee-18b28ea5c405",
+								"required": true,
+								"dataType": "@answer",
+								"name": "answer",
+								"value": "$answer",
+								"prompts": [
+									{
+										"lang": "en",
+										"value": "What is the answer?"
+									}
+								],
+								"isList": false
+							}
+						],
+						"messages": [
+							{
+								"type": 0,
+								"lang": "en",
+								"speech": []
+							}
+						],
+						"defaultResponsePlatforms": {},
+						"speech": []
+					}
+				],
+				"priority": 500000,
+				"cortanaCommand": {
+					"navigateOrService": "NAVIGATE",
+					"target": ""
+				},
+				"webhookUsed": false,
+				"webhookForSlotFilling": false,
+				"lastUpdate": 1535501712,
+				"fallbackIntent": false,
+				"events": [],
+				"usersays": [
+					{
+						"id": "e451f302-e83c-4c0d-8d31-aabf5f38b7a4",
+						"data": [
+							{
+								"text": "answer",
+								"alias": "answerTriggerPhrase",
+								"meta": "@answerTriggerPhrase",
+								"userDefined": true
+							},
+							{
+								"text": " ",
+								"userDefined": false
+							},
+							{
+								"text": "just lucky i guess",
+								"alias": "answer",
+								"meta": "@answer",
+								"userDefined": true
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1535501598
+					},
+					{
+						"id": "daf4f7e4-f779-4997-9669-023d96a330e3",
+						"data": [
+							{
+								"text": "the answer is",
+								"alias": "answerTriggerPhrase",
+								"meta": "@answerTriggerPhrase",
+								"userDefined": true
+							},
+							{
+								"text": " ",
+								"userDefined": false
+							},
+							{
+								"text": "just luck i guess",
+								"alias": "answer",
+								"meta": "@answer",
+								"userDefined": true
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1535501450
+					}
+				]
+			},
+			"Ask Question Intent": {
+				"id": "1a5c2674-54e9-4003-91d7-e093242fed6c",
+				"name": "Ask Question Intent",
+				"auto": true,
+				"contexts": [],
+				"responses": [
+					{
+						"resetContexts": false,
+						"affectedContexts": [],
+						"parameters": [
+							{
+								"id": "5ff1d8fe-c38a-45f0-83a1-9e2657dc24fc",
+								"required": false,
+								"dataType": "@sys.given-name",
+								"name": "given-name",
+								"value": "$given-name",
+								"isList": false
+							},
+							{
+								"id": "1242c05c-f2a1-421f-b3c2-0c3993cbf938",
+								"required": false,
+								"dataType": "@askQuestionTriggerPhrase",
+								"name": "askQuestionTriggerPhrase",
+								"value": "$askQuestionTriggerPhrase",
+								"isList": false
+							},
+							{
+								"id": "1c331d19-7c4f-46ef-b456-f68cbcafbca9",
+								"dataType": "@question",
+								"name": "question",
+								"value": "$question",
+								"isList": false
+							}
+						],
+						"messages": [
+							{
+								"type": 0,
+								"lang": "en",
+								"speech": []
+							}
+						],
+						"defaultResponsePlatforms": {},
+						"speech": []
+					}
+				],
+				"priority": 500000,
+				"cortanaCommand": {
+					"navigateOrService": "NAVIGATE",
+					"target": ""
+				},
+				"webhookUsed": true,
+				"webhookForSlotFilling": false,
+				"lastUpdate": 1535497922,
+				"fallbackIntent": false,
+				"events": [],
+				"usersays": [
+					{
+						"id": "1f3fa6ed-7213-4e50-b6a3-be8ddf637bd1",
+						"data": [
+							{
+								"text": "Ask",
+								"alias": "askQuestionTriggerPhrase",
+								"meta": "@askQuestionTriggerPhrase",
+								"userDefined": true
+							},
+							{
+								"text": " ",
+								"userDefined": false
+							},
+							{
+								"text": "Mike",
+								"alias": "given-name",
+								"meta": "@sys.given-name",
+								"userDefined": false
+							},
+							{
+								"text": " ",
+								"userDefined": false
+							},
+							{
+								"text": "how he got so handsome",
+								"alias": "question",
+								"meta": "@question",
+								"userDefined": true
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1535497840
+					}
+				]
+			},
 			"Cancel Intent": {
 				"id": "f280f7c9-77bc-4f29-b942-f0b981323467",
 				"name": "Cancel Intent",
@@ -45957,6 +54750,27 @@ window.qm.staticData = {
 					}
 				]
 			},
+			"Knowledge.KnowledgeBase.MTQ3ODYxNjIwMDE1ODc0NzAzMzY": {
+				"id": "fa003351-d595-41b1-aac3-e85707cd498f",
+				"name": "Knowledge.KnowledgeBase.MTQ3ODYxNjIwMDE1ODc0NzAzMzY",
+				"auto": false,
+				"contexts": [],
+				"responses": [
+					{
+						"resetContexts": false,
+						"affectedContexts": [],
+						"parameters": [],
+						"defaultResponsePlatforms": {},
+						"speech": []
+					}
+				],
+				"priority": 500000,
+				"webhookUsed": false,
+				"webhookForSlotFilling": false,
+				"lastUpdate": 1533602033,
+				"fallbackIntent": false,
+				"events": []
+			},
 			"Recall Intent": {
 				"id": "95a49fb0-b9f2-4ff6-a8ca-f90fe189f8d8",
 				"name": "Recall Intent",
@@ -46114,7 +54928,7 @@ window.qm.staticData = {
 				},
 				"webhookUsed": true,
 				"webhookForSlotFilling": false,
-				"lastUpdate": 1533392228,
+				"lastUpdate": 1535564780,
 				"fallbackIntent": false,
 				"events": [],
 				"usersays": [
@@ -46161,6 +54975,30 @@ window.qm.staticData = {
 						"isTemplate": false,
 						"count": 0,
 						"updated": 1533392228
+					},
+					{
+						"id": "10a34c3d-05c4-4def-8321-a94b3671e602",
+						"data": [
+							{
+								"text": "i have a",
+								"alias": "recordMeasurementTriggerPhrase",
+								"meta": "@recordMeasurementTriggerPhrase",
+								"userDefined": true
+							},
+							{
+								"text": " ",
+								"userDefined": false
+							},
+							{
+								"text": "headache",
+								"alias": "variableName",
+								"meta": "@variableName",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1535564780
 					},
 					{
 						"id": "327dcfda-63e4-4167-8f2f-5b23b39ab41a",
@@ -46283,6 +55121,215 @@ window.qm.staticData = {
 						"isTemplate": false,
 						"count": 0,
 						"updated": 1533392228
+					}
+				]
+			},
+			"Record Symptom Intent": {
+				"id": "aaa6ac15-601a-4a2c-8188-8f9e3c2c39e8",
+				"name": "Record Symptom Intent",
+				"auto": true,
+				"contexts": [],
+				"responses": [
+					{
+						"resetContexts": false,
+						"affectedContexts": [],
+						"parameters": [
+							{
+								"id": "d8217e52-4249-4e68-9f81-666991c6ed4c",
+								"required": false,
+								"dataType": "@recordSymptomTriggerPhrase",
+								"name": "recordSymptomTriggerPhrase",
+								"value": "$recordSymptomTriggerPhrase",
+								"isList": false
+							},
+							{
+								"id": "d7ea0aa5-84c7-4db3-bacf-529828e598e0",
+								"required": false,
+								"dataType": "@symptomVariableName",
+								"name": "variableName",
+								"value": "$variableName",
+								"isList": false
+							},
+							{
+								"id": "4a05100c-20a8-4fda-986c-18d67805ee35",
+								"required": true,
+								"dataType": "@sys.number",
+								"name": "measurementValue",
+								"value": "$measurementValue",
+								"prompts": [
+									{
+										"lang": "en",
+										"value": "I'm sorry. How severe is it on a scale of 1 to 5?"
+									}
+								],
+								"isList": false
+							}
+						],
+						"messages": [
+							{
+								"type": 0,
+								"lang": "en",
+								"speech": []
+							}
+						],
+						"defaultResponsePlatforms": {},
+						"speech": []
+					}
+				],
+				"priority": 500000,
+				"cortanaCommand": {
+					"navigateOrService": "NAVIGATE",
+					"target": ""
+				},
+				"webhookUsed": true,
+				"webhookForSlotFilling": false,
+				"lastUpdate": 1535581293,
+				"fallbackIntent": false,
+				"events": [],
+				"usersays": [
+					{
+						"id": "d5573ee6-7107-4722-8061-d2da18691005",
+						"data": [
+							{
+								"text": "I have a",
+								"alias": "recordSymptomTriggerPhrase",
+								"meta": "@recordSymptomTriggerPhrase",
+								"userDefined": false
+							},
+							{
+								"text": " ",
+								"userDefined": false
+							},
+							{
+								"text": "headache",
+								"alias": "variableName",
+								"meta": "@symptomVariableName",
+								"userDefined": true
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1535565285
+					},
+					{
+						"id": "c6ca3bfb-5cdf-45fc-b096-ed20a90d987a",
+						"data": [
+							{
+								"text": "i have",
+								"alias": "recordSymptomTriggerPhrase",
+								"meta": "@recordSymptomTriggerPhrase",
+								"userDefined": false
+							},
+							{
+								"text": " ",
+								"userDefined": false
+							},
+							{
+								"text": "swollen knees",
+								"alias": "variableName",
+								"meta": "@symptomVariableName",
+								"userDefined": true
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1535581293
+					},
+					{
+						"id": "3aa3fd13-5f13-4605-b3c0-aadbf6a57c7e",
+						"data": [
+							{
+								"text": "i have",
+								"alias": "recordSymptomTriggerPhrase",
+								"meta": "@recordSymptomTriggerPhrase",
+								"userDefined": false
+							},
+							{
+								"text": " ",
+								"userDefined": false
+							},
+							{
+								"text": "knee pain",
+								"alias": "variableName",
+								"meta": "@symptomVariableName",
+								"userDefined": true
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1535581293
+					},
+					{
+						"id": "e70cb031-e740-44ad-9dd8-a6e30d6bf3aa",
+						"data": [
+							{
+								"text": "i have",
+								"alias": "recordSymptomTriggerPhrase",
+								"meta": "@recordSymptomTriggerPhrase",
+								"userDefined": false
+							},
+							{
+								"text": " ",
+								"userDefined": false
+							},
+							{
+								"text": "acne",
+								"alias": "variableName",
+								"meta": "@symptomVariableName",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1535581293
+					},
+					{
+						"id": "28511a86-5f07-42e2-9636-927d5fcd9bc4",
+						"data": [
+							{
+								"text": "i have",
+								"alias": "recordSymptomTriggerPhrase",
+								"meta": "@recordSymptomTriggerPhrase",
+								"userDefined": true
+							},
+							{
+								"text": " ",
+								"userDefined": false
+							},
+							{
+								"text": "back pain",
+								"alias": "variableName",
+								"meta": "@symptomVariableName",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1535581195
+					},
+					{
+						"id": "e86dfe4e-e58f-45c7-ad57-2b3c69f190f8",
+						"data": [
+							{
+								"text": "i have",
+								"alias": "recordSymptomTriggerPhrase",
+								"meta": "@recordSymptomTriggerPhrase",
+								"userDefined": false
+							},
+							{
+								"text": " ",
+								"userDefined": false
+							},
+							{
+								"text": "psoriasis",
+								"alias": "variableName",
+								"meta": "@symptomVariableName",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1535581195
 					}
 				]
 			},
@@ -46482,9 +55529,11 @@ window.qm.staticData = {
 							},
 							{
 								"id": "c46ac1dd-424e-4f42-9fad-540192561516",
+								"required": false,
 								"dataType": "@yesNo",
 								"name": "yesNo",
-								"value": "$yesNo"
+								"value": "$yesNo",
+								"isList": false
 							}
 						],
 						"messages": [
@@ -46499,9 +55548,13 @@ window.qm.staticData = {
 					}
 				],
 				"priority": 500000,
+				"cortanaCommand": {
+					"navigateOrService": "NAVIGATE",
+					"target": ""
+				},
 				"webhookUsed": true,
 				"webhookForSlotFilling": false,
-				"lastUpdate": 1533512333,
+				"lastUpdate": 1535574686,
 				"fallbackIntent": false,
 				"events": [
 					{
@@ -46528,6 +55581,34 @@ window.qm.staticData = {
 						"isTemplate": false,
 						"count": 0,
 						"updated": 1533512333
+					},
+					{
+						"id": "7264a03d-6455-4f4e-88f3-fbb68f0a7520",
+						"data": [
+							{
+								"text": "skip all",
+								"alias": "notificationAction",
+								"meta": "@notificationAction",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1535574686
+					},
+					{
+						"id": "045895dd-332d-45a4-b9ab-2b0391c169de",
+						"data": [
+							{
+								"text": "i don't remember",
+								"alias": "notificationAction",
+								"meta": "@notificationAction",
+								"userDefined": true
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"updated": 1535574686
 					},
 					{
 						"id": "69949328-785c-4aa9-a7d3-143c56c54bf9",
@@ -47320,16 +56401,16 @@ window.qm.staticData = {
 						"type": "number"
 					},
 					"outcomeFillingValue": {
-						"description": "Ex: -1",
+						"description": "Ex: -1. Unit: User-specified or common.",
 						"type": "integer"
 					},
 					"outcomeMaximumAllowedValue": {
-						"description": "Ex: 23",
+						"description": "Ex: 23. Unit: User-specified or common.",
 						"format": "double",
 						"type": "number"
 					},
 					"outcomeMinimumAllowedValue": {
-						"description": "Ex: 0.1",
+						"description": "Ex: 0.1. Unit: User-specified or common.",
 						"format": "double",
 						"type": "number"
 					},
@@ -47353,25 +56434,25 @@ window.qm.staticData = {
 						"type": "string"
 					},
 					"predictorFillingValue": {
-						"description": "Ex: -1",
+						"description": "Ex: -1. Unit: User-specified or common.",
 						"type": "integer"
 					},
 					"predictorMaximumAllowedValue": {
-						"description": "Ex: 200",
+						"description": "Ex: 200. Unit: User-specified or common.",
 						"format": "double",
 						"type": "number"
 					},
 					"predictorMinimumAllowedValue": {
-						"description": "Ex: 30",
+						"description": "Ex: 30. Unit: User-specified or common.",
 						"format": "double",
 						"type": "number"
 					},
 					"predictsHighEffectChange": {
-						"description": "Ex: 17",
+						"description": "Ex: 17. Unit: User-specified or common.",
 						"type": "integer"
 					},
 					"predictsLowEffectChange": {
-						"description": "Ex: -11",
+						"description": "Ex: -11. Unit: User-specified or common.",
 						"type": "integer"
 					},
 					"pValue": {
@@ -48217,12 +57298,14 @@ window.qm.staticData = {
 						"type": "boolean"
 					},
 					"maximumAllowedValue": {
-						"description": "Ex: 5",
-						"type": "integer"
+						"description": "Ex: 5. Unit: User-specified or common.",
+						"format": "double",
+						"type": "number"
 					},
 					"minimumAllowedValue": {
-						"description": "Ex: 1",
-						"type": "integer"
+						"description": "Ex: 1. Unit: User-specified or common.",
+						"format": "double",
+						"type": "number"
 					},
 					"note": {
 						"description": "Note of measurement",
@@ -48241,8 +57324,9 @@ window.qm.staticData = {
 						"type": "integer"
 					},
 					"originalValue": {
-						"description": "Original value as originally submitted",
-						"type": "integer"
+						"description": "Original value submitted. Unit: Originally submitted.",
+						"format": "double",
+						"type": "number"
 					},
 					"pngPath": {
 						"description": "Ex: img/variable_categories/treatments.png",
@@ -48350,7 +57434,32 @@ window.qm.staticData = {
 						"type": "string"
 					},
 					"variableCategoryName": {
-						"description": "Ex: Treatments",
+						"description": "Ex: Emotions, Treatments, Symptoms...",
+						"enum": [
+							"Activity",
+							"Books",
+							"Causes of Illness",
+							"Cognitive Performance",
+							"Conditions",
+							"Emotions",
+							"Environment",
+							"Foods",
+							"Goals",
+							"Locations",
+							"Miscellaneous",
+							"Movies and TV",
+							"Music",
+							"Nutrients",
+							"Payments",
+							"Physical Activities",
+							"Physique",
+							"Sleep",
+							"Social Interactions",
+							"Software",
+							"Symptoms",
+							"Treatments",
+							"Vital Signs"
+						],
 						"type": "string"
 					},
 					"variableDescription": {
@@ -48449,7 +57558,32 @@ window.qm.staticData = {
 						"type": "string"
 					},
 					"variableCategoryName": {
-						"description": "Variable category name",
+						"description": "Ex: Emotions, Treatments, Symptoms...",
+						"enum": [
+							"Activity",
+							"Books",
+							"Causes of Illness",
+							"Cognitive Performance",
+							"Conditions",
+							"Emotions",
+							"Environment",
+							"Foods",
+							"Goals",
+							"Locations",
+							"Miscellaneous",
+							"Movies and TV",
+							"Music",
+							"Nutrients",
+							"Payments",
+							"Physical Activities",
+							"Physique",
+							"Sleep",
+							"Social Interactions",
+							"Software",
+							"Symptoms",
+							"Treatments",
+							"Vital Signs"
+						],
 						"type": "string"
 					},
 					"variableName": {
@@ -49178,7 +58312,7 @@ window.qm.staticData = {
 						"type": "string"
 					},
 					"studyAbstract": {
-						"description": "Ex: Aggregated data from 21 suggests with a low degree of confidence (p=0.097) that Very Distracting Time (Work) has a moderately positive predictive relationship (R=0.354) with Video Activities  (Activity).  The highest quartile of Video Activities measurements were observed following an average 2.03h Very Distracting Timeper day.  The lowest quartile of Video Activities  measurements were observed following an average 1.04h Very Distracting Timeper day.",
+						"description": "Ex: Aggregated data from 21 suggests with a low degree of confidence (p=0.097) that Very Distracting Time has a moderately positive predictive relationship (R=0.354) with Video Activities  (Activity).  The highest quartile of Video Activities measurements were observed following an average 2.03h Very Distracting Timeper day.  The lowest quartile of Video Activities  measurements were observed following an average 1.04h Very Distracting Timeper day.",
 						"type": "string"
 					},
 					"studyDesign": {
@@ -49194,7 +58328,7 @@ window.qm.staticData = {
 						"type": "string"
 					},
 					"studyResults": {
-						"description": "Ex: This analysis suggests that higher Very Distracting Time (Work) generally predicts negative Video Activities (p = 0.097). Video Activities is, on average, 36%  higher after around 2.03 Very Distracting Time.  After an onset delay of 168 hours, Video Activities is, on average, 16%  lower than its average over the 168 hours following around 1.04 Very Distracting Time.  146 data points were used in this analysis.  The value for Very Distracting Time changed 2984 times, effectively running 1492 separate natural experiments. The top quartile outcome values are preceded by an average 2.03 h of Very Distracting Time.  The bottom quartile outcome values are preceded by an average 1.04 h of Very Distracting Time.  Forward Pearson Correlation Coefficient was 0.354 (p=0.097, 95% CI -0.437 to 1.144 onset delay = 0 hours, duration of action = 168 hours) .  The Reverse Pearson Correlation Coefficient was 0.208 (P=0.097, 95% CI -0.583 to 0.998, onset delay = -0 hours, duration of action = -168 hours). When the Very Distracting Time value is closer to 2.03 h than 1.04 h, the Video Activities value which follows is, on average, 36% percent higher than its typical value.  When the Very Distracting Time value is closer to 1.04 h than 2.03 h, the Video Activities value which follows is 0% lower than its typical value.  Video Activities is 5 h (67% higher) on average after days with around 5 h Very Distracting Time",
+						"description": "Ex: This analysis suggests that higher Very Distracting Time generally predicts negative Video Activities (p = 0.097). Video Activities is, on average, 36%  higher after around 2.03 Very Distracting Time.  After an onset delay of 168 hours, Video Activities is, on average, 16%  lower than its average over the 168 hours following around 1.04 Very Distracting Time.  146 data points were used in this analysis.  The value for Very Distracting Time changed 2984 times, effectively running 1492 separate natural experiments. The top quartile outcome values are preceded by an average 2.03 h of Very Distracting Time.  The bottom quartile outcome values are preceded by an average 1.04 h of Very Distracting Time.  Forward Pearson Correlation Coefficient was 0.354 (p=0.097, 95% CI -0.437 to 1.144 onset delay = 0 hours, duration of action = 168 hours) .  The Reverse Pearson Correlation Coefficient was 0.208 (P=0.097, 95% CI -0.583 to 0.998, onset delay = -0 hours, duration of action = -168 hours). When the Very Distracting Time value is closer to 2.03 h than 1.04 h, the Video Activities value which follows is, on average, 36% percent higher than its typical value.  When the Very Distracting Time value is closer to 1.04 h than 2.03 h, the Video Activities value which follows is 0% lower than its typical value.  Video Activities is 5 h (67% higher) on average after days with around 5 h Very Distracting Time",
 						"type": "string"
 					},
 					"studyTitle": {
@@ -49334,7 +58468,7 @@ window.qm.staticData = {
 						"type": "string"
 					},
 					"defaultValue": {
-						"description": "Default value to use for the measurement when tracking",
+						"description": "Default value to use for the measurement when tracking. Unit: User-specified or common.",
 						"format": "float",
 						"type": "number"
 					},
@@ -49351,7 +58485,7 @@ window.qm.staticData = {
 						"type": "string"
 					},
 					"fillingValue": {
-						"description": "Ex: 0",
+						"description": "Ex: 0. Unit: User-specified or common.",
 						"type": "integer"
 					},
 					"firstDailyReminderTime": {
@@ -49413,12 +58547,14 @@ window.qm.staticData = {
 						"type": "boolean"
 					},
 					"maximumAllowedValue": {
-						"description": "Ex: 5",
-						"type": "integer"
+						"description": "Ex: 5. Unit: User-specified or common.",
+						"format": "double",
+						"type": "number"
 					},
 					"minimumAllowedValue": {
-						"description": "Ex: 1",
-						"type": "integer"
+						"description": "Ex: 1. Unit: User-specified or common.",
+						"format": "double",
+						"type": "number"
 					},
 					"nextReminderTimeEpochSeconds": {
 						"description": "Ex: 1501555520",
@@ -49503,7 +58639,7 @@ window.qm.staticData = {
 						"type": "string"
 					},
 					"secondToLastValue": {
-						"description": "Ex: 1",
+						"description": "Ex: 1. Unit: User-specified or common.",
 						"format": "double",
 						"type": "number"
 					},
@@ -49604,7 +58740,32 @@ window.qm.staticData = {
 						"type": "string"
 					},
 					"variableCategoryName": {
-						"description": "Name of the variable category to be used when sending measurements",
+						"description": "Ex: Emotions, Treatments, Symptoms...",
+						"enum": [
+							"Activity",
+							"Books",
+							"Causes of Illness",
+							"Cognitive Performance",
+							"Conditions",
+							"Emotions",
+							"Environment",
+							"Foods",
+							"Goals",
+							"Locations",
+							"Miscellaneous",
+							"Movies and TV",
+							"Music",
+							"Nutrients",
+							"Payments",
+							"Physical Activities",
+							"Physique",
+							"Sleep",
+							"Social Interactions",
+							"Software",
+							"Symptoms",
+							"Treatments",
+							"Vital Signs"
+						],
 						"type": "string"
 					},
 					"variableDescription": {
@@ -49714,7 +58875,7 @@ window.qm.staticData = {
 						"type": "string"
 					},
 					"modifiedValue": {
-						"description": "Is the user specified default value or falls back to the last value in user unit. Good for initializing input fields",
+						"description": "Is the user specified default value or falls back to the last value in user unit. Good for initializing input fields. Unit: User-specified or common.",
 						"format": "double",
 						"type": "number"
 					},
@@ -49980,7 +59141,32 @@ window.qm.staticData = {
 						"type": "string"
 					},
 					"variableCategoryName": {
-						"description": "Name of the variable category to be used when sending measurements",
+						"description": "Ex: Emotions, Treatments, Symptoms...",
+						"enum": [
+							"Activity",
+							"Books",
+							"Causes of Illness",
+							"Cognitive Performance",
+							"Conditions",
+							"Emotions",
+							"Environment",
+							"Foods",
+							"Goals",
+							"Locations",
+							"Miscellaneous",
+							"Movies and TV",
+							"Music",
+							"Nutrients",
+							"Payments",
+							"Physical Activities",
+							"Physique",
+							"Sleep",
+							"Social Interactions",
+							"Software",
+							"Symptoms",
+							"Treatments",
+							"Vital Signs"
+						],
 						"type": "string"
 					},
 					"variableId": {
@@ -50428,7 +59614,7 @@ window.qm.staticData = {
 						"type": "array"
 					},
 					"alias": {
-						"description": "Alternative name",
+						"description": "User-Defined Variable Setting:  Alternative display name",
 						"type": "string"
 					},
 					"availableUnits": {
@@ -50478,7 +59664,7 @@ window.qm.staticData = {
 						"$ref": "#/definitions/Card"
 					},
 					"causeOnly": {
-						"description": "A value of 1 indicates that this variable is generally a cause in a causal relationship.  An example of a causeOnly variable would be a variable such as Cloud Cover which would generally not be influenced by the behaviour of the user",
+						"description": "User-Defined Variable Setting: True indicates that this variable is generally a cause in a causal relationship.  An example of a causeOnly variable would be a variable such as Cloud Cover which would generally not be influenced by the behaviour of the user",
 						"type": "boolean"
 					},
 					"charts": {
@@ -50516,7 +59702,7 @@ window.qm.staticData = {
 						"type": "array"
 					},
 					"childUserTagVariables": {
-						"description": "User-defined. An example of a parent category variable would be Fruit when tagged with the child sub-type variables Apple.  Child variable (Apple) measurements will be included when the parent category (Fruit) is analyzed.  This allows us to see how Fruit consumption might be affecting without having to record both Fruit and Apple intake.",
+						"description": "User-Defined Variable Setting: An example of a parent category variable would be Fruit when tagged with the child sub-type variables Apple.  Child variable (Apple) measurements will be included when the parent category (Fruit) is analyzed.  This allows us to see how Fruit consumption might be affecting without having to record both Fruit and Apple intake.",
 						"items": {
 							"$ref": "#/definitions/Variable"
 						},
@@ -50527,7 +59713,11 @@ window.qm.staticData = {
 						"type": "string"
 					},
 					"combinationOperation": {
-						"description": "Ex: MEAN",
+						"description": "User Variable Setting: Way to aggregate measurements over time. Options are MEAN or SUM. SUM should be used for things like minutes of exercise.  If you use MEAN for exercise, then a person might exercise more minutes in one day but add separate measurements that were smaller.  So when we are doing correlational analysis, we would think that the person exercised less that day even though they exercised more.  Conversely, we must use MEAN for things such as ratings which cannot be SUMMED.",
+						"enum": [
+							"MEAN",
+							"SUM"
+						],
 						"type": "string"
 					},
 					"commonAlias": {
@@ -50546,14 +59736,6 @@ window.qm.staticData = {
 						},
 						"type": "array"
 					},
-					"commonVariableMostCommonConnectorId": {
-						"description": "Ex: 51",
-						"type": "integer"
-					},
-					"commonVariableUpdatedAt": {
-						"description": "Ex: 2017-02-07 23:43:39 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
-						"type": "string"
-					},
 					"createdAt": {
 						"description": "When the record was first created. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format",
 						"type": "string"
@@ -50570,7 +59752,7 @@ window.qm.staticData = {
 						}
 					},
 					"description": {
-						"description": "Ex: negative",
+						"description": "User Variable Setting: Ex: Summary to be used in studies.",
 						"type": "string"
 					},
 					"displayName": {
@@ -50583,7 +59765,7 @@ window.qm.staticData = {
 						"type": "integer"
 					},
 					"durationOfActionInHours": {
-						"description": "Ex: 168",
+						"description": "User-Defined Variable Setting: The amount of time over which a predictor/stimulus event can exert an observable influence on an outcome variable value. For instance, aspirin (stimulus/predictor) typically decreases headache severity for approximately four hours (duration of action) following the onset delay.  Unit: Hours",
 						"type": "integer"
 					},
 					"earliestFillingTime": {
@@ -50602,39 +59784,28 @@ window.qm.staticData = {
 						"type": "integer"
 					},
 					"errorMessage": {
-						"description": "error_message",
+						"description": "Error message from last analysis",
 						"type": "string"
 					},
 					"experimentEndTime": {
-						"description": "Latest measurement start_time to be used in analysis. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format",
-						"type": "string"
-					},
-					"experimentEndTimeSeconds": {
-						"description": "Ex: 1893477600",
-						"type": "integer"
-					},
-					"experimentEndTimeString": {
-						"description": "Ex: 2030-01-01 06:00:00 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+						"description": "User-Defined Variable Setting: Latest measurement time to be used in analysis. Format: UTC ISO 8601 YYYY-MM-DDThh:mm:ss.",
 						"type": "string"
 					},
 					"experimentStartTime": {
-						"description": "Earliest measurement start_time to be used in analysis. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format",
-						"type": "string"
-					},
-					"experimentStartTimeSeconds": {
-						"description": "Ex: 1269307902",
-						"type": "integer"
-					},
-					"experimentStartTimeString": {
-						"description": "Ex: 2010-03-23 01:31:42 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+						"description": "User-Defined Variable Setting: Earliest measurement time to be used in analysis. Format: UTC ISO 8601 YYYY-MM-DDThh:mm:ss.",
 						"type": "string"
 					},
 					"fillingType": {
-						"description": "0 -> No filling, 1 -> Use filling-value",
+						"description": "User Variable Setting: When it comes to analysis to determine the effects of this variable, knowing when it did not occur is as important as knowing when it did occur. For example, if you are tracking a medication, it is important to know when you did not take it, but you do not have to log zero values for all the days when you haven't taken it. Hence, you can specify a filling value (typically 0) to insert whenever data is missing.",
+						"enum": [
+							"none",
+							"zero-filling",
+							"value-filling"
+						],
 						"type": "string"
 					},
 					"fillingValue": {
-						"description": "When it comes to analysis to determine the effects of this variable, knowing when it did not occur is as important as knowing when it did occur. For example, if you are tracking a medication, it is important to know when you did not take it, but you do not have to log zero values for all the days when you haven't taken it. Hence, you can specify a filling value (typically 0) to insert whenever data is missing.",
+						"description": "User Variable Setting: When it comes to analysis to determine the effects of this variable, knowing when it did not occur is as important as knowing when it did occur. For example, if you are tracking a medication, it is important to know when you did not take it, but you do not have to log zero values for all the days when you haven't taken it. Hence, you can specify a filling value (typically 0) to insert whenever data is missing.  Unit: User-specified or common.",
 						"format": "float",
 						"type": "number"
 					},
@@ -50669,21 +59840,21 @@ window.qm.staticData = {
 						"type": "array"
 					},
 					"ingredientOfUserTagVariables": {
-						"description": "User-specific IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.",
+						"description": "User Variable Setting: IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.",
 						"items": {
 							"$ref": "#/definitions/Variable"
 						},
 						"type": "array"
 					},
 					"ingredientUserTagVariables": {
-						"description": "User-specific IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.",
+						"description": "User Variable Setting: IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.",
 						"items": {
 							"$ref": "#/definitions/Variable"
 						},
 						"type": "array"
 					},
 					"inputType": {
-						"description": "Ex: value",
+						"description": "Type of input field to show for recording measurements",
 						"type": "string"
 					},
 					"ionIcon": {
@@ -50698,14 +59869,14 @@ window.qm.staticData = {
 						"type": "array"
 					},
 					"joinedUserTagVariables": {
-						"description": "User-defined. Joining can be used used to merge duplicate variables. For instance, if two variables called Apples (Red Delicious) and Red Delicious Apples are joined, when one of them is analyzed, the measurements for the other will be included as well.",
+						"description": "User Variable Setting: Joining can be used used to merge duplicate variables. For instance, if two variables called Apples (Red Delicious) and Red Delicious Apples are joined, when one of them is analyzed, the measurements for the other will be included as well.",
 						"items": {
 							"$ref": "#/definitions/Variable"
 						},
 						"type": "array"
 					},
 					"joinWith": {
-						"description": "The Variable this Variable should be joined with. If the variable is joined with some other variable then it is not shown to user in the list of variables",
+						"description": "Duplicate variables. If the variable is joined with some other variable then it is not shown to user in the list of variables",
 						"format": "int32",
 						"type": "integer"
 					},
@@ -50714,18 +59885,8 @@ window.qm.staticData = {
 						"format": "float",
 						"type": "number"
 					},
-					"lastOriginalUnitId": {
-						"description": "ID of last original Unit",
-						"format": "int32",
-						"type": "integer"
-					},
-					"lastOriginalValue": {
-						"description": "Last original value which is stored",
-						"format": "int32",
-						"type": "integer"
-					},
 					"lastProcessedDailyValue": {
-						"description": "Ex: 500",
+						"description": "Calculated Statistic: Ex: 500. Unit: User-specified or common.",
 						"format": "double",
 						"type": "number"
 					},
@@ -50733,13 +59894,8 @@ window.qm.staticData = {
 						"description": "When this variable or its settings were last updated UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
 						"type": "string"
 					},
-					"lastUnitId": {
-						"description": "ID of last Unit",
-						"format": "int32",
-						"type": "integer"
-					},
 					"lastValue": {
-						"description": "Last Value",
+						"description": "Calculated Statistic: Last measurement value in the common unit or user unit if different. Unit: User-specified or common.",
 						"format": "float",
 						"type": "number"
 					},
@@ -50749,21 +59905,21 @@ window.qm.staticData = {
 						"type": "integer"
 					},
 					"latestMeasurementTime": {
-						"description": "Latest measurement time",
+						"description": "Latest measurement time. Format: Unix-time epoch seconds.",
 						"format": "int32",
 						"type": "integer"
 					},
 					"latestSourceTime": {
-						"description": "Latest source time",
+						"description": "Latest source time. Format: Unix-time epoch seconds.",
 						"format": "int32",
 						"type": "integer"
 					},
 					"latestUserMeasurementTime": {
-						"description": "Ex: 1501383600",
+						"description": "Ex: 1501383600. Format: Unix-time epoch seconds.",
 						"type": "integer"
 					},
 					"latitude": {
-						"description": "Latitude",
+						"description": "Latitude. Unit: User-specified or common.",
 						"format": "float",
 						"type": "number"
 					},
@@ -50777,26 +59933,31 @@ window.qm.staticData = {
 						"type": "number"
 					},
 					"manualTracking": {
-						"description": "Ex: 1",
+						"description": "True if the variable is an emotion or symptom rating that is not typically automatically collected by a device or app.",
 						"type": "boolean"
 					},
+					"maximumAllowedDailyValue": {
+						"description": "User Variable Setting: The maximum allowed value a daily aggregated measurement. Unit: User-specified or common.",
+						"format": "float",
+						"type": "number"
+					},
 					"maximumAllowedValue": {
-						"description": "The maximum allowed value for measurements. While you can record a value above this maximum, it will be excluded from the correlation analysis.",
+						"description": "User Variable Setting: The maximum allowed value a single measurement. While you can record a value above this maximum, it will be excluded from the correlation analysis.  Unit: User-specified or common.",
 						"format": "float",
 						"type": "number"
 					},
 					"maximumRecordedDailyValue": {
-						"description": "Maximum recorded daily value of this variable",
+						"description": "Calculated Statistic: Maximum recorded daily value of this variable. Unit: User-specified or common.",
 						"format": "float",
 						"type": "number"
 					},
 					"maximumRecordedValue": {
-						"description": "Ex: 1",
+						"description": "Calculated Statistic: Ex: 1. Unit: User-specified or common.",
 						"format": "double",
 						"type": "number"
 					},
 					"mean": {
-						"description": "Mean",
+						"description": "Mean. Unit: User-specified or common.",
 						"format": "float",
 						"type": "number"
 					},
@@ -50811,12 +59972,22 @@ window.qm.staticData = {
 						"type": "number"
 					},
 					"minimumAllowedValue": {
-						"description": "The minimum allowed value for measurements. While you can record a value below this minimum, it will be excluded from the correlation analysis.",
+						"description": "User-Defined Variable Setting: The minimum allowed value a single measurement. While you can record a value below this minimum, it will be excluded from the correlation analysis. Unit: User-specified or common",
+						"format": "float",
+						"type": "number"
+					},
+					"minimumAllowedDailyValue": {
+						"description": "User-Defined Variable Setting: The minimum allowed value a daily aggregated measurement.  For instance, you might set to 100 for steps to keep erroneous 0 daily steps out of the analysis. Unit: User-specified or common.",
+						"format": "float",
+						"type": "number"
+					},
+					"minimumNonZeroValue": {
+						"description": "User-Defined Variable Setting: The minimum allowed non-zero value a single measurement.  For instance, you might set to 100 mL for steps to keep erroneous 0 daily steps out of the analysis. Unit: User-specified or common.",
 						"format": "float",
 						"type": "number"
 					},
 					"minimumRecordedValue": {
-						"description": "Minimum recorded value of this variable",
+						"description": "Minimum recorded value of this variable. Unit: User-specified or common.",
 						"format": "float",
 						"type": "number"
 					},
@@ -50834,7 +60005,7 @@ window.qm.staticData = {
 						"type": "integer"
 					},
 					"mostCommonValue": {
-						"description": "Most common value",
+						"description": "Calculated Statistic: Most common value. Unit: User-specified or common.",
 						"format": "float",
 						"type": "number"
 					},
@@ -50908,17 +60079,17 @@ window.qm.staticData = {
 						"type": "integer"
 					},
 					"onsetDelayInHours": {
-						"description": "Ex: 0.5",
+						"description": "User Variable Setting: The amount of time in seconds that elapses after the predictor/stimulus event before the outcome as perceived by a self-tracker is known as the onset delay. For example, the onset delay between the time a person takes an aspirin (predictor/stimulus event) and the time a person perceives a change in their headache severity (outcome) is approximately 30 minutes.",
 						"format": "double",
 						"type": "number"
 					},
 					"outcome": {
-						"description": "Outcome variables (those with `outcome` == 1) are variables for which a human would generally want to identify the influencing factors. These include symptoms of illness, physique, mood, cognitive performance, etc.  Generally correlation calculations are only performed on outcome variables",
+						"description": "User Variable Setting: True for variables for which a human would generally want to identify the influencing factors. These include symptoms of illness, physique, mood, cognitive performance, etc.  Generally correlation calculations are only performed on outcome variables",
 						"type": "boolean"
 					},
 					"outcomeOfInterest": {
-						"description": "Ex: 1",
-						"type": "integer"
+						"description": "Do you want to receive updates on newly discovered factors influencing this variable?",
+						"type": "boolean"
 					},
 					"parentCommonTagVariables": {
 						"description": "Commonly defined for all users.  An example of a parent category variable would be Fruit when tagged with the child sub-type variables Apple.  Child variable (Apple) measurements will be included when the parent category (Fruit) is analyzed.  This allows us to see how Fruit consumption might be affecting without having to record both Fruit and Apple intake.",
@@ -50956,9 +60127,8 @@ window.qm.staticData = {
 						"type": "string"
 					},
 					"public": {
-						"description": "Is variable public",
-						"format": "int32",
-						"type": "integer"
+						"description": "Should this variable show up in automcomplete searches for users who do not already have measurements for it?",
+						"type": "boolean"
 					},
 					"question": {
 						"description": "Ex: How is your overall mood?",
@@ -50973,12 +60143,12 @@ window.qm.staticData = {
 						"type": "integer"
 					},
 					"secondMostCommonValue": {
-						"description": "Ex: 1",
+						"description": "Calculated Statistic: Ex: 1. Unit: User-specified or common.",
 						"format": "double",
 						"type": "number"
 					},
 					"secondToLastValue": {
-						"description": "Ex: 250",
+						"description": "Calculated Statistic: Ex: 250. Unit: User-specified or common.",
 						"format": "double",
 						"type": "number"
 					},
@@ -51009,12 +60179,12 @@ window.qm.staticData = {
 						"type": "string"
 					},
 					"thirdMostCommonValue": {
-						"description": "Ex: 6",
+						"description": "Calculated Statistic: Ex: 6. Unit: User-specified or common.",
 						"format": "double",
 						"type": "number"
 					},
 					"thirdToLastValue": {
-						"description": "Ex: 250",
+						"description": "Calculated Statistic: Ex: 250. Unit: User-specified or common.",
 						"format": "double",
 						"type": "number"
 					},
@@ -51047,7 +60217,7 @@ window.qm.staticData = {
 						"type": "integer"
 					},
 					"unitName": {
-						"description": "Ex: Count",
+						"description": "User Variable Setting: Count",
 						"type": "string"
 					},
 					"upc": {
@@ -51104,35 +60274,6 @@ window.qm.staticData = {
 						"description": "Ex: Count",
 						"type": "string"
 					},
-					"userVariableFillingValue": {
-						"description": "Ex: -1",
-						"format": "double",
-						"type": "number"
-					},
-					"userVariableMostCommonConnectorId": {
-						"description": "Ex: 51",
-						"type": "integer"
-					},
-					"userVariableUpdatedAt": {
-						"description": "Ex: 2017-07-30 14:58:26",
-						"type": "string"
-					},
-					"userVariableValence": {
-						"description": "Ex: positive or negative",
-						"type": "string"
-					},
-					"userVariableVariableCategoryId": {
-						"description": "Ex: 13",
-						"type": "integer"
-					},
-					"userVariableVariableCategoryName": {
-						"description": "Ex: Treatments",
-						"type": "string"
-					},
-					"userVariableWikipediaTitle": {
-						"description": "Ex: ",
-						"type": "string"
-					},
 					"variableCategory": {
 						"$ref": "#/definitions/VariableCategory"
 					},
@@ -51143,18 +60284,6 @@ window.qm.staticData = {
 						},
 						"type": "array"
 					},
-					"lastSource": {
-						"description": "Last source",
-						"type": "integer"
-					},
-					"lastUnit": {
-						"description": "Last unit",
-						"type": "string"
-					},
-					"mostCommonUnit": {
-						"description": "Most common unit",
-						"type": "string"
-					},
 					"valence": {
 						"description": "Ex: positive",
 						"type": "string"
@@ -51163,18 +60292,34 @@ window.qm.staticData = {
 						"description": "Ex: 6",
 						"type": "integer"
 					},
-					"variableCategoryImageUrl": {
-						"description": "Ex: https://maxcdn.icons8.com/Color/PNG/96/Household/sleeping_in_bed-96.png",
-						"type": "string"
-					},
 					"variableCategoryName": {
-						"description": "Variable category like Mood, Sleep, Physical Activity, Treatment, Symptom, etc.",
+						"description": "User Variable Setting: Variable category like Emotions, Sleep, Physical Activities, Treatments, Symptoms, etc.",
+						"enum": [
+							"Activity",
+							"Books",
+							"Causes of Illness",
+							"Cognitive Performance",
+							"Conditions",
+							"Emotions",
+							"Environment",
+							"Foods",
+							"Goals",
+							"Locations",
+							"Miscellaneous",
+							"Movies and TV",
+							"Music",
+							"Nutrients",
+							"Payments",
+							"Physical Activities",
+							"Physique",
+							"Sleep",
+							"Social Interactions",
+							"Software",
+							"Symptoms",
+							"Treatments",
+							"Vital Signs"
+						],
 						"type": "string"
-					},
-					"variableFillingValue": {
-						"description": "Ex: -1",
-						"format": "double",
-						"type": "number"
 					},
 					"variableId": {
 						"description": "Ex: 96380",
@@ -51185,12 +60330,12 @@ window.qm.staticData = {
 						"type": "string"
 					},
 					"variance": {
-						"description": "Ex: 115947037.40816",
+						"description": "Statistic: Ex: 115947037.40816",
 						"format": "double",
 						"type": "number"
 					},
 					"wikipediaTitle": {
-						"description": "Ex: ",
+						"description": "User Variable Setting: You can help to improve the studies by pasting the title of the most appropriate Wikipedia article for this variable",
 						"type": "string"
 					}
 				},
@@ -51243,7 +60388,7 @@ window.qm.staticData = {
 						"type": "integer"
 					},
 					"fillingValue": {
-						"description": "Ex: -1",
+						"description": "Ex: -1. Unit: Variable category default unit.",
 						"type": "integer"
 					},
 					"helpText": {
@@ -51267,7 +60412,7 @@ window.qm.staticData = {
 						"type": "boolean"
 					},
 					"maximumAllowedValue": {
-						"description": "Ex: ",
+						"description": "Unit: Variable category default unit.",
 						"type": "string"
 					},
 					"measurementSynonymSingularLowercase": {
@@ -51275,7 +60420,7 @@ window.qm.staticData = {
 						"type": "string"
 					},
 					"minimumAllowedValue": {
-						"description": "Ex: ",
+						"description": "Unit: Variable category default unit.",
 						"type": "string"
 					},
 					"moreInfo": {
@@ -51323,7 +60468,32 @@ window.qm.staticData = {
 						"type": "string"
 					},
 					"variableCategoryName": {
-						"description": "Ex: Emotions",
+						"description": "Ex: Emotions, Treatments, Symptoms...",
+						"enum": [
+							"Activity",
+							"Books",
+							"Causes of Illness",
+							"Cognitive Performance",
+							"Conditions",
+							"Emotions",
+							"Environment",
+							"Foods",
+							"Goals",
+							"Locations",
+							"Miscellaneous",
+							"Movies and TV",
+							"Music",
+							"Nutrients",
+							"Payments",
+							"Physical Activities",
+							"Physique",
+							"Sleep",
+							"Social Interactions",
+							"Software",
+							"Symptoms",
+							"Treatments",
+							"Vital Signs"
+						],
 						"type": "string"
 					},
 					"variableCategoryNameSingular": {
@@ -51391,8 +60561,21 @@ window.qm.staticData = {
 						"type": "integer"
 					},
 					"value": {
-						"description": "Vote: 0 (for implausible) or 1 (for plausible)",
-						"type": "boolean"
+						"description": "Vote down for implausible/not-useful or up for plausible/useful. Vote none to delete a previous vote.",
+						"enum": [
+							"up",
+							"down",
+							"none"
+						],
+						"type": "string"
+					},
+					"type": {
+						"description": "Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do",
+						"enum": [
+							"causality",
+							"usefulness"
+						],
+						"type": "string"
 					}
 				},
 				"required": [
@@ -52017,9 +61200,9 @@ window.qm.staticData = {
 				"type": "integer"
 			},
 			"variableCategoryNameParam": {
-				"description": "Limit results to a specific variable category",
+				"description": "Ex: Emotions, Treatments, Symptoms...",
 				"enum": [
-					"Activity",
+					"Activities",
 					"Books",
 					"Causes of Illness",
 					"Cognitive Performance",
@@ -52041,7 +61224,7 @@ window.qm.staticData = {
 					"Symptoms",
 					"Treatments",
 					"Vital Signs",
-					"Work"
+					"Goals"
 				],
 				"in": "query",
 				"name": "variableCategoryName",
@@ -54814,7 +63997,7 @@ window.qm.staticData = {
 			},
 			"/v3/variableCategories": {
 				"get": {
-					"description": "The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.",
+					"description": "The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Goals.",
 					"operationId": "getVariableCategories",
 					"produces": [
 						"application/json"
