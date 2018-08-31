@@ -4,14 +4,14 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "58c705149765de8cfd5213fe536b1e80",
+    "content-hash": "363107f886896aeaacd759fc54149acb",
     "packages": [
         {
             "name": "WordPress/WordPress",
-            "version": "3.9.3",
+            "version": "4.9.8",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/3.9.2.zip",
+                "url": "https://github.com/WordPress/WordPress/archive/4.9.8.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -181,6 +181,26 @@
             "description": "A composer installer for libraries that live in an application webroot.",
             "homepage": "http://fancyguy.github.com/webroot-installer/",
             "time": "2013-03-15T17:51:14+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/buddypress",
+            "version": "3.1.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/buddypress/",
+                "reference": "tags/3.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/buddypress.3.1.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/buddypress/"
         },
         {
             "name": "wpackagist-plugin/bugsnag",
