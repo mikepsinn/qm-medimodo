@@ -3240,6 +3240,7 @@ window.qm = {
             }
         },
         addIgnoreCommand: function(phrase){
+            if(!qm.mic.annyangAvailable()){return;}
             var commands = {};
             commands[phrase] = function () {
                 qmLog.info("Ignoring robot phrase: "+phrase);
@@ -4291,7 +4292,7 @@ window.qm = {
                 return !!window.chrome && !!window.chrome.webstore;
             },
             isEdge: function () {
-                return !isIE && !!window.StyleMedia;
+                return !qm.platform.browser.isIE() && !!window.StyleMedia;
             },
             isIE: function () {
                 return /*@cc_on!@*/false || !!document.documentMode;
@@ -4590,9 +4591,12 @@ window.qm = {
         getSpeechAvailable: function(){
             if(qm.speech.speechAvailable !== null){return qm.speech.speechAvailable;}
             if(typeof speechSynthesis === "undefined"){
-                if(!qm.appMode.isTesting()){qmLog.error("Speech not available on " + qm.platform.getPlatformAndBrowserString());}
+                if(!qm.appMode.isTesting() || qm.platform.isMobile()){
+                    qmLog.error("Speech not available on " + qm.platform.getPlatformAndBrowserString());
+                }
                 return qm.speech.speechAvailable = qm.speech.speechEnabled = false;
             }
+            qmLog.info("speechSynthesis is available");
             var isWebBrowser = qm.platform.isWeb();
             var isChromeBrowser = qm.platform.browser.isChrome();
             if(isWebBrowser && !isChromeBrowser){
@@ -4677,6 +4681,7 @@ window.qm = {
             }
         },
         talkRobot: function(text, successHandler, errorHandler, resumeListening){
+            qmLog.info("talkRobot: "+text);
             if(!qm.speech.getSpeechAvailable()){
                 if(errorHandler){errorHandler("Speech not available so cannot say " + text);}
                 return false;
@@ -6814,7 +6819,7 @@ window.qm = {
             var HEIGHT = 400;
             var canvas = $('#siri-canvas')[0];
             if(!canvas){
-                qmLog.error("No siri canvas!");
+                qmLog.info("No siri canvas!");
                 return false;
             }
             var ctx = canvas.getContext("2d");

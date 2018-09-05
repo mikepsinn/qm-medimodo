@@ -25486,8 +25486,6 @@ img.intro-primary-outcome-variable-rating-buttons {
   -webkit-animation: dash 6s linear forwards;
   animation: dash 6s linear forwards;
   fill: url(#grad1);
-  -webkit-filter: url(#dropshadow);
-  filter: url(#dropshadow);
   left: 50%;
   margin-left: -160px;
   position: absolute;
