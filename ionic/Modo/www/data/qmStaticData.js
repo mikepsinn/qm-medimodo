@@ -1136,18 +1136,18 @@ var staticData = {
 		"splashScreen": "oMg0F5fmyf_sfzgyc",
 		"textLogo": "nm8LguNtZL_chsco6",
 		"versionNumber": "2.8.917",
-		"androidVersionCode": "2018091791",
-		"builtAt": 1537221606
+		"androidVersionCode": "2018091793",
+		"builtAt": 1537223909
 	},
 	"buildInfo": {
-		"iosCFBundleVersion": "2.8.917.1319",
-		"builtAt": 1537221606,
+		"iosCFBundleVersion": "2.8.917.1357",
+		"builtAt": 1537223909,
 		"versionNumber": "2.8.917",
 		"versionNumbers": {
-			"iosCFBundleVersion": "2.8.917.1319",
-			"androidVersionCode": "2018091791",
+			"iosCFBundleVersion": "2.8.917.1357",
+			"androidVersionCode": "2018091793",
 			"ionicApp": "2.8.917",
-			"buildVersionNumber": "2018091791"
+			"buildVersionNumber": "2018091793"
 		},
 		"gitBranch": "master",
 		"gitCommitShaHash": "fdf9ee361a99ecc95b60d98c63fafa7550035c03"
@@ -34346,7 +34346,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-17 04:53:47",
-			"message": "Got 0 new measurements 17 hours ago.  ",
+			"message": "Got 0 new measurements 18 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -34543,7 +34543,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-17 20:16:59",
-			"message": "Got 0 new measurements 103 minutes ago.  ",
+			"message": "Got 0 new measurements 2 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -34656,7 +34656,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-16 21:56:08",
-			"message": "Got 0 new measurements 24 hours ago.  ",
+			"message": "Got 0 new measurements 25 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -35008,7 +35008,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-17 17:40:46",
-			"message": "Got 0 new measurements 4 hours ago.  ",
+			"message": "Got 0 new measurements 5 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -36004,7 +36004,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-16 18:54:35",
-			"message": "Got 20 new measurements 27 hours ago.  ",
+			"message": "Got 20 new measurements 28 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -36444,7 +36444,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-17 04:51:05",
-			"message": "Got 1 new measurements 17 hours ago.  ",
+			"message": "Got 1 new measurements 18 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
