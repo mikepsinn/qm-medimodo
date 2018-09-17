@@ -733,6 +733,12 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                 // noinspection Annotator
                 chcp.fetchUpdate(qmService.deploy.updateCallback, null);
             },
+            chcpError: function(message, metaData){
+                metaData = metaData || {};
+                metaData.chcpInfo = qmLog.globalMetaData.chcpInfo;
+                metaData.chcpConfig = qm.staticData.chcp;
+                qmLog.error("CHCP: "+message, metaData);
+            },
             installUpdate: function(){
                 qmLog.info('CHCP installUpdate...');
                 // noinspection Annotator
@@ -740,7 +746,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                     qmService.deploy.setVersionInfo();
                     if (error) {
                         qmLog.globalMetaData.chcpInfo.error = error;
-                        qmLog.error('CHCP Install ERROR: '+ JSON.stringify(error));
+                        qmService.deploy.chcpError('CHCP Install ERROR: '+ JSON.stringify(error));
                         qmService.showMaterialAlert('Update error ' + error.code)
                     } else {
                         // Automatically restarts
@@ -753,7 +759,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                 if(error){qmLog.globalMetaData.chcpInfo.error = error;}
                 if(data){qmLog.globalMetaData.chcpInfo.data = data;}
                 if (error) {
-                    qmLog.error("CHCP updateCallback ERROR: ", error);
+                    qmService.deploy.chcpError("CHCP updateCallback ERROR: ", {error: error, data: data});
                 } else {
                     qmLog.info('CHCP update is loaded: ', data);
                     qmService.deploy.installUpdate(qmService.deploy.installUpdateCallback);
@@ -767,11 +773,11 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
             },
             installUpdateCallback: function(error) {
                 if (error) {
-                    qmLog.error("CHCP installUpdateCallback ERROR:", error);
+                    qmService.deploy.chcpError("CHCP installUpdateCallback ERROR:", error);
                     // failed to install the update, should handle this gracefuly;
                     // probably nothing that user can do, just let him in the app.
                 } else {
-                    qmLog.error("CHCP installUpdateCallback Success!");
+                    qmService.deploy.chcpError("CHCP installUpdateCallback Success!");
                     // update installed and user can proceed;
                     // and he will, since the plugin will reload app to the index page.
                 }
@@ -779,7 +785,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
             chcpIsDefined: function(){
                 if(!qm.platform.isMobile()){return false;}
                 if(typeof chcp === "undefined"){
-                    qmLog.error("chcp not defined");
+                    qmService.deploy.chcpError("chcp not defined");
                     return false;
                 }
                 return true;
@@ -789,7 +795,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                 chcp.getVersionInfo(function(error, versionInfo){
                     if(error){
                         qmLog.globalMetaData.chcpInfo.error = error;
-                        qmLog.error("CHCP VERSION ERROR: "+ JSON.stringify(qmLog.globalMetaData.chcpInfo));
+                        qmService.deploy.chcpError("CHCP VERSION ERROR: "+ JSON.stringify(qmLog.globalMetaData.chcpInfo));
                     }
                     if(versionInfo){qmLog.globalMetaData.chcpInfo.versionInfo = versionInfo;}
                     qm.api.getViaXhrOrFetch('chcp.json', function(chcpConfig){
@@ -799,7 +805,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                     }, function (error) {
                         if(error){
                             qmLog.globalMetaData.chcpInfo.error = error;
-                            qmLog.error("CHCP VERSION ERROR: "+ JSON.stringify(qmLog.globalMetaData.chcpInfo));
+                            qmService.deploy.chcpError("CHCP VERSION ERROR: "+ JSON.stringify(qmLog.globalMetaData.chcpInfo));
                         }
                         if(errorHandler){errorHandler(error);}
                     });
@@ -1308,7 +1314,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
         notifications: {
             trackAll: function(trackingReminderNotification, modifiedReminderValue, ev){
                 qm.notifications.deleteByVariableName(trackingReminderNotification.variableName);
-                qm.notifications.track(trackingReminderNotification, modifiedReminderValue, ev, true);
+                qmService.notifications.track(trackingReminderNotification, modifiedReminderValue, ev, true);
                 qmService.logEventToGA(qm.analytics.eventCategories.inbox, "trackAll");
             },
             track: function(trackingReminderNotification, modifiedReminderValue, $event, trackAll, undoCallback){
@@ -1940,7 +1946,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
         stateHelper: {
             previousUrl: null,
             goBack: function (providedStateParams){
-                qmLog.info("Called goBack with state params: "+JSON.stringify(providedStateParams));
+                qmLog.info("goBack: Called goBack with state params: "+JSON.stringify(providedStateParams));
                 if(qmService.stateHelper.previousUrl){
                     qmLog.info("Going to qmService.stateHelper.previousUrl: "+qmService.stateHelper.previousUrl);
                     window.location.href = qmService.stateHelper.previousUrl;
@@ -1971,7 +1977,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                 }
                 if($ionicHistory.viewHistory().backView){
                     var backView = $ionicHistory.backView();
-                    qmLog.info("backView.stateName is " + backView.stateName);
+                    qmLog.info("goBack: backView.stateName is " + backView.stateName);
                     var stateId = backView.stateName;
                     //skipSearchPages();  // TODO:  If we skipSearchPages we have to remove intro page as well
                     if(providedStateParams){
@@ -1980,7 +1986,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                     qmLog.info('Going back to ' + backView.stateId + '  with stateParams ', backView.stateParams, null);
                     $ionicHistory.goBack();
                 } else {
-                    qmLog.info("goToDefaultState because there is no $ionicHistory.viewHistory().backView ");
+                    qmLog.info("goBack: goToDefaultState because there is no $ionicHistory.viewHistory().backView ");
                     qmService.goToDefaultState(providedStateParams);
                 }
             },
@@ -3247,13 +3253,16 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
     qmService.setUser = function(user){
         qmLog.authDebug("Setting user to: ", user, user);
         qmService.rootScope.setUser(user);
-        if(user && !user.stripeActive && qm.getAppSettings().additionalSettings.monetizationSettings.advertisingEnabled){
+        qm.userHelper.setUser(user);
+        if(!qm.getAppSettings()){
+            qmLog.error("Can't get qm.getAppSettings for some reason!");
+            return;
+        }
+        if(user && !user.stripeActive && qm.getAppSettings() && qm.getAppSettings().additionalSettings.monetizationSettings.advertisingEnabled){
             qmService.adBanner.initialize();
-
         } else {
             qmLog.info("admob: Not initializing for some reason")
         }
-        qm.userHelper.setUser(user);
     };
     qmService.setUserInLocalStorageBugsnagIntercomPush = function(user){
         qmLogService.debug('setUserInLocalStorageBugsnagIntercomPush:', null, user);
@@ -5538,6 +5547,11 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
     };
     qmService.setupHelpCards = function () {
         if(qm.storage.getItem(qm.items.defaultHelpCards)){return qm.storage.getItem(qm.items.defaultHelpCards);}
+        if(!qm.getAppSettings()){
+            qmLog.error("No appSettings to setup help cards!");
+            qm.getAppSettings();
+            return;
+        }
         qm.storage.setItem(qm.items.defaultHelpCards, qm.getAppSettings().appDesign.helpCard.active);
         return qm.getAppSettings().appDesign.helpCard.active;
     };
@@ -6450,6 +6464,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
     };
     qmService.processAndSaveAppSettings = function(appSettings, callback){
         qmLog.debug("processAndSaveAppSettings for " + appSettings.clientId, null, appSettings);
+        appSettings.doctorRobotAlias = qm.appsManager.getDoctorRobotoAlias(appSettings);
         function changeFavicon(){
             /** @namespace $rootScope.appSettings.additionalSettings.appImages.favicon */
             if(!qm.getAppSettings().favicon){return;}
@@ -6931,7 +6946,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
             if (trackingReminder.tally !== null) {
                 qmService.postMeasurementByReminder(trackingReminder, trackingReminder.tally)
                     .then(function () {
-                        qmLogService.debug('Successfully qmService.postMeasurementByReminder: ', trackingReminder, null);
+                        qmLogService.debug('Successfully qmService.postMeasurementByReminder: ', trackingReminder);
                     }, function (error) {
                         qmLogService.error(error);
                         qmLogService.error('Failed to Track by favorite! ', trackingReminder);
