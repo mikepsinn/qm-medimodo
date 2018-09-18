@@ -1063,7 +1063,7 @@
 	"buttons": [
 		{
 			"accessibilityText": "Go to Inbox",
-			"action": null,
+			"action": "https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/reminders-inbox",
 			"additionalInformation": null,
 			"color": "#0f9d58",
 			"confirmationText": null,
@@ -1088,7 +1088,7 @@
 		},
 		{
 			"accessibilityText": "Manage Reminders",
-			"action": null,
+			"action": "https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/reminders-manage",
 			"additionalInformation": null,
 			"color": "#0f9d58",
 			"confirmationText": null,
@@ -1134,7 +1134,7 @@
 	"updatedAt": "2018-09-16 18:00:01",
 	"splashScreen": "oMg0F5fmyf_sfzgyc",
 	"textLogo": "nm8LguNtZL_chsco6",
-	"versionNumber": "2.8.917",
-	"androidVersionCode": "2018091793",
-	"builtAt": 1537223909
+	"versionNumber": "2.8.918",
+	"androidVersionCode": "2018091818",
+	"builtAt": 1537244998
 }

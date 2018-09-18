@@ -29,7 +29,7 @@
   "backgroundColor": "#3b579d",
   "buttons": [{
     "accessibilityText": "Connect",
-    "action": null,
+    "action": "https://app.quantimo.do/api/connectors/facebook/connect",
     "additionalInformation": null,
     "color": "#0f9d58",
     "confirmationText": null,
@@ -105,7 +105,7 @@
   "backgroundColor": "#e4405f",
   "buttons": [{
     "accessibilityText": "Connect",
-    "action": null,
+    "action": "https://app.quantimo.do/api/connectors/github/connect",
     "additionalInformation": null,
     "color": "#0f9d58",
     "confirmationText": null,
@@ -176,7 +176,7 @@
   "backgroundColor": "#23448b",
   "buttons": [{
     "accessibilityText": "Connect",
-    "action": null,
+    "action": "https://app.quantimo.do/api/connectors/gmail/connect",
     "additionalInformation": null,
     "color": "#0f9d58",
     "confirmationText": null,
@@ -248,7 +248,7 @@
   "backgroundColor": "#2c6efc",
   "buttons": [{
     "accessibilityText": "Connect",
-    "action": null,
+    "action": "https://app.quantimo.do/api/connectors/googlecalendar/connect",
     "additionalInformation": null,
     "color": "#0f9d58",
     "confirmationText": null,
@@ -320,7 +320,7 @@
   "backgroundColor": "#00a3ad",
   "buttons": [{
     "accessibilityText": "Connect",
-    "action": null,
+    "action": "https://app.quantimo.do/api/connectors/googlefit/connect",
     "additionalInformation": null,
     "color": "#0f9d58",
     "confirmationText": null,
@@ -392,7 +392,7 @@
   "backgroundColor": "#23448b",
   "buttons": [{
     "accessibilityText": "Connect",
-    "action": null,
+    "action": "https://app.quantimo.do/api/connectors/googleplus/connect",
     "additionalInformation": null,
     "color": "#0f9d58",
     "confirmationText": null,
@@ -468,7 +468,7 @@
   "backgroundColor": "#e4405f",
   "buttons": [{
     "accessibilityText": "Connect",
-    "action": null,
+    "action": "https://app.quantimo.do/api/connectors/linkedin/connect",
     "additionalInformation": null,
     "color": "#0f9d58",
     "confirmationText": null,
@@ -543,7 +543,7 @@
   "backgroundColor": "#e4405f",
   "buttons": [{
     "accessibilityText": "Go to Inbox",
-    "action": null,
+    "action": "https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/reminders-inbox",
     "additionalInformation": null,
     "color": "#0f9d58",
     "confirmationText": null,
@@ -567,7 +567,7 @@
     "webhookUrl": null
   }, {
     "accessibilityText": "Manage Reminders",
-    "action": null,
+    "action": "https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/reminders-manage",
     "additionalInformation": null,
     "color": "#0f9d58",
     "confirmationText": null,
@@ -643,7 +643,7 @@
   "backgroundColor": "#fc4c02",
   "buttons": [{
     "accessibilityText": "Connect",
-    "action": null,
+    "action": "https://app.quantimo.do/api/connectors/strava/connect",
     "additionalInformation": null,
     "color": "#0f9d58",
     "confirmationText": null,
@@ -714,7 +714,7 @@
   "backgroundColor": "#e4405f",
   "buttons": [{
     "accessibilityText": "Connect",
-    "action": null,
+    "action": "https://app.quantimo.do/api/connectors/twitter/connect",
     "additionalInformation": null,
     "color": "#0f9d58",
     "confirmationText": null,

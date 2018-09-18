@@ -1064,7 +1064,7 @@ var staticData = {
 		"buttons": [
 			{
 				"accessibilityText": "Go to Inbox",
-				"action": null,
+				"action": "https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/reminders-inbox",
 				"additionalInformation": null,
 				"color": "#0f9d58",
 				"confirmationText": null,
@@ -1089,7 +1089,7 @@ var staticData = {
 			},
 			{
 				"accessibilityText": "Manage Reminders",
-				"action": null,
+				"action": "https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/reminders-manage",
 				"additionalInformation": null,
 				"color": "#0f9d58",
 				"confirmationText": null,
@@ -1135,19 +1135,19 @@ var staticData = {
 		"updatedAt": "2018-09-16 18:00:01",
 		"splashScreen": "oMg0F5fmyf_sfzgyc",
 		"textLogo": "nm8LguNtZL_chsco6",
-		"versionNumber": "2.8.917",
-		"androidVersionCode": "2018091793",
-		"builtAt": 1537223909
+		"versionNumber": "2.8.918",
+		"androidVersionCode": "2018091818",
+		"builtAt": 1537244998
 	},
 	"buildInfo": {
-		"iosCFBundleVersion": "2.8.917.1357",
-		"builtAt": 1537223909,
-		"versionNumber": "2.8.917",
+		"iosCFBundleVersion": "2.8.918.269",
+		"builtAt": 1537244998,
+		"versionNumber": "2.8.918",
 		"versionNumbers": {
-			"iosCFBundleVersion": "2.8.917.1357",
-			"androidVersionCode": "2018091793",
-			"ionicApp": "2.8.917",
-			"buildVersionNumber": "2018091793"
+			"iosCFBundleVersion": "2.8.918.269",
+			"androidVersionCode": "2018091818",
+			"ionicApp": "2.8.918",
+			"buildVersionNumber": "2018091818"
 		},
 		"gitBranch": "master",
 		"gitCommitShaHash": "fdf9ee361a99ecc95b60d98c63fafa7550035c03"
@@ -1602,11 +1602,11 @@ var staticData = {
 			"numberOfCorrelations": 324,
 			"numberOfCorrelationsAsCause": 178,
 			"numberOfCorrelationsAsEffect": 470,
-			"numberOfRawMeasurements": 32785,
-			"numberOfTrackingReminders": 127,
+			"numberOfRawMeasurements": 32786,
+			"numberOfTrackingReminders": 128,
 			"numberOfUserCorrelationsAsCause": 89,
 			"numberOfUserCorrelationsAsEffect": 235,
-			"numberOfUserVariables": 1395,
+			"numberOfUserVariables": 1396,
 			"outcome": true,
 			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png",
 			"public": true,
@@ -1636,11 +1636,11 @@ var staticData = {
 			"numberOfCorrelations": 310,
 			"numberOfCorrelationsAsCause": 176,
 			"numberOfCorrelationsAsEffect": 444,
-			"numberOfRawMeasurements": 22458,
-			"numberOfTrackingReminders": 123,
+			"numberOfRawMeasurements": 22459,
+			"numberOfTrackingReminders": 124,
 			"numberOfUserCorrelationsAsCause": 88,
 			"numberOfUserCorrelationsAsEffect": 222,
-			"numberOfUserVariables": 1384,
+			"numberOfUserVariables": 1385,
 			"outcome": true,
 			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png",
 			"public": true,
@@ -1766,11 +1766,11 @@ var staticData = {
 			"numberOfCorrelations": 311,
 			"numberOfCorrelationsAsCause": 158,
 			"numberOfCorrelationsAsEffect": 464,
-			"numberOfRawMeasurements": 21764,
-			"numberOfTrackingReminders": 158,
+			"numberOfRawMeasurements": 21765,
+			"numberOfTrackingReminders": 159,
 			"numberOfUserCorrelationsAsCause": 79,
 			"numberOfUserCorrelationsAsEffect": 232,
-			"numberOfUserVariables": 1303,
+			"numberOfUserVariables": 1304,
 			"outcome": true,
 			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png",
 			"public": true,
@@ -1864,11 +1864,11 @@ var staticData = {
 			"numberOfCorrelations": 213,
 			"numberOfCorrelationsAsCause": 426,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 1218794,
+			"numberOfRawMeasurements": 1219036,
 			"numberOfTrackingReminders": 4,
 			"numberOfUserCorrelationsAsCause": 213,
 			"numberOfUserCorrelationsAsEffect": 0,
-			"numberOfUserVariables": 776,
+			"numberOfUserVariables": 778,
 			"outcome": false,
 			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/environment.png",
 			"public": true,
@@ -1962,11 +1962,11 @@ var staticData = {
 			"numberOfCorrelations": 207,
 			"numberOfCorrelationsAsCause": 414,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 1201229,
+			"numberOfRawMeasurements": 1201231,
 			"numberOfTrackingReminders": 2,
 			"numberOfUserCorrelationsAsCause": 207,
 			"numberOfUserCorrelationsAsEffect": 0,
-			"numberOfUserVariables": 748,
+			"numberOfUserVariables": 749,
 			"outcome": false,
 			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/environment.png",
 			"public": true,
@@ -2065,11 +2065,11 @@ var staticData = {
 			"numberOfCorrelations": 204,
 			"numberOfCorrelationsAsCause": 408,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 1205628,
+			"numberOfRawMeasurements": 1205874,
 			"numberOfTrackingReminders": 1,
 			"numberOfUserCorrelationsAsCause": 204,
 			"numberOfUserCorrelationsAsEffect": 0,
-			"numberOfUserVariables": 580,
+			"numberOfUserVariables": 581,
 			"outcome": false,
 			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/environment.png",
 			"public": true,
@@ -2199,7 +2199,7 @@ var staticData = {
 			"numberOfTrackingReminders": 211,
 			"numberOfUserCorrelationsAsCause": 135,
 			"numberOfUserCorrelationsAsEffect": 0,
-			"numberOfUserVariables": 352,
+			"numberOfUserVariables": 353,
 			"outcome": false,
 			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/foods.png",
 			"public": true,
@@ -2291,7 +2291,7 @@ var staticData = {
 			"numberOfCorrelations": 774,
 			"numberOfCorrelationsAsCause": 338,
 			"numberOfCorrelationsAsEffect": 1210,
-			"numberOfRawMeasurements": 2294229,
+			"numberOfRawMeasurements": 2294408,
 			"numberOfTrackingReminders": 20,
 			"numberOfUserCorrelationsAsCause": 169,
 			"numberOfUserCorrelationsAsEffect": 605,
@@ -2957,7 +2957,7 @@ var staticData = {
 			"numberOfCorrelations": 162,
 			"numberOfCorrelationsAsCause": 324,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 20474,
+			"numberOfRawMeasurements": 20475,
 			"numberOfTrackingReminders": 2,
 			"numberOfUserCorrelationsAsCause": 162,
 			"numberOfUserCorrelationsAsEffect": 0,
@@ -3374,11 +3374,11 @@ var staticData = {
 			"numberOfCorrelations": 156,
 			"numberOfCorrelationsAsCause": 312,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 1908,
-			"numberOfTrackingReminders": 128,
+			"numberOfRawMeasurements": 1911,
+			"numberOfTrackingReminders": 129,
 			"numberOfUserCorrelationsAsCause": 156,
 			"numberOfUserCorrelationsAsEffect": 0,
-			"numberOfUserVariables": 113,
+			"numberOfUserVariables": 114,
 			"outcome": false,
 			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.png",
 			"public": true,
@@ -3631,7 +3631,7 @@ var staticData = {
 			"numberOfCorrelations": 744,
 			"numberOfCorrelationsAsCause": 320,
 			"numberOfCorrelationsAsEffect": 1168,
-			"numberOfRawMeasurements": 172174,
+			"numberOfRawMeasurements": 172175,
 			"numberOfTrackingReminders": 34,
 			"numberOfUserCorrelationsAsCause": 160,
 			"numberOfUserCorrelationsAsEffect": 584,
@@ -4060,7 +4060,7 @@ var staticData = {
 			"numberOfCorrelations": 493,
 			"numberOfCorrelationsAsCause": 250,
 			"numberOfCorrelationsAsEffect": 736,
-			"numberOfRawMeasurements": 6419,
+			"numberOfRawMeasurements": 6420,
 			"numberOfTrackingReminders": 19,
 			"numberOfUserCorrelationsAsCause": 125,
 			"numberOfUserCorrelationsAsEffect": 368,
@@ -4093,7 +4093,7 @@ var staticData = {
 			"numberOfCorrelations": 25,
 			"numberOfCorrelationsAsCause": 18,
 			"numberOfCorrelationsAsEffect": 32,
-			"numberOfRawMeasurements": 725,
+			"numberOfRawMeasurements": 726,
 			"numberOfTrackingReminders": 94,
 			"numberOfUserCorrelationsAsCause": 9,
 			"numberOfUserCorrelationsAsEffect": 16,
@@ -4125,7 +4125,7 @@ var staticData = {
 			"numberOfCorrelations": 31,
 			"numberOfCorrelationsAsCause": 62,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 825,
+			"numberOfRawMeasurements": 826,
 			"numberOfTrackingReminders": 90,
 			"numberOfUserCorrelationsAsCause": 31,
 			"numberOfUserCorrelationsAsEffect": 0,
@@ -4515,7 +4515,7 @@ var staticData = {
 			"numberOfCorrelations": 77,
 			"numberOfCorrelationsAsCause": 154,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 596,
+			"numberOfRawMeasurements": 597,
 			"numberOfTrackingReminders": 56,
 			"numberOfUserCorrelationsAsCause": 77,
 			"numberOfUserCorrelationsAsEffect": 0,
@@ -4776,7 +4776,7 @@ var staticData = {
 			"numberOfCorrelations": 703,
 			"numberOfCorrelationsAsCause": 296,
 			"numberOfCorrelationsAsEffect": 1110,
-			"numberOfRawMeasurements": 16028,
+			"numberOfRawMeasurements": 16030,
 			"numberOfTrackingReminders": 4,
 			"numberOfUserCorrelationsAsCause": 148,
 			"numberOfUserCorrelationsAsEffect": 555,
@@ -8377,7 +8377,7 @@ var staticData = {
 			"name": "Purchases of Kitchen & Dining Features",
 			"numberOfAggregateCorrelationsAsCause": 1,
 			"numberOfAggregateCorrelationsAsEffect": 0,
-			"numberCommonTaggedBy": 217,
+			"numberCommonTaggedBy": 218,
 			"numberOfCommonTags": 0,
 			"numberOfCorrelations": 1,
 			"numberOfCorrelationsAsCause": 2,
@@ -15659,7 +15659,7 @@ var staticData = {
 			"numberOfCorrelations": 13,
 			"numberOfCorrelationsAsCause": 26,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 39,
+			"numberOfRawMeasurements": 40,
 			"numberOfTrackingReminders": 3,
 			"numberOfUserCorrelationsAsCause": 13,
 			"numberOfUserCorrelationsAsEffect": 0,
@@ -15788,8 +15788,8 @@ var staticData = {
 			"numberOfCorrelations": 40,
 			"numberOfCorrelationsAsCause": 80,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 186,
-			"numberOfTrackingReminders": 3,
+			"numberOfRawMeasurements": 187,
+			"numberOfTrackingReminders": 2,
 			"numberOfUserCorrelationsAsCause": 40,
 			"numberOfUserCorrelationsAsEffect": 0,
 			"numberOfUserVariables": 6,
@@ -18558,7 +18558,7 @@ var staticData = {
 			"numberOfCorrelations": 66,
 			"numberOfCorrelationsAsCause": 132,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 915,
+			"numberOfRawMeasurements": 916,
 			"numberOfTrackingReminders": 2,
 			"numberOfUserCorrelationsAsCause": 66,
 			"numberOfUserCorrelationsAsEffect": 0,
@@ -21916,8 +21916,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg",
 			"synonyms": [
 				"Acidic Foods",
-				"Acidic Foods - 6-oz Granules: Guaranteed",
-				"Acidic Food"
+				"Acidic Foods - 6-oz Granules: Guaranteed"
 			],
 			"unitAbbreviatedName": "count",
 			"userId": null,
@@ -22111,8 +22110,7 @@ var staticData = {
 			"subtitle": "1 studies",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
-				"Purchases of Oils",
-				"Purchases of Oil"
+				"Purchases of Oils"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -22277,9 +22275,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
 				"Games",
-				"Purchases of Games",
-				"Game",
-				"Purchases of Game"
+				"Purchases of Games"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -22412,8 +22408,7 @@ var staticData = {
 			"synonyms": [
 				"Potatoes",
 				"Potatoes - Russet",
-				"Potatoes - Russet, Flesh And Skin, Baked",
-				"Potato"
+				"Potatoes - Russet, Flesh And Skin, Baked"
 			],
 			"unitAbbreviatedName": "serving",
 			"userId": null,
@@ -22577,9 +22572,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
 				"AC Adapters",
-				"Purchases of AC Adapters",
-				"AC Adapter",
-				"Purchases of AC Adapter"
+				"Purchases of AC Adapters"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -22909,9 +22902,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/foods.svg",
 			"synonyms": [
 				"McDONALDS",
-				"McDONALDS, Chicken McNUGGETS",
-				"McDONALD",
-				"McDONALDS, Chicken McNUGGET"
+				"McDONALDS, Chicken McNUGGETS"
 			],
 			"unitAbbreviatedName": "serving",
 			"userId": null,
@@ -23042,9 +23033,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
 				"HD Movies",
-				"Purchases of HD Movies",
-				"HD Movie",
-				"Purchases of HD Movie"
+				"Purchases of HD Movies"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -23109,9 +23098,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
 				"International Shipping Pet Supplies",
-				"Purchases of International Shipping Pet Supplies",
-				"International Shipping Pet Supply",
-				"Purchases of International Shipping Pet Supply"
+				"Purchases of International Shipping Pet Supplies"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -23176,8 +23163,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/symptoms.svg",
 			"synonyms": [
-				"Hypomania",
-				"Hypomanium"
+				"Hypomania"
 			],
 			"unitAbbreviatedName": "h",
 			"userId": null,
@@ -23530,8 +23516,7 @@ var staticData = {
 			"subtitle": "1 studies",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/symptoms.svg",
 			"synonyms": [
-				"Dermatillomania",
-				"Dermatillomanium"
+				"Dermatillomania"
 			],
 			"unitAbbreviatedName": "/5",
 			"userId": null,
@@ -23659,8 +23644,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/symptoms.svg",
 			"synonyms": [
-				"Bumps",
-				"Bump"
+				"Bumps"
 			],
 			"unitAbbreviatedName": "count",
 			"userId": null,
@@ -23789,9 +23773,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
 				"Power & Hand Tools",
-				"Purchases of Power & Hand Tools",
-				"Power & Hand Tool",
-				"Purchases of Power & Hand Tool"
+				"Purchases of Power & Hand Tools"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -23921,9 +23903,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
 				"Vacuum Sealers",
-				"Purchases of Vacuum Sealers",
-				"Vacuum Sealer",
-				"Purchases of Vacuum Sealer"
+				"Purchases of Vacuum Sealers"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -23955,8 +23935,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/foods.svg",
 			"synonyms": [
-				"Chicken Nuggets",
-				"Chicken Nugget"
+				"Chicken Nuggets"
 			],
 			"unitAbbreviatedName": "cal",
 			"userId": null,
@@ -23988,8 +23967,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/symptoms.svg",
 			"synonyms": [
-				"Laziness",
-				"Lazines"
+				"Laziness"
 			],
 			"unitAbbreviatedName": "/5",
 			"userId": null,
@@ -24085,8 +24063,7 @@ var staticData = {
 			"subtitle": "1 studies",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/symptoms.svg",
 			"synonyms": [
-				"Agoraphobia",
-				"Agoraphobium"
+				"Agoraphobia"
 			],
 			"unitAbbreviatedName": "/5",
 			"userId": null,
@@ -24410,8 +24387,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
-				"Purchases of Movies",
-				"Purchases of Movie"
+				"Purchases of Movies"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -24764,8 +24740,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/foods.svg",
 			"synonyms": [
-				"Oreos",
-				"Oreo"
+				"Oreos"
 			],
 			"unitAbbreviatedName": "serving",
 			"userId": null,
@@ -24946,7 +24921,7 @@ var staticData = {
 			"numberOfCorrelations": 68,
 			"numberOfCorrelationsAsCause": 116,
 			"numberOfCorrelationsAsEffect": 20,
-			"numberOfRawMeasurements": 572,
+			"numberOfRawMeasurements": 573,
 			"numberOfTrackingReminders": 1,
 			"numberOfUserCorrelationsAsCause": 58,
 			"numberOfUserCorrelationsAsEffect": 10,
@@ -25022,8 +24997,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/foods.svg",
 			"synonyms": [
 				"Fast Foods",
-				"Fast Foods, Quesadilla, With Chicken",
-				"Fast Food"
+				"Fast Foods, Quesadilla, With Chicken"
 			],
 			"unitAbbreviatedName": "serving",
 			"userId": null,
@@ -25187,8 +25161,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/foods.svg",
 			"synonyms": [
-				"Hashed Browns",
-				"Hashed Brown"
+				"Hashed Browns"
 			],
 			"unitAbbreviatedName": "serving",
 			"userId": null,
@@ -25483,8 +25456,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/foods.svg",
 			"synonyms": [
 				"Snacks",
-				"Snacks, Pretzels, Hard, Plain, Salted",
-				"Snack"
+				"Snacks, Pretzels, Hard, Plain, Salted"
 			],
 			"unitAbbreviatedName": "serving",
 			"userId": null,
@@ -25582,9 +25554,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg",
 			"synonyms": [
 				"Purchases of Herbs",
-				"Purchases of Herbs, Spices & Seasonings",
-				"Purchases of Herb",
-				"Purchases of Herbs, Spices & Seasoning"
+				"Purchases of Herbs, Spices & Seasonings"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -25618,9 +25588,7 @@ var staticData = {
 			"synonyms": [
 				"Muffins, Blueberry, Commercially Prepared",
 				"Includes Mini-muffins",
-				"Muffins",
-				"Includes Mini-muffin",
-				"Muffin"
+				"Muffins"
 			],
 			"unitAbbreviatedName": "serving",
 			"userId": null,
@@ -25974,8 +25942,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/foods.svg",
 			"synonyms": [
-				"Chocolate Coco Krispis",
-				"Chocolate Coco Krispi"
+				"Chocolate Coco Krispis"
 			],
 			"unitAbbreviatedName": "serving",
 			"userId": null,
@@ -26138,8 +26105,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
-				"Purchases of Video Games",
-				"Purchases of Video Game"
+				"Purchases of Video Games"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -26460,8 +26426,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
-				"Purchases of Kitchen & Bath Fixtures",
-				"Purchases of Kitchen & Bath Fixture"
+				"Purchases of Kitchen & Bath Fixtures"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -26494,8 +26459,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/foods.svg",
 			"synonyms": [
 				"Hummus",
-				"Hummus, Commercial",
-				"Hummu"
+				"Hummus, Commercial"
 			],
 			"unitAbbreviatedName": "serving",
 			"userId": null,
@@ -26527,8 +26491,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
-				"Purchases of Lab & Scientific Products",
-				"Purchases of Lab & Scientific Product"
+				"Purchases of Lab & Scientific Products"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -26624,8 +26587,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/symptoms.svg",
 			"synonyms": [
-				"Angryness",
-				"Angrynes"
+				"Angryness"
 			],
 			"unitAbbreviatedName": "/5",
 			"userId": null,
@@ -26754,8 +26716,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/foods.svg",
 			"synonyms": [
-				"Mixed Vegetables",
-				"Mixed Vegetable"
+				"Mixed Vegetables"
 			],
 			"unitAbbreviatedName": "serving",
 			"userId": null,
@@ -27019,9 +26980,7 @@ var staticData = {
 				"Cereals - Oats, Regular And Quick And Instant, Unenriched, Cooked With Water, Without Salt",
 				"oatmeal",
 				"Cereals",
-				"Cereals - Oats",
-				"Cereal",
-				"Cereals - Oat"
+				"Cereals - Oats"
 			],
 			"unitAbbreviatedName": "serving",
 			"userId": null,
@@ -27056,8 +27015,7 @@ var staticData = {
 				"Home & Kitchen Features",
 				"Brother CS6000i Feature-Rich Sewing Machine With 60 Built-In Stitches, 7 styles of 1-Step Auto-Size Buttonholes, Quilting Table, and Hard Cover",
 				"Brother CS6000i Feature-Rich Sewing Machine",
-				"Purchases of Brother CS6000i Feature-Rich Sewing Machine",
-				"Home & Kitchen Feature"
+				"Purchases of Brother CS6000i Feature-Rich Sewing Machine"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -27091,8 +27049,7 @@ var staticData = {
 			"synonyms": [
 				"Cereals - Granola, Homemade",
 				"Cereals",
-				"Cereals - Granola",
-				"Cereal"
+				"Cereals - Granola"
 			],
 			"unitAbbreviatedName": "g",
 			"userId": null,
@@ -27125,9 +27082,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
 				"Sewing Machines",
-				"Purchases of Sewing Machines",
-				"Sewing Machine",
-				"Purchases of Sewing Machine"
+				"Purchases of Sewing Machines"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -27288,8 +27243,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/symptoms.svg",
 			"synonyms": [
-				"Light-headedness",
-				"Light-headednes"
+				"Light-headedness"
 			],
 			"unitAbbreviatedName": "/5",
 			"userId": null,
@@ -27900,9 +27854,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/foods.svg",
 			"synonyms": [
 				"Fast Foods",
-				"Fast Foods, Hamburger; Single, Regular Patty; With Condiments",
-				"Fast Food",
-				"Fast Foods, Hamburger; Single, Regular Patty; With Condiment"
+				"Fast Foods, Hamburger; Single, Regular Patty; With Condiments"
 			],
 			"unitAbbreviatedName": "serving",
 			"userId": null,
@@ -28000,9 +27952,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
 				"Accessory Kits",
-				"Purchases of Accessory Kits",
-				"Accessory Kit",
-				"Purchases of Accessory Kit"
+				"Purchases of Accessory Kits"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -28388,8 +28338,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg",
 			"synonyms": [
-				"Purchases of Multiple Vitamin-Mineral Supplements",
-				"Purchases of Multiple Vitamin-Mineral Supplement"
+				"Purchases of Multiple Vitamin-Mineral Supplements"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -28455,8 +28404,7 @@ var staticData = {
 			"synonyms": [
 				"Insomnia",
 				"Trouble Sleeping",
-				"Insomnia/Trouble Sleeping",
-				"Insomnium"
+				"Insomnia/Trouble Sleeping"
 			],
 			"unitAbbreviatedName": "/5",
 			"userId": null,
@@ -28520,8 +28468,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/foods.svg",
 			"synonyms": [
-				"Home Fried Potatoes",
-				"Home Fried Potato"
+				"Home Fried Potatoes"
 			],
 			"unitAbbreviatedName": "serving",
 			"userId": null,
@@ -28542,7 +28489,7 @@ var staticData = {
 			"numberOfCorrelations": 29,
 			"numberOfCorrelationsAsCause": 58,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 759,
+			"numberOfRawMeasurements": 760,
 			"numberOfTrackingReminders": 1,
 			"numberOfUserCorrelationsAsCause": 29,
 			"numberOfUserCorrelationsAsEffect": 0,
@@ -28618,8 +28565,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg",
 			"synonyms": [
-				"Floss",
-				"Flos"
+				"Floss"
 			],
 			"unitAbbreviatedName": "applications",
 			"userId": null,
@@ -28652,9 +28598,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
 				"Screen Protectors",
-				"Purchases of Screen Protectors",
-				"Screen Protector",
-				"Purchases of Screen Protector"
+				"Purchases of Screen Protectors"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -28976,8 +28920,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/foods.svg",
 			"synonyms": [
-				"White Chocolate Dipped Mixed Nuts",
-				"White Chocolate Dipped Mixed Nut"
+				"White Chocolate Dipped Mixed Nuts"
 			],
 			"unitAbbreviatedName": "serving",
 			"userId": null,
@@ -29042,9 +28985,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
 				"USB Cables",
-				"Purchases of USB Cables",
-				"USB Cable",
-				"Purchases of USB Cable"
+				"Purchases of USB Cables"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -29077,9 +29018,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
 				"Computer Accessories & Peripherals",
-				"Purchases of Computer Accessories & Peripherals",
-				"Computer Accessories & Peripheral",
-				"Purchases of Computer Accessories & Peripheral"
+				"Purchases of Computer Accessories & Peripherals"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -29176,9 +29115,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/foods.svg",
 			"synonyms": [
 				"Donettes Mini Donuts",
-				"Donettes Mini Donuts By Hostess",
-				"Donettes Mini Donut",
-				"Donettes Mini Donuts By Hostes"
+				"Donettes Mini Donuts By Hostess"
 			],
 			"unitAbbreviatedName": "g",
 			"userId": null,
@@ -29467,9 +29404,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
 				"Cables & Interconnects",
-				"Purchases of Cables & Interconnects",
-				"Cables & Interconnect",
-				"Purchases of Cables & Interconnect"
+				"Purchases of Cables & Interconnects"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -29664,8 +29599,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/foods.svg",
 			"synonyms": [
 				"Breakfast Menu Entrees Veggie-cheese Ome W Eggbeaters",
-				"Breakfast Menu Entrees Veggie-cheese Ome W Eggbeaters By Denny",
-				"Breakfast Menu Entrees Veggie-cheese Ome W Eggbeater"
+				"Breakfast Menu Entrees Veggie-cheese Ome W Eggbeaters By Denny"
 			],
 			"unitAbbreviatedName": "g",
 			"userId": null,
@@ -29697,8 +29631,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
-				"Purchases of Top Dog Supplies",
-				"Purchases of Top Dog Supply"
+				"Purchases of Top Dog Supplies"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -29829,8 +29762,7 @@ var staticData = {
 			"synonyms": [
 				"Pain In Buttocks",
 				"Hip Area",
-				"Pain In Buttocks / Hip Area",
-				"Pain In Buttock"
+				"Pain In Buttocks / Hip Area"
 			],
 			"unitAbbreviatedName": "/5",
 			"userId": null,
@@ -29928,8 +29860,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
-				"Purchases of Exercise & Fitness",
-				"Purchases of Exercise & Fitnes"
+				"Purchases of Exercise & Fitness"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -29994,8 +29925,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
-				"Purchases of Sports & Fitness",
-				"Purchases of Sports & Fitnes"
+				"Purchases of Sports & Fitness"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -30219,8 +30149,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/foods.svg",
 			"synonyms": [
-				"Cookies",
-				"Cooky"
+				"Cookies"
 			],
 			"unitAbbreviatedName": "g",
 			"userId": null,
@@ -30350,8 +30279,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/foods.svg",
 			"synonyms": [
 				"French Fries",
-				"Large",
-				"French Fry"
+				"Large"
 			],
 			"unitAbbreviatedName": "serving",
 			"userId": null,
@@ -30513,8 +30441,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/foods.svg",
 			"synonyms": [
 				"Sloppy Joes ",
-				"Sloppy Joes",
-				"Sloppy Jo"
+				"Sloppy Joes"
 			],
 			"unitAbbreviatedName": "serving",
 			"userId": null,
@@ -30643,8 +30570,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
-				"Purchases of Vegetables",
-				"Purchases of Vegetable"
+				"Purchases of Vegetables"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -30923,7 +30849,7 @@ var staticData = {
 			"numberOfCorrelations": 3,
 			"numberOfCorrelationsAsCause": 6,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 419,
+			"numberOfRawMeasurements": 420,
 			"numberOfTrackingReminders": 1,
 			"numberOfUserCorrelationsAsCause": 3,
 			"numberOfUserCorrelationsAsEffect": 0,
@@ -31095,8 +31021,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
-				"Kitchen & Dining Features",
-				"Kitchen & Dining Feature"
+				"Kitchen & Dining Features"
 			],
 			"unitAbbreviatedName": "serving",
 			"userId": null,
@@ -31549,8 +31474,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg",
 			"synonyms": [
 				"Inositol & Choline",
-				"Inositol & Choline By Source Naturals",
-				"Inositol & Choline By Source Natural"
+				"Inositol & Choline By Source Naturals"
 			],
 			"unitAbbreviatedName": "mg",
 			"userId": null,
@@ -31583,9 +31507,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
 				"T-Shirts",
-				"Purchases of T-Shirts",
-				"T-Shirt",
-				"Purchases of T-Shirt"
+				"Purchases of T-Shirts"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -31617,8 +31539,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg",
 			"synonyms": [
-				"Amphetamines",
-				"Amphetamine"
+				"Amphetamines"
 			],
 			"unitAbbreviatedName": "g",
 			"userId": null,
@@ -31671,7 +31592,7 @@ var staticData = {
 			"numberOfCorrelations": 4,
 			"numberOfCorrelationsAsCause": 8,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 617,
+			"numberOfRawMeasurements": 618,
 			"numberOfTrackingReminders": 1,
 			"numberOfUserCorrelationsAsCause": 4,
 			"numberOfUserCorrelationsAsEffect": 0,
@@ -31911,9 +31832,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
 				"HDMI Cables",
-				"Purchases of HDMI Cables",
-				"HDMI Cable",
-				"Purchases of HDMI Cable"
+				"Purchases of HDMI Cables"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -32043,8 +31962,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg",
 			"synonyms": [
 				"Anxious",
-				"Anxious: Using The Brain To Understand And Treat Fear And Anxiety",
-				"Anxiou"
+				"Anxious: Using The Brain To Understand And Treat Fear And Anxiety"
 			],
 			"unitAbbreviatedName": "/5",
 			"userId": null,
@@ -32076,8 +31994,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg",
 			"synonyms": [
-				"Supplements",
-				"Supplement"
+				"Supplements"
 			],
 			"unitAbbreviatedName": "count",
 			"userId": null,
@@ -32371,9 +32288,7 @@ var staticData = {
 			"synonyms": [
 				"Side House Chop Salad W",
 				"Blue Cheese And Balsamic Vinegrette Dres",
-				"Side House Chop Salad W/Blue Cheese And Balsamic Vinegrette Dres",
-				"Blue Cheese And Balsamic Vinegrette Dre",
-				"Side House Chop Salad W/Blue Cheese And Balsamic Vinegrette Dre"
+				"Side House Chop Salad W/Blue Cheese And Balsamic Vinegrette Dres"
 			],
 			"unitAbbreviatedName": "serving",
 			"userId": null,
@@ -32438,8 +32353,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/foods.svg",
 			"synonyms": [
 				"Snacks",
-				"Snacks, Potato Chips, Plain, Salted",
-				"Snack"
+				"Snacks, Potato Chips, Plain, Salted"
 			],
 			"unitAbbreviatedName": "serving",
 			"userId": null,
@@ -32503,8 +32417,7 @@ var staticData = {
 			"subtitle": "3 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg",
 			"synonyms": [
-				"Morning Meds",
-				"Morning Med"
+				"Morning Meds"
 			],
 			"unitAbbreviatedName": "yes/no",
 			"userId": null,
@@ -32959,8 +32872,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/nutrients.svg",
 			"synonyms": [
 				"Tocotrienol",
-				"Tocotrienol, Delta",
-				"Tocotrienol, Deltum"
+				"Tocotrienol, Delta"
 			],
 			"unitAbbreviatedName": "mg",
 			"userId": null,
@@ -33155,9 +33067,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
 				"Earbud Headphones",
-				"Purchases of Earbud Headphones",
-				"Earbud Headphone",
-				"Purchases of Earbud Headphone"
+				"Purchases of Earbud Headphones"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -33255,8 +33165,7 @@ var staticData = {
 			"subtitle": "2 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/foods.svg",
 			"synonyms": [
-				"Lime Chips",
-				"Lime Chip"
+				"Lime Chips"
 			],
 			"unitAbbreviatedName": "g",
 			"userId": null,
@@ -33387,8 +33296,7 @@ var staticData = {
 			"subtitle": "2 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/foods.svg",
 			"synonyms": [
-				"Gummies",
-				"Gummy"
+				"Gummies"
 			],
 			"unitAbbreviatedName": "serving",
 			"userId": null,
@@ -33487,8 +33395,7 @@ var staticData = {
 				"Biscuits",
 				"Buttermilk, Prepared From Recipe",
 				"Biscuits, Plain",
-				"Biscuits, Plain Or Buttermilk, Prepared From Recipe",
-				"Biscuit"
+				"Biscuits, Plain Or Buttermilk, Prepared From Recipe"
 			],
 			"unitAbbreviatedName": "serving",
 			"userId": null,
@@ -33618,8 +33525,7 @@ var staticData = {
 			"subtitle": "2 trackers",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
 			"synonyms": [
-				"Purchases of Necklaces",
-				"Purchases of Necklace"
+				"Purchases of Necklaces"
 			],
 			"unitAbbreviatedName": "$",
 			"userId": null,
@@ -33716,8 +33622,7 @@ var staticData = {
 			"subtitle": "1 studies",
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/foods.svg",
 			"synonyms": [
-				"Butter Toffee Peanuts",
-				"Butter Toffee Peanut"
+				"Butter Toffee Peanuts"
 			],
 			"unitAbbreviatedName": "g",
 			"userId": null,
@@ -33782,9 +33687,7 @@ var staticData = {
 			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg",
 			"synonyms": [
 				"Antacid Tablets",
-				"Antacid Tablets By Walgreens",
-				"Antacid Tablet",
-				"Antacid Tablets By Walgreen"
+				"Antacid Tablets By Walgreens"
 			],
 			"unitAbbreviatedName": "tablets",
 			"userId": null,
@@ -33829,7 +33732,7 @@ var staticData = {
 			"clientRequiresSecret": false,
 			"connectError": null,
 			"connectInstructions": null,
-			"connectorClientId": "KGVzagPZdOzmmrkorStx8LsTF2qK7klrire9TVu+",
+			"connectorClientId": null,
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
@@ -33846,9 +33749,7 @@ var staticData = {
 			"providesUserProfileForLogin": null,
 			"qmClient": null,
 			"realId": null,
-			"scopes": [
-				"profile"
-			],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": null,
 			"updateError": "Not updating amazon for user 230 because memcached says we just updated it 3 minutes ago",
@@ -33859,7 +33760,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Get it here!",
-					"action": null,
+					"action": "https://chrome.google.com/webstore/detail/quantimodo-life-tracking/jioloifallegdkgjklafkkbniianjbgi",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
@@ -33913,18 +33814,14 @@ var staticData = {
 			"stdOAuthToken": null,
 			"clientRequiresSecret": false,
 			"connectError": null,
-			"connectInstructions": {
-				"url": "https://www.facebook.com/v2.9/dialog/oauth?state=eyJ1c2VyX2lkIjoyMzAsImNsaWVudF9pZCI6InF1YW50aW1vZG8ifQ--&type=web_server&client_id=225078261031461&redirect_uri=https%3A%2F%2Fapp.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Ffacebook%2Fconnect&response_type=code&scope=user_likes%2Cuser_posts",
-				"parameters": [],
-				"usePopup": true
-			},
+			"connectInstructions": null,
 			"connectorClientId": "225078261031461",
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-17 04:08:44",
-			"message": "Got 0 new measurements 18 hours ago.  ",
+			"message": "Got 0 new measurements 24 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -33947,7 +33844,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Disconnect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/facebook/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
@@ -34024,11 +33921,7 @@ var staticData = {
 			"mobileConnectMethod": "oauth",
 			"clientRequiresSecret": false,
 			"connectError": null,
-			"connectInstructions": {
-				"url": "https://www.fitbit.com/oauth2/authorize?state=eyJ1c2VyX2lkIjoyMzAsImNsaWVudF9pZCI6InF1YW50aW1vZG8ifQ--&type=web_server&client_id=2298DS&redirect_uri=https%3A%2F%2Fapp.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Ffitbit%2Fconnect&response_type=code&scope=activity+heartrate+location+nutrition+sleep+weight",
-				"parameters": [],
-				"usePopup": true
-			},
+			"connectInstructions": null,
 			"connectorClientId": "2298DS",
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
@@ -34045,14 +33938,7 @@ var staticData = {
 			"providesUserProfileForLogin": null,
 			"qmClient": null,
 			"realId": null,
-			"scopes": [
-				"activity",
-				"heartrate",
-				"location",
-				"nutrition",
-				"sleep",
-				"weight"
-			],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": 20,
 			"updateError": "No token",
@@ -34063,7 +33949,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Get it here!",
-					"action": null,
+					"action": "https://www.amazon.com/Fitbit-Charge-Heart-Fitness-Wristband/dp/B01K9S260E/ref=as_li_ss_tl?ie=UTF8&qid=1493518902&sr=8-3&keywords=fitbit&th=1&linkCode=ll1&tag=quant08-20&linkId=b357b0833de73b0c4e935fd7c13a079e",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
@@ -34088,7 +33974,7 @@ var staticData = {
 				},
 				{
 					"accessibilityText": "Connect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/fitbit/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
@@ -34142,18 +34028,14 @@ var staticData = {
 			"providesUserProfileForLogin": true,
 			"clientRequiresSecret": true,
 			"connectError": null,
-			"connectInstructions": {
-				"url": "https://github.com/login/oauth/authorize?state=eyJ1c2VyX2lkIjoyMzAsImNsaWVudF9pZCI6InF1YW50aW1vZG8ifQ--&type=web_server&client_id=b7bf465391ed9601ba49&redirect_uri=https%3A%2F%2Fapp.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Fgithub%2Fconnect&response_type=code&scope=user%2Crepo",
-				"parameters": [],
-				"usePopup": true
-			},
-			"connectorClientId": "b7bf465391ed9601ba49",
+			"connectInstructions": null,
+			"connectorClientId": null,
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-17 18:16:55",
-			"message": "Got 38 new measurements 4 hours ago.  ",
+			"message": "Got 38 new measurements 10 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -34162,10 +34044,7 @@ var staticData = {
 			],
 			"qmClient": null,
 			"realId": null,
-			"scopes": [
-				"user",
-				"repo"
-			],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": 38,
 			"updateError": null,
@@ -34176,7 +34055,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Disconnect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/github/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
@@ -34255,7 +34134,7 @@ var staticData = {
 			"clientRequiresSecret": false,
 			"connectError": null,
 			"connectInstructions": null,
-			"connectorClientId": "1052648855194.apps.googleusercontent.com",
+			"connectorClientId": null,
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
@@ -34270,11 +34149,7 @@ var staticData = {
 			],
 			"qmClient": null,
 			"realId": null,
-			"scopes": [
-				"https://www.googleapis.com/auth/gmail.readonly",
-				"https://www.googleapis.com/auth/userinfo.email",
-				"https://www.googleapis.com/auth/plus.login"
-			],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": 0,
 			"updateError": "Could not identify time format for: 8. Please use Unix timestamps or ISO8601 format",
@@ -34285,7 +34160,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Connect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/gmail/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
@@ -34340,13 +34215,13 @@ var staticData = {
 			"clientRequiresSecret": false,
 			"connectError": null,
 			"connectInstructions": null,
-			"connectorClientId": "1052648855194.apps.googleusercontent.com",
+			"connectorClientId": null,
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-17 04:53:47",
-			"message": "Got 0 new measurements 18 hours ago.  ",
+			"message": "Got 0 new measurements 24 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -34355,11 +34230,7 @@ var staticData = {
 			],
 			"qmClient": null,
 			"realId": null,
-			"scopes": [
-				"https://www.googleapis.com/auth/calendar.readonly",
-				"https://www.googleapis.com/auth/userinfo.email",
-				"https://www.googleapis.com/auth/plus.login"
-			],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": 0,
 			"updateError": "No new measurements since 2018-07-31",
@@ -34370,7 +34241,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Disconnect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/googlecalendar/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
@@ -34450,7 +34321,7 @@ var staticData = {
 			"clientRequiresSecret": false,
 			"connectError": null,
 			"connectInstructions": null,
-			"connectorClientId": "1052648855194.apps.googleusercontent.com",
+			"connectorClientId": null,
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
@@ -34465,13 +34336,7 @@ var staticData = {
 			],
 			"qmClient": null,
 			"realId": null,
-			"scopes": [
-				"https://www.googleapis.com/auth/fitness.activity.read",
-				"https://www.googleapis.com/auth/fitness.body.read",
-				"https://www.googleapis.com/auth/fitness.location.read",
-				"https://www.googleapis.com/auth/userinfo.email",
-				"https://www.googleapis.com/auth/plus.login"
-			],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": 0,
 			"updateError": "Token expired on 06/16/2018 at 10:36:05 PM",
@@ -34482,7 +34347,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Connect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/googlefit/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
@@ -34537,13 +34402,13 @@ var staticData = {
 			"clientRequiresSecret": false,
 			"connectError": null,
 			"connectInstructions": null,
-			"connectorClientId": "1052648855194.apps.googleusercontent.com",
+			"connectorClientId": null,
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-17 20:16:59",
-			"message": "Got 0 new measurements 2 hours ago.  ",
+			"message": "Got 0 new measurements 8 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -34552,10 +34417,7 @@ var staticData = {
 			],
 			"qmClient": null,
 			"realId": null,
-			"scopes": [
-				"https://www.googleapis.com/auth/userinfo.email",
-				"https://www.googleapis.com/auth/plus.login"
-			],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": 0,
 			"updateError": "No new measurements since 2018-08-30",
@@ -34566,7 +34428,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Disconnect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/googleplus/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
@@ -34645,18 +34507,14 @@ var staticData = {
 			"providesUserProfileForLogin": true,
 			"clientRequiresSecret": true,
 			"connectError": null,
-			"connectInstructions": {
-				"url": "https://www.linkedin.com/uas/oauth2/authorization?state=eyJ1c2VyX2lkIjoyMzAsImNsaWVudF9pZCI6InF1YW50aW1vZG8ifQ--&type=web_server&client_id=77oiwiq6wuq9uy&redirect_uri=https%3A%2F%2Fapp.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Flinkedin%2Fconnect&response_type=code&scope=r_basicprofile+r_emailaddress",
-				"parameters": [],
-				"usePopup": true
-			},
-			"connectorClientId": "77oiwiq6wuq9uy",
+			"connectInstructions": null,
+			"connectorClientId": null,
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-16 21:56:08",
-			"message": "Got 0 new measurements 25 hours ago.  ",
+			"message": "Got 0 new measurements 31 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -34665,10 +34523,7 @@ var staticData = {
 			],
 			"qmClient": null,
 			"realId": null,
-			"scopes": [
-				"r_basicprofile",
-				"r_emailaddress"
-			],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": 0,
 			"updateError": "No new measurements despite never having been updated before",
@@ -34679,7 +34534,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Disconnect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/linkedin/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
@@ -34756,21 +34611,7 @@ var staticData = {
 			"mobileConnectMethod": "input",
 			"clientRequiresSecret": false,
 			"connectError": null,
-			"connectInstructions": {
-				"url": "https://app.quantimo.do/api/v1/connectors/moodpanda/connect",
-				"parameters": [
-					{
-						"displayName": "Email",
-						"key": "email",
-						"type": "text",
-						"placeholder": "",
-						"defaultValue": "",
-						"helpText": "",
-						"ionIcon": null
-					}
-				],
-				"usePopup": false
-			},
+			"connectInstructions": null,
 			"connectorClientId": null,
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
@@ -34787,7 +34628,7 @@ var staticData = {
 			"providesUserProfileForLogin": null,
 			"qmClient": null,
 			"realId": null,
-			"scopes": [],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": 0,
 			"updateError": "This connector isn't connected",
@@ -34798,7 +34639,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Connect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/moodpanda/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
@@ -34850,37 +34691,14 @@ var staticData = {
 			"mobileConnectMethod": "input",
 			"clientRequiresSecret": false,
 			"connectError": null,
-			"connectInstructions": {
-				"url": "https://app.quantimo.do/api/v1/connectors/moodscope/connect",
-				"parameters": [
-					{
-						"displayName": "Username",
-						"key": "username",
-						"type": "text",
-						"placeholder": "",
-						"defaultValue": "",
-						"helpText": "",
-						"ionIcon": null
-					},
-					{
-						"displayName": "Password",
-						"key": "password",
-						"type": "password",
-						"placeholder": "",
-						"defaultValue": "",
-						"helpText": "",
-						"ionIcon": null
-					}
-				],
-				"usePopup": false
-			},
+			"connectInstructions": null,
 			"connectorClientId": null,
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-17 15:21:30",
-			"message": "Got 0 new measurements 7 hours ago.  ",
+			"message": "Got 0 new measurements 13 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -34890,7 +34708,7 @@ var staticData = {
 			"providesUserProfileForLogin": null,
 			"qmClient": null,
 			"realId": null,
-			"scopes": [],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": 0,
 			"updateError": "No new measurements since 2017-11-27",
@@ -34901,7 +34719,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Disconnect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/moodscope/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
@@ -34978,37 +34796,14 @@ var staticData = {
 			"mobileConnectMethod": "input",
 			"clientRequiresSecret": false,
 			"connectError": null,
-			"connectInstructions": {
-				"url": "https://app.quantimo.do/api/v1/connectors/myfitnesspal/connect",
-				"parameters": [
-					{
-						"displayName": "Username",
-						"key": "username",
-						"type": "text",
-						"placeholder": "",
-						"defaultValue": "",
-						"helpText": "",
-						"ionIcon": null
-					},
-					{
-						"displayName": "Password",
-						"key": "password",
-						"type": "password",
-						"placeholder": "",
-						"defaultValue": "",
-						"helpText": "",
-						"ionIcon": null
-					}
-				],
-				"usePopup": false
-			},
+			"connectInstructions": null,
 			"connectorClientId": null,
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-17 17:40:46",
-			"message": "Got 0 new measurements 5 hours ago.  ",
+			"message": "Got 0 new measurements 11 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -35018,7 +34813,7 @@ var staticData = {
 			"providesUserProfileForLogin": null,
 			"qmClient": null,
 			"realId": null,
-			"scopes": [],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": 0,
 			"updateError": "No new measurements since 2017-12-27",
@@ -35029,7 +34824,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Disconnect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/myfitnesspal/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
@@ -35106,30 +34901,7 @@ var staticData = {
 			"mobileConnectMethod": "input",
 			"clientRequiresSecret": false,
 			"connectError": null,
-			"connectInstructions": {
-				"url": "https://app.quantimo.do/api/v1/connectors/mynetdiary/connect",
-				"parameters": [
-					{
-						"displayName": "Username",
-						"key": "username",
-						"type": "text",
-						"placeholder": "",
-						"defaultValue": "",
-						"helpText": "",
-						"ionIcon": null
-					},
-					{
-						"displayName": "Password",
-						"key": "password",
-						"type": "password",
-						"placeholder": "",
-						"defaultValue": "",
-						"helpText": "",
-						"ionIcon": null
-					}
-				],
-				"usePopup": false
-			},
+			"connectInstructions": null,
 			"connectorClientId": null,
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
@@ -35146,7 +34918,7 @@ var staticData = {
 			"providesUserProfileForLogin": null,
 			"qmClient": null,
 			"realId": null,
-			"scopes": [],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": null,
 			"updateError": null,
@@ -35157,7 +34929,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Connect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/mynetdiary/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
@@ -35209,18 +34981,14 @@ var staticData = {
 			"mobileConnectMethod": "oauth",
 			"clientRequiresSecret": true,
 			"connectError": null,
-			"connectInstructions": {
-				"url": "https://api.netatmo.net/oauth2/authorize?state=eyJ1c2VyX2lkIjoyMzAsImNsaWVudF9pZCI6InF1YW50aW1vZG8ifQ--&type=web_server&client_id=58115c8b7a75702f8f8b72c1&redirect_uri=https%3A%2F%2Fapp.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Fnetatmo%2Fconnect&response_type=code&scope=read_station+read_thermostat",
-				"parameters": [],
-				"usePopup": true
-			},
-			"connectorClientId": "58115c8b7a75702f8f8b72c1",
+			"connectInstructions": null,
+			"connectorClientId": null,
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-16 22:23:45",
-			"message": "Got 0 new measurements 24 hours ago.  ",
+			"message": "Got 0 new measurements 30 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -35230,10 +34998,7 @@ var staticData = {
 			"providesUserProfileForLogin": null,
 			"qmClient": null,
 			"realId": null,
-			"scopes": [
-				"read_station",
-				"read_thermostat"
-			],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": 0,
 			"updateError": "No new measurements since 2018-09-06",
@@ -35244,7 +35009,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Disconnect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/netatmo/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
@@ -35322,18 +35087,14 @@ var staticData = {
 			"providesUserProfileForLogin": true,
 			"clientRequiresSecret": true,
 			"connectError": null,
-			"connectInstructions": {
-				"url": "https://app.quantimo.do/api/v3/oauth2/authorize?register=true&state=eyJ1c2VyX2lkIjoyMzAsImNsaWVudF9pZCI6InF1YW50aW1vZG8ifQ--&type=web_server&client_id=quantimodo&redirect_uri=https%3A%2F%2Fapp.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Fquantimodo%2Fconnect&response_type=code&scope=readmeasurements+writemeasurements",
-				"parameters": [],
-				"usePopup": true
-			},
-			"connectorClientId": "quantimodo",
+			"connectInstructions": null,
+			"connectorClientId": null,
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-17 10:18:29",
-			"message": "Got 0 new measurements 12 hours ago.  ",
+			"message": "Got 0 new measurements 18 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -35342,10 +35103,7 @@ var staticData = {
 			],
 			"qmClient": null,
 			"realId": null,
-			"scopes": [
-				"readmeasurements",
-				"writemeasurements"
-			],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": 0,
 			"updateError": "No new measurements since 2018-08-04",
@@ -35356,7 +35114,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Go to Inbox",
-					"action": null,
+					"action": "https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/reminders-inbox",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
@@ -35381,7 +35139,7 @@ var staticData = {
 				},
 				{
 					"accessibilityText": "Manage Reminders",
-					"action": null,
+					"action": "https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/reminders-manage",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
@@ -35433,11 +35191,7 @@ var staticData = {
 			"mobileConnectMethod": "oauth",
 			"clientRequiresSecret": false,
 			"connectError": null,
-			"connectInstructions": {
-				"url": "https://www.rescuetime.com/oauth/authorize?state=eyJ1c2VyX2lkIjoyMzAsImNsaWVudF9pZCI6InF1YW50aW1vZG8ifQ--&client_id=b7961429bf2ca6fab2de92681e347ef6c253bf77c1a4c069d964110e43c1de24&redirect_uri=https%3A%2F%2Fapp.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Frescuetime%2Fconnect&response_type=code&scope=time_data+category_data+productivity_data",
-				"parameters": [],
-				"usePopup": true
-			},
+			"connectInstructions": null,
 			"connectorClientId": "b7961429bf2ca6fab2de92681e347ef6c253bf77c1a4c069d964110e43c1de24",
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
@@ -35454,11 +35208,7 @@ var staticData = {
 			"providesUserProfileForLogin": null,
 			"qmClient": null,
 			"realId": null,
-			"scopes": [
-				"time_data",
-				"category_data",
-				"productivity_data"
-			],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": 350,
 			"updateError": null,
@@ -35469,7 +35219,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Get it here!",
-					"action": null,
+					"action": "https://www.rescuetime.com/rp/quantimodo/plans",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
@@ -35494,7 +35244,7 @@ var staticData = {
 				},
 				{
 					"accessibilityText": "Connect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/rescuetime/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
@@ -35546,11 +35296,7 @@ var staticData = {
 			"mobileConnectMethod": "oauth",
 			"clientRequiresSecret": false,
 			"connectError": null,
-			"connectInstructions": {
-				"url": "https://runkeeper.com/apps/authorize?state=eyJ1c2VyX2lkIjoyMzAsImNsaWVudF9pZCI6InF1YW50aW1vZG8ifQ--&client_id=57b4df7d2adb45e38fd126dfd3e8c188&redirect_uri=https%3A%2F%2Fapp.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Frunkeeper%2Fconnect&response_type=code&scope=",
-				"parameters": [],
-				"usePopup": true
-			},
+			"connectInstructions": null,
 			"connectorClientId": "57b4df7d2adb45e38fd126dfd3e8c188",
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
@@ -35567,7 +35313,7 @@ var staticData = {
 			"providesUserProfileForLogin": null,
 			"qmClient": null,
 			"realId": null,
-			"scopes": [],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": 1,
 			"updateError": "Please provide clientId with request!",
@@ -35578,7 +35324,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Connect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/runkeeper/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
@@ -35630,18 +35376,14 @@ var staticData = {
 			"mobileConnectMethod": "oauth",
 			"clientRequiresSecret": true,
 			"connectError": null,
-			"connectInstructions": {
-				"url": "https://slack.com/oauth/authorize?state=eyJ1c2VyX2lkIjoyMzAsImNsaWVudF9pZCI6InF1YW50aW1vZG8ifQ--&type=web_server&client_id=212721326246.211356569553&redirect_uri=https%3A%2F%2Fapp.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Fslack%2Fconnect&response_type=code&scope=incoming-webhook+chat%3Awrite%3Abot+links%3Awrite",
-				"parameters": [],
-				"usePopup": true
-			},
-			"connectorClientId": "212721326246.211356569553",
+			"connectInstructions": null,
+			"connectorClientId": null,
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-17 10:18:29",
-			"message": "Got 0 new measurements 12 hours ago.  ",
+			"message": "Got 0 new measurements 18 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -35651,11 +35393,7 @@ var staticData = {
 			"providesUserProfileForLogin": null,
 			"qmClient": null,
 			"realId": null,
-			"scopes": [
-				"incoming-webhook",
-				"chat:write:bot",
-				"links:write"
-			],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": 0,
 			"updateError": "No new measurements since 2018-08-04",
@@ -35666,7 +35404,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Disconnect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/slack/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
@@ -35744,7 +35482,7 @@ var staticData = {
 			"clientRequiresSecret": false,
 			"connectError": null,
 			"connectInstructions": null,
-			"connectorClientId": "1052648855194.apps.googleusercontent.com",
+			"connectorClientId": null,
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
@@ -35760,10 +35498,7 @@ var staticData = {
 			"providesUserProfileForLogin": null,
 			"qmClient": null,
 			"realId": null,
-			"scopes": [
-				"https://www.googleapis.com/auth/userinfo.email",
-				"https://www.googleapis.com/auth/plus.login"
-			],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": 43,
 			"updateError": "Token expired on 01/27/2018 at 06:07:34 PM",
@@ -35774,7 +35509,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Connect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/sleepcloud/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
@@ -35827,11 +35562,7 @@ var staticData = {
 			"mobileConnectMethod": "oauth",
 			"clientRequiresSecret": false,
 			"connectError": null,
-			"connectInstructions": {
-				"url": "https://api.slice.com/oauth/authorize?state=eyJ1c2VyX2lkIjoyMzAsImNsaWVudF9pZCI6InF1YW50aW1vZG8ifQ--&client_id=6aaaf81a&redirect_uri=https%3A%2F%2Fapp.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Fslice%2Fconnect&response_type=code&scope=",
-				"parameters": [],
-				"usePopup": true
-			},
+			"connectInstructions": null,
 			"connectorClientId": "6aaaf81a",
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
@@ -35846,7 +35577,7 @@ var staticData = {
 			"providesUserProfileForLogin": null,
 			"qmClient": null,
 			"realId": null,
-			"scopes": [],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": 5,
 			"updateError": "Client error response\n[status code] 401\n[reason phrase] Unauthorized\n[url] https://api.slice.com/api/v1/orders?limit=10&offset=0&since=1521230253000",
@@ -35857,7 +35588,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Connect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/slice/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
@@ -35911,18 +35642,14 @@ var staticData = {
 			"providesUserProfileForLogin": true,
 			"clientRequiresSecret": true,
 			"connectError": null,
-			"connectInstructions": {
-				"url": "https://www.strava.com/oauth/authorize?approval_prompt=auto&state=eyJ1c2VyX2lkIjoyMzAsImNsaWVudF9pZCI6InF1YW50aW1vZG8ifQ--&type=web_server&client_id=22095&redirect_uri=https%3A%2F%2Fapp.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Fstrava%2Fconnect&response_type=code&scope=public",
-				"parameters": [],
-				"usePopup": true
-			},
-			"connectorClientId": "22095",
+			"connectInstructions": null,
+			"connectorClientId": null,
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-06-10 13:10:41",
-			"message": "Got 2 new measurements 99 days ago.  ",
+			"message": "Got 2 new measurements 100 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -35931,9 +35658,7 @@ var staticData = {
 			],
 			"qmClient": null,
 			"realId": null,
-			"scopes": [
-				"public"
-			],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": 2,
 			"updateError": null,
@@ -35944,7 +35669,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Connect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/strava/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
@@ -35998,13 +35723,13 @@ var staticData = {
 			"clientRequiresSecret": true,
 			"connectError": null,
 			"connectInstructions": null,
-			"connectorClientId": "pTsS0XybNPtheyxY2yV9YL0Ok",
+			"connectorClientId": null,
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-16 18:54:35",
-			"message": "Got 20 new measurements 28 hours ago.  ",
+			"message": "Got 20 new measurements 34 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -36013,7 +35738,7 @@ var staticData = {
 			],
 			"qmClient": null,
 			"realId": null,
-			"scopes": [],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": 20,
 			"updateError": null,
@@ -36024,7 +35749,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Disconnect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/twitter/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
@@ -36101,12 +35826,8 @@ var staticData = {
 			"mobileConnectMethod": "oauth",
 			"clientRequiresSecret": true,
 			"connectError": null,
-			"connectInstructions": {
-				"url": "https://jawbone.com/auth/oauth2/auth?state=eyJ1c2VyX2lkIjoyMzAsImNsaWVudF9pZCI6InF1YW50aW1vZG8ifQ--&client_id=10RfjEgKr8U&redirect_uri=https%3A%2F%2Fapp.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Fup%2Fconnect&response_type=code&scope=basic_read+extended_read+location_read+friends_read+mood_read+move_read+sleep_read+meal_read+weight_read+heartrate_read+generic_event_read",
-				"parameters": [],
-				"usePopup": true
-			},
-			"connectorClientId": "10RfjEgKr8U",
+			"connectInstructions": null,
+			"connectorClientId": null,
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
@@ -36122,19 +35843,7 @@ var staticData = {
 			"providesUserProfileForLogin": null,
 			"qmClient": null,
 			"realId": null,
-			"scopes": [
-				"basic_read",
-				"extended_read",
-				"location_read",
-				"friends_read",
-				"mood_read",
-				"move_read",
-				"sleep_read",
-				"meal_read",
-				"weight_read",
-				"heartrate_read",
-				"generic_event_read"
-			],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": null,
 			"updateError": null,
@@ -36145,7 +35854,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Get it here!",
-					"action": null,
+					"action": "http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
@@ -36170,7 +35879,7 @@ var staticData = {
 				},
 				{
 					"accessibilityText": "Connect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/up/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
@@ -36225,28 +35934,14 @@ var staticData = {
 			],
 			"clientRequiresSecret": false,
 			"connectError": null,
-			"connectInstructions": {
-				"url": "https://app.quantimo.do/api/v1/connectors/worldweatheronline/connect",
-				"parameters": [
-					{
-						"displayName": "Location",
-						"key": "location",
-						"type": "text",
-						"placeholder": "Enter Post/Zip Code, City/Town, IATA, IP",
-						"defaultValue": "",
-						"helpText": "",
-						"ionIcon": null
-					}
-				],
-				"usePopup": false
-			},
+			"connectInstructions": null,
 			"connectorClientId": null,
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-17 17:15:38",
-			"message": "Got 59 new measurements 5 hours ago.  ",
+			"message": "Got 59 new measurements 11 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -36256,7 +35951,7 @@ var staticData = {
 			"providesUserProfileForLogin": null,
 			"qmClient": null,
 			"realId": null,
-			"scopes": [],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": 59,
 			"updateError": null,
@@ -36267,7 +35962,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Disconnect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/worldweatheronline/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
@@ -36343,21 +36038,7 @@ var staticData = {
 			"mobileConnectMethod": "input",
 			"clientRequiresSecret": false,
 			"connectError": null,
-			"connectInstructions": {
-				"url": "https://app.quantimo.do/api/v1/connectors/whatpulse/connect",
-				"parameters": [
-					{
-						"displayName": "Username",
-						"key": "username",
-						"type": "text",
-						"placeholder": "",
-						"defaultValue": "",
-						"helpText": "Enter your Whatpulse username found next to your avatar on the WhatPulse My Stats page",
-						"ionIcon": null
-					}
-				],
-				"usePopup": false
-			},
+			"connectInstructions": null,
 			"connectorClientId": null,
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
@@ -36374,7 +36055,7 @@ var staticData = {
 			"providesUserProfileForLogin": null,
 			"qmClient": null,
 			"realId": null,
-			"scopes": [],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": 2,
 			"updateError": null,
@@ -36385,7 +36066,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Connect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/whatpulse/connect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#0f9d58",
 					"confirmationText": null,
@@ -36438,13 +36119,13 @@ var staticData = {
 			"clientRequiresSecret": true,
 			"connectError": null,
 			"connectInstructions": null,
-			"connectorClientId": "e4d28f45e14b8cc97e8c585127db3f2132e61ef0ed20be490e7b5f7417d",
+			"connectorClientId": null,
 			"connectorUserEmail": null,
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-17 04:51:05",
-			"message": "Got 1 new measurements 18 hours ago.  ",
+			"message": "Got 1 new measurements 24 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -36454,7 +36135,7 @@ var staticData = {
 			"providesUserProfileForLogin": null,
 			"qmClient": null,
 			"realId": null,
-			"scopes": [],
+			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": 1,
 			"updateError": null,
@@ -36465,7 +36146,7 @@ var staticData = {
 			"buttons": [
 				{
 					"accessibilityText": "Disconnect",
-					"action": null,
+					"action": "https://app.quantimo.do/api/connectors/withings/disconnect?accessToken04a5556e92733925d0561c2a40a12899ac46ac2a",
 					"additionalInformation": null,
 					"color": "#dd4b39",
 					"confirmationText": null,
@@ -60639,6 +60320,1049 @@ var staticData = {
 					"cause",
 					"effect"
 				]
+			},
+			"Activity": {
+				"required": [
+					"id",
+					"userId",
+					"component",
+					"type",
+					"action",
+					"content",
+					"primaryLink",
+					"itemId",
+					"secondaryItemId",
+					"dateRecorded",
+					"hideSitewide",
+					"mpttLeft",
+					"mpttRight",
+					"isSpam"
+				],
+				"properties": {
+					"id": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"userId": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"component": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"type": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"action": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"content": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"primaryLink": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"itemId": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"secondaryItemId": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"dateRecorded": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"hideSitewide": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"mpttLeft": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"mpttRight": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"isSpam": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"metaDataArray": {
+						"description": "Additional activity key-value data",
+						"items": {
+							"type": "object"
+						},
+						"type": "array"
+					}
+				}
+			},
+			"ActivitiesResponse": {
+				"required": [
+					"activities"
+				],
+				"properties": {
+					"activities": {
+						"items": {
+							"$ref": "#/definitions/Activity"
+						},
+						"type": "array"
+					},
+					"description": {
+						"description": "Activity",
+						"type": "string"
+					},
+					"summary": {
+						"description": "Activity",
+						"type": "string"
+					},
+					"image": {
+						"$ref": "#/definitions/Image"
+					},
+					"avatar": {
+						"description": "Square icon png url",
+						"type": "string"
+					},
+					"ionIcon": {
+						"description": "Ex: ion-ios-person",
+						"type": "string"
+					},
+					"html": {
+						"description": "Embeddable list of study summaries with explanation at the top",
+						"type": "string"
+					}
+				}
+			},
+			"Friend": {
+				"required": [
+					"id",
+					"initiatorUserId",
+					"friendUserId",
+					"isConfirmed",
+					"isLimited",
+					"dateCreated"
+				],
+				"properties": {
+					"id": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"initiatorUserId": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"friendUserId": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"isConfirmed": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"isLimited": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"dateCreated": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"metaDataArray": {
+						"description": "Additional friend key-value data",
+						"items": {
+							"type": "object"
+						},
+						"type": "array"
+					}
+				}
+			},
+			"FriendsResponse": {
+				"required": [
+					"friends"
+				],
+				"properties": {
+					"friends": {
+						"items": {
+							"$ref": "#/definitions/Friend"
+						},
+						"type": "array"
+					},
+					"description": {
+						"description": "Friend",
+						"type": "string"
+					},
+					"summary": {
+						"description": "Friend",
+						"type": "string"
+					},
+					"image": {
+						"$ref": "#/definitions/Image"
+					},
+					"avatar": {
+						"description": "Square icon png url",
+						"type": "string"
+					},
+					"ionIcon": {
+						"description": "Ex: ion-ios-person",
+						"type": "string"
+					},
+					"html": {
+						"description": "Embeddable list of study summaries with explanation at the top",
+						"type": "string"
+					}
+				}
+			},
+			"Group": {
+				"required": [
+					"id",
+					"creatorId",
+					"name",
+					"slug",
+					"description",
+					"status",
+					"parentId",
+					"enableForum",
+					"dateCreated"
+				],
+				"properties": {
+					"id": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"creatorId": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"name": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"slug": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"description": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"status": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"parentId": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"enableForum": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"dateCreated": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"metaDataArray": {
+						"description": "Additional group key-value data",
+						"items": {
+							"type": "object"
+						},
+						"type": "array"
+					}
+				}
+			},
+			"GroupsResponse": {
+				"required": [
+					"groups"
+				],
+				"properties": {
+					"groups": {
+						"items": {
+							"$ref": "#/definitions/Group"
+						},
+						"type": "array"
+					},
+					"description": {
+						"description": "Group",
+						"type": "string"
+					},
+					"summary": {
+						"description": "Group",
+						"type": "string"
+					},
+					"image": {
+						"$ref": "#/definitions/Image"
+					},
+					"avatar": {
+						"description": "Square icon png url",
+						"type": "string"
+					},
+					"ionIcon": {
+						"description": "Ex: ion-ios-person",
+						"type": "string"
+					},
+					"html": {
+						"description": "Embeddable list of study summaries with explanation at the top",
+						"type": "string"
+					}
+				}
+			},
+			"GroupsMember": {
+				"required": [
+					"id",
+					"groupId",
+					"userId",
+					"inviterId",
+					"isAdmin",
+					"isMod",
+					"userTitle",
+					"dateModified",
+					"comments",
+					"isConfirmed",
+					"isBanned",
+					"inviteSent"
+				],
+				"properties": {
+					"id": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"groupId": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"userId": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"inviterId": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"isAdmin": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"isMod": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"userTitle": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"dateModified": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"comments": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"isConfirmed": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"isBanned": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"inviteSent": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"metaDataArray": {
+						"description": "Additional groupsmember key-value data",
+						"items": {
+							"type": "object"
+						},
+						"type": "array"
+					}
+				}
+			},
+			"GroupsMembersResponse": {
+				"required": [
+					"groupsMembers"
+				],
+				"properties": {
+					"groupsMembers": {
+						"items": {
+							"$ref": "#/definitions/GroupsMember"
+						},
+						"type": "array"
+					},
+					"description": {
+						"description": "GroupsMember",
+						"type": "string"
+					},
+					"summary": {
+						"description": "GroupsMember",
+						"type": "string"
+					},
+					"image": {
+						"$ref": "#/definitions/Image"
+					},
+					"avatar": {
+						"description": "Square icon png url",
+						"type": "string"
+					},
+					"ionIcon": {
+						"description": "Ex: ion-ios-person",
+						"type": "string"
+					},
+					"html": {
+						"description": "Embeddable list of study summaries with explanation at the top",
+						"type": "string"
+					}
+				}
+			},
+			"MessagesMessage": {
+				"required": [
+					"id",
+					"threadId",
+					"senderId",
+					"subject",
+					"message",
+					"dateSent"
+				],
+				"properties": {
+					"id": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"threadId": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"senderId": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"subject": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"message": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"dateSent": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"metaDataArray": {
+						"description": "Additional messagesmessage key-value data",
+						"items": {
+							"type": "object"
+						},
+						"type": "array"
+					}
+				}
+			},
+			"MessagesMessagesResponse": {
+				"required": [
+					"messagesMessages"
+				],
+				"properties": {
+					"messagesMessages": {
+						"items": {
+							"$ref": "#/definitions/MessagesMessage"
+						},
+						"type": "array"
+					},
+					"description": {
+						"description": "MessagesMessage",
+						"type": "string"
+					},
+					"summary": {
+						"description": "MessagesMessage",
+						"type": "string"
+					},
+					"image": {
+						"$ref": "#/definitions/Image"
+					},
+					"avatar": {
+						"description": "Square icon png url",
+						"type": "string"
+					},
+					"ionIcon": {
+						"description": "Ex: ion-ios-person",
+						"type": "string"
+					},
+					"html": {
+						"description": "Embeddable list of study summaries with explanation at the top",
+						"type": "string"
+					}
+				}
+			},
+			"MessagesNotice": {
+				"required": [
+					"id",
+					"subject",
+					"message",
+					"dateSent",
+					"isActive"
+				],
+				"properties": {
+					"id": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"subject": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"message": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"dateSent": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"isActive": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"metaDataArray": {
+						"description": "Additional messagesnotice key-value data",
+						"items": {
+							"type": "object"
+						},
+						"type": "array"
+					}
+				}
+			},
+			"MessagesNoticesResponse": {
+				"required": [
+					"messagesNotices"
+				],
+				"properties": {
+					"messagesNotices": {
+						"items": {
+							"$ref": "#/definitions/MessagesNotice"
+						},
+						"type": "array"
+					},
+					"description": {
+						"description": "MessagesNotice",
+						"type": "string"
+					},
+					"summary": {
+						"description": "MessagesNotice",
+						"type": "string"
+					},
+					"image": {
+						"$ref": "#/definitions/Image"
+					},
+					"avatar": {
+						"description": "Square icon png url",
+						"type": "string"
+					},
+					"ionIcon": {
+						"description": "Ex: ion-ios-person",
+						"type": "string"
+					},
+					"html": {
+						"description": "Embeddable list of study summaries with explanation at the top",
+						"type": "string"
+					}
+				}
+			},
+			"MessagesRecipient": {
+				"required": [
+					"id",
+					"userId",
+					"threadId",
+					"unreadCount",
+					"senderOnly",
+					"isDeleted"
+				],
+				"properties": {
+					"id": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"userId": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"threadId": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"unreadCount": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"senderOnly": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"isDeleted": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"metaDataArray": {
+						"description": "Additional messagesrecipient key-value data",
+						"items": {
+							"type": "object"
+						},
+						"type": "array"
+					}
+				}
+			},
+			"MessagesRecipientsResponse": {
+				"required": [
+					"messagesRecipients"
+				],
+				"properties": {
+					"messagesRecipients": {
+						"items": {
+							"$ref": "#/definitions/MessagesRecipient"
+						},
+						"type": "array"
+					},
+					"description": {
+						"description": "MessagesRecipient",
+						"type": "string"
+					},
+					"summary": {
+						"description": "MessagesRecipient",
+						"type": "string"
+					},
+					"image": {
+						"$ref": "#/definitions/Image"
+					},
+					"avatar": {
+						"description": "Square icon png url",
+						"type": "string"
+					},
+					"ionIcon": {
+						"description": "Ex: ion-ios-person",
+						"type": "string"
+					},
+					"html": {
+						"description": "Embeddable list of study summaries with explanation at the top",
+						"type": "string"
+					}
+				}
+			},
+			"Notification": {
+				"required": [
+					"id",
+					"userId",
+					"itemId",
+					"secondaryItemId",
+					"componentName",
+					"componentAction",
+					"dateNotified",
+					"isNew"
+				],
+				"properties": {
+					"id": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"userId": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"itemId": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"secondaryItemId": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"componentName": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"componentAction": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"dateNotified": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"isNew": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"metaDataArray": {
+						"description": "Additional notification key-value data",
+						"items": {
+							"type": "object"
+						},
+						"type": "array"
+					}
+				}
+			},
+			"NotificationsResponse": {
+				"required": [
+					"notifications"
+				],
+				"properties": {
+					"notifications": {
+						"items": {
+							"$ref": "#/definitions/Notification"
+						},
+						"type": "array"
+					},
+					"description": {
+						"description": "Notification",
+						"type": "string"
+					},
+					"summary": {
+						"description": "Notification",
+						"type": "string"
+					},
+					"image": {
+						"$ref": "#/definitions/Image"
+					},
+					"avatar": {
+						"description": "Square icon png url",
+						"type": "string"
+					},
+					"ionIcon": {
+						"description": "Ex: ion-ios-person",
+						"type": "string"
+					},
+					"html": {
+						"description": "Embeddable list of study summaries with explanation at the top",
+						"type": "string"
+					}
+				}
+			},
+			"UserBlog": {
+				"required": [
+					"id",
+					"userId",
+					"blogId"
+				],
+				"properties": {
+					"id": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"userId": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"blogId": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"metaDataArray": {
+						"description": "Additional userblog key-value data",
+						"items": {
+							"type": "object"
+						},
+						"type": "array"
+					}
+				}
+			},
+			"UserBlogsResponse": {
+				"required": [
+					"userBlogs"
+				],
+				"properties": {
+					"userBlogs": {
+						"items": {
+							"$ref": "#/definitions/UserBlog"
+						},
+						"type": "array"
+					},
+					"description": {
+						"description": "UserBlog",
+						"type": "string"
+					},
+					"summary": {
+						"description": "UserBlog",
+						"type": "string"
+					},
+					"image": {
+						"$ref": "#/definitions/Image"
+					},
+					"avatar": {
+						"description": "Square icon png url",
+						"type": "string"
+					},
+					"ionIcon": {
+						"description": "Ex: ion-ios-person",
+						"type": "string"
+					},
+					"html": {
+						"description": "Embeddable list of study summaries with explanation at the top",
+						"type": "string"
+					}
+				}
+			},
+			"XprofileDatum": {
+				"required": [
+					"id",
+					"fieldId",
+					"userId",
+					"value",
+					"lastUpdated"
+				],
+				"properties": {
+					"id": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"fieldId": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"userId": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"value": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"lastUpdated": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"metaDataArray": {
+						"description": "Additional xprofiledatum key-value data",
+						"items": {
+							"type": "object"
+						},
+						"type": "array"
+					}
+				}
+			},
+			"XprofileDataResponse": {
+				"required": [
+					"xprofileData"
+				],
+				"properties": {
+					"xprofileData": {
+						"items": {
+							"$ref": "#/definitions/XprofileDatum"
+						},
+						"type": "array"
+					},
+					"description": {
+						"description": "XprofileDatum",
+						"type": "string"
+					},
+					"summary": {
+						"description": "XprofileDatum",
+						"type": "string"
+					},
+					"image": {
+						"$ref": "#/definitions/Image"
+					},
+					"avatar": {
+						"description": "Square icon png url",
+						"type": "string"
+					},
+					"ionIcon": {
+						"description": "Ex: ion-ios-person",
+						"type": "string"
+					},
+					"html": {
+						"description": "Embeddable list of study summaries with explanation at the top",
+						"type": "string"
+					}
+				}
+			},
+			"XprofileField": {
+				"required": [
+					"id",
+					"groupId",
+					"parentId",
+					"type",
+					"name",
+					"description",
+					"isRequired",
+					"isDefaultOption",
+					"fieldOrder",
+					"optionOrder",
+					"orderBy",
+					"canDelete"
+				],
+				"properties": {
+					"id": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"groupId": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"parentId": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"type": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"name": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"description": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"isRequired": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"isDefaultOption": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"fieldOrder": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"optionOrder": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"orderBy": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"canDelete": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"metaDataArray": {
+						"description": "Additional xprofilefield key-value data",
+						"items": {
+							"type": "object"
+						},
+						"type": "array"
+					}
+				}
+			},
+			"XprofileFieldsResponse": {
+				"required": [
+					"xprofileFields"
+				],
+				"properties": {
+					"xprofileFields": {
+						"items": {
+							"$ref": "#/definitions/XprofileField"
+						},
+						"type": "array"
+					},
+					"description": {
+						"description": "XprofileField",
+						"type": "string"
+					},
+					"summary": {
+						"description": "XprofileField",
+						"type": "string"
+					},
+					"image": {
+						"$ref": "#/definitions/Image"
+					},
+					"avatar": {
+						"description": "Square icon png url",
+						"type": "string"
+					},
+					"ionIcon": {
+						"description": "Ex: ion-ios-person",
+						"type": "string"
+					},
+					"html": {
+						"description": "Embeddable list of study summaries with explanation at the top",
+						"type": "string"
+					}
+				}
+			},
+			"XprofileGroup": {
+				"required": [
+					"id",
+					"name",
+					"description",
+					"groupOrder",
+					"canDelete"
+				],
+				"properties": {
+					"id": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"name": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"description": {
+						"description": "What do you expect?",
+						"type": "string"
+					},
+					"groupOrder": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"canDelete": {
+						"description": "What do you expect?",
+						"type": "integer"
+					},
+					"metaDataArray": {
+						"description": "Additional xprofilegroup key-value data",
+						"items": {
+							"type": "object"
+						},
+						"type": "array"
+					}
+				}
+			},
+			"XprofileGroupsResponse": {
+				"required": [
+					"xprofileGroups"
+				],
+				"properties": {
+					"xprofileGroups": {
+						"items": {
+							"$ref": "#/definitions/XprofileGroup"
+						},
+						"type": "array"
+					},
+					"description": {
+						"description": "XprofileGroup",
+						"type": "string"
+					},
+					"summary": {
+						"description": "XprofileGroup",
+						"type": "string"
+					},
+					"image": {
+						"$ref": "#/definitions/Image"
+					},
+					"avatar": {
+						"description": "Square icon png url",
+						"type": "string"
+					},
+					"ionIcon": {
+						"description": "Ex: ion-ios-person",
+						"type": "string"
+					},
+					"html": {
+						"description": "Embeddable list of study summaries with explanation at the top",
+						"type": "string"
+					}
+				}
 			}
 		},
 		"host": "app.quantimo.do",
@@ -64240,6 +64964,1806 @@ var staticData = {
 						"studies"
 					]
 				}
+			},
+			"/v3/activities": {
+				"get": {
+					"operationId": "getActivities",
+					"tags": [
+						"Activities"
+					],
+					"summary": "Get Activities",
+					"description": "Get Activities",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"200": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/ActivitiesResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				},
+				"post": {
+					"operationId": "postActivities",
+					"tags": [
+						"Activities"
+					],
+					"summary": "Post Activities",
+					"description": "Post Activities",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"201": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/ActivitiesResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				}
+			},
+			"/v3/friends": {
+				"get": {
+					"operationId": "getFriends",
+					"tags": [
+						"Friends"
+					],
+					"summary": "Get Friends",
+					"description": "Get Friends",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"200": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/FriendsResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				},
+				"post": {
+					"operationId": "postFriends",
+					"tags": [
+						"Friends"
+					],
+					"summary": "Post Friends",
+					"description": "Post Friends",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"201": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/FriendsResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				}
+			},
+			"/v3/groups": {
+				"get": {
+					"operationId": "getGroups",
+					"tags": [
+						"Groups"
+					],
+					"summary": "Get Groups",
+					"description": "Get Groups",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"200": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/GroupsResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				},
+				"post": {
+					"operationId": "postGroups",
+					"tags": [
+						"Groups"
+					],
+					"summary": "Post Groups",
+					"description": "Post Groups",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"201": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/GroupsResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				}
+			},
+			"/v3/groupsMembers": {
+				"get": {
+					"operationId": "getGroupsMembers",
+					"tags": [
+						"Groups"
+					],
+					"summary": "Get GroupsMembers",
+					"description": "Get GroupsMembers",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"200": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/GroupsMembersResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				},
+				"post": {
+					"operationId": "postGroupsMembers",
+					"tags": [
+						"Groups"
+					],
+					"summary": "Post GroupsMembers",
+					"description": "Post GroupsMembers",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"201": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/GroupsMembersResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				}
+			},
+			"/v3/messagesMessages": {
+				"get": {
+					"operationId": "getMessagesMessages",
+					"tags": [
+						"Messages"
+					],
+					"summary": "Get MessagesMessages",
+					"description": "Get MessagesMessages",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"200": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/MessagesMessagesResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				},
+				"post": {
+					"operationId": "postMessagesMessages",
+					"tags": [
+						"Messages"
+					],
+					"summary": "Post MessagesMessages",
+					"description": "Post MessagesMessages",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"201": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/MessagesMessagesResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				}
+			},
+			"/v3/messagesNotices": {
+				"get": {
+					"operationId": "getMessagesNotices",
+					"tags": [
+						"Messages"
+					],
+					"summary": "Get MessagesNotices",
+					"description": "Get MessagesNotices",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"200": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/MessagesNoticesResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				},
+				"post": {
+					"operationId": "postMessagesNotices",
+					"tags": [
+						"Messages"
+					],
+					"summary": "Post MessagesNotices",
+					"description": "Post MessagesNotices",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"201": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/MessagesNoticesResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				}
+			},
+			"/v3/messagesRecipients": {
+				"get": {
+					"operationId": "getMessagesRecipients",
+					"tags": [
+						"Messages"
+					],
+					"summary": "Get MessagesRecipients",
+					"description": "Get MessagesRecipients",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"200": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/MessagesRecipientsResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				},
+				"post": {
+					"operationId": "postMessagesRecipients",
+					"tags": [
+						"Messages"
+					],
+					"summary": "Post MessagesRecipients",
+					"description": "Post MessagesRecipients",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"201": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/MessagesRecipientsResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				}
+			},
+			"/v3/notifications": {
+				"get": {
+					"operationId": "getNotifications",
+					"tags": [
+						"Notifications"
+					],
+					"summary": "Get Notifications",
+					"description": "Get Notifications",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"200": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/NotificationsResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				},
+				"post": {
+					"operationId": "postNotifications",
+					"tags": [
+						"Notifications"
+					],
+					"summary": "Post Notifications",
+					"description": "Post Notifications",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"201": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/NotificationsResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				}
+			},
+			"/v3/userBlogs": {
+				"get": {
+					"operationId": "getUserBlogs",
+					"tags": [
+						"User"
+					],
+					"summary": "Get UserBlogs",
+					"description": "Get UserBlogs",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"200": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/UserBlogsResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				},
+				"post": {
+					"operationId": "postUserBlogs",
+					"tags": [
+						"User"
+					],
+					"summary": "Post UserBlogs",
+					"description": "Post UserBlogs",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"201": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/UserBlogsResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				}
+			},
+			"/v3/xprofileData": {
+				"get": {
+					"operationId": "getXprofileData",
+					"tags": [
+						"Xprofile"
+					],
+					"summary": "Get XprofileData",
+					"description": "Get XprofileData",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"200": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/XprofileDataResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				},
+				"post": {
+					"operationId": "postXprofileData",
+					"tags": [
+						"Xprofile"
+					],
+					"summary": "Post XprofileData",
+					"description": "Post XprofileData",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"201": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/XprofileDataResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				}
+			},
+			"/v3/xprofileFields": {
+				"get": {
+					"operationId": "getXprofileFields",
+					"tags": [
+						"Xprofile"
+					],
+					"summary": "Get XprofileFields",
+					"description": "Get XprofileFields",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"200": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/XprofileFieldsResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				},
+				"post": {
+					"operationId": "postXprofileFields",
+					"tags": [
+						"Xprofile"
+					],
+					"summary": "Post XprofileFields",
+					"description": "Post XprofileFields",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"201": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/XprofileFieldsResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				}
+			},
+			"/v3/xprofileGroups": {
+				"get": {
+					"operationId": "getXprofileGroups",
+					"tags": [
+						"Xprofile"
+					],
+					"summary": "Get XprofileGroups",
+					"description": "Get XprofileGroups",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"200": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/XprofileGroupsResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				},
+				"post": {
+					"operationId": "postXprofileGroups",
+					"tags": [
+						"Xprofile"
+					],
+					"summary": "Post XprofileGroups",
+					"description": "Post XprofileGroups",
+					"produces": [
+						"application/json"
+					],
+					"responses": {
+						"201": {
+							"description": "Successful operation",
+							"schema": {
+								"items": {
+									"$ref": "#/definitions/XprofileGroupsResponse"
+								},
+								"type": "array"
+							}
+						},
+						"401": {
+							"description": "Not authenticated"
+						},
+						"404": {
+							"description": "Not found"
+						},
+						"500": {
+							"description": "Internal server error"
+						}
+					},
+					"parameters": [
+						{
+							"$ref": "#/parameters/sortParam"
+						},
+						{
+							"$ref": "#/parameters/limitParam"
+						},
+						{
+							"$ref": "#/parameters/offsetParam"
+						},
+						{
+							"$ref": "#/parameters/updatedAtParam"
+						},
+						{
+							"$ref": "#/parameters/userIdParam"
+						},
+						{
+							"$ref": "#/parameters/createdAtParam"
+						},
+						{
+							"description": "Id",
+							"in": "query",
+							"name": "id",
+							"required": false,
+							"type": "integer"
+						},
+						{
+							"$ref": "#/parameters/clientIdParam"
+						},
+						{
+							"$ref": "#/parameters/platform"
+						}
+					],
+					"security": [
+						{
+							"access_token": []
+						},
+						{
+							"quantimodo_oauth2": [
+								"readmeasurements"
+							]
+						}
+					]
+				}
 			}
 		},
 		"produces": [
@@ -65982,44 +68506,6 @@ var staticData = {
 			"measurementSynonymSingularLowercase": "rating"
 		},
 		{
-			"amazonProductCategory": null,
-			"causeOnly": false,
-			"combinationOperation": "MEAN",
-			"common": true,
-			"defaultUnitAbbreviatedName": "/5",
-			"defaultUnitId": 10,
-			"durationOfAction": 86400,
-			"effectOnly": null,
-			"fillingType": null,
-			"fillingValue": -1,
-			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Messaging/sad-96.png",
-			"ionIcon": "ion-sad-outline",
-			"manualTracking": true,
-			"maximumAllowedValue": null,
-			"minimumAllowedValue": null,
-			"moreInfo": "Symptom severity can be influence by hundreds of factors in daily life. The human mind can only hold 7 numbers in working memory at a time.  I can hold a billion in my mind! If you regularly record your symptoms, add them so I can use this data to determine which hidden and imperceptible factors might be worsening or improving them.",
-			"name": "Symptoms",
-			"onsetDelay": 0,
-			"outcome": true,
-			"pngPath": "img/variable_categories/symptoms.png",
-			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/symptoms.png",
-			"public": true,
-			"setupQuestion": "What is a negative health symptom you are experiencing?",
-			"suffix": null,
-			"svgPath": "img/variable_categories/symptoms.svg",
-			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/symptoms.svg",
-			"synonyms": [
-				"Symptoms",
-				"Symptom"
-			],
-			"valence": "negative",
-			"variableCategoryNameSingular": "Symptom",
-			"id": 10,
-			"helpText": "What symptom do you want to record?",
-			"variableCategoryName": "Symptoms",
-			"measurementSynonymSingularLowercase": "rating"
-		},
-		{
 			"amazonProductCategory": "GourmetFood",
 			"causeOnly": true,
 			"combinationOperation": "SUM",
@@ -66103,6 +68589,44 @@ var staticData = {
 			"defaultValueLabel": "Dosage",
 			"defaultValuePlaceholderText": "Enter dose value here...",
 			"measurementSynonymSingularLowercase": "dose"
+		},
+		{
+			"amazonProductCategory": null,
+			"causeOnly": false,
+			"combinationOperation": "MEAN",
+			"common": true,
+			"defaultUnitAbbreviatedName": "/5",
+			"defaultUnitId": 10,
+			"durationOfAction": 86400,
+			"effectOnly": null,
+			"fillingType": null,
+			"fillingValue": -1,
+			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Messaging/sad-96.png",
+			"ionIcon": "ion-sad-outline",
+			"manualTracking": true,
+			"maximumAllowedValue": null,
+			"minimumAllowedValue": null,
+			"moreInfo": "Symptom severity can be influence by hundreds of factors in daily life. The human mind can only hold 7 numbers in working memory at a time.  I can hold a billion in my mind! If you regularly record your symptoms, add them so I can use this data to determine which hidden and imperceptible factors might be worsening or improving them.",
+			"name": "Symptoms",
+			"onsetDelay": 0,
+			"outcome": true,
+			"pngPath": "img/variable_categories/symptoms.png",
+			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/symptoms.png",
+			"public": true,
+			"setupQuestion": "What is a negative health symptom you are experiencing?",
+			"suffix": null,
+			"svgPath": "img/variable_categories/symptoms.svg",
+			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/symptoms.svg",
+			"synonyms": [
+				"Symptoms",
+				"Symptom"
+			],
+			"valence": "negative",
+			"variableCategoryNameSingular": "Symptom",
+			"id": 10,
+			"helpText": "What symptom do you want to record?",
+			"variableCategoryName": "Symptoms",
+			"measurementSynonymSingularLowercase": "rating"
 		},
 		{
 			"amazonProductCategory": "Electronics",
@@ -66304,105 +68828,215 @@ var staticData = {
 			"durationOfAction": 86400,
 			"effectOnly": null,
 			"fillingType": null,
-			"fillingValue": -1,
-			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Healthcare/brain-96.png",
-			"ionIcon": "ion-arrow-graph-up-right",
+			"fillingValue": 0,
+			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Healthcare/virus-96.png",
+			"ionIcon": "ion-ios-medkit",
 			"manualTracking": false,
 			"maximumAllowedValue": null,
 			"minimumAllowedValue": null,
 			"moreInfo": null,
-			"name": "Cognitive Performance",
+			"name": "Causes of Illness",
 			"onsetDelay": 0,
-			"outcome": true,
-			"pngPath": "img/variable_categories/cognitive-performance.png",
-			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/cognitive-performance.png",
+			"outcome": false,
+			"pngPath": "img/variable_categories/causes-of-illness.png",
+			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/causes-of-illness.png",
 			"public": true,
 			"setupQuestion": null,
 			"suffix": null,
-			"svgPath": "img/variable_categories/cognitive-performance.svg",
-			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/cognitive-performance.svg",
+			"svgPath": "img/variable_categories/causes-of-illness.svg",
+			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/causes-of-illness.svg",
 			"synonyms": [
-				"Cognitive Performance"
+				"Causes of Illness",
+				"Cause of Illness",
+				"Causes of Illnes",
+				"Cause of Illnes"
 			],
 			"valence": null,
-			"variableCategoryNameSingular": "Cognitive Performance",
-			"id": 9
+			"variableCategoryNameSingular": "Cause of Illness",
+			"id": 18
 		},
 		{
 			"amazonProductCategory": null,
 			"causeOnly": false,
-			"combinationOperation": "MEAN",
+			"combinationOperation": "SUM",
+			"common": null,
+			"defaultUnitAbbreviatedName": "count",
+			"defaultUnitId": 23,
+			"durationOfAction": 86400,
+			"effectOnly": null,
+			"fillingType": null,
+			"fillingValue": 0,
+			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Music/musical_notes-96.png",
+			"ionIcon": "ion-music-note",
+			"manualTracking": false,
+			"maximumAllowedValue": null,
+			"minimumAllowedValue": null,
+			"moreInfo": null,
+			"name": "Music",
+			"onsetDelay": 0,
+			"outcome": false,
+			"pngPath": "img/variable_categories/music.png",
+			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/music.png",
+			"public": true,
+			"setupQuestion": null,
+			"suffix": null,
+			"svgPath": "img/variable_categories/music.svg",
+			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/music.svg",
+			"synonyms": [
+				"Music"
+			],
+			"valence": null,
+			"variableCategoryNameSingular": "Music",
+			"id": 251,
+			"helpText": "What music did you listen to?",
+			"variableCategoryName": "Music",
+			"measurementSynonymSingularLowercase": "music"
+		},
+		{
+			"amazonProductCategory": null,
+			"causeOnly": false,
+			"combinationOperation": "SUM",
+			"common": null,
+			"defaultUnitAbbreviatedName": null,
+			"defaultUnitId": null,
+			"durationOfAction": 86400,
+			"effectOnly": null,
+			"fillingType": null,
+			"fillingValue": 0,
+			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Household/retro_tv-96.png",
+			"ionIcon": "ion-social-youtube",
+			"manualTracking": false,
+			"maximumAllowedValue": null,
+			"minimumAllowedValue": null,
+			"moreInfo": null,
+			"name": "Movies and TV",
+			"onsetDelay": 0,
+			"outcome": false,
+			"pngPath": "img/variable_categories/movies-and-tv.png",
+			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/movies-and-tv.png",
+			"public": true,
+			"setupQuestion": null,
+			"suffix": null,
+			"svgPath": "img/variable_categories/movies-and-tv.svg",
+			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/movies-and-tv.svg",
+			"synonyms": [
+				"Movies and TV"
+			],
+			"valence": null,
+			"variableCategoryNameSingular": "Movies and TV",
+			"id": 42
+		},
+		{
+			"amazonProductCategory": null,
+			"causeOnly": false,
+			"combinationOperation": "SUM",
+			"common": null,
+			"defaultUnitAbbreviatedName": "$",
+			"defaultUnitId": 49,
+			"durationOfAction": 86400,
+			"effectOnly": null,
+			"fillingType": null,
+			"fillingValue": 0,
+			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Finance/banknotes-96.png",
+			"ionIcon": "ion-cash",
+			"manualTracking": false,
+			"maximumAllowedValue": null,
+			"minimumAllowedValue": null,
+			"moreInfo": "Effortlessly see how supplements from Amazon might be influencing you, for example, by automatically logging spending by connecting the Slice app",
+			"name": "Payments",
+			"onsetDelay": 0,
+			"outcome": false,
+			"pngPath": "img/variable_categories/payments.png",
+			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.png",
+			"public": false,
+			"setupQuestion": null,
+			"suffix": null,
+			"svgPath": "img/variable_categories/payments.svg",
+			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
+			"synonyms": [
+				"Purchases",
+				"Payments",
+				"Payment",
+				"Purchase"
+			],
+			"valence": null,
+			"variableCategoryNameSingular": "Payment",
+			"id": 32,
+			"helpText": "What did you pay for?",
+			"variableCategoryName": "Payments",
+			"measurementSynonymSingularLowercase": "payment"
+		},
+		{
+			"amazonProductCategory": null,
+			"causeOnly": false,
+			"combinationOperation": "SUM",
 			"common": null,
 			"defaultUnitAbbreviatedName": "min",
 			"defaultUnitId": 2,
 			"durationOfAction": 86400,
 			"effectOnly": null,
 			"fillingType": null,
-			"fillingValue": -1,
-			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Maps/treasure_map-96.png",
-			"ionIcon": "ion-ios-location-outline",
-			"manualTracking": false,
-			"maximumAllowedValue": null,
-			"minimumAllowedValue": null,
-			"moreInfo": "By automatically recording your location in the background using GPS, we might be able to figure out how the amount of time spent at the gym, restaurants, doctors, offices, home and work locations may be affecting you.  Another benefit of enabling this option is that allows the app to run in the background and open instantly instead of taking a few seconds to load.  You can view your location history by going to Menu -> History -> Locations.",
-			"name": "Locations",
-			"onsetDelay": 0,
-			"outcome": false,
-			"pngPath": "img/variable_categories/location.png",
-			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/location.png",
-			"public": false,
-			"setupQuestion": null,
-			"suffix": null,
-			"svgPath": "img/variable_categories/location.svg",
-			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/location.svg",
-			"synonyms": [
-				"Location",
-				"Locations"
-			],
-			"valence": null,
-			"variableCategoryNameSingular": "Location",
-			"id": 4,
-			"helpText": "What location do you want to record?",
-			"variableCategoryName": "Location",
-			"measurementSynonymSingularLowercase": "location"
-		},
-		{
-			"amazonProductCategory": null,
-			"causeOnly": true,
-			"combinationOperation": "MEAN",
-			"common": null,
-			"defaultUnitAbbreviatedName": "g",
-			"defaultUnitId": 6,
-			"durationOfAction": 86400,
-			"effectOnly": null,
-			"fillingType": null,
-			"fillingValue": -1,
-			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Food/vegetarian_food-96.png",
-			"ionIcon": "ion-fork",
+			"fillingValue": 0,
+			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Programming/console-96.png",
+			"ionIcon": "ion-laptop",
 			"manualTracking": false,
 			"maximumAllowedValue": null,
 			"minimumAllowedValue": null,
 			"moreInfo": null,
-			"name": "Nutrients",
+			"name": "Software",
 			"onsetDelay": 0,
 			"outcome": false,
-			"pngPath": "img/variable_categories/nutrients.png",
-			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/nutrients.png",
-			"public": true,
+			"pngPath": "img/variable_categories/software.png",
+			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/software.png",
+			"public": false,
 			"setupQuestion": null,
-			"suffix": "intake",
-			"svgPath": "img/variable_categories/nutrients.svg",
-			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/nutrients.svg",
+			"suffix": null,
+			"svgPath": "img/variable_categories/software.svg",
+			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/software.svg",
 			"synonyms": [
-				"Nutrients",
-				"Nutrient"
+				"Software & Mobile Apps",
+				"App",
+				"Software",
+				"Software & Mobile App"
 			],
 			"valence": null,
-			"variableCategoryNameSingular": "Nutrient",
-			"id": 11,
-			"helpText": "What nutrient do you want to track?",
-			"variableCategoryName": "Nutrients",
-			"measurementSynonymSingularLowercase": "nutrient"
+			"variableCategoryNameSingular": "Software",
+			"id": 20
+		},
+		{
+			"amazonProductCategory": "Books",
+			"causeOnly": false,
+			"combinationOperation": "MEAN",
+			"common": null,
+			"defaultUnitAbbreviatedName": null,
+			"defaultUnitId": null,
+			"durationOfAction": 86400,
+			"effectOnly": null,
+			"fillingType": null,
+			"fillingValue": 0,
+			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Printing/books-96.png",
+			"ionIcon": "ion-ios-book",
+			"manualTracking": false,
+			"maximumAllowedValue": null,
+			"minimumAllowedValue": null,
+			"moreInfo": null,
+			"name": "Books",
+			"onsetDelay": 0,
+			"outcome": false,
+			"pngPath": "img/variable_categories/books.png",
+			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/books.png",
+			"public": true,
+			"setupQuestion": null,
+			"suffix": null,
+			"svgPath": "img/variable_categories/books.svg",
+			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/books.svg",
+			"synonyms": [
+				"Books",
+				"Book"
+			],
+			"valence": null,
+			"variableCategoryNameSingular": "Book",
+			"id": 19
 		},
 		{
 			"amazonProductCategory": null,
@@ -66440,114 +69074,6 @@ var staticData = {
 			"valence": null,
 			"variableCategoryNameSingular": "Goal",
 			"id": 12
-		},
-		{
-			"amazonProductCategory": null,
-			"causeOnly": false,
-			"combinationOperation": "SUM",
-			"common": null,
-			"defaultUnitAbbreviatedName": "min",
-			"defaultUnitId": 2,
-			"durationOfAction": 86400,
-			"effectOnly": null,
-			"fillingType": null,
-			"fillingValue": -1,
-			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Sports/football-96.png",
-			"ionIcon": "ion-ios-body-outline",
-			"manualTracking": false,
-			"maximumAllowedValue": null,
-			"minimumAllowedValue": null,
-			"moreInfo": null,
-			"name": "Activities",
-			"onsetDelay": 0,
-			"outcome": false,
-			"pngPath": "img/variable_categories/activity.png",
-			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/activity.png",
-			"public": false,
-			"setupQuestion": null,
-			"suffix": null,
-			"svgPath": "img/variable_categories/activity.svg",
-			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/activity.svg",
-			"synonyms": [
-				"Activity",
-				"Activities"
-			],
-			"valence": null,
-			"variableCategoryNameSingular": "Activity",
-			"id": 14,
-			"helpText": "What activity do you want to record?",
-			"variableCategoryName": "Activity",
-			"measurementSynonymSingularLowercase": "activity"
-		},
-		{
-			"amazonProductCategory": null,
-			"causeOnly": false,
-			"combinationOperation": "MEAN",
-			"common": null,
-			"defaultUnitAbbreviatedName": null,
-			"defaultUnitId": null,
-			"durationOfAction": 86400,
-			"effectOnly": null,
-			"fillingType": null,
-			"fillingValue": -1,
-			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Business/collaboration-96.png",
-			"ionIcon": "ion-ios-chatboxes-outline",
-			"manualTracking": false,
-			"maximumAllowedValue": null,
-			"minimumAllowedValue": null,
-			"moreInfo": null,
-			"name": "Social Interactions",
-			"onsetDelay": 0,
-			"outcome": false,
-			"pngPath": "img/variable_categories/social-interactions.png",
-			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/social-interactions.png",
-			"public": false,
-			"setupQuestion": null,
-			"suffix": null,
-			"svgPath": "img/variable_categories/social-interactions.svg",
-			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/social-interactions.svg",
-			"synonyms": [
-				"Social Interactions",
-				"Social Interaction"
-			],
-			"valence": null,
-			"variableCategoryNameSingular": "Social Interaction",
-			"id": 7
-		},
-		{
-			"amazonProductCategory": null,
-			"causeOnly": false,
-			"combinationOperation": "MEAN",
-			"common": null,
-			"defaultUnitAbbreviatedName": null,
-			"defaultUnitId": null,
-			"durationOfAction": 86400,
-			"effectOnly": null,
-			"fillingType": null,
-			"fillingValue": -1,
-			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Users/dizzy_person_2-96.png",
-			"ionIcon": "ion-ios-medkit",
-			"manualTracking": false,
-			"maximumAllowedValue": null,
-			"minimumAllowedValue": null,
-			"moreInfo": null,
-			"name": "Conditions",
-			"onsetDelay": 0,
-			"outcome": true,
-			"pngPath": "img/variable_categories/conditions.png",
-			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/conditions.png",
-			"public": true,
-			"setupQuestion": null,
-			"suffix": null,
-			"svgPath": "img/variable_categories/conditions.svg",
-			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/conditions.svg",
-			"synonyms": [
-				"Conditions",
-				"Condition"
-			],
-			"valence": null,
-			"variableCategoryNameSingular": "Condition",
-			"id": 16
 		},
 		{
 			"amazonProductCategory": null,
@@ -66596,35 +69122,33 @@ var staticData = {
 			"durationOfAction": 86400,
 			"effectOnly": null,
 			"fillingType": null,
-			"fillingValue": 0,
-			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Healthcare/virus-96.png",
+			"fillingValue": -1,
+			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Users/dizzy_person_2-96.png",
 			"ionIcon": "ion-ios-medkit",
 			"manualTracking": false,
 			"maximumAllowedValue": null,
 			"minimumAllowedValue": null,
 			"moreInfo": null,
-			"name": "Causes of Illness",
+			"name": "Conditions",
 			"onsetDelay": 0,
-			"outcome": false,
-			"pngPath": "img/variable_categories/causes-of-illness.png",
-			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/causes-of-illness.png",
+			"outcome": true,
+			"pngPath": "img/variable_categories/conditions.png",
+			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/conditions.png",
 			"public": true,
 			"setupQuestion": null,
 			"suffix": null,
-			"svgPath": "img/variable_categories/causes-of-illness.svg",
-			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/causes-of-illness.svg",
+			"svgPath": "img/variable_categories/conditions.svg",
+			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/conditions.svg",
 			"synonyms": [
-				"Causes of Illness",
-				"Cause of Illness",
-				"Causes of Illnes",
-				"Cause of Illnes"
+				"Conditions",
+				"Condition"
 			],
 			"valence": null,
-			"variableCategoryNameSingular": "Cause of Illness",
-			"id": 18
+			"variableCategoryNameSingular": "Condition",
+			"id": 16
 		},
 		{
-			"amazonProductCategory": "Books",
+			"amazonProductCategory": null,
 			"causeOnly": false,
 			"combinationOperation": "MEAN",
 			"common": null,
@@ -66633,30 +69157,30 @@ var staticData = {
 			"durationOfAction": 86400,
 			"effectOnly": null,
 			"fillingType": null,
-			"fillingValue": 0,
-			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Printing/books-96.png",
-			"ionIcon": "ion-ios-book",
+			"fillingValue": -1,
+			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Business/collaboration-96.png",
+			"ionIcon": "ion-ios-chatboxes-outline",
 			"manualTracking": false,
 			"maximumAllowedValue": null,
 			"minimumAllowedValue": null,
 			"moreInfo": null,
-			"name": "Books",
+			"name": "Social Interactions",
 			"onsetDelay": 0,
 			"outcome": false,
-			"pngPath": "img/variable_categories/books.png",
-			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/books.png",
-			"public": true,
+			"pngPath": "img/variable_categories/social-interactions.png",
+			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/social-interactions.png",
+			"public": false,
 			"setupQuestion": null,
 			"suffix": null,
-			"svgPath": "img/variable_categories/books.svg",
-			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/books.svg",
+			"svgPath": "img/variable_categories/social-interactions.svg",
+			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/social-interactions.svg",
 			"synonyms": [
-				"Books",
-				"Book"
+				"Social Interactions",
+				"Social Interaction"
 			],
 			"valence": null,
-			"variableCategoryNameSingular": "Book",
-			"id": 19
+			"variableCategoryNameSingular": "Social Interaction",
+			"id": 7
 		},
 		{
 			"amazonProductCategory": null,
@@ -66668,143 +69192,143 @@ var staticData = {
 			"durationOfAction": 86400,
 			"effectOnly": null,
 			"fillingType": null,
-			"fillingValue": 0,
-			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Programming/console-96.png",
-			"ionIcon": "ion-laptop",
+			"fillingValue": -1,
+			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Sports/football-96.png",
+			"ionIcon": "ion-ios-body-outline",
 			"manualTracking": false,
 			"maximumAllowedValue": null,
 			"minimumAllowedValue": null,
 			"moreInfo": null,
-			"name": "Software",
+			"name": "Activities",
 			"onsetDelay": 0,
 			"outcome": false,
-			"pngPath": "img/variable_categories/software.png",
-			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/software.png",
+			"pngPath": "img/variable_categories/activity.png",
+			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/activity.png",
 			"public": false,
 			"setupQuestion": null,
 			"suffix": null,
-			"svgPath": "img/variable_categories/software.svg",
-			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/software.svg",
+			"svgPath": "img/variable_categories/activity.svg",
+			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/activity.svg",
 			"synonyms": [
-				"Software & Mobile Apps",
-				"App",
-				"Software",
-				"Software & Mobile App"
+				"Activity",
+				"Activities"
 			],
 			"valence": null,
-			"variableCategoryNameSingular": "Software",
-			"id": 20
+			"variableCategoryNameSingular": "Activity",
+			"id": 14,
+			"helpText": "What activity do you want to record?",
+			"variableCategoryName": "Activity",
+			"measurementSynonymSingularLowercase": "activity"
 		},
 		{
 			"amazonProductCategory": null,
-			"causeOnly": false,
-			"combinationOperation": "SUM",
+			"causeOnly": true,
+			"combinationOperation": "MEAN",
 			"common": null,
-			"defaultUnitAbbreviatedName": "$",
-			"defaultUnitId": 49,
+			"defaultUnitAbbreviatedName": "g",
+			"defaultUnitId": 6,
 			"durationOfAction": 86400,
 			"effectOnly": null,
 			"fillingType": null,
-			"fillingValue": 0,
-			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Finance/banknotes-96.png",
-			"ionIcon": "ion-cash",
+			"fillingValue": -1,
+			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Food/vegetarian_food-96.png",
+			"ionIcon": "ion-fork",
 			"manualTracking": false,
 			"maximumAllowedValue": null,
 			"minimumAllowedValue": null,
-			"moreInfo": "Effortlessly see how supplements from Amazon might be influencing you, for example, by automatically logging spending by connecting the Slice app",
-			"name": "Payments",
+			"moreInfo": null,
+			"name": "Nutrients",
 			"onsetDelay": 0,
 			"outcome": false,
-			"pngPath": "img/variable_categories/payments.png",
-			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.png",
-			"public": false,
+			"pngPath": "img/variable_categories/nutrients.png",
+			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/nutrients.png",
+			"public": true,
 			"setupQuestion": null,
-			"suffix": null,
-			"svgPath": "img/variable_categories/payments.svg",
-			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/payments.svg",
+			"suffix": "intake",
+			"svgPath": "img/variable_categories/nutrients.svg",
+			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/nutrients.svg",
 			"synonyms": [
-				"Purchases",
-				"Payments",
-				"Payment",
-				"Purchase"
+				"Nutrients",
+				"Nutrient"
 			],
 			"valence": null,
-			"variableCategoryNameSingular": "Payment",
-			"id": 32,
-			"helpText": "What did you pay for?",
-			"variableCategoryName": "Payments",
-			"measurementSynonymSingularLowercase": "payment"
+			"variableCategoryNameSingular": "Nutrient",
+			"id": 11,
+			"helpText": "What nutrient do you want to track?",
+			"variableCategoryName": "Nutrients",
+			"measurementSynonymSingularLowercase": "nutrient"
 		},
 		{
 			"amazonProductCategory": null,
 			"causeOnly": false,
-			"combinationOperation": "SUM",
+			"combinationOperation": "MEAN",
+			"common": null,
+			"defaultUnitAbbreviatedName": "min",
+			"defaultUnitId": 2,
+			"durationOfAction": 86400,
+			"effectOnly": null,
+			"fillingType": null,
+			"fillingValue": -1,
+			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Maps/treasure_map-96.png",
+			"ionIcon": "ion-ios-location-outline",
+			"manualTracking": false,
+			"maximumAllowedValue": null,
+			"minimumAllowedValue": null,
+			"moreInfo": "By automatically recording your location in the background using GPS, we might be able to figure out how the amount of time spent at the gym, restaurants, doctors, offices, home and work locations may be affecting you.  Another benefit of enabling this option is that allows the app to run in the background and open instantly instead of taking a few seconds to load.  You can view your location history by going to Menu -> History -> Locations.",
+			"name": "Locations",
+			"onsetDelay": 0,
+			"outcome": false,
+			"pngPath": "img/variable_categories/location.png",
+			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/location.png",
+			"public": false,
+			"setupQuestion": null,
+			"suffix": null,
+			"svgPath": "img/variable_categories/location.svg",
+			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/location.svg",
+			"synonyms": [
+				"Location",
+				"Locations"
+			],
+			"valence": null,
+			"variableCategoryNameSingular": "Location",
+			"id": 4,
+			"helpText": "What location do you want to record?",
+			"variableCategoryName": "Location",
+			"measurementSynonymSingularLowercase": "location"
+		},
+		{
+			"amazonProductCategory": null,
+			"causeOnly": false,
+			"combinationOperation": "MEAN",
 			"common": null,
 			"defaultUnitAbbreviatedName": null,
 			"defaultUnitId": null,
 			"durationOfAction": 86400,
 			"effectOnly": null,
 			"fillingType": null,
-			"fillingValue": 0,
-			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Household/retro_tv-96.png",
-			"ionIcon": "ion-social-youtube",
+			"fillingValue": -1,
+			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Healthcare/brain-96.png",
+			"ionIcon": "ion-arrow-graph-up-right",
 			"manualTracking": false,
 			"maximumAllowedValue": null,
 			"minimumAllowedValue": null,
 			"moreInfo": null,
-			"name": "Movies and TV",
+			"name": "Cognitive Performance",
 			"onsetDelay": 0,
-			"outcome": false,
-			"pngPath": "img/variable_categories/movies-and-tv.png",
-			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/movies-and-tv.png",
+			"outcome": true,
+			"pngPath": "img/variable_categories/cognitive-performance.png",
+			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/cognitive-performance.png",
 			"public": true,
 			"setupQuestion": null,
 			"suffix": null,
-			"svgPath": "img/variable_categories/movies-and-tv.svg",
-			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/movies-and-tv.svg",
+			"svgPath": "img/variable_categories/cognitive-performance.svg",
+			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/cognitive-performance.svg",
 			"synonyms": [
-				"Movies and TV"
+				"Cognitive Performance"
 			],
 			"valence": null,
-			"variableCategoryNameSingular": "Movies and TV",
-			"id": 42
-		},
-		{
-			"amazonProductCategory": null,
-			"causeOnly": false,
-			"combinationOperation": "SUM",
-			"common": null,
-			"defaultUnitAbbreviatedName": "count",
-			"defaultUnitId": 23,
-			"durationOfAction": 86400,
-			"effectOnly": null,
-			"fillingType": null,
-			"fillingValue": 0,
-			"imageUrl": "https://maxcdn.icons8.com/Color/PNG/96/Music/musical_notes-96.png",
-			"ionIcon": "ion-music-note",
-			"manualTracking": false,
-			"maximumAllowedValue": null,
-			"minimumAllowedValue": null,
-			"moreInfo": null,
-			"name": "Music",
-			"onsetDelay": 0,
-			"outcome": false,
-			"pngPath": "img/variable_categories/music.png",
-			"pngUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/music.png",
-			"public": true,
-			"setupQuestion": null,
-			"suffix": null,
-			"svgPath": "img/variable_categories/music.svg",
-			"svgUrl": "https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/music.svg",
-			"synonyms": [
-				"Music"
-			],
-			"valence": null,
-			"variableCategoryNameSingular": "Music",
-			"id": 251,
-			"helpText": "What music did you listen to?",
-			"variableCategoryName": "Music",
-			"measurementSynonymSingularLowercase": "music"
+			"variableCategoryNameSingular": "Cognitive Performance",
+			"id": 9
 		},
 		{
 			"amazonProductCategory": null,
