@@ -35,7 +35,7 @@
     <script src="js/ionIcons.js"></script>
     <script src="js/qmLogger.js"></script>
     <script src="js/qmHelpers.js"></script>
-    <script src="data/qmStaticData.js"></script>
+      <script src="data/qmStaticData.js"></script> <!-- Must come after qmHelpers because we assign to qm.staticData -->
     <script src="js/qmChrome.js"></script>
     <script src="js/configuration-app.js"></script>
     <script src="js/services/qmLogService.js"></script>
@@ -136,6 +136,6 @@
     <script src="https://js.stripe.com/v3/"></script>
     <script src="lib/compromise/builds/compromise.js"></script>
     <script src="lib/Bravey/build/bravey.js"></script>
-    <script src="lib/pusher-js/dist/web/pusher.js"></script>
+    <!--<script src="lib/pusher-js/dist/web/pusher.js"></script>-->
   </body>
 </html>

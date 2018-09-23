@@ -128,7 +128,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                         ],
                         cancelText: '<i class="icon ion-ios-close"></i>Cancel',
                         cancel: function() {qmLog.debug('CANCELLED', null);},
-                        buttonClicked: function(index) {
+                        buttonClicked: function(index, button) {
                             qmLog.debug('BUTTON CLICKED', index);
                             var stateParams = {};
                             if(variableCategoryName){stateParams.variableCategoryName = variableCategoryName;}
@@ -1357,7 +1357,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                     //destructiveText: '<i class="icon ion-trash-a"></i>Skip All ',
                     cancelText: '<i class="icon ion-ios-close"></i>Cancel',
                     cancel: function() {qmLogService.debug('CANCELLED', null);},
-                    buttonClicked: function(index) {
+                    buttonClicked: function(index, button) {
                         qmLogService.debug('BUTTON CLICKED', null, index);
                         if(index === 0){qmLogService.debug('clicked variable name', null);}
                         if(index === 1){qmService.notifications.editReminderSettingsByNotification(trackingReminderNotification);}
@@ -1539,13 +1539,14 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                 var title = "Skip all?";
                 var textContent = "Do you want to dismiss all remaining past " + trackingReminderNotification.variableName + " reminder notifications?";
                 function yesCallback() {
+                    var filtered = qm.notifications.deleteByVariableName(trackingReminderNotification.variableName);
                     trackingReminderNotification.hide = true;
-                    qmLogService.debug('Skipping all notifications for trackingReminder', null, trackingReminderNotification);
+                    qmLog.debug('Skipping all notifications for trackingReminder', null, trackingReminderNotification);
                     qmService.showInfoToast("Skipping all " + trackingReminderNotification.variableName + " notifications...");
                     var params = {trackingReminderId : trackingReminderNotification.trackingReminderId};
-                    //qmService.showInfoToast('Skipping all ' + $scope.state.variableObject.name + ' reminder notifications...');
+                    if(successHandler){successHandler(filtered);}
                     qm.notifications.skipAllTrackingReminderNotifications(params, function(response){
-                            if(successHandler){successHandler(response);}
+                            //if(successHandler){successHandler(response);}
                         }, function(error){
                             if(errorHandler){errorHandler(error);}
                             qmLog.error(error);
@@ -1555,6 +1556,9 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                 function noCallback() {}
                 qmService.showMaterialConfirmationDialog(title, textContent, yesCallback, noCallback, ev);
                 return true;
+            },
+            skipAll: function(trackingReminderNotification, successHandler, errorHandler, ev){
+                return qmService.notifications.skipAllForVariable(trackingReminderNotification, successHandler, errorHandler, ev);
             },
             lastAction: "",
             showUndoToast: function(callback){
@@ -1580,6 +1584,10 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
         },
         pusher: {
             subscribe: function(user){
+                if(typeof Pusher === "undefined"){
+                    qmLog.debug("Pusher not defined!");
+                    return;
+                }
                 Pusher.logToConsole = qm.appMode.isDevelopment() || qm.appMode.isDebug();  // Enable pusher logging - don't include this in production
                 var pusher = new Pusher('4e7cd12d82bff45e4976', {cluster: 'us2', encrypted: true});
                 var channel = pusher.subscribe('user-'+user.id);
@@ -2250,15 +2258,14 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
             if(button.stateParams){stateParams = button.stateParams;}
             button.state = button.state || button.stateName;
             if(button.state){
-                if(button.state === qmStates.reminderAdd){
-                    qmService.reminders.addToRemindersUsingVariableObject(variableObject, {doneState: qmStates.remindersList, skipReminderSettingsIfPossible: true});
-                } else {
-                    qmService.goToState(button.state, stateParams);
-                }
-                return true;
+                qmService.goToState(button.state, stateParams);
+                return true;  // Needed to close action sheet
             }
-            if(button.action && button.action.modifiedValue){
-                qmService.trackByFavorite(stateParams.variableObject, button.action.modifiedValue);
+            if(button.action && qmService.notifications[button.action]){
+                var trackingReminderNotification = card.parameters;
+                trackingReminderNotification = qm.objectHelper.copyPropertiesFromOneObjectToAnother(button.parameters, trackingReminderNotification, true);
+                qmService.notifications[button.action](trackingReminderNotification);
+                return true;  // Needed to close action sheet
             }
             return false; // Don't close if clicking top variable name
         },
