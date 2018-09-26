@@ -389,6 +389,17 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                 }, function (error) {
                     qmLog.error('upVote failed!', error);
                 });
+            },
+            skipAll: function(button, card, successHandler){
+                qmService.showBasicLoader();
+                card.parameters = qm.objectHelper.copyPropertiesFromOneObjectToAnother(button.parameters, card.parameters);
+                qm.feed.addToFeedQueueAndRemoveFromFeed(card, function(nextCard){
+                    qm.feed.postToFeedEndpointImmediately(card, function(feed){
+                        if(successHandler){successHandler(feed);}
+                        qmService.feed.broadcastGetCards();
+                        qmService.hideLoader();
+                    });
+                });
             }
         },
         charts: {
@@ -970,6 +981,16 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                 if(emailType === 'fitbit'){ verifyEmailAddressAndExecuteCallback(sendFitbitEmail); }
                 if(emailType === 'chrome'){ verifyEmailAddressAndExecuteCallback(sendChromeEmail); }
             },
+        },
+        feed: {
+            broadcastGetCards: function(){
+                if($state.current.name === qmStates.feed){
+                    qmLog.info("Broadcasting broadcastGetCards");
+                    $rootScope.$broadcast('broadcastGetCards');
+                } else {
+                    qmLog.info("NOT broadcasting broadcastGetCards because state is "+$state.current.name);
+                }
+            }
         },
         help: {
             showExplanationsPopup: function(parameterOrPropertyName, ev, modelName, title) {
@@ -2038,6 +2059,30 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                 qmLogService.error("Could not find state with name: " + stateName);
             }
         },
+        sharing: {
+            shareNativelyOrViaWeb: function(sharingUrl){
+                if (qm.platform.isMobile()){
+                    // this is the complete list of currently supported params you can pass to the plugin (all optional)
+                    var options = {
+                        //message: correlationObject.sharingTitle, // not supported on some apps (Facebook, Instagram)
+                        //subject: correlationObject.sharingTitle, // fi. for email
+                        //files: ['', ''], // an array of filenames either locally or remotely
+                        url: sharingUrl.replace('local.q', 'app.q'),
+                        chooserTitle: 'Pick an app' // Android only, you can override the default share sheet title
+                    };
+                    var onSuccess = function(result) {
+                        //qmLog.error("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
+                        qmLog.error("Share to " + result.app + ' completed: ' + result.completed); // On Android result.app is currently empty. On iOS it's empty when sharing is cancelled (result.completed=false)
+                    };
+                    var onError = function(msg) {
+                        qmLog.error("Sharing failed with message: " + msg);
+                    };
+                    qmService.cordova.getPlugins().socialsharing.shareWithOptions(options, onSuccess, onError);
+                } else {
+                    qmService.openSharingUrl(sharingUrl);
+                }
+            }
+        },
         studyHelper: {
             showShareStudyConfirmation: function (study, sharingUrl, ev){
                 qm.studyHelper.lastStudy = study;
@@ -2253,20 +2298,37 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                 }
             }
         },
-        handleCardActionSheetClick: function(button, card) {
+        handleCardButtonClick: function(button, card) {
+            card.selectedButton = button;
             var stateParams = {};
             if(button.stateParams){stateParams = button.stateParams;}
             button.state = button.state || button.stateName;
+            if(button.webhookUrl){
+                var yesCallback = function(){
+                    qmService.post(button.webhookUrl, function(response){
+                        if(button.successToastText){qmService.showInfoToast(button.successToastText);}
+                    });
+                };
+                qmService.showMaterialConfirmationDialog(button.tooltip, button.confirmationText, yesCallback, function(){qmLog.info("Said no");});
+                return true;  // Needed to close action sheet
+            }
             if(button.state){
                 qmService.goToState(button.state, stateParams);
                 return true;  // Needed to close action sheet
             }
-            if(button.action && qmService.notifications[button.action]){
-                var trackingReminderNotification = card.parameters;
-                trackingReminderNotification = qm.objectHelper.copyPropertiesFromOneObjectToAnother(button.parameters, trackingReminderNotification, true);
-                qmService.notifications[button.action](trackingReminderNotification);
+            if(button.action && qmService.buttonClickHandlers[button.action]){
+                qmService.buttonClickHandlers[button.action](button, card);
                 return true;  // Needed to close action sheet
             }
+            if(button.action && button.action === "share"){
+                qmService.sharing.shareNativelyOrViaWeb(button.link);
+                return true;
+            }
+            if(button.link){
+                qm.urlHelper.openUrlInNewTab(button.link);
+                return true;
+            }
+            qm.feed.addToFeedQueueAndRemoveFromFeed(card);
             return false; // Don't close if clicking top variable name
         },
         handleVariableActionSheetClick: function(button, variableObject) {
@@ -2380,7 +2442,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
             }
             return buttons;
         },
-        openActionSheet: function (card, destructiveButtonClickedFunction) {
+        openActionSheetForCard: function (card, destructiveButtonClickedFunction) {
             qmLog.info("card", card);
             qmLog.info("actionSheetButtons", card.actionSheetButtons);
             card.actionSheetButtons = card.actionSheetButtons.map(function(button){
@@ -2393,7 +2455,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                 cancelText: '<i class="icon ion-ios-close"></i>Cancel',
                 cancel: function() {qmLog.debug('CANCELLED'); return true;},
                 buttonClicked: function(index, button) {
-                    return qmService.actionSheets.handleCardActionSheetClick(button, card);
+                    return qmService.actionSheets.handleCardButtonClick(button, card);
                 }
             };
             if(destructiveButtonClickedFunction){
@@ -2401,7 +2463,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                 actionSheetParams.destructiveButtonClicked = function(response) {
                     qmLog.debug('destructiveButtonClicked', response);
                     card.hide = true;
-                    destructiveButtonClickedFunction();
+                    destructiveButtonClickedFunction(card);
                     return true;
                 };
             }
@@ -2617,7 +2679,10 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
         });
     };
     qmService.post = function(route, requiredFields, body, successHandler, requestSpecificErrorHandler, options){
-        if(!body){throw "Please provide body parameter to qmService.post";}
+        if(!body){
+            body = {};
+            qmLog.warn("No body parameter provided to qmService.post");
+        }
         if(!options){ options = {}; }
         options.stackTrace = (body.stackTrace) ? body.stackTrace : 'No stacktrace provided with params';
         delete body.stackTrace;
