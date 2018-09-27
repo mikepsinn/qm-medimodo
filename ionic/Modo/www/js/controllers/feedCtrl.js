@@ -14,12 +14,9 @@ angular.module('starter').controller('FeedCtrl', ["$state", "$scope", "$rootScop
                     qmService.actionSheets.handleCardButtonClick(button, card);
                 }
             },
-            openActionSheet: function (card) {
+            openActionSheetForCard: function (card) {
                 var destructiveButtonClickedFunction = cardHandlers.removeCard;
                 qmService.actionSheets.openActionSheetForCard(card, destructiveButtonClickedFunction);
-            },
-            htmlClick: function(card){
-                $scope.state.openActionSheet(card);
             },
             refreshFeed: function () {
                 qm.feed.getFeedFromApi({}, function(cards){
@@ -55,11 +52,12 @@ angular.module('starter').controller('FeedCtrl', ["$state", "$scope", "$rootScop
                 });
                 qm.feed.undoFunction = function(){
                     card.hide = false;
-                    var cards = $scope.state.cards.unshift(card);
-                    cardHandlers.addCardsToScope(cards);
-                    qm.feed.addToFeedAndRemoveFromFeedQueue(card);
+                    qm.feed.addToFeedAndRemoveFromFeedQueue(card, cardHandlers.getCards);
                 };
-                if(button.successToastText){qmService.showUndoToast(button.successToastText);}
+                var button = card.selectedButton;
+                if(button.successToastText){
+                    qmService.toast.showUndoToast(button.successToastText, qm.feed.undoFunction);
+                }
             },
             getCards: function(cards) {
                 if(cards){

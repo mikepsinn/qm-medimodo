@@ -2325,7 +2325,11 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                 return true;
             }
             if(button.link){
-                qm.urlHelper.openUrlInNewTab(button.link);
+                if(button.link.indexOf("http") === 0 && button.link.indexOf(window.location.host) === -1){
+                    qm.urlHelper.openUrlInNewTab(button.link);
+                } else {
+                    qm.urlHelper.openUrl(button.link);
+                }
                 return true;
             }
             qm.feed.addToFeedQueueAndRemoveFromFeed(card);
@@ -3326,11 +3330,8 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
         qmLog.authDebug("Setting user to: ", user, user);
         qmService.rootScope.setUser(user);
         qm.userHelper.setUser(user);
-        if(!qm.getAppSettings()){
-            qmLog.error("Can't get qm.getAppSettings for some reason!");
-            return;
-        }
-        if(user && !user.stripeActive && qm.getAppSettings() && qm.getAppSettings().additionalSettings.monetizationSettings.advertisingEnabled){
+        if(user && !user.stripeActive && qm.getAppSettings() &&
+            qm.getAppSettings().additionalSettings.monetizationSettings.advertisingEnabled){
             qmService.adBanner.initialize();
         } else {
             qmLog.info("admob: Not initializing for some reason")

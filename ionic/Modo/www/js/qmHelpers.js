@@ -2583,8 +2583,8 @@ var qm = {
     },
     globalHelper: {
         setStudy: function(study){
-            if(study.studyId){
-                qm.storage.setGlobal(study.studyId, study);
+            if(study.id){
+                qm.storage.setGlobal(study.id, study);
                 return;
             }
             if(!study.causeVariable){
@@ -2968,7 +2968,7 @@ var qm = {
             qm.qmLog.debug('adding to ' + localStorageItemName + ': ' + JSON.stringify(newElementsArray).substring(0,20)+'...');
             qm.localForage.getItem(localStorageItemName, function(localStorageItemArray){
                 localStorageItemArray = localStorageItemArray || [];
-                localStorageItemArray = localStorageItemArray.concat(newElementsArray);
+                localStorageItemArray = newElementsArray.concat(localStorageItemArray);
                 localStorageItemArray = localStorageItemArray.filter(function(element){
                     return element !== null;
                 });
@@ -4087,6 +4087,10 @@ var qm = {
                 return;
             }
             if(!(trackingReminderNotificationsArray instanceof Array)){trackingReminderNotificationsArray = [trackingReminderNotificationsArray];}
+            if(!trackingReminderNotificationsArray[0]){
+                qmLog.error("trackingReminderNotificationsArray[0] is "+trackingReminderNotificationsArray[0],
+                    {trackingReminderNotificationsArray: trackingReminderNotificationsArray});
+            }
             trackingReminderNotificationsArray[0] = qm.timeHelper.addTimeZoneOffsetProperty(trackingReminderNotificationsArray[0]);
             qm.api.postToQuantiModo(trackingReminderNotificationsArray, 'v3/trackingReminderNotifications', successHandler, function(error){
                 qm.qmLog.info("Called postTrackingReminderNotificationsToApi...");
@@ -5727,23 +5731,25 @@ var qm = {
         },
         getCauseVariableId: function($stateParams, $scope, $rootScope){
             var value = qm.parameterHelper.getStateUrlRootScopeOrRequestParam(['causeVariableId', 'predictorVariableId'], $stateParams, $scope, $rootScope);
-            if(value){return value;}
+            if(value){return parseInt(value);}
             if(qm.studyHelper.lastStudy){
                 var lastStudyOrCorrelation = qm.studyHelper.lastStudy;
-                if(lastStudyOrCorrelation.causeVariableId){return lastStudyOrCorrelation.causeVariableId;}
+                if(lastStudyOrCorrelation.causeVariableId){
+                    return parseInt(lastStudyOrCorrelation.causeVariableId);
+                }
                 if(lastStudyOrCorrelation.causeVariable){
-                    return lastStudyOrCorrelation.causeVariable.variableId || lastStudyOrCorrelation.causeVariable.id;
+                    return parseInt(lastStudyOrCorrelation.causeVariable.variableId || lastStudyOrCorrelation.causeVariable.id);
                 }
             }
         },
         getEffectVariableId: function($stateParams, $scope, $rootScope){
             var value = qm.parameterHelper.getStateUrlRootScopeOrRequestParam(['effectVariableId', 'outcomeVariableId'], $stateParams, $scope, $rootScope);
-            if(value){return value;}
+            if(value){return parseInt(value);}
             if(qm.studyHelper.lastStudy){
                 var lastStudyOrCorrelation = qm.studyHelper.lastStudy;
-                if(lastStudyOrCorrelation.effectVariableId){return lastStudyOrCorrelation.effectVariableId;}
+                if(lastStudyOrCorrelation.effectVariableId){return parseInt(lastStudyOrCorrelation.effectVariableId);}
                 if(lastStudyOrCorrelation.effectVariable){
-                    return lastStudyOrCorrelation.effectVariable.variableId || lastStudyOrCorrelation.effectVariable.id;
+                    return parseInt(lastStudyOrCorrelation.effectVariable.variableId || lastStudyOrCorrelation.effectVariable.id);
                 }
             }
         },
@@ -5755,7 +5761,13 @@ var qm = {
             }
             var causeVariableName = study.causeVariableName || study.causeVariable.name;
             var effectVariableName = study.effectVariableName || study.effectVariable.name;
-            if(params.studyId && params.studyId === study.studyId){return true;}
+            var causeVariableId = study.causeVariableId || study.causeVariable.id;
+            var effectVariableId = study.effectVariableId || study.effectVariable.id;
+            if(params.causeVariableId && params.causeVariableId !== causeVariableId){return false;}
+            if(params.effectVariableId && params.effectVariableId !== effectVariableId){return false;}
+            if(study && !study.id){qmLog.error("Study has no id!");}
+            if(study.id && params.studyId && params.studyId === study.id){return true;}
+            if(study.id && params.studyId && params.studyId !== study.id){return false;}
             if(params.causeVariableName && params.causeVariableName !== causeVariableName){return false;}
             if(params.effectVariableName && params.effectVariableName !== effectVariableName){return false;}
             if(params.type && params.type !== study.type){return false;}
@@ -5815,7 +5827,7 @@ var qm = {
             var effectVariableName = qm.studyHelper.getEffectVariableName(study);
             if(causeVariableName){url = qm.urlHelper.addUrlQueryParamsToUrlString({causeVariableName: causeVariableName}, url);}
             if(effectVariableName){url = qm.urlHelper.addUrlQueryParamsToUrlString({effectVariableName: effectVariableName}, url);}
-            if(study.studyId){url += "&studyId=" + study.studyId;}
+            if(study.id){url += "&studyId=" + study.id;}
             return url;
         },
         getStudyFromApi: function(params, successHandler, errorHandler){
@@ -5962,6 +5974,10 @@ var qm = {
             return date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
         },
         addTimeZoneOffsetProperty: function(obj){
+            if(!obj){
+                qmLog.error("Nothing provided to addTimeZoneOffsetProperty");
+                return obj;
+            }
             var a = new Date();
             obj.timeZoneOffset = a.getTimezoneOffset();
             return obj;
@@ -6144,9 +6160,14 @@ var qm = {
             return keyValuePairsObject;
         },
         openUrlInNewTab: function (url, showLocation) {
+            qmLog.info("openUrlInNewTab: "+url);
             showLocation = showLocation || 'yes';
             //window.open(url, '_blank', 'location='+showLocation);
             window.open(url, '_blank');
+        },
+        openUrl: function (url) {
+            qmLog.info("openUrl: "+url);
+            window.location.href = url;
         },
         getIonicUrlForPath: function(path) {
             return qm.urlHelper.getIonicAppBaseUrl() + "index.html#/app/" + path;
