@@ -1135,19 +1135,19 @@ var staticData = {
 		"updatedAt": "2018-09-26 22:18:08",
 		"splashScreen": "oMg0F5fmyf_sfzgyc",
 		"textLogo": "nm8LguNtZL_chsco6",
-		"versionNumber": "2.8.927",
-		"androidVersionCode": "2018092789",
-		"builtAt": 1538084539
+		"versionNumber": "2.8.928",
+		"androidVersionCode": "2018092885",
+		"builtAt": 1538167204
 	},
 	"buildInfo": {
-		"iosCFBundleVersion": "2.8.927.1301",
-		"builtAt": 1538084539,
-		"versionNumber": "2.8.927",
+		"iosCFBundleVersion": "2.8.928.1239",
+		"builtAt": 1538167204,
+		"versionNumber": "2.8.928",
 		"versionNumbers": {
-			"iosCFBundleVersion": "2.8.927.1301",
-			"androidVersionCode": "2018092789",
-			"ionicApp": "2.8.927",
-			"buildVersionNumber": "2018092789"
+			"iosCFBundleVersion": "2.8.928.1239",
+			"androidVersionCode": "2018092885",
+			"ionicApp": "2.8.928",
+			"buildVersionNumber": "2018092885"
 		},
 		"gitBranch": "master",
 		"gitCommitShaHash": "03d86ff3aa4c8330ab5a4da468549b6b4c923b03"
@@ -33752,9 +33752,9 @@ var staticData = {
 			"scopes": null,
 			"spreadsheetUpload": null,
 			"totalMeasurementsInLastUpdate": null,
-			"updateError": "Not updating amazon for user 230 because memcached says we just updated it 3 minutes ago",
+			"updateError": "Not updating amazon for user 230 because memcached says we just updated it 4 minutes ago",
 			"updateRequestedAt": "2018-04-22 22:11:06",
-			"updateStatus": "UPDATING",
+			"updateStatus": "ERROR",
 			"affiliate": true,
 			"backgroundColor": "#fa4876",
 			"buttons": [
@@ -33821,7 +33821,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-27 17:50:59",
-			"message": "Got 0 new measurements 4 hours ago.  ",
+			"message": "Got 0 new measurements 27 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -33928,7 +33928,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-07-16 05:41:19",
-			"message": "Got 20 new measurements 74 days ago.  ",
+			"message": "Got 20 new measurements 75 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -34034,8 +34034,8 @@ var staticData = {
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
-			"lastSuccessfulUpdatedAt": "2018-09-27 00:48:22",
-			"message": "Got 142 new measurements 21 hours ago.  ",
+			"lastSuccessfulUpdatedAt": "2018-09-28 09:13:30",
+			"message": "Got 132 new measurements 11 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -34046,7 +34046,7 @@ var staticData = {
 			"realId": null,
 			"scopes": null,
 			"spreadsheetUpload": null,
-			"totalMeasurementsInLastUpdate": 142,
+			"totalMeasurementsInLastUpdate": 132,
 			"updateError": null,
 			"updateRequestedAt": "2018-09-01 20:34:51",
 			"updateStatus": "UPDATED",
@@ -34140,7 +34140,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-07-21 16:53:05",
-			"message": "Got 0 new measurements 68 days ago.  ",
+			"message": "Got 0 new measurements 69 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -34221,7 +34221,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-27 18:23:57",
-			"message": "Got 0 new measurements 3 hours ago.  ",
+			"message": "Got 0 new measurements 26 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -34327,7 +34327,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-02-05 22:51:13",
-			"message": "Got 0 new measurements 234 days ago.  ",
+			"message": "Got 0 new measurements 235 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -34407,8 +34407,8 @@ var staticData = {
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
-			"lastSuccessfulUpdatedAt": "2018-09-27 02:55:04",
-			"message": "Got 0 new measurements 19 hours ago.  ",
+			"lastSuccessfulUpdatedAt": "2018-09-28 11:16:15",
+			"message": "Got 0 new measurements 9 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -34514,7 +34514,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-27 13:28:08",
-			"message": "Got 0 new measurements 8 hours ago.  ",
+			"message": "Got 0 new measurements 31 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -34618,7 +34618,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2017-10-01 21:08:19",
-			"message": "Got 0 new measurements 361 days ago.  ",
+			"message": "Got 0 new measurements 362 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -34697,8 +34697,8 @@ var staticData = {
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
-			"lastSuccessfulUpdatedAt": "2018-09-26 21:48:51",
-			"message": "Got 0 new measurements 24 hours ago.  ",
+			"lastSuccessfulUpdatedAt": "2018-09-28 06:03:52",
+			"message": "Got 0 new measurements 15 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -34802,8 +34802,8 @@ var staticData = {
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
-			"lastSuccessfulUpdatedAt": "2018-09-27 00:11:14",
-			"message": "Got 0 new measurements 22 hours ago.  ",
+			"lastSuccessfulUpdatedAt": "2018-09-28 08:30:36",
+			"message": "Got 0 new measurements 12 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -34988,7 +34988,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-27 14:05:14",
-			"message": "Got 5 new measurements 8 hours ago.  ",
+			"message": "Got 5 new measurements 31 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -35093,8 +35093,8 @@ var staticData = {
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
-			"lastSuccessfulUpdatedAt": "2018-09-26 16:16:15",
-			"message": "Got 0 new measurements 29 hours ago.  ",
+			"lastSuccessfulUpdatedAt": "2018-09-28 00:25:14",
+			"message": "Got 0 new measurements 20 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -35198,7 +35198,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-04-17 21:07:29",
-			"message": "Got 350 new measurements 163 days ago.  ",
+			"message": "Got 350 new measurements 164 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -35382,8 +35382,8 @@ var staticData = {
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
-			"lastSuccessfulUpdatedAt": "2018-09-26 16:16:15",
-			"message": "Got 0 new measurements 29 hours ago.  ",
+			"lastSuccessfulUpdatedAt": "2018-09-28 00:25:14",
+			"message": "Got 0 new measurements 20 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -35488,7 +35488,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-01-27 17:11:40",
-			"message": "Got 43 new measurements 243 days ago.  ",
+			"message": "Got 43 new measurements 244 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -35569,7 +35569,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-03-16 19:57:33",
-			"message": "Got 5 new measurements 195 days ago.  ",
+			"message": "Got 5 new measurements 196 days ago.  ",
 			"platforms": [
 				"chrome",
 				"web"
@@ -35649,7 +35649,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-06-10 13:10:41",
-			"message": "Got 2 new measurements 109 days ago.  ",
+			"message": "Got 2 new measurements 110 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -35728,8 +35728,8 @@ var staticData = {
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
-			"lastSuccessfulUpdatedAt": "2018-09-27 10:23:10",
-			"message": "Got 20 new measurements 11 hours ago.  ",
+			"lastSuccessfulUpdatedAt": "2018-09-28 18:53:05",
+			"message": "Got 20 new measurements 107 minutes ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -35940,8 +35940,8 @@ var staticData = {
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
-			"lastSuccessfulUpdatedAt": "2018-09-26 23:46:10",
-			"message": "Got 60 new measurements 22 hours ago.  ",
+			"lastSuccessfulUpdatedAt": "2018-09-28 08:05:14",
+			"message": "Got 57 new measurements 13 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -35953,7 +35953,7 @@ var staticData = {
 			"realId": null,
 			"scopes": null,
 			"spreadsheetUpload": null,
-			"totalMeasurementsInLastUpdate": 60,
+			"totalMeasurementsInLastUpdate": 57,
 			"updateError": null,
 			"updateRequestedAt": "2018-07-31 14:29:51",
 			"updateStatus": "UPDATED",
@@ -36125,7 +36125,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-27 18:21:11",
-			"message": "Got 0 new measurements 3 hours ago.  ",
+			"message": "Got 0 new measurements 26 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -55716,6 +55716,12 @@ var staticData = {
 						},
 						"type": "array"
 					},
+					"buttonsSecondary": {
+						"items": {
+							"$ref": "#/definitions/Button"
+						},
+						"type": "array"
+					},
 					"content": {
 						"description": "Ex: Content",
 						"type": "string"
@@ -57650,7 +57656,7 @@ var staticData = {
 						"description": "The user id of the principal investigator or subject if an individual studies",
 						"type": "string"
 					},
-					"studyId": {
+					"id": {
 						"description": "ID of the cohort study which is necessary to allow participants to join",
 						"type": "string"
 					},
@@ -59545,28 +59551,28 @@ var staticData = {
 						"type": "string"
 					},
 					"ingredientOfCommonTagVariables": {
-						"description": "Commonly defined for all users. IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.",
+						"description": "Commonly defined for all users. IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollipop could be Sugar.  This way you only have to record Lollipop consumption and we can use this data to see how sugar might be affecting you.",
 						"items": {
 							"$ref": "#/definitions/Variable"
 						},
 						"type": "array"
 					},
 					"ingredientCommonTagVariables": {
-						"description": "Commonly defined for all users. IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.",
+						"description": "Commonly defined for all users. IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollipop could be Sugar.  This way you only have to record Lollipop consumption and we can use this data to see how sugar might be affecting you.",
 						"items": {
 							"$ref": "#/definitions/Variable"
 						},
 						"type": "array"
 					},
 					"ingredientOfUserTagVariables": {
-						"description": "User-Defined Variable Setting: IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.",
+						"description": "User-Defined Variable Setting: IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollipop could be Sugar.  This way you only have to record Lollipop consumption and we can use this data to see how sugar might be affecting you.",
 						"items": {
 							"$ref": "#/definitions/Variable"
 						},
 						"type": "array"
 					},
 					"ingredientUserTagVariables": {
-						"description": "User-Defined Variable Setting: IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.",
+						"description": "User-Defined Variable Setting: IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollipop could be Sugar.  This way you only have to record Lollipop consumption and we can use this data to see how sugar might be affecting you.",
 						"items": {
 							"$ref": "#/definitions/Variable"
 						},
