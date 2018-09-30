@@ -1131,10 +1131,10 @@
 	"synonyms": [],
 	"shortDescription": null,
 	"instructionsHtml": null,
-	"updatedAt": "2018-09-26 22:18:08",
+	"updatedAt": "2018-09-30 21:05:02",
 	"splashScreen": "oMg0F5fmyf_sfzgyc",
 	"textLogo": "nm8LguNtZL_chsco6",
-	"versionNumber": "2.8.928",
-	"androidVersionCode": "2018092885",
-	"builtAt": 1538167204
+	"versionNumber": "2.8.930",
+	"androidVersionCode": "2018093087",
+	"builtAt": 1538341815
 }
