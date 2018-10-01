@@ -378,13 +378,30 @@ var qm = {
         },
         getBaseUrl: function () {
             if(qm.appMode.isDebug() && qm.platform.isMobile()){return "https://utopia.quantimo.do";}
+            if(qm.getUser() && qm.getUser().id === 230 && qm.platform.isMobile()){return "https://utopia.quantimo.do";}
             if(qm.appsManager.getAppSettingsFromMemory() && qm.appsManager.getAppSettingsFromMemory().apiUrl){
                 if(qm.appsManager.getAppSettingsFromMemory().apiUrl.indexOf('https://') === -1){
                     qm.appsManager.getAppSettingsFromMemory().apiUrl = "https://" + qm.appsManager.getAppSettingsFromMemory().apiUrl;
                 }
                 return qm.appsManager.getAppSettingsFromMemory().apiUrl;
             }
-            return qm.appsManager.getQuantiModoApiUrl();
+            var apiUrl = window.qm.urlHelper.getParam(qm.items.apiUrl);
+            if(!apiUrl){apiUrl = qm.storage.getItem(qm.items.apiUrl);}
+            if(!apiUrl && window.location.origin.indexOf('staging.quantimo.do') !== -1){apiUrl = "https://staging.quantimo.do";}
+            if(!apiUrl && window.location.origin.indexOf('local.quantimo.do') !== -1){apiUrl = "https://local.quantimo.do";}
+            if(!apiUrl && window.location.origin.indexOf('utopia.quantimo.do') !== -1){apiUrl = "https://utopia.quantimo.do";}
+            if(!apiUrl && window.location.origin.indexOf('localhost:8100') !== -1){return "https://app.quantimo.do";} // Ionic serve
+            if(!apiUrl){apiUrl = "https://app.quantimo.do";}
+            if(apiUrl.indexOf("https://") === -1){apiUrl = "https://" + apiUrl;}
+            apiUrl = apiUrl.replace("https://https", "https");
+            // Why are we adding a port to the API url?  It breaks localhost:8100
+            if(window.location.port && window.location.port !== "443" && window.location.hostname !== 'localhost'){
+                apiUrl += ":" + window.location.port;
+            }
+            return apiUrl;
+        },
+        getApiUrl: function(){
+            return qm.api.getBaseUrl();
         },
         postToQuantiModo: function (body, path, successHandler, errorHandler) {
             qm.api.getRequestUrl(path, function(url){
@@ -407,7 +424,7 @@ var qm = {
         getAppSettingsUrl: function (clientId, callback) {
             function generateUrl(clientId, clientSecret){
                 // Can't use QM SDK in service worker
-                var settingsUrl = qm.appsManager.getQuantiModoApiUrl() + '/api/v1/appSettings?clientId=' + clientId;
+                var settingsUrl = qm.api.getBaseUrl() + '/api/v1/appSettings?clientId=' + clientId;
                 if(clientSecret){settingsUrl += "&clientSecret=" + clientSecret;}
                 if(window.designMode){settingsUrl += '&designMode=true';}
                 window.qm.qmLog.debug('Getting app settings from ' + settingsUrl);
@@ -511,7 +528,7 @@ var qm = {
                     url = addQueryParameter(url, 'platform', qm.platform.getCurrentPlatform());
                     return url;
                 }
-                var url = addGlobalQueryParameters(qm.appsManager.getQuantiModoApiUrl() + "/api/" + path);
+                var url = addGlobalQueryParameters(qm.api.getBaseUrl() + "/api/" + path);
                 qm.qmLog.debug("Making API request to " + url);
                 successHandler(url);
             })
@@ -570,23 +587,6 @@ var qm = {
             }
             clientId = qm.storage.getItem(qm.items.builderClientId);
             return clientId;
-        },
-        getQuantiModoApiUrl: function () {
-            if(qm.appMode.isDebug() && qm.platform.isMobile()){return "https://utopia.quantimo.do";}
-            var apiUrl = window.qm.urlHelper.getParam(qm.items.apiUrl);
-            if(!apiUrl){apiUrl = qm.storage.getItem(qm.items.apiUrl);}
-            if(!apiUrl && window.location.origin.indexOf('staging.quantimo.do') !== -1){apiUrl = "https://staging.quantimo.do";}
-            if(!apiUrl && window.location.origin.indexOf('local.quantimo.do') !== -1){apiUrl = "https://local.quantimo.do";}
-            if(!apiUrl && window.location.origin.indexOf('utopia.quantimo.do') !== -1){apiUrl = "https://utopia.quantimo.do";}
-            if(!apiUrl && window.location.origin.indexOf('localhost:8100') !== -1){return "https://app.quantimo.do";} // Ionic serve
-            if(!apiUrl){apiUrl = "https://app.quantimo.do";}
-            if(apiUrl.indexOf("https://") === -1){apiUrl = "https://" + apiUrl;}
-            apiUrl = apiUrl.replace("https://https", "https");
-            // Why are we adding a port to the API url?  It breaks localhost:8100
-            if(window.location.port && window.location.port !== "443" && window.location.hostname !== 'localhost'){
-                apiUrl += ":" + window.location.port;
-            }
-            return apiUrl;
         },
         getClientSecret: function(){
             if(qm.clientSecret){return qm.clientSecret;}
@@ -1145,6 +1145,9 @@ var qm = {
         }
     },
     auth: {
+        getAccessToken: function(){
+            return qm.auth.getAccessTokenFromUrlUserOrStorage();
+        },
         getAndSaveAccessTokenFromCurrentUrl: function(){
             qm.qmLog.authDebug("getAndSaveAccessTokenFromCurrentUrl " + window.location.href);
             var accessTokenFromUrl = qm.auth.getAccessTokenFromCurrentUrl();
@@ -2359,7 +2362,8 @@ var qm = {
             qm.feed.recentlyRespondedTo[submittedCard.id] = submittedCard;
             var parameters = submittedCard.parameters;
             if(submittedCard.selectedButton){
-                parameters = qm.objectHelper.copyPropertiesFromOneObjectToAnother(submittedCard.selectedButton.parameters, parameters);
+                parameters = qm.objectHelper.copyPropertiesFromOneObjectToAnother(submittedCard.selectedButton.parameters,
+                    parameters, false);
             }
             if(!parameters){
                 var error = "No submittedCard provided to addToFeedQueueAndRemoveFromFeed!";
@@ -2912,6 +2916,15 @@ var qm = {
                 return;
             }
             if(!qm.storage.valueIsValid(value)){return false;}
+            if(qm.pouch.enabled){
+                qm.pouch.getDb().upsert(key, function (doc) {
+                    return value;
+                }).then(function (res) {
+                    qmLog.info(res); // success, res is {rev: '1-xxx', updated: true, id: 'myDocId'}
+                }).catch(function (err) {
+                    qmLog.error(err);
+                });
+            }
             localforage.setItem(key, value, function (err) {
                 if(err){
                     if(errorHandler){errorHandler(err);}
@@ -3417,7 +3430,7 @@ var qm = {
                     card.selectedButton = qm.feed.getButtonMatchingPhrase(possiblePhrases);
                     var matchingFilledInputField, responseText;
                     if(card.selectedButton){
-                        card.parameters = qm.objectHelper.copyPropertiesFromOneObjectToAnother(card.selectedButton.parameters, card.parameters, true);
+                        card.parameters = qm.objectHelper.copyPropertiesFromOneObjectToAnother(card.selectedButton.parameters, card.parameters, false);
                         responseText = card.selectedButton.successToastText;
                         qm.qmLog.info("selectedButton", card.selectedButton);
                         for (var i = 0; i < unfilledFields.length; i++) {
@@ -4079,10 +4092,8 @@ var qm = {
         postNotifications: function(successHandler, errorHandler){
             qm.qmLog.info("Called postTrackingReminderNotificationsDeferred...");
             var trackingReminderNotificationsArray = qm.storage.getItem(qm.items.notificationsSyncQueue);
-            if(!trackingReminderNotificationsArray || !trackingReminderNotificationsArray.length){if(successHandler){successHandler();}}
-            //qm.qmLog.info('postTrackingReminderNotificationsDeferred trackingReminderNotificationsArray: ' + JSON.stringify(trackingReminderNotificationsArray));
             qm.storage.removeItem(qm.items.notificationsSyncQueue);
-            if(!trackingReminderNotificationsArray){
+            if(!trackingReminderNotificationsArray || !trackingReminderNotificationsArray.length){
                 if(successHandler){successHandler();}
                 return;
             }
@@ -4118,14 +4129,14 @@ var qm = {
         }
     },
     objectHelper: {
-        copyPropertiesFromOneObjectToAnother: function(source, destination, skipNulls){
+        copyPropertiesFromOneObjectToAnother: function(source, destinationToOverwrite, copyNulls){
             for (var prop in source) {
                 if (source.hasOwnProperty(prop)) {
-                    if(skipNulls && source[prop] === null){continue;}
-                    destination[prop] = source[prop];
+                    if(!copyNulls && source[prop] === null){continue;}
+                    destinationToOverwrite[prop] = source[prop];
                 }
             }
-            return destination;
+            return destinationToOverwrite;
         },
         isObject: function(a){
             return (!!a) && (a.constructor === Object);
@@ -4367,6 +4378,22 @@ var qm = {
                 return (qm.platform.browser.isChrome() || qm.platform.browser.isOpera()) && !!window.CSS;
             }
         }
+    },
+    pouch: {
+        enabled: false,
+        db: null,
+        getDb: function () {
+            if(qm.db && qm.pouch.dbName === qm.auth.getAccessToken()){
+                return qm.db;
+            }
+            if(!qm.auth.getAccessToken()){
+                qm.pouch.dbName = 'public';
+            } else {
+                qm.pouch.dbName = qm.auth.getAccessToken();
+            }
+            return qm.db = new PouchDB('http://localhost:5984/'+qm.pouch.dbName);
+        },
+        dbName: null
     },
     push: {
         getLastPushTimeStampInSeconds: function(){return qm.storage.getItem(qm.items.lastPushTimestamp);},
@@ -5891,7 +5918,7 @@ var qm = {
             }
             qm.chartHelper.setChartExportOptionsForAllSubProperties(study);
             if(study.text){  // Hack to make consistent with basic correlations to use same HTML template
-                study.statistics = qm.objectHelper.copyPropertiesFromOneObjectToAnother(study.text, study.statistics);
+                study.statistics = qm.objectHelper.copyPropertiesFromOneObjectToAnother(study.text, study.statistics, false);
                 delete study.text;
             }
             qm.studyHelper.saveLastStudyToGlobalsAndLocalForage(study);
@@ -7246,7 +7273,7 @@ var qm = {
                 return false;
             }
             // Service worker must be served from same origin with no redirect so we serve directly with nginx
-            var serviceWorkerUrl = qm.appsManager.getQuantiModoApiUrl()+'/ionic/Modo/src/firebase-messaging-sw.js';
+            var serviceWorkerUrl = window.location.origin+'/ionic/Modo/src/firebase-messaging-sw.js';
             qm.qmLog.info("Loading service worker from " + serviceWorkerUrl);
             if(typeof navigator.serviceWorker === "undefined"){
                 qm.qmLog.error("navigator.serviceWorker is not defined!");

@@ -363,6 +363,75 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                     qmService.barcodeScanner.upcToAttach = null;
                 }
                 return variableObject;
+            },
+            quaggaScan: function(){
+                navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+                window.URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
+
+                function getUserMedia(constraints, success, failure) {
+                    navigator.getUserMedia(constraints, function(stream) {
+                        var videoSrc = (window.URL && window.URL.createObjectURL(stream)) || stream;
+                        success.apply(null, [videoSrc]);
+                    }, failure);
+                }
+
+
+                function initCamera(constraints, video, callback) {
+                    getUserMedia(constraints, function (src) {
+                        video.src = src;
+                        video.addEventListener('loadeddata', function() {
+                            var attempts = 10;
+
+                            function checkVideo() {
+                                if (attempts > 0) {
+                                    if (video.videoWidth > 0 && video.videoHeight > 0) {
+                                        console.log(video.videoWidth + "px x " + video.videoHeight + "px");
+                                        video.play();
+                                        callback();
+                                    } else {
+                                        window.setTimeout(checkVideo, 100);
+                                    }
+                                } else {
+                                    callback('Unable to play video stream.');
+                                }
+                                attempts--;
+                            }
+
+                            checkVideo();
+                        }, false);
+                    }, function(e) {
+                        console.log(e);
+                    });
+                }
+
+                function copyToCanvas(video, ctx) {
+                    ( function frame() {
+                        ctx.drawImage(video, 0, 0);
+                        window.requestAnimationFrame(frame);
+                    }());
+                }
+
+                window.addEventListener('load', function() {
+                    var constraints = {
+                            video: {
+                                mandatory: {
+                                    minWidth: 1280,
+                                    minHeight: 720
+                                }
+                            }
+                        },
+                        video = document.createElement('video'),
+                        canvas = document.createElement('canvas');
+
+                    document.body.appendChild(video);
+                    document.body.appendChild(canvas);
+
+                    initCamera(constraints, video, function() {
+                        canvas.setAttribute('width', video.videoWidth);
+                        canvas.setAttribute('height', video.videoHeight);
+                        copyToCanvas(video, canvas.getContext('2d'));
+                    });
+                }, false);
             }
         },
         buttonClickHandlers: {
@@ -392,7 +461,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
             },
             skipAll: function(button, card, successHandler){
                 qmService.showBasicLoader();
-                card.parameters = qm.objectHelper.copyPropertiesFromOneObjectToAnother(button.parameters, card.parameters);
+                card.parameters = qm.objectHelper.copyPropertiesFromOneObjectToAnother(button.parameters, card.parameters, false);
                 qm.feed.addToFeedQueueAndRemoveFromFeed(card, function(nextCard){
                     qm.feed.postToFeedEndpointImmediately(card, function(feed){
                         if(successHandler){successHandler(feed);}
@@ -918,7 +987,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                 "Tracking Reminder Notification Intent": function(intent){
                     qmLog.info("intent: ", intent);
                     var card = qm.feed.currentCard;
-                    card.parameters = qm.objectHelper.copyPropertiesFromOneObjectToAnother(intent.parameters, card.parameters);
+                    card.parameters = qm.objectHelper.copyPropertiesFromOneObjectToAnother(intent.parameters, card.parameters, false);
                     qm.feed.addToFeedQueueAndRemoveFromFeed(card, function(nextCard){
                         if(card.followUpAction){card.followUpAction();}
                     });
@@ -1778,6 +1847,10 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                         qmLog.error(userErrorMessage);
                         showVariableList();
                     }
+                    if(!qm.platform.isMobile()){
+                        qmService.barcodeScanner.quaggaScan();
+                        return;
+                    }
                     qmService.barcodeScanner.scanBarcode(dialogParameters.requestParams, function (variables) {
                         if (variables && variables.length) {
                             self.helpText = "If you don't see what you're looking for, click the x and try a manual search";
@@ -2300,9 +2373,6 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
         },
         handleCardButtonClick: function(button, card) {
             card.selectedButton = button;
-            var stateParams = {};
-            if(button.stateParams){stateParams = button.stateParams;}
-            button.state = button.state || button.stateName;
             if(button.webhookUrl){
                 var yesCallback = function(){
                     qmService.post(button.webhookUrl, function(response){
@@ -2312,7 +2382,12 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
                 qmService.showMaterialConfirmationDialog(button.tooltip, button.confirmationText, yesCallback, function(){qmLog.info("Said no");});
                 return true;  // Needed to close action sheet
             }
+            button.state = button.state || button.stateName;
             if(button.state){
+                var stateParams = {};
+                if(button.stateParams){stateParams = button.stateParams;}
+                stateParams = qm.objectHelper.copyPropertiesFromOneObjectToAnother(stateParams, card.parameters, false);
+                delete stateParams.id;
                 qmService.goToState(button.state, stateParams);
                 return true;  // Needed to close action sheet
             }
@@ -6618,7 +6693,6 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
             template = template + "Built " + qm.timeHelper.getTimeSinceString(qm.getAppSettings().builtAt) + '\r\n';
             template = template + "user.pushNotificationsEnabled: " + qm.userHelper.getUserFromLocalStorage().pushNotificationsEnabled + '\r\n';
             template = template + "last Push Received: " + qm.push.getTimeSinceLastPushString() + '\r\n';
-            template = template + "last Push Data: " + qm.stringHelper.prettyJsonStringify(qm.storage.getItem(qm.items.lastPushData)) + '\r\n';
             template = template + "last Local Notification Triggered: " + qm.notifications.getTimeSinceLastLocalNotification() + '\r\n';
             template = template + "drawOverAppsPopupEnabled: " + qm.storage.getItem(qm.items.drawOverAppsPopupEnabled) + '\r\n';
             template = template + "last popup: " + qm.notifications.getTimeSinceLastPopupString() + '\r\n';
@@ -6633,6 +6707,7 @@ angular.module('starter').factory('qmService', ["$http", "$q", "$rootScope", "$i
             template = template + "Splashscreen plugin: " + splashInstalled + '\r\n';
             template = template + "Cordova Hot Code Push: " + qm.stringHelper.prettyJsonStringify(qmLog.globalMetaData.chcpInfo) + '\r\n';
             template = addSnapShotList(template);
+            template = template + "last Push Data: " + qm.stringHelper.prettyJsonStringify(qm.storage.getItem(qm.items.lastPushData)) + '\r\n';
             if(qmService.localNotifications.localNotificationsPluginInstalled()){
                 qmService.localNotifications.getAllLocalScheduled(function (localNotifications) {
                     template = template + "localNotifications: " + qm.stringHelper.prettyJsonStringify(localNotifications) + '\r\n';
