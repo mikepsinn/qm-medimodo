@@ -1,12 +1,12 @@
 {
-	"iosCFBundleVersion": "2.8.1008.325",
-	"builtAt": 1538976351,
-	"versionNumber": "2.8.1008",
+	"iosCFBundleVersion": "2.8.1009.351",
+	"builtAt": 1539064336,
+	"versionNumber": "2.8.1009",
 	"versionNumbers": {
-		"iosCFBundleVersion": "2.8.1008.325",
-		"androidVersionCode": "2018100822",
-		"ionicApp": "2.8.1008",
-		"buildVersionNumber": "2018100822"
+		"iosCFBundleVersion": "2.8.1009.351",
+		"androidVersionCode": "2018100924",
+		"ionicApp": "2.8.1009",
+		"buildVersionNumber": "2018100924"
 	},
 	"gitBranch": "master",
 	"gitCommitShaHash": "61d8212aa4b4a75043da3a5eb079653638c32187"

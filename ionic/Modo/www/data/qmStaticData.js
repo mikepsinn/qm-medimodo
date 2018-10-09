@@ -1132,22 +1132,22 @@ var staticData = {
 		"synonyms": [],
 		"shortDescription": null,
 		"instructionsHtml": null,
-		"updatedAt": "2018-10-06 01:52:28",
+		"updatedAt": "2018-10-08 18:38:28",
 		"splashScreen": "oMg0F5fmyf_sfzgyc",
 		"textLogo": "nm8LguNtZL_chsco6",
-		"versionNumber": "2.8.1008",
-		"androidVersionCode": "2018100822",
-		"builtAt": 1538976351
+		"versionNumber": "2.8.1009",
+		"androidVersionCode": "2018100924",
+		"builtAt": 1539064336
 	},
 	"buildInfo": {
-		"iosCFBundleVersion": "2.8.1008.325",
-		"builtAt": 1538976351,
-		"versionNumber": "2.8.1008",
+		"iosCFBundleVersion": "2.8.1009.351",
+		"builtAt": 1539064336,
+		"versionNumber": "2.8.1009",
 		"versionNumbers": {
-			"iosCFBundleVersion": "2.8.1008.325",
-			"androidVersionCode": "2018100822",
-			"ionicApp": "2.8.1008",
-			"buildVersionNumber": "2018100822"
+			"iosCFBundleVersion": "2.8.1009.351",
+			"androidVersionCode": "2018100924",
+			"ionicApp": "2.8.1009",
+			"buildVersionNumber": "2018100924"
 		},
 		"gitBranch": "master",
 		"gitCommitShaHash": "61d8212aa4b4a75043da3a5eb079653638c32187"
@@ -23601,7 +23601,7 @@ var staticData = {
 			"numberOfCorrelations": 38,
 			"numberOfCorrelationsAsCause": 76,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 150,
+			"numberOfRawMeasurements": 154,
 			"numberOfTrackingReminders": 0,
 			"numberOfUserCorrelationsAsCause": 38,
 			"numberOfUserCorrelationsAsEffect": 0,
@@ -23666,7 +23666,7 @@ var staticData = {
 			"numberOfCorrelations": 38,
 			"numberOfCorrelationsAsCause": 76,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 150,
+			"numberOfRawMeasurements": 154,
 			"numberOfTrackingReminders": 0,
 			"numberOfUserCorrelationsAsCause": 38,
 			"numberOfUserCorrelationsAsEffect": 0,
@@ -23794,7 +23794,7 @@ var staticData = {
 			"numberOfCorrelations": 38,
 			"numberOfCorrelationsAsCause": 76,
 			"numberOfCorrelationsAsEffect": 0,
-			"numberOfRawMeasurements": 150,
+			"numberOfRawMeasurements": 154,
 			"numberOfTrackingReminders": 0,
 			"numberOfUserCorrelationsAsCause": 38,
 			"numberOfUserCorrelationsAsEffect": 0,
@@ -66286,7 +66286,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-10-08 00:47:06",
-			"message": "Got 0 new measurements 5 hours ago.  ",
+			"message": "Got 0 new measurements 29 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -66393,7 +66393,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-07-16 05:41:19",
-			"message": "Got 20 new measurements 84 days ago.  ",
+			"message": "Got 20 new measurements 85 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -66499,8 +66499,8 @@ var staticData = {
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
-			"lastSuccessfulUpdatedAt": "2018-10-07 04:27:28",
-			"message": "Got 155 new measurements 25 hours ago.  ",
+			"lastSuccessfulUpdatedAt": "2018-10-08 19:40:47",
+			"message": "Got 57 new measurements 10 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -66511,7 +66511,7 @@ var staticData = {
 			"realId": null,
 			"scopes": null,
 			"spreadsheetUpload": null,
-			"totalMeasurementsInLastUpdate": 155,
+			"totalMeasurementsInLastUpdate": 57,
 			"updateError": null,
 			"updateRequestedAt": "2018-09-01 20:34:51",
 			"updateStatus": "UPDATED",
@@ -66605,7 +66605,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-07-21 16:53:05",
-			"message": "Got 0 new measurements 79 days ago.  ",
+			"message": "Got 0 new measurements 80 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -66686,7 +66686,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-10-08 01:41:12",
-			"message": "Got 0 new measurements 4 hours ago.  ",
+			"message": "Got 0 new measurements 28 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -66792,7 +66792,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-02-05 22:51:13",
-			"message": "Got 0 new measurements 244 days ago.  ",
+			"message": "Got 0 new measurements 245 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -66872,8 +66872,8 @@ var staticData = {
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
-			"lastSuccessfulUpdatedAt": "2018-10-07 07:15:38",
-			"message": "Got 0 new measurements 22 hours ago.  ",
+			"lastSuccessfulUpdatedAt": "2018-10-08 22:35:38",
+			"message": "Got 0 new measurements 7 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -66979,7 +66979,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-10-07 19:49:01",
-			"message": "Got 0 new measurements 10 hours ago.  ",
+			"message": "Got 0 new measurements 34 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -67083,7 +67083,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2017-10-01 21:08:19",
-			"message": "Got 0 new measurements 371 days ago.  ",
+			"message": "Got 0 new measurements 372 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -67162,8 +67162,8 @@ var staticData = {
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
-			"lastSuccessfulUpdatedAt": "2018-10-07 00:22:28",
-			"message": "Got 0 new measurements 29 hours ago.  ",
+			"lastSuccessfulUpdatedAt": "2018-10-08 15:33:18",
+			"message": "Got 0 new measurements 14 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -67268,7 +67268,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-09-28 08:30:36",
-			"message": "Got 0 new measurements 10 days ago.  ",
+			"message": "Got 0 new measurements 11 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -67428,7 +67428,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-10-07 20:25:41",
-			"message": "Got 10 new measurements 9 hours ago.  ",
+			"message": "Got 10 new measurements 33 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -67533,8 +67533,8 @@ var staticData = {
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
-			"lastSuccessfulUpdatedAt": "2018-10-06 16:13:57",
-			"message": "Got 0 new measurements 37 hours ago.  ",
+			"lastSuccessfulUpdatedAt": "2018-10-08 07:25:08",
+			"message": "Got 0 new measurements 22 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -67638,7 +67638,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-04-17 21:07:29",
-			"message": "Got 350 new measurements 173 days ago.  ",
+			"message": "Got 350 new measurements 174 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -67822,8 +67822,8 @@ var staticData = {
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
-			"lastSuccessfulUpdatedAt": "2018-10-06 16:13:57",
-			"message": "Got 0 new measurements 37 hours ago.  ",
+			"lastSuccessfulUpdatedAt": "2018-10-08 07:25:08",
+			"message": "Got 0 new measurements 22 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -67928,7 +67928,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-01-27 17:11:40",
-			"message": "Got 43 new measurements 254 days ago.  ",
+			"message": "Got 43 new measurements 255 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -68009,7 +68009,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-03-16 19:57:33",
-			"message": "Got 5 new measurements 205 days ago.  ",
+			"message": "Got 5 new measurements 206 days ago.  ",
 			"platforms": [
 				"chrome",
 				"web"
@@ -68089,7 +68089,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-06-10 13:10:41",
-			"message": "Got 2 new measurements 120 days ago.  ",
+			"message": "Got 2 new measurements 121 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -68169,7 +68169,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-10-07 15:52:08",
-			"message": "Got 20 new measurements 14 hours ago.  ",
+			"message": "Got 20 new measurements 38 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -68380,8 +68380,8 @@ var staticData = {
 			"connectStatus": "DISCONNECTED",
 			"enabled": 1,
 			"errorMessage": null,
-			"lastSuccessfulUpdatedAt": "2018-10-07 03:25:00",
-			"message": "Got 139 new measurements 26 hours ago.  ",
+			"lastSuccessfulUpdatedAt": "2018-10-08 18:38:51",
+			"message": "Got 639 new measurements 11 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -68393,7 +68393,7 @@ var staticData = {
 			"realId": null,
 			"scopes": null,
 			"spreadsheetUpload": null,
-			"totalMeasurementsInLastUpdate": 139,
+			"totalMeasurementsInLastUpdate": 639,
 			"updateError": null,
 			"updateRequestedAt": "2018-07-31 14:29:51",
 			"updateStatus": "UPDATED",
@@ -68485,7 +68485,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-04-22 09:18:55",
-			"message": "Got 2 new measurements 169 days ago.  ",
+			"message": "Got 2 new measurements 170 days ago.  ",
 			"platforms": [
 				"ios",
 				"android",
@@ -68565,7 +68565,7 @@ var staticData = {
 			"enabled": 1,
 			"errorMessage": null,
 			"lastSuccessfulUpdatedAt": "2018-10-08 01:37:05",
-			"message": "Got 0 new measurements 4 hours ago.  ",
+			"message": "Got 0 new measurements 28 hours ago.  ",
 			"platforms": [
 				"ios",
 				"android",
