@@ -5,13 +5,13 @@
 			"appleId": "1115037060",
 			"appIdentifier": "com.quantimodo.quantimodo",
 			"facebookAppId": 225078261031461,
-			"ionicAppId": ""
+			"ionicAppId": "42fe48d4"
 		},
 		"appImages": {
 			"appIcon": "https://quantimodo.s3.amazonaws.com/app_uploads/quantimodo/app_images_appIcon.png",
 			"notificationIcon": "ion-android-happy",
-			"splashScreen": "https://raw.githubusercontent.com/mikepsinn/quantimodo-images/master/splash-screens/mindfulness-splash.png",
-			"textLogo": "https://quantimodo.s3.amazonaws.com/app_uploads/quantimodo/app_images_textLogo.png",
+			"splashScreen": "https://quantimodo.s3.amazonaws.com/app_uploads/quantimodo/appImages_splashScreen_1498869615.png",
+			"textLogo": "https://quantimodo.s3.amazonaws.com/app_uploads/quantimodo/appImages_textLogo_1498869688.png",
 			"favicon": "https://quantimodo.s3.amazonaws.com/app_uploads/quantimodo/icon_16.png",
 			"instructions": {
 				"appIcon": "<p>Ideally, a 512px by 512px  icon or square logo png image with a transparent background.  <a href=\"http://code.ionicframework.com/resources/icon.psd\">Photoshop Icon Template</a></p><br>",
@@ -21,13 +21,13 @@
 		},
 		"companyEmail": "info@quantimo.do",
 		"downloadLinks": {
-			"androidApp": "https://play.google.com/store/apps/details?id=com.quantimodo.oauth_test_client",
+			"androidApp": "https://play.google.com/store/apps/details?id=com.quantimodo.quantimodo",
 			"iosApp": "https://itunes.apple.com/us/app/quantimodo-life-tracker/id1115037060?mt=8",
 			"chromeExtension": "https://chrome.google.com/webstore/detail/quantimodo-life-tracking/jioloifallegdkgjklafkkbniianjbgi",
-			"webApp": "https://oauth_test_client.quantimo.do",
+			"webApp": "https://app.quantimo.do",
 			"physicianDashboard": "https://quantimodo.quantimo.do/api/v2/physicians",
-			"integrationGuide": "https://app.quantimo.do/api/v2/apps/quantimodo/integration",
-			"appDesigner": "https://app.quantimo.do/ionic/Modo/www/configuration-index.html#/app/configuration?clientId=quantimodo",
+			"integrationGuide": "https://staging.quantimo.do/api/v2/apps/quantimodo/integration",
+			"appDesigner": "https://staging.quantimo.do/ionic/Modo/www/configuration-index.html#/app/configuration?clientId=quantimodo",
 			"descriptions": {
 				"androidApp": null,
 				"iosApp": null,
@@ -55,8 +55,8 @@
 				"integrationGuide": "https://github.com/mikepsinn/quantimodo-images/blob/master/050-laptop.png?raw=true",
 				"appDesigner": "https://github.com/mikepsinn/quantimodo-images/blob/master/magician.png?raw=true"
 			},
-			"inboxUrl": "https://oauth_test_client.quantimo.do/ionic/Modo/src/index.html#/app/settings",
-			"settingsUrl": "https://oauth_test_client.quantimo.do/ionic/Modo/src/index.html#/app/settings"
+			"inboxUrl": "https://app.quantimo.do/ionic/Modo/src/index.html#/app/settings",
+			"settingsUrl": "https://app.quantimo.do/ionic/Modo/src/index.html#/app/settings"
 		},
 		"googleAnalyticsTrackingIds": {
 			"adminPanel": "UA-39222734-29",
@@ -73,55 +73,110 @@
 		"upgradeDisabled": false,
 		"monetizationSettings": {
 			"subscriptionsEnabled": {
+				"disabled": null,
 				"displayName": "Subscriptions Enabled",
-				"key": "subscriptionsEnabled",
-				"value": true,
-				"type": "bool",
+				"entityName": null,
 				"helpText": "Would you like to enable subscriptions adds and earn $2 per monthly subscriber?",
-				"show": true,
+				"hint": null,
+				"icon": null,
+				"image": null,
+				"key": "subscriptionsEnabled",
+				"labelRight": null,
+				"labelLeft": null,
 				"link": null,
-				"image": null
+				"placeholder": null,
+				"required": null,
+				"show": true,
+				"submitButton": null,
+				"type": "bool",
+				"validationPattern": null,
+				"value": true,
+				"id": null
 			},
 			"advertisingEnabled": {
+				"disabled": null,
 				"displayName": "Advertising Enabled",
-				"key": "advertisingEnabled",
-				"value": false,
-				"type": "bool",
+				"entityName": null,
 				"helpText": "Would you like to show ads and earn 50% of all click revenue?",
-				"show": true,
+				"hint": null,
+				"icon": null,
+				"image": null,
+				"key": "advertisingEnabled",
+				"labelRight": null,
+				"labelLeft": null,
 				"link": null,
-				"image": null
+				"placeholder": null,
+				"required": null,
+				"show": true,
+				"submitButton": null,
+				"type": "bool",
+				"validationPattern": null,
+				"value": false,
+				"id": null
 			},
 			"playPublicLicenseKey": {
+				"disabled": null,
 				"displayName": "Play Public License Key",
-				"key": "playPublicLicenseKey",
-				"value": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsj3LTNlYyR0Mdj4hCu1S0HwYOxrIeub16ONsEPZQQqFgg/63qCa6/jW4PQkMUMGpCV/GX8rLV5DWRXLaHj8KVATc+CCVQR6SLTSRRj0R3bpNU5g00DxD99pNMeZZTRbANKvVWHxDdbvttokygbbr3VidGoL9ly8nmiouLmefLIjiMzjDkJ/xmYJcZ7Pk9BAZb+ZgiX372nEtwUyoL2miTQe9Skgd8SGq1unQebpFRg+R3TsNq4HKxnG630VwNlxycOl+HvWcwNp2p6u+7ogFKTHJ7sEbfr2x5cph07zRKvnJKO5pYgZGk6GRVwKOMc8dNYnQLynwb7hBfAQzFnE8QQIDAQAB",
-				"type": "string",
+				"entityName": null,
 				"helpText": "Can be found at the <a href=\"https://play.google.com/apps/publish\" target=\"_blank\">Play Developer Console</a> by clicking your app -> Development Tools -> Services and APIs",
-				"show": true,
+				"hint": null,
+				"icon": null,
+				"image": "https://lh3.googleusercontent.com/9WW-ovgK4v2va7xkI0Fu8ypaRGBCBboebwKMucGXvboZa1u9KIQkuCKPBzG80t6aIXo=w300",
+				"key": "playPublicLicenseKey",
+				"labelRight": null,
+				"labelLeft": null,
 				"link": "https://developer.android.com/training/in-app-billing/preparing-iab-app.html#AddToDevConsole",
-				"image": "https://lh3.googleusercontent.com/9WW-ovgK4v2va7xkI0Fu8ypaRGBCBboebwKMucGXvboZa1u9KIQkuCKPBzG80t6aIXo=w300"
+				"placeholder": null,
+				"required": null,
+				"show": true,
+				"submitButton": null,
+				"type": "string",
+				"validationPattern": null,
+				"value": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsj3LTNlYyR0Mdj4hCu1S0HwYOxrIeub16ONsEPZQQqFgg/63qCa6/jW4PQkMUMGpCV/GX8rLV5DWRXLaHj8KVATc+CCVQR6SLTSRRj0R3bpNU5g00DxD99pNMeZZTRbANKvVWHxDdbvttokygbbr3VidGoL9ly8nmiouLmefLIjiMzjDkJ/xmYJcZ7Pk9BAZb+ZgiX372nEtwUyoL2miTQe9Skgd8SGq1unQebpFRg+R3TsNq4HKxnG630VwNlxycOl+HvWcwNp2p6u+7ogFKTHJ7sEbfr2x5cph07zRKvnJKO5pYgZGk6GRVwKOMc8dNYnQLynwb7hBfAQzFnE8QQIDAQAB",
+				"id": null
 			},
 			"monetizationSettingsInstructionLinks": null,
 			"iosMonthlySubscriptionCode": {
+				"disabled": null,
 				"displayName": "iOS Monthly Subscription Code",
-				"key": "iosMonthlySubscriptionCode",
-				"value": "quantimodo_monthly7",
-				"type": "string",
+				"entityName": null,
 				"helpText": "Create a monthly Auto-Renewable Subscription In-App Purchase at https://itunesconnect.apple.com and enter the code here",
-				"show": true,
+				"hint": null,
+				"icon": null,
+				"image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8IBe_Gu-i_gtUs0eaFwH1slGQoqgymL1MvUN9bcBz7rmA3zCExw",
+				"key": "iosMonthlySubscriptionCode",
+				"labelRight": null,
+				"labelLeft": null,
 				"link": "https://itunesconnect.apple.com",
-				"image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8IBe_Gu-i_gtUs0eaFwH1slGQoqgymL1MvUN9bcBz7rmA3zCExw"
+				"placeholder": null,
+				"required": null,
+				"show": true,
+				"submitButton": null,
+				"type": "string",
+				"validationPattern": null,
+				"value": "quantimodo_monthly7",
+				"id": null
 			},
 			"iosYearlySubscriptionCode": {
+				"disabled": null,
 				"displayName": "iOS Yearly Subscription Code",
-				"key": "iosYearlySubscriptionCode",
-				"value": "quantimodo_yearly7",
-				"type": "string",
+				"entityName": null,
 				"helpText": "Create a yearly Auto-Renewable Subscription In-App Purchase at https://itunesconnect.apple.com and enter the code here",
-				"show": true,
+				"hint": null,
+				"icon": null,
+				"image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8IBe_Gu-i_gtUs0eaFwH1slGQoqgymL1MvUN9bcBz7rmA3zCExw",
+				"key": "iosYearlySubscriptionCode",
+				"labelRight": null,
+				"labelLeft": null,
 				"link": "https://itunesconnect.apple.com",
-				"image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8IBe_Gu-i_gtUs0eaFwH1slGQoqgymL1MvUN9bcBz7rmA3zCExw"
+				"placeholder": null,
+				"required": null,
+				"show": true,
+				"submitButton": null,
+				"type": "string",
+				"validationPattern": null,
+				"value": "quantimodo_yearly7",
+				"id": null
 			}
 		}
 	},
@@ -153,8 +208,8 @@
 				},
 				"button3": {
 					"icon": "ion-ios-cloud-download-outline",
-					"label": "Talk to Me",
-					"stateName": "app.chat",
+					"label": "Import Data",
+					"stateName": "app.import",
 					"stateParameters": {
 						"variableCategoryName": "Anything"
 					}
@@ -176,14 +231,16 @@
 					"title": "Reminder Inbox",
 					"icon": "ion-archive",
 					"bodyText": "Scroll through the Inbox and press the appropriate button on each reminder notification. Each one only takes a few seconds. You'll be shocked at how much valuable data you can collect with just a few minutes in the Reminder Inbox each day!",
-					"$$hashKey": "object:1775"
+					"$$hashKey": "object:1665",
+					"$$mdSelectId": 15
 				},
 				{
 					"id": "recordMeasurementInfoCard",
 					"title": "Record Measurements",
 					"icon": "ion-edit",
 					"bodyText": "Want to just record a medication, food or symptom immediately instead of creating a reminder? Just go to the Record Measurement menu item and select the appropriate variable category. Alternatively, you can just press the little red button at the bottom of the screen.",
-					"$$hashKey": "object:1776"
+					"$$hashKey": "object:1666",
+					"$$mdSelectId": 16
 				},
 				{
 					"id": "chromeExtensionInfoCard",
@@ -195,7 +252,8 @@
 						"text": "Send Me a Link",
 						"ionIcon": "ion-checkmark"
 					},
-					"$$hashKey": "object:1777"
+					"$$hashKey": "object:1667",
+					"$$mdSelectId": 17
 				},
 				{
 					"id": "getHelpInfoCard",
@@ -208,7 +266,8 @@
 						"buttonClass": "button button-clear button-positive ion-checkmark",
 						"goToState": "app.help"
 					},
-					"$$hashKey": "object:1778"
+					"$$hashKey": "object:1668",
+					"$$mdSelectId": 18
 				},
 				{
 					"id": "getFitbitHelpInfoCard",
@@ -220,7 +279,8 @@
 						"text": "Get Fitbit",
 						"ionIcon": "ion-checkmark"
 					},
-					"$$hashKey": "object:1779"
+					"$$hashKey": "object:1669",
+					"$$mdSelectId": 19
 				},
 				{
 					"id": "locationTrackingPage",
@@ -245,7 +305,8 @@
 					"iconClass": "icon positive ion-ios-location-outline",
 					"ionIcon": "ion-ios-location-outline",
 					"moreInfo": "By automatically recording your location in the background using GPS, we might be able to figure out how the amount of time spent at the gym, restaurants, doctors, offices, home and work locations may be affecting you.  Another benefit of enabling this option is that allows the app to run in the background and open instantly instead of taking a few seconds to load.  You can view your location history by going to Menu -> History -> Locations.",
-					"$$hashKey": "object:1780"
+					"$$hashKey": "object:1670",
+					"$$mdSelectId": 20
 				},
 				{
 					"id": "weatherTrackingPage",
@@ -270,7 +331,8 @@
 					"iconClass": "icon positive ion-ios-partlysunny",
 					"ionIcon": "ion-ios-partlysunny",
 					"moreInfo": "By recording your local weather conditions, I might be able to figure out how the amount of sunlight or temperature is affecting you.",
-					"$$hashKey": "object:1781"
+					"$$hashKey": "object:1671",
+					"$$mdSelectId": 21
 				},
 				{
 					"id": "importDataPage",
@@ -291,14 +353,15 @@
 						"buttonClass": "button button-clear button-positive ion-checkmark",
 						"goToState": "app.import"
 					},
-					"$$hashKey": "object:1782"
+					"$$hashKey": "object:1672",
+					"$$mdSelectId": 22
 				}
 			]
 		},
 		"intro": {
 			"active": [
 				{
-					"title": "Hi! I'm  QuantiModo!",
+					"title": "Hi! I'm QuantiModo!",
 					"color": {
 						"backgroundColor": "#0f9d58",
 						"circleColor": "#03c466"
@@ -307,7 +370,8 @@
 						"url": "img/robots/robot-waving.svg"
 					},
 					"bodyText": "I've been programmed to reduce human suffering with data.",
-					"$$hashKey": "object:1214"
+					"$$hashKey": "object:1922",
+					"$$mdSelectId": 23
 				},
 				{
 					"title": "Hidden Influences",
@@ -319,7 +383,8 @@
 						"url": "img/intro/patient-frown-factors.png"
 					},
 					"bodyText": "Your symptoms can be worsened or improved by medical treatments, your sleep, exercise, the hundreds of chemicals you consume through your diet, and even the weather!",
-					"$$hashKey": "object:1215"
+					"$$hashKey": "object:1923",
+					"$$mdSelectId": 24
 				},
 				{
 					"title": "Only Human",
@@ -330,20 +395,9 @@
 					"image": {
 						"url": "img/brains/brain-pink.svg"
 					},
-					"bodyText": "Your puny human brain can only hold 7 numbers in working-memory at a time.  So on it's own, it's not able to determine which hidden factors are contributing to or alleviating your suffering.",
-					"$$hashKey": "object:1216"
-				},
-				{
-					"title": "Machine Learning",
-					"color": {
-						"backgroundColor": "#3467d6",
-						"circleColor": "#5b95f9"
-					},
-					"image": {
-						"url": "img/robots/quantimodo-robot-brain.svg"
-					},
-					"bodyText": "My brain can hold TRILLIONS of numbers!  I can also analyze it to help you determine how different foods could be affecting your health!",
-					"$$hashKey": "object:1218"
+					"bodyText": "Human brains can only hold 7 numbers in working-memory at a time.  So on their own, they're not able to determine which diet is best for you. ",
+					"$$hashKey": "object:1924",
+					"$$mdSelectId": 25
 				},
 				{
 					"title": "Treatment Determination",
@@ -354,8 +408,22 @@
 					"image": {
 						"url": "img/intro/doctor-frown-factors.png"
 					},
-					"bodyText": "Indeed, brains have access to less than 1% of the relevant information when they use intuition to determine the best ways to treat your symptoms!",
-					"$$hashKey": "object:1217"
+					"bodyText": "Indeed, your doctor has access to less than 1% of the relevant information when they use intuition to determine the best ways to treat your symptoms!",
+					"$$hashKey": "object:1925",
+					"$$mdSelectId": 26
+				},
+				{
+					"title": "Machine Learning",
+					"color": {
+						"backgroundColor": "#3467d6",
+						"circleColor": "#5b95f9"
+					},
+					"image": {
+						"url": "img/robots/quantimodo-robot-brain.svg"
+					},
+					"bodyText": "My brain can hold trillions of numbers!  I can also analyze it to help your dietitian determine how different foods could be affecting your health! ",
+					"$$hashKey": "object:1926",
+					"$$mdSelectId": 27
 				},
 				{
 					"title": "Automated Tracking",
@@ -366,8 +434,9 @@
 					"image": {
 						"url": "img/intro/download_2-96.png"
 					},
-					"bodyText": "Weight, blood pressure, heart rate, & physical activity data can be collected automatically and imported from dozens of devices.  Weather and the amount of time spent at the gym, restaurants, work, or doctors offices can be automatically collected via your phone's GPS.",
-					"$$hashKey": "object:1219"
+					"bodyText": "Weight, blood pressure, heart rate, physical activity data can be collected automatically and imported from dozens of devices.  Weather and the amount of time spent at the gym, restaurants, work, or doctors offices can be collected via your phone's GPS.",
+					"$$hashKey": "object:1927",
+					"$$mdSelectId": 28
 				},
 				{
 					"title": "Effortless Tracking",
@@ -379,7 +448,8 @@
 						"url": "img/intro/inbox.svg"
 					},
 					"bodyText": "By taking just a few minutes each day, you can easily record your diet and symptoms in the Reminder Inbox.  The more data you give me, the smarter I get!  Your data doesn't have to be perfect to be valuable, but it's important to track regularly. ",
-					"$$hashKey": "object:1220"
+					"$$hashKey": "object:1928",
+					"$$mdSelectId": 29
 				},
 				{
 					"title": "Data Security",
@@ -391,7 +461,8 @@
 						"url": "img/intro/lock.svg"
 					},
 					"bodyText": "I use bank-level encryption to keep your data secure.  Human eyes will never see your data unless you intentionally share it. ",
-					"$$hashKey": "object:1221"
+					"$$hashKey": "object:1929",
+					"$$mdSelectId": 30
 				}
 			],
 			"id": null
@@ -404,7 +475,7 @@
 					"icon": "ion-archive",
 					"href": "#/app/reminders-inbox",
 					"id": "reminders-inbox",
-					"$$hashKey": "object:3210"
+					"$$hashKey": "object:3522"
 				},
 				{
 					"title": "My Variables",
@@ -418,7 +489,7 @@
 							"icon": "ion-android-globe",
 							"href": "#/app/variable-list-category/Anything",
 							"id": "variable-list-category-anything",
-							"$$hashKey": "object:3242"
+							"$$hashKey": "object:3554"
 						},
 						{
 							"title": "Treatments",
@@ -429,7 +500,7 @@
 							"icon": "ion-ios-medkit-outline",
 							"href": "#/app/variable-list-category/Treatments",
 							"id": "variable-list-category-treatments",
-							"$$hashKey": "object:3243"
+							"$$hashKey": "object:3555"
 						},
 						{
 							"title": "Symptoms",
@@ -440,7 +511,7 @@
 							"icon": "ion-sad-outline",
 							"href": "#/app/variable-list-category/Symptoms",
 							"id": "variable-list-category-symptoms",
-							"$$hashKey": "object:3244"
+							"$$hashKey": "object:3556"
 						},
 						{
 							"title": "Vital Signs",
@@ -451,7 +522,7 @@
 							"icon": "ion-ios-pulse",
 							"href": "#/app/variable-list-category/Vital Signs",
 							"id": "variable-list-category-vital-signs",
-							"$$hashKey": "object:3245"
+							"$$hashKey": "object:3557"
 						},
 						{
 							"title": "Emotions",
@@ -462,7 +533,7 @@
 							"icon": "ion-happy-outline",
 							"href": "#/app/variable-list-category/Emotions",
 							"id": "variable-list-category-emotions",
-							"$$hashKey": "object:3246"
+							"$$hashKey": "object:3558"
 						},
 						{
 							"title": "Foods",
@@ -473,7 +544,7 @@
 							"icon": "ion-ios-nutrition-outline",
 							"href": "#/app/variable-list-category/Foods",
 							"id": "variable-list-category-foods",
-							"$$hashKey": "object:3247"
+							"$$hashKey": "object:3559"
 						},
 						{
 							"title": "Physical Activity",
@@ -484,12 +555,12 @@
 							"icon": "ion-ios-body-outline",
 							"href": "#/app/variable-list-category/Physical Activity",
 							"id": "variable-list-category-physical-activity",
-							"$$hashKey": "object:3248"
+							"$$hashKey": "object:3560"
 						}
 					],
 					"icon": "ion-android-globe",
 					"id": "my-variables",
-					"$$hashKey": "object:3211",
+					"$$hashKey": "object:3523",
 					"showSubMenu": false
 				},
 				{
@@ -501,7 +572,7 @@
 							"icon": "ion-android-globe",
 							"href": "#/app/history-all-category/Anything",
 							"id": "history-all-category-anything",
-							"$$hashKey": "object:3274",
+							"$$hashKey": "object:3586",
 							"params": {
 								"variableCategoryName": "Anything"
 							}
@@ -515,7 +586,7 @@
 							"icon": "ion-happy-outline",
 							"href": "#/app/history-all-category/Emotions",
 							"id": "history-all-category-emotions",
-							"$$hashKey": "object:3275"
+							"$$hashKey": "object:3587"
 						},
 						{
 							"title": "Foods",
@@ -526,7 +597,7 @@
 							"icon": "ion-ios-nutrition-outline",
 							"href": "#/app/history-all-category/Foods",
 							"id": "history-all-category-foods",
-							"$$hashKey": "object:3276"
+							"$$hashKey": "object:3588"
 						},
 						{
 							"title": "Symptoms",
@@ -537,7 +608,7 @@
 							"icon": "ion-sad-outline",
 							"href": "#/app/history-all-category/Symptoms",
 							"id": "history-all-category-symptoms",
-							"$$hashKey": "object:3277"
+							"$$hashKey": "object:3589"
 						},
 						{
 							"title": "Treatments",
@@ -548,7 +619,7 @@
 							"icon": "ion-ios-medkit-outline",
 							"href": "#/app/history-all-category/Treatments",
 							"id": "history-all-category-treatments",
-							"$$hashKey": "object:3278"
+							"$$hashKey": "object:3590"
 						},
 						{
 							"title": "Physical Activity",
@@ -559,7 +630,7 @@
 							"icon": "ion-ios-body-outline",
 							"href": "#/app/history-all-category/Physical Activity",
 							"id": "history-all-category-physical-activity",
-							"$$hashKey": "object:3279"
+							"$$hashKey": "object:3591"
 						},
 						{
 							"title": "Vital Signs",
@@ -570,7 +641,7 @@
 							"icon": "ion-ios-pulse",
 							"href": "#/app/history-all-category/Vital Signs",
 							"id": "history-all-category-vital-signs",
-							"$$hashKey": "object:3280"
+							"$$hashKey": "object:3592"
 						},
 						{
 							"title": "Locations",
@@ -581,12 +652,12 @@
 							"icon": "ion-ios-location-outline",
 							"href": "#/app/history-all-category/Location",
 							"id": "history-all-category-location",
-							"$$hashKey": "object:3281"
+							"$$hashKey": "object:3593"
 						}
 					],
 					"icon": "ion-ios-list-outline",
 					"id": "history",
-					"$$hashKey": "object:3212",
+					"$$hashKey": "object:3524",
 					"showSubMenu": false
 				},
 				{
@@ -595,7 +666,7 @@
 					"icon": "ion-ios-cloud-download-outline",
 					"href": "#/app/import",
 					"id": "import",
-					"$$hashKey": "object:3213"
+					"$$hashKey": "object:3525"
 				},
 				{
 					"title": "Discoveries",
@@ -606,7 +677,7 @@
 							"icon": "ion-log-in",
 							"href": "#/app/predictor-search",
 							"id": "predictor-search",
-							"$$hashKey": "object:3314"
+							"$$hashKey": "object:3626"
 						},
 						{
 							"title": "Outcome Search",
@@ -614,7 +685,7 @@
 							"icon": "ion-log-out",
 							"href": "#/app/outcome-search",
 							"id": "outcome-search",
-							"$$hashKey": "object:3315"
+							"$$hashKey": "object:3627"
 						},
 						{
 							"title": "Create Study",
@@ -622,28 +693,7 @@
 							"icon": "ion-erlenmeyer-flask",
 							"href": "#/app/study-creation",
 							"id": "study-creation",
-							"$hashKey": "ca474062-17a9-6418-658a-b701c924a7fd",
-							"$$hashKey": "object:7339"
-						},
-						{
-							"title": "Your Studies",
-							"stateName": "app.studiesCreated",
-							"icon": "ion-person",
-							"href": "#/app/studies/created",
-							"id": "studies-created",
-							"$hashKey": "object:7356",
-							"params": [],
-							"$$hashKey": "object:3487"
-						},
-						{
-							"title": "Open Studies",
-							"stateName": "app.studiesOpen",
-							"icon": "ion-ios-people",
-							"href": "#/app/studies/open",
-							"id": "studies-open",
-							"$hashKey": "object:3488",
-							"params": [],
-							"$$hashKey": "object:3760"
+							"$$hashKey": "object:3628"
 						},
 						{
 							"title": "Discoveries",
@@ -651,12 +701,12 @@
 							"icon": "ion-wand",
 							"href": "#/app/studies",
 							"id": "studies",
-							"$$hashKey": "object:3317"
+							"$$hashKey": "object:3629"
 						}
 					],
 					"icon": "ion-ios-analytics",
 					"id": "discoveries",
-					"$$hashKey": "object:3214",
+					"$$hashKey": "object:3526",
 					"showSubMenu": false
 				},
 				{
@@ -665,7 +715,7 @@
 					"icon": "ion-arrow-graph-up-right",
 					"href": "#/app/chart-search",
 					"id": "chart-search",
-					"$$hashKey": "object:3215"
+					"$$hashKey": "object:3527"
 				},
 				{
 					"title": "Settings",
@@ -673,7 +723,7 @@
 					"icon": "ion-ios-gear-outline",
 					"href": "#/app/settings",
 					"id": "settings",
-					"$$hashKey": "object:3216"
+					"$$hashKey": "object:3528"
 				}
 			],
 			"id": null
@@ -682,7 +732,7 @@
 			"active": [
 				{
 					"id": "addEmotionRemindersCard",
-					"title": null,
+					"title": "Varying Emotions?",
 					"color": {
 						"backgroundColor": "#0f9d58",
 						"circleColor": "#03c466"
@@ -691,15 +741,16 @@
 					"image": {
 						"url": "https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png"
 					},
-					"addButtonText": "Yes",
-					"nextPageButtonText": "No",
-					"bodyText": "Do you regularly experience any unpleasant emotions?",
+					"addButtonText": "Add Emotion",
+					"nextPageButtonText": "Maybe Later",
+					"bodyText": "Do you have any emotions that fluctuate regularly? If so, add them so I can try to determine which factors are influencing them.",
 					"moreInfo": "Do you have any emotions that fluctuate regularly?  If so, add them so I can try to determine which factors are influencing them.",
-					"$$hashKey": "object:1508"
+					"$$hashKey": "object:1430",
+					"$$mdSelectId": 1
 				},
 				{
 					"id": "addSymptomRemindersCard",
-					"title": null,
+					"title": "Recurring Symptoms?",
 					"color": {
 						"backgroundColor": "#3467d6",
 						"circleColor": "#5b95f9"
@@ -708,15 +759,16 @@
 						"url": "https://maxcdn.icons8.com/Color/PNG/96/Messaging/sad-96.png"
 					},
 					"variableCategoryName": "Symptoms",
-					"addButtonText": "Yes",
-					"nextPageButtonText": "No",
-					"bodyText": "Do you have any recurring symptoms?",
+					"addButtonText": "Add Symptom",
+					"nextPageButtonText": "Maybe Later",
+					"bodyText": "Got any recurring symptoms that vary in their severity?",
 					"moreInfo": "Symptom severity can be influence by hundreds of factors in daily life. The human mind can only hold 7 numbers in working memory at a time.  I can hold a billion in my mind! If you regularly record your symptoms, add them so I can use this data to determine which hidden and imperceptible factors might be worsening or improving them.",
-					"$$hashKey": "object:1509"
+					"$$hashKey": "object:1431",
+					"$$mdSelectId": 2
 				},
 				{
 					"id": "addFoodRemindersCard",
-					"title": null,
+					"title": "Common Foods or Drinks?",
 					"color": {
 						"backgroundColor": "#3467d6",
 						"circleColor": "#5b95f9"
@@ -725,15 +777,16 @@
 						"url": "https://maxcdn.icons8.com/Color/PNG/96/Food/vegetarian_food-96.png"
 					},
 					"variableCategoryName": "Foods",
-					"addButtonText": "Yes",
-					"nextPageButtonText": "No",
-					"bodyText": "Are there any foods or drinks that you consume more than a few times a week?",
+					"addButtonText": "Add Food or Drink",
+					"nextPageButtonText": "Maybe Later",
+					"bodyText": "Add any foods or drinks that you consume more than a few times a week",
 					"moreInfo": "Diet can have a significant impact on your health. It's important to enter any foods that you regularly eat to see how they might be affecting you.",
-					"$$hashKey": "object:1510"
+					"$$hashKey": "object:1432",
+					"$$mdSelectId": 3
 				},
 				{
 					"id": "addTreatmentRemindersCard",
-					"title": null,
+					"title": "Any Treatments?",
 					"color": {
 						"backgroundColor": "#f09402",
 						"circleColor": "#fab952"
@@ -742,11 +795,12 @@
 						"url": "https://maxcdn.icons8.com/Color/PNG/96/Healthcare/pill-96.png"
 					},
 					"variableCategoryName": "Treatments",
-					"addButtonText": "Yes",
-					"nextPageButtonText": "No",
+					"addButtonText": "Add Treatment",
+					"nextPageButtonText": "Maybe Later",
 					"bodyText": "Are you taking any medications, treatments, supplements, or other interventions like meditation or psychotherapy? ",
-					"moreInfo": "Often the effects of medications and treatments aren't intuitively perceptible. That's where I come in!  If you regularly recording your treatments,  I can analyze the data so we can get a better idea which ones are helping you,which one may be harming you, and which ones are merely a waste of money.",
-					"$$hashKey": "object:1511"
+					"moreInfo": "Often the effects of medications and treatments aren't intuitively perceptible. That's where I come in!  If you regularly recording your treatments,  I can analyze the data swe can get a better idea which ones are helping you,which one may be harming you, and which ones are merely a waste of money.",
+					"$$hashKey": "object:1433",
+					"$$mdSelectId": 4
 				},
 				{
 					"id": "locationTrackingPage",
@@ -763,7 +817,8 @@
 					"nextPageButtonText": "Maybe Later",
 					"bodyText": "Would you like to automatically log location to see how time spent at restaurants, the gym, work or doctors offices might be affecting you? ",
 					"moreInfo": "By automatically recording your location in the background using GPS, we might be able to figure out how the amount of time spent at the gym, restaurants, doctors, offices, home and work locations may be affecting you.  Another benefit of enabling this option is that allows the app to run in the background and open instantly instead of taking a few seconds to load.  You can view your location history by going to Menu -> History -> Locations.",
-					"$$hashKey": "object:1512"
+					"$$hashKey": "object:1434",
+					"$$mdSelectId": 5
 				},
 				{
 					"id": "weatherTrackingPage",
@@ -780,7 +835,8 @@
 					"nextPageButtonText": "Maybe Later",
 					"bodyText": "Would you like to automatically record the weather to see how temperature or sunlight exposure might be affecting you? ",
 					"moreInfo": "By recording your local weather conditions, I might be able to figure out how the amount of sunlight or temperature is affecting you.",
-					"$$hashKey": "object:1513"
+					"$$hashKey": "object:1435",
+					"$$mdSelectId": 6
 				},
 				{
 					"id": "importDataPage",
@@ -795,7 +851,8 @@
 					"premiumFeature": true,
 					"bodyText": "Let's go to the Import Data page and see if you're using any of the dozens of apps and devices that I can automatically pull data from!",
 					"nextPageButtonText": "Maybe Later",
-					"$$hashKey": "object:1514"
+					"$$hashKey": "object:1436",
+					"$$mdSelectId": 7
 				},
 				{
 					"id": "allDoneCard",
@@ -808,7 +865,8 @@
 						"url": "img/robots/robot-waving.svg"
 					},
 					"bodyText": "You're all set up!  Let's take a minute to record your first measurements and then you're done for the day! ",
-					"$$hashKey": "object:1515"
+					"$$hashKey": "object:1443",
+					"$$mdSelectId": 14
 				}
 			],
 			"id": null
@@ -984,17 +1042,17 @@
 			"ios": "BUILDING"
 		},
 		"betaDownloadLinks": {
-			"androidArmv7Debug": null,
-			"androidArmv7Release": null,
+			"androidArmv7Debug": false,
+			"androidArmv7Release": false,
 			"androidRelease": "https://quantimodo.s3.amazonaws.com/app_uploads/quantimodo/platforms/android/build/outputs/apk/android-release.apk",
 			"androidDebug": "https://quantimodo.s3.amazonaws.com/app_uploads/quantimodo/platforms/android/build/outputs/apk/android-debug.apk",
-			"androidX86Debug": null,
-			"androidX86Release": null,
+			"androidX86Debug": false,
+			"androidX86Release": false,
 			"chromeExtension": "https://quantimodo.s3.amazonaws.com/app_uploads/quantimodo/build/quantimodo-chrome-extension.zip",
-			"ios": null
+			"ios": false
 		},
 		"buildEnabled": {
-			"androidArmv7Debug": false,
+			"androidArmv7Debug": true,
 			"androidArmv7Release": false,
 			"androidRelease": true,
 			"androidDebug": true,
@@ -1004,7 +1062,7 @@
 			"ios": true
 		}
 	},
-	"buildEnabled": false,
+	"buildEnabled": true,
 	"clientSecret": "TcQArZOoUecO9O4aBvntUl6v1QzzsU38",
 	"collaborators": null,
 	"id": null,
@@ -1040,12 +1098,12 @@
 		"FITBIT_CLIENT_ID": "2298DS",
 		"RUNKEEPER_CLIENT_ID": "aa7233e520fa4b34aa5f9c3f27b22803"
 	},
-	"redirectUri": "https://app.quantimo.do/ionic/Modo/www/callback/ https://app.quantimo.do/api/v1/connectors/quantimodo/connect https://local.quantimo.do/api/v1/connectors/quantimodo/connect https://staging.quantimo.do/api/v1/connectors/quantimodo/connect http://localhost https://local.quantimo.do/ionic/Modo/www/callback/  https://local.quantimo.do/ionic/Modo/src/callback/  https://staging.quantimo.do/ionic/Modo/www/callback/ ",
+	"redirectUri": "https://app.quantimo.do/ionic/Modo/www/callback/",
 	"users": null,
-	"builderUrl": "https://app.quantimo.do/ionic/Modo/www/configuration-index.html#/app/configuration?clientId=quantimodo",
+	"builderUrl": "https://staging.quantimo.do/ionic/Modo/www/configuration-index.html#/app/configuration?clientId=quantimodo",
 	"appDescription": "Better living through data.",
 	"appDisplayName": "QuantiModo",
-	"appType": "custom",
+	"appType": "general",
 	"clientId": "quantimodo",
 	"homepageUrl": "https://quantimo.do",
 	"iconUrl": "oHROiCLu95_gizg3j",
@@ -1057,7 +1115,7 @@
 	"predictorVariableId": 0,
 	"scopes": null,
 	"study": 0,
-	"userId": 230,
+	"userId": 1,
 	"affiliate": null,
 	"backgroundColor": null,
 	"buttons": [
@@ -1131,10 +1189,10 @@
 	"synonyms": [],
 	"shortDescription": null,
 	"instructionsHtml": null,
-	"updatedAt": "2018-10-08 18:38:28",
+	"updatedAt": "2018-03-04 01:32:53",
 	"splashScreen": "oMg0F5fmyf_sfzgyc",
 	"textLogo": "nm8LguNtZL_chsco6",
-	"versionNumber": "2.8.1009",
-	"androidVersionCode": "2018100924",
-	"builtAt": 1539064336
+	"versionNumber": "2.8.1013",
+	"androidVersionCode": "2018101382",
+	"builtAt": 1539460043
 }
