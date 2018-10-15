@@ -2218,31 +2218,9 @@ var qm = {
         currentCard: null,
         getMostRecentCard: function(successHandler, errorHandler){
             qm.feed.getFeedFromLocalForageOrApi({}, function(feedCards){
-                qm.localForage.getItem(qm.items.feedQueue, function(queueCards){
-                    var notInQueue = feedCards;
-                    if(queueCards && queueCards.length) {
-                        notInQueue = feedCards.filter(function (feedCard) {
-                            var fromQueue = queueCards.find(function (queueCardParams) {
-                                if(!queueCardParams){
-                                    qm.qmLog.error("empty item in queueCards");
-                                    return false;
-                                }
-                                return feedCard.parameters.trackingReminderNotificationId === queueCardParams.trackingReminderNotificationId;
-                            });
-                            return !fromQueue;
-                        });
-                    }
-                    var currentCard = notInQueue.shift();
-                    if(!currentCard){
-                        errorHandler("No cards not in queue!");
-                        return false;
-                    }
-                    if(qm.feed.recentlyRespondedTo[currentCard.id]){
-                        qm.qmLog.error("Already responded to this card: ", currentCard);
-                    }
-                    qm.feed.saveFeedInLocalForage(notInQueue, function(){
-                        successHandler(currentCard);
-                    }, errorHandler);
+                var currentCard = feedCards.shift();
+                qm.feed.saveFeedInLocalForage(feedCards, function(){
+                    successHandler(currentCard);
                 }, errorHandler);
             }, errorHandler);
         },
@@ -2263,7 +2241,12 @@ var qm = {
                 var cards = qm.feed.handleFeedResponse(data);
                 qm.api.generalResponseHandler(error, cards, response, successHandler, errorHandler, params, cacheKey);
             }
-            qm.feed.getFeedApiInstance(params).getFeed(params, callback);
+            qm.feed.postFeedQueue(null, function(cards){
+                successHandler(cards);
+            }, function(error){
+                qm.qmLog.error(error);
+                qm.feed.getFeedApiInstance(params).getFeed(params, callback);
+            });
         },
         handleFeedResponse: function(data){
             var cards;
@@ -2280,22 +2263,7 @@ var qm = {
             return cards;
         },
         saveFeedInLocalForage: function(feedCards, successHandler, errorHandler){
-            qm.localForage.getItem(qm.items.feedQueue, function(queueCards){
-                var notInQueue = feedCards;
-                if(queueCards) {
-                    notInQueue = feedCards.filter(function (feedCard) {
-                        var fromQueue = queueCards.find(function (queueCardParams) {
-                            if(!queueCardParams){
-                                qm.qmLog.error("empty item in queueCards");
-                                return false;
-                            }
-                            return feedCard.parameters.trackingReminderNotificationId === queueCardParams.trackingReminderNotificationId;
-                        });
-                        return !fromQueue;
-                    });
-                }
-                qm.localForage.setItem(qm.items.feed, notInQueue, successHandler, errorHandler);
-            }, errorHandler);
+            qm.localForage.setItem(qm.items.feed, feedCards, successHandler, errorHandler);
         },
         getFeedFromLocalForageOrApi: function(params, successHandler, errorHandler){
             qm.localForage.getItem(qm.items.feed, function(cards){
@@ -2323,9 +2291,18 @@ var qm = {
             }, errorHandler);
         },
         postFeedQueue: function(feedQueue, successHandler, errorHandler){
-            qm.localForage.removeItem(qm.items.feedQueue, function(){
-                qm.feed.postToFeedEndpointImmediately(feedQueue, successHandler, errorHandler);
-            }, function(error){qm.qmLog.error(error);});
+            function post(feedQueue){
+                qm.localForage.removeItem(qm.items.feedQueue, function(){
+                    qm.feed.postToFeedEndpointImmediately(feedQueue, successHandler, errorHandler);
+                }, function(error){qm.qmLog.error(error);});
+            }
+            if(feedQueue){
+                post(feedQueue);
+                return;
+            }
+            qm.localForage.getItem(qm.items.feedQueue, function(feedQueue){
+                post(feedQueue);
+            }, errorHandler);
         },
         postCardImmediately: function(card, successHandler, errorHandler){
             qm.feed.addToFeedQueueAndRemoveFromFeed(card, function(nextCard){
@@ -2349,7 +2326,7 @@ var qm = {
                 qm.feed.getFeedApiInstance(params).postFeed(feedQueue, params, callback);
             } else {
                 qm.localForage.removeItem(qm.items.feedQueue, function(feedQueue){
-                    qm.feed.getFeedApiInstance(params).postFeed(feedQueue, params, callback);
+                    qm.feed.getFeedApiInstance(params).postFeed(feedQueue || [], params, callback);
                 })
             }
         },
@@ -5125,7 +5102,7 @@ var qm = {
                 if (studiesCreated) { qm.shares.saveStudiesCreatedToLocalStorage(studiesCreated); }
                 qm.api.generalResponseHandler(error, data, response, successHandler, errorHandler, params, 'getStudiesCreatedFromApi');
             }
-            qm.studyHelper.getStudiesApiInstance().getStudiesCreated(params, callback);
+            qm.studyHelper.getStudiesApiInstance({}, arguments.callee.name).getStudiesCreated(params, callback);
         },
         saveStudiesCreatedToLocalStorage: function(studiesCreated){
             if(!studiesCreated){
@@ -5167,7 +5144,7 @@ var qm = {
                     qm.api.generalResponseHandler(error, study, response, successHandler, errorHandler, params, 'createStudy');
                 }
                 var params = qm.api.addGlobalParams({});
-                qm.studyHelper.getStudiesApiInstance().createStudy(body, params, callback);
+                qm.studyHelper.getStudiesApiInstance({}, arguments.callee.name).createStudy(body, params, callback);
             }
             qm.studyHelper.getStudyFromLocalForageOrGlobals(body, function (study) {
                 successHandler(study);
@@ -5185,7 +5162,7 @@ var qm = {
                 if (studiesJoined) { qm.shares.saveStudiesJoinedToLocalStorage(studiesJoined); }
                 qm.api.generalResponseHandler(error, data, response, successHandler, errorHandler, params, 'getStudiesJoinedFromApi');
             }
-            qm.studyHelper.getStudiesApiInstance().getStudiesJoined(params, callback);
+            qm.studyHelper.getStudiesApiInstance({}, arguments.callee.name).getStudiesJoined(params, callback);
         },
         saveStudiesJoinedToLocalStorage: function(studiesJoined){
             if(!studiesJoined){
@@ -5226,7 +5203,7 @@ var qm = {
                 qm.api.generalResponseHandler(error, study, response, successHandler, errorHandler, params, 'joinStudy');
             }
             var params = qm.api.addGlobalParams({});
-            qm.studyHelper.getStudiesApiInstance().joinStudy(body, callback);
+            qm.studyHelper.getStudiesApiInstance({}, arguments.callee.name).joinStudy(body, callback);
         },
     },
     storage: {
@@ -5684,8 +5661,8 @@ var qm = {
         }
     },
     studyHelper: {
-        getStudiesApiInstance: function(params){
-            qm.api.configureClient(arguments.callee.name);
+        getStudiesApiInstance: function(params, functionName){
+            qm.api.configureClient(functionName);
             var apiInstance = new Quantimodo.StudiesApi();
             apiInstance.apiClient.timeout = 120 * 1000;
             apiInstance.cache = !params || !params.recalculate;
@@ -5878,7 +5855,7 @@ var qm = {
                 var study = qm.studyHelper.processAndSaveStudy(data);
                 qm.api.generalResponseHandler(error, study, response, successHandler, errorHandler, params, cacheKey);
             }
-            qm.studyHelper.getStudiesApiInstance(params).getStudy(params, callback);
+            qm.studyHelper.getStudiesApiInstance(params, arguments.callee.name).getStudy(params, callback);
         },
         getStudyFromLocalStorageOrApi: function (params, successHandler, errorHandler){
             if(qm.urlHelper.getParam('aggregated')){params.aggregated = true;}
@@ -5940,7 +5917,7 @@ var qm = {
             function callback(error, data, response) {
                 qm.api.generalResponseHandler(error, data, response, successHandler, errorHandler, params, cacheKey);
             }
-            qm.studyHelper.getStudiesApiInstance().getStudies(params, callback);
+            qm.studyHelper.getStudiesApiInstance({}, arguments.callee.name).getStudies(params, callback);
         },
         goToStudyPageJoinPageViaStudy: function(study){window.location.href = qm.studyHelper.getStudyJoinUrl(study);},
         goToStudyPageViaStudy: function(study){
@@ -6923,16 +6900,18 @@ var qm = {
                     { audio: true },
                     doAudioStuff,
                     function(error) {
-                        canvas.width = 0;
-                        canvas.height = 0;
-                        qm.qmLog.error('Audio error: ' + error.name);
+                        qm.qmLog.error('Audio error: ' + error.name + " "  + error.message);
+                        if(canvas){
+                            canvas.width = 0;
+                            canvas.height = 0;
+                        }
                     }
                 );
             } else {
                 navigator.mediaDevices.getUserMedia({audio: true})
                     .then(doAudioStuff)
                     .catch(function(error) {
-                        qm.qmLog.error('Audio error: ' + error.name);
+                        qm.qmLog.error('Audio error: ' + error.name + " "  + error.message);
                     });
             }
             // Do the thing

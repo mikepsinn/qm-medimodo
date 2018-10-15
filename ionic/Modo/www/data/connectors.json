@@ -5,7 +5,7 @@
   "clientRequiresSecret": false,
   "connectError": null,
   "connectInstructions": {
-    "url": "https://www.facebook.com/v2.9/dialog/oauth?state=eyJjbGllbnRfaWQiOiJxdWFudGltb2RvIn0-&type=web_server&client_id=225078261031461&redirect_uri=https%3A%2F%2Fstaging.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Ffacebook%2Fconnect&response_type=code&scope=user_likes%2Cuser_posts",
+    "url": "https://www.facebook.com/v2.9/dialog/oauth?state=eyJjbGllbnRfaWQiOiJxdWFudGltb2RvIn0-&type=web_server&client_id=225078261031461&redirect_uri=https%3A%2F%2Fapp.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Ffacebook%2Fconnect&response_type=code&scope=user_likes%2Cuser_posts",
     "parameters": [],
     "usePopup": true
   },
@@ -29,7 +29,7 @@
   "backgroundColor": "#3b579d",
   "buttons": [{
     "accessibilityText": "Connect",
-    "action": "https://staging.quantimo.do/api/v4/connectors/facebook/connect",
+    "action": "https://app.quantimo.do/api/v4/connectors/facebook/connect",
     "additionalInformation": null,
     "color": "#0f9d58",
     "confirmationText": null,
@@ -39,7 +39,7 @@
     "id": "button-button-facebook",
     "image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
     "ionIcon": "ion-link",
-    "link": "https://staging.quantimo.do/api/v4/connectors/facebook/connect",
+    "link": "https://app.quantimo.do/api/v4/connectors/facebook/connect",
     "parameters": null,
     "stateName": null,
     "stateParams": null,
@@ -81,11 +81,11 @@
   "clientRequiresSecret": true,
   "connectError": null,
   "connectInstructions": {
-    "url": "https://github.com/login/oauth/authorize?state=eyJjbGllbnRfaWQiOiJxdWFudGltb2RvIn0-&type=web_server&client_id=9ef8c8c36df172a543e0&redirect_uri=https%3A%2F%2Fstaging.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Fgithub%2Fconnect&response_type=code&scope=user%2Crepo",
+    "url": "https://github.com/login/oauth/authorize?state=eyJjbGllbnRfaWQiOiJxdWFudGltb2RvIn0-&type=web_server&client_id=b7bf465391ed9601ba49&redirect_uri=https%3A%2F%2Fapp.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Fgithub%2Fconnect&response_type=code&scope=user%2Crepo",
     "parameters": [],
     "usePopup": true
   },
-  "connectorClientId": "9ef8c8c36df172a543e0",
+  "connectorClientId": "b7bf465391ed9601ba49",
   "connectorUserEmail": null,
   "connectStatus": "DISCONNECTED",
   "enabled": 1,
@@ -105,7 +105,7 @@
   "backgroundColor": "#e4405f",
   "buttons": [{
     "accessibilityText": "Connect",
-    "action": "https://staging.quantimo.do/api/v4/connectors/github/connect",
+    "action": "https://app.quantimo.do/api/v4/connectors/github/connect",
     "additionalInformation": null,
     "color": "#0f9d58",
     "confirmationText": null,
@@ -115,7 +115,7 @@
     "id": "button-button-github",
     "image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
     "ionIcon": "ion-link",
-    "link": "https://staging.quantimo.do/api/v4/connectors/github/connect",
+    "link": "https://app.quantimo.do/api/v4/connectors/github/connect",
     "parameters": null,
     "stateName": null,
     "stateParams": null,
@@ -176,7 +176,7 @@
   "backgroundColor": "#23448b",
   "buttons": [{
     "accessibilityText": "Connect",
-    "action": "https://staging.quantimo.do/api/v4/connectors/gmail/connect",
+    "action": "https://app.quantimo.do/api/v4/connectors/gmail/connect",
     "additionalInformation": null,
     "color": "#0f9d58",
     "confirmationText": null,
@@ -186,7 +186,7 @@
     "id": "button-button-gmail",
     "image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
     "ionIcon": "ion-link",
-    "link": "https://staging.quantimo.do/api/v4/connectors/gmail/connect",
+    "link": "https://app.quantimo.do/api/v4/connectors/gmail/connect",
     "parameters": null,
     "stateName": null,
     "stateParams": null,
@@ -248,7 +248,7 @@
   "backgroundColor": "#2c6efc",
   "buttons": [{
     "accessibilityText": "Connect",
-    "action": "https://staging.quantimo.do/api/v4/connectors/googlecalendar/connect",
+    "action": "https://app.quantimo.do/api/v4/connectors/googlecalendar/connect",
     "additionalInformation": null,
     "color": "#0f9d58",
     "confirmationText": null,
@@ -258,7 +258,7 @@
     "id": "button-button-googlecalendar",
     "image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
     "ionIcon": "ion-link",
-    "link": "https://staging.quantimo.do/api/v4/connectors/googlecalendar/connect",
+    "link": "https://app.quantimo.do/api/v4/connectors/googlecalendar/connect",
     "parameters": null,
     "stateName": null,
     "stateParams": null,
@@ -320,7 +320,7 @@
   "backgroundColor": "#00a3ad",
   "buttons": [{
     "accessibilityText": "Connect",
-    "action": "https://staging.quantimo.do/api/v4/connectors/googlefit/connect",
+    "action": "https://app.quantimo.do/api/v4/connectors/googlefit/connect",
     "additionalInformation": null,
     "color": "#0f9d58",
     "confirmationText": null,
@@ -330,7 +330,7 @@
     "id": "button-button-googlefit",
     "image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
     "ionIcon": "ion-link",
-    "link": "https://staging.quantimo.do/api/v4/connectors/googlefit/connect",
+    "link": "https://app.quantimo.do/api/v4/connectors/googlefit/connect",
     "parameters": null,
     "stateName": null,
     "stateParams": null,
@@ -392,7 +392,7 @@
   "backgroundColor": "#23448b",
   "buttons": [{
     "accessibilityText": "Connect",
-    "action": "https://staging.quantimo.do/api/v4/connectors/googleplus/connect",
+    "action": "https://app.quantimo.do/api/v4/connectors/googleplus/connect",
     "additionalInformation": null,
     "color": "#0f9d58",
     "confirmationText": null,
@@ -402,7 +402,7 @@
     "id": "button-button-googleplus",
     "image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
     "ionIcon": "ion-link",
-    "link": "https://staging.quantimo.do/api/v4/connectors/googleplus/connect",
+    "link": "https://app.quantimo.do/api/v4/connectors/googleplus/connect",
     "parameters": null,
     "stateName": null,
     "stateParams": null,
@@ -444,7 +444,7 @@
   "clientRequiresSecret": true,
   "connectError": null,
   "connectInstructions": {
-    "url": "https://www.linkedin.com/uas/oauth2/authorization?state=eyJjbGllbnRfaWQiOiJxdWFudGltb2RvIn0-&type=web_server&client_id=77oiwiq6wuq9uy&redirect_uri=https%3A%2F%2Fstaging.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Flinkedin%2Fconnect&response_type=code&scope=r_basicprofile+r_emailaddress",
+    "url": "https://www.linkedin.com/uas/oauth2/authorization?state=eyJjbGllbnRfaWQiOiJxdWFudGltb2RvIn0-&type=web_server&client_id=77oiwiq6wuq9uy&redirect_uri=https%3A%2F%2Fapp.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Flinkedin%2Fconnect&response_type=code&scope=r_basicprofile+r_emailaddress",
     "parameters": [],
     "usePopup": true
   },
@@ -468,7 +468,7 @@
   "backgroundColor": "#e4405f",
   "buttons": [{
     "accessibilityText": "Connect",
-    "action": "https://staging.quantimo.do/api/v4/connectors/linkedin/connect",
+    "action": "https://app.quantimo.do/api/v4/connectors/linkedin/connect",
     "additionalInformation": null,
     "color": "#0f9d58",
     "confirmationText": null,
@@ -478,7 +478,7 @@
     "id": "button-button-linkedin",
     "image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
     "ionIcon": "ion-link",
-    "link": "https://staging.quantimo.do/api/v4/connectors/linkedin/connect",
+    "link": "https://app.quantimo.do/api/v4/connectors/linkedin/connect",
     "parameters": null,
     "stateName": null,
     "stateParams": null,
@@ -519,7 +519,7 @@
   "clientRequiresSecret": true,
   "connectError": null,
   "connectInstructions": {
-    "url": "https://staging.quantimo.do/api/v3/oauth2/authorize?register=true&state=eyJjbGllbnRfaWQiOiJxdWFudGltb2RvIn0-&type=web_server&client_id=quantimodo&redirect_uri=https%3A%2F%2Fstaging.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Fquantimodo%2Fconnect&response_type=code&scope=readmeasurements+writemeasurements",
+    "url": "https://app.quantimo.do/api/v3/oauth2/authorize?register=true&state=eyJjbGllbnRfaWQiOiJxdWFudGltb2RvIn0-&type=web_server&client_id=quantimodo&redirect_uri=https%3A%2F%2Fapp.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Fquantimodo%2Fconnect&response_type=code&scope=readmeasurements+writemeasurements",
     "parameters": [],
     "usePopup": true
   },
@@ -619,7 +619,7 @@
   "clientRequiresSecret": true,
   "connectError": null,
   "connectInstructions": {
-    "url": "https://www.strava.com/oauth/authorize?approval_prompt=auto&state=eyJjbGllbnRfaWQiOiJxdWFudGltb2RvIn0-&type=web_server&client_id=22095&redirect_uri=https%3A%2F%2Fstaging.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Fstrava%2Fconnect&response_type=code&scope=public",
+    "url": "https://www.strava.com/oauth/authorize?approval_prompt=auto&state=eyJjbGllbnRfaWQiOiJxdWFudGltb2RvIn0-&type=web_server&client_id=22095&redirect_uri=https%3A%2F%2Fapp.quantimo.do%2Fapi%2Fv1%2Fconnectors%2Fstrava%2Fconnect&response_type=code&scope=public",
     "parameters": [],
     "usePopup": true
   },
@@ -643,7 +643,7 @@
   "backgroundColor": "#fc4c02",
   "buttons": [{
     "accessibilityText": "Connect",
-    "action": "https://staging.quantimo.do/api/v4/connectors/strava/connect",
+    "action": "https://app.quantimo.do/api/v4/connectors/strava/connect",
     "additionalInformation": null,
     "color": "#0f9d58",
     "confirmationText": null,
@@ -653,7 +653,7 @@
     "id": "button-button-strava",
     "image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
     "ionIcon": "ion-link",
-    "link": "https://staging.quantimo.do/api/v4/connectors/strava/connect",
+    "link": "https://app.quantimo.do/api/v4/connectors/strava/connect",
     "parameters": null,
     "stateName": null,
     "stateParams": null,
@@ -714,7 +714,7 @@
   "backgroundColor": "#e4405f",
   "buttons": [{
     "accessibilityText": "Connect",
-    "action": "https://staging.quantimo.do/api/v4/connectors/twitter/connect",
+    "action": "https://app.quantimo.do/api/v4/connectors/twitter/connect",
     "additionalInformation": null,
     "color": "#0f9d58",
     "confirmationText": null,
@@ -724,7 +724,7 @@
     "id": "button-button-twitter",
     "image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/link.svg",
     "ionIcon": "ion-link",
-    "link": "https://staging.quantimo.do/api/v4/connectors/twitter/connect",
+    "link": "https://app.quantimo.do/api/v4/connectors/twitter/connect",
     "parameters": null,
     "stateName": null,
     "stateParams": null,
