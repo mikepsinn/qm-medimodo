@@ -2,4 +2,4 @@ CNAME
 node_modules/
 .idea/
 build/logs/
-
+wp-config.php
