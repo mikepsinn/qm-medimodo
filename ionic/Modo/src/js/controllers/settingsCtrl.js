@@ -34,21 +34,10 @@ angular.module('starter').controller('SettingsCtrl', ["$state", "$scope", "$ioni
 	});
     $scope.$on('$ionicView.afterEnter', function(e) {qmService.hideLoader();});
     $scope.completelyResetAppStateAndSendToLogin = function(){qmService.login.completelyResetAppStateAndSendToLogin();};
-	qmService.storage.getAsStringWithCallback('primaryOutcomeRatingFrequencyDescription', function (primaryOutcomeRatingFrequencyDescription) {
-		$scope.primaryOutcomeRatingFrequencyDescription = primaryOutcomeRatingFrequencyDescription ? primaryOutcomeRatingFrequencyDescription : "daily";
-		if($rootScope.platform.isIOS){
-			if($scope.primaryOutcomeRatingFrequencyDescription !== 'hour' &&
-				$scope.primaryOutcomeRatingFrequencyDescription !== 'day' &&
-				$scope.primaryOutcomeRatingFrequencyDescription !== 'never'
-			) {
-				$scope.primaryOutcomeRatingFrequencyDescription = 'day';
-				qmService.storage.setItem('primaryOutcomeRatingFrequencyDescription', 'day');
-			}
-		}
-	});
 	$scope.sendSharingInvitation = function() {
 		var subjectLine = "I%27d%20like%20to%20share%20my%20data%20with%20you";
-		var emailBody = "Hi!%20%20%0A%0AI%27m%20tracking%20my%20health%20and%20happiness%20with%20an%20app%20and%20I%27d%20like%20to%20share%20my%20data%20with%20you.%20%20%0A%0APlease%20generate%20a%20data%20authorization%20URL%20at%20" +
+		var emailBody = "Hi!%20%20%0A%0AI%27m%20tracking%20my%20health%20and%20happiness%20with%20an%20app%20and%20I%27d%20like%20to%20share%20my%20data%20with%20you."+
+			"%20%20%0A%0APlease%20generate%20a%20data%20authorization%20URL%20at%20" +
 			encodeURIComponent(qm.api.getBaseUrl()) + "%2Fapi%2Fv2%2Fphysicians%20and%20email%20it%20to%20me.%20%0A%0AThanks!%20%3AD";
 		var fallbackUrl = qm.api.getQuantiModoUrl("api/v2/account/applications", true);
 		var emailAddress = null;
@@ -76,12 +65,12 @@ angular.module('starter').controller('SettingsCtrl', ["$state", "$scope", "$ioni
                     "frequency reminder", null);
 				if(!qm.storage.getItem(qm.items.deviceTokenOnServer)){
 					console.warn("Could not find device token for push notifications so scheduling combined local notifications");
-					qmService.syncTrackingReminders();
+					qmService.trackingReminders.syncTrackingReminders();
 				}
 			});
 		} else {
             qmService.showMaterialAlert('Enabled Multiple Notifications', 'You will get a separate device notification for each reminder that you create.', ev);
-			qmService.cancelAllNotifications().then(function() {qmService.syncTrackingReminders();});
+			qmService.cancelAllNotifications().then(function() {qmService.trackingReminders.syncTrackingReminders();});
 		}
 	};
 	$scope.getPreviewBuildsChange = function() {
@@ -131,7 +120,7 @@ angular.module('starter').controller('SettingsCtrl', ["$state", "$scope", "$ioni
 					} else if (newEarliestReminderTime !== $rootScope.user.earliestReminderTime){
 						$rootScope.user.earliestReminderTime = newEarliestReminderTime;
                         var params = qm.timeHelper.addTimeZoneOffsetProperty({earliestReminderTime: $rootScope.user.earliestReminderTime});
-						qmService.updateUserSettingsDeferred(params).then(function(){qmService.syncTrackingReminders();});
+						qmService.updateUserSettingsDeferred(params).then(function(){qmService.trackingReminders.syncTrackingReminders();});
                         qmService.showMaterialAlert('Earliest Notification Time Updated', 'You should not receive device notifications before ' + moment(a).format('h:mm A') + '.', ev);
 					}
 				}
@@ -148,6 +137,7 @@ angular.module('starter').controller('SettingsCtrl', ["$state", "$scope", "$ioni
 				if (typeof (val) === 'undefined') {
 					qmLogService.debug('Time not selected', null);
 				} else {
+                    var a = new Date();
 					var selectedTime = new Date(val * 1000);
 					a.setHours(selectedTime.getUTCHours());
 					a.setMinutes(selectedTime.getUTCMinutes());
@@ -160,7 +150,7 @@ angular.module('starter').controller('SettingsCtrl', ["$state", "$scope", "$ioni
 					} else if (newLatestReminderTime !== $rootScope.user.latestReminderTime){
 						$rootScope.user.latestReminderTime = newLatestReminderTime;
                         var params = qm.timeHelper.addTimeZoneOffsetProperty({latestReminderTime: $rootScope.user.latestReminderTime});
-						qmService.updateUserSettingsDeferred(params).then(function(){qmService.syncTrackingReminders();});
+						qmService.updateUserSettingsDeferred(params).then(function(){qmService.trackingReminders.syncTrackingReminders();});
                         qmService.showMaterialAlert('Latest Notification Time Updated', 'You should not receive device notification after ' + moment(a).format('h:mm A') + '.', ev);
 					}
 				}
@@ -172,11 +162,10 @@ angular.module('starter').controller('SettingsCtrl', ["$state", "$scope", "$ioni
 		ionicTimePicker.openTimePicker($scope.state.latestReminderTimePickerConfiguration);
 	};
 	$scope.logout = function(ev) {
-		$rootScope.accessTokenFromUrl = null;
 		var showDataClearPopup = function(ev){
             var title = 'Log Out';
             var textContent = "Are you sure you want to log out? I'll miss you dearly!";
-            function yesCallback(){qmService.completelyResetAppStateAndLogout();}
+            function yesCallback(){qmService.auth.completelyResetAppStateAndLogout();}
             function noCallback(){
                 //qmService.afterLogoutDoNotDeleteMeasurements();
             }
@@ -274,7 +263,7 @@ angular.module('starter').controller('SettingsCtrl', ["$state", "$scope", "$ioni
         } else if ($rootScope.user.subscriptionProvider === 'apple') { appleDowngrade();
         } else { webDowngrade(); }
     };
-    if($rootScope.platform.isAndroid){
+    if(qm.platform.isAndroid()){
     	$scope.toggleDrawOverAppsPopup = function(ev){
     		qmService.toggleDrawOverAppsPopup(ev);
     	};

@@ -5,6 +5,7 @@ angular.module('starter').controller('VariableSearchCtrl', ["$scope", "$state", 
     $scope.state = $stateParams;
     $scope.state.searching = true;
     $scope.state.variableSearchResults = [];
+    $scope.state.variableSearchParameters = {};
     //$scope.state.variableSearchParameters = {};  DON'T OVERWRITE $stateParams.variableSearchParameters
     $scope.state.variableSearchQuery = {name:''};
     if(!$scope.state.noVariablesFoundCard) {$scope.state.noVariablesFoundCard = {show: false, title: 'No Variables Found', body: "You don't have any data, yet.  Start tracking!"};}
@@ -54,7 +55,7 @@ angular.module('starter').controller('VariableSearchCtrl', ["$scope", "$state", 
             qmService.addToFavoritesUsingVariableObject(variableObject);
         } else if (window.location.href.indexOf('reminder-search') !== -1) {
             var options = {skipReminderSettingsIfPossible: $scope.state.skipReminderSettingsIfPossible, doneState: $scope.state.doneState};
-            qmService.addToRemindersUsingVariableObject(variableObject, options);
+            qmService.reminders.addToRemindersUsingVariableObject(variableObject, options);
         } else if ($scope.state.nextState.indexOf('predictor') !== -1) {
             qmService.goToState($scope.state.nextState, {effectVariableName: variableObject.name});
         } else if ($scope.state.nextState.indexOf('outcome') !== -1) {
@@ -193,7 +194,7 @@ angular.module('starter').controller('VariableSearchCtrl', ["$scope", "$state", 
         if($scope.state.variableSearchQuery.name.length > 2){return;}
         $scope.state.showAddVariableButton = false;
         if(!$scope.state.variableSearchResults || $scope.state.variableSearchResults.length < 1){$scope.state.searching = true;}
-        qmService.getFromLocalStorageOrApiDeferred($scope.state.variableSearchParameters).then(function (userVariables) {
+        qm.userVariables.getFromLocalStorageOrApi($scope.state.variableSearchParameters, function (userVariables) {
             if(userVariables && userVariables.length > 0){
                 if($scope.state.variableSearchQuery.name.length < 3) {
                     $scope.state.variableSearchResults = qm.arrayHelper.removeArrayElementsWithDuplicateIds(userVariables.concat($scope.state.variableSearchResults));
@@ -256,8 +257,8 @@ angular.module('starter').controller('VariableSearchCtrl', ["$scope", "$state", 
     var checkNameExists = function (item) {
         if(!item.name){
             var message = "variable doesn't have a name! variable: " + JSON.stringify(item);
-            qmLogService.error(null, message);
-            qmLogService.error(null, message);
+            qmLogService.error(message);
+            qmLogService.error(message);
             return false;
         }
         return true;

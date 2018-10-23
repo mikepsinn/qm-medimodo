@@ -1,13 +1,18 @@
 angular.module('qmCommon')
-
     .service('qmApiV1', function ($http, $q, settings) {
-
+        function getQmUrl(path){
+            var url = settings.apiHost + path;
+            var accessToken = qm.auth.getAccessTokenFromUrlUserOrStorage();
+            if(accessToken){url += '?accessToken='+accessToken;}
+            return url;
+        }
         this.getData = function (url, p, f) {
+            var accessToken = qm.auth.getAccessTokenFromUrlUserOrStorage();
+            if(accessToken){p.accessToken = accessToken;}
             $http.get(url, {params: p}).then(function (response) {
                 f(response.data);
             });
         };
-
         var errorHandler = function(response, doNotSendToLogin){
             if(response.status === 401){
                 if(doNotSendToLogin){
@@ -22,13 +27,9 @@ angular.module('qmCommon')
                 }
             }
         };
-
         this.searchVariablesByName = function (request) {
-
             var def = $q.defer();
-
             var endPoint;
-
             if (settings.commonOrUser == 'user') {
                 endPoint = 'api/variables/search/' + encodeURIComponent(request.term);
                 if(request.effectOrCause == 'cause' || request.effectOrCause == 'effect'){
@@ -44,60 +45,41 @@ angular.module('qmCommon')
             } else {
                 console.error('endpoint type (common or public) is not specified');
             }
-
-            $http.get(settings.apiHost + endPoint).then(function (response) {
+            $http.get(getQmUrl(endPoint)).then(function (response) {
                 console.debug('Search variables response', response);
                 def.resolve(response.data);
             });
-
             return def.promise;
-
         };
-
         //this method to simulate v2 functionality
         this.getVariables = function (params) {
-            return $http.get(settings.apiHost + 'api/variables/search/' + encodeURIComponent(params.name));
+            return $http.get(getQmUrl('api/variables/search/' + encodeURIComponent(params.name)));
         };
-
         this.getUnits = function () {
-
-            return $http.get(settings.apiHost + 'api/v1/units');
-
+            return $http.get(getQmUrl('api/v1/units'));
         };
-
         this.searchCorrelations = function (cause, effect) {
-
             var requestUrl = settings.apiHost;
-
             if (settings.commonOrUser == 'user') {
                 requestUrl += 'api/v1/correlations?';
-
                 if (cause) {
                     requestUrl += 'cause=' + encodeURIComponent(cause) + '&';
                 }
-
                 if (effect) {
                     requestUrl += 'effect=' + encodeURIComponent(effect);
                 }
-
             } else if (settings.commonOrUser == 'common') {
                 requestUrl += 'api/v1/public/correlations/search/';
-
                 if (cause && !effect) {
                     requestUrl += encodeURIComponent(cause) + "?effectOrCause=cause"
                 } else {
                     requestUrl += encodeURIComponent(effect) + "?effectOrCause=effect"
                 }
-
             } else {
                 console.error('endpoint type (common or public) is not specified');
             }
-
-
             return $http.get(requestUrl);
-
         };
-
         this.vote = function (correlation, vote, callback) {
             $http.post(settings.apiHost + "api/v1/votes", {
                 causeVariableName: correlation.causeVariableName,
@@ -110,7 +92,6 @@ angular.module('qmCommon')
                 errorHandler(response);
             });
         };
-
         this.deleteVote = function (correlation, callback) {
             $http.post(settings.apiHost + 'api/v1/votes/delete', {
                 causeVariableName: correlation.causeVariableName,
@@ -119,47 +100,36 @@ angular.module('qmCommon')
                 callback(response.data);
             })
         };
-
         this.getVariableByName = function (varName, callback) {
-            return $http.get(settings.apiHost + 'api/v1/variables?name=' + encodeURIComponent(varName));
+            return $http.get(getQmUrl('api/v1/variables?name=' + encodeURIComponent(varName)));
         };
-
         this.postMeasurement = function (measurement) {
             console.debug('Going to post this measurement:', measurement);
-
             return $http.post(settings.apiHost + 'api/v1/measurements', measurement);
         };
-
         this.getUnitsForVariableByName = function (variableName, callback) {
-            $http.get(settings.apiHost + 'api/v1/unitsVariable?variable=' + encodeURIComponent(variableName))
+            $http.get(getQmUrl('api/v1/unitsVariable?variable=' + encodeURIComponent(variableName)))
                 .then(function (response) {
                     callback(response);
                 }, function(response){
                     errorHandler(response);
                 });
         };
-
         this.setVariableSettings = function (variableSettings) {
             return $http.post(settings.apiHost + 'api/v1/userVariables', variableSettings);
         };
-
         this.getCurrentUserData = function (callback) {
-            $http.get(settings.apiHost + 'api/v1/user/me').then(function (response) {
+            $http.get(getQmUrl('api/v1/user/me')).then(function (response) {
                 callback(response.data);
             });
         };
-
         this.getMeasurementsRange = function () {
-            return $http.get(settings.apiHost + 'api/v1/measurementsRange');
+            return $http.get(getQmUrl('api/v1/measurementsRange'));
         };
-
         this.getDailyMeasurements = function (variableName, startTime, endTime) {
-
             var deferred = $q.defer();
             var measurements = [];
-
             function getLooping(offset) {
-
                 return $http({
                     url: settings.apiHost + 'api/v1/measurements/daily',
                     method: "GET",
@@ -171,7 +141,6 @@ angular.module('qmCommon')
                         offset: offset
                     }
                 }).then(function (response) {
-
                     if (response.data.length) {
                         for (var i = 0; i < response.data.length; i++) {
                             measurements.push(response.data[i]);
@@ -180,24 +149,19 @@ angular.module('qmCommon')
                     } else {
                         deferred.resolve(measurements);
                     }
-
                 })
-
             }
-
             getLooping(0);
-
             return deferred.promise;
         };
-
         this.getCredentials = function () {
-            return $http.get(settings.apiHost + 'api/v1/user/me');
+            var url = settings.apiHost + 'api/v1/user/me';
+            var accessToken = localStorage.getItem('accessToken');
+            if(accessToken){url += '?accessToken='+accessToken;}
+            return $http.get(url);
         };
-
         this.fetchAccessToken = function (authorizationCode, redirectUri) {
-
             var url = settings.apiHost + "api/oauth2/token";
-
             // make request
             var request = {
                 method: 'POST',
@@ -214,11 +178,8 @@ angular.module('qmCommon')
                     redirect_uri: redirectUri
                 }
             };
-
             return $http(request);
-
         }
-
         this.refreshAccessToken = function (refreshToken) {
             var url = settings.apiHost + "api/oauth2/token";
             return $http.post(url, {
@@ -228,6 +189,4 @@ angular.module('qmCommon')
                 grant_type: 'refresh_token'
             });
         }
-
     });
-

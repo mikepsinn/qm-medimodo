@@ -21,25 +21,19 @@ angular.module('starter').controller('ImportCtrl', ["$scope", "$ionicLoading", "
             });
         }
     };
-    function userCanConnect(connector) {
-        if(!$rootScope.user){
-            qmService.refreshUser();
-            return true;
-        }
-        if(qmService.premiumModeDisabledForTesting){return false;}
-        if($rootScope.user.stripeActive){return true;}
-        if(qm.platform.isChromeExtension()){return true;}
-        if(connector && !connector.premium){return true;}
-        //if(qm.platform.isAndroid()){return true;}
-        //if(qm.platform.isWeb()){return true;}
-        return !qm.getAppSettings().additionalSettings.monetizationSettings.subscriptionsEnabled;
-	}
 	$scope.$on('$ionicView.beforeEnter', function(e) {
+	    if(!$scope.helpCard || $scope.helpCard.title !== "Import Your Data"){
+            $scope.helpCard = {
+                title: "Import Your Data",
+                bodyText: "Scroll down and press Connect for any apps or device you currently use.  Once you're finished, press the Done bar at the bottom.",
+                icon: "ion-ios-cloud-download"
+            };
+        }
 		qmLogService.debug('ImportCtrl beforeEnter', null);
         if(typeof $rootScope.hideNavigationMenu === "undefined") {
             qmService.navBar.showNavigationMenuIfHideUrlParamNotSet();
         }
-        $scope.state.connectorName = qm.urlHelper.getParam('connectorName');
+        $scope.state.searchText = qm.urlHelper.getParam('connectorName');
         if($scope.state.connectorName){
             qm.connectorHelper.getConnectorByName($scope.state.connectorName, function (connector) {
                 $scope.state.connector = connector;
@@ -54,6 +48,23 @@ angular.module('starter').controller('ImportCtrl', ["$scope", "$ionicLoading", "
             qmService.refreshUser(); // Check if user upgrade via web since last user refresh
         }
 	});
+    $scope.$on('$ionicView.afterEnter', function(e) {
+        var message = qm.urlHelper.getParam('message');
+        if(message){qmService.showMaterialAlert(decodeURIComponent(message), "You should begin seeing your imported data within an hour or so.")}
+    });
+	function userCanConnect(connector) {
+        if(!$rootScope.user){
+            qmService.refreshUser();
+            return true;
+        }
+        if(qmService.premiumModeDisabledForTesting){return false;}
+        if($rootScope.user.stripeActive){return true;}
+        if(qm.platform.isChromeExtension()){return true;}
+        if(connector && !connector.premium){return true;}
+        //if(qm.platform.isAndroid()){return true;}
+        //if(qm.platform.isWeb()){return true;}
+        return !qm.getAppSettings().additionalSettings.monetizationSettings.subscriptionsEnabled;
+    }
 	$scope.hideImportHelpCard = function () {
 		$scope.showImportHelpCard = false;
         window.qm.storage.setItem(qm.items.hideImportHelpCard, true);
@@ -73,7 +84,7 @@ angular.module('starter').controller('ImportCtrl', ["$scope", "$ionicLoading", "
 	};
     $scope.showActionSheetForConnector = function(connector) {
         var connectorButtons = JSON.parse(JSON.stringify(connector.buttons));
-        connectorButtons.push({text: '<i class="icon ' + qmService.ionIcons.history + '"></i>' + connector.displayName + ' History',
+        connectorButtons.push({text: '<i class="icon ' + ionIcons.history + '"></i>' + connector.displayName + ' History',
             id: 'history', state: qmStates.historyAll, stateParams: {connectorName: connector.name}});
         connectorButtons = qmService.actionSheets.addHtmlToActionSheetButtonArray(connectorButtons);
         connectorButtons.map(function (button) {
@@ -85,9 +96,9 @@ angular.module('starter').controller('ImportCtrl', ["$scope", "$ionicLoading", "
             destructiveText: (connector.connected) ? '<i class="icon ion-trash-a"></i>Disconnect ' : null,
             cancelText: '<i class="icon ion-ios-close"></i>Cancel',
             cancel: function() {qmLogService.debug('CANCELLED');},
-            buttonClicked: function(index) {
+            buttonClicked: function(index, button) {
                 if(connectorButtons[index].state){
-                    qmService.actionSheets.handleActionSheetButtonClick(connectorButtons[index]);
+                    qmService.actionSheets.handleVariableActionSheetClick(connectorButtons[index]);
                 } else {
                     $scope.connectorAction(connector, connectorButtons[index]);
                 }
@@ -342,9 +353,9 @@ angular.module('starter').controller('ImportCtrl', ["$scope", "$ionicLoading", "
             var connector = qmService.connector;
             $scope.appSettings = qm.getAppSettings();
             var addAffiliateTag  = connector.connectInstructions.parameters.find(function (obj) {return obj.key === 'addAffiliateTag';});
-            $scope.addAffiliateTag = isTruthy(addAffiliateTag.defaultValue);
+            $scope.addAffiliateTag = qm.stringHelper.isTruthy(addAffiliateTag.defaultValue);
             var importPurchases  = connector.connectInstructions.parameters.find(function (obj) {return obj.key === 'importPurchases';});
-            $scope.importPurchases = isTruthy(importPurchases.defaultValue);
+            $scope.importPurchases = qm.stringHelper.isTruthy(importPurchases.defaultValue);
             $scope.onToggle = function(){
                 var params = { importPurchases: $scope.importPurchases || false, addAffiliateTag: $scope.addAffiliateTag || false };
                 qmService.connectors.connectWithParams(params, connector.name);
@@ -381,7 +392,7 @@ angular.module('starter').controller('ImportCtrl', ["$scope", "$ionicLoading", "
         qmService.disconnectConnectorDeferred(connector.name).then(function (){
             $scope.refreshConnectors();
         }, function(error) {
-            qmLogService.error("error disconnecting " + error);
+            qmLogService.error("error disconnecting ", error);
         });
     };
     var updateConnector = function (connector, button){
@@ -409,6 +420,8 @@ angular.module('starter').controller('ImportCtrl', ["$scope", "$ionicLoading", "
             getItHere(connector, button);
         } else if(button.text.toLowerCase().indexOf('update') !== -1){
             updateConnector(connector, button);
+        } else if(button.text.toLowerCase().indexOf('upgrade') !== -1){
+            qmService.goToState('app.upgrade');
         }
     };
     $rootScope.$on('broadcastRefreshConnectors', function() {

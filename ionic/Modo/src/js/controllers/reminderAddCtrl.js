@@ -7,7 +7,7 @@ angular.module('starter').controller('ReminderAddCtrl', ["$scope", "$state", "$s
     qmService.navBar.setFilterBarSearchIcon(false);
     $scope.state = {
         units: qm.unitHelper.getProgressivelyMoreUnits(),
-        showAddVariableCard : false,
+        showVariableCategorySelector : false,
         showUnits: false,
         selectedFrequencyName : 'Daily',
         selectedReminder : false,
@@ -47,15 +47,19 @@ angular.module('starter').controller('ReminderAddCtrl', ["$scope", "$state", "$s
     }
     if(!$rootScope.user){qmService.refreshUser();}
     $scope.$on('$ionicView.beforeEnter', function(){ qmLogService.info('ReminderAddCtrl beforeEnter...');
+        $scope.state.trackingReminder = $stateParams.reminder || $stateParams.trackingReminder || qm.storage.getItem(qm.items.lastReminder) || $scope.state.trackingReminder;
+        if($stateParams.trackingReminderId){
+            $scope.state.trackingReminder = $stateParams;
+            $scope.state.trackingReminder.id = $stateParams.trackingReminderId;
+        }
         $scope.state.savingText = 'Save';
-        var backView = $ionicHistory.backView();
         qm.variableCategoryHelper.getVariableCategoriesFromGlobalsOrApi(function (variableCategories) {
             $scope.state.variableCategories = variableCategories;
         });
         qmService.navBar.showNavigationMenuIfHideUrlParamNotSet();
         qmService.login.sendToLoginIfNecessaryAndComeBack();
         if($stateParams.variableObject){ $stateParams.variableCategoryName = $stateParams.variableObject.variableCategoryName; }
-        if($stateParams.reminder){ $stateParams.variableCategoryName = $stateParams.reminder.variableCategoryName; }
+        if($scope.state.trackingReminder && $scope.state.trackingReminder.variableCategoryName){ $stateParams.variableCategoryName = $scope.state.trackingReminder.variableCategoryName; }
         $scope.stateParams = $stateParams;
         setTitle();
         var reminderIdUrlParameter = qm.urlHelper.getParam('reminderId');
@@ -63,8 +67,6 @@ angular.module('starter').controller('ReminderAddCtrl', ["$scope", "$state", "$s
         if ($stateParams.variableObject) {
             $scope.state.variableObject = $stateParams.variableObject;
             setupByVariableObject($stateParams.variableObject);
-        } else if ($stateParams.reminder && $stateParams.reminder !== null) {
-            setupEditReminder($stateParams.reminder);
         } else if(reminderIdUrlParameter) {
             setupReminderEditingFromUrlParameter(reminderIdUrlParameter);
         } else if(variableIdUrlParameter) {
@@ -74,19 +76,11 @@ angular.module('starter').controller('ReminderAddCtrl', ["$scope", "$state", "$s
         } else if($stateParams.variableCategoryName){
             $scope.state.trackingReminder.variableCategoryName = $stateParams.variableCategoryName;
             setupVariableCategory($scope.state.trackingReminder.variableCategoryName);
-        } else if (qm.storage.getItem(qm.items.lastReminder)) {
-            $scope.state.trackingReminder = qm.storage.getItem(qm.items.lastReminder);
         } else if (qm.getPrimaryOutcomeVariable()){
             $scope.state.variableObject = qm.getPrimaryOutcomeVariable();
             setupByVariableObject(qm.getPrimaryOutcomeVariable());
         } else {
             $scope.goBack();
-        }
-        if($stateParams.skipReminderSettingsIfPossible){
-            //$scope.save();
-        }
-        if(!$scope.state.trackingReminder.variableCategoryName || $scope.state.trackingReminder.variableCategoryName === ""){
-            $scope.state.showAddVariableCard = true;
         }
     });
     $scope.$on('$ionicView.afterEnter', function(){
@@ -94,6 +88,7 @@ angular.module('starter').controller('ReminderAddCtrl', ["$scope", "$state", "$s
         qmService.hideLoader();
         qm.storage.setItem(qm.items.lastReminder, $scope.state.trackingReminder);
         setHideDefaultValueField();
+        if($state.current.name !== qmStates.favoriteAdd){setupEditReminder($scope.state.trackingReminder);}  // Needed to set dates
     });
     $scope.showMoreOptions = function(){ $scope.state.showMoreOptions = true; };
     if($rootScope.user) {
@@ -173,8 +168,7 @@ angular.module('starter').controller('ReminderAddCtrl', ["$scope", "$state", "$s
     };
     var setupByVariableObject = function(selectedVariable){
         qmLogService.info('remindersAdd.setupByVariableObject: ' + selectedVariable.name, null);
-        if (!selectedVariable.variableCategoryName) { $scope.state.showAddVariableCard = true; }
-        $scope.state.variableObject=selectedVariable;
+        $scope.state.variableObject = selectedVariable;
         setupVariableCategory(selectedVariable.variableCategoryName);
         if (selectedVariable.unitAbbreviatedName) {
             $scope.state.trackingReminder.unitAbbreviatedName = selectedVariable.unitAbbreviatedName;
@@ -293,6 +287,7 @@ angular.module('starter').controller('ReminderAddCtrl', ["$scope", "$state", "$s
         return frequencyChart[frequencyName];
     }
     $scope.save = function(){
+        $scope.state.trackingReminder = qm.unitHelper.updateAllUnitPropertiesOnObject($scope.state.trackingReminder.unitAbbreviatedName, $scope.state.trackingReminder);
         qmLogService.info('Clicked save reminder');
         if($stateParams.favorite){
             $scope.state.trackingReminder.reminderFrequency = 0;
@@ -346,7 +341,7 @@ angular.module('starter').controller('ReminderAddCtrl', ["$scope", "$state", "$s
         qmService.addToTrackingReminderSyncQueue(remindersArray);
         $scope.state.savingText = "Saving "+ $scope.state.trackingReminder.variableName + '...';
         qmService.showInfoToast($scope.state.savingText);
-        qmService.syncTrackingReminders(true).then(function () {
+        qmService.trackingReminders.syncTrackingReminders(true).then(function () {
             var toastMessage = $scope.state.trackingReminder.variableName + ' saved';
             qmService.showInfoToast(toastMessage);
             qmService.hideLoader();
@@ -410,7 +405,8 @@ angular.module('starter').controller('ReminderAddCtrl', ["$scope", "$state", "$s
     };
     var setupVariableCategory = function(variableCategoryName){
         qmLogService.debug('remindersAdd.setupVariableCategory ' + variableCategoryName, null);
-        if(!variableCategoryName || variableCategoryName === 'Anything'){variableCategoryName = '';}
+        if(variableCategoryName === 'Anything'){variableCategoryName = null;}
+        if(!variableCategoryName){return;}
         $scope.state.trackingReminder.variableCategoryName = variableCategoryName;
         $scope.state.variableCategoryObject = qmService.getVariableCategoryInfo(variableCategoryName);
         if (!$scope.state.trackingReminder.unitAbbreviatedName) {
@@ -490,8 +486,7 @@ angular.module('starter').controller('ReminderAddCtrl', ["$scope", "$state", "$s
             showMoreUnits();
         } else {
             qmLogService.debug('selecting_unit', null, $scope.state.trackingReminder.unitAbbreviatedName);
-            $scope.state.trackingReminder.unitName = qm.unitsIndexedByAbbreviatedName[$scope.state.trackingReminder.unitAbbreviatedName].name;
-            $scope.state.trackingReminder.unitId = qm.unitsIndexedByAbbreviatedName[$scope.state.trackingReminder.unitAbbreviatedName].id;
+            $scope.state.trackingReminder = qm.unitHelper.updateAllUnitPropertiesOnObject($scope.state.trackingReminder.unitAbbreviatedName, $scope.state.trackingReminder);
         }
         setHideDefaultValueField();
     };
@@ -540,8 +535,7 @@ angular.module('starter').controller('ReminderAddCtrl', ["$scope", "$state", "$s
     })();
     $scope.toggleReminderEnabled = function (){
         if(!$scope.state.trackingReminder.enabled){
-            var moment = moment();
-            $scope.state.selectedStopTrackingDate = moment.subtract(1, 'days');
+            $scope.state.selectedStopTrackingDate = moment().subtract(1, 'days');
         } else {
             $scope.state.selectedStopTrackingDate = null;
         }

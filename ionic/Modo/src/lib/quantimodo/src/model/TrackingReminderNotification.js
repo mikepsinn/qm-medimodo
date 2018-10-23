@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TrackingReminderNotificationAction', 'model/TrackingReminderNotificationTrackAllAction', 'model/Unit'], factory);
+    define(['ApiClient', 'model/Card', 'model/TrackingReminderNotificationAction', 'model/TrackingReminderNotificationTrackAllAction', 'model/Unit'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TrackingReminderNotificationAction'), require('./TrackingReminderNotificationTrackAllAction'), require('./Unit'));
+    module.exports = factory(require('../ApiClient'), require('./Card'), require('./TrackingReminderNotificationAction'), require('./TrackingReminderNotificationTrackAllAction'), require('./Unit'));
   } else {
     // Browser globals (root is window)
     if (!root.Quantimodo) {
       root.Quantimodo = {};
     }
-    root.Quantimodo.TrackingReminderNotification = factory(root.Quantimodo.ApiClient, root.Quantimodo.TrackingReminderNotificationAction, root.Quantimodo.TrackingReminderNotificationTrackAllAction, root.Quantimodo.Unit);
+    root.Quantimodo.TrackingReminderNotification = factory(root.Quantimodo.ApiClient, root.Quantimodo.Card, root.Quantimodo.TrackingReminderNotificationAction, root.Quantimodo.TrackingReminderNotificationTrackAllAction, root.Quantimodo.Unit);
   }
-}(this, function(ApiClient, TrackingReminderNotificationAction, TrackingReminderNotificationTrackAllAction, Unit) {
+}(this, function(ApiClient, Card, TrackingReminderNotificationAction, TrackingReminderNotificationTrackAllAction, Unit) {
   'use strict';
 
 
@@ -45,7 +45,7 @@
    * @class
    * @param actionArray {Array.<module:model/TrackingReminderNotificationAction>} 
    * @param availableUnits {Array.<module:model/Unit>} 
-   * @param fillingValue {Number} Example: 0
+   * @param fillingValue {Number} Ex: 0
    * @param id {Number} id for the specific PENDING tracking remidner
    * @param trackAllActions {Array.<module:model/TrackingReminderNotificationTrackAllAction>} 
    */
@@ -67,9 +67,20 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
     _this['fillingValue'] = fillingValue;
 
     _this['id'] = id;
+
 
 
 
@@ -142,6 +153,36 @@
       }
       if (data.hasOwnProperty('availableUnits')) {
         obj['availableUnits'] = ApiClient.convertToType(data['availableUnits'], [Unit]);
+      }
+      if (data.hasOwnProperty('bestStudyLink')) {
+        obj['bestStudyLink'] = ApiClient.convertToType(data['bestStudyLink'], 'String');
+      }
+      if (data.hasOwnProperty('bestStudyCard')) {
+        obj['bestStudyCard'] = Card.constructFromObject(data['bestStudyCard']);
+      }
+      if (data.hasOwnProperty('bestUserStudyLink')) {
+        obj['bestUserStudyLink'] = ApiClient.convertToType(data['bestUserStudyLink'], 'String');
+      }
+      if (data.hasOwnProperty('bestUserStudyCard')) {
+        obj['bestUserStudyCard'] = Card.constructFromObject(data['bestUserStudyCard']);
+      }
+      if (data.hasOwnProperty('bestPopulationStudyLink')) {
+        obj['bestPopulationStudyLink'] = ApiClient.convertToType(data['bestPopulationStudyLink'], 'String');
+      }
+      if (data.hasOwnProperty('bestPopulationStudyCard')) {
+        obj['bestPopulationStudyCard'] = Card.constructFromObject(data['bestPopulationStudyCard']);
+      }
+      if (data.hasOwnProperty('optimalValueMessage')) {
+        obj['optimalValueMessage'] = ApiClient.convertToType(data['optimalValueMessage'], 'String');
+      }
+      if (data.hasOwnProperty('commonOptimalValueMessage')) {
+        obj['commonOptimalValueMessage'] = ApiClient.convertToType(data['commonOptimalValueMessage'], 'String');
+      }
+      if (data.hasOwnProperty('userOptimalValueMessage')) {
+        obj['userOptimalValueMessage'] = ApiClient.convertToType(data['userOptimalValueMessage'], 'String');
+      }
+      if (data.hasOwnProperty('card')) {
+        obj['card'] = Card.constructFromObject(data['card']);
       }
       if (data.hasOwnProperty('clientId')) {
         obj['clientId'] = ApiClient.convertToType(data['clientId'], 'String');
@@ -241,6 +282,9 @@
       }
       if (data.hasOwnProperty('question')) {
         obj['question'] = ApiClient.convertToType(data['question'], 'String');
+      }
+      if (data.hasOwnProperty('longQuestion')) {
+        obj['longQuestion'] = ApiClient.convertToType(data['longQuestion'], 'String');
       }
       if (data.hasOwnProperty('reminderEndTime')) {
         obj['reminderEndTime'] = ApiClient.convertToType(data['reminderEndTime'], 'String');
@@ -366,7 +410,57 @@
    */
   exports.prototype['availableUnits'] = undefined;
   /**
-   * clientId
+   * Link to study comparing variable with strongest relationship for user or population
+   * @member {String} bestStudyLink
+   */
+  exports.prototype['bestStudyLink'] = undefined;
+  /**
+   * Description of relationship with variable with strongest relationship for user or population
+   * @member {module:model/Card} bestStudyCard
+   */
+  exports.prototype['bestStudyCard'] = undefined;
+  /**
+   * Link to study comparing variable with strongest relationship for user
+   * @member {String} bestUserStudyLink
+   */
+  exports.prototype['bestUserStudyLink'] = undefined;
+  /**
+   * Description of relationship with variable with strongest relationship for user
+   * @member {module:model/Card} bestUserStudyCard
+   */
+  exports.prototype['bestUserStudyCard'] = undefined;
+  /**
+   * Link to study comparing variable with strongest relationship for population
+   * @member {String} bestPopulationStudyLink
+   */
+  exports.prototype['bestPopulationStudyLink'] = undefined;
+  /**
+   * Description of relationship with variable with strongest relationship for population
+   * @member {module:model/Card} bestPopulationStudyCard
+   */
+  exports.prototype['bestPopulationStudyCard'] = undefined;
+  /**
+   * Description of relationship with variable with strongest relationship for user or population
+   * @member {String} optimalValueMessage
+   */
+  exports.prototype['optimalValueMessage'] = undefined;
+  /**
+   * Description of relationship with variable with strongest relationship for population
+   * @member {String} commonOptimalValueMessage
+   */
+  exports.prototype['commonOptimalValueMessage'] = undefined;
+  /**
+   * Description of relationship with variable with strongest relationship for user
+   * @member {String} userOptimalValueMessage
+   */
+  exports.prototype['userOptimalValueMessage'] = undefined;
+  /**
+   * Card with options for tracking.
+   * @member {module:model/Card} card
+   */
+  exports.prototype['card'] = undefined;
+  /**
+   * Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do
    * @member {String} clientId
    */
   exports.prototype['clientId'] = undefined;
@@ -376,42 +470,42 @@
    */
   exports.prototype['combinationOperation'] = undefined;
   /**
-   * Example: 2017-07-29 20:49:54 UTC ISO 8601 YYYY-MM-DDThh:mm:ss
+   * Ex: 2017-07-29 20:49:54 UTC ISO 8601 YYYY-MM-DDThh:mm:ss
    * @member {String} createdAt
    */
   exports.prototype['createdAt'] = undefined;
   /**
-   * Example: Trader Joe's Bedtime Tea
+   * Ex: Trader Joe's Bedtime Tea
    * @member {String} displayName
    */
   exports.prototype['displayName'] = undefined;
   /**
-   * Is the user specified default value or falls back to the last value in user unit. Good for initializing input fields
+   * Is the user specified default value or falls back to the last value in user unit. Good for initializing input fields. Unit: User-specified or common.
    * @member {Number} modifiedValue
    */
   exports.prototype['modifiedValue'] = undefined;
   /**
-   * Example: /5
+   * Ex: /5
    * @member {String} unitAbbreviatedName
    */
   exports.prototype['unitAbbreviatedName'] = undefined;
   /**
-   * Example: 5
+   * Ex: 5
    * @member {Number} unitCategoryId
    */
   exports.prototype['unitCategoryId'] = undefined;
   /**
-   * Example: Rating
+   * Ex: Rating
    * @member {String} unitCategoryName
    */
   exports.prototype['unitCategoryName'] = undefined;
   /**
-   * Example: 10
+   * Ex: 10
    * @member {Number} unitId
    */
   exports.prototype['unitId'] = undefined;
   /**
-   * Example: 1 to 5 Rating
+   * Ex: 1 to 5 Rating
    * @member {String} unitName
    */
   exports.prototype['unitName'] = undefined;
@@ -421,7 +515,7 @@
    */
   exports.prototype['defaultValue'] = undefined;
   /**
-   * Example: positive
+   * Ex: positive
    * @member {String} description
    */
   exports.prototype['description'] = undefined;
@@ -431,12 +525,12 @@
    */
   exports.prototype['email'] = undefined;
   /**
-   * Example: 0
+   * Ex: 0
    * @member {Number} fillingValue
    */
   exports.prototype['fillingValue'] = undefined;
   /**
-   * Example: ion-sad-outline
+   * Ex: ion-sad-outline
    * @member {String} iconIcon
    */
   exports.prototype['iconIcon'] = undefined;
@@ -446,42 +540,42 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * Example: https://rximage.nlm.nih.gov/image/images/gallery/original/55111-0129-60_RXNAVIMAGE10_B051D81E.jpg
+   * Ex: https://rximage.nlm.nih.gov/image/images/gallery/original/55111-0129-60_RXNAVIMAGE10_B051D81E.jpg
    * @member {String} imageUrl
    */
   exports.prototype['imageUrl'] = undefined;
   /**
-   * Example: happiestFaceIsFive
+   * Ex: happiestFaceIsFive
    * @member {String} inputType
    */
   exports.prototype['inputType'] = undefined;
   /**
-   * Example: ion-happy-outline
+   * Ex: ion-happy-outline
    * @member {String} ionIcon
    */
   exports.prototype['ionIcon'] = undefined;
   /**
-   * Example: 3
+   * Ex: 3
    * @member {Number} lastValue
    */
   exports.prototype['lastValue'] = undefined;
   /**
-   * Example: 1
+   * True if this variable is normally tracked via manual user input rather than automatic imports
    * @member {Boolean} manualTracking
    */
   exports.prototype['manualTracking'] = undefined;
   /**
-   * Example: 5
+   * Ex: 5
    * @member {Number} maximumAllowedValue
    */
   exports.prototype['maximumAllowedValue'] = undefined;
   /**
-   * Example: 1
+   * Ex: 1
    * @member {Number} minimumAllowedValue
    */
   exports.prototype['minimumAllowedValue'] = undefined;
   /**
-   * Example: 3
+   * Ex: 3
    * @member {Number} mostCommonValue
    */
   exports.prototype['mostCommonValue'] = undefined;
@@ -491,12 +585,12 @@
    */
   exports.prototype['notificationBar'] = undefined;
   /**
-   * Example: UTC ISO 8601 YYYY-MM-DDThh:mm:ss
+   * Ex: UTC ISO 8601 YYYY-MM-DDThh:mm:ss
    * @member {String} notifiedAt
    */
   exports.prototype['notifiedAt'] = undefined;
   /**
-   * Example: 5
+   * Ex: 5
    * @member {Number} numberOfUniqueValues
    */
   exports.prototype['numberOfUniqueValues'] = undefined;
@@ -506,12 +600,12 @@
    */
   exports.prototype['outcome'] = undefined;
   /**
-   * Example: img/variable_categories/emotions.png
+   * Ex: img/variable_categories/emotions.png
    * @member {String} pngPath
    */
   exports.prototype['pngPath'] = undefined;
   /**
-   * Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png
+   * Ex: https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png
    * @member {String} pngUrl
    */
   exports.prototype['pngUrl'] = undefined;
@@ -526,17 +620,22 @@
    */
   exports.prototype['productUrl'] = undefined;
   /**
-   * Example: How is your overall mood?
+   * Ex: How is your overall mood?
    * @member {String} question
    */
   exports.prototype['question'] = undefined;
   /**
-   * Example: 01-01-2018
+   * Ex: How is your overall mood on a scale of 1 to 5??
+   * @member {String} longQuestion
+   */
+  exports.prototype['longQuestion'] = undefined;
+  /**
+   * Ex: 01-01-2018
    * @member {String} reminderEndTime
    */
   exports.prototype['reminderEndTime'] = undefined;
   /**
-   * How often user should be reminded in seconds. Example: 86400
+   * How often user should be reminded in seconds. Ex: 86400
    * @member {Number} reminderFrequency
    */
   exports.prototype['reminderFrequency'] = undefined;
@@ -556,12 +655,12 @@
    */
   exports.prototype['reminderTime'] = undefined;
   /**
-   * Example: 4
+   * Ex: 4
    * @member {Number} secondMostCommonValue
    */
   exports.prototype['secondMostCommonValue'] = undefined;
   /**
-   * Example: 1
+   * Ex: 1
    * @member {Number} secondToLastValue
    */
   exports.prototype['secondToLastValue'] = undefined;
@@ -571,27 +670,27 @@
    */
   exports.prototype['sms'] = undefined;
   /**
-   * Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg
+   * Ex: https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg
    * @member {String} svgUrl
    */
   exports.prototype['svgUrl'] = undefined;
   /**
-   * Example: 2
+   * Ex: 2
    * @member {Number} thirdMostCommonValue
    */
   exports.prototype['thirdMostCommonValue'] = undefined;
   /**
-   * Example: 2
+   * Ex: 2
    * @member {Number} thirdToLastValue
    */
   exports.prototype['thirdToLastValue'] = undefined;
   /**
-   * Example: Rate Overall Mood
+   * Ex: Rate Overall Mood
    * @member {String} title
    */
   exports.prototype['title'] = undefined;
   /**
-   * Example: 3
+   * Ex: 3
    * @member {Number} total
    */
   exports.prototype['total'] = undefined;
@@ -605,12 +704,12 @@
    */
   exports.prototype['trackingReminderId'] = undefined;
   /**
-   * Example: https://rximage.nlm.nih.gov/image/images/gallery/original/55111-0129-60_RXNAVIMAGE10_B051D81E.jpg
+   * Ex: https://rximage.nlm.nih.gov/image/images/gallery/original/55111-0129-60_RXNAVIMAGE10_B051D81E.jpg
    * @member {String} trackingReminderImageUrl
    */
   exports.prototype['trackingReminderImageUrl'] = undefined;
   /**
-   * Example: 5072482
+   * Ex: 5072482
    * @member {Number} trackingReminderNotificationId
    */
   exports.prototype['trackingReminderNotificationId'] = undefined;
@@ -620,17 +719,17 @@
    */
   exports.prototype['trackingReminderNotificationTime'] = undefined;
   /**
-   * Example: 1501534124
+   * Ex: 1501534124
    * @member {Number} trackingReminderNotificationTimeEpoch
    */
   exports.prototype['trackingReminderNotificationTimeEpoch'] = undefined;
   /**
-   * Example: 15:48:44
+   * Ex: 15:48:44
    * @member {String} trackingReminderNotificationTimeLocal
    */
   exports.prototype['trackingReminderNotificationTimeLocal'] = undefined;
   /**
-   * Example: 8PM Sun, May 1
+   * Ex: 8PM Sun, May 1
    * @member {String} trackingReminderNotificationTimeLocalHumanString
    */
   exports.prototype['trackingReminderNotificationTimeLocalHumanString'] = undefined;
@@ -645,58 +744,58 @@
    */
   exports.prototype['userId'] = undefined;
   /**
-   * Example: /5
+   * Ex: /5
    * @member {String} userVariableUnitAbbreviatedName
    */
   exports.prototype['userVariableUnitAbbreviatedName'] = undefined;
   /**
-   * Example: 5
+   * Ex: 5
    * @member {Number} userVariableUnitCategoryId
    */
   exports.prototype['userVariableUnitCategoryId'] = undefined;
   /**
-   * Example: Rating
+   * Ex: Rating
    * @member {String} userVariableUnitCategoryName
    */
   exports.prototype['userVariableUnitCategoryName'] = undefined;
   /**
-   * Example: 10
+   * Ex: 10
    * @member {Number} userVariableUnitId
    */
   exports.prototype['userVariableUnitId'] = undefined;
   /**
-   * Example: 1 to 5 Rating
+   * Ex: 1 to 5 Rating
    * @member {String} userVariableUnitName
    */
   exports.prototype['userVariableUnitName'] = undefined;
   /**
-   * Example: 1
+   * Ex: 1
    * @member {Number} userVariableVariableCategoryId
    */
   exports.prototype['userVariableVariableCategoryId'] = undefined;
   /**
-   * Example: Emotions
+   * Ex: Emotions
    * @member {String} userVariableVariableCategoryName
    */
   exports.prototype['userVariableVariableCategoryName'] = undefined;
   /**
-   * Example: positive
+   * Ex: positive
    * @member {String} valence
    */
   exports.prototype['valence'] = undefined;
   /**
-   * Example: 1
+   * Ex: 1
    * @member {Number} variableCategoryId
    */
   exports.prototype['variableCategoryId'] = undefined;
   /**
-   * Example: https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png
+   * Ex: https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png
    * @member {String} variableCategoryImageUrl
    */
   exports.prototype['variableCategoryImageUrl'] = undefined;
   /**
-   * Name of the variable category to be used when sending measurements
-   * @member {String} variableCategoryName
+   * Ex: Emotions, Treatments, Symptoms...
+   * @member {module:model/TrackingReminderNotification.VariableCategoryNameEnum} variableCategoryName
    */
   exports.prototype['variableCategoryName'] = undefined;
   /**
@@ -705,7 +804,7 @@
    */
   exports.prototype['variableId'] = undefined;
   /**
-   * Example: https://image.png
+   * Ex: https://image.png
    * @member {String} variableImageUrl
    */
   exports.prototype['variableImageUrl'] = undefined;
@@ -732,6 +831,128 @@
      * @const
      */
     "SUM": "SUM"  };
+
+  /**
+   * Allowed values for the <code>variableCategoryName</code> property.
+   * @enum {String}
+   * @readonly
+   */
+  exports.VariableCategoryNameEnum = {
+    /**
+     * value: "Activity"
+     * @const
+     */
+    "Activity": "Activity",
+    /**
+     * value: "Books"
+     * @const
+     */
+    "Books": "Books",
+    /**
+     * value: "Causes of Illness"
+     * @const
+     */
+    "Causes of Illness": "Causes of Illness",
+    /**
+     * value: "Cognitive Performance"
+     * @const
+     */
+    "Cognitive Performance": "Cognitive Performance",
+    /**
+     * value: "Conditions"
+     * @const
+     */
+    "Conditions": "Conditions",
+    /**
+     * value: "Emotions"
+     * @const
+     */
+    "Emotions": "Emotions",
+    /**
+     * value: "Environment"
+     * @const
+     */
+    "Environment": "Environment",
+    /**
+     * value: "Foods"
+     * @const
+     */
+    "Foods": "Foods",
+    /**
+     * value: "Goals"
+     * @const
+     */
+    "Goals": "Goals",
+    /**
+     * value: "Locations"
+     * @const
+     */
+    "Locations": "Locations",
+    /**
+     * value: "Miscellaneous"
+     * @const
+     */
+    "Miscellaneous": "Miscellaneous",
+    /**
+     * value: "Movies and TV"
+     * @const
+     */
+    "Movies and TV": "Movies and TV",
+    /**
+     * value: "Music"
+     * @const
+     */
+    "Music": "Music",
+    /**
+     * value: "Nutrients"
+     * @const
+     */
+    "Nutrients": "Nutrients",
+    /**
+     * value: "Payments"
+     * @const
+     */
+    "Payments": "Payments",
+    /**
+     * value: "Physical Activities"
+     * @const
+     */
+    "Physical Activities": "Physical Activities",
+    /**
+     * value: "Physique"
+     * @const
+     */
+    "Physique": "Physique",
+    /**
+     * value: "Sleep"
+     * @const
+     */
+    "Sleep": "Sleep",
+    /**
+     * value: "Social Interactions"
+     * @const
+     */
+    "Social Interactions": "Social Interactions",
+    /**
+     * value: "Software"
+     * @const
+     */
+    "Software": "Software",
+    /**
+     * value: "Symptoms"
+     * @const
+     */
+    "Symptoms": "Symptoms",
+    /**
+     * value: "Treatments"
+     * @const
+     */
+    "Treatments": "Treatments",
+    /**
+     * value: "Vital Signs"
+     * @const
+     */
+    "Vital Signs": "Vital Signs"  };
 
 
   return exports;

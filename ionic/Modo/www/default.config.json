@@ -125,13 +125,13 @@
 			}
 		}
 	},
-	"appDescription": "Better living through data.",
 	"appDesign": {
 		"aliases": {
 			"active": {
 				"physicianAlias": "physician",
 				"patientAlias": "patient"
-			}
+			},
+			"id": null
 		},
 		"floatingActionButton": {
 			"active": {
@@ -153,8 +153,8 @@
 				},
 				"button3": {
 					"icon": "ion-ios-cloud-download-outline",
-					"label": "Import Data",
-					"stateName": "app.import",
+					"label": "Talk to Me",
+					"stateName": "app.chat",
 					"stateParameters": {
 						"variableCategoryName": "Anything"
 					}
@@ -176,16 +176,14 @@
 					"title": "Reminder Inbox",
 					"icon": "ion-archive",
 					"bodyText": "Scroll through the Inbox and press the appropriate button on each reminder notification. Each one only takes a few seconds. You'll be shocked at how much valuable data you can collect with just a few minutes in the Reminder Inbox each day!",
-					"$$hashKey": "object:1319",
-					"$$mdSelectId": 1
+					"$$hashKey": "object:1775"
 				},
 				{
 					"id": "recordMeasurementInfoCard",
 					"title": "Record Measurements",
 					"icon": "ion-edit",
 					"bodyText": "Want to just record a medication, food or symptom immediately instead of creating a reminder? Just go to the Record Measurement menu item and select the appropriate variable category. Alternatively, you can just press the little red button at the bottom of the screen.",
-					"$$hashKey": "object:1320",
-					"$$mdSelectId": 2
+					"$$hashKey": "object:1776"
 				},
 				{
 					"id": "chromeExtensionInfoCard",
@@ -197,8 +195,7 @@
 						"text": "Send Me a Link",
 						"ionIcon": "ion-checkmark"
 					},
-					"$$hashKey": "object:1321",
-					"$$mdSelectId": 3
+					"$$hashKey": "object:1777"
 				},
 				{
 					"id": "getHelpInfoCard",
@@ -211,8 +208,7 @@
 						"buttonClass": "button button-clear button-positive ion-checkmark",
 						"goToState": "app.help"
 					},
-					"$$hashKey": "object:1322",
-					"$$mdSelectId": 4
+					"$$hashKey": "object:1778"
 				},
 				{
 					"id": "getFitbitHelpInfoCard",
@@ -224,8 +220,7 @@
 						"text": "Get Fitbit",
 						"ionIcon": "ion-checkmark"
 					},
-					"$$hashKey": "object:1323",
-					"$$mdSelectId": 5
+					"$$hashKey": "object:1779"
 				},
 				{
 					"id": "locationTrackingPage",
@@ -247,11 +242,10 @@
 						"goToState": "app.settings"
 					},
 					"bodyText": "Would you like to automatically log location to see how time spent at restaurants, the gym, work or doctors offices might be affecting you? ",
-					"$$hashKey": "object:1324",
-					"$$mdSelectId": 6,
 					"iconClass": "icon positive ion-ios-location-outline",
 					"ionIcon": "ion-ios-location-outline",
-					"moreInfo": "By automatically recording your location in the background using GPS, we might be able to figure out how the amount of time spent at the gym, restaurants, doctors, offices, home and work locations may be affecting you.  Another benefit of enabling this option is that allows the app to run in the background and open instantly instead of taking a few seconds to load.  You can view your location history by going to Menu -> History -> Locations."
+					"moreInfo": "By automatically recording your location in the background using GPS, we might be able to figure out how the amount of time spent at the gym, restaurants, doctors, offices, home and work locations may be affecting you.  Another benefit of enabling this option is that allows the app to run in the background and open instantly instead of taking a few seconds to load.  You can view your location history by going to Menu -> History -> Locations.",
+					"$$hashKey": "object:1780"
 				},
 				{
 					"id": "weatherTrackingPage",
@@ -273,11 +267,10 @@
 						"buttonClass": "button button-clear button-positive ion-checkmark",
 						"goToState": "app.import"
 					},
-					"$$hashKey": "object:1325",
-					"$$mdSelectId": 7,
 					"iconClass": "icon positive ion-ios-partlysunny",
 					"ionIcon": "ion-ios-partlysunny",
-					"moreInfo": "By recording your local weather conditions, I might be able to figure out how the amount of sunlight or temperature is affecting you."
+					"moreInfo": "By recording your local weather conditions, I might be able to figure out how the amount of sunlight or temperature is affecting you.",
+					"$$hashKey": "object:1781"
 				},
 				{
 					"id": "importDataPage",
@@ -298,8 +291,7 @@
 						"buttonClass": "button button-clear button-positive ion-checkmark",
 						"goToState": "app.import"
 					},
-					"$$hashKey": "object:1326",
-					"$$mdSelectId": 8
+					"$$hashKey": "object:1782"
 				}
 			]
 		},
@@ -315,8 +307,7 @@
 						"url": "img/robots/robot-waving.svg"
 					},
 					"bodyText": "I've been programmed to reduce human suffering with data.",
-					"$$hashKey": "object:1576",
-					"$$mdSelectId": 9
+					"$$hashKey": "object:1214"
 				},
 				{
 					"title": "Hidden Influences",
@@ -328,8 +319,7 @@
 						"url": "img/intro/patient-frown-factors.png"
 					},
 					"bodyText": "Your symptoms can be worsened or improved by medical treatments, your sleep, exercise, the hundreds of chemicals you consume through your diet, and even the weather!",
-					"$$hashKey": "object:1577",
-					"$$mdSelectId": 10
+					"$$hashKey": "object:1215"
 				},
 				{
 					"title": "Only Human",
@@ -340,22 +330,8 @@
 					"image": {
 						"url": "img/brains/brain-pink.svg"
 					},
-					"bodyText": "Human brains can only hold 7 numbers in working-memory at a time.  So on their own, they're not able to determine which diet is best for you. ",
-					"$$hashKey": "object:1578",
-					"$$mdSelectId": 11
-				},
-				{
-					"title": "Treatment Determination",
-					"color": {
-						"backgroundColor": "#0f9d58",
-						"circleColor": "#03c466"
-					},
-					"image": {
-						"url": "img/intro/doctor-frown-factors.png"
-					},
-					"bodyText": "Indeed, your doctor has access to less than 1% of the relevant information when they use intuition to determine the best ways to treat your symptoms!",
-					"$$hashKey": "object:1579",
-					"$$mdSelectId": 12
+					"bodyText": "Your puny human brain can only hold 7 numbers in working-memory at a time.  So on it's own, it's not able to determine which hidden factors are contributing to or alleviating your suffering.",
+					"$$hashKey": "object:1216"
 				},
 				{
 					"title": "Machine Learning",
@@ -366,9 +342,20 @@
 					"image": {
 						"url": "img/robots/quantimodo-robot-brain.svg"
 					},
-					"bodyText": "My brain can hold trillions of numbers!  I can also analyze it to help your dietitian determine how different foods could be affecting your health! ",
-					"$$hashKey": "object:1580",
-					"$$mdSelectId": 13
+					"bodyText": "My brain can hold TRILLIONS of numbers!  I can also analyze it to help you determine how different foods could be affecting your health!",
+					"$$hashKey": "object:1218"
+				},
+				{
+					"title": "Treatment Determination",
+					"color": {
+						"backgroundColor": "#0f9d58",
+						"circleColor": "#03c466"
+					},
+					"image": {
+						"url": "img/intro/doctor-frown-factors.png"
+					},
+					"bodyText": "Indeed, brains have access to less than 1% of the relevant information when they use intuition to determine the best ways to treat your symptoms!",
+					"$$hashKey": "object:1217"
 				},
 				{
 					"title": "Automated Tracking",
@@ -379,9 +366,8 @@
 					"image": {
 						"url": "img/intro/download_2-96.png"
 					},
-					"bodyText": "Weight, blood pressure, heart rate, physical activity data can be collected automatically and imported from dozens of devices.  Weather and the amount of time spent at the gym, restaurants, work, or doctors offices can be collected via your phone's GPS.",
-					"$$hashKey": "object:1581",
-					"$$mdSelectId": 14
+					"bodyText": "Weight, blood pressure, heart rate, & physical activity data can be collected automatically and imported from dozens of devices.  Weather and the amount of time spent at the gym, restaurants, work, or doctors offices can be automatically collected via your phone's GPS.",
+					"$$hashKey": "object:1219"
 				},
 				{
 					"title": "Effortless Tracking",
@@ -393,8 +379,7 @@
 						"url": "img/intro/inbox.svg"
 					},
 					"bodyText": "By taking just a few minutes each day, you can easily record your diet and symptoms in the Reminder Inbox.  The more data you give me, the smarter I get!  Your data doesn't have to be perfect to be valuable, but it's important to track regularly. ",
-					"$$hashKey": "object:1582",
-					"$$mdSelectId": 15
+					"$$hashKey": "object:1220"
 				},
 				{
 					"title": "Data Security",
@@ -406,10 +391,10 @@
 						"url": "img/intro/lock.svg"
 					},
 					"bodyText": "I use bank-level encryption to keep your data secure.  Human eyes will never see your data unless you intentionally share it. ",
-					"$$hashKey": "object:1583",
-					"$$mdSelectId": 16
+					"$$hashKey": "object:1221"
 				}
-			]
+			],
+			"id": null
 		},
 		"menu": {
 			"active": [
@@ -637,7 +622,28 @@
 							"icon": "ion-erlenmeyer-flask",
 							"href": "#/app/study-creation",
 							"id": "study-creation",
-							"$$hashKey": "object:3316"
+							"$hashKey": "ca474062-17a9-6418-658a-b701c924a7fd",
+							"$$hashKey": "object:7339"
+						},
+						{
+							"title": "Your Studies",
+							"stateName": "app.studiesCreated",
+							"icon": "ion-person",
+							"href": "#/app/studies/created",
+							"id": "studies-created",
+							"$hashKey": "object:7356",
+							"params": [],
+							"$$hashKey": "object:3487"
+						},
+						{
+							"title": "Open Studies",
+							"stateName": "app.studiesOpen",
+							"icon": "ion-ios-people",
+							"href": "#/app/studies/open",
+							"id": "studies-open",
+							"$hashKey": "object:3488",
+							"params": [],
+							"$$hashKey": "object:3760"
 						},
 						{
 							"title": "Discoveries",
@@ -669,7 +675,8 @@
 					"id": "settings",
 					"$$hashKey": "object:3216"
 				}
-			]
+			],
+			"id": null
 		},
 		"onboarding": {
 			"active": [
@@ -687,9 +694,8 @@
 					"addButtonText": "Yes",
 					"nextPageButtonText": "No",
 					"bodyText": "Do you regularly experience any unpleasant emotions?",
-					"$$hashKey": "object:1835",
-					"$$mdSelectId": 17,
-					"moreInfo": "Do you have any emotions that fluctuate regularly?  If so, add them so I can try to determine which factors are influencing them."
+					"moreInfo": "Do you have any emotions that fluctuate regularly?  If so, add them so I can try to determine which factors are influencing them.",
+					"$$hashKey": "object:1508"
 				},
 				{
 					"id": "addSymptomRemindersCard",
@@ -705,9 +711,8 @@
 					"addButtonText": "Yes",
 					"nextPageButtonText": "No",
 					"bodyText": "Do you have any recurring symptoms?",
-					"$$hashKey": "object:1836",
-					"$$mdSelectId": 18,
-					"moreInfo": "Symptom severity can be influence by hundreds of factors in daily life. The human mind can only hold 7 numbers in working memory at a time.  I can hold a billion in my mind! If you regularly record your symptoms, add them so I can use this data to determine which hidden and imperceptible factors might be worsening or improving them."
+					"moreInfo": "Symptom severity can be influence by hundreds of factors in daily life. The human mind can only hold 7 numbers in working memory at a time.  I can hold a billion in my mind! If you regularly record your symptoms, add them so I can use this data to determine which hidden and imperceptible factors might be worsening or improving them.",
+					"$$hashKey": "object:1509"
 				},
 				{
 					"id": "addFoodRemindersCard",
@@ -723,9 +728,8 @@
 					"addButtonText": "Yes",
 					"nextPageButtonText": "No",
 					"bodyText": "Are there any foods or drinks that you consume more than a few times a week?",
-					"$$hashKey": "object:1837",
-					"$$mdSelectId": 19,
-					"moreInfo": "Diet can have a significant impact on your health. It's important to enter any foods that you regularly eat to see how they might be affecting you."
+					"moreInfo": "Diet can have a significant impact on your health. It's important to enter any foods that you regularly eat to see how they might be affecting you.",
+					"$$hashKey": "object:1510"
 				},
 				{
 					"id": "addTreatmentRemindersCard",
@@ -741,9 +745,8 @@
 					"addButtonText": "Yes",
 					"nextPageButtonText": "No",
 					"bodyText": "Are you taking any medications, treatments, supplements, or other interventions like meditation or psychotherapy? ",
-					"$$hashKey": "object:1838",
-					"$$mdSelectId": 20,
-					"moreInfo": "Often the effects of medications and treatments aren't intuitively perceptible. That's where I come in!  If you regularly recording your treatments,  I can analyze the data so we can get a better idea which ones are helping you,which one may be harming you, and which ones are merely a waste of money."
+					"moreInfo": "Often the effects of medications and treatments aren't intuitively perceptible. That's where I come in!  If you regularly recording your treatments,  I can analyze the data so we can get a better idea which ones are helping you,which one may be harming you, and which ones are merely a waste of money.",
+					"$$hashKey": "object:1511"
 				},
 				{
 					"id": "locationTrackingPage",
@@ -759,9 +762,8 @@
 					"premiumFeature": true,
 					"nextPageButtonText": "Maybe Later",
 					"bodyText": "Would you like to automatically log location to see how time spent at restaurants, the gym, work or doctors offices might be affecting you? ",
-					"$$hashKey": "object:1839",
-					"$$mdSelectId": 21,
-					"moreInfo": "By automatically recording your location in the background using GPS, we might be able to figure out how the amount of time spent at the gym, restaurants, doctors, offices, home and work locations may be affecting you.  Another benefit of enabling this option is that allows the app to run in the background and open instantly instead of taking a few seconds to load.  You can view your location history by going to Menu -> History -> Locations."
+					"moreInfo": "By automatically recording your location in the background using GPS, we might be able to figure out how the amount of time spent at the gym, restaurants, doctors, offices, home and work locations may be affecting you.  Another benefit of enabling this option is that allows the app to run in the background and open instantly instead of taking a few seconds to load.  You can view your location history by going to Menu -> History -> Locations.",
+					"$$hashKey": "object:1512"
 				},
 				{
 					"id": "weatherTrackingPage",
@@ -777,9 +779,8 @@
 					"premiumFeature": false,
 					"nextPageButtonText": "Maybe Later",
 					"bodyText": "Would you like to automatically record the weather to see how temperature or sunlight exposure might be affecting you? ",
-					"$$hashKey": "object:1840",
-					"$$mdSelectId": 22,
-					"moreInfo": "By recording your local weather conditions, I might be able to figure out how the amount of sunlight or temperature is affecting you."
+					"moreInfo": "By recording your local weather conditions, I might be able to figure out how the amount of sunlight or temperature is affecting you.",
+					"$$hashKey": "object:1513"
 				},
 				{
 					"id": "importDataPage",
@@ -794,8 +795,7 @@
 					"premiumFeature": true,
 					"bodyText": "Let's go to the Import Data page and see if you're using any of the dozens of apps and devices that I can automatically pull data from!",
 					"nextPageButtonText": "Maybe Later",
-					"$$hashKey": "object:1841",
-					"$$mdSelectId": 23
+					"$$hashKey": "object:1514"
 				},
 				{
 					"id": "allDoneCard",
@@ -808,12 +808,161 @@
 						"url": "img/robots/robot-waving.svg"
 					},
 					"bodyText": "You're all set up!  Let's take a minute to record your first measurements and then you're done for the day! ",
-					"$$hashKey": "object:1848",
-					"$$mdSelectId": 30
+					"$$hashKey": "object:1515"
 				}
-			]
+			],
+			"id": null
 		},
 		"upgradePleadingCard": null,
+		"featuresList": {
+			"active": [
+				{
+					"title": "Emotion Tracking",
+					"subTitle": null,
+					"image": "https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png",
+					"premium": false,
+					"subtitle": "Turn data into happiness!",
+					"moreInfo": "Do you have any emotions that fluctuate regularly?  If so, add them so I can try to determine which factors are influencing them."
+				},
+				{
+					"title": "Track Symptoms",
+					"subTitle": null,
+					"image": "https://maxcdn.icons8.com/Color/PNG/96/Messaging/sad-96.png",
+					"premium": false,
+					"subtitle": "in just seconds a day",
+					"moreInfo": "Symptom severity can be influence by hundreds of factors in daily life. The human mind can only hold 7 numbers in working memory at a time.  I can hold a billion in my mind! If you regularly record your symptoms, add them so I can use this data to determine which hidden and imperceptible factors might be worsening or improving them."
+				},
+				{
+					"title": "Track Diet",
+					"subTitle": null,
+					"image": "https://maxcdn.icons8.com/Color/PNG/96/Food/vegetarian_food-96.png",
+					"premium": false,
+					"subtitle": "Identify dietary triggers",
+					"moreInfo": "Diet can have a significant impact on your health. It's important to enter any foods that you regularly eat to see how they might be affecting you."
+				},
+				{
+					"title": "Treatment Tracking",
+					"subTitle": null,
+					"image": "https://maxcdn.icons8.com/Color/PNG/96/Healthcare/pill-96.png",
+					"premium": false,
+					"subtitle": "with reminders",
+					"moreInfo": "Often the effects of medications and treatments aren't intuitively perceptible. That's where I come in!  If you regularly recording your treatments,  I can analyze the data so we can get a better idea which ones are helping you,which one may be harming you, and which ones are merely a waste of money."
+				},
+				{
+					"title": "Weather Tracking",
+					"subTitle": null,
+					"image": "https://maxcdn.icons8.com/Color/PNG/96/Weather/chance_of_storm-96.png",
+					"premium": false,
+					"subtitle": "Automatically log weather",
+					"moreInfo": "By recording your local weather conditions, I might be able to figure out how the amount of sunlight or temperature is affecting you."
+				},
+				{
+					"title": "Sleep Quality",
+					"subTitle": null,
+					"image": "https://maxcdn.icons8.com/Color/PNG/96/Household/sleeping_in_bed-96.png",
+					"premium": false,
+					"subtitle": "Create a Sleep Quality reminder to record your sleep quality every day",
+					"moreInfo": "I can talk to many of the most popular sleep trackers like Fitbit, Jawbone, Sleep as Android, and Withings"
+				},
+				{
+					"title": "Import from Apps",
+					"subTitle": null,
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/www/img/features/smartphone.svg",
+					"premium": false,
+					"subtitle": "Facebook, Google Calendar, Runkeeper, Github, Sleep as Android, MoodiModo, and even the weather!",
+					"moreInfo": "Automatically import your data from Google Calendar, Facebook, Runkeeper, QuantiModo, Sleep as Android, MoodiModo, Github, and even the weather!"
+				},
+				{
+					"title": "Sync Across Devices",
+					"subTitle": null,
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/www/img/features/devices.svg",
+					"premium": false,
+					"subtitle": "Web, Chrome, Android, and iOS",
+					"moreInfo": "Any of your QuantiModo-supported apps will automatically sync with any other app on the web, Chrome, Android, and iOS."
+				},
+				{
+					"title": "Location Tracking",
+					"subTitle": null,
+					"image": "https://maxcdn.icons8.com/Color/PNG/96/Maps/treasure_map-96.png",
+					"premium": false,
+					"subtitle": "Automatically log places",
+					"moreInfo": "By automatically recording your location in the background using GPS, we might be able to figure out how the amount of time spent at the gym, restaurants, doctors, offices, home and work locations may be affecting you.  Another benefit of enabling this option is that allows the app to run in the background and open instantly instead of taking a few seconds to load.  You can view your location history by going to Menu -> History -> Locations."
+				},
+				{
+					"title": "Purchase Tracking",
+					"subTitle": null,
+					"image": "https://maxcdn.icons8.com/Color/PNG/96/Finance/banknotes-96.png",
+					"premium": false,
+					"subtitle": "Automatically log purchases",
+					"moreInfo": "Effortlessly see how supplements from Amazon might be influencing you, for example, by automatically logging spending by connecting the Slice app"
+				},
+				{
+					"title": "Productivity Tracking",
+					"subTitle": null,
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/www/img/features/rescuetime.png",
+					"premium": false,
+					"subtitle": "Passively track app usage",
+					"moreInfo": "You can do this by installing and connecting Rescuetime on the Import Data page.  Rescuetime is a program that runs on your computer & passively tracks of productivity and app usage."
+				},
+				{
+					"title": "Automated Physique Tracking",
+					"subTitle": null,
+					"image": "https://maxcdn.icons8.com/Color/PNG/96/Sports/yoga-96.png",
+					"premium": false,
+					"subtitle": "Monitor weight and body fat with the Withings body analyzer",
+					"moreInfo": "I can give you easy access to your weight and other vitals. You can manually enter weight, but I recommend using a Fitbit or Withings wifi scale for the most detailed data. I can create a beautiful graph of your weight changes, so you can easily keep track of whether you're hitting your goals. Body weight doesn't tell the whole story, so I also support body fat percent. "
+				},
+				{
+					"title": "Find Out What Works",
+					"subTitle": null,
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/www/img/data/graph.png",
+					"premium": false,
+					"subtitle": "Discover hidden factors improving or worsening symptoms and well-being",
+					"moreInfo": "See a list of the strongest predictors for any outcome.  See the values for each predictor that typically precede optimal outcomes.  Dive deeper by checking out the full study on any predictor and outcome combination."
+				},
+				{
+					"title": "Import from Devices",
+					"subTitle": null,
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/www/img/features/smartwatch.svg",
+					"premium": true,
+					"subtitle": "Fitbit, Jawbone Up, Withings...",
+					"moreInfo": "Automatically import your data from Fitbit, Withings, Jawbone."
+				},
+				{
+					"title": "Automated Vital Signs",
+					"subTitle": null,
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/www/img/features/heart-like.png",
+					"premium": true,
+					"subtitle": "Keep your heart healthy",
+					"moreInfo": "I can get your heart rate data from the Fitbit Charge HR, Fitbit Surge.  Resting heart rate is a good measure of general fitness, and heart rate during workouts show intensity.  I can also talk to Withing's bluetooth blood pressure monitor. "
+				},
+				{
+					"title": "Automated Fitness Tracking",
+					"subTitle": null,
+					"image": "https://maxcdn.icons8.com/Color/PNG/96/Sports/weightlifting-96.png",
+					"premium": true,
+					"subtitle": "Steps and physical activity",
+					"moreInfo": "I get steps from a variety of sources like Fitbit & Jawbone. Even if you don't have any fitness trackers, you can manually record any physical activity, like running, cycling, or going to the gym."
+				},
+				{
+					"title": "Automatic Sleep Tracking",
+					"subTitle": null,
+					"image": "https://maxcdn.icons8.com/Color/PNG/96/Household/sleeping_in_bed-96.png",
+					"premium": true,
+					"subtitle": "Automatically track sleep duration and quality by importing Fitbit data.",
+					"moreInfo": "I can talk to many of the most popular sleep trackers like Fitbit, Jawbone, Sleep as Android, and Withings"
+				},
+				{
+					"title": "Ad Free!",
+					"subTitle": null,
+					"image": "https://quantimodo.quantimo.do/ionic/Modo/www/img/features/smartphone.svg",
+					"premium": true,
+					"subtitle": "Help support continued improvements and reduce suffering through accelerated scientific discovery!",
+					"moreInfo": "No ads!  What more do you want?"
+				}
+			],
+			"id": null
+		},
 		"ionNavBarClass": "bar-positive",
 		"physicianAlias": "Physician",
 		"patientAlias": "Patient",
@@ -823,12 +972,11 @@
 		"defaultState": "app.remindersInbox",
 		"wordAliases": []
 	},
-	"appDisplayName": "QuantiModo",
 	"appStatus": {
 		"buildStatus": {
 			"androidArmv7Debug": "BUILDING",
 			"androidArmv7Release": "BUILDING",
-			"androidRelease": "BUILDING",
+			"androidRelease": "READY",
 			"androidDebug": "READY",
 			"androidX86Debug": "BUILDING",
 			"androidX86Release": "BUILDING",
@@ -856,15 +1004,10 @@
 			"ios": true
 		}
 	},
-	"appType": "general",
 	"buildEnabled": false,
-	"clientId": "quantimodo",
 	"clientSecret": "TcQArZOoUecO9O4aBvntUl6v1QzzsU38",
 	"collaborators": null,
-	"createdAt": null,
-	"userId": 230,
-	"users": null,
-	"redirectUri": "https://app.quantimo.do/ionic/Modo/www/callback/ https://app.quantimo.do/api/v1/connectors/quantimodo/connect https://local.quantimo.do/api/v1/connectors/quantimodo/connect https://staging.quantimo.do/api/v1/connectors/quantimodo/connect http://localhost https://local.quantimo.do/ionic/Modo/www/callback/  https://local.quantimo.do/ionic/Modo/src/callback/  https://staging.quantimo.do/ionic/Modo/www/callback/ ",
+	"id": null,
 	"privateConfig": {
 		"bugsnag_key": "ae7bc49d1285848342342bb5c321a2cf",
 		"client_ids": {
@@ -897,13 +1040,101 @@
 		"FITBIT_CLIENT_ID": "2298DS",
 		"RUNKEEPER_CLIENT_ID": "aa7233e520fa4b34aa5f9c3f27b22803"
 	},
-	"companyName": null,
+	"redirectUri": "https://app.quantimo.do/ionic/Modo/www/callback/ https://app.quantimo.do/api/v1/connectors/quantimodo/connect https://local.quantimo.do/api/v1/connectors/quantimodo/connect https://staging.quantimo.do/api/v1/connectors/quantimodo/connect http://localhost https://local.quantimo.do/ionic/Modo/www/callback/  https://local.quantimo.do/ionic/Modo/src/callback/  https://staging.quantimo.do/ionic/Modo/www/callback/ ",
+	"users": null,
+	"builderUrl": "https://app.quantimo.do/ionic/Modo/www/configuration-index.html#/app/configuration?clientId=quantimodo",
+	"appDescription": "Better living through data.",
+	"appDisplayName": "QuantiModo",
+	"appType": "custom",
+	"clientId": "quantimodo",
 	"homepageUrl": "https://quantimo.do",
 	"iconUrl": "oHROiCLu95_gizg3j",
+	"outcomeVariableId": 0,
+	"ownerAvatar": "https://lh6.googleusercontent.com/-BHr4hyUWqZU/AAAAAAAAAAI/AAAAAAAIG28/2Lv0en738II/photo.jpg?sz=50",
+	"ownerDisplayName": "Mike Sinn",
+	"ownerEmail": "m@thinkbynumbers.org",
+	"physician": 0,
+	"predictorVariableId": 0,
+	"scopes": null,
+	"study": 0,
+	"userId": 230,
+	"affiliate": null,
+	"backgroundColor": null,
+	"buttons": [
+		{
+			"accessibilityText": "Go to Inbox",
+			"action": "https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/reminders-inbox",
+			"additionalInformation": null,
+			"color": "#0f9d58",
+			"confirmationText": null,
+			"functionName": null,
+			"html": "<span id=\"remindersinbox-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-archive\"></i> &nbsp;Go to Inbox</span>",
+			"icon": "ion-archive",
+			"id": "remindersinbox-button",
+			"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/archive.svg",
+			"ionIcon": "ion-archive",
+			"link": "#/app/reminders-inbox",
+			"parameters": null,
+			"stateName": "app.remindersInbox",
+			"stateParams": [],
+			"successAlertBody": null,
+			"successAlertTitle": null,
+			"successToastText": null,
+			"text": "Go to Inbox",
+			"title": "Go to Inbox",
+			"tooltip": "Go to Inbox",
+			"type": null,
+			"webhookUrl": null
+		},
+		{
+			"accessibilityText": "Manage Reminders",
+			"action": "https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/reminders-manage",
+			"additionalInformation": null,
+			"color": "#0f9d58",
+			"confirmationText": null,
+			"functionName": null,
+			"html": "<span id=\"remindersmanage-button\" style=\"color: #0f9d58\" ><i class=\"icon ion-android-notifications-none\"></i> &nbsp;Manage Reminders</span>",
+			"icon": "ion-android-notifications-none",
+			"id": "remindersmanage-button",
+			"image": "https://quantimodo.quantimo.do/ionic/Modo/src/lib/Ionicons/src/android-notifications-none.svg",
+			"ionIcon": "ion-android-notifications-none",
+			"link": "#/app/variable-list-category/Anything",
+			"parameters": null,
+			"stateName": "app.remindersManage",
+			"stateParams": [],
+			"successAlertBody": null,
+			"successAlertTitle": null,
+			"successToastText": null,
+			"text": "Manage Reminders",
+			"title": "Manage Reminders",
+			"tooltip": "Manage Reminders",
+			"type": null,
+			"webhookUrl": null
+		}
+	],
+	"card": null,
+	"connected": null,
+	"count": null,
+	"createdAt": "2017-05-24 21:44:10",
+	"dataSourceType": "client_app",
+	"defaultUnitAbbreviatedName": null,
+	"defaultVariableCategoryName": null,
+	"displayName": "QuantiModo",
+	"getItUrl": "",
+	"image": null,
+	"imageHtml": "<a href=\"\"><img id=\"_image\" title=\"\" src=\"\" alt=\"\"></a>",
+	"linkedDisplayNameHtml": "<a href=\"\"></a>",
+	"logoColor": null,
 	"longDescription": "",
+	"name": null,
+	"premium": null,
+	"synonyms": [],
+	"shortDescription": null,
+	"instructionsHtml": null,
+	"updatedAt": "2018-10-20 21:27:37",
 	"splashScreen": "oMg0F5fmyf_sfzgyc",
 	"textLogo": "nm8LguNtZL_chsco6",
-	"versionNumber": "2.8.614",
-	"androidVersionCode": "2018061493",
-	"builtAt": 1529015398
+	"versionNumber": "2.8.1020",
+	"androidVersionCode": "2018102094",
+	"builtAt": 1540075918
 }

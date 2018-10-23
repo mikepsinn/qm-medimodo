@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Card'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Card'));
   } else {
     // Browser globals (root is window)
     if (!root.Quantimodo) {
       root.Quantimodo = {};
     }
-    root.Quantimodo.Measurement = factory(root.Quantimodo.ApiClient);
+    root.Quantimodo.Measurement = factory(root.Quantimodo.ApiClient, root.Quantimodo.Card);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Card) {
   'use strict';
 
 
@@ -51,6 +51,7 @@
    */
   var exports = function(sourceName, startTimeString, unitAbbreviatedName, value, variableName) {
     var _this = this;
+
 
 
 
@@ -112,6 +113,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('card')) {
+        obj['card'] = Card.constructFromObject(data['card']);
+      }
       if (data.hasOwnProperty('clientId')) {
         obj['clientId'] = ApiClient.convertToType(data['clientId'], 'String');
       }
@@ -258,17 +262,22 @@
   }
 
   /**
-   * Example: quantimodo
+   * Card containing image, text, link and relevant buttons
+   * @member {module:model/Card} card
+   */
+  exports.prototype['card'] = undefined;
+  /**
+   * Ex: quantimodo
    * @member {String} clientId
    */
   exports.prototype['clientId'] = undefined;
   /**
-   * Example: 13
+   * Ex: 13
    * @member {Number} connectorId
    */
   exports.prototype['connectorId'] = undefined;
   /**
-   * Example: 2017-07-30 21:08:36
+   * Ex: 2017-07-30 21:08:36
    * @member {String} createdAt
    */
   exports.prototype['createdAt'] = undefined;
@@ -278,37 +287,37 @@
    */
   exports.prototype['displayValueAndUnitString'] = undefined;
   /**
-   * Example: ion-sad-outline
+   * Ex: ion-sad-outline
    * @member {String} iconIcon
    */
   exports.prototype['iconIcon'] = undefined;
   /**
-   * Example: 1051466127
+   * Ex: 1051466127
    * @member {Number} id
    */
   exports.prototype['id'] = undefined;
   /**
-   * Example: value
+   * Ex: value
    * @member {String} inputType
    */
   exports.prototype['inputType'] = undefined;
   /**
-   * Example: ion-ios-medkit-outline
+   * Ex: ion-ios-medkit-outline
    * @member {String} ionIcon
    */
   exports.prototype['ionIcon'] = undefined;
   /**
-   * Example: 1
+   * Ex: 1
    * @member {Boolean} manualTracking
    */
   exports.prototype['manualTracking'] = undefined;
   /**
-   * Example: 5
+   * Ex: 5. Unit: User-specified or common.
    * @member {Number} maximumAllowedValue
    */
   exports.prototype['maximumAllowedValue'] = undefined;
   /**
-   * Example: 1
+   * Ex: 1. Unit: User-specified or common.
    * @member {Number} minimumAllowedValue
    */
   exports.prototype['minimumAllowedValue'] = undefined;
@@ -328,22 +337,22 @@
    */
   exports.prototype['noteHtml'] = undefined;
   /**
-   * Example: 23
+   * Ex: 23
    * @member {Number} originalUnitId
    */
   exports.prototype['originalUnitId'] = undefined;
   /**
-   * Original value as originally submitted
+   * Original value submitted. Unit: Originally submitted.
    * @member {Number} originalValue
    */
   exports.prototype['originalValue'] = undefined;
   /**
-   * Example: img/variable_categories/treatments.png
+   * Ex: img/variable_categories/treatments.png
    * @member {String} pngPath
    */
   exports.prototype['pngPath'] = undefined;
   /**
-   * Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.png
+   * Ex: https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.png
    * @member {String} pngUrl
    */
   exports.prototype['pngUrl'] = undefined;
@@ -358,7 +367,7 @@
    */
   exports.prototype['sourceName'] = undefined;
   /**
-   * Example: 2014-08-27
+   * Ex: 2014-08-27
    * @member {String} startDate
    */
   exports.prototype['startDate'] = undefined;
@@ -373,7 +382,7 @@
    */
   exports.prototype['startTimeString'] = undefined;
   /**
-   * Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg
+   * Ex: https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg
    * @member {String} svgUrl
    */
   exports.prototype['svgUrl'] = undefined;
@@ -383,27 +392,27 @@
    */
   exports.prototype['unitAbbreviatedName'] = undefined;
   /**
-   * Example: 6
+   * Ex: 6
    * @member {Number} unitCategoryId
    */
   exports.prototype['unitCategoryId'] = undefined;
   /**
-   * Example: Miscellany
+   * Ex: Miscellany
    * @member {String} unitCategoryName
    */
   exports.prototype['unitCategoryName'] = undefined;
   /**
-   * Example: 23
+   * Ex: 23
    * @member {Number} unitId
    */
   exports.prototype['unitId'] = undefined;
   /**
-   * Example: Count
+   * Ex: Count
    * @member {String} unitName
    */
   exports.prototype['unitName'] = undefined;
   /**
-   * Example: 2017-07-30 21:08:36
+   * Ex: 2017-07-30 21:08:36
    * @member {String} updatedAt
    */
   exports.prototype['updatedAt'] = undefined;
@@ -413,42 +422,42 @@
    */
   exports.prototype['url'] = undefined;
   /**
-   * Example: count
+   * Ex: count
    * @member {String} userVariableUnitAbbreviatedName
    */
   exports.prototype['userVariableUnitAbbreviatedName'] = undefined;
   /**
-   * Example: 6
+   * Ex: 6
    * @member {Number} userVariableUnitCategoryId
    */
   exports.prototype['userVariableUnitCategoryId'] = undefined;
   /**
-   * Example: Miscellany
+   * Ex: Miscellany
    * @member {String} userVariableUnitCategoryName
    */
   exports.prototype['userVariableUnitCategoryName'] = undefined;
   /**
-   * Example: 23
+   * Ex: 23
    * @member {Number} userVariableUnitId
    */
   exports.prototype['userVariableUnitId'] = undefined;
   /**
-   * Example: Count
+   * Ex: Count
    * @member {String} userVariableUnitName
    */
   exports.prototype['userVariableUnitName'] = undefined;
   /**
-   * Example: 13
+   * Ex: 13
    * @member {Number} userVariableVariableCategoryId
    */
   exports.prototype['userVariableVariableCategoryId'] = undefined;
   /**
-   * Example: Treatments
+   * Ex: Treatments
    * @member {String} userVariableVariableCategoryName
    */
   exports.prototype['userVariableVariableCategoryName'] = undefined;
   /**
-   * Example: negative
+   * Ex: negative
    * @member {String} valence
    */
   exports.prototype['valence'] = undefined;
@@ -458,27 +467,27 @@
    */
   exports.prototype['value'] = undefined;
   /**
-   * Example: 13
+   * Ex: 13
    * @member {Number} variableCategoryId
    */
   exports.prototype['variableCategoryId'] = undefined;
   /**
-   * Example: https://maxcdn.icons8.com/Color/PNG/96/Healthcare/pill-96.png
+   * Ex: https://maxcdn.icons8.com/Color/PNG/96/Healthcare/pill-96.png
    * @member {String} variableCategoryImageUrl
    */
   exports.prototype['variableCategoryImageUrl'] = undefined;
   /**
-   * Example: Treatments
-   * @member {String} variableCategoryName
+   * Ex: Emotions, Treatments, Symptoms...
+   * @member {module:model/Measurement.VariableCategoryNameEnum} variableCategoryName
    */
   exports.prototype['variableCategoryName'] = undefined;
   /**
-   * Example: negative
+   * Ex: negative
    * @member {String} variableDescription
    */
   exports.prototype['variableDescription'] = undefined;
   /**
-   * Example: 5956846
+   * Ex: 5956846
    * @member {Number} variableId
    */
   exports.prototype['variableId'] = undefined;
@@ -488,11 +497,133 @@
    */
   exports.prototype['variableName'] = undefined;
   /**
-   * Example: Trader Joe's Bedtime Tea
+   * Ex: Trader Joe's Bedtime Tea
    * @member {String} displayName
    */
   exports.prototype['displayName'] = undefined;
 
+
+  /**
+   * Allowed values for the <code>variableCategoryName</code> property.
+   * @enum {String}
+   * @readonly
+   */
+  exports.VariableCategoryNameEnum = {
+    /**
+     * value: "Activity"
+     * @const
+     */
+    "Activity": "Activity",
+    /**
+     * value: "Books"
+     * @const
+     */
+    "Books": "Books",
+    /**
+     * value: "Causes of Illness"
+     * @const
+     */
+    "Causes of Illness": "Causes of Illness",
+    /**
+     * value: "Cognitive Performance"
+     * @const
+     */
+    "Cognitive Performance": "Cognitive Performance",
+    /**
+     * value: "Conditions"
+     * @const
+     */
+    "Conditions": "Conditions",
+    /**
+     * value: "Emotions"
+     * @const
+     */
+    "Emotions": "Emotions",
+    /**
+     * value: "Environment"
+     * @const
+     */
+    "Environment": "Environment",
+    /**
+     * value: "Foods"
+     * @const
+     */
+    "Foods": "Foods",
+    /**
+     * value: "Goals"
+     * @const
+     */
+    "Goals": "Goals",
+    /**
+     * value: "Locations"
+     * @const
+     */
+    "Locations": "Locations",
+    /**
+     * value: "Miscellaneous"
+     * @const
+     */
+    "Miscellaneous": "Miscellaneous",
+    /**
+     * value: "Movies and TV"
+     * @const
+     */
+    "Movies and TV": "Movies and TV",
+    /**
+     * value: "Music"
+     * @const
+     */
+    "Music": "Music",
+    /**
+     * value: "Nutrients"
+     * @const
+     */
+    "Nutrients": "Nutrients",
+    /**
+     * value: "Payments"
+     * @const
+     */
+    "Payments": "Payments",
+    /**
+     * value: "Physical Activities"
+     * @const
+     */
+    "Physical Activities": "Physical Activities",
+    /**
+     * value: "Physique"
+     * @const
+     */
+    "Physique": "Physique",
+    /**
+     * value: "Sleep"
+     * @const
+     */
+    "Sleep": "Sleep",
+    /**
+     * value: "Social Interactions"
+     * @const
+     */
+    "Social Interactions": "Social Interactions",
+    /**
+     * value: "Software"
+     * @const
+     */
+    "Software": "Software",
+    /**
+     * value: "Symptoms"
+     * @const
+     */
+    "Symptoms": "Symptoms",
+    /**
+     * value: "Treatments"
+     * @const
+     */
+    "Treatments": "Treatments",
+    /**
+     * value: "Vital Signs"
+     * @const
+     */
+    "Vital Signs": "Vital Signs"  };
 
 
   return exports;

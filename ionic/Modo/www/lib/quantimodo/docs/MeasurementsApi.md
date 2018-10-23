@@ -99,25 +99,24 @@ var opts = {
   'sort': "sort_example", // String | Sort by one of the listed field names. If the field name is prefixed with `-`, it will sort in descending order.
   'limit': 100, // Number | The LIMIT is used to limit the number of results returned. So if youhave 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.
   'offset': 56, // Number | OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause.If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.
-  'variableCategoryName': "variableCategoryName_example", // String | Limit results to a specific variable category
+  'variableCategoryName': "variableCategoryName_example", // String | Ex: Emotions, Treatments, Symptoms...
   'updatedAt': "updatedAt_example", // String | When the record was last updated. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss datetime format. Time zone should be UTC and not local.
   'userId': 8.14, // Number | User's id
   'sourceName': "sourceName_example", // String | ID of the source you want measurements for (supports exact name match only)
-  'connectorName': "connectorName_example", // String | Example: facebook
+  'connectorName': "connectorName_example", // String | Ex: facebook
   'value': "value_example", // String | Value of measurement
-  'unitName': "unitName_example", // String | Example: Milligrams
+  'unitName': "unitName_example", // String | Ex: Milligrams
   'earliestMeasurementTime': "earliestMeasurementTime_example", // String | Excluded records with measurement times earlier than this value. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format. Time zone should be UTC and not local.
   'latestMeasurementTime': "latestMeasurementTime_example", // String | Excluded records with measurement times later than this value. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format. Time zone should be UTC and not local.
   'createdAt': "createdAt_example", // String | When the record was first created. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss datetime format. Time zone should be UTC and not local.
   'id': 56, // Number | Measurement id
   'groupingWidth': 56, // Number | The time (in seconds) over which measurements are grouped together
   'groupingTimezone': "groupingTimezone_example", // String | The time (in seconds) over which measurements are grouped together
-  'doNotProcess': true, // Boolean | Example: true
-  'appName': "appName_example", // String | Example: MoodiModo
-  'clientId': "clientId_example", // String | Example: oauth_test_client
-  'doNotConvert': true, // Boolean | Example: 1
-  'minMaxFilter': true, // Boolean | Example: 1
-  'platform': "platform_example", // String | Example: chrome, android, ios, web
+  'doNotProcess': true, // Boolean | Ex: true
+  'clientId': "clientId_example", // String | Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do
+  'doNotConvert': true, // Boolean | Ex: 1
+  'minMaxFilter': true, // Boolean | Ex: 1
+  'platform': "platform_example" // String | Ex: chrome, android, ios, web
 };
 
 var callback = function(error, data, response) {
@@ -138,25 +137,24 @@ Name | Type | Description  | Notes
  **sort** | **String**| Sort by one of the listed field names. If the field name is prefixed with &#x60;-&#x60;, it will sort in descending order. | [optional] 
  **limit** | **Number**| The LIMIT is used to limit the number of results returned. So if youhave 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records. | [optional] [default to 100]
  **offset** | **Number**| OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause.If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned. | [optional] 
- **variableCategoryName** | **String**| Limit results to a specific variable category | [optional] 
+ **variableCategoryName** | **String**| Ex: Emotions, Treatments, Symptoms... | [optional] 
  **updatedAt** | **String**| When the record was last updated. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss datetime format. Time zone should be UTC and not local. | [optional] 
  **userId** | **Number**| User&#39;s id | [optional] 
  **sourceName** | **String**| ID of the source you want measurements for (supports exact name match only) | [optional] 
- **connectorName** | **String**| Example: facebook | [optional] 
+ **connectorName** | **String**| Ex: facebook | [optional] 
  **value** | **String**| Value of measurement | [optional] 
- **unitName** | **String**| Example: Milligrams | [optional] 
+ **unitName** | **String**| Ex: Milligrams | [optional] 
  **earliestMeasurementTime** | **String**| Excluded records with measurement times earlier than this value. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format. Time zone should be UTC and not local. | [optional] 
  **latestMeasurementTime** | **String**| Excluded records with measurement times later than this value. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format. Time zone should be UTC and not local. | [optional] 
  **createdAt** | **String**| When the record was first created. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss datetime format. Time zone should be UTC and not local. | [optional] 
  **id** | **Number**| Measurement id | [optional] 
  **groupingWidth** | **Number**| The time (in seconds) over which measurements are grouped together | [optional] 
  **groupingTimezone** | **String**| The time (in seconds) over which measurements are grouped together | [optional] 
- **doNotProcess** | **Boolean**| Example: true | [optional] 
- **appName** | **String**| Example: MoodiModo | [optional] 
- **clientId** | **String**| Example: oauth_test_client | [optional] 
- **doNotConvert** | **Boolean**| Example: 1 | [optional] 
- **minMaxFilter** | **Boolean**| Example: 1 | [optional] 
- **platform** | **String**| Example: chrome, android, ios, web | [optional] 
+ **doNotProcess** | **Boolean**| Ex: true | [optional] 
+ **clientId** | **String**| Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do | [optional] 
+ **doNotConvert** | **Boolean**| Ex: 1 | [optional] 
+ **minMaxFilter** | **Boolean**| Ex: 1 | [optional] 
+ **platform** | **String**| Ex: chrome, android, ios, web | [optional] 
 
 ### Return type
 
@@ -197,13 +195,13 @@ quantimodo_oauth2.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new Quantimodo.MeasurementsApi();
 
 var opts = { 
-  'causeVariableName': "causeVariableName_example", // String | Variable name of the hypothetical cause variable.  Example: Sleep Duration
-  'effectVariableName': "effectVariableName_example", // String | Variable name of the hypothetical effect variable.  Example: Overall Mood
+  'causeVariableName': "causeVariableName_example", // String | Name of the hypothetical predictor variable.  Ex: Sleep Duration
+  'effectVariableName': "effectVariableName_example", // String | Name of the hypothetical outcome variable.  Ex: Overall Mood
   'effectUnitName': "effectUnitName_example", // String | Name for the unit effect measurements to be returned in
   'userId': 8.14, // Number | User's id
   'causeUnitName': "causeUnitName_example", // String | Name for the unit cause measurements to be returned in
   'onsetDelay': "onsetDelay_example", // String | The amount of time in seconds that elapses after the predictor/stimulus event before the outcome as perceived by a self-tracker is known as the onset delay. For example, the onset delay between the time a person takes an aspirin (predictor/stimulus event) and the time a person perceives a change in their headache severity (outcome) is approximately 30 minutes.
-  'durationOfAction': "durationOfAction_example", // String | The amount of time over which a predictor/stimulus event can exert an observable influence on an outcome variable value. For instance, aspirin (stimulus/predictor) typically decreases headache severity for approximately four hours (duration of action) following the onset delay.
+  'durationOfAction': "durationOfAction_example", // String | The amount of time over which a predictor/stimulus event can exert an observable influence on an outcome variable value. For instance, aspirin (stimulus/predictor) typically decreases headache severity for approximately four hours (duration of action) following the onset delay. Unit: Seconds
   'earliestMeasurementTime': "earliestMeasurementTime_example", // String | Excluded records with measurement times earlier than this value. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format. Time zone should be UTC and not local.
   'latestMeasurementTime': "latestMeasurementTime_example", // String | Excluded records with measurement times later than this value. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format. Time zone should be UTC and not local.
   'limit': 100, // Number | The LIMIT is used to limit the number of results returned. So if youhave 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.
@@ -225,13 +223,13 @@ apiInstance.getPairs(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **causeVariableName** | **String**| Variable name of the hypothetical cause variable.  Example: Sleep Duration | [optional] 
- **effectVariableName** | **String**| Variable name of the hypothetical effect variable.  Example: Overall Mood | [optional] 
+ **causeVariableName** | **String**| Name of the hypothetical predictor variable.  Ex: Sleep Duration | [optional] 
+ **effectVariableName** | **String**| Name of the hypothetical outcome variable.  Ex: Overall Mood | [optional] 
  **effectUnitName** | **String**| Name for the unit effect measurements to be returned in | [optional] 
  **userId** | **Number**| User&#39;s id | [optional] 
  **causeUnitName** | **String**| Name for the unit cause measurements to be returned in | [optional] 
  **onsetDelay** | **String**| The amount of time in seconds that elapses after the predictor/stimulus event before the outcome as perceived by a self-tracker is known as the onset delay. For example, the onset delay between the time a person takes an aspirin (predictor/stimulus event) and the time a person perceives a change in their headache severity (outcome) is approximately 30 minutes. | [optional] 
- **durationOfAction** | **String**| The amount of time over which a predictor/stimulus event can exert an observable influence on an outcome variable value. For instance, aspirin (stimulus/predictor) typically decreases headache severity for approximately four hours (duration of action) following the onset delay. | [optional] 
+ **durationOfAction** | **String**| The amount of time over which a predictor/stimulus event can exert an observable influence on an outcome variable value. For instance, aspirin (stimulus/predictor) typically decreases headache severity for approximately four hours (duration of action) following the onset delay. Unit: Seconds | [optional] 
  **earliestMeasurementTime** | **String**| Excluded records with measurement times earlier than this value. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format. Time zone should be UTC and not local. | [optional] 
  **latestMeasurementTime** | **String**| Excluded records with measurement times later than this value. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format. Time zone should be UTC and not local. | [optional] 
  **limit** | **Number**| The LIMIT is used to limit the number of results returned. So if youhave 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records. | [optional] [default to 100]

@@ -1,11 +1,12 @@
-<ion-view hide-nav-bar="hideNavigationMenu" view-title="Welcome">
-	<ion-content style="background-color: #f2f2f2">
+<ion-view hide-nav-bar="hideNavigationMenu">
+	<ion-nav-title>Welcome</ion-nav-title>
+	<ion-content>
 	<div id="login-iframe"></div>
 	<div ng-hide="hidePrimaryOutcomeVariableCard" class="card primary-outcome-variable-reporting">
 		<div class="item item-text-wrap">
 			<h1>Welcome to <span class="positive">{{appSettings.appDisplayName}}</span></h1>
 			<ul>
-				<li>{{welcomeText}}</li>
+				<li>{{appSettings.welcomeText}}</li>
 				<li>{{primaryOutcomeVariableDetails.trackingQuestion}}</li>
 			</ul>
 		</div>

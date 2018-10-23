@@ -11,7 +11,7 @@
             <md-list-item class="secondary-button-padding" ng-repeat="(key, value) in appSettings.appStatus.buildStatus"
                           ng-if="key === 'chromeExtension' || key === 'androidRelease' || key === 'androidDebug' || key === 'ios'">
                 <md-switch ng-if="true" ng-model="appSettings.appStatus.buildEnabled[key]" aria-label="buildEnabled"
-                           ng-change="postAppSettings()"></md-switch>
+                           ng-change="postAppSettingsAfterConfirmation()"></md-switch>
                 <p> <md-progress-linear ng-if="value == 'BUILDING' && appSettings.appStatus.buildEnabled[key]" md-mode="indeterminate"></md-progress-linear>
                     {{ key | camelCaseToTitleCase | uppercase }} &nbsp </p>
                 <md-button ng-if="appSettings.appStatus.betaDownloadLinks[key]" class="md-icon-button md-secondary" style="font-size: 30px;"

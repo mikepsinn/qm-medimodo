@@ -9,8 +9,8 @@
 </md-toolbar>
 <div layout="column">
     <md-content flex layout layout-align="center">
-        <div layout-gt-sm flex flex-gt-sm="100">
-            <div flex>
+        <div layout-gt-sm flex flex-gt-sm="100" layout="row">
+            <div style="max-width: 300px;" flex>
                 <md-card>
                     <md-card-content>
                         <ion-list id="menu-list">
@@ -52,20 +52,20 @@
                             <div ng-if="!appSettingObjectToEdit.subMenu">
                                 <md-input-container >
                                     <label>Target State</label>
-                                    <md-select ng-model="appSettingObjectToEdit.stateName">
-                                        <md-option ng-value="option.name" ng-repeat="option in stateList" >{{option.name | camelCaseToTitleCase}}</md-option>
+                                    <md-select ng-model="appSettingObjectToEdit.stateName" ng-change="updateHrefInMenuItem(appSettingObjectToEdit)">
+                                        <md-option ng-value="option.name" ng-repeat="option in stateList">{{option.name | camelCaseToTitleCase}}</md-option>
                                     </md-select>
                                 </md-input-container>
                                 <div ng-if="appSettingObjectToEdit.params && appSettingObjectToEdit.params.variableCategoryName">
                                     <label>Variable Category</label>
-                                    <md-select ng-model="item.stateParameters.variableCategoryName">
+                                    <md-select ng-model="appSettingObjectToEdit.params.variableCategoryName" ng-change="updateHrefInMenuItem(appSettingObjectToEdit)">
                                         <md-option ng-value="option" ng-repeat="option in variableCategoryNames" >
                                             <i class="icon {{variableCategories[option].ionIcon}}"></i> &nbsp;{{option | camelCaseToTitleCase}}
                                         </md-option>
                                     </md-select>
                                 </div>
                             </div>
-                            <md-button class="md-fab md-avatar" aria-label="{{appSettingObjectToEdit.icon | ionIconDisplayName}}" ng-click="selectIonIcon($event, appSettingObjectToEdit.icon)">
+                            <md-button class="md-fab md-avatar" aria-label="{{appSettingObjectToEdit.icon | ionIconDisplayName}}" ng-click="selectIonIcon($event, appSettingObjectToEdit)">
                                 <md-icon style="font-size: 20px;" md-font-icon="{{appSettingObjectToEdit.icon}}" class="{{appSettingObjectToEdit.icon}}"></md-icon>
                             </md-button>
                         </md-card-content>

@@ -3,16 +3,22 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**type** | **String** | Ex: population, cohort, or individual | 
+**userId** | **String** | The user id of the principal investigator or subject if an individual studies | [optional] 
+**studyId** | **String** | ID of the cohort study which is necessary to allow participants to join | [optional] 
 **causeVariable** | [**Variable**](Variable.md) |  | [optional] 
-**charts** | [**[Chart]**](Chart.md) |  | [optional] 
+**causeVariableName** | **String** | Ex: Sleep Quality | [optional] 
+**studyCharts** | [**StudyCharts**](StudyCharts.md) |  | [optional] 
 **effectVariable** | [**Variable**](Variable.md) |  | [optional] 
+**effectVariableName** | **String** | Ex: Overall Mood | [optional] 
 **participantInstructions** | [**ParticipantInstruction**](ParticipantInstruction.md) |  | [optional] 
 **statistics** | [**Correlation**](Correlation.md) |  | [optional] 
 **studyHtml** | [**StudyHtml**](StudyHtml.md) |  | [optional] 
 **studyImages** | [**StudyImages**](StudyImages.md) |  | [optional] 
 **studyLinks** | [**StudyLinks**](StudyLinks.md) |  | [optional] 
+**studySharing** | [**StudySharing**](StudySharing.md) |  | [optional] 
 **studyText** | [**StudyText**](StudyText.md) |  | [optional] 
-**type** | **String** | Example: population | 
-**userId** | **String** | The user id if an individual study | [optional] 
+**studyVotes** | [**StudyVotes**](StudyVotes.md) |  | [optional] 
+**joined** | **Boolean** | True if you are sharing your data with this study | [optional] 
 
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/DataSource', 'model/TrackingReminderNotificationAction', 'model/Unit', 'model/Variable', 'model/VariableCategory'], factory);
+    define(['ApiClient', 'model/DataSource', 'model/TrackingReminderNotificationAction', 'model/Unit', 'model/Variable', 'model/VariableCategory', 'model/VariableCharts'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./DataSource'), require('./TrackingReminderNotificationAction'), require('./Unit'), require('./Variable'), require('./VariableCategory'));
+    module.exports = factory(require('../ApiClient'), require('./DataSource'), require('./TrackingReminderNotificationAction'), require('./Unit'), require('./Variable'), require('./VariableCategory'), require('./VariableCharts'));
   } else {
     // Browser globals (root is window)
     if (!root.Quantimodo) {
       root.Quantimodo = {};
     }
-    root.Quantimodo.Variable = factory(root.Quantimodo.ApiClient, root.Quantimodo.DataSource, root.Quantimodo.TrackingReminderNotificationAction, root.Quantimodo.Unit, root.Quantimodo.Variable, root.Quantimodo.VariableCategory);
+    root.Quantimodo.Variable = factory(root.Quantimodo.ApiClient, root.Quantimodo.DataSource, root.Quantimodo.TrackingReminderNotificationAction, root.Quantimodo.Unit, root.Quantimodo.Variable, root.Quantimodo.VariableCategory, root.Quantimodo.VariableCharts);
   }
-}(this, function(ApiClient, DataSource, TrackingReminderNotificationAction, Unit, Variable, VariableCategory) {
+}(this, function(ApiClient, DataSource, TrackingReminderNotificationAction, Unit, Variable, VariableCategory, VariableCharts) {
   'use strict';
 
 
@@ -43,10 +43,10 @@
    * Constructs a new <code>Variable</code>.
    * @alias module:model/Variable
    * @class
-   * @param id {Number} Example: 95614
-   * @param name {String} Example: Trader Joes Bedtime Tea / Sleepytime Tea (any Brand)
+   * @param id {Number} Ex: 95614
+   * @param name {String} Ex: Trader Joes Bedtime Tea / Sleepytime Tea (any Brand)
    * @param userId {Number} User ID
-   * @param variableId {Number} Example: 96380
+   * @param variableId {Number} Ex: 96380
    */
   var exports = function(id, name, userId, variableId) {
     var _this = this;
@@ -91,9 +91,10 @@
 
 
 
-
-
     _this['id'] = id;
+
+
+
 
 
 
@@ -172,8 +173,10 @@
 
 
 
-    _this['userId'] = userId;
 
+
+
+    _this['userId'] = userId;
 
 
 
@@ -228,7 +231,7 @@
         obj['causeOnly'] = ApiClient.convertToType(data['causeOnly'], 'Boolean');
       }
       if (data.hasOwnProperty('charts')) {
-        obj['charts'] = ApiClient.convertToType(data['charts'], Object);
+        obj['charts'] = VariableCharts.constructFromObject(data['charts']);
       }
       if (data.hasOwnProperty('chartsLinkDynamic')) {
         obj['chartsLinkDynamic'] = ApiClient.convertToType(data['chartsLinkDynamic'], 'String');
@@ -247,6 +250,9 @@
       }
       if (data.hasOwnProperty('chartsLinkTwitter')) {
         obj['chartsLinkTwitter'] = ApiClient.convertToType(data['chartsLinkTwitter'], 'String');
+      }
+      if (data.hasOwnProperty('childCommonTagVariables')) {
+        obj['childCommonTagVariables'] = ApiClient.convertToType(data['childCommonTagVariables'], [Variable]);
       }
       if (data.hasOwnProperty('childUserTagVariables')) {
         obj['childUserTagVariables'] = ApiClient.convertToType(data['childUserTagVariables'], [Variable]);
@@ -275,20 +281,11 @@
       if (data.hasOwnProperty('createdAt')) {
         obj['createdAt'] = ApiClient.convertToType(data['createdAt'], 'String');
       }
-      if (data.hasOwnProperty('unitAbbreviatedName')) {
-        obj['unitAbbreviatedName'] = ApiClient.convertToType(data['unitAbbreviatedName'], 'String');
+      if (data.hasOwnProperty('dataSourceNames')) {
+        obj['dataSourceNames'] = ApiClient.convertToType(data['dataSourceNames'], 'String');
       }
-      if (data.hasOwnProperty('unitCategoryId')) {
-        obj['unitCategoryId'] = ApiClient.convertToType(data['unitCategoryId'], 'Number');
-      }
-      if (data.hasOwnProperty('unitCategoryName')) {
-        obj['unitCategoryName'] = ApiClient.convertToType(data['unitCategoryName'], 'String');
-      }
-      if (data.hasOwnProperty('unitId')) {
-        obj['unitId'] = ApiClient.convertToType(data['unitId'], 'Number');
-      }
-      if (data.hasOwnProperty('unitName')) {
-        obj['unitName'] = ApiClient.convertToType(data['unitName'], 'String');
+      if (data.hasOwnProperty('dataSources')) {
+        obj['dataSources'] = ApiClient.convertToType(data['dataSources'], [DataSource]);
       }
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -350,6 +347,12 @@
       if (data.hasOwnProperty('informationalUrl')) {
         obj['informationalUrl'] = ApiClient.convertToType(data['informationalUrl'], 'String');
       }
+      if (data.hasOwnProperty('ingredientOfCommonTagVariables')) {
+        obj['ingredientOfCommonTagVariables'] = ApiClient.convertToType(data['ingredientOfCommonTagVariables'], [Variable]);
+      }
+      if (data.hasOwnProperty('ingredientCommonTagVariables')) {
+        obj['ingredientCommonTagVariables'] = ApiClient.convertToType(data['ingredientCommonTagVariables'], [Variable]);
+      }
       if (data.hasOwnProperty('ingredientOfUserTagVariables')) {
         obj['ingredientOfUserTagVariables'] = ApiClient.convertToType(data['ingredientOfUserTagVariables'], [Variable]);
       }
@@ -361,6 +364,9 @@
       }
       if (data.hasOwnProperty('ionIcon')) {
         obj['ionIcon'] = ApiClient.convertToType(data['ionIcon'], 'String');
+      }
+      if (data.hasOwnProperty('joinedCommonTagVariables')) {
+        obj['joinedCommonTagVariables'] = ApiClient.convertToType(data['joinedCommonTagVariables'], [Variable]);
       }
       if (data.hasOwnProperty('joinedUserTagVariables')) {
         obj['joinedUserTagVariables'] = ApiClient.convertToType(data['joinedUserTagVariables'], [Variable]);
@@ -500,11 +506,8 @@
       if (data.hasOwnProperty('outcomeOfInterest')) {
         obj['outcomeOfInterest'] = ApiClient.convertToType(data['outcomeOfInterest'], 'Number');
       }
-      if (data.hasOwnProperty('parent')) {
-        obj['parent'] = ApiClient.convertToType(data['parent'], 'String');
-      }
-      if (data.hasOwnProperty('parentId')) {
-        obj['parentId'] = ApiClient.convertToType(data['parentId'], 'Number');
+      if (data.hasOwnProperty('parentCommonTagVariables')) {
+        obj['parentCommonTagVariables'] = ApiClient.convertToType(data['parentCommonTagVariables'], [Variable]);
       }
       if (data.hasOwnProperty('parentUserTagVariables')) {
         obj['parentUserTagVariables'] = ApiClient.convertToType(data['parentUserTagVariables'], [Variable]);
@@ -542,9 +545,6 @@
       if (data.hasOwnProperty('skewness')) {
         obj['skewness'] = ApiClient.convertToType(data['skewness'], 'Number');
       }
-      if (data.hasOwnProperty('sources')) {
-        obj['sources'] = ApiClient.convertToType(data['sources'], 'String');
-      }
       if (data.hasOwnProperty('standardDeviation')) {
         obj['standardDeviation'] = ApiClient.convertToType(data['standardDeviation'], 'Number');
       }
@@ -565,6 +565,21 @@
       }
       if (data.hasOwnProperty('unit')) {
         obj['unit'] = Unit.constructFromObject(data['unit']);
+      }
+      if (data.hasOwnProperty('unitAbbreviatedName')) {
+        obj['unitAbbreviatedName'] = ApiClient.convertToType(data['unitAbbreviatedName'], 'String');
+      }
+      if (data.hasOwnProperty('unitCategoryId')) {
+        obj['unitCategoryId'] = ApiClient.convertToType(data['unitCategoryId'], 'Number');
+      }
+      if (data.hasOwnProperty('unitCategoryName')) {
+        obj['unitCategoryName'] = ApiClient.convertToType(data['unitCategoryName'], 'String');
+      }
+      if (data.hasOwnProperty('unitId')) {
+        obj['unitId'] = ApiClient.convertToType(data['unitId'], 'Number');
+      }
+      if (data.hasOwnProperty('unitName')) {
+        obj['unitName'] = ApiClient.convertToType(data['unitName'], 'String');
       }
       if (data.hasOwnProperty('upc')) {
         obj['upc'] = ApiClient.convertToType(data['upc'], 'String');
@@ -625,9 +640,6 @@
       }
       if (data.hasOwnProperty('variableCategory')) {
         obj['variableCategory'] = VariableCategory.constructFromObject(data['variableCategory']);
-      }
-      if (data.hasOwnProperty('dataSource')) {
-        obj['dataSource'] = DataSource.constructFromObject(data['dataSource']);
       }
       if (data.hasOwnProperty('joinedVariables')) {
         obj['joinedVariables'] = ApiClient.convertToType(data['joinedVariables'], [Variable]);
@@ -691,56 +703,61 @@
    */
   exports.prototype['causeOnly'] = undefined;
   /**
-   * An object with various chart properties each property contain and svg and Highcharts configuration
-   * @member {Object} charts
+   * @member {module:model/VariableCharts} charts
    */
   exports.prototype['charts'] = undefined;
   /**
-   * Example: https://local.quantimo.do/ionic/Modo/www/#/app/charts/Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29?variableName=Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Ftreatments.png
+   * Ex: https://local.quantimo.do/ionic/Modo/www/#/app/charts/Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29?variableName=Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Ftreatments.png
    * @member {String} chartsLinkDynamic
    */
   exports.prototype['chartsLinkDynamic'] = undefined;
   /**
-   * Example: mailto:?subject=Check%20out%20my%20Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29%20data%21&body=See%20my%20Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29%20history%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DTrader%2520Joes%2520Bedtime%2520Tea%2520%252F%2520Sleepytime%2520Tea%2520%2528any%2520Brand%2529%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Ftreatments.png%0A%0AHave%20a%20great%20day!
+   * Ex: mailto:?subject=Check%20out%20my%20Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29%20data%21&body=See%20my%20Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29%20history%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DTrader%2520Joes%2520Bedtime%2520Tea%2520%252F%2520Sleepytime%2520Tea%2520%2528any%2520Brand%2529%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Ftreatments.png%0A%0AHave%20a%20great%20day!
    * @member {String} chartsLinkEmail
    */
   exports.prototype['chartsLinkEmail'] = undefined;
   /**
-   * Example: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DTrader%2520Joes%2520Bedtime%2520Tea%2520%252F%2520Sleepytime%2520Tea%2520%2528any%2520Brand%2529%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Ftreatments.png
+   * Ex: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DTrader%2520Joes%2520Bedtime%2520Tea%2520%252F%2520Sleepytime%2520Tea%2520%2528any%2520Brand%2529%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Ftreatments.png
    * @member {String} chartsLinkFacebook
    */
   exports.prototype['chartsLinkFacebook'] = undefined;
   /**
-   * Example: https://plus.google.com/share?url=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DTrader%2520Joes%2520Bedtime%2520Tea%2520%252F%2520Sleepytime%2520Tea%2520%2528any%2520Brand%2529%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Ftreatments.png
+   * Ex: https://plus.google.com/share?url=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DTrader%2520Joes%2520Bedtime%2520Tea%2520%252F%2520Sleepytime%2520Tea%2520%2528any%2520Brand%2529%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Ftreatments.png
    * @member {String} chartsLinkGoogle
    */
   exports.prototype['chartsLinkGoogle'] = undefined;
   /**
-   * Example: https://local.quantimo.do/api/v2/charts?variableName=Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Ftreatments.png
+   * Ex: https://local.quantimo.do/api/v2/charts?variableName=Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Ftreatments.png
    * @member {String} chartsLinkStatic
    */
   exports.prototype['chartsLinkStatic'] = undefined;
   /**
-   * Example: https://twitter.com/home?status=Check%20out%20my%20Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29%20data%21%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DTrader%2520Joes%2520Bedtime%2520Tea%2520%252F%2520Sleepytime%2520Tea%2520%2528any%2520Brand%2529%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Ftreatments.png%20%40quantimodo
+   * Ex: https://twitter.com/home?status=Check%20out%20my%20Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29%20data%21%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DTrader%2520Joes%2520Bedtime%2520Tea%2520%252F%2520Sleepytime%2520Tea%2520%2528any%2520Brand%2529%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Ftreatments.png%20%40quantimodo
    * @member {String} chartsLinkTwitter
    */
   exports.prototype['chartsLinkTwitter'] = undefined;
   /**
+   * Commonly defined for all users. An example of a parent category variable would be Fruit when tagged with the child sub-type variables Apple.  Child variable (Apple) measurements will be included when the parent category (Fruit) is analyzed.  This allows us to see how Fruit consumption might be affecting without having to record both Fruit and Apple intake.
+   * @member {Array.<module:model/Variable>} childCommonTagVariables
+   */
+  exports.prototype['childCommonTagVariables'] = undefined;
+  /**
+   * User-defined. An example of a parent category variable would be Fruit when tagged with the child sub-type variables Apple.  Child variable (Apple) measurements will be included when the parent category (Fruit) is analyzed.  This allows us to see how Fruit consumption might be affecting without having to record both Fruit and Apple intake.
    * @member {Array.<module:model/Variable>} childUserTagVariables
    */
   exports.prototype['childUserTagVariables'] = undefined;
   /**
-   * clientId
+   * Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do
    * @member {String} clientId
    */
   exports.prototype['clientId'] = undefined;
   /**
-   * Example: MEAN
+   * Ex: MEAN
    * @member {String} combinationOperation
    */
   exports.prototype['combinationOperation'] = undefined;
   /**
-   * Example: Anxiety / Nervousness
+   * Ex: Anxiety / Nervousness
    * @member {String} commonAlias
    */
   exports.prototype['commonAlias'] = undefined;
@@ -753,12 +770,12 @@
    */
   exports.prototype['commonTagVariables'] = undefined;
   /**
-   * Example: 51
+   * Ex: 51
    * @member {Number} commonVariableMostCommonConnectorId
    */
   exports.prototype['commonVariableMostCommonConnectorId'] = undefined;
   /**
-   * Example: 2017-02-07 23:43:39 UTC ISO 8601 YYYY-MM-DDThh:mm:ss
+   * Ex: 2017-02-07 23:43:39 UTC ISO 8601 YYYY-MM-DDThh:mm:ss
    * @member {String} commonVariableUpdatedAt
    */
   exports.prototype['commonVariableUpdatedAt'] = undefined;
@@ -768,37 +785,22 @@
    */
   exports.prototype['createdAt'] = undefined;
   /**
-   * Example: count
-   * @member {String} unitAbbreviatedName
+   * Comma-separated list of source names to limit variables to those sources
+   * @member {String} dataSourceNames
    */
-  exports.prototype['unitAbbreviatedName'] = undefined;
+  exports.prototype['dataSourceNames'] = undefined;
   /**
-   * Example: 6
-   * @member {Number} unitCategoryId
+   * These are sources of measurements for this variable
+   * @member {Array.<module:model/DataSource>} dataSources
    */
-  exports.prototype['unitCategoryId'] = undefined;
+  exports.prototype['dataSources'] = undefined;
   /**
-   * Example: Miscellany
-   * @member {String} unitCategoryName
-   */
-  exports.prototype['unitCategoryName'] = undefined;
-  /**
-   * ID of unit to use for this variable
-   * @member {Number} unitId
-   */
-  exports.prototype['unitId'] = undefined;
-  /**
-   * Example: Count
-   * @member {String} unitName
-   */
-  exports.prototype['unitName'] = undefined;
-  /**
-   * Example: negative
+   * Ex: negative
    * @member {String} description
    */
   exports.prototype['description'] = undefined;
   /**
-   * Example: Trader Joe's Bedtime Tea
+   * Ex: Trader Joe's Bedtime Tea
    * @member {String} displayName
    */
   exports.prototype['displayName'] = undefined;
@@ -808,7 +810,7 @@
    */
   exports.prototype['durationOfAction'] = undefined;
   /**
-   * Example: 168
+   * Ex: 168
    * @member {Number} durationOfActionInHours
    */
   exports.prototype['durationOfActionInHours'] = undefined;
@@ -838,12 +840,12 @@
    */
   exports.prototype['experimentEndTime'] = undefined;
   /**
-   * Example: 1893477600
+   * Ex: 1893477600
    * @member {Number} experimentEndTimeSeconds
    */
   exports.prototype['experimentEndTimeSeconds'] = undefined;
   /**
-   * Example: 2030-01-01 06:00:00 UTC ISO 8601 YYYY-MM-DDThh:mm:ss
+   * Ex: 2030-01-01 06:00:00 UTC ISO 8601 YYYY-MM-DDThh:mm:ss
    * @member {String} experimentEndTimeString
    */
   exports.prototype['experimentEndTimeString'] = undefined;
@@ -853,12 +855,12 @@
    */
   exports.prototype['experimentStartTime'] = undefined;
   /**
-   * Example: 1269307902
+   * Ex: 1269307902
    * @member {Number} experimentStartTimeSeconds
    */
   exports.prototype['experimentStartTimeSeconds'] = undefined;
   /**
-   * Example: 2010-03-23 01:31:42 UTC ISO 8601 YYYY-MM-DDThh:mm:ss
+   * Ex: 2010-03-23 01:31:42 UTC ISO 8601 YYYY-MM-DDThh:mm:ss
    * @member {String} experimentStartTimeString
    */
   exports.prototype['experimentStartTimeString'] = undefined;
@@ -873,12 +875,12 @@
    */
   exports.prototype['fillingValue'] = undefined;
   /**
-   * Example: ion-sad-outline
+   * Ex: ion-sad-outline
    * @member {String} iconIcon
    */
   exports.prototype['iconIcon'] = undefined;
   /**
-   * Example: 95614
+   * Ex: 95614
    * @member {Number} id
    */
   exports.prototype['id'] = undefined;
@@ -888,20 +890,32 @@
    */
   exports.prototype['imageUrl'] = undefined;
   /**
-   * Example: https://google.com
+   * Ex: https://google.com
    * @member {String} informationalUrl
    */
   exports.prototype['informationalUrl'] = undefined;
   /**
+   * Commonly defined for all users. IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.
+   * @member {Array.<module:model/Variable>} ingredientOfCommonTagVariables
+   */
+  exports.prototype['ingredientOfCommonTagVariables'] = undefined;
+  /**
+   * Commonly defined for all users. IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.
+   * @member {Array.<module:model/Variable>} ingredientCommonTagVariables
+   */
+  exports.prototype['ingredientCommonTagVariables'] = undefined;
+  /**
+   * User-specific IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.
    * @member {Array.<module:model/Variable>} ingredientOfUserTagVariables
    */
   exports.prototype['ingredientOfUserTagVariables'] = undefined;
   /**
+   * User-specific IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.
    * @member {Array.<module:model/Variable>} ingredientUserTagVariables
    */
   exports.prototype['ingredientUserTagVariables'] = undefined;
   /**
-   * Example: value
+   * Ex: value
    * @member {String} inputType
    */
   exports.prototype['inputType'] = undefined;
@@ -911,6 +925,12 @@
    */
   exports.prototype['ionIcon'] = undefined;
   /**
+   * Commonly defined for all users.  Joining can be used used to merge duplicate variables. For instance, if two variables called Apples (Red Delicious) and Red Delicious Apples are joined, when one of them is analyzed, the measurements for the other will be included as well.
+   * @member {Array.<module:model/Variable>} joinedCommonTagVariables
+   */
+  exports.prototype['joinedCommonTagVariables'] = undefined;
+  /**
+   * User-defined. Joining can be used used to merge duplicate variables. For instance, if two variables called Apples (Red Delicious) and Red Delicious Apples are joined, when one of them is analyzed, the measurements for the other will be included as well.
    * @member {Array.<module:model/Variable>} joinedUserTagVariables
    */
   exports.prototype['joinedUserTagVariables'] = undefined;
@@ -935,7 +955,7 @@
    */
   exports.prototype['lastOriginalValue'] = undefined;
   /**
-   * Example: 500
+   * Ex: 500
    * @member {Number} lastProcessedDailyValue
    */
   exports.prototype['lastProcessedDailyValue'] = undefined;
@@ -970,7 +990,7 @@
    */
   exports.prototype['latestSourceTime'] = undefined;
   /**
-   * Example: 1501383600
+   * Ex: 1501383600
    * @member {Number} latestUserMeasurementTime
    */
   exports.prototype['latestUserMeasurementTime'] = undefined;
@@ -990,7 +1010,7 @@
    */
   exports.prototype['longitude'] = undefined;
   /**
-   * Example: 1
+   * Ex: 1
    * @member {Boolean} manualTracking
    */
   exports.prototype['manualTracking'] = undefined;
@@ -1005,7 +1025,7 @@
    */
   exports.prototype['maximumRecordedDailyValue'] = undefined;
   /**
-   * Example: 1
+   * Ex: 1
    * @member {Number} maximumRecordedValue
    */
   exports.prototype['maximumRecordedValue'] = undefined;
@@ -1035,12 +1055,12 @@
    */
   exports.prototype['minimumRecordedValue'] = undefined;
   /**
-   * Example: 51
+   * Ex: 51
    * @member {Number} mostCommonConnectorId
    */
   exports.prototype['mostCommonConnectorId'] = undefined;
   /**
-   * Example: 23
+   * Ex: 23
    * @member {Number} mostCommonOriginalUnitId
    */
   exports.prototype['mostCommonOriginalUnitId'] = undefined;
@@ -1055,17 +1075,17 @@
    */
   exports.prototype['mostCommonValue'] = undefined;
   /**
-   * Example: Trader Joes Bedtime Tea / Sleepytime Tea (any Brand)
+   * Ex: Trader Joes Bedtime Tea / Sleepytime Tea (any Brand)
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
-   * Example: 1
+   * Ex: 1
    * @member {Number} numberOfAggregateCorrelationsAsCause
    */
   exports.prototype['numberOfAggregateCorrelationsAsCause'] = undefined;
   /**
-   * Example: 310
+   * Ex: 310
    * @member {Number} numberOfAggregateCorrelationsAsEffect
    */
   exports.prototype['numberOfAggregateCorrelationsAsEffect'] = undefined;
@@ -1085,12 +1105,12 @@
    */
   exports.prototype['numberOfProcessedDailyMeasurements'] = undefined;
   /**
-   * Example: 295
+   * Ex: 295
    * @member {Number} numberOfRawMeasurements
    */
   exports.prototype['numberOfRawMeasurements'] = undefined;
   /**
-   * Example: 1
+   * Ex: 1
    * @member {Number} numberOfTrackingReminders
    */
   exports.prototype['numberOfTrackingReminders'] = undefined;
@@ -1100,22 +1120,22 @@
    */
   exports.prototype['numberOfUniqueDailyValues'] = undefined;
   /**
-   * Example: 2
+   * Ex: 2
    * @member {Number} numberOfUniqueValues
    */
   exports.prototype['numberOfUniqueValues'] = undefined;
   /**
-   * Example: 115
+   * Ex: 115
    * @member {Number} numberOfUserCorrelationsAsCause
    */
   exports.prototype['numberOfUserCorrelationsAsCause'] = undefined;
   /**
-   * Example: 29014
+   * Ex: 29014
    * @member {Number} numberOfUserCorrelationsAsEffect
    */
   exports.prototype['numberOfUserCorrelationsAsEffect'] = undefined;
   /**
-   * Example: 2
+   * Ex: 2
    * @member {Number} numberOfUserVariables
    */
   exports.prototype['numberOfUserVariables'] = undefined;
@@ -1125,7 +1145,7 @@
    */
   exports.prototype['onsetDelay'] = undefined;
   /**
-   * Example: 0.5
+   * Ex: 0.5
    * @member {Number} onsetDelayInHours
    */
   exports.prototype['onsetDelayInHours'] = undefined;
@@ -1135,41 +1155,37 @@
    */
   exports.prototype['outcome'] = undefined;
   /**
-   * Example: 1
+   * Ex: 1
    * @member {Number} outcomeOfInterest
    */
   exports.prototype['outcomeOfInterest'] = undefined;
   /**
-   * 
-   * @member {String} parent
+   * Commonly defined for all users.  An example of a parent category variable would be Fruit when tagged with the child sub-type variables Apple.  Child variable (Apple) measurements will be included when the parent category (Fruit) is analyzed.  This allows us to see how Fruit consumption might be affecting without having to record both Fruit and Apple intake.
+   * @member {Array.<module:model/Variable>} parentCommonTagVariables
    */
-  exports.prototype['parent'] = undefined;
+  exports.prototype['parentCommonTagVariables'] = undefined;
   /**
-   * ID of the parent variable if this variable has any parent
-   * @member {Number} parentId
-   */
-  exports.prototype['parentId'] = undefined;
-  /**
+   * User-defined. An example of a parent category variable would be Fruit when tagged with the child sub-type variables Apple.  Child variable (Apple) measurements will be included when the parent category (Fruit) is analyzed.  This allows us to see how Fruit consumption might be affecting without having to record both Fruit and Apple intake.
    * @member {Array.<module:model/Variable>} parentUserTagVariables
    */
   exports.prototype['parentUserTagVariables'] = undefined;
   /**
-   * Example: img/variable_categories/treatments.png
+   * Ex: img/variable_categories/treatments.png
    * @member {String} pngPath
    */
   exports.prototype['pngPath'] = undefined;
   /**
-   * Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.png
+   * Ex: https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.png
    * @member {String} pngUrl
    */
   exports.prototype['pngUrl'] = undefined;
   /**
-   * Example: 0
+   * Ex: 0
    * @member {Number} predictorOfInterest
    */
   exports.prototype['predictorOfInterest'] = undefined;
   /**
-   * Example: 95.4
+   * Ex: 95.4
    * @member {Number} price
    */
   exports.prototype['price'] = undefined;
@@ -1184,22 +1200,22 @@
    */
   exports.prototype['public'] = undefined;
   /**
-   * Example: 131
+   * Ex: 131
    * @member {Number} rawMeasurementsAtLastAnalysis
    */
   exports.prototype['rawMeasurementsAtLastAnalysis'] = undefined;
   /**
-   * Example: 1
+   * Ex: 1
    * @member {Number} secondMostCommonValue
    */
   exports.prototype['secondMostCommonValue'] = undefined;
   /**
-   * Example: 250
+   * Ex: 250
    * @member {Number} secondToLastValue
    */
   exports.prototype['secondToLastValue'] = undefined;
   /**
-   * Example: 1
+   * Would you like to make your measurements publicly visible?
    * @member {Boolean} shareUserMeasurements
    */
   exports.prototype['shareUserMeasurements'] = undefined;
@@ -1209,12 +1225,7 @@
    */
   exports.prototype['skewness'] = undefined;
   /**
-   * Comma-separated list of source names to limit variables to those sources
-   * @member {String} sources
-   */
-  exports.prototype['sources'] = undefined;
-  /**
-   * Standard deviation Example: 0.46483219855434
+   * Standard deviation Ex: 0.46483219855434
    * @member {Number} standardDeviation
    */
   exports.prototype['standardDeviation'] = undefined;
@@ -1229,17 +1240,17 @@
    */
   exports.prototype['subtitle'] = undefined;
   /**
-   * Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg
+   * Ex: https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg
    * @member {String} svgUrl
    */
   exports.prototype['svgUrl'] = undefined;
   /**
-   * Example: 6
+   * Ex: 6
    * @member {Number} thirdMostCommonValue
    */
   exports.prototype['thirdMostCommonValue'] = undefined;
   /**
-   * Example: 250
+   * Ex: 250
    * @member {Number} thirdToLastValue
    */
   exports.prototype['thirdToLastValue'] = undefined;
@@ -1247,6 +1258,31 @@
    * @member {module:model/Unit} unit
    */
   exports.prototype['unit'] = undefined;
+  /**
+   * Ex: count
+   * @member {String} unitAbbreviatedName
+   */
+  exports.prototype['unitAbbreviatedName'] = undefined;
+  /**
+   * Ex: 6
+   * @member {Number} unitCategoryId
+   */
+  exports.prototype['unitCategoryId'] = undefined;
+  /**
+   * Ex: Miscellany
+   * @member {String} unitCategoryName
+   */
+  exports.prototype['unitCategoryName'] = undefined;
+  /**
+   * ID of unit to use for this variable
+   * @member {Number} unitId
+   */
+  exports.prototype['unitId'] = undefined;
+  /**
+   * Ex: Count
+   * @member {String} unitName
+   */
+  exports.prototype['unitName'] = undefined;
   /**
    * Universal product code or similar
    * @member {String} upc
@@ -1263,7 +1299,7 @@
    */
   exports.prototype['updatedAt'] = undefined;
   /**
-   * Example: 2017-07-30 14:58:26
+   * Ex: 2017-07-30 14:58:26
    * @member {String} updatedTime
    */
   exports.prototype['updatedTime'] = undefined;
@@ -1281,62 +1317,62 @@
    */
   exports.prototype['userTagVariables'] = undefined;
   /**
-   * Example: count
+   * Ex: count
    * @member {String} userVariableUnitAbbreviatedName
    */
   exports.prototype['userVariableUnitAbbreviatedName'] = undefined;
   /**
-   * Example: 6
+   * Ex: 6
    * @member {Number} userVariableUnitCategoryId
    */
   exports.prototype['userVariableUnitCategoryId'] = undefined;
   /**
-   * Example: Miscellany
+   * Ex: Miscellany
    * @member {String} userVariableUnitCategoryName
    */
   exports.prototype['userVariableUnitCategoryName'] = undefined;
   /**
-   * Example: 23
+   * Ex: 23
    * @member {Number} userVariableUnitId
    */
   exports.prototype['userVariableUnitId'] = undefined;
   /**
-   * Example: Count
+   * Ex: Count
    * @member {String} userVariableUnitName
    */
   exports.prototype['userVariableUnitName'] = undefined;
   /**
-   * Example: -1
+   * Ex: -1
    * @member {Number} userVariableFillingValue
    */
   exports.prototype['userVariableFillingValue'] = undefined;
   /**
-   * Example: 51
+   * Ex: 51
    * @member {Number} userVariableMostCommonConnectorId
    */
   exports.prototype['userVariableMostCommonConnectorId'] = undefined;
   /**
-   * Example: 2017-07-30 14:58:26
+   * Ex: 2017-07-30 14:58:26
    * @member {String} userVariableUpdatedAt
    */
   exports.prototype['userVariableUpdatedAt'] = undefined;
   /**
-   * Example: positive or negative
+   * Ex: positive or negative
    * @member {String} userVariableValence
    */
   exports.prototype['userVariableValence'] = undefined;
   /**
-   * Example: 13
+   * Ex: 13
    * @member {Number} userVariableVariableCategoryId
    */
   exports.prototype['userVariableVariableCategoryId'] = undefined;
   /**
-   * Example: Treatments
+   * Ex: Treatments
    * @member {String} userVariableVariableCategoryName
    */
   exports.prototype['userVariableVariableCategoryName'] = undefined;
   /**
-   * Example: 
+   * Ex: 
    * @member {String} userVariableWikipediaTitle
    */
   exports.prototype['userVariableWikipediaTitle'] = undefined;
@@ -1344,10 +1380,6 @@
    * @member {module:model/VariableCategory} variableCategory
    */
   exports.prototype['variableCategory'] = undefined;
-  /**
-   * @member {module:model/DataSource} dataSource
-   */
-  exports.prototype['dataSource'] = undefined;
   /**
    * Array of Variables that are joined with this Variable
    * @member {Array.<module:model/Variable>} joinedVariables
@@ -1369,17 +1401,17 @@
    */
   exports.prototype['mostCommonUnit'] = undefined;
   /**
-   * Example: positive
+   * Ex: positive
    * @member {String} valence
    */
   exports.prototype['valence'] = undefined;
   /**
-   * Example: 6
+   * Ex: 6
    * @member {Number} variableCategoryId
    */
   exports.prototype['variableCategoryId'] = undefined;
   /**
-   * Example: https://maxcdn.icons8.com/Color/PNG/96/Household/sleeping_in_bed-96.png
+   * Ex: https://maxcdn.icons8.com/Color/PNG/96/Household/sleeping_in_bed-96.png
    * @member {String} variableCategoryImageUrl
    */
   exports.prototype['variableCategoryImageUrl'] = undefined;
@@ -1389,27 +1421,27 @@
    */
   exports.prototype['variableCategoryName'] = undefined;
   /**
-   * Example: -1
+   * Ex: -1
    * @member {Number} variableFillingValue
    */
   exports.prototype['variableFillingValue'] = undefined;
   /**
-   * Example: 96380
+   * Ex: 96380
    * @member {Number} variableId
    */
   exports.prototype['variableId'] = undefined;
   /**
-   * Example: Sleep Duration
+   * Ex: Sleep Duration
    * @member {String} variableName
    */
   exports.prototype['variableName'] = undefined;
   /**
-   * Example: 115947037.40816
+   * Ex: 115947037.40816
    * @member {Number} variance
    */
   exports.prototype['variance'] = undefined;
   /**
-   * Example: 
+   * Ex: 
    * @member {String} wikipediaTitle
    */
   exports.prototype['wikipediaTitle'] = undefined;

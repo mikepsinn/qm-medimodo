@@ -8,18 +8,27 @@ angular.module('starter').controller('ConfigurationCtrl', function( $state, $sco
     //var previewUrlPrefix = "/ionic/Modo/www/configuration-index.html#/app/";
     $rootScope.showPopOut = qm.urlHelper.getParam('showPopOut');
     $scope.$on('$ionicView.beforeEnter', function(e) {
+        qmLog.info("beforeEnter configuration state!");
         if(!$rootScope.user){qmService.refreshUser();}
         $scope.state = {
             //appSettingsUndo: config.appSettings,
             //previewUrl: previewUrlPrefix,
             clientId: (qm.urlHelper.getParam('clientId')) ? qm.urlHelper.getParam('clientId') : $stateParams.clientId
         };
-        if(!$scope.state.clientId){$scope.state.clientId = $rootScope.appSettings.clientId;}
+        if(!$scope.state.clientId){
+            $scope.state.clientId = qm.stringHelper.getStringAfter('configuration/');
+            qmLog.info("No $scope.state.clientId so setting it to StringAfter 'configuration/': "+$rootScope.appSettings.clientId);
+        }
+        if(!$scope.state.clientId){
+            qmLog.info("No $scope.state.clientId so setting it to $rootScope.appSettings.clientId: "+$rootScope.appSettings.clientId);
+            $scope.state.clientId = $rootScope.appSettings.clientId;
+        }
+        populateAppsListFromLocalStorage();
         if(configurationService.allAppSettings){
-            populateAppsList(configurationService.allAppSettings);
+            populateAppsListAndSwitchToSelectedApp(configurationService.allAppSettings);
         } else {
             qmService.showBlackRingLoader();
-            refreshAppList();
+            refreshAppListAndSwitchToSelectedApp();
         }
         configurationService.updateAppComponents();
     });
@@ -28,24 +37,41 @@ angular.module('starter').controller('ConfigurationCtrl', function( $state, $sco
         if(!$scope.appList){qmService.showInfoToast("Loading your apps (this could take a minute)");}
         qm.integration.getIntegrationJsWithoutClientId(); // Have it ready to copy to clipboard
     });
-    function populateAppsList(apps) {
-        if(!apps || !apps.length){return $scope.appList = [];}
-        var appToSwitchTo;
-        var appList = [];
-        for(var i = 0; i < apps.length; i++){
-            if(!appToSwitchTo && apps[i].clientId  === $scope.state.clientId){
-                appToSwitchTo = apps[i];
-            }
-            appList.push({clientId: apps[i].clientId, appDisplayName: apps[i].appDisplayName, appIcon: apps[i].additionalSettings.appImages.appIcon});
+    $scope.$on('$ionicView.beforeLeave', function(e) {
+        qmLog.info("Leaving configuration state!");
+    });
+    function populateAppsListFromLocalStorage() {
+        var appList = configurationService.getAppsListFromLocalStorage();
+        if(appList){
+            $scope.appList = appList; // More efficient than updating scope a million times
+            qmService.hideLoader();
         }
+    }
+    function populateAppsListFromAppSettingsArray(appSettingsArray) {
+        if(!appSettingsArray || !appSettingsArray.length){return $scope.appList = [];}
+        var appList = configurationService.convertAppSettingsToAppList(appSettingsArray);
+        qm.storage.setItem(qm.items.appList, appList);
         $scope.appList = appList; // More efficient than updating scope a million times
-        if(!appToSwitchTo && apps.length){appToSwitchTo = apps[0];}
+    }
+    function populateAppsListAndSwitchToSelectedApp(appSettingsArray) {
+        qmLog.info("populateAppsListAndSwitchToSelectedApp");
+        populateAppsListFromAppSettingsArray(appSettingsArray);
+        var appToSwitchTo = appSettingsArray.find(function (appSettingsObject) {
+            return appSettingsObject.clientId === qm.appsManager.getBuilderClientId();
+        });
+        if($rootScope.user.administrator && !appToSwitchTo && $rootScope.appSettings.clientId === qm.appsManager.getBuilderClientId()){
+            // This happens when an admin is editing an app they aren't a collaborator of with clientId url param
+            qmService.hideLoader();
+            return;
+        }
+        if (!appToSwitchTo && appSettingsArray.length){appToSwitchTo = appSettingsArray[0];}
         configurationService.separateUsersAndConfigureAppSettings(appToSwitchTo);
         qmService.hideLoader();
     }
-    function refreshAppList() {
-        configurationService.getAppsList().then(function () {
-            populateAppsList(configurationService.allAppSettings);
+    function refreshAppListAndSwitchToSelectedApp() {
+        qmLog.info("refreshAppListAndSwitchToSelectedApp...");
+        configurationService.getAppSettingsArrayFromApi().then(function () {
+            populateAppsListAndSwitchToSelectedApp(configurationService.allAppSettings);
             qmService.hideLoader();
         });
     }
@@ -59,7 +85,7 @@ angular.module('starter').controller('ConfigurationCtrl', function( $state, $sco
             $scope.revisionsList = revisionList;
             configurationService.updateAppComponentTypesAfterAppTypeChange();
             configurationService.updateAppComponents();
-            //configurationService.postAppSettingsDeferred($rootScope.appSettings);
+            //configurationService.saveRevisionAndPostAppSettingsAfterConfirmation($rootScope.appSettings);
         });
     };
     $scope.appComponentTypeChange = function (appComponentType) {
@@ -108,7 +134,7 @@ angular.module('starter').controller('ConfigurationCtrl', function( $state, $sco
     $scope.undoPostAppSettings = function (ev) {
         configurationService.separateUsersAndConfigureAppSettings($scope.state.appSettingsUndo);
         $scope.state.appSettingsUndo = null;
-        configurationService.postAppSettingsDeferred($rootScope.appSettings, ev);
+        configurationService.saveRevisionAndPostAppSettingsAfterConfirmation($rootScope.appSettings, ev);
     };
     function updateAppSettingInScope(appSettingName, appSettingValue, appSettingVariable) {
         if(typeof $rootScope.appSettings.appDesign[appSettingName] !== "undefined"){
@@ -137,10 +163,14 @@ angular.module('starter').controller('ConfigurationCtrl', function( $state, $sco
             '&filename=' + fileName + "&accessToken=" + $rootScope.user.accessToken + "&encrypt=" + encrypt, data: body});
         file.upload.then(function (response) {
             console.debug("File upload response: ", response);
-            qmService.showInfoToast(fileName.replace('app_images_', '') + " uploaded!");
+            var displayName = fileName.replace('app_images_', '');
+            displayName = qm.stringHelper.camelToTitleCase(displayName);
+            qmService.showInfoToast(displayName + " uploaded!");
             successHandler(response.data.url);
-            $rootScope.saveAppSettingChanges();
             qmService.hideLoader();
+            configurationService.postAppSettingsAfterConfirmation($rootScope.appSettings, function (appSettingsUpdateResponse) {
+                qmLog.info("appSettings image UpdateResponse", appSettingsUpdateResponse);
+            });
         }, function (response) {
             qmService.hideLoader();
             if (response.status > 0){$scope.errorMsg = response.status + ': ' + response.data;}
@@ -192,7 +222,7 @@ angular.module('starter').controller('ConfigurationCtrl', function( $state, $sco
                 var newAppSettingObjectToEditString = JSON.stringify($rootScope.appSettingObjectToEdit).replace(originalSettingsParentVariableString, newSettingsParentVariableString);
                 $rootScope.appSettingObjectToEdit = JSON.parse(newAppSettingObjectToEditString);
             }
-            $rootScope.saveAppSettingChanges();
+            configurationService.postAppSettingsAfterConfirmation();
             qmService.hideLoader();
         }, function (response) {
             qmService.hideLoader();
@@ -262,7 +292,7 @@ angular.module('starter').controller('ConfigurationCtrl', function( $state, $sco
             self.selectedItem = item;
             self.buttonText = dataToPass.buttonText;
             $scope.ionIcon = item.ionIcon;
-            console.debug('Item changed to ' + item.ionIcon.name);
+            console.debug('Item changed to ' + item.ionIcon);
         }
         /**
          * Build `ionIcons` list of key/value pairs
@@ -279,11 +309,11 @@ angular.module('starter').controller('ConfigurationCtrl', function( $state, $sco
             });
         }
     };
-    $scope.selectIonIcon = function (ev, currentIcon, appSettingName) {
+    $scope.selectIonIcon = function (ev, appSettingObjectToEdit) {
         $mdDialog.show({
             controller: SelectIonIconDialogController,
             controllerAs: 'ctrl',
-            templateUrl: 'templates/fragments/variable-search-dialog-fragment.html',
+            templateUrl: 'templates/dialogs/variable-search-dialog.html',
             parent: angular.element(document.body),
             targetEvent: ev,
             clickOutsideToClose: false,
@@ -295,28 +325,44 @@ angular.module('starter').controller('ConfigurationCtrl', function( $state, $sco
                     placeholder: "Search for an icon...",
                     buttonText: "Select icon",
                     requestParams: {},
-                    currentIcon: currentIcon
+                    currentIcon: appSettingObjectToEdit.icon
                 }
             }
-        }).then(function(ionIcon) {
-            currentIcon = ionIcon;
-            updateAppSettingInScope(appSettingName, ionIcon, currentIcon);
-            configurationService.postAppSettingsDeferred();
+        }).then(function(newIcon) {
+            appSettingObjectToEdit.icon = newIcon;
+            //updateAppSettingInScope(appSettingName, ionIcon, currentIcon);
+            //configurationService.saveRevisionAndPostAppSettingsAfterConfirmation();
         }, function() {console.debug('User cancelled selection');});
     };
-    $scope.postAppSettings = function () {
-        configurationService.saveAppSettingsRevisionLocally(function (revisionList) {
+    $scope.postAppSettingsAfterConfirmation = function () {
+        if($rootScope.appSettingObjectToEdit){
+            var appSettingType = $rootScope.appSettingType;
+            var newAppSetting = $rootScope.appSettingObjectToEdit;
+            var originalAppSetting = $rootScope.originalAppSetting;
+            configurationService.replaceAppSetting(appSettingType, originalAppSetting, JSON.stringify(newAppSetting));
+            $rootScope.originalAppSetting = newAppSetting;  // Have to update so we can replace if we change something else
+        }
+        configurationService.saveRevisionAndPostAppSettingsAfterConfirmation($rootScope.appSettings, function (revisionList) {
             $scope.revisionsList = revisionList;
-            configurationService.postAppSettingsDeferred();
-            for(var i = 0; i < $scope.appList.length; i++){
-                if($scope.appList[i].clientId === $rootScope.appSettings.clientId){
-                    $scope.appList[i] = $rootScope.appSettings;
-                }
-            }
         });
+        for(var i = 0; i < $scope.appList.length; i++){
+            if($scope.appList[i].clientId === $rootScope.appSettings.clientId){
+                //$scope.appList[i] = $rootScope.appSettings;  // TODO: Why?
+            }
+        }
+    };
+    $scope.updateHrefInMenuItem = function(menuItem){
+        menuItem = qmService.menu.href.updateHrefAndIdInMenuItemBasedOnStateName(menuItem);
+        return menuItem;
     };
     $scope.switchApp = function(selectedApp){
+        if(selectedApp.clientId === $rootScope.appSettings.clientId){
+            qmLog.info("Already using "+selectedApp.clientId);
+            return false;
+        }
+        qmService.showBasicLoader();
         configurationService.switchApp(selectedApp, function (revisionList) {
+            qmService.hideLoader();
             $scope.revisionsList = revisionList;
         });
     };
@@ -327,7 +373,7 @@ angular.module('starter').controller('ConfigurationCtrl', function( $state, $sco
             qm.localForage.getItem(qm.items.appSettingsRevisions, function(revisions){
                 for (var i = 0; i < revisions.length; i++) {
                     if(revisions[i].revisionTime === selectedRevision.revisionTime) {
-                        $rootScope.appSettings = revisions[i];
+                        qmService.processAndSaveAppSettings(revisions[i]);
                         break;
                     }
                 }

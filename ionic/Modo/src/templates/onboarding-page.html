@@ -7,19 +7,23 @@
                            ng-click="goToReminderSearchFromOnboarding($event)">
                     <i class="ion-plus-round"> &nbsp; {{circlePage.addButtonText}} &nbsp;</i>
                 </md-button>
-                <md-button id="enableLocationTrackingButton" class="button circle-page-button" ng-show="circlePage.id === 'locationTrackingPage' && (user.stripeActive || appSettings.additionalSettings.monetizationSettings.subscriptionsEnabled.value)"
+                <md-button id="enableLocationTrackingButton" class="button circle-page-button"
+                           ng-show="circlePage.id === 'locationTrackingPage'&& !state.requireUpgrades"
                         ng-click="enableLocationTrackingWithMeasurements($event)">
                     <i class="{{variableCategories.Location.ionIcon}}"> &nbsp; Yes &nbsp;</i>
                 </md-button>
-                <md-button id="enableWeatherTrackingButton" class="button circle-page-button" ng-show="circlePage.id === 'weatherTrackingPage' && (user.stripeActive || appSettings.additionalSettings.monetizationSettings.subscriptionsEnabled.value)"
+                <md-button id="enableWeatherTrackingButton" class="button circle-page-button" 
+                           ng-show="circlePage.id === 'weatherTrackingPage'&& !state.requireUpgrades"
                         ng-click="connectWeatherOnboarding()">
                     <i class="ion-ios-partlysunny"> &nbsp; Yes &nbsp;</i>
                 </md-button>
-                <md-button id="importDataButton" class="button circle-page-button" ng-show="circlePage.id === 'importDataPage' && (user.stripeActive || appSettings.additionalSettings.monetizationSettings.subscriptionsEnabled.value)"
+                <md-button id="importDataButton" class="button circle-page-button" 
+                           ng-show="circlePage.id === 'importDataPage' && !state.requireUpgrades"
                         ng-click="onboardingGoToImportPage()">
                     <i class="ion-android-download"> &nbsp; Connect &nbsp;</i>
                 </md-button>
-                <md-button id="goToUpgradePageButton" class="button circle-page-button" ng-show="circlePage.premiumFeature && !user.stripeActive && !appSettings.additionalSettings.monetizationSettings.subscriptionsEnabled.value"
+                <md-button id="goToUpgradePageButton" class="button circle-page-button" 
+                           ng-show="circlePage.premiumFeature && state.requireUpgrades"
                         ng-click="goToUpgradePage()">
                     <i class="ion-android-star"> &nbsp;Upgrade &nbsp;</i>
                 </md-button>
@@ -37,7 +41,6 @@
                            ng-click="postMeasurement(circlePage, 0)">
                     <i class="ion-close-round"> &nbsp; No &nbsp;</i>
                 </md-button>
-                <br><br>
                 <div>
                     <md-button ng-show="state.showSkipButton && !appSettings.designMode" id="skipButtonWelcome"
                                class="button circle-page-button" style="font-size: 14px;" ng-click="skipOnboarding()">
@@ -57,4 +60,5 @@
             </div>
         </div>
     </div>
+    <div ng-show="showRobot" ng-include="'templates/robot.html'" ng-click="robotClick()" class="robot-container"></div>
 </ion-view>

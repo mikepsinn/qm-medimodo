@@ -43,16 +43,16 @@
    * Constructs a new <code>GetCorrelationsResponse</code>.
    * @alias module:model/GetCorrelationsResponse
    * @class
-   * @param status {Number} Status code
-   * @param success {Boolean} 
+   * @param description {String} Can be used as body of help info popup
+   * @param summary {String} Can be used as title in help info popup
    */
-  var exports = function(status, success) {
+  var exports = function(description, summary) {
     var _this = this;
 
 
+    _this['description'] = description;
+    _this['summary'] = summary;
 
-    _this['status'] = status;
-    _this['success'] = success;
   };
 
   /**
@@ -69,14 +69,14 @@
       if (data.hasOwnProperty('data')) {
         obj['data'] = GetCorrelationsDataResponse.constructFromObject(data['data']);
       }
-      if (data.hasOwnProperty('message')) {
-        obj['message'] = ApiClient.convertToType(data['message'], 'String');
+      if (data.hasOwnProperty('description')) {
+        obj['description'] = ApiClient.convertToType(data['description'], 'String');
       }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'Number');
+      if (data.hasOwnProperty('summary')) {
+        obj['summary'] = ApiClient.convertToType(data['summary'], 'String');
       }
-      if (data.hasOwnProperty('success')) {
-        obj['success'] = ApiClient.convertToType(data['success'], 'Boolean');
+      if (data.hasOwnProperty('avatar')) {
+        obj['avatar'] = ApiClient.convertToType(data['avatar'], 'String');
       }
     }
     return obj;
@@ -87,19 +87,20 @@
    */
   exports.prototype['data'] = undefined;
   /**
-   * Message
-   * @member {String} message
+   * Can be used as body of help info popup
+   * @member {String} description
    */
-  exports.prototype['message'] = undefined;
+  exports.prototype['description'] = undefined;
   /**
-   * Status code
-   * @member {Number} status
+   * Can be used as title in help info popup
+   * @member {String} summary
    */
-  exports.prototype['status'] = undefined;
+  exports.prototype['summary'] = undefined;
   /**
-   * @member {Boolean} success
+   * Square icon png url
+   * @member {String} avatar
    */
-  exports.prototype['success'] = undefined;
+  exports.prototype['avatar'] = undefined;
 
 
 

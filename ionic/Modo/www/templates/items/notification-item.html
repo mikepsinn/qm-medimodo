@@ -7,7 +7,7 @@
         <h2 style="white-space: normal; line-height: normal; ">{{trackingReminderNotification.title}}</h2>
         <p style="white-space: normal;">{{ trackingReminderNotification.trackingReminderNotificationTimeLocalHumanString}}</p>
     </div>
-    <div id="notification-more" class="col col-10"><i style="font-size: 20px;" class="icon positive ion-more"></i></div>
+    <div id="notification-more" class="col col-10"><i style="font-size: 20px; cursor: pointer;" class="icon positive ion-more"></i></div>
 </div>
 <div class="button-bar">
     <button id="notification-skip" class="button button-clear button-assertive" style="text-overflow: clip; font-size: 12px;"
@@ -56,21 +56,21 @@
     </div>
 </div>
 <!--TODO: Remove (trackingReminderNotification.inputType === 'value' && trackingReminderNotification.defaultValue !== null) once all clients are updated and we can uncomment defaultValue inputType in Unit.php-->
-<div class="primary-outcome-variable-reporting" ng-if="trackingReminderNotification.inputType === 'oneToFiveNumbers'">
+<div id="numericRatingOptions" class="primary-outcome-variable-reporting" ng-if="trackingReminderNotification.inputType === 'oneToFiveNumbers'">
     <div class="primary-outcome-variable-rating-buttons" >
         <img id="{{'numericRatingOptions' + option.numericValue}}" ng-repeat="option in numericRatingOptions"
              on-hold="trackAllWithConfirmation(trackingReminderNotification, option.numericValue, $event)"
              ng-click="track(trackingReminderNotification, option.numericValue, $event)" ng-src="{{option.img}}">
     </div>
 </div>
-<div class="primary-outcome-variable-reporting" ng-if="trackingReminderNotification.inputType === 'happiestFaceIsFive'">
+<div id="happiestFaceIsFive" class="primary-outcome-variable-reporting" ng-if="trackingReminderNotification.inputType === 'happiestFaceIsFive'">
     <div class="primary-outcome-variable-rating-buttons" >
         <img id="{{'positiveRatingOptions' + option.numericValue}}" ng-repeat="option in positiveRatingOptions"
              on-hold="trackAllWithConfirmation(trackingReminderNotification, option.numericValue, $event)"
              ng-click="track(trackingReminderNotification, option.numericValue, $event)" ng-src="{{option.img}}">
     </div>
 </div>
-<div class="primary-outcome-variable-reporting" ng-if="trackingReminderNotification.inputType === 'saddestFaceIsFive'">
+<div id="saddestFaceIsFive" class="primary-outcome-variable-reporting" ng-if="trackingReminderNotification.inputType === 'saddestFaceIsFive'">
     <div class="primary-outcome-variable-rating-buttons" >
         <img id="{{'negativeRatingOptions' + option.numericValue}}"  ng-repeat="option in negativeRatingOptions"
              on-hold="trackAllWithConfirmation(trackingReminderNotification, option.numericValue, $event)"

@@ -62,6 +62,7 @@
 
 
 
+
   };
 
   /**
@@ -89,6 +90,9 @@
       }
       if (data.hasOwnProperty('fullStudyHtmlWithCssStyles')) {
         obj['fullStudyHtmlWithCssStyles'] = ApiClient.convertToType(data['fullStudyHtmlWithCssStyles'], 'String');
+      }
+      if (data.hasOwnProperty('participantInstructionsHtml')) {
+        obj['participantInstructionsHtml'] = ApiClient.convertToType(data['participantInstructionsHtml'], 'String');
       }
       if (data.hasOwnProperty('statisticsTableHtml')) {
         obj['statisticsTableHtml'] = ApiClient.convertToType(data['statisticsTableHtml'], 'String');
@@ -144,6 +148,11 @@
    */
   exports.prototype['fullStudyHtmlWithCssStyles'] = undefined;
   /**
+   * Instructions for study participation
+   * @member {String} participantInstructionsHtml
+   */
+  exports.prototype['participantInstructionsHtml'] = undefined;
+  /**
    * Embeddable table with statistics
    * @member {String} statisticsTableHtml
    */
@@ -174,12 +183,12 @@
    */
   exports.prototype['studyTextHtml'] = undefined;
   /**
-   * 
+   * What do you expect?
    * @member {String} socialSharingButtonHtml
    */
   exports.prototype['socialSharingButtonHtml'] = undefined;
   /**
-   * 
+   * What do you expect?
    * @member {String} studySummaryBoxHtml
    */
   exports.prototype['studySummaryBoxHtml'] = undefined;

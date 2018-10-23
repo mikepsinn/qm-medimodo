@@ -48,6 +48,8 @@
     var _this = this;
 
 
+
+
   };
 
   /**
@@ -64,15 +66,31 @@
       if (data.hasOwnProperty('purchaseId')) {
         obj['purchaseId'] = ApiClient.convertToType(data['purchaseId'], 'Number');
       }
+      if (data.hasOwnProperty('description')) {
+        obj['description'] = ApiClient.convertToType(data['description'], 'String');
+      }
+      if (data.hasOwnProperty('summary')) {
+        obj['summary'] = ApiClient.convertToType(data['summary'], 'String');
+      }
     }
     return obj;
   }
 
   /**
-   * Example: 1
+   * Ex: 1
    * @member {Number} purchaseId
    */
   exports.prototype['purchaseId'] = undefined;
+  /**
+   * Can be used as body of help info popup
+   * @member {String} description
+   */
+  exports.prototype['description'] = undefined;
+  /**
+   * Can be used as title in help info popup
+   * @member {String} summary
+   */
+  exports.prototype['summary'] = undefined;
 
 
 

@@ -182,17 +182,17 @@
   }
 
   /**
-   * Example: mood
+   * Ex: mood
    * @member {String} appType
    */
   exports.prototype['appType'] = undefined;
   /**
-   * Example: false
+   * Ex: false
    * @member {Boolean} causeOnly
    */
   exports.prototype['causeOnly'] = undefined;
   /**
-   * Example: MEAN
+   * Ex: MEAN
    * @member {String} combinationOperation
    */
   exports.prototype['combinationOperation'] = undefined;
@@ -202,67 +202,67 @@
    */
   exports.prototype['createdTime'] = undefined;
   /**
-   * Example: /5
+   * Ex: /5
    * @member {String} unitAbbreviatedName
    */
   exports.prototype['unitAbbreviatedName'] = undefined;
   /**
-   * Example: 10
+   * Ex: 10
    * @member {Number} unitId
    */
   exports.prototype['unitId'] = undefined;
   /**
-   * Example: 86400
+   * User-Defined Variable Setting: The amount of time over which a predictor/stimulus event can exert an observable influence on an outcome variable value. For instance, aspirin (stimulus/predictor) typically decreases headache severity for approximately four hours (duration of action) following the onset delay.  Unit: Seconds
    * @member {Number} durationOfAction
    */
   exports.prototype['durationOfAction'] = undefined;
   /**
-   * Example: -1
+   * Ex: -1. Unit: Variable category default unit.
    * @member {Number} fillingValue
    */
   exports.prototype['fillingValue'] = undefined;
   /**
-   * Example: What emotion do you want to rate?
+   * Ex: What emotion do you want to rate?
    * @member {String} helpText
    */
   exports.prototype['helpText'] = undefined;
   /**
-   * Example: 1
+   * Ex: 1
    * @member {Number} id
    */
   exports.prototype['id'] = undefined;
   /**
-   * Example: https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png
+   * Ex: https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png
    * @member {String} imageUrl
    */
   exports.prototype['imageUrl'] = undefined;
   /**
-   * Example: ion-happy-outline
+   * Ex: ion-happy-outline
    * @member {String} ionIcon
    */
   exports.prototype['ionIcon'] = undefined;
   /**
-   * Example: true
+   * Ex: true
    * @member {Boolean} manualTracking
    */
   exports.prototype['manualTracking'] = undefined;
   /**
-   * Example: 
+   * Unit: Variable category default unit.
    * @member {String} maximumAllowedValue
    */
   exports.prototype['maximumAllowedValue'] = undefined;
   /**
-   * Example: rating
+   * Ex: rating
    * @member {String} measurementSynonymSingularLowercase
    */
   exports.prototype['measurementSynonymSingularLowercase'] = undefined;
   /**
-   * Example: 
+   * Unit: Variable category default unit.
    * @member {String} minimumAllowedValue
    */
   exports.prototype['minimumAllowedValue'] = undefined;
   /**
-   * Example: Do you have any emotions that fluctuate regularly?  If so, add them so I can try to determine which factors are influencing them.
+   * Ex: Do you have any emotions that fluctuate regularly?  If so, add them so I can try to determine which factors are influencing them.
    * @member {String} moreInfo
    */
   exports.prototype['moreInfo'] = undefined;
@@ -272,42 +272,42 @@
    */
   exports.prototype['name'] = undefined;
   /**
-   * Example: 0
+   * Ex: 0
    * @member {Number} onsetDelay
    */
   exports.prototype['onsetDelay'] = undefined;
   /**
-   * Example: true
+   * Ex: true
    * @member {Boolean} outcome
    */
   exports.prototype['outcome'] = undefined;
   /**
-   * Example: img/variable_categories/emotions.png
+   * Ex: img/variable_categories/emotions.png
    * @member {String} pngPath
    */
   exports.prototype['pngPath'] = undefined;
   /**
-   * Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png
+   * Ex: https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png
    * @member {String} pngUrl
    */
   exports.prototype['pngUrl'] = undefined;
   /**
-   * Example: true
+   * Ex: true
    * @member {Boolean} public
    */
   exports.prototype['public'] = undefined;
   /**
-   * Example: img/variable_categories/emotions.svg
+   * Ex: img/variable_categories/emotions.svg
    * @member {String} svgPath
    */
   exports.prototype['svgPath'] = undefined;
   /**
-   * Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg
+   * Ex: https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg
    * @member {String} svgUrl
    */
   exports.prototype['svgUrl'] = undefined;
   /**
-   * Example: 1
+   * Ex: 1
    * @member {Number} updated
    */
   exports.prototype['updated'] = undefined;
@@ -317,16 +317,138 @@
    */
   exports.prototype['updatedTime'] = undefined;
   /**
-   * Example: Emotions
-   * @member {String} variableCategoryName
+   * Ex: Emotions, Treatments, Symptoms...
+   * @member {module:model/VariableCategory.VariableCategoryNameEnum} variableCategoryName
    */
   exports.prototype['variableCategoryName'] = undefined;
   /**
-   * Example: Emotion
+   * Ex: Emotion
    * @member {String} variableCategoryNameSingular
    */
   exports.prototype['variableCategoryNameSingular'] = undefined;
 
+
+  /**
+   * Allowed values for the <code>variableCategoryName</code> property.
+   * @enum {String}
+   * @readonly
+   */
+  exports.VariableCategoryNameEnum = {
+    /**
+     * value: "Activity"
+     * @const
+     */
+    "Activity": "Activity",
+    /**
+     * value: "Books"
+     * @const
+     */
+    "Books": "Books",
+    /**
+     * value: "Causes of Illness"
+     * @const
+     */
+    "Causes of Illness": "Causes of Illness",
+    /**
+     * value: "Cognitive Performance"
+     * @const
+     */
+    "Cognitive Performance": "Cognitive Performance",
+    /**
+     * value: "Conditions"
+     * @const
+     */
+    "Conditions": "Conditions",
+    /**
+     * value: "Emotions"
+     * @const
+     */
+    "Emotions": "Emotions",
+    /**
+     * value: "Environment"
+     * @const
+     */
+    "Environment": "Environment",
+    /**
+     * value: "Foods"
+     * @const
+     */
+    "Foods": "Foods",
+    /**
+     * value: "Goals"
+     * @const
+     */
+    "Goals": "Goals",
+    /**
+     * value: "Locations"
+     * @const
+     */
+    "Locations": "Locations",
+    /**
+     * value: "Miscellaneous"
+     * @const
+     */
+    "Miscellaneous": "Miscellaneous",
+    /**
+     * value: "Movies and TV"
+     * @const
+     */
+    "Movies and TV": "Movies and TV",
+    /**
+     * value: "Music"
+     * @const
+     */
+    "Music": "Music",
+    /**
+     * value: "Nutrients"
+     * @const
+     */
+    "Nutrients": "Nutrients",
+    /**
+     * value: "Payments"
+     * @const
+     */
+    "Payments": "Payments",
+    /**
+     * value: "Physical Activities"
+     * @const
+     */
+    "Physical Activities": "Physical Activities",
+    /**
+     * value: "Physique"
+     * @const
+     */
+    "Physique": "Physique",
+    /**
+     * value: "Sleep"
+     * @const
+     */
+    "Sleep": "Sleep",
+    /**
+     * value: "Social Interactions"
+     * @const
+     */
+    "Social Interactions": "Social Interactions",
+    /**
+     * value: "Software"
+     * @const
+     */
+    "Software": "Software",
+    /**
+     * value: "Symptoms"
+     * @const
+     */
+    "Symptoms": "Symptoms",
+    /**
+     * value: "Treatments"
+     * @const
+     */
+    "Treatments": "Treatments",
+    /**
+     * value: "Vital Signs"
+     * @const
+     */
+    "Vital Signs": "Vital Signs"  };
 
 
   return exports;

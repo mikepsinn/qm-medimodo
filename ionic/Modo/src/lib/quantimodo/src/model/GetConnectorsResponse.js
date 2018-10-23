@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Connector'], factory);
+    define(['ApiClient', 'model/DataSource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Connector'));
+    module.exports = factory(require('../ApiClient'), require('./DataSource'));
   } else {
     // Browser globals (root is window)
     if (!root.Quantimodo) {
       root.Quantimodo = {};
     }
-    root.Quantimodo.GetConnectorsResponse = factory(root.Quantimodo.ApiClient, root.Quantimodo.Connector);
+    root.Quantimodo.GetConnectorsResponse = factory(root.Quantimodo.ApiClient, root.Quantimodo.DataSource);
   }
-}(this, function(ApiClient, Connector) {
+}(this, function(ApiClient, DataSource) {
   'use strict';
 
 
@@ -43,16 +43,15 @@
    * Constructs a new <code>GetConnectorsResponse</code>.
    * @alias module:model/GetConnectorsResponse
    * @class
-   * @param status {Number} Status code
-   * @param success {Boolean} 
+   * @param description {String} Can be used as body of help info popup
+   * @param summary {String} Can be used as title in help info popup
    */
-  var exports = function(status, success) {
+  var exports = function(description, summary) {
     var _this = this;
 
 
-
-    _this['status'] = status;
-    _this['success'] = success;
+    _this['description'] = description;
+    _this['summary'] = summary;
   };
 
   /**
@@ -67,39 +66,32 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('connectors')) {
-        obj['connectors'] = ApiClient.convertToType(data['connectors'], [Connector]);
+        obj['connectors'] = ApiClient.convertToType(data['connectors'], [DataSource]);
       }
-      if (data.hasOwnProperty('message')) {
-        obj['message'] = ApiClient.convertToType(data['message'], 'String');
+      if (data.hasOwnProperty('description')) {
+        obj['description'] = ApiClient.convertToType(data['description'], 'String');
       }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'Number');
-      }
-      if (data.hasOwnProperty('success')) {
-        obj['success'] = ApiClient.convertToType(data['success'], 'Boolean');
+      if (data.hasOwnProperty('summary')) {
+        obj['summary'] = ApiClient.convertToType(data['summary'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {Array.<module:model/Connector>} connectors
+   * @member {Array.<module:model/DataSource>} connectors
    */
   exports.prototype['connectors'] = undefined;
   /**
-   * Message
-   * @member {String} message
+   * Can be used as body of help info popup
+   * @member {String} description
    */
-  exports.prototype['message'] = undefined;
+  exports.prototype['description'] = undefined;
   /**
-   * Status code
-   * @member {Number} status
+   * Can be used as title in help info popup
+   * @member {String} summary
    */
-  exports.prototype['status'] = undefined;
-  /**
-   * @member {Boolean} success
-   */
-  exports.prototype['success'] = undefined;
+  exports.prototype['summary'] = undefined;
 
 
 

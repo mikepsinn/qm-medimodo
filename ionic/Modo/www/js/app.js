@@ -20,7 +20,7 @@ angular.module('starter',
         'jtt_wikipedia',
         'angular-clipboard',
         'angular-google-analytics',
-        //'angular-google-adsense',
+        'angular-google-adsense',
         'ngMaterialDatePicker',
         'ngMaterial',
         'ngMessages',
@@ -30,11 +30,23 @@ angular.module('starter',
         //'ngOpbeat',
         'angular-web-notification',
         //'ui-iconpicker',
-        'ngFitText'
+        'ngFitText',
+        'ngMdIcons',
+        'angularMoment',
+        'open-chat-framework'
     ]
 )
-.run(["$ionicPlatform", "$ionicHistory", "$state", "$rootScope", "qmService", "qmLogService",
-    function($ionicPlatform, $ionicHistory, $state, $rootScope, qmService, qmLogService) {
+.run(["$ionicPlatform", "$ionicHistory", "$state", "$rootScope", "qmService", "ngChatEngine",
+    function($ionicPlatform, $ionicHistory, $state, $rootScope, qmService, ngChatEngine) {
+    if(typeof ChatEngineCore !== "undefined"){
+        $rootScope.ChatEngine = ChatEngineCore.create({
+            publishKey: 'pub-c-d8599c43-cecf-42ba-a72f-aa3b24653c2b',
+            subscribeKey: 'sub-c-6c6c021c-c4e2-11e7-9628-f616d8b03518'
+        }, {
+            debug: true,
+            globalChannel: 'chat-engine-angular-simple'
+        });
+    }
     if(!qm.urlHelper.onQMSubDomain()){qm.appsManager.loadPrivateConfigFromJsonFile();}
     qmService.showBlackRingLoader();
     if(qm.urlHelper.getParam('logout')){qm.storage.clear(); qmService.setUser(null);}
@@ -42,9 +54,10 @@ angular.module('starter',
     $ionicPlatform.ready(function() {
         //$ionicAnalytics.register();
         if(ionic.Platform.isIPad() || ionic.Platform.isIOS()){
-            window.onerror = function (errorMsg, url, lineNumber) {
-                errorMsg = 'Error: ' + errorMsg + ' Script: ' + url + ' Line: ' + lineNumber;
-                qmLogService.error(null, errorMsg);
+            window.onerror = function (error, url, lineNumber) {
+                var name = error.name || error.message || error;
+                var message = ' Script: ' + url + ' Line: ' + lineNumber;
+                qmLog.error(name, message, error);
             };
         }
         if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
@@ -53,6 +66,10 @@ angular.module('starter',
         if (window.StatusBar) {StatusBar.styleDefault();} // org.apache.cordova.statusbar required
     });
     $rootScope.goToState = function(stateName, stateParameters, ev){
+        if(stateName === 'toggleRobot'){
+            qm.robot.toggle();
+            return;
+        }
         if(stateName.indexOf('button') !== -1){
             var buttonName = stateName;
             /** @namespace $rootScope.appSettings.appDesign.floatingActionButton */
@@ -101,12 +118,12 @@ angular.module('starter',
 
     var intervalChecker = setInterval(function(){if(qm.getAppSettings()){clearInterval(intervalChecker);}}, 500);
     if (qm.urlHelper.getParam('existingUser') || qm.urlHelper.getParam('introSeen') || qm.urlHelper.getParam('refreshUser') || window.designMode) {
-        qmService.intro.setIntroSeen(true, "Url parms have existingUser or introSeen or refreshUser or desingMode");
+        qmService.intro.setIntroSeen(true, "Url parms have existingUser or introSeen or refreshUser or designMode");
         qm.storage.setItem(qm.items.onboarded, true);
     }
 }])
 .config(["$stateProvider", "$urlRouterProvider", "$compileProvider", "ionicTimePickerProvider", "ionicDatePickerProvider",
-    "$ionicConfigProvider", "AnalyticsProvider",
+    "$ionicConfigProvider", "AnalyticsProvider", "ngMdIconServiceProvider",
     //"$opbeatProvider",
     function($stateProvider, $urlRouterProvider, $compileProvider, ionicTimePickerProvider, ionicDatePickerProvider,
                  $ionicConfigProvider, AnalyticsProvider
@@ -152,9 +169,11 @@ angular.module('starter',
     var config_resolver = {
         appSettingsResponse: function($q){
             var deferred = $q.defer();
-            qm.appsManager.getAppSettingsLocallyOrFromApi(function(appSettings){
-                deferred.resolve(appSettings);
-            });
+            if(qm.appMode.isDevelopment()){ // TODO: Faster.  We might want to do this globally at some point
+                deferred.resolve(qm.staticData.appSettings);
+            } else {
+                qm.appsManager.getAppSettingsLocallyOrFromApi(function(appSettings){deferred.resolve(appSettings);});
+            }
             return deferred.promise;
         }
     };
@@ -176,16 +195,20 @@ angular.module('starter',
         closeOnSelect: false
     };
     ionicDatePickerProvider.configDatePicker(datePickerObj);
+
     window.qmStates = {
         "asNeededMeds": "app.asNeededMeds",
         "charts": "app.charts",
         "chartSearch": "app.chartSearch",
+        "chat": "app.chat",
         "configuration": "app.configuration",
         "configurationClientId": "app.configurationClientId",
         "contact": "app.contact",
+        "dataSharing": "app.dataSharing",
         "favoriteAdd": "app.favoriteAdd",
         "favorites": "app.favorites",
         "favoriteSearch": "app.favoriteSearch",
+        "feed": "app.feed",
         "feedback": "app.feedback",
         "help": "app.help",
         "history": "app.history",
@@ -227,6 +250,8 @@ angular.module('starter',
         "settings": "app.settings",
         "study": "app.study",
         "studies": "app.studies",
+        "studiesOpen": "app.studiesOpen",
+        "studiesCreated": "app.studiesCreated",
         "studyCreation": "app.studyCreation",
         "studyJoin": "app.studyJoin",
         "tabs": "app.tabs",
@@ -270,7 +295,9 @@ angular.module('starter',
             url: "/login",
             params: {
                 fromState : null,
-                fromUrl : null
+                fromUrl : null,
+                title: "Login",
+                ionIcon: ionIcons.login
             },
             views: {
                 'menuContent': {
@@ -280,10 +307,12 @@ angular.module('starter',
             }
         })
         .state(qmStates.intro, {
-            cache: true,
+            cache: false,
             url: "/intro",
             params: {
-                doNotRedirect: true
+                doNotRedirect: true,
+                title: "Intro",
+                ionIcon: ionIcons.login
             },
             views: {
                 'menuContent': {
@@ -296,6 +325,11 @@ angular.module('starter',
         .state(qmStates.track, {
             url: "/track",
             cache: false,
+            params: {
+                showAds: true,
+                title: "Track Primary Outcome",
+                ionIcon: ionIcons.recordMeasurement
+            },
             views: {
                 'menuContent': {
                     templateUrl: "templates/track-primary-outcome-variable.html",
@@ -306,6 +340,7 @@ angular.module('starter',
         .state(qmStates.measurementAddSearch, {
             url: "/measurement-add-search",
             params: {
+                showAds: true,
                 reminder : null,
                 fromState : null,
                 measurement : null,
@@ -319,7 +354,9 @@ angular.module('starter',
                     manualTracking: true
                 },
                 hideNavigationMenu: null,
-                doneState: null
+                doneState: null,
+                title: "Select a Variable",
+                ionIcon: ionIcons.search
             },
             views: {
                 'menuContent': {
@@ -331,6 +368,7 @@ angular.module('starter',
         .state(qmStates.reminderSearch, {
             url: "/reminder-search",
             params: {
+                showAds: true,
                 variableCategoryName : null,
                 fromState : null,
                 fromUrl : null,
@@ -345,7 +383,9 @@ angular.module('starter',
                 },
                 hideNavigationMenu: null,
                 skipReminderSettingsIfPossible: null,
-                doneState: null
+                doneState: null,
+                title: "Select a Variable",
+                ionIcon: ionIcons.search
             },
             views: {
                 'menuContent': {
@@ -357,6 +397,7 @@ angular.module('starter',
         .state(qmStates.favoriteSearch, {
             url: "/favorite-search",
             params: {
+                showAds: true,
                 variableCategoryName : null,
                 fromState : null,
                 fromUrl : null,
@@ -371,7 +412,9 @@ angular.module('starter',
                     manualTracking: true
                 },
                 hideNavigationMenu: null,
-                doneState: null
+                doneState: null,
+                title: "Select a Variable",
+                ionIcon: ionIcons.search
             },
             views: {
                 'menuContent': {
@@ -382,8 +425,10 @@ angular.module('starter',
         })
         .state(qmStates.measurementAdd, {
             url: "/measurement-add",
-            cache: false,
+            //cache: false,  TODO: Why was this false?
+            cache: true,
             params: {
+                showAds: true,
                 trackingReminder: null,
                 reminderNotification: null,
                 fromState : null,
@@ -391,7 +436,9 @@ angular.module('starter',
                 measurement : null,
                 variableObject : null,
                 variableName: null,
-                currentMeasurementHistory: null
+                currentMeasurementHistory: null,
+                title: "Record a Measurement",
+                ionIcon: ionIcons.recordMeasurement
             },
             views: {
                 'menuContent': {
@@ -404,12 +451,15 @@ angular.module('starter',
             url: "/measurement-add-variable-name/:variableName",
             cache: false,
             params: {
+                showAds: true,
                 trackingReminder: null,
                 reminderNotification: null,
                 fromState : null,
                 fromUrl : null,
                 measurement : null,
-                variableObject : null
+                variableObject : null,
+                title: "Record a Measurement",
+                ionIcon: ionIcons.recordMeasurement
             },
             views: {
                 'menuContent': {
@@ -422,13 +472,16 @@ angular.module('starter',
             url: "/variable-settings",
             cache: false,
             params: {
+                showAds: true,
                 reminder : null,
                 fromState : null,
                 fromUrl : null,
                 measurement : null,
                 variableObject : null,
                 variableName : null,
-                variableId : null
+                variableId : null,
+                title: "Variable Settings",
+                ionIcon: ionIcons.settings
             },
             views: {
                 'menuContent': {
@@ -441,12 +494,15 @@ angular.module('starter',
             url: "/variable-settings/:variableName",
             cache: false,
             params: {
+                showAds: true,
                 reminder : null,
                 fromState : null,
                 fromUrl : null,
                 measurement : null,
                 variableObject : null,
-                variableName : null
+                variableName : null,
+                title: "Variable Settings",
+                ionIcon: ionIcons.settings
             },
             views: {
                 'menuContent': {
@@ -458,6 +514,17 @@ angular.module('starter',
         .state(qmStates.import, {
             url: "/import",
             cache: false,
+            params: {
+                showAds: true,
+                reminder : null,
+                fromState : null,
+                fromUrl : null,
+                measurement : null,
+                variableObject : null,
+                variableName : null,
+                title: "Import Data",
+                ionIcon: ionIcons.importData
+            },
             views: {
                 'menuContent': {
                     templateUrl: "templates/import-data.html",
@@ -469,7 +536,10 @@ angular.module('starter',
             url: "/import-native",
             cache: false,
             params: {
-                native: true
+                showAds: true,
+                native: true,
+                title: "Import Data",
+                ionIcon: ionIcons.importData
             },
             views: {
                 'menuContent': {
@@ -482,6 +552,7 @@ angular.module('starter',
             url: "/chart-search",
             cache: false,
             params: {
+                showAds: true,
                 variableCategoryName: null,
                 fromState: null,
                 fromUrl: null,
@@ -494,7 +565,9 @@ angular.module('starter',
                     includePublic: false
                     //manualTracking: false  Shouldn't do this because it will only include explicitly false variables
                 },
-                hideNavigationMenu: null
+                hideNavigationMenu: null,
+                title: "Select a Variable",
+                ionIcon: ionIcons.search
             },
             views: {
                 'menuContent': {
@@ -507,6 +580,7 @@ angular.module('starter',
             url: "/predictor-search",
             cache: false,
             params: {
+                showAds: true,
                 title: "Outcomes", // Gets cut off on iPod if any longer
                 variableSearchPlaceholderText: "Search for an outcome...",
                 helpText: "Search for an outcome like overall mood or a symptom that you want to know the causes of...",
@@ -525,7 +599,8 @@ angular.module('starter',
                     sort: "-numberOfCorrelationsAsEffect",
                     outcome: true
                 },
-                hideNavigationMenu: null
+                hideNavigationMenu: null,
+                ionIcon: ionIcons.search
             },
             views: {
                 'menuContent': {
@@ -538,6 +613,7 @@ angular.module('starter',
             url: "/tagee-search",
             cache: false,
             params: {
+                showAds: true,
                 userTagVariableObject: null,
                 title: "Select Tagee", // Gets cut off on iPod if any longer
                 variableSearchPlaceholderText: "Search for a variable to tag...",
@@ -554,7 +630,8 @@ angular.module('starter',
                     includePublic: true
                 },
                 hideNavigationMenu: null,
-                doneState: null
+                doneState: null,
+                ionIcon: ionIcons.search
             },
             views: {
                 'menuContent': {
@@ -567,6 +644,7 @@ angular.module('starter',
             url: "/tag-search",
             cache: false,
             params: {
+                showAds: true,
                 userTaggedVariableObject: null,
                 title: "Tags", // Gets cut off on iPod if any longer
                 variableSearchPlaceholderText: "Search for a tag...",
@@ -583,7 +661,8 @@ angular.module('starter',
                     includePublic: true
                 },
                 hideNavigationMenu: null,
-                doneState: null
+                doneState: null,
+                ionIcon: ionIcons.search
             },
             views: {
                 'menuContent': {
@@ -596,6 +675,7 @@ angular.module('starter',
             url: "/tag-add",
             cache: false,
             params: {
+                showAds: true,
                 tagConversionFactor: null,
                 fromState : null,
                 fromStateParams: null,
@@ -607,7 +687,9 @@ angular.module('starter',
                     "check the label every time.  I can just tag Candy Bar and Lollypop with the amount sugar. Then during " +
                     "analysis the sugar from those items will be included.  Additionally if I have multiple variables that " +
                     "are basically the same thing like maybe a drug and it's generic name, I can tag those and then the " +
-                    "measurements from both variables will be included in the analysis."
+                    "measurements from both variables will be included in the analysis.",
+                title: "Tag a Variable",
+                ionIcon: ionIcons.tag
             },
             views: {
                 'menuContent': {
@@ -620,6 +702,7 @@ angular.module('starter',
             url: "/outcome-search",
             cache: false,
             params: {
+                showAds: true,
                 title: "Predictors", // Gets cut off on iPod if any longer
                 variableSearchPlaceholderText: "Search for an predictor...",
                 helpText: "Search for a predictor like a food or treatment that you want to know the effects of...",
@@ -637,7 +720,8 @@ angular.module('starter',
                     numberOfCorrelationsAsCause: '(gt)1',
                     sort: "-numberOfCorrelationsAsCause"
                 },
-                hideNavigationMenu: null
+                hideNavigationMenu: null,
+                ionIcon: ionIcons.search
             },
             views: {
                 'menuContent': {
@@ -650,6 +734,7 @@ angular.module('starter',
             url: "/search-variables-with-user-predictors",
             cache: false,
             params: {
+                showAds: true,
                 variableCategoryName: null,
                 nextState: qmStates.predictorsAll,
                 doNotShowAddVariableButton: true,
@@ -659,7 +744,9 @@ angular.module('starter',
                     //manualTracking: false,  Shouldn't do this because it will only include explicitly false variables
                     numberOfUserCorrelations: '(gt)1'
                 },
-                hideNavigationMenu: null
+                hideNavigationMenu: null,
+                title: "Select a Variable",
+                ionIcon: ionIcons.search
             },
             views: {
                 'menuContent': {
@@ -672,6 +759,7 @@ angular.module('starter',
             url: "/search-variables-with-common-predictors",
             cache: false,
             params: {
+                showAds: true,
                 variableCategoryName: null,
                 nextState: qmStates.predictorsAll,
                 doNotShowAddVariableButton: true,
@@ -681,7 +769,9 @@ angular.module('starter',
                     //manualTracking: false  Shouldn't do this because it will only include explicitly false variables
                     numberOfAggregatedCorrelations: '(gt)1'
                 },
-                hideNavigationMenu: null
+                hideNavigationMenu: null,
+                title: "Select a Variable",
+                ionIcon: ionIcons.search
             },
             views: {
                 'menuContent': {
@@ -694,13 +784,16 @@ angular.module('starter',
             url: "/charts/:variableName",
             cache: false,
             params: {
+                showAds: true,
                 trackingReminder : null,
                 variableObject: null,
                 measurementInfo: null,
                 noReload: false,
                 fromState : null,
                 fromUrl : null,
-                refresh: null
+                refresh: null,
+                title: "Charts",
+                ionIcon: ionIcons.charts
             },
             views: {
                 'menuContent': {
@@ -712,63 +805,119 @@ angular.module('starter',
         .state(qmStates.studies, {
             url: "/studies",
             params: {
+                showAds: true,
                 aggregated: null,
                 variableObject : null,
                 causeVariableName: null,
                 effectVariableName: null,
                 requestParams : {
                     correlationCoefficient: null
-                }
+                },
+                title: "Studies",
+                ionIcon: ionIcons.study
             },
             cache: true,
             views: {
                 'menuContent': {
-                    templateUrl: "templates/predictors-list.html",
-                    controller: 'PredictorsCtrl'
+                    templateUrl: "templates/studies-list-page.html",
+                    controller: 'StudiesCtrl'
+                }
+            }
+        })
+        .state(qmStates.studiesOpen, {
+            url: "/studies/open",
+            params: {
+                showAds: true,
+                aggregated: null,
+                variableObject : null,
+                causeVariableName: null,
+                effectVariableName: null,
+                open: true,
+                requestParams : {
+                    correlationCoefficient: null
+                },
+                title: "Open Studies",
+                ionIcon: ionIcons.study
+            },
+            cache: true,
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/studies-list-page.html",
+                    controller: 'StudiesCtrl'
+                }
+            }
+        })
+        .state(qmStates.studiesCreated, {
+            url: "/studies/created",
+            params: {
+                showAds: true,
+                aggregated: null,
+                variableObject : null,
+                causeVariableName: null,
+                effectVariableName: null,
+                created: true,
+                requestParams : {
+                    correlationCoefficient: null
+                },
+                title: "Your Studies",
+                ionIcon: ionIcons.study
+            },
+            cache: true,
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/studies-list-page.html",
+                    controller: 'StudiesCtrl'
                 }
             }
         })
         .state(qmStates.predictorsAll, {
             url: "/predictors/:effectVariableName",
             params: {
+                showAds: true,
                 aggregated: false,
                 variableObject : null,
                 causeVariableName: null,
                 effectVariableName: null,
                 requestParams : {
                     correlationCoefficient: null
-                }
+                },
+                title: "Top Predictors",
+                ionIcon: ionIcons.study
             },
             cache: true,
             views: {
                 'menuContent': {
-                    templateUrl: "templates/predictors-list.html",
-                    controller: 'PredictorsCtrl'
+                    templateUrl: "templates/studies-list-page.html",
+                    controller: 'StudiesCtrl'
                 }
             }
         })
         .state(qmStates.outcomesAll, {
             url: "/outcomes/:causeVariableName",
             params: {
+                showAds: true,
                 aggregated: false,
                 variableObject : null,
                 causeVariableName: null,
                 effectVariableName: null,
                 requestParams : {
                     correlationCoefficient: null
-                }
+                },
+                title: "Top Outcomes",
+                ionIcon: ionIcons.study
             },
             cache: true,
             views: {
                 'menuContent': {
-                    templateUrl: "templates/predictors-list.html",
-                    controller: 'PredictorsCtrl'
+                    templateUrl: "templates/studies-list-page.html",
+                    controller: 'StudiesCtrl'
                 }
             }
         })
         .state(qmStates.predictorsPositive, {
             url: "/predictors-positive",
             params: {
+                showAds: true,
                 aggregated: false,
                 valence: 'positive',
                 variableObject : null,
@@ -777,19 +926,22 @@ angular.module('starter',
                 fallBackToPrimaryOutcome: true,
                 requestParams : {
                     correlationCoefficient: '(gt)0'
-                }
+                },
+                title: "Positive Predictors",
+                ionIcon: ionIcons.study
             },
             cache: true,
             views: {
                 'menuContent': {
-                    templateUrl: "templates/predictors-list.html",
-                    controller: 'PredictorsCtrl'
+                    templateUrl: "templates/studies-list-page.html",
+                    controller: 'StudiesCtrl'
                 }
             }
         })
         .state(qmStates.predictorsPositiveVariable, {
             url: "/predictors-positive-variable/:effectVariableName",
             params: {
+                showAds: true,
                 aggregated: false,
                 valence: 'positive',
                 variableObject : null,
@@ -798,19 +950,22 @@ angular.module('starter',
                 fallBackToPrimaryOutcome: true,
                 requestParams : {
                     correlationCoefficient: '(gt)0'
-                }
+                },
+                title: "Positive Predictors",
+                ionIcon: ionIcons.study
             },
             cache: true,
             views: {
                 'menuContent': {
-                    templateUrl: "templates/predictors-list.html",
-                    controller: 'PredictorsCtrl'
+                    templateUrl: "templates/studies-list-page.html",
+                    controller: 'StudiesCtrl'
                 }
             }
         })
         .state(qmStates.predictorsNegative, {
             url: "/predictors-negative",
             params: {
+                showAds: true,
                 aggregated: false,
                 valence: 'negative',
                 variableObject : null,
@@ -819,19 +974,22 @@ angular.module('starter',
                 fallBackToPrimaryOutcome: true,
                 requestParams : {
                     correlationCoefficient: '(lt)0'
-                }
+                },
+                title: "Negative Predictors",
+                ionIcon: ionIcons.study
             },
             cache: true,
             views: {
                 'menuContent': {
-                    templateUrl: "templates/predictors-list.html",
-                    controller: 'PredictorsCtrl'
+                    templateUrl: "templates/studies-list-page.html",
+                    controller: 'StudiesCtrl'
                 }
             }
         })
         .state(qmStates.predictorsNegativeVariable, {
             url: "/predictors-negative-variable/:effectVariableName",
             params: {
+                showAds: true,
                 aggregated: false,
                 valence: 'negative',
                 variableObject : null,
@@ -840,19 +998,22 @@ angular.module('starter',
                 fallBackToPrimaryOutcome: true,
                 requestParams : {
                     correlationCoefficient: '(lt)0'
-                }
+                },
+                title: "Negative Predictors",
+                ionIcon: ionIcons.study
             },
             cache: true,
             views: {
                 'menuContent': {
-                    templateUrl: "templates/predictors-list.html",
-                    controller: 'PredictorsCtrl'
+                    templateUrl: "templates/studies-list-page.html",
+                    controller: 'StudiesCtrl'
                 }
             }
         })
         .state(qmStates.predictorsUser, {
             url: "/predictors/user/:effectVariableName",
             params: {
+                showAds: true,
                 aggregated: false,
                 variableObject : null,
                 causeVariableName: null,
@@ -860,19 +1021,22 @@ angular.module('starter',
                 fallBackToPrimaryOutcome: true,
                 requestParams : {
                     correlationCoefficient: null
-                }
+                },
+                title: "Your Predictors",
+                ionIcon: ionIcons.study
             },
             cache: true,
             views: {
                 'menuContent': {
-                    templateUrl: "templates/predictors-list.html",
-                    controller: 'PredictorsCtrl'
+                    templateUrl: "templates/studies-list-page.html",
+                    controller: 'StudiesCtrl'
                 }
             }
         })
         .state(qmStates.predictorsAggregated, {
             url: "/predictors/aggregated/:effectVariableName",
             params: {
+                showAds: true,
                 aggregated: true,
                 variableObject : null,
                 fallBackToPrimaryOutcome: true,
@@ -880,13 +1044,15 @@ angular.module('starter',
                     causeVariableName: null,
                     effectVariableName: null,
                     correlationCoefficient: null
-                }
+                },
+                title: "Common Predictors",
+                ionIcon: ionIcons.study
             },
             cache: true,
             views: {
                 'menuContent': {
-                    templateUrl: "templates/predictors-list.html",
-                    controller: 'PredictorsCtrl'
+                    templateUrl: "templates/studies-list-page.html",
+                    controller: 'StudiesCtrl'
                 }
             }
         })
@@ -894,10 +1060,13 @@ angular.module('starter',
             cache: true,
             url: "/study",
             params: {
-                correlationObject: null,
+                showAds: true,
                 causeVariableName: null,
                 effectVariableName: null,
-                refresh: null
+                refresh: null,
+                study: null,
+                title: "Study",
+                ionIcon: ionIcons.study
             },
             views: {
                 'menuContent': {
@@ -907,10 +1076,14 @@ angular.module('starter',
             }
         })
         .state(qmStates.studyJoin, {
-            cache: false,
+            cache: true,
             url: "/study-join",
             params: {
-                correlationObject: null
+                causeVariableName: null,
+                effectVariableName: null,
+                study: null,
+                title: "Join Study",
+                ionIcon: ionIcons.study
             },
             views: {
                 'menuContent': {
@@ -920,12 +1093,15 @@ angular.module('starter',
             }
         })
         .state(qmStates.studyCreation, {
-            cache: false,
+            cache: true,
             url: "/study-creation",
             params: {
-                correlationObject: null,
+                showAds: true,
                 causeVariable: null,
-                effectVariable: null
+                effectVariable: null,
+                study: null,
+                title: "Create Study",
+                ionIcon: ionIcons.study
             },
             views: {
                 'menuContent': {
@@ -936,6 +1112,10 @@ angular.module('starter',
         })
         .state(qmStates.settings, {
             url: "/settings",
+            params: {
+                title: "Settings",
+                ionIcon: ionIcons.settings
+            },
             views: {
                 'menuContent': {
                     templateUrl: "templates/settings.html",
@@ -945,6 +1125,10 @@ angular.module('starter',
         })
         .state(qmStates.notificationPreferences, {
             url: "/notificationPreferences",
+            params: {
+                title: "Notification Settings",
+                ionIcon: ionIcons.androidNotifications
+            },
             views: {
                 'menuContent': {
                     templateUrl: "templates/notification-preferences.html",
@@ -954,6 +1138,10 @@ angular.module('starter',
         })
         .state(qmStates.map, {
             url: "/map",
+            params: {
+                title: "Map",
+                ionIcon: ionIcons.map
+            },
             views: {
                 'menuContent': {
                     templateUrl: "templates/map.html",
@@ -963,6 +1151,10 @@ angular.module('starter',
         })
         .state(qmStates.help, {
             url: "/help",
+            params: {
+                title: "Help",
+                ionIcon: ionIcons.help
+            },
             views: {
                 'menuContent': {
                     templateUrl: "templates/help.html",
@@ -972,6 +1164,10 @@ angular.module('starter',
         })
         .state(qmStates.feedback, {
             url: "/feedback",
+            params: {
+                title: "Feedback",
+                ionIcon: ionIcons.speakerphone
+            },
             views: {
                 'menuContent': {
                     templateUrl: "templates/feedback.html",
@@ -981,6 +1177,10 @@ angular.module('starter',
         })
         .state(qmStates.contact, {
             url: "/contact",
+            params: {
+                title: "Feedback",
+                ionIcon: ionIcons.androidChat
+            },
             views: {
                 'menuContent': {
                     templateUrl: "templates/contact.html",
@@ -1003,12 +1203,15 @@ angular.module('starter',
         .state(qmStates.history, {
             url: "/history",
             params: {
+                showAds: true,
                 updatedMeasurementHistory: null,
                 variableObject : null,
                 refresh: null,
                 variableCategoryName: null,
                 connectorName: null,
-                sourceName: null
+                sourceName: null,
+                title: "History",
+                ionIcon: ionIcons.history
             },
             views: {
                 'menuContent': {
@@ -1021,11 +1224,14 @@ angular.module('starter',
             url: "/history-all",
             cache: true,
             params: {
+                showAds: true,
                 variableCategoryName: null,
                 connectorName: null,
                 sourceName: null,
                 updatedMeasurementHistory: null,
-                refresh: null
+                refresh: null,
+                title: "History",
+                ionIcon: ionIcons.history
             },
             views: {
                 'menuContent': {
@@ -1038,8 +1244,11 @@ angular.module('starter',
             url: "/history-all-category/:variableCategoryName",
             cache: true,
             params: {
+                showAds: true,
                 updatedMeasurementHistory: null,
-                refresh: null
+                refresh: null,
+                title: "History",
+                ionIcon: ionIcons.history
             },
             views: {
                 'menuContent': {
@@ -1052,9 +1261,12 @@ angular.module('starter',
             url: "/history-all-variable/:variableName",
             cache: true,
             params: {
+                showAds: true,
                 variableObject : null,
                 updatedMeasurementHistory: null,
-                refresh: null
+                refresh: null,
+                title: "History",
+                ionIcon: ionIcons.history
             },
             views: {
                 'menuContent': {
@@ -1067,6 +1279,7 @@ angular.module('starter',
             url: "/reminders-inbox",
             cache: true,
             params: {
+                showAds: true,
                 title: 'Reminder Inbox',
                 reminderFrequency: null,
                 unit: null,
@@ -1074,7 +1287,8 @@ angular.module('starter',
                 dateTime : null,
                 value : null,
                 fromUrl : null,
-                showHelpCards: true
+                showHelpCards: true,
+                ionIcon: ionIcons.inbox
             },
             views: {
                 'menuContent': {
@@ -1095,7 +1309,8 @@ angular.module('starter',
                 value : null,
                 fromUrl : null,
                 showHelpCards: false,
-                hideNavigationMenu: true
+                hideNavigationMenu: true,
+                ionIcon: ionIcons.inbox
             },
             views: {
                 'menuContent': {
@@ -1108,12 +1323,15 @@ angular.module('starter',
             url: "/favorites",
             cache: false,
             params: {
+                showAds: true,
                 reminderFrequency: 0,
                 unit: null,
                 variableName : null,
                 dateTime : null,
                 value : null,
-                fromUrl : null
+                fromUrl : null,
+                title: "Favorites",
+                ionIcon: ionIcons.star
             },
             views: {
                 'menuContent': {
@@ -1125,6 +1343,10 @@ angular.module('starter',
         .state(qmStates.configurationClientId, {
             cache: true,
             url: "/configuration/:clientId",
+            params: {
+                title: "App Builder",
+                ionIcon: ionIcons.settings
+            },
             views: {
                 'menuContent': {
                     templateUrl: "../../app-configuration/templates/configuration.html",
@@ -1135,6 +1357,10 @@ angular.module('starter',
         .state(qmStates.configuration, {
             cache: true,
             url: "/configuration",
+            params: {
+                title: "App Builder",
+                ionIcon: ionIcons.settings
+            },
             views: {
                 'menuContent': {
                     templateUrl: "../../app-configuration/templates/configuration.html",
@@ -1145,12 +1371,15 @@ angular.module('starter',
         .state(qmStates.remindersInboxToday, {
             url: "/reminders-inbox-today",
             params: {
+                showAds: true,
                 unit: null,
                 variableName : null,
                 dateTime : null,
                 value : null,
                 fromUrl : null,
-                today : true
+                today : true,
+                title: "Inbox",
+                ionIcon: ionIcons.inbox
             },
             views: {
                 'menuContent': {
@@ -1162,11 +1391,13 @@ angular.module('starter',
         .state(qmStates.manageScheduledMeds, {
             url: "/manage-scheduled-meds",
             params: {
+                showAds: true,
                 title: "Manage Scheduled Meds",
                 helpText: "Here you can add and manage your scheduled medications.  Long-press on a medication for more options.  You can drag down to refresh.",
                 addButtonText: "Add scheduled medication",
                 variableCategoryName : 'Treatments',
-                trackingReminders: null
+                trackingReminders: null,
+                ionIcon: ionIcons.reminder
             },
             views: {
                 'menuContent': {
@@ -1178,10 +1409,12 @@ angular.module('starter',
         .state(qmStates.todayMedSchedule, {
             url: "/today-med-schedule",
             params: {
+                showAds: true,
                 title: "Today's Med Schedule",
                 helpText: "Here you can see and record today's scheduled doses.",
                 today : true,
-                variableCategoryName : 'Treatments'
+                variableCategoryName : 'Treatments',
+                ionIcon: ionIcons.reminder
             },
             views: {
                 'menuContent': {
@@ -1193,8 +1426,10 @@ angular.module('starter',
         .state(qmStates.asNeededMeds, {
             url: "/as-needed-meds",
             params: {
+                showAds: true,
                 title: "As Needed Meds",
-                variableCategoryName : 'Treatments'
+                variableCategoryName : 'Treatments',
+                ionIcon: ionIcons.star
             },
             views: {
                 'menuContent': {
@@ -1213,8 +1448,11 @@ angular.module('starter',
                 }
             },
             params: {
+                showAds: true,
                 variableCategoryName : null,
-                trackingReminders: null
+                trackingReminders: null,
+                title: "Manage Reminders",
+                ionIcon: ionIcons.reminder
             }
         })
         .state(qmStates.remindersManageCategory, {
@@ -1227,7 +1465,10 @@ angular.module('starter',
                 }
             },
             params: {
-                trackingReminders: null
+                showAds: true,
+                trackingReminders: null,
+                title: "Manage Reminders",
+                ionIcon: ionIcons.reminder
             }
         })
         .state(qmStates.remindersList, {
@@ -1240,8 +1481,11 @@ angular.module('starter',
                 }
             },
             params: {
+                showAds: true,
                 variableCategoryName : null,
-                trackingReminders: null
+                trackingReminders: null,
+                title: "Manage Reminders",
+                ionIcon: ionIcons.reminder
             }
         })
         .state(qmStates.remindersListCategory, {
@@ -1254,15 +1498,21 @@ angular.module('starter',
                 }
             },
             params: {
-                trackingReminders: null
+                showAds: true,
+                trackingReminders: null,
+                title: "Manage Reminders",
+                ionIcon: ionIcons.reminder
             }
         })
         .state(qmStates.variableList, {
             cache: true,
             url: "/variable-list",
             params: {
+                showAds: true,
                 variableCategoryName : null,
-                trackingReminders: null
+                trackingReminders: null,
+                title: "Manage Variables",
+                ionIcon: ionIcons.reminder
             },
             views: {
                 'menuContent': {
@@ -1275,7 +1525,10 @@ angular.module('starter',
             cache: true,
             url: "/variable-list-category/:variableCategoryName",
             params: {
-                trackingReminders: null
+                showAds: true,
+                trackingReminders: null,
+                title: "Manage Variables",
+                ionIcon: ionIcons.reminder
             },
             views: {
                 'menuContent': {
@@ -1288,16 +1541,26 @@ angular.module('starter',
             url: "/reminder-add/:variableName",
             cache: false,
             params: {
-                variableCategoryName : null,
-                variableName : null,
-                reminder : null,
+                doneState: null,
+                favorite: false,
                 fromState : null,
                 fromUrl : null,
+                ionIcon: ionIcons.reminder,
                 measurement : null,
+                reminder : null,
+                skipReminderSettingsIfPossible: null,
+                stopTrackingDate: null,
+                startTrackingData: null,
+                title: "Add Reminder",
+                trackingReminder : null,
+                trackingReminderId : null,
+                unitAbbreviatedName: null,
+                unitName: null,
+                unitId: null,
+                variableId : null,
+                variableCategoryName : null,
+                variableName : null,
                 variableObject : null,
-                favorite: false,
-                doneState: null,
-                skipReminderSettingsIfPossible: null
             },
             views: {
                 'menuContent': {
@@ -1309,7 +1572,10 @@ angular.module('starter',
         .state(qmStates.onboarding, {
             url: "/onboarding",
             cache: true,
-            params: { },
+            params: {
+                title: "Getting Started",
+                ionIcon: ionIcons.reminder
+            },
             views: {
                 'menuContent': {
                     templateUrl: "templates/onboarding-page.html",
@@ -1321,12 +1587,28 @@ angular.module('starter',
             url: "/upgrade",
             cache: true,
             params: {
-                litePlanState: null
+                litePlanState: null,
+                title: "Upgrade",
+                ionIcon: ionIcons.star
             },
             views: {
                 'menuContent': {
                     templateUrl: "templates/upgrade-page-cards.html",
                     controller: 'UpgradeCtrl'
+                }
+            }
+        })
+        .state(qmStates.dataSharing, {
+            url: "/data-sharing",
+            cache: true,
+            params: {
+                title: "Manage Data Sharing",
+                ionIcon: ionIcons.locked
+            },
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/data-sharing-page.html",
+                    controller: 'DataSharingCtrl'
                 }
             }
         })
@@ -1338,6 +1620,34 @@ angular.module('starter',
                 'menuContent': {
                     templateUrl: "templates/tabs.html",
                     controller: 'TabsCtrl'
+                }
+            }
+        })
+        .state(qmStates.chat, {
+            url: "/chat",
+            cache: true,
+            params: {
+                title: "Talk to Dr. Modo",
+                ionIcon: ionIcons.chatbox
+            },
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/chat.html",
+                    controller: 'ChatCtrl'
+                }
+            }
+        })
+        .state(qmStates.feed, {
+            url: "/feed",
+            cache: true,
+            params: {
+                title: "Talk to Dr. Modo",
+                ionIcon: ionIcons.chatbox
+            },
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/feed.html",
+                    controller: 'FeedCtrl'
                 }
             }
         })
@@ -1354,7 +1664,9 @@ angular.module('starter',
                 variableObject : null,
                 favorite: true,
                 doneState: null,
-                skipReminderSettingsIfPossible: null
+                skipReminderSettingsIfPossible: null,
+                title: "Add Favorite",
+                ionIcon: ionIcons.star
             },
             views: {
                 'menuContent': {
@@ -1372,7 +1684,11 @@ angular.module('starter',
         $urlRouterProvider.otherwise('/app/onboarding');
     } else {
         //console.debug("Intro seen so setting default route to inbox");
-        $urlRouterProvider.otherwise('/app/reminders-inbox');
+        if(qm.appMode.isBuilder()){
+            $urlRouterProvider.otherwise('/app/configuration');
+        } else {
+            $urlRouterProvider.otherwise('/app/reminders-inbox');
+        }
     }
 }])
 .component("mdFabProgress", {
@@ -1415,3 +1731,12 @@ angular.module('exceptionOverride', []).factory('$exceptionHandler', function ()
         }
     };
 });
+angular.module('open-chat-framework', [])
+.service('ngChatEngine', ['$timeout', function($timeout) {
+    this.bind = function(ChatEngine) {
+        // updates angular when anything changes
+        ChatEngine.onAny(function(event, payload) {
+            $timeout(function() {});
+        });
+    }
+}]);

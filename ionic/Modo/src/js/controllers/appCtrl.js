@@ -2,41 +2,25 @@ angular.module('starter')// Parent Controller - This controller runs before ever
 .controller('AppCtrl', ["$scope", "$timeout", "$ionicPopover", "$ionicLoading", "$state", "$ionicHistory", "$rootScope",
     "$ionicPopup", "$ionicSideMenuDelegate", "$ionicPlatform", "$injector", "qmService", "qmLogService",
     "$cordovaOauth", "clipboard", "$ionicActionSheet", "Analytics", "$locale", "$mdDialog", "$mdToast", "$sce",
-    "wikipediaFactory", "appSettingsResponse", function($scope, $timeout, $ionicPopover, $ionicLoading, $state, $ionicHistory, $rootScope,
+    "wikipediaFactory", "appSettingsResponse",  "$stateParams",
+    function($scope, $timeout, $ionicPopover, $ionicLoading, $state, $ionicHistory, $rootScope,
                                 $ionicPopup, $ionicSideMenuDelegate, $ionicPlatform, $injector, qmService, qmLogService,
                                 $cordovaOauth, clipboard, $ionicActionSheet, Analytics, //$ionicDeploy,
-                                $locale, $mdDialog, $mdToast, $sce, wikipediaFactory, appSettingsResponse) {
+                                $locale, $mdDialog, $mdToast, $sce, wikipediaFactory, appSettingsResponse, $stateParams) {
     $scope.controller_name = "AppCtrl";
     qmService.initializeApplication(appSettingsResponse);
-    qmService.numberOfPendingNotifications = null;
+    qm.notifications.numberOfPendingNotifications = null;
     $scope.$on('$ionicView.enter', function (e) {
-        qmLogService.debug('appCtrl enter in state ' + $state.current.name + ' and url is ' + window.location.href, null);
-        //$scope.showHelpInfoPopupIfNecessary(e);
-        if (e.targetScope && e.targetScope.controller_name && e.targetScope.controller_name === "TrackPrimaryOutcomeCtrl") {
-            $scope.showCalendarButton = true;
-        } else { $scope.showCalendarButton = false; }
-        // Show "..." button on top right
-        if (e.targetScope && e.targetScope.controller_name &&
-            e.targetScope.controller_name === "MeasurementAddCtrl" ||
-            e.targetScope.controller_name === "ReminderAddCtrl" ||
-            e.targetScope.controller_name === "FavoriteAddCtrl" ||
-            e.targetScope.controller_name === "ChartsPageCtrl" ||
-            e.targetScope.controller_name === "VariableSettingsCtrl" ||
-            e.targetScope.controller_name === "RemindersInboxCtrl" ||
-            e.targetScope.controller_name === "RemindersManageCtrl" ||
-            e.targetScope.controller_name === "StudyCtrl" ||
-            e.targetScope.controller_name === "PredictorsCtrl" ||
-            e.targetScope.controller_name === "historyAllMeasurementsCtrl" ||
-            e.targetScope.controller_name === "ConfigurationCtrl"
-        ) { $scope.showMoreMenuButton = true;
-        } else { $scope.showMoreMenuButton = false; }
+        qmLog.debug('appCtrl enter in state ' + $state.current.name + ' and url is ' + window.location.href);
     });
     $scope.$on('$ionicView.afterEnter', function (e) {
         qmLog.info($scope.controller_name + ".afterEnter so posting queued notifications if any");
-        qmService.postTrackingReminderNotificationsDeferred();
+        qm.notifications.postNotifications();
         qmService.refreshUserUsingAccessTokenInUrlIfNecessary();
+        $rootScope.setMicEnabled(qm.mic.getMicEnabled());
     });
     $scope.closeMenu = function () { $ionicSideMenuDelegate.toggleLeft(false); };
+    $scope.generalButtonClickHandler = qmService.buttonClickHandlers.generalButtonClickHandler;
     $scope.$watch(function () { return $ionicSideMenuDelegate.getOpenRatio();
     }, function (ratio) {
         if (ratio == 1){
@@ -48,18 +32,18 @@ angular.module('starter')// Parent Controller - This controller runs before ever
             $scope.hideMenuButton = false;
         }
     });
-    $scope.goToVariableSettingsForCauseVariable = function(correlationObject) {
+    $scope.goToVariableSettingsForCauseVariable = function(study) {
         /** @namespace correlationObject.causeVariable */
-        if(correlationObject.causeVariable){
-            qmService.goToState('app.variableSettingsVariableName', {variableObject: correlationObject.causeVariable, variableName: correlationObject.causeVariableName});
+        if(study.causeVariable){
+            qmService.goToState('app.variableSettingsVariableName', {variableObject: study.causeVariable, variableName: study.causeVariableName});
         } else {
-            qmService.goToState('app.variableSettingsVariableName', {variableName: correlationObject.causeVariableName});
+            qmService.goToState('app.variableSettingsVariableName', {variableName: study.causeVariableName});
         }
     };
-    $scope.goToVariableSettingsForEffectVariable = function(correlationObject) {
+    $scope.goToVariableSettingsForEffectVariable = function(study) {
         /** @namespace correlationObject.effectVariable */
-        if(correlationObject.effectVariable){ qmService.goToState('app.variableSettingsVariableName', {variableObject: correlationObject.effectVariable, variableName: correlationObject.effectVariableName});
-        } else { qmService.goToState('app.variableSettingsVariableName', {variableName: correlationObject.effectVariableName}); }
+        if(study.effectVariable){ qmService.goToState('app.variableSettingsVariableName', {variableObject: study.effectVariable, variableName: study.effectVariableName});
+        } else { qmService.goToState('app.variableSettingsVariableName', {variableName: study.effectVariableName}); }
     };
     $scope.openUrl = function (url, showLocationBar, windowTarget) {
         showLocationBar = showLocationBar || "no";
@@ -74,45 +58,45 @@ angular.module('starter')// Parent Controller - This controller runs before ever
             }
         }
     };
-    $scope.toggleStudyShare = function (correlationObject, ev) {
-        if(correlationObject.shareUserMeasurements){
-            qmService.studyHelper.showShareStudyConfirmation(correlationObject, ev);
+    $scope.toggleStudyShare = function (study, ev) {
+        if(study.studySharing.shareUserMeasurements){
+            qmService.studyHelper.showShareStudyConfirmation(study, ev);
         } else {
-            qmService.studyHelper.showUnShareStudyConfirmation(correlationObject, ev);
+            qmService.studyHelper.showUnShareStudyConfirmation(study, ev);
         }
     };
-    $scope.shareStudy = function(correlationObject, shareType, ev){
-        if(!correlationObject){
-            qmLogService.error("No correlationObject provided to shareStudy!");
+    $scope.shareStudy = function(study, shareType, ev){
+        if(!study){
+            qmLogService.error("No study provided to shareStudy!");
             return;
         }
-        var sharingUrl = qm.objectHelper.getValueOfPropertyOrSubPropertyWithNameLike(shareType, correlationObject);
-        if(!sharingUrl){qmLogService.error("No sharing url for this correlation: ", {correlation: correlationObject});}
-        if(sharingUrl.indexOf('userId') !== -1 && !correlationObject.shareUserMeasurements){
-            qmService.studyHelper.showShareStudyConfirmation(correlationObject, sharingUrl, ev);
+        var sharingUrl = qm.objectHelper.getValueOfPropertyOrSubPropertyWithNameLike(shareType, study);
+        if(!sharingUrl){qmLogService.error("No sharing url for this study: ", {study: study});}
+        if(sharingUrl.indexOf('userId') !== -1 && !study.studySharing.shareUserMeasurements){
+            qmService.studyHelper.showShareStudyConfirmation(study, sharingUrl, ev);
             return;
         }
-        qmService.studyHelper.shareStudyNativelyOrViaWeb(correlationObject, sharingUrl);
+        qmService.studyHelper.shareStudyNativelyOrViaWeb(study, sharingUrl);
     };
     $scope.openSharingUrl = function(sharingUrl){ qmService.openSharingUrl(sharingUrl); };
-    $scope.openStudyLinkFacebook = function (predictorVariableName, outcomeVariableName) {
-        qmService.openSharingUrl(qmService.getStudyLinks(predictorVariableName, outcomeVariableName).studyLinkFacebook);
+    $scope.openStudyLinkFacebook = function (causeVariableName, effectVariableName, study) {
+        qmService.openSharingUrl(qmService.getStudyLinks(causeVariableName, effectVariableName, study).studyLinkFacebook);
     };
-    $scope.openStudyLinkTwitter = function (predictorVariableName, outcomeVariableName) {
-        qmService.openSharingUrl(qmService.getStudyLinks(predictorVariableName, outcomeVariableName).studyLinkTwitter);
+    $scope.openStudyLinkTwitter = function (causeVariableName, effectVariableName, study) {
+        qmService.openSharingUrl(qmService.getStudyLinks(causeVariableName, effectVariableName, study).studyLinkTwitter);
     };
-    $scope.openStudyLinkGoogle = function (predictorVariableName, outcomeVariableName) {
-        qmService.openSharingUrl(qmService.getStudyLinks(predictorVariableName, outcomeVariableName).studyLinkGoogle);
+    $scope.openStudyLinkGoogle = function (causeVariableName, effectVariableName, study) {
+        qmService.openSharingUrl(qmService.getStudyLinks(causeVariableName, effectVariableName, study).studyLinkGoogle);
     };
-    $scope.openStudyLinkEmail = function (predictorVariableName, outcomeVariableName) {
-        qmService.openSharingUrl(qmService.getStudyLinks(predictorVariableName, outcomeVariableName).studyLinkEmail);
+    $scope.openStudyLinkEmail = function (causeVariableName, effectVariableName, study) {
+        qmService.openSharingUrl(qmService.getStudyLinks(causeVariableName, effectVariableName, study).studyLinkEmail);
     };
     $scope.toggleVariableShare = function (variableObject, ev) {
         if(variableObject.shareUserMeasurements){qmService.showShareVariableConfirmation(variableObject, ev);} else {qmService.showUnShareVariableConfirmation(variableObject, ev);}
     };
     $rootScope.setLocalStorageFlagTrue = function (flagName) {
         qmLogService.debug('Set ' + flagName + ' to true', null);
-        $rootScope[flagName] = true;
+        qmService.rootScope.setProperty(flagName, true);
         qmService.storage.setItem(flagName, true);
     };
     $scope.showHelpInfoPopup = function (explanationId, ev, modelName) {
@@ -125,57 +109,60 @@ angular.module('starter')// Parent Controller - This controller runs before ever
     $scope.positiveRatingOptions = qmService.getPositiveRatingOptions();
     $scope.negativeRatingOptions = qmService.getNegativeRatingOptions();
     $scope.numericRatingOptions = qmService.getNumericRatingOptions();
-    $scope.welcomeText = qm.getAppSettings().welcomeText;
-    $scope.downVote = function(correlationObject, $index, ev){
+    $scope.downVote = function(study, $index, ev){
+        var correlationObject = study.statistics;
+        var causeVariableName = qm.studyHelper.getCauseVariableName(study);
+        var effectVariableName = qm.studyHelper.getEffectVariableName(study);
         if (correlationObject.correlationCoefficient > 0) {$scope.increasesDecreases = "increases";} else {$scope.increasesDecreases = "decreases";}
         var title, textContent, yesCallback, noCallback;
-        if (correlationObject.userVote !== 0) {
+        if (study.studyVotes.userVote !== 0) {
             title = 'Implausible relationship?';
-            textContent =  'Do you think is is IMPOSSIBLE that ' + correlationObject.causeVariableName + ' ' + $scope.increasesDecreases + ' your ' + correlationObject.effectVariableName+ '?';
+            textContent =  'Do you think is is IMPOSSIBLE that ' + causeVariableName + ' ' + $scope.increasesDecreases + ' your ' + effectVariableName+ '?';
             yesCallback = function() {
-                correlationObject.userVote = 0;
-                correlationObject.vote = 0;
-                qmService.postVoteDeferred(correlationObject).then(function () {qmLogService.debug('Down voted!', null);}, function () {qmLogService.error('Down vote failed!');});
+                study.studyVotes.userVote = 0;
+                qmService.postVoteToApi(study, function (response) {qmLogService.debug('Down voted!', null);}, function () {qmLogService.error('Down vote failed!');});
             };
             noCallback = function() {};
             qmService.showMaterialConfirmationDialog(title, textContent, yesCallback, noCallback, ev);
         } else {
             title = 'Delete Downvote';
-            textContent = 'You previously voted that it is IMPOSSIBLE that ' + correlationObject.causeVariableName +
-                ' ' + $scope.increasesDecreases + ' your ' + correlationObject.effectVariableName+ '. Do you want to delete this down vote?';
-            yesCallback = function() {deleteVote(correlationObject, $index);};
+            textContent = 'You previously voted that it is IMPOSSIBLE that ' + causeVariableName +
+                ' ' + $scope.increasesDecreases + ' your ' + effectVariableName+ '. Do you want to delete this down vote?';
+            yesCallback = function() {deleteVote(study, $index);};
             noCallback = function () {};
             qmService.showMaterialConfirmationDialog(title, textContent, yesCallback, noCallback, ev);
         }
     };
-    $scope.upVote = function(correlationObject, $index, ev){
+    $scope.upVote = function(study, $index, ev){
+        var correlationObject = study.statistics || study;
+        var causeVariableName = qm.studyHelper.getCauseVariableName(study);
+        var effectVariableName = qm.studyHelper.getEffectVariableName(study);
         if (correlationObject.correlationCoefficient > 0) {$scope.increasesDecreases = "increases";} else {$scope.increasesDecreases = "decreases";}
         var title, textContent, yesCallback, noCallback;
-        if (correlationObject.userVote !== 1) {
+        if (study.studyVotes.userVote !== 1) {
             title = 'Plausible relationship?';
-            textContent = 'Do you think it is POSSIBLE that '+ correlationObject.causeVariableName + ' ' + $scope.increasesDecreases + ' your ' + correlationObject.effectVariableName+ '?';
+            textContent = 'Do you think it is POSSIBLE that '+ causeVariableName + ' ' + $scope.increasesDecreases + ' your ' + effectVariableName+ '?';
             yesCallback = function() {
-                correlationObject.userVote = 1;
-                correlationObject.vote = 1;
-                qmService.postVoteDeferred(correlationObject).then(function () {qmLogService.debug('upVote', null);}, function () {qmLogService.error('upVote failed!');});
+                study.studyVotes.userVote = 1;
+                qmService.postVoteToApi(study, function () {qmLogService.debug('upVote', null);}, function () {qmLogService.error('upVote failed!');});
             };
             noCallback = function () {};
             qmService.showMaterialConfirmationDialog(title, textContent, yesCallback, noCallback, ev);
         } else {
             title = 'Delete Upvote';
-            textContent = 'You previously voted that it is POSSIBLE that '+ correlationObject.causeVariableName +
-                ' ' + $scope.increasesDecreases + ' your ' + correlationObject.effectVariableName+ '. Do you want to delete this up vote?';
-            yesCallback = function() {deleteVote(correlationObject, $index);};
+            textContent = 'You previously voted that it is POSSIBLE that '+ causeVariableName +
+                ' ' + $scope.increasesDecreases + ' your ' + effectVariableName+ '. Do you want to delete this up vote?';
+            yesCallback = function() {deleteVote(study, $index);};
             noCallback = function () {};
             qmService.showMaterialConfirmationDialog(title, textContent, yesCallback, noCallback, ev);
         }
     };
-    function deleteVote(correlationObject, $index) {
-        correlationObject.userVote = null;
-        qmService.deleteVoteDeferred(correlationObject, function(response){
+    function deleteVote(study) {
+        study.studyVotes.userVote = null;
+        qmService.deleteVoteToApi(study, function(response){
             qmLogService.debug('deleteVote response', null, response);
-        }, function(response){
-            qmLogService.error("deleteVote response", response);
+        }, function(error){
+            qmLogService.error("deleteVote error", error);
         });
     }
     $scope.safeApply = function(fn) {
@@ -201,19 +188,19 @@ angular.module('starter')// Parent Controller - This controller runs before ever
             return;
         }
         trackingReminder.displayTotal =
-            qmService.formatValueUnitDisplayText("Recorded " + trackingReminder.modifiedValue + " " + trackingReminder.unitAbbreviatedName);
+            qm.stringHelper.formatValueUnitDisplayText("Recorded " + trackingReminder.modifiedValue + " " + trackingReminder.unitAbbreviatedName);
         qmService.postMeasurementByReminder(trackingReminder, trackingReminder.modifiedValue)
             .then(function () {
                 qmLogService.debug('Successfully qmService.postMeasurementByReminder: ' + JSON.stringify(trackingReminder));
             }, function(error) {
-                qmLogService.error('Failed to track favorite! error: ' + error, null, trackingReminder);
+                qmLogService.error('Failed to track favorite! error: ', error, trackingReminder);
             });
     };
     $scope.trackByFavorite = function(trackingReminder, modifiedReminderValue){
         qmService.trackByFavorite(trackingReminder, modifiedReminderValue);
     };
     // Triggered on a button click, or some other target
-    $scope.showFavoriteActionSheet = function(favorite, $index, bloodPressure) {
+    $scope.showFavoriteActionSheet = function(favorite, $index, bloodPressure, state) {
         var variableObject = {id: favorite.variableId, name: favorite.variableName};
         var actionMenuButtons = [
             { text: '<i class="icon ion-gear-a"></i>Edit Reminder' },
@@ -242,7 +229,9 @@ angular.module('starter')// Parent Controller - This controller runs before ever
                 return true;
             },
             destructiveButtonClicked: function() {
-                favorite.hide = true;
+                state.favoritesArray = state.favoritesArray.filter(function (oneFavorite) {
+                    return oneFavorite.id !== favorite.id;
+                });
                 qmService.deleteTrackingReminderDeferred(favorite);
                 return true;
             }
@@ -284,8 +273,10 @@ angular.module('starter')// Parent Controller - This controller runs before ever
     };
     $scope.$on('$stateChangeSuccess', function() {
         qmService.navBar.setOfflineConnectionErrorShowing(false);
-        qmLog.context = $state.current.name;
+        qmLog.globalMetaData.context = $state.current.name;
         if (typeof analytics !== 'undefined')  { analytics.trackView($state.current.name); }
+        qmService.adSense.showOrHide();
+        qmService.adBanner.showOrHide($stateParams);
         //qmService.login.deleteAfterLoginStateIfItMatchesCurrentState();
         $scope.closeMenu();
     });
@@ -305,12 +296,8 @@ angular.module('starter')// Parent Controller - This controller runs before ever
     $scope.updateEmailAndExecuteCallback = function (callback) {
         qmService.updateEmailAndExecuteCallback(callback);
     };
-    $scope.goToStudyPage = function(correlationObject) {qmService.goToStudyPageViaCorrelationObject(correlationObject);};
-    $scope.goToStudyPageWithVariableNames = function(causeVariableName, effectVariableName) {
-        qmLogService.debug('Clicked go goToStudyPageWithVariableNames for ' + causeVariableName + ' and ' + effectVariableName, null);
-        //qmService.goToState('app.study', {causeVariableName: causeVariableName, effectVariableName: effectVariableName});
-        qmService.goToStudyPage(causeVariableName, effectVariableName);
-    };
+    $scope.goToStudyPageViaStudy = qm.studyHelper.goToStudyPageViaStudy;
+    $scope.goToJoinStudyPageViaStudy = qm.studyHelper.goToStudyPageJoinPageViaStudy;
     $scope.showGeneralVariableSearchDialog = function (ev) {
         function selectVariable(variable) {
             $scope.variableObject = variable;
@@ -330,5 +317,42 @@ angular.module('starter')// Parent Controller - This controller runs before ever
     $scope.switchToPatient = qmService.switchToPatient;
     $scope.trustAsHtml = function(string) {
         return $sce.trustAsHtml(string);
+    };
+    $rootScope.setMicEnabled = function(value){
+        qmLog.info("$rootScope.setMicEnabled");
+        if(value === 'toggle'){value = !qm.mic.getMicEnabled();}
+        $timeout(function () {
+            qmService.rootScope.setProperty('micEnabled', value);
+            qm.mic.setMicEnabled(value);
+            qm.speech.setSpeechEnabled(value);
+            if(value === false){
+                //qm.robot.hideRobot();
+                qm.visualizer.hideVisualizer();
+                qm.mic.onMicDisabled();
+            }
+            if(value === true) {
+                qm.robot.showRobot();
+                qm.visualizer.showVisualizer();
+                qm.mic.onMicEnabled();
+            }
+        }, 1);
+    };
+    $scope.setSpeechEnabled = function(value){
+        $scope.speechEnabled = value;
+        qmService.rootScope.setProperty('speechEnabled', value);
+        qm.speech.setSpeechEnabled(value);
+        qm.speech.defaultAction();
+    };
+    $scope.setVisualizationEnabled = function(value){
+        $scope.visualizationEnabled = value;
+        qmService.rootScope.setProperty('visualizationEnabled', value);
+        qm.visualizer.setVisualizationEnabled(value);
+    };
+    $scope.robotClick = function(){
+        if($state.current.name === qmStates.chat){
+            qm.robot.onRobotClick();
+        } else {
+            qmService.goToState(qmStates.chat);
+        }
     };
 }]);

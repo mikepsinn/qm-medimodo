@@ -43,15 +43,30 @@
    * Constructs a new <code>Button</code>.
    * @alias module:model/Button
    * @class
-   * @param link {String} Example: https://local.quantimo.do
-   * @param text {String} Example: Connect
+   * @param link {String} Ex: https://local.quantimo.do
+   * @param text {String} Ex: Connect
    */
   var exports = function(link, text) {
     var _this = this;
 
-    _this['link'] = link;
-    _this['text'] = text;
 
+
+
+
+
+
+
+
+
+
+
+    _this['link'] = link;
+
+
+
+
+
+    _this['text'] = text;
 
 
   };
@@ -67,50 +82,170 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('link')) {
-        obj['link'] = ApiClient.convertToType(data['link'], 'String');
+      if (data.hasOwnProperty('accessibilityText')) {
+        obj['accessibilityText'] = ApiClient.convertToType(data['accessibilityText'], 'String');
       }
-      if (data.hasOwnProperty('text')) {
-        obj['text'] = ApiClient.convertToType(data['text'], 'String');
+      if (data.hasOwnProperty('action')) {
+        obj['action'] = ApiClient.convertToType(data['action'], Object);
       }
-      if (data.hasOwnProperty('ionIcon')) {
-        obj['ionIcon'] = ApiClient.convertToType(data['ionIcon'], 'String');
+      if (data.hasOwnProperty('additionalInformation')) {
+        obj['additionalInformation'] = ApiClient.convertToType(data['additionalInformation'], 'String');
       }
       if (data.hasOwnProperty('color')) {
         obj['color'] = ApiClient.convertToType(data['color'], 'String');
       }
-      if (data.hasOwnProperty('additionalInformation')) {
-        obj['additionalInformation'] = ApiClient.convertToType(data['additionalInformation'], 'String');
+      if (data.hasOwnProperty('confirmationText')) {
+        obj['confirmationText'] = ApiClient.convertToType(data['confirmationText'], 'String');
+      }
+      if (data.hasOwnProperty('functionName')) {
+        obj['functionName'] = ApiClient.convertToType(data['functionName'], 'String');
+      }
+      if (data.hasOwnProperty('parameters')) {
+        obj['parameters'] = ApiClient.convertToType(data['parameters'], Object);
+      }
+      if (data.hasOwnProperty('html')) {
+        obj['html'] = ApiClient.convertToType(data['html'], 'String');
+      }
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      }
+      if (data.hasOwnProperty('image')) {
+        obj['image'] = ApiClient.convertToType(data['image'], 'String');
+      }
+      if (data.hasOwnProperty('ionIcon')) {
+        obj['ionIcon'] = ApiClient.convertToType(data['ionIcon'], 'String');
+      }
+      if (data.hasOwnProperty('link')) {
+        obj['link'] = ApiClient.convertToType(data['link'], 'String');
+      }
+      if (data.hasOwnProperty('stateName')) {
+        obj['stateName'] = ApiClient.convertToType(data['stateName'], 'String');
+      }
+      if (data.hasOwnProperty('stateParams')) {
+        obj['stateParams'] = ApiClient.convertToType(data['stateParams'], Object);
+      }
+      if (data.hasOwnProperty('successToastText')) {
+        obj['successToastText'] = ApiClient.convertToType(data['successToastText'], 'String');
+      }
+      if (data.hasOwnProperty('successAlertTitle')) {
+        obj['successAlertTitle'] = ApiClient.convertToType(data['successAlertTitle'], 'String');
+      }
+      if (data.hasOwnProperty('successAlertBody')) {
+        obj['successAlertBody'] = ApiClient.convertToType(data['successAlertBody'], 'String');
+      }
+      if (data.hasOwnProperty('text')) {
+        obj['text'] = ApiClient.convertToType(data['text'], 'String');
+      }
+      if (data.hasOwnProperty('tooltip')) {
+        obj['tooltip'] = ApiClient.convertToType(data['tooltip'], 'String');
+      }
+      if (data.hasOwnProperty('webhookUrl')) {
+        obj['webhookUrl'] = ApiClient.convertToType(data['webhookUrl'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * Example: https://local.quantimo.do
-   * @member {String} link
+   * Ex: connect
+   * @member {String} accessibilityText
    */
-  exports.prototype['link'] = undefined;
+  exports.prototype['accessibilityText'] = undefined;
   /**
-   * Example: Connect
-   * @member {String} text
+   * Action data
+   * @member {Object} action
    */
-  exports.prototype['text'] = undefined;
+  exports.prototype['action'] = undefined;
   /**
-   * Example: ion-refresh
-   * @member {String} ionIcon
+   * Ex: connect
+   * @member {String} additionalInformation
    */
-  exports.prototype['ionIcon'] = undefined;
+  exports.prototype['additionalInformation'] = undefined;
   /**
-   * Example: #f2f2f2
+   * Ex: #f2f2f2
    * @member {String} color
    */
   exports.prototype['color'] = undefined;
   /**
-   * Example: connect
-   * @member {String} additionalInformation
+   * Text to show user before executing functionName
+   * @member {String} confirmationText
    */
-  exports.prototype['additionalInformation'] = undefined;
+  exports.prototype['confirmationText'] = undefined;
+  /**
+   * Name of function to call
+   * @member {String} functionName
+   */
+  exports.prototype['functionName'] = undefined;
+  /**
+   * Data to provide to functionName or be copied to the card parameters when button is clicked and card is posted to the API
+   * @member {Object} parameters
+   */
+  exports.prototype['parameters'] = undefined;
+  /**
+   * Ex: connect
+   * @member {String} html
+   */
+  exports.prototype['html'] = undefined;
+  /**
+   * HTML element id
+   * @member {String} id
+   */
+  exports.prototype['id'] = undefined;
+  /**
+   * Ex: https://image.jpg
+   * @member {String} image
+   */
+  exports.prototype['image'] = undefined;
+  /**
+   * Ex: ion-refresh
+   * @member {String} ionIcon
+   */
+  exports.prototype['ionIcon'] = undefined;
+  /**
+   * Ex: https://local.quantimo.do
+   * @member {String} link
+   */
+  exports.prototype['link'] = undefined;
+  /**
+   * State to go to
+   * @member {String} stateName
+   */
+  exports.prototype['stateName'] = undefined;
+  /**
+   * Data to provide to the state
+   * @member {Object} stateParams
+   */
+  exports.prototype['stateParams'] = undefined;
+  /**
+   * Text to show user after executing functionName
+   * @member {String} successToastText
+   */
+  exports.prototype['successToastText'] = undefined;
+  /**
+   * Text to show user after executing functionName
+   * @member {String} successAlertTitle
+   */
+  exports.prototype['successAlertTitle'] = undefined;
+  /**
+   * Text to show user after executing functionName
+   * @member {String} successAlertBody
+   */
+  exports.prototype['successAlertBody'] = undefined;
+  /**
+   * Ex: Connect
+   * @member {String} text
+   */
+  exports.prototype['text'] = undefined;
+  /**
+   * Ex: This is a tooltip
+   * @member {String} tooltip
+   */
+  exports.prototype['tooltip'] = undefined;
+  /**
+   * Post here on button click
+   * @member {String} webhookUrl
+   */
+  exports.prototype['webhookUrl'] = undefined;
 
 
 
