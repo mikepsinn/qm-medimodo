@@ -1462,7 +1462,7 @@ angular.module('starter').factory('configurationService', function($http, $q, $r
         return deferred.promise;
     };
     configurationService.getEmbeddableJs = function () {
-        return '<script src="https://cdn.rawgit.com/QuantiModo/quantimodo-embed-js/0.0.1/quantimodo-embed.min.js"></script>' +
+        return '<script src="https://cdn.jsdelivr.net/gh/QuantiModo/quantimodo-embed-js@0.0.1/quantimodo-embed.min.js"></script>' +
             '<script>' +
                 'window.QuantiModoIntegration.options = {clientId: "' + $rootScope.appSettings.clientId + '"}; ' +
                 'window.QuantiModoIntegration.createSingleFloatingActionButton();' +
